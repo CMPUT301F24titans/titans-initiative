@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/button_save_changes"
+        android:layout_above="@id/button_apply"
         android:padding="10dp"
         android:orientation="vertical">
 
@@ -23,7 +23,7 @@
                 android:id="@+id/title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/profile"
+                android:text="@string/event_name"
                 android:textColor="@color/black"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -42,7 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="@string/user_type"
+            android:text="Organized by user"
+            android:textColor="@color/material_dynamic_neutral50"
             android:paddingBottom="10dp"
             />
 
@@ -53,83 +54,65 @@
             android:gravity="center_horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardCornerRadius="75dp">
+                android:layout_width="200dp"
+                android:layout_height="200dp">
 
                 <ImageView
                     android:id="@+id/profile_pic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@android:drawable/sym_def_app_icon" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button_edit_profile_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/edit_remove_profile_pic"
-            android:contentDescription=""
-            app:srcCompat="@android:drawable/ic_input_add" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="@string/full_name"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/edit_text_full_name"
-            android:text="Full Name"
+            android:text="@string/event_details"
+            android:textStyle="bold"
             android:textColor="@color/material_dynamic_neutral50"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp" />
+            android:textSize="24sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/edit_text_email"
-            android:text="Email"
+            android:paddingTop="10dp"
+            android:text="@string/event_details_example"
             android:textColor="@color/material_dynamic_neutral50"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp" />
+            android:textSize="14sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/phone_number"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/edit_text_phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Phone Number"
+            android:paddingTop="10dp"
+            android:text="@string/event_date"
+            android:textStyle="bold"
             android:textColor="@color/material_dynamic_neutral50"
-            android:layout_margin="10dp"/>
+            android:textSize="24sp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_date_example"
+            android:textColor="@color/material_dynamic_neutral50"
+            android:textSize="14sp"/>
 
         <CheckBox
+            android:id="@+id/checkbox_geolocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/checkbox_notifications"
+            android:text="@string/geolocation_sharing_message"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"/>
     </LinearLayout>
 
     <Button
-        android:id="@+id/button_save_changes"
+        android:id="@+id/button_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save_changes"
+        android:text="@string/apply"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:contentDescription=""
