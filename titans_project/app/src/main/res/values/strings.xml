@@ -56,4 +56,8 @@
     <string name="save_changes">Save Changes</string>
     <string name="user_return">Return</string>
     <string name="optional">(Optional)</string>
+    <string name="return_to_homepage">Return to Homepage</string>
+    <string name="my_events">My Events</string>
+    <string name="event_name">Event Name</string>
+    <string name="event_date">Event Date</string>
 </resources>
