@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/event_name"
-                android:textColor="@color/black"
+                android:textColor="@color/default_button"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 android:layout_weight="15" />
@@ -34,6 +34,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/user_return"
+                android:backgroundTint="@color/default_button"
                 android:layout_weight="5" />
         </LinearLayout>
 
@@ -116,6 +117,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:contentDescription=""
+        android:backgroundTint="@color/default_button"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </RelativeLayout>

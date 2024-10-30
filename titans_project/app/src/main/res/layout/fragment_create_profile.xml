@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="@string/create_profile"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/default_button"
             android:textSize="34sp"
             android:textStyle="bold"
             android:paddingBottom="10dp"/>
@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:text="@string/upload_profile_pic"
             android:contentDescription=""
+            android:backgroundTint="@color/default_button"
             app:srcCompat="@android:drawable/ic_input_add" />
 
         <TextView
@@ -115,6 +116,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/save_changes"
+        android:backgroundTint="@color/default_button"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:contentDescription=""
