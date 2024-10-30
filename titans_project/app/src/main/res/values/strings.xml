@@ -32,5 +32,10 @@
     <string name="application_submit">Submit</string>
     <string name="checkbox_application">I accept the terms and conditions</string>
     <string name="result_describe">Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result /</string>
-
+    <string name="my_events">My Events</string>
+    <string name="event_details">Event Details</string>
+    <string name="geolocation_sharing_message">I agree to share my geolocation</string>
+    <string name="apply">Apply</string>
+    <string name="event_details_example">The Volunteer Event System is a platform designed to simplify the organization, promotion, and participation in volunteer events. This system connects organizations, volunteers, and event coordinators by providing a centralized location to create, manage, and sign up for events.</string>
+    <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
 </resources>
