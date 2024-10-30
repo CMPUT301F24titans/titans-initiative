@@ -104,6 +104,7 @@
 
 
         <CheckBox
+            android:id="@+id/checkbox_notifications"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/checkbox_notifications"/>
