@@ -3134,6 +3134,7 @@ drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable notification
 drawable notification_action_background
 drawable notification_bell_red_circle_20623
 drawable notification_bg
@@ -3830,7 +3831,7 @@ layout fragment_create_profile
 layout fragment_edit_profile
 layout fragment_event_details
 layout fragment_final_result
-layout fragment_my_application
+layout fragment_my_applications
 layout fragment_my_events
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
@@ -3965,6 +3966,7 @@ string event_date_example
 string event_details
 string event_details_example
 string event_name
+string event_update
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior

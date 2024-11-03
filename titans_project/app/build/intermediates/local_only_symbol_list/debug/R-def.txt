@@ -12,6 +12,7 @@ color white
 dimen fab_margin
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable notification
 drawable notification_bell_red_circle_20623
 id FirstFragment
 id ProfileView
@@ -54,7 +55,7 @@ layout fragment_create_profile
 layout fragment_edit_profile
 layout fragment_event_details
 layout fragment_final_result
-layout fragment_my_application
+layout fragment_my_applications
 layout fragment_my_events
 menu menu_main
 mipmap ic_launcher
@@ -76,6 +77,7 @@ string event_date_example
 string event_details
 string event_details_example
 string event_name
+string event_update
 string first_fragment_label
 string full_name
 string gcm_defaultSenderId

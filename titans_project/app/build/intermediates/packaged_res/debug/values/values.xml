@@ -26,6 +26,7 @@
     <string name="event_details">Event Details</string>
     <string name="event_details_example">The Volunteer Event System is a platform designed to simplify the organization, promotion, and participation in volunteer events. This system connects organizations, volunteers, and event coordinators by providing a centralized location to create, manage, and sign up for events.</string>
     <string name="event_name">Event Name</string>
+    <string name="event_update">Event Update</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="full_name">Full Name</string>
     <string name="gcm_defaultSenderId" translatable="false">131020617969</string>
@@ -37,7 +38,7 @@
     <string name="homepage">Homepage</string>
     <string name="leave_waitlist">Leave Waitlist</string>
     <string name="my_application_title">My Application</string>
-    <string name="my_applications">My Application</string>
+    <string name="my_applications">My Applications</string>
     <string name="my_events">My Events</string>
     <string name="next">Next</string>
     <string name="no_button">No</string>
