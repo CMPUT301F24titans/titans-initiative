@@ -67,4 +67,5 @@
     <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
     <string name="my_applications">My Applications</string>
     <string name="homepage">Homepage</string>
+    <string name="event_update">Event Update</string>
 </resources>

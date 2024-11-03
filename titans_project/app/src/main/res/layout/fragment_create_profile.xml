@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/upload_profile_pic"
-            android:backgroundTint="@color/button_default"
+            android:backgroundTint="@color/dark_gray"
             android:contentDescription=""
             app:srcCompat="@android:drawable/ic_input_add" />
 
@@ -117,7 +117,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/create"
-        android:backgroundTint="@color/button_default"
+        android:backgroundTint="@color/dark_gray"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:contentDescription=""
