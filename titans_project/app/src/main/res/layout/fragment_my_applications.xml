@@ -12,21 +12,32 @@
         android:layout_above="@+id/button_return_home"
         android:padding="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/homepage"
-            android:textColor="@color/light_gray"
-            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/my_events"
-            android:textColor="@color/dark_gray"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:weightSum="20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/my_applications"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_weight="15" />
+
+            <Button
+                android:id="@+id/button_return"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/user_return"
+                android:backgroundTint="@color/dark_gray"
+                android:layout_weight="5" />
+        </LinearLayout>
 
         <!-- Divider line -->
         <View
@@ -39,8 +50,7 @@
         <ListView
             android:id="@+id/listview_events"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
@@ -59,8 +69,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_input_add"
-            android:id="@+id/application_button"/>
+            app:srcCompat="@android:drawable/ic_input_add" />
 
         <Button
             android:layout_width="0dp"
@@ -69,10 +78,8 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_input_add"
-            android:id="@+id/profile_button"/>
+            app:srcCompat="@android:drawable/ic_input_add" />
 
     </LinearLayout>
-
 
 </RelativeLayout>
