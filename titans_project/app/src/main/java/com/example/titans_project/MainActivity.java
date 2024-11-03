@@ -16,6 +16,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+/**
+ * This is a class that defines the main activity of the app
+ */
 public class MainActivity extends AppCompatActivity {
     private ListView eventList;
     private ArrayList<Event> dataList;

@@ -17,6 +17,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+/**
+ * This is a class that defines the Profile screen
+ */
 public class ProfileView extends AppCompatActivity {
     private Button return_button;
 
