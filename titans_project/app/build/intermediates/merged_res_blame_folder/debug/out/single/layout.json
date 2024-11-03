@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\content_my_events.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\content_my_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\fragment_event_details.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\fragment_event_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\content_my_application.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\content_my_application.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\fragment_edit_profile.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\fragment_edit_profile.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-43:/layout/fragment_edit_profile.xml",
+        "source": "com.example.titans_project.app-main-46:/layout/fragment_edit_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\fragment_appliction_form.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\fragment_appliction_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\fragment_final_result.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\fragment_final_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\fragment_my_events.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\fragment_my_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\fragment_my_application.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\fragment_my_application.xml"
+    },
+    {
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-43:\\layout\\fragment_create_profile.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-46:\\layout\\fragment_create_profile.xml"
+    }
+]
