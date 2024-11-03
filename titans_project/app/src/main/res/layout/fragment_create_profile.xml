@@ -47,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/upload_profile_pic"
+            android:backgroundTint="@color/button_default"
             android:contentDescription=""
             app:srcCompat="@android:drawable/ic_input_add" />
 
@@ -115,7 +116,8 @@
         android:id="@+id/button_create_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save_changes"
+        android:text="@string/create"
+        android:backgroundTint="@color/button_default"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:contentDescription=""
