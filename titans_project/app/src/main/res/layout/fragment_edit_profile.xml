@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/profile"
-                android:textColor="@color/black"
+                android:textColor="@color/default_button"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 android:layout_weight="15" />
@@ -33,7 +33,9 @@
                 android:id="@+id/button_return"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_gray"
                 android:text="@string/user_return"
+                android:backgroundTint="@color/default_button"
                 android:layout_weight="5" />
         </LinearLayout>
 
@@ -70,7 +72,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_remove_profile_pic"
+            android:backgroundTint="@color/dark_gray"
             android:contentDescription=""
+            android:backgroundTint="@color/default_button"
             app:srcCompat="@android:drawable/ic_input_add" />
 
         <TextView
@@ -132,7 +136,9 @@
         android:text="@string/save_changes"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
+        android:backgroundTint="@color/dark_gray"
         android:contentDescription=""
+        android:backgroundTint="@color/default_button"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </RelativeLayout>

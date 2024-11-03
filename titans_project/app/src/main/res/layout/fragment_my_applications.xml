@@ -12,21 +12,32 @@
         android:layout_above="@+id/button_return_home"
         android:padding="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/homepage"
-            android:textColor="@color/light_gray"
-            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/my_events"
-            android:textColor="@color/dark_gray"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:weightSum="20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/my_applications"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_weight="15" />
+
+            <Button
+                android:id="@+id/button_return"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/user_return"
+                android:backgroundTint="@color/dark_gray"
+                android:layout_weight="5" />
+        </LinearLayout>
 
         <!-- Divider line -->
         <View
