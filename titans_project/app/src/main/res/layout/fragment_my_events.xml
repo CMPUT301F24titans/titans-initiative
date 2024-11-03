@@ -8,34 +8,84 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/button_return_home"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_above="@+id/button_return_home"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/my_events"
-            android:textColor="@color/black"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+            android:text="@string/homepage"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/my_events"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_weight="15" />
+
+            <Button
+                android:id="@+id/button_return"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/user_return"
+                android:backgroundTint="@color/button_default"
+                android:layout_weight="5" />
+        </LinearLayout>
+
+        <!-- Divider line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/text_secondary"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
 
         <ListView
             android:id="@+id/listview_events"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
     </LinearLayout>
 
-    <Button
+    <LinearLayout
         android:id="@+id/button_return_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/return_to_homepage"
         android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
         android:layout_margin="10dp"
-        android:contentDescription=""
-        app:srcCompat="@android:drawable/ic_input_add" />
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/my_applications"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/button_default"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/profile"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/button_default"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+    </LinearLayout>
 
 </RelativeLayout>
