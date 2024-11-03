@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private EventsArrayAdapter eventsArrayAdapter;
     private Button profile_button, application_button;
     Intent profile = new Intent();
+    Intent my_applications = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +45,21 @@ public class MainActivity extends AppCompatActivity {
         eventsArrayAdapter = new EventsArrayAdapter(this, dataList);
         eventList.setAdapter(eventsArrayAdapter);
 
+        // User clicks on the Profile button
         profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 profile.setClass(MainActivity.this, ProfileView.class);
                 startActivity(profile);
+            }
+        });
+
+        // User clicks on the My Applications button
+        application_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                my_applications.setClass(MainActivity.this, MyApplicationsView.class);
+                startActivity(my_applications);
             }
         });
     }
