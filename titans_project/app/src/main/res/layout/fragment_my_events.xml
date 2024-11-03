@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/my_events"
-            android:textColor="@color/default_button"
+            android:textColor="@color/dark_gray"
             android:textSize="34sp"
             android:textStyle="bold" />
 
@@ -49,13 +49,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:layout_margin="10dp"
-<<<<<<< HEAD
         android:weightSum="2">
-=======
-        android:contentDescription=""
-        android:backgroundTint="@color/default_button"
-        app:srcCompat="@android:drawable/ic_input_add" />
->>>>>>> main
 
         <Button
             android:layout_width="0dp"
