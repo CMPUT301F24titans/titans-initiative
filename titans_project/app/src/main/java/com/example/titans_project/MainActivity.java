@@ -21,12 +21,32 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Event> dataList;
     private EventsArrayAdapter eventsArrayAdapter;
     private Button profile_button, application_button;
-    private Intent profile, application;
+    Intent profile = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_my_events);
 
+        eventList = findViewById(R.id.listview_events);
+        profile_button = findViewById(R.id.profile_button);
+        application_button = findViewById(R.id.application_button);
+
+        String[] events = {"Edmonton", "Vancouver", "Toronto"};
+        String[] date = {"2024/11/5", "2024/12/5", "2025/11/5"};
+        dataList = new ArrayList<>();
+        for (int i = 0; i < events.length; i++) {
+            dataList.add(new Event(events[i], "organizer", "created date", date[i], "description", "picture"));
+        }
+        eventsArrayAdapter = new EventsArrayAdapter(this, dataList);
+        eventList.setAdapter(eventsArrayAdapter);
+
+        profile_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                profile.setClass(MainActivity.this, ProfileView.class);
+                startActivity(profile);
+            }
+        });
     }
 }

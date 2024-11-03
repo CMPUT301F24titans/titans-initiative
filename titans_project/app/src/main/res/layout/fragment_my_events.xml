@@ -39,7 +39,8 @@
         <ListView
             android:id="@+id/listview_events"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -58,7 +59,8 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:id="@+id/application_button"/>
 
         <Button
             android:layout_width="0dp"
@@ -67,8 +69,10 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:id="@+id/profile_button"/>
 
     </LinearLayout>
+
 
 </RelativeLayout>
