@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-35:12
 MERGED from [androidx.databinding:viewbinding:8.2.1] C:\Users\Jakob\.gradle\caches\transforms-4\ec09fe3dba922d08a8acae7fb6af1c00\transformed\viewbinding-8.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.8.3] C:\Users\Jakob\.gradle\caches\transforms-4\3f0e0cb2e54874b1bbda6d8ae703446f\transformed\navigation-common-2.8.3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.8.3] C:\Users\Jakob\.gradle\caches\transforms-4\fa843cc5c1b1544fd8f6e6d06145538b\transformed\navigation-runtime-2.8.3\AndroidManifest.xml:17:1-22:12
@@ -80,9 +80,15 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Jak
 		INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:5:5-66
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Jakob\.gradle\caches\transforms-4\1bd2f214cf9788a9693905f9904535ea\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Jakob\.gradle\caches\transforms-4\1bd2f214cf9788a9693905f9904535ea\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:5:5-31:19
-INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:5:5-31:19
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:7:5-33:19
+INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:7:5-33:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Jakob\.gradle\caches\transforms-4\bad0ea282563291679ebf25728fe84a6\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Jakob\.gradle\caches\transforms-4\bad0ea282563291679ebf25728fe84a6\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Jakob\.gradle\caches\transforms-4\6c701dc9249108046573953c32fc2f5c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -122,53 +128,53 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Jakob\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] C:\Users\Jakob\.gradle\caches\transforms-4\d184ffdbf28e774beaca41c6dd80b940\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:12:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:8:9-54
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:10:9-54
 	android:roundIcon
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:13:9-54
 	tools:targetApi
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:14:9-29
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:13:9-52
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:15:9-52
 	android:dataExtractionRules
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:7:9-65
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:9:9-65
 activity#com.example.titans_project.ProfileView
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:15:9-17:40
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:17:9-19:40
 	android:exported
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:17:13-37
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:19:13-37
 	android:name
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:16:13-40
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:18:13-40
 activity#com.example.titans_project.MyApplicationsView
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:18:9-20:40
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:20:9-22:40
 	android:exported
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:20:13-37
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:19:13-47
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:21:13-47
 activity#com.example.titans_project.MainActivity
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:21:9-30:20
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:23:9-32:20
 	android:exported
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:23:13-36
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:25:13-36
 	android:theme
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:24:13-56
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:26:13-56
 	android:name
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:22:13-41
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:24:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:30:27-74
 uses-sdk
 INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Jakob\U_of_A\YEAR_3\CMPUT_301\project\project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml
@@ -315,10 +321,6 @@ MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\Jakob\.gradle\caches\transfor
 MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\Jakob\.gradle\caches\transforms-4\786785e056441153043367eb92b9a6a5\transformed\grpc-android-1.62.2\AndroidManifest.xml:7:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Jakob\.gradle\caches\transforms-4\1bd2f214cf9788a9693905f9904535ea\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:10:22-76
-uses-permission#android.permission.INTERNET
-ADDED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Jakob\.gradle\caches\transforms-4\1bd2f214cf9788a9693905f9904535ea\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:11:5-67
-	android:name
-		ADDED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Jakob\.gradle\caches\transforms-4\1bd2f214cf9788a9693905f9904535ea\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:11:22-64
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\Jakob\.gradle\caches\transforms-4\1bd2f214cf9788a9693905f9904535ea\transformed\firebase-firestore-25.1.1\AndroidManifest.xml:14:9-23:19
 MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Jakob\.gradle\caches\transforms-4\10e09dae9d30a2517b6d632400f97a93\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
