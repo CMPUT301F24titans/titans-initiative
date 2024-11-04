@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
 
 /**
@@ -27,10 +30,18 @@ public class MainActivity extends AppCompatActivity {
     Intent profile = new Intent();
     Intent my_applications = new Intent();
 
+    private FirebaseFirestore db;
+    private CollectionReference eventRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_my_events);
+
+        // firebase
+        db = FirebaseFirestore.getInstance();
+        eventRef = db.collection("events");
+        eventRef.document("Testing");
 
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
@@ -58,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         application_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 my_applications.setClass(MainActivity.this, MyApplicationsView.class);
                 startActivity(my_applications);
             }
