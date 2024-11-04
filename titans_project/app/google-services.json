@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "131020617969",
-    "project_id": "titans-4ecdc",
-    "storage_bucket": "titans-4ecdc.appspot.com"
+    "project_number": "660667334823",
+    "project_id": "titans-initiative",
+    "storage_bucket": "titans-initiative.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:131020617969:android:a3c709b214d1d68173d150",
+        "mobilesdk_app_id": "1:660667334823:android:4d676fc90c8ed142cedb82",
         "android_client_info": {
           "package_name": "com.example.titans_project"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBZY1aWgOSbq9xE5Y6NqS0RWyhp4DtbrAI"
+          "current_key": "AIzaSyD8PM_NS6OBr4UBe1eSoQKEup52WGLe9ZU"
         }
       ],
       "services": {

@@ -1,11 +1,13 @@
 package com.example.titans_project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +16,14 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This is a class that defines the main activity of the app
@@ -27,10 +36,17 @@ public class MainActivity extends AppCompatActivity {
     Intent profile = new Intent();
     Intent my_applications = new Intent();
 
+    private FirebaseFirestore db;
+    private CollectionReference eventRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_my_events);
+
+        // firebase
+        db = FirebaseFirestore.getInstance();
+        eventRef = db.collection("events");
 
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
