@@ -79,4 +79,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    /**
+     * Method to add an event to the 'events' collection in Firestore
+     */
+    private void addEventToFirestore(String name, String organizer, String createdDate, String date, String description, String picture) {
+        // Create event data as a Map
+        Map<String, Object> event = new HashMap<>();
+        event.put("name", name);
+        event.put("organizer", organizer);
+        event.put("createdDate", createdDate);
+        event.put("date", date);
+        event.put("description", description);
+        event.put("picture", picture);
+
+        // Add the event to Firestore 'events' collection
+        eventRef.add(event)
+                .addOnSuccessListener(documentReference -> Log.d("MainActivity", "Event added with ID: " + documentReference.getId()))
+                .addOnFailureListener(e -> Log.e("MainActivity", "Error adding event", e));
+    }
 }
