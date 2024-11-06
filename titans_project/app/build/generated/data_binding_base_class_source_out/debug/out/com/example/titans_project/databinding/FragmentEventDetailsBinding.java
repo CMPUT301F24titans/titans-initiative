@@ -32,20 +32,33 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
   public final CheckBox checkboxGeolocation;
 
   @NonNull
-  public final ImageView profilePic;
+  public final TextView eventDate;
 
   @NonNull
-  public final TextView title;
+  public final TextView eventDescription;
+
+  @NonNull
+  public final TextView eventName;
+
+  @NonNull
+  public final TextView organizer;
+
+  @NonNull
+  public final ImageView profilePic;
 
   private FragmentEventDetailsBinding(@NonNull RelativeLayout rootView, @NonNull Button buttonApply,
       @NonNull Button buttonReturn, @NonNull CheckBox checkboxGeolocation,
-      @NonNull ImageView profilePic, @NonNull TextView title) {
+      @NonNull TextView eventDate, @NonNull TextView eventDescription, @NonNull TextView eventName,
+      @NonNull TextView organizer, @NonNull ImageView profilePic) {
     this.rootView = rootView;
     this.buttonApply = buttonApply;
     this.buttonReturn = buttonReturn;
     this.checkboxGeolocation = checkboxGeolocation;
+    this.eventDate = eventDate;
+    this.eventDescription = eventDescription;
+    this.eventName = eventName;
+    this.organizer = organizer;
     this.profilePic = profilePic;
-    this.title = title;
   }
 
   @Override
@@ -93,20 +106,38 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.event_date;
+      TextView eventDate = ViewBindings.findChildViewById(rootView, id);
+      if (eventDate == null) {
+        break missingId;
+      }
+
+      id = R.id.event_description;
+      TextView eventDescription = ViewBindings.findChildViewById(rootView, id);
+      if (eventDescription == null) {
+        break missingId;
+      }
+
+      id = R.id.event_name;
+      TextView eventName = ViewBindings.findChildViewById(rootView, id);
+      if (eventName == null) {
+        break missingId;
+      }
+
+      id = R.id.organizer;
+      TextView organizer = ViewBindings.findChildViewById(rootView, id);
+      if (organizer == null) {
+        break missingId;
+      }
+
       id = R.id.profile_pic;
       ImageView profilePic = ViewBindings.findChildViewById(rootView, id);
       if (profilePic == null) {
         break missingId;
       }
 
-      id = R.id.title;
-      TextView title = ViewBindings.findChildViewById(rootView, id);
-      if (title == null) {
-        break missingId;
-      }
-
       return new FragmentEventDetailsBinding((RelativeLayout) rootView, buttonApply, buttonReturn,
-          checkboxGeolocation, profilePic, title);
+          checkboxGeolocation, eventDate, eventDescription, eventName, organizer, profilePic);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

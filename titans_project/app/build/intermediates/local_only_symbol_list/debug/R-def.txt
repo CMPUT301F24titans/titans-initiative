@@ -36,12 +36,14 @@ id edit_text_email
 id edit_text_full_name
 id edit_text_phone_number
 id event_date
+id event_description
 id event_name
 id leave_button
 id listview_events
 id nav_graph
 id no_button
 id notification_icon
+id organizer
 id profile_button
 id profile_pic
 id result_title
