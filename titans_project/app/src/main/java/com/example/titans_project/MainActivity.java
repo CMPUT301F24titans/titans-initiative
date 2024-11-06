@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This creates a user profile in Firebase
      */
-    private void createProfile(FirebaseUser user){
+    public void createProfile(FirebaseUser user){
         userRef = db.collection("user");
         // Create HashMap to store user's information
         HashMap<String, Object> userData = new HashMap<>();

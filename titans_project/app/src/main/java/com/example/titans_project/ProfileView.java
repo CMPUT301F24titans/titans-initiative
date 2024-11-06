@@ -4,14 +4,17 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -47,21 +50,6 @@ public class ProfileView extends AppCompatActivity {
         CheckBox notifications = findViewById(R.id.checkbox_notifications);
         Button save_changes_button = findViewById(R.id.button_save_changes);
 
-        // Check user has entered a phone number
-        if (!phone_number.getText().toString().isEmpty()) {  // not empty
-            if (!phone_number.getText().toString().matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")){
-                phone_number.setError("Please enter a valid phone number");
-            }
-        }
-
-        // Check user has entered a valid email
-        if (!email.getText().toString().isEmpty()){  // not empty
-            // check if there was an invalid email address entered
-            if (!email.getText().toString().matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to check if valid email (TOTAL PAIN!!!)
-                email.setError("Please enter a valid email address");
-            }
-        }
-
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,12 +60,63 @@ public class ProfileView extends AppCompatActivity {
         save_changes_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userRef.update("name", name.getText().toString());
-                userRef.update("email", email.getText().toString());
-                userRef.update("phone_number", phone_number.getText().toString());
-                userRef.update("facility", facility.getText().toString());
-                userRef.update("notifications", notifications.isChecked());
-            }
+                // Input validation before proceeding with the update
+                String nameInput = name.getText().toString().trim();
+                String emailInput = email.getText().toString().trim();
+                String phoneInput = phone_number.getText().toString().trim();
+                String facilityInput = facility.getText().toString().trim();
+
+                // Validate email
+                if (emailInput.isEmpty() || !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {
+                    email.setError("Please enter a valid email address");
+                    return; // Don't proceed with the update if validation fails
+                }
+
+                // Validate phone number
+                if (phoneInput.isEmpty() || !phoneInput.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")) {
+                    phone_number.setError("Please enter a valid phone number");
+                    return; // Don't proceed with the update if validation fails
+                }
+
+                // Get the document
+                userRef.get().addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot user = task.getResult();
+                        // Prepare data to update in a HashMap
+                        HashMap<String, Object> userData = new HashMap<>();
+                        userData.put("name", nameInput);
+                        userData.put("email", emailInput);
+                        userData.put("phone_number", phoneInput);
+                        userData.put("facility", facilityInput);
+                        userData.put("notifications", notifications.isChecked());
+
+                        if (user.exists()) {
+                            // Perform the update in Firestore
+                            userRef.update(userData)
+                                    .addOnSuccessListener(aVoid -> {
+                                        // Handle success
+                                        Log.d("ProfileView", "User details updated successfully!");
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        // Handle failure
+                                        Log.e("ProfileView", "Error updating user details", e);
+                                    });
+                        }
+                        else {
+                            mAuth.signInAnonymously();
+                            FirebaseUser currentUser = mAuth.getCurrentUser();
+                            // Create nested HashMap to store user's events
+                            HashMap<String, Object> eventData = new HashMap<>();  // empty initially
+                            userData.put("Events", eventData);
+                            // Store in Firebase
+                            db.collection("user").document(currentUser.getUid()).set(userData);
+                        }
+                    }
         });
+                Toast.makeText(ProfileView.this, "Changes Saved",
+                        Toast.LENGTH_SHORT).show();
+                finish();
+            }
+    });
     }
 }
