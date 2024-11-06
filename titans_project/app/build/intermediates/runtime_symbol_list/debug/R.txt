@@ -3321,6 +3321,7 @@ int id button_edit_profile_pic 0x7f080077
 int id button_return 0x7f080078
 int id button_return_home 0x7f080079
 int id button_save_changes 0x7f08007a
+int id button_toolbar 0x7f08022b
 int id cache_measures 0x7f08007b
 int id callMeasure 0x7f08007c
 int id cancel_button 0x7f08007d
@@ -3357,6 +3358,7 @@ int id coordinator 0x7f08009b
 int id cos 0x7f08009c
 int id counterclockwise 0x7f08009d
 int id cradle 0x7f08009e
+int id created_events_button 0x7f080228
 int id currentState 0x7f08009f
 int id custom 0x7f0800a0
 int id customPanel 0x7f0800a1
@@ -3398,6 +3400,7 @@ int id east 0x7f0800c4
 int id edge 0x7f0800c5
 int id edit_query 0x7f0800c6
 int id edit_text_email 0x7f0800c7
+int id edit_text_facility 0x7f080229
 int id edit_text_full_name 0x7f0800c8
 int id edit_text_id 0x7f0800c9
 int id edit_text_phone_number 0x7f0800ca
@@ -3616,6 +3619,7 @@ int id save_non_transition_alpha 0x7f08019e
 int id save_overlay_view 0x7f08019f
 int id sawtooth 0x7f0801a0
 int id scale 0x7f0801a1
+int id scan_button 0x7f08022a
 int id screen 0x7f0801a2
 int id scroll 0x7f0801a3
 int id scrollIndicatorDown 0x7f0801a4
@@ -3886,7 +3890,7 @@ int layout design_navigation_menu 0x7f0b002c
 int layout design_navigation_menu_item 0x7f0b002d
 int layout design_text_input_end_icon 0x7f0b002e
 int layout design_text_input_start_icon 0x7f0b002f
-int layout fragment_appliction_form 0x7f0b0030
+int layout fragment_application_form 0x7f0b0076
 int layout fragment_create_profile 0x7f0b0031
 int layout fragment_edit_profile 0x7f0b0032
 int layout fragment_event_details 0x7f0b0033
@@ -4038,6 +4042,7 @@ int string common_signin_button_text_long 0x7f120048
 int string copy_toast_msg 0x7f120049
 int string create 0x7f12004a
 int string create_profile 0x7f12004b
+int string created_events 0x7f1200ef
 int string dest_title 0x7f12004c
 int string edit_remove_profile_pic 0x7f12004d
 int string email 0x7f12004e
@@ -4052,6 +4057,7 @@ int string event_update 0x7f120056
 int string exposed_dropdown_menu_content_description 0x7f120057
 int string fab_transformation_scrim_behavior 0x7f120058
 int string fab_transformation_sheet_behavior 0x7f120059
+int string facility 0x7f1200f0
 int string fallback_menu_item_copy_link 0x7f12005a
 int string fallback_menu_item_open_in_browser 0x7f12005b
 int string fallback_menu_item_share_link 0x7f12005c
@@ -4189,6 +4195,7 @@ int string result_describe 0x7f1200df
 int string result_title 0x7f1200e0
 int string return_to_homepage 0x7f1200e1
 int string save_changes 0x7f1200e2
+int string scan 0x7f1200f1
 int string search_menu_title 0x7f1200e3
 int string searchbar_scrolling_view_behavior 0x7f1200e4
 int string searchview_clear_text_content_description 0x7f1200e5

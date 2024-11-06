@@ -19,6 +19,7 @@
     <string name="checkbox_notifications">Receive notifications from Organizers and Administration</string>
     <string name="create">Create</string>
     <string name="create_profile">Create Profile</string>
+    <string name="created_events">Created Events</string>
     <string name="edit_remove_profile_pic">Edit/Remove Profile Pic</string>
     <string name="email">Email</string>
     <string name="event_date">Event Date</string>
@@ -27,6 +28,7 @@
     <string name="event_details_example">The Volunteer Event System is a platform designed to simplify the organization, promotion, and participation in volunteer events. This system connects organizations, volunteers, and event coordinators by providing a centralized location to create, manage, and sign up for events.</string>
     <string name="event_name">Event Name</string>
     <string name="event_update">Event Update</string>
+    <string name="facility">Facility</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="full_name">Full Name</string>
     <string name="gcm_defaultSenderId" translatable="false">660667334823</string>
@@ -38,7 +40,7 @@
     <string name="homepage">Homepage</string>
     <string name="leave_waitlist">Leave Waitlist</string>
     <string name="my_application_title">My Application</string>
-    <string name="my_applications">My Applications</string>
+    <string name="my_applications">Applications</string>
     <string name="my_events">My Events</string>
     <string name="next">Next</string>
     <string name="no_button">No</string>
@@ -51,6 +53,7 @@
     <string name="result_title">Event Result</string>
     <string name="return_to_homepage">Return to Homepage</string>
     <string name="save_changes">Save Changes</string>
+    <string name="scan">Scan</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="user_return">Return</string>

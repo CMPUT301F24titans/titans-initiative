@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
     private CollectionReference eventRef;
+    private CollectionReference userRef;
     private static final String TAG = "AnonymousAuthActivity";
     private FirebaseAuth mAuth;
 
@@ -60,15 +63,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_my_events);
 
-        // Initialize Firebase Auth
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         // Check and perform anonymous sign-in
         performAnonymousSignIn();
 
-
-        // Initialize Firebase Database
-        db = FirebaseFirestore.getInstance();
         eventRef = db.collection("events");
 
         eventList = findViewById(R.id.listview_events);
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // User clicks on the My Applications button
+        // User clicks on the Applications button
         application_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,11 +117,14 @@ public class MainActivity extends AppCompatActivity {
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            // successful anonymous first time sign in
                             if (task.isSuccessful()) {
                                 Log.d(TAG, "signInAnonymously:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                redirectToCreateProfile();
-                            } else {
+                                createProfile(user);  // store user in Firebase
+                            }
+                            // unsuccessful anonymous sign in
+                            else {
                                 Log.w(TAG, "signInAnonymously:failure", task.getException());
                                 Toast.makeText(MainActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
@@ -129,18 +134,26 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Existing user detected
             Log.d(TAG, "User already signed in");
-            setContentView(R.layout.fragment_my_events);
             Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(),
                     Toast.LENGTH_SHORT).show();
         }
     }
 
     /**
-     * This redirects the user to the CreateProfileView activity
+     * This creates a user profile in Firebase
      */
-    private void redirectToCreateProfile() {
-        Intent createProfileIntent = new Intent(MainActivity.this, CreateProfileView.class);
-        startActivity(createProfileIntent);
-
+    private void createProfile(FirebaseUser user){
+        userRef = db.collection("user");
+        // Create HashMap to store user's information
+        HashMap<String, Object> userData = new HashMap<>();
+        userData.put("full_name","");
+        userData.put("email","");
+        userData.put("phone_number","");
+        userData.put("facility","");
+        // Create nested HashMap to store user's events
+        HashMap<String, Object> eventData = new HashMap<>();  // empty initially
+        userData.put("Events", eventData);
+        // Store in Firebase
+        userRef.document(user.getUid()).set(userData);
     }
 }

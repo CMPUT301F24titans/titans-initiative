@@ -10,7 +10,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_above="@+id/button_return_home"
-        android:padding="10dp">
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="40dp">
 
 
         <LinearLayout

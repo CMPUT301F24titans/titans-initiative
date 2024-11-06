@@ -26,7 +26,10 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   public final Button applicationButton;
 
   @NonNull
-  public final LinearLayout buttonReturnHome;
+  public final LinearLayout buttonToolbar;
+
+  @NonNull
+  public final Button createdEventsButton;
 
   @NonNull
   public final ListView listviewEvents;
@@ -35,16 +38,22 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   public final Button profileButton;
 
   @NonNull
+  public final Button scanButton;
+
+  @NonNull
   public final TextView title;
 
   private FragmentMyEventsBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button applicationButton, @NonNull LinearLayout buttonReturnHome,
-      @NonNull ListView listviewEvents, @NonNull Button profileButton, @NonNull TextView title) {
+      @NonNull Button applicationButton, @NonNull LinearLayout buttonToolbar,
+      @NonNull Button createdEventsButton, @NonNull ListView listviewEvents,
+      @NonNull Button profileButton, @NonNull Button scanButton, @NonNull TextView title) {
     this.rootView = rootView;
     this.applicationButton = applicationButton;
-    this.buttonReturnHome = buttonReturnHome;
+    this.buttonToolbar = buttonToolbar;
+    this.createdEventsButton = createdEventsButton;
     this.listviewEvents = listviewEvents;
     this.profileButton = profileButton;
+    this.scanButton = scanButton;
     this.title = title;
   }
 
@@ -81,9 +90,15 @@ public final class FragmentMyEventsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.button_return_home;
-      LinearLayout buttonReturnHome = ViewBindings.findChildViewById(rootView, id);
-      if (buttonReturnHome == null) {
+      id = R.id.button_toolbar;
+      LinearLayout buttonToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (buttonToolbar == null) {
+        break missingId;
+      }
+
+      id = R.id.created_events_button;
+      Button createdEventsButton = ViewBindings.findChildViewById(rootView, id);
+      if (createdEventsButton == null) {
         break missingId;
       }
 
@@ -99,6 +114,12 @@ public final class FragmentMyEventsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.scan_button;
+      Button scanButton = ViewBindings.findChildViewById(rootView, id);
+      if (scanButton == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
@@ -106,7 +127,7 @@ public final class FragmentMyEventsBinding implements ViewBinding {
       }
 
       return new FragmentMyEventsBinding((RelativeLayout) rootView, applicationButton,
-          buttonReturnHome, listviewEvents, profileButton, title);
+          buttonToolbar, createdEventsButton, listviewEvents, profileButton, scanButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

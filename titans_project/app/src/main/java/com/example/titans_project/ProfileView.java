@@ -21,7 +21,6 @@ import java.util.ArrayList;
  * This is a class that defines the Profile screen
  */
 public class ProfileView extends AppCompatActivity {
-    private Button return_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class ProfileView extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_edit_profile);
 
-        return_button = findViewById(R.id.button_return);
+        Button return_button = findViewById(R.id.button_return);
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

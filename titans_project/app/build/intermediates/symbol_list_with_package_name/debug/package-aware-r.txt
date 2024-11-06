@@ -3322,6 +3322,7 @@ id button_edit_profile_pic
 id button_return
 id button_return_home
 id button_save_changes
+id button_toolbar
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3358,6 +3359,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id created_events_button
 id currentState
 id custom
 id customPanel
@@ -3399,6 +3401,7 @@ id east
 id edge
 id edit_query
 id edit_text_email
+id edit_text_facility
 id edit_text_full_name
 id edit_text_id
 id edit_text_phone_number
@@ -3617,6 +3620,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scan_button
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3887,7 +3891,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_appliction_form
+layout fragment_application_form
 layout fragment_create_profile
 layout fragment_edit_profile
 layout fragment_event_details
@@ -4039,6 +4043,7 @@ string common_signin_button_text_long
 string copy_toast_msg
 string create
 string create_profile
+string created_events
 string dest_title
 string edit_remove_profile_pic
 string email
@@ -4053,6 +4058,7 @@ string event_update
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string facility
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
@@ -4190,6 +4196,7 @@ string result_describe
 string result_title
 string return_to_homepage
 string save_changes
+string scan
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description

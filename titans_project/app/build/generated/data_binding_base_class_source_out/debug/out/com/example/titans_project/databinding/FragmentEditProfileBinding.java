@@ -38,6 +38,9 @@ public final class FragmentEditProfileBinding implements ViewBinding {
   public final EditText editTextEmail;
 
   @NonNull
+  public final EditText editTextFacility;
+
+  @NonNull
   public final EditText editTextFullName;
 
   @NonNull
@@ -52,15 +55,16 @@ public final class FragmentEditProfileBinding implements ViewBinding {
   private FragmentEditProfileBinding(@NonNull RelativeLayout rootView,
       @NonNull RelativeLayout ProfileView, @NonNull Button buttonEditProfilePic,
       @NonNull Button buttonReturn, @NonNull Button buttonSaveChanges,
-      @NonNull EditText editTextEmail, @NonNull EditText editTextFullName,
-      @NonNull EditText editTextPhoneNumber, @NonNull ImageView profilePic,
-      @NonNull TextView title) {
+      @NonNull EditText editTextEmail, @NonNull EditText editTextFacility,
+      @NonNull EditText editTextFullName, @NonNull EditText editTextPhoneNumber,
+      @NonNull ImageView profilePic, @NonNull TextView title) {
     this.rootView = rootView;
     this.ProfileView = ProfileView;
     this.buttonEditProfilePic = buttonEditProfilePic;
     this.buttonReturn = buttonReturn;
     this.buttonSaveChanges = buttonSaveChanges;
     this.editTextEmail = editTextEmail;
+    this.editTextFacility = editTextFacility;
     this.editTextFullName = editTextFullName;
     this.editTextPhoneNumber = editTextPhoneNumber;
     this.profilePic = profilePic;
@@ -120,6 +124,12 @@ public final class FragmentEditProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.edit_text_facility;
+      EditText editTextFacility = ViewBindings.findChildViewById(rootView, id);
+      if (editTextFacility == null) {
+        break missingId;
+      }
+
       id = R.id.edit_text_full_name;
       EditText editTextFullName = ViewBindings.findChildViewById(rootView, id);
       if (editTextFullName == null) {
@@ -145,8 +155,8 @@ public final class FragmentEditProfileBinding implements ViewBinding {
       }
 
       return new FragmentEditProfileBinding((RelativeLayout) rootView, ProfileView,
-          buttonEditProfilePic, buttonReturn, buttonSaveChanges, editTextEmail, editTextFullName,
-          editTextPhoneNumber, profilePic, title);
+          buttonEditProfilePic, buttonReturn, buttonSaveChanges, editTextEmail, editTextFacility,
+          editTextFullName, editTextPhoneNumber, profilePic, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

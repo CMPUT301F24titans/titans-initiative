@@ -30,9 +30,12 @@ id button_edit_profile_pic
 id button_return
 id button_return_home
 id button_save_changes
+id button_toolbar
 id checkbox_geolocation
 id checkbox_notifications
+id created_events_button
 id edit_text_email
+id edit_text_facility
 id edit_text_full_name
 id edit_text_phone_number
 id event_date
@@ -45,12 +48,13 @@ id notification_icon
 id profile_button
 id profile_pic
 id result_title
+id scan_button
 id textView2
 id title
 id yes_button
 layout content_my_application
 layout content_my_events
-layout fragment_appliction_form
+layout fragment_application_form
 layout fragment_create_profile
 layout fragment_edit_profile
 layout fragment_event_details
@@ -70,6 +74,7 @@ string checkbox_application
 string checkbox_notifications
 string create
 string create_profile
+string created_events
 string edit_remove_profile_pic
 string email
 string event_date
@@ -78,6 +83,7 @@ string event_details
 string event_details_example
 string event_name
 string event_update
+string facility
 string first_fragment_label
 string full_name
 string gcm_defaultSenderId
@@ -102,6 +108,7 @@ string result_describe
 string result_title
 string return_to_homepage
 string save_changes
+string scan
 string second_fragment_label
 string upload_profile_pic
 string user_return
