@@ -3250,7 +3250,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id account_type_spinner
 id actionDown
 id actionDownUp
 id actionUp
@@ -3315,12 +3314,10 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
-id button_add_profile_pic
 id button_apply
 id button_create_profile
 id button_edit_profile_pic
 id button_return
-id button_return_home
 id button_save_changes
 id button_toolbar
 id cache_measures
@@ -3892,12 +3889,11 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_application_form
-layout fragment_create_profile
-layout fragment_edit_profile
 layout fragment_event_details
 layout fragment_final_result
 layout fragment_my_applications
 layout fragment_my_events
+layout fragment_profile
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog

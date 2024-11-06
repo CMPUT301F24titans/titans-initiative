@@ -150,10 +150,12 @@ public class MainActivity extends AppCompatActivity {
         userData.put("email","");
         userData.put("phone_number","");
         userData.put("facility","");
+        userData.put("notifications", Boolean.FALSE);
         // Create nested HashMap to store user's events
         HashMap<String, Object> eventData = new HashMap<>();  // empty initially
         userData.put("Events", eventData);
         // Store in Firebase
         userRef.document(user.getUid()).set(userData);
+        finish();
     }
 }

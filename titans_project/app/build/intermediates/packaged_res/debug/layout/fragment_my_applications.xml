@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_above="@+id/button_return_home"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
         android:paddingTop="40dp">
@@ -53,35 +52,6 @@
             android:id="@+id/listview_events"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/button_return_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:layout_margin="10dp"
-        android:weightSum="2">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/my_applications"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/dark_gray"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_input_add" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/profile"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/dark_gray"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_input_add" />
-
     </LinearLayout>
 
 </RelativeLayout>
