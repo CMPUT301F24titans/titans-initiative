@@ -28,7 +28,6 @@ public class ProfileView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_edit_profile);
-
         return_button = findViewById(R.id.button_return);
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
