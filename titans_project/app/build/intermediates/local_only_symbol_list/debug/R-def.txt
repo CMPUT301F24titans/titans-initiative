@@ -14,6 +14,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable notification
 drawable notification_bell_red_circle_20623
+drawable solid_color_background__blue_
 id FirstFragment
 id ProfileView
 id SecondFragment
@@ -37,6 +38,7 @@ id edit_text_full_name
 id edit_text_phone_number
 id event_date
 id event_name
+id imageView
 id leave_button
 id listview_events
 id nav_graph
@@ -47,6 +49,7 @@ id profile_pic
 id result_title
 id scan_button
 id textView2
+id textview_initials
 id title
 id yes_button
 layout content_my_application

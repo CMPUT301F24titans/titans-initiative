@@ -52,6 +52,10 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\drawable_solid_color_background__blue_.jpg.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\drawable\\solid_color_background__blue_.jpg"
+    },
+    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\xml\\backup_rules.xml"
     },
@@ -102,6 +106,10 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_fragment_my_events.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_my_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\mipmap-anydpi-v26_ic_launcher.xml.flat",

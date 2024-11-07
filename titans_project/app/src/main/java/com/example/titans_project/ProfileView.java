@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -49,6 +50,8 @@ public class ProfileView extends AppCompatActivity {
         EditText facility = findViewById(R.id.edit_text_facility);
         CheckBox notifications = findViewById(R.id.checkbox_notifications);
         Button save_changes_button = findViewById(R.id.button_save_changes);
+        TextView initials = findViewById(R.id.textview_initials);
+        initials.setText("JF");
 
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override

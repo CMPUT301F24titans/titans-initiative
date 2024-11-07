@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -50,14 +51,18 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final EditText editTextPhoneNumber;
 
   @NonNull
-  public final ImageView profilePic;
+  public final ImageView imageView;
+
+  @NonNull
+  public final TextView textviewInitials;
 
   private FragmentProfileBinding(@NonNull RelativeLayout rootView,
       @NonNull RelativeLayout ProfileView, @NonNull Button buttonEditProfilePic,
       @NonNull Button buttonReturn, @NonNull Button buttonSaveChanges,
       @NonNull CheckBox checkboxNotifications, @NonNull EditText editTextEmail,
       @NonNull EditText editTextFacility, @NonNull EditText editTextFullName,
-      @NonNull EditText editTextPhoneNumber, @NonNull ImageView profilePic) {
+      @NonNull EditText editTextPhoneNumber, @NonNull ImageView imageView,
+      @NonNull TextView textviewInitials) {
     this.rootView = rootView;
     this.ProfileView = ProfileView;
     this.buttonEditProfilePic = buttonEditProfilePic;
@@ -68,7 +73,8 @@ public final class FragmentProfileBinding implements ViewBinding {
     this.editTextFacility = editTextFacility;
     this.editTextFullName = editTextFullName;
     this.editTextPhoneNumber = editTextPhoneNumber;
-    this.profilePic = profilePic;
+    this.imageView = imageView;
+    this.textviewInitials = textviewInitials;
   }
 
   @Override
@@ -148,15 +154,22 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.profile_pic;
-      ImageView profilePic = ViewBindings.findChildViewById(rootView, id);
-      if (profilePic == null) {
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
+      id = R.id.textview_initials;
+      TextView textviewInitials = ViewBindings.findChildViewById(rootView, id);
+      if (textviewInitials == null) {
         break missingId;
       }
 
       return new FragmentProfileBinding((RelativeLayout) rootView, ProfileView,
           buttonEditProfilePic, buttonReturn, buttonSaveChanges, checkboxNotifications,
-          editTextEmail, editTextFacility, editTextFullName, editTextPhoneNumber, profilePic);
+          editTextEmail, editTextFacility, editTextFullName, editTextPhoneNumber, imageView,
+          textviewInitials);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

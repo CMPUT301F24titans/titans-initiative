@@ -3195,6 +3195,7 @@ int drawable notification_template_icon_bg 0x7f0700fa
 int drawable notification_template_icon_low_bg 0x7f0700fb
 int drawable notification_tile_bg 0x7f0700fc
 int drawable notify_panel_notification_icon_bg 0x7f0700fd
+int drawable solid_color_background__blue_ 0x7f070101
 int drawable test_level_drawable 0x7f0700fe
 int drawable tooltip_frame_dark 0x7f0700ff
 int drawable tooltip_frame_light 0x7f070100
@@ -3452,6 +3453,7 @@ int id ifRoom 0x7f0800fa
 int id ignore 0x7f0800fb
 int id ignoreRequest 0x7f0800fc
 int id image 0x7f0800fd
+int id imageView 0x7f08022c
 int id immediateStop 0x7f0800fe
 int id included 0x7f0800ff
 int id indeterminate 0x7f080100
@@ -3707,6 +3709,7 @@ int id textinput_helper_text 0x7f0801f8
 int id textinput_placeholder 0x7f0801f9
 int id textinput_prefix_text 0x7f0801fa
 int id textinput_suffix_text 0x7f0801fb
+int id textview_initials 0x7f08022e
 int id time 0x7f0801fc
 int id title 0x7f0801fd
 int id titleDividerNoCustom 0x7f0801fe
