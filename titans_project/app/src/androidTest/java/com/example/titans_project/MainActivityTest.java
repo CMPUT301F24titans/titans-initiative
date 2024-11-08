@@ -68,10 +68,11 @@ public class MainActivityTest {
     }
 
     /**
-     * This is the test of lick on the event in events list
+     * This is the test of profile save the user information
      */
     @Test
-    public void testEventDetail(){
+    public void testProfileSave(){
+        onView(withId(R.id.profile_button)).perform(click());
 
     }
 }
