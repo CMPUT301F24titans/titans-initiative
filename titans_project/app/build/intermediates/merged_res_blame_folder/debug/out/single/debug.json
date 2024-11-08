@@ -4,28 +4,16 @@
         "source": "com.example.titans_project.app-main-54:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_attendee_item.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/attendee_item.xml"
-    },
-    {
         "merged": "com.example.titans_project.app-merged_res-52:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "com.example.titans_project.app-main-54:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/drawable/ic_launcher_foreground.xml"
     },
     {
         "merged": "com.example.titans_project.app-merged_res-52:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "com.example.titans_project.app-main-54:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_create_event.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_create_event.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_edit_event.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_edit_event.xml"
+        "merged": "com.example.titans_project.app-merged_res-52:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.titans_project.app-main-54:/drawable/ic_launcher_foreground.xml"
     },
     {
         "merged": "com.example.titans_project.app-merged_res-52:/layout_fragment_final_result.xml.flat",
@@ -56,18 +44,6 @@
         "source": "com.example.titans_project.app-main-54:/drawable/solid_color_background__blue_.jpg"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-52:/drawable_ic_placeholder_image.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/drawable/ic_placeholder_image.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_qr_scanner.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_qr_scanner.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_view_all_events_organizer.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_view_all_events_organizer.xml"
-    },
-    {
         "merged": "com.example.titans_project.app-merged_res-52:/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "com.example.titans_project.app-main-54:/mipmap-xxxhdpi/ic_launcher.webp"
     },
@@ -82,18 +58,6 @@
     {
         "merged": "com.example.titans_project.app-merged_res-52:/layout_content_my_application.xml.flat",
         "source": "com.example.titans_project.app-main-54:/layout/content_my_application.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_delete_event.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_delete_event.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/drawable_attendee_item_background.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/drawable/attendee_item_background.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_attendees.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_attendees.xml"
     },
     {
         "merged": "com.example.titans_project.app-merged_res-52:/layout_content_browse_profiles.xml.flat",
@@ -132,10 +96,6 @@
         "source": "com.example.titans_project.app-main-54:/drawable/notification.png"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_qr_code.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_qr_code.xml"
-    },
-    {
         "merged": "com.example.titans_project.app-merged_res-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "com.example.titans_project.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
@@ -158,10 +118,6 @@
     {
         "merged": "com.example.titans_project.app-merged_res-52:/navigation_nav_graph.xml.flat",
         "source": "com.example.titans_project.app-main-54:/navigation/nav_graph.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_activity_view_event_organizer.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/activity_view_event_organizer.xml"
     },
     {
         "merged": "com.example.titans_project.app-merged_res-52:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
