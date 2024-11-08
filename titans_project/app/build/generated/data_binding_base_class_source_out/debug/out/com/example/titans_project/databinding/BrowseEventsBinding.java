@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,9 +20,6 @@ import java.lang.String;
 public final class BrowseEventsBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
-
-  @NonNull
-  public final Switch backUser;
 
   @NonNull
   public final ListView browseContentListview;
@@ -41,19 +37,22 @@ public final class BrowseEventsBinding implements ViewBinding {
   public final Button profilesButton;
 
   @NonNull
+  public final Button returnButton;
+
+  @NonNull
   public final TextView title;
 
-  private BrowseEventsBinding(@NonNull LinearLayout rootView, @NonNull Switch backUser,
+  private BrowseEventsBinding(@NonNull LinearLayout rootView,
       @NonNull ListView browseContentListview, @NonNull TextView dateOfEventHeader,
       @NonNull TextView eventNameHeader, @NonNull Button eventsButton,
-      @NonNull Button profilesButton, @NonNull TextView title) {
+      @NonNull Button profilesButton, @NonNull Button returnButton, @NonNull TextView title) {
     this.rootView = rootView;
-    this.backUser = backUser;
     this.browseContentListview = browseContentListview;
     this.dateOfEventHeader = dateOfEventHeader;
     this.eventNameHeader = eventNameHeader;
     this.eventsButton = eventsButton;
     this.profilesButton = profilesButton;
+    this.returnButton = returnButton;
     this.title = title;
   }
 
@@ -84,12 +83,6 @@ public final class BrowseEventsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.back_user;
-      Switch backUser = ViewBindings.findChildViewById(rootView, id);
-      if (backUser == null) {
-        break missingId;
-      }
-
       id = R.id.browse_content_listview;
       ListView browseContentListview = ViewBindings.findChildViewById(rootView, id);
       if (browseContentListview == null) {
@@ -120,14 +113,20 @@ public final class BrowseEventsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.returnButton;
+      Button returnButton = ViewBindings.findChildViewById(rootView, id);
+      if (returnButton == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
         break missingId;
       }
 
-      return new BrowseEventsBinding((LinearLayout) rootView, backUser, browseContentListview,
-          dateOfEventHeader, eventNameHeader, eventsButton, profilesButton, title);
+      return new BrowseEventsBinding((LinearLayout) rootView, browseContentListview,
+          dateOfEventHeader, eventNameHeader, eventsButton, profilesButton, returnButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
