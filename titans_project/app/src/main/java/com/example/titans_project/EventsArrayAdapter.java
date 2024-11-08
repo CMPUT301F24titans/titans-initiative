@@ -1,7 +1,5 @@
 package com.example.titans_project;
 
-import static java.security.AccessController.getContext;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

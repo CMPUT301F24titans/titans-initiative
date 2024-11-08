@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private CollectionReference eventRef, userRef;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         addUser(testUser);
         addUser(fakeUser);
 
+
         // User clicks on the Profile button
         profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,25 +96,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // User clicks on the event in events list
         eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 event_detail.setClass(MainActivity.this, EventDetailView.class);
-                event_detail.putExtra("event name", eventsdataList.get(position).getName());
-                event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizer());
-                event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
-                event_detail.putExtra("event date", eventsdataList.get(position).getEvent_date());
                 startActivity(event_detail);
             }
         });
     }
 
-    /**
-     * This used for add event into events list and also add into firebase
-     * @param event
-     *      The event want to add to event list
-     */
     private void addEvent(Event event){
         eventsdataList.add(event);
         eventsArrayAdapter.notifyDataSetChanged();
@@ -127,11 +119,6 @@ public class MainActivity extends AppCompatActivity {
         eventRef.document(event.getName()).set(eventdata);
     }
 
-    /**
-     * This used for add user into wait list and also add into firebase
-     * @param user
-     *      The user want to add to wait list
-     */
     private void addUser(User user){
         usersdataList.add(user);
 
