@@ -9,8 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_above="@+id/button_return_home"
-        android:padding="10dp">
+        android:layout_above="@+id/button_toolbar"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,14 +20,34 @@
             android:textColor="@color/light_gray"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/my_events"
-            android:textColor="@color/dark_gray"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_events"
+                android:textColor="@color/dark_gray"
+                android:textSize="34sp"
+                android:paddingRight="100dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/created_events"
+                android:layout_margin="5dp"
+                android:textSize="14sp"
+                android:backgroundTint="@color/dark_gray"
+                app:srcCompat="@android:drawable/ic_input_add"
+                android:id="@+id/created_events_button"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
 
         <!-- Divider line -->
         <View
@@ -44,19 +65,20 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/button_return_home"
+        android:id="@+id/button_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:layout_margin="10dp"
-        android:weightSum="2">
+        android:weightSum="3">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/my_applications"
             android:layout_margin="5dp"
+            android:textSize="12sp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
             app:srcCompat="@android:drawable/ic_input_add"
@@ -67,10 +89,22 @@
             android:layout_height="wrap_content"
             android:text="@string/profile"
             android:layout_margin="5dp"
+            android:textSize="12sp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
             app:srcCompat="@android:drawable/ic_input_add"
             android:id="@+id/profile_button"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/scan"
+            android:textSize="12sp"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/dark_gray"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:id="@+id/scan_button"/>
 
     </LinearLayout>
 

@@ -40,6 +40,7 @@ public class EventDetailView extends AppCompatActivity {
             public void onClick(View view) {
                 upload.setType("image/*");
                 startActivityForResult(upload, event_image);
+
             }
         });
 
