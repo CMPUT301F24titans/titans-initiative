@@ -15,25 +15,30 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class EventsArrayAdapter extends ArrayAdapter<Event> {
+
+    private Context context;
+    private ArrayList<Event> events;
+
     public EventsArrayAdapter(Context context, ArrayList<Event> events) {
-        super(context, 0, events);
+        super(context, 0, events);  // Call the superclass constructor
+        this.context = context;
+        this.events = events;
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view;
+    public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.content_my_events, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.content_browse_events, parent, false);
         }
-        else {
-            view = convertView;
-        }
-        Event event = getItem(position);
-        TextView eventName = view.findViewById(R.id.event_name);
-        TextView eventDate = view.findViewById(R.id.event_date);
-        eventName.setText(event.getName());
-        eventDate.setText(event.getEvent_date());
-        return view;
+
+        Event event = getItem(position);  // Use getItem to retrieve the event at the given position
+        TextView name = convertView.findViewById(R.id.event_name);
+        TextView date = convertView.findViewById(R.id.event_date);
+
+        name.setText(event.getName());
+        date.setText(event.getEventDate());
+
+        return convertView;
     }
+
 }

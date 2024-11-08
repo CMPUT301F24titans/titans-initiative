@@ -3279,6 +3279,7 @@ id activity_chooser_view_content
 id add
 id adjust_height
 id adjust_width
+id admin_mode
 id alertTitle
 id aligned
 id all
@@ -3879,9 +3880,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout browse_content
+layout browse_events
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout content_browse_events
 layout content_my_application
 layout content_my_events
 layout custom_dialog
