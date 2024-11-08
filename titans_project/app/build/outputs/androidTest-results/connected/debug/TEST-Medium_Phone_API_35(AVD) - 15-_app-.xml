@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<testsuite name="com.example.titans_project.MainActivityTest" tests="1" failures="0" errors="0" skipped="0" time="13.287" timestamp="2024-11-08T22:43:34" hostname="localhost">
+<testsuite name="com.example.titans_project.MainActivityTest" tests="4" failures="0" errors="0" skipped="0" time="24.801" timestamp="2024-11-08T22:47:34" hostname="localhost">
   <properties>
     <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
     <property name="flavor" value="" />
     <property name="project" value=":app" />
   </properties>
-  <testcase name="testProfileSave" classname="com.example.titans_project.MainActivityTest" time="11.035" />
+  <testcase name="testSwitchMode" classname="com.example.titans_project.MainActivityTest" time="6.715" />
+  <testcase name="testProfilePage" classname="com.example.titans_project.MainActivityTest" time="3.426" />
+  <testcase name="testProfileSave" classname="com.example.titans_project.MainActivityTest" time="6.383" />
+  <testcase name="testMyApplication" classname="com.example.titans_project.MainActivityTest" time="2.503" />
 </testsuite>

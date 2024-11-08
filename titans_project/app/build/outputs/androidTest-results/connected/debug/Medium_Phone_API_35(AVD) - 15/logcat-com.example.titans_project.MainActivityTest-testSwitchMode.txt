@@ -1,0 +1,529 @@
+11-08 15:47:05.380 14961 14977 I TestRunner: started: testSwitchMode(com.example.titans_project.MainActivityTest)
+11-08 15:47:05.420  1489 14038 I Finsky  : [446] aapk.c(16): Regular flags synced
+11-08 15:47:05.421  1489 14038 I Finsky  : [446] acha.bx(61): Writing flags config, size 1.
+11-08 15:47:05.421  1489 14038 I Finsky  : [446] acha.bx(74): Started writing experiment flags into file [4dEVOh7DlClE42ly_19Hs7FqnnFOj9O0dm-zzWqGxeo].
+11-08 15:47:05.430  1489 14038 I Finsky  : [446] acha.bx(403): Finished writing experiment flags into file [4dEVOh7DlClE42ly_19Hs7FqnnFOj9O0dm-zzWqGxeo], numFlags=2237.
+11-08 15:47:05.441  1489 14038 I Finsky  : [446] aapb.g(63): Successfully applied new configurations for package com.google.android.finsky.regular.
+11-08 15:47:05.448 14961 14977 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-08 15:47:05.451  1489 14038 I Finsky  : [446] aapb.g(135): [EExp] Exporting experiments for package com.google.android.finsky.regular.
+11-08 15:47:05.451  1489 14038 I Finsky  : [446] agkn.v(25): [EExp] Exporting experiments for namespace com.google.android.finsky.regular.
+11-08 15:47:05.479  1489 14038 I Finsky  : [446] aapb.g(189): [EExp] Successfully exported experiments for package com.google.android.finsky.regular.
+11-08 15:47:05.479   589  1807 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@48bdbf1b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:05.483  1489 14038 I Finsky  : [446] aapb.h(12): Triggered update for experiment package com.google.android.finsky.stable.
+11-08 15:47:05.489  1489  1497 W android.vending: Suspending all threads took: 8.191ms
+11-08 15:47:05.503  1132  1132 W SplitSelectStateCtor: Missing session instanceIds
+11-08 15:47:05.507  1132  1132 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: Failed to create storageInfo for com.google.android.finsky.stable.
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: com.google.android.gms.phenotype.core.common.PhenotypeException: 29514: Storage info not created for Play Store.
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at aqjd.d(PG:1084)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at aqjj.b(PG:97)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at atfq.call(PG:225)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at axgt.a(PG:3)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at axfz.run(PG:19)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at axgu.run(PG:5)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at aybx.run(PG:59)
+11-08 15:47:05.528  1489 14037 W RegistrationCommon: 	at java.lang.Thread.run(Thread.java:1012)
+11-08 15:47:05.540  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=243, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
+11-08 15:47:05.620  1489  1497 I android.vending: Background concurrent mark compact GC freed 6325KB AllocSpace bytes, 22(1904KB) LOS objects, 49% free, 8952KB/17MB, paused 14.782ms,14.028ms total 198.266ms
+11-08 15:47:05.622  1489  1499 W System  : A resource failed to call close.
+11-08 15:47:05.670   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:05.734  1489 14038 I Finsky  : [446] acha.bx(61): Writing flags config, size 1.
+11-08 15:47:05.734  1489 14038 I Finsky  : [446] acha.bx(74): Started writing experiment flags into file [8uKij9Tp4PZyjSvh8NyLyFvuCv94NONrKvkkdzEKIoQ].
+11-08 15:47:05.736  1489 14038 I Finsky  : [446] acha.bx(403): Finished writing experiment flags into file [8uKij9Tp4PZyjSvh8NyLyFvuCv94NONrKvkkdzEKIoQ], numFlags=1918.
+11-08 15:47:05.743  1489 14038 I Finsky  : [446] aapb.g(63): Successfully applied new configurations for package com.google.android.finsky.stable.
+11-08 15:47:05.745  1489 14038 I Finsky  : [446] aapb.g(135): [EExp] Exporting experiments for package com.google.android.finsky.stable.
+11-08 15:47:05.745  1489 14038 I Finsky  : [446] agkn.v(25): [EExp] Exporting experiments for namespace com.google.android.finsky.stable.
+11-08 15:47:05.789  1489 14038 I Finsky  : [446] aapb.g(189): [EExp] Successfully exported experiments for package com.google.android.finsky.stable.
+11-08 15:47:05.789  1489 14038 I Finsky  : [446] tkl.b(6): HC: beginRecoverGmscoreIfApplicable
+11-08 15:47:05.789  1489 14038 I Finsky  : [446] tkl.b(36): HC: No target version, skip Gmscore recovery.
+11-08 15:47:05.798  1489  1977 I Finsky  : [60] afqx.b(11): SUH: Syncing device attributes was successful in self update.
+11-08 15:47:05.859  1132  1547 D EGL_emulation: app_time_stats: avg=218.07ms min=6.69ms max=3187.19ms count=16
+11-08 15:47:05.944  1489 14043 I Finsky  : [447] qaj.accept(78): Wrote row to frosting DB: 576
+11-08 15:47:06.082   589   738 D WifiConfigStore: Writing to stores completed in 169 ms.
+11-08 15:47:06.138  1132  1547 D EGL_emulation: app_time_stats: avg=1826.16ms min=12.35ms max=17906.24ms count=10
+11-08 15:47:06.147 14961 14961 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+11-08 15:47:06.159   841  1073 D EGL_emulation: app_time_stats: avg=6073.11ms min=6073.11ms max=6073.11ms count=1
+11-08 15:47:06.209 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: PRE_ON_CREATE
+11-08 15:47:06.210 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-08 15:47:06.215  1489  1975 D TrafficStats: tagSocket(146) with statsTag=0x4be64f9b, statsUid=-1
+11-08 15:47:06.348  1132  1132 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:06.351  1132  1132 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+11-08 15:47:06.428 14961 14961 W .titans_project: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+11-08 15:47:06.651  1489  1489 I Finsky  : [2] afqz.e(295): SUH: [self-update] Skipping DFE self-update. Local Version [version=84342330,derivedid=2,splits=[config.en, config.x86_64, phonesky_data_loader, phonesky_data_loader.config.x86_64]] > Server Version [version=-1,derivedid=-1,splits=[]]
+11-08 15:47:06.675  1489 14043 I Finsky  : [447] qaj.accept(78): Wrote row to frosting DB: 577
+11-08 15:47:06.683   376   376 D Zygote  : Forked child process 14986
+11-08 15:47:06.711 14986 14986 I ng:quick_launch: Using CollectorTypeCMC GC.
+11-08 15:47:06.712 14986 14986 W ng:quick_launch: Unexpected CPU variant for x86: x86_64.
+11-08 15:47:06.712 14986 14986 W ng:quick_launch: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+11-08 15:47:06.722 14986 14986 E ng:quick_launch: Not starting debugger since process cannot load the jdwp agent.
+11-08 15:47:06.725 14986 14986 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-08 15:47:06.735 10342 10342 I Endpoint: Created gRPC endpoint for service class com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService
+11-08 15:47:06.772 14986 14986 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+11-08 15:47:06.772 14986 14986 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-08 15:47:06.772 14986 14986 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+11-08 15:47:06.796  1489 14038 D TrafficStats: tagSocket(152) with statsTag=0xffffffff, statsUid=-1
+11-08 15:47:06.815 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.en.dm': No such file or directory
+11-08 15:47:06.816 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.en.dm': No such file or directory
+11-08 15:47:06.824 14986 14986 W ng:quick_launch: Entry not found
+11-08 15:47:06.831 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.x86_64.dm': No such file or directory
+11-08 15:47:06.831 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.x86_64.dm': No such file or directory
+11-08 15:47:06.848 14986 14986 W ng:quick_launch: Entry not found
+11-08 15:47:06.848 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_phonesky_data_loader.dm': No such file or directory
+11-08 15:47:06.848 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_phonesky_data_loader.dm': No such file or directory
+11-08 15:47:06.853 10342 15002 D CompatChangeReporter: Compat change id reported: 270674727; UID 10142; state: ENABLED
+11-08 15:47:06.857 14986 14986 W ng:quick_launch: Entry not found
+11-08 15:47:06.860 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_phonesky_data_loader.config.x86_64.dm': No such file or directory
+11-08 15:47:06.868 14986 14986 W ziparchive: Unable to open '/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_phonesky_data_loader.config.x86_64.dm': No such file or directory
+11-08 15:47:06.872 14961 14961 D CompatChangeReporter: Compat change id reported: 3400644; UID 10229; state: ENABLED
+11-08 15:47:06.876 14986 14986 W ng:quick_launch: Entry not found
+11-08 15:47:06.891 14986 14986 D nativeloader: Configuring clns-7 for other apk /data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/base.apk:/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.en.apk:/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.x86_64.apk:/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_phonesky_data_loader.apk:/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_phonesky_data_loader.config.x86_64.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/lib/x86_64:/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/base.apk!/lib/x86_64:/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.en.apk!/lib/x86_64:/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split
+11-08 15:47:06.893 14986 14986 D CompatChangeReporter: Compat change id reported: 202956589; UID 10142; state: ENABLED
+11-08 15:47:06.912 14961 14965 I .titans_project: Compiler allocated 4219KB to compile void android.widget.TextView.<init>(android.content.Context, android.util.AttributeSet, int, int)
+11-08 15:47:06.964 14778 14781 I AidlLazyServiceRegistrar: Process has 0 (of 2 available) client(s) in use after notification android.system.virtualizationmaintenance has clients: 0
+11-08 15:47:06.964 14778 14781 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+11-08 15:47:06.969 14986 14986 V GraphicsEnvironment: Currently set values for:
+11-08 15:47:06.969 14986 14986 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-08 15:47:06.969 14986 14986 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-08 15:47:06.969 14986 14986 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+11-08 15:47:06.969 14986 14986 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-08 15:47:06.981 14778 14781 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
+11-08 15:47:06.993 14986 14986 I Finsky:quick_launch: [2] mfp.j(82): Process created at version: 43.4.23-31 [0] [PR] 689948425
+11-08 15:47:07.018 14986 14986 I Finsky:quick_launch: [2] acha.bt(187): Finished reading experiment flags from file [0tGUNCGIkbk4o6-fQ335kUYSKwVj4lusnHT-A5Dsy08] numFlags=1918.
+11-08 15:47:07.032 14986 15011 D CompatChangeReporter: Compat change id reported: 312399441; UID 10142; state: ENABLED
+11-08 15:47:07.043 14986 15013 D nativeloader: Load /data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/split_config.x86_64.apk!/lib/x86_64/libmappedcountercacheversionjni.so using ns clns-7 from class loader (caller=/data/app/~~Ces5rELffmHDjWpwmZaoHQ==/com.android.vending-cHJPph0Cwh1Ys7yVAGq9Rw==/base.apk): ok
+11-08 15:47:07.053 14986 14986 I Finsky:quick_launch: [2] acha.bt(187): Finished reading experiment flags from file [Se-xCc4LzNyh3UrKMIU2sUf-PUKz4oQEbpKZDMuaFno] numFlags=2237.
+11-08 15:47:07.096  1489  1949 I Finsky  : [57] qpi.accept(58): SCH: Scheduling phonesky job Id: 10-12, CT: 1731106026691, Constraints: [{ L: 0, D: 43200000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }, { L: 0, D: 0, C: CHARGING_NONE, I: IDLE_NONE, N: NET_NONE }]
+11-08 15:47:07.096  1489  1949 I Finsky  : [57] qpi.accept(58): SCH: Scheduling phonesky job Id: 10-47, CT: 1731106026691, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }, { L: 0, D: 0, C: CHARGING_NONE, I: IDLE_NONE, N: NET_NONE }]
+11-08 15:47:07.096  1489  1949 I Finsky  : [57] qpi.accept(58): SCH: Scheduling phonesky job Id: 10-79, CT: 1731106026691, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_ANY }]
+11-08 15:47:07.096  1489  1949 I Finsky  : [57] qpi.accept(58): SCH: Scheduling phonesky job Id: 10-107, CT: 1731106026691, Constraints: [{ L: 0, D: 43200000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }, { L: 0, D: 0, C: CHARGING_NONE, I: IDLE_NONE, N: NET_NONE }]
+11-08 15:47:07.096  1489  1949 I Finsky  : [57] qpi.accept(58): SCH: Scheduling phonesky job Id: 10-122, CT: 1731106026691, Constraints: [{ L: 0, D: 43200000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }, { L: 0, D: 0, C: CHARGING_NONE, I: IDLE_NONE, N: NET_NONE }]
+11-08 15:47:07.096  1489  1949 I Finsky  : [57] qpi.accept(58): SCH: Scheduling phonesky job Id: 10-127, CT: 1731106026691, Constraints: [{ L: 0, D: 43200000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }, { L: 0, D: 0, C: CHARGING_NONE, I: IDLE_NONE, N: NET_NONE }]
+11-08 15:47:07.100 14986 14986 I Endpoint: Created gRPC endpoint for service class com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService
+11-08 15:47:07.113 14986 14986 I Finsky:quick_launch: [2] lkz.l(307): This process start was not selected for Play memory metrics collection.
+11-08 15:47:07.117 14961 15018 W System  : Ignoring header X-Firebase-Locale because its value was null.
+11-08 15:47:07.134  1489  1907 I Finsky  : [53] mdm.apply(151): SCH: Scheduling 1 system job(s)
+11-08 15:47:07.135  1489  1907 I Finsky  : [53] mdm.apply(316): SCH: Scheduling expedited system job 9786
+11-08 15:47:07.152 14986 15020 D CompatChangeReporter: Compat change id reported: 270674727; UID 10142; state: ENABLED
+11-08 15:47:07.165 14961 15018 D TrafficStats: tagSocket(113) with statsTag=0xffffffff, statsUid=-1
+11-08 15:47:07.170  1489  1489 I Finsky  : [2] aezy.onStartJob(127): SCH: job service start with id 9786.
+11-08 15:47:07.188  1489 14054 I Finsky  : [448] mdn.a(323): SCH: Satisfied jobs for 9786 are: 10-12, 10-47, 10-107, 10-122, 10-127
+11-08 15:47:07.189  1489 14870 I Finsky  : [460] aezf.a(53): SCH: Skip running other jobs while hygiene is running
+11-08 15:47:07.192  1489  1489 I Finsky  : [2] tkd.b(6): Hygiene tasks scheduled
+11-08 15:47:07.197  1489  1489 I Finsky  : [2] aeyi.q(56): SCH: jobFinished: 1-1337. TimeElapsed: 4987ms.
+11-08 15:47:07.218  1489  1489 I Finsky  : [2] abts.accept(98): SCH: Job 12-1 starting
+11-08 15:47:07.220  1489  1489 I Finsky  : [2] abts.accept(98): SCH: Job 10-12 starting
+11-08 15:47:07.227  1489  1489 I Finsky  : [2] abts.accept(98): SCH: Job 10-47 starting
+11-08 15:47:07.228  1489  1489 I Finsky  : [2] abts.accept(98): SCH: Job 10-107 starting
+11-08 15:47:07.232  1489  1489 I Finsky  : [2] ContentSyncJob.h(9): [ContentSync] job started
+11-08 15:47:07.239  1489  1489 I Finsky  : [2] AppUsageStatsHygieneJob.a(6): Running reliable app usage stats job
+11-08 15:47:07.240  1489 14054 I Finsky  : [448] muu.b(151): [Counters Flush] finished, scheduled=false
+11-08 15:47:07.240  1489 14054 I Finsky  : [448] aeyi.q(56): SCH: jobFinished: 10-47. TimeElapsed: 3ms.
+11-08 15:47:07.259  1489  2125 I PlayCommon: [85] aueg.l(242): Preparing logs for uploading
+11-08 15:47:07.265  1489  1496 I android.vending: Compiler allocated 4299KB to compile java.lang.Object mgr.h()
+11-08 15:47:07.267  1489  2125 W PlayCommon: [85] aueg.n(11): No account for auth token provided
+11-08 15:47:07.268  1489  2125 I PlayCommon: [85] aueg.l(1904): Connecting to server: https://play.googleapis.com/play/log?format=raw&proto_v2=true
+11-08 15:47:07.287  1489  1496 W android.vending: Missing inline cache for java.lang.Object orr.apply(java.lang.Object)
+11-08 15:47:07.301  1489  2125 D TrafficStats: tagSocket(136) with statsTag=0x6900, statsUid=-1
+11-08 15:47:07.307  1489  1489 I Finsky  : [2] abts.accept(98): SCH: Job 10-122 starting
+11-08 15:47:07.363  1489  1907 I Finsky  : [53] qpi.accept(58): SCH: Scheduling phonesky job Id: 1-1337, CT: 1731106027218, Constraints: [{ L: 37085788, D: 80285788, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }]
+11-08 15:47:07.373   589  1376 D ConnectivityService: requestNetwork for uid/pid:10229/14961 activeRequest: null callbackRequest: 377 [NetworkRequest [ REQUEST id=378, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+11-08 15:47:07.375   589   745 D ConnectivityService: NetReassign [378 : null → 104] [c 1] [a 0] [i 1]
+11-08 15:47:07.382 10342 15005 I Finsky:background: [75] aeyo.<init>(47): Resetting scheduler db
+11-08 15:47:07.383  1489  1977 I Finsky  : [60] mdm.apply(151): SCH: Scheduling 0 system job(s)
+11-08 15:47:07.392   589   738 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=378, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:07.392   589   738 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=378, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:07.392   589   738 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=378, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:07.392   589   738 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=378, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:07.410 14961 15033 W DynamiteModule: Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+11-08 15:47:07.415 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: CREATED
+11-08 15:47:07.415 14961 14961 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.example.titans_project.MainActivity@cd683d6
+11-08 15:47:07.417  1489 15027 I Finsky  : [465] wbs.r(36): Completed 0 account content syncs with 0 successful.
+11-08 15:47:07.417  1489  1489 I Finsky  : [2] ContentSyncJob.a(12): [ContentSync] Installation state replication succeeded.
+11-08 15:47:07.417  1489  1489 I Finsky  : [2] aeyi.q(56): SCH: jobFinished: 12-1. TimeElapsed: 186ms.
+11-08 15:47:07.443 10342 11050 I Finsky:background: [58] qpi.accept(58): SCH: Scheduling phonesky job Id: 47-15, CT: 1731057112690, Constraints: [{ L: 3600000, D: 21200389, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_NONE }]
+11-08 15:47:07.450 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: STARTED
+11-08 15:47:07.450 14961 14961 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.titans_project.MainActivity@cd683d6
+11-08 15:47:07.456 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: RESUMED
+11-08 15:47:07.457 14961 14961 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.titans_project.MainActivity@cd683d6
+11-08 15:47:07.460  1489  1489 I Finsky  : [2] abts.accept(98): SCH: Job 10-127 starting
+11-08 15:47:07.461  1489  1489 I Finsky  : [2] MarketDeeplinkHandlingActivitySwapHygieneJob.a(6): Start swapping the Market Deeplink handling activity.
+11-08 15:47:07.465  1081  1882 W ProviderHelper: Unknown dynamite feature providerinstaller.dynamite
+11-08 15:47:07.471 14961 15033 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+11-08 15:47:07.473 14961 15033 W ProviderInstaller: Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+11-08 15:47:07.476 14961 15033 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+11-08 15:47:07.480 14961 14961 W HWUI    : Unknown dataspace 0
+11-08 15:47:07.484 14961 15033 D nativeloader: Configuring clns-10 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/lib/x86_64:/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+11-08 15:47:07.489  1489  2125 I android.vending: IncrementDisableThreadFlip blocked for 31.366ms
+11-08 15:47:07.493 14961 15033 D nativeloader: Configuring clns-11 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/lib/x86_64:/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+11-08 15:47:07.496 14961 15033 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-08 15:47:07.496 14961 15033 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+11-08 15:47:07.503 14961 15033 W .titans_project: Loading /data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/oat/x86_64/base.odex non-executable as it requires an image which we failed to load
+11-08 15:47:07.509 14961 15033 D nativeloader: Configuring clns-12 for other apk /data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/lib/x86_64:/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+11-08 15:47:07.516 10342 11057 I Finsky:background: [61] mdm.apply(151): SCH: Scheduling 1 system job(s)
+11-08 15:47:07.521  1489  1497 I android.vending: Background concurrent mark compact GC freed 9234KB AllocSpace bytes, 17(700KB) LOS objects, 49% free, 10MB/21MB, paused 6.721ms,7.447ms total 135.667ms
+11-08 15:47:07.522  1489  1907 I Finsky  : [53] MarketDeeplinkHandlingActivitySwapHygieneJob.b(27): Set component com.android.vending/com.google.android.finsky.activities.MarketDeepLinkHandlerActivity enabled state to 0
+11-08 15:47:07.528 10342 11057 D CompatChangeReporter: Compat change id reported: 311402873; UID 10142; state: ENABLED
+11-08 15:47:07.528 10342 11057 D CompatChangeReporter: Compat change id reported: 323349338; UID 10142; state: ENABLED
+11-08 15:47:07.528 10342 11057 W JobInfo : Job 'com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground#10056' has a deadline with functional constraints and an extremely short time window of 0 ms (delay=0, deadline=0). The functional constraints are not likely to be satisfied when the job runs.
+11-08 15:47:07.529 10342 11057 I Finsky:background: [61] aeyd.b(244): SCH: Scheduling system job Id: 10056, L: 0, D: 0, C: false, I: true, N: 0
+11-08 15:47:07.531   589  1381 W JobInfo : Job 'com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground#10056' has a deadline with functional constraints and an extremely short time window of 0 ms (delay=0, deadline=0). The functional constraints are not likely to be satisfied when the job runs.
+11-08 15:47:07.540  1489  1907 I Finsky  : [53] MarketDeeplinkHandlingActivitySwapHygieneJob.b(27): Set component com.android.vending/com.google.android.finsky.transparentmainactivity.TransparentMainActivity enabled state to 0
+11-08 15:47:07.543  1489  1907 I Finsky  : [53] MarketDeeplinkHandlingActivitySwapHygieneJob.b(27): Set component com.android.vending/com.google.android.finsky.transparentmainactivity.TransparentMainActivityAlias enabled state to 0
+11-08 15:47:07.544  1489  1907 I Finsky  : [53] MarketDeeplinkHandlingActivitySwapHygieneJob.b(27): Set component com.android.vending/com.google.android.finsky.transparentmainactivity.HsdpAlias enabled state to 0
+11-08 15:47:07.547  1489 14054 I Finsky  : [448] mdn.a(323): SCH: Satisfied jobs for 9819 are: 10-12, 10-107, 10-122, 10-127
+11-08 15:47:07.553  1489  1907 I Finsky  : [53] aeyi.q(56): SCH: jobFinished: 10-127. TimeElapsed: 92ms.
+11-08 15:47:07.558  1489  1977 I Finsky  : [60] lwj.ko(869): Finished reliable app usage stats job
+11-08 15:47:07.561 10342 10342 I Finsky:background: [2] aezy.onStartJob(127): SCH: job service start with id 10056.
+11-08 15:47:07.561  1489  1977 I Finsky  : [60] aeyi.q(56): SCH: jobFinished: 10-107. TimeElapsed: 321ms.
+11-08 15:47:07.580 14961 15033 W ProviderInstaller: Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+11-08 15:47:07.584  1489  2125 I PlayCommon: [85] aueg.l(2153): Successfully uploaded logs.
+11-08 15:47:07.659   445  1223 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10229 pid=0
+11-08 15:47:07.659   445  1223 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10229 => denied (2035 us)
+11-08 15:47:07.662   445  1223 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10229 pid=0
+11-08 15:47:07.662   445  1223 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10229 => denied (2676 us)
+11-08 15:47:07.665   445  1223 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10229 pid=0
+11-08 15:47:07.665   445  1223 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10229 => denied (3222 us)
+11-08 15:47:07.668   445   456 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10229 pid=14961
+11-08 15:47:07.668   445   456 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10229 => denied (7402 us)
+11-08 15:47:07.680 14961 14979 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-08 15:47:07.681 14961 14979 I EGL_emulation: Opening libGLESv2_emulation.so
+11-08 15:47:07.706 10342 15035 I Finsky:background: [77] mdn.a(323): SCH: Satisfied jobs for 10056 are: 47-15
+11-08 15:47:07.707  1489  1703 I Finsky  : [43] aeyi.q(56): SCH: jobFinished: 10-122. TimeElapsed: 400ms.
+11-08 15:47:07.745 14961 14979 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-08 15:47:07.751 14961 14979 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-08 15:47:07.780 10342 10432 I Finsky:background: [52] oqs.f(41): Subscription detail: DataSubscriptionInfo{groupIdLevel1=null, serviceProviderName=[Zr1R7g28S8p7iucp_gnNJJtsRl-pgO3Y6eIkCh24Iy0], simCarrierId=1}
+11-08 15:47:07.791 10342 15039 I Finsky:background: [78] abts.accept(98): SCH: Job 47-15 starting
+11-08 15:47:07.804 10342 10342 I Finsky:background: [2] oqr.onSubscriptionsChanged(6): onSubscriptionsChanged
+11-08 15:47:07.817 10342 10432 I Finsky:background: [52] oej.d(124): playLoggingServerUrl: https://play.googleapis.com/play/log
+11-08 15:47:07.818 10342 10432 I Finsky:background: [52] oej.d(143): playLoggingServerTimestampUrl: https://play.googleapis.com/play/log/timestamp
+11-08 15:47:07.829 14961 15033 D nativeloader: Load /data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using ns clns-12 from class loader (caller=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!classes3.dex): ok
+11-08 15:47:07.839 14961 15033 V NativeCrypto: Registering com/google/android/gms/org/conscrypt/NativeCrypto's 305 native methods...
+11-08 15:47:07.873   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-08 15:47:07.873 14961 14979 I Gralloc4: mapper 4.x is not supported
+11-08 15:47:07.925 10342 10348 I ding:background: Background concurrent mark compact GC freed 2311KB AllocSpace bytes, 4(80KB) LOS objects, 49% free, 4202KB/8405KB, paused 14.588ms,2.093ms total 62.803ms
+11-08 15:47:07.929 14961 15046 W .titans_project: Accessing hidden method Ldalvik/system/VMStack;->getStackClass2()Ljava/lang/Class; (unsupported, reflection, allowed)
+11-08 15:47:07.972 10342 11057 I Finsky:background: [61] nbe.a(289): [Counters Flush] Successfully flushed counter events
+11-08 15:47:08.032 14961 15046 I ejky.a  : Unable to retrieve flag snapshot for com.google.android.gms.providerinstaller#com.google.android.gms, using defaults.
+11-08 15:47:08.035   589   670 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10229 pid=0
+11-08 15:47:08.035   589   670 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10229 => denied (123 us)
+11-08 15:47:08.035   589   670 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10229 pid=0
+11-08 15:47:08.037   589   670 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10229 => denied (1724 us)
+11-08 15:47:08.037   589   670 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10229 pid=0
+11-08 15:47:08.037   589   670 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10229 => denied (109 us)
+11-08 15:47:08.038 14961 14961 I Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.
+11-08 15:47:08.039 14961 15033 W .titans_project: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (unsupported, reflection, allowed)
+11-08 15:47:08.048   589   612 W ziparchive: Unable to open '/data/app/~~FxZSx_9W6OUn7-tYSsybhA==/com.example.titans_project-eLdDnwVqkBS5Ka494O6fWg==/base.dm': No such file or directory
+11-08 15:47:08.056   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.MainActivity for user 0: +2s570ms
+11-08 15:47:08.083 10342 11084 W SQLiteLog: (28) double-quoted string literal: "play-pass"
+11-08 15:47:08.098 14986 15052 I Finsky:quick_launch: [58] oqs.f(41): Subscription detail: DataSubscriptionInfo{groupIdLevel1=null, serviceProviderName=[Zr1R7g28S8p7iucp_gnNJJtsRl-pgO3Y6eIkCh24Iy0], simCarrierId=1}
+11-08 15:47:08.120 10342 11084 E Finsky:background: [62] aojx.M(45): [Counters] attempted to use a non-positive increment for: 5114
+11-08 15:47:08.120 10342 11084 E Finsky:background: [62] aojx.M(45): [Counters] attempted to use a non-positive increment for: 5115
+11-08 15:47:08.120 10342 11084 E Finsky:background: [62] aojx.M(45): [Counters] attempted to use a non-positive increment for: 5116
+11-08 15:47:08.120 10342 11084 E Finsky:background: [62] aojx.M(45): [Counters] attempted to use a non-positive increment for: 5119
+11-08 15:47:08.121 14986 15052 I Finsky:quick_launch: [58] oej.d(124): playLoggingServerUrl: https://play.googleapis.com/play/log
+11-08 15:47:08.121 14986 15052 I Finsky:quick_launch: [58] oej.d(143): playLoggingServerTimestampUrl: https://play.googleapis.com/play/log/timestamp
+11-08 15:47:08.134 14986 14986 I Finsky:quick_launch: [2] oqr.onSubscriptionsChanged(6): onSubscriptionsChanged
+11-08 15:47:08.176 10342 15041 D TrafficStats: tagSocket(105) with statsTag=0xffffffff, statsUid=-1
+11-08 15:47:08.207 14961 15033 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+11-08 15:47:08.216   589   710 I ImeTracker: com.example.titans_project:f2a8d55a: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:08.217  1081  1095 I FontLog : (REDACTED) Received query %s, URI %s
+11-08 15:47:08.217  1081  1095 I FontLog : (REDACTED) Query [%s] resolved to %s
+11-08 15:47:08.221   589   710 I ImeTracker: com.example.titans_project:f2a8d55a: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:08.229  1081  1095 I FontLog : (REDACTED) Fetch %s end status %s
+11-08 15:47:08.242 14986 15062 I PlayCommon: [60] aueg.l(242): Preparing logs for uploading
+11-08 15:47:08.248  1081  1095 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+11-08 15:47:08.280  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:08.294 14986 15062 I PlayCommon: [60] aueg.l(1416): Connecting to server for timestamp: https://play.googleapis.com/play/log/timestamp
+11-08 15:47:08.300  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:08.300  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:08.307 14986 15053 I Finsky:quick_launch: [59] nbe.a(289): [Counters Flush] Successfully flushed counter events
+11-08 15:47:08.313  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:08.313  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: Failed to get service from broker.
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3242)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3226)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3209)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3151)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at amxe.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):36)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at amvl.z(:com.google.android.gms@244337038@24.43.37 (260800-693941914):143)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at amcs.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):54)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:959)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at bskq.mC(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at bskq.dispatchMessage(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:232)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:317)
+11-08 15:47:08.317 14961 15045 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+11-08 15:47:08.343 14986 15062 D TrafficStats: tagSocket(97) with statsTag=0xffffffff, statsUid=-1
+11-08 15:47:08.355  1251  1251 W NotificationCenter: NotificationCenter$ListenerData.notifyOnExecutor():672 Heavy notify work detected on UI thread: |kga->gjp| takes 26ms
+11-08 15:47:08.357  1081  1095 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+11-08 15:47:08.361 14961 15018 W System  : Ignoring header X-Firebase-Locale because its value was null.
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: Failed to register com.google.android.gms.providerinstaller#com.google.android.gms
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: ejlj: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at ejll.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):13)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at fcqn.d(:com.google.android.gms@244337038@24.43.37 (260800-693941914):3)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at fcqp.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):130)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at fcsi.execute(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at fcqq.h(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at fcqq.l(:com.google.android.gms@244337038@24.43.37 (260800-693941914):101)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at fcqq.p(:com.google.android.gms@244337038@24.43.37 (260800-693941914):19)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at ebqt.hE(:com.google.android.gms@244337038@24.43.37 (260800-693941914):35)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at drdz.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):14)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at fcsi.execute(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at drea.b(:com.google.android.gms@244337038@24.43.37 (260800-693941914):18)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at drep.b(:com.google.android.gms@244337038@24.43.37 (260800-693941914):36)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at drer.c(:com.google.android.gms@244337038@24.43.37 (260800-693941914):26)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amaa.c(:com.google.android.gms@244337038@24.43.37 (260800-693941914):9)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amcq.q(:com.google.android.gms@244337038@24.43.37 (260800-693941914):48)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amcq.d(:com.google.android.gms@244337038@24.43.37 (260800-693941914):10)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amcq.g(:com.google.android.gms@244337038@24.43.37 (260800-693941914):211)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amcq.onConnectionFailed(:com.google.android.gms@244337038@24.43.37 (260800-693941914):2)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amcs.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):82)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at android.os.Handler.handleCallback(Handler.java:959)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at bskq.mC(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at bskq.dispatchMessage(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at android.os.Looper.loopOnce(Looper.java:232)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at android.os.Looper.loop(Looper.java:317)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: Caused by: alys: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amux.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):15)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amad.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	at amaa.c(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
+11-08 15:47:08.365 14961 15043 W CondFlagRegistrar: 	... 12 more
+11-08 15:47:08.394  1132  1132 D BaseDepthController: setSurface:
+11-08 15:47:08.394  1132  1132 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+11-08 15:47:08.394  1132  1132 D BaseDepthController: 	mSurface: null
+11-08 15:47:08.395  1132  1132 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+11-08 15:47:08.396  1132  1132 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+11-08 15:47:08.396  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
+11-08 15:47:08.396  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
+11-08 15:47:08.396  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:34)
+11-08 15:47:08.396  1132  1132 D StatsLog: LAUNCHER_ONSTOP
+11-08 15:47:08.397   841  1038 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@a476b6f
+11-08 15:47:08.399   589  1072 W InputManager-JNI: Input channel object 'bf5522a Splash Screen com.example.titans_project (client)' was disposed without first being removed with the input manager!
+11-08 15:47:08.440  1132  1132 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+11-08 15:47:08.478  1132  1634 D OneSearchSuggestProvider: Shut down the binder channel
+11-08 15:47:08.502  1132  1142 I IPCThreadState: oneway function results for code 2 on binder at 0x7134c0d588a0 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-08 15:47:08.512 14961 15018 D TrafficStats: tagSocket(160) with statsTag=0xffffffff, statsUid=-1
+11-08 15:47:08.512 14961 14977 W FileTestStorage: Output properties is not supported.
+11-08 15:47:08.532 10342 11057 I Finsky:background: [61] qpi.accept(58): SCH: Scheduling phonesky job Id: 47-30, CT: 1731106028147, Constraints: [{ L: 0, D: 172800000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }, { L: 0, D: 0, C: CHARGING_NONE, I: IDLE_NONE, N: NET_NONE }]
+11-08 15:47:08.548 10342 11050 I Finsky:background: [58] mdm.apply(151): SCH: Scheduling 2 system job(s)
+11-08 15:47:08.552 10342 11050 I Finsky:background: [58] aeyd.b(244): SCH: Scheduling system job Id: 10057, L: 0, D: 172799596, C: false, I: false, N: 1
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: enableTracing failed. You may need to upgrade your androidx.tracing:tracing version
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: java.lang.NoSuchMethodError: No static method forceEnableAppTracing()V in class Landroidx/tracing/Trace; or its super classes (declaration of 'androidx.tracing.Trace' appears in /data/app/~~FxZSx_9W6OUn7-tYSsybhA==/com.example.titans_project-eLdDnwVqkBS5Ka494O6fWg==/base.apk)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.platform.tracing.AndroidXTracer.enableTracing(AndroidXTracer.java:57)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<init>(Tracing.java:53)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<clinit>(Tracing.java:49)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule.providesTracing(BaseLayerModule.java:190)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.providesTracing(BaseLayerModule_ProvidesTracingFactory.java:37)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:29)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:11)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:34)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:12)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.DaggerBaseLayerComponent$BaseLayerComponentImpl.idlingResourceRegistry(DaggerBaseLayerComponent.java:275)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.espresso.Espresso.<clinit>(Espresso.java:64)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at com.example.titans_project.MainActivityTest.testSwitchMode(MainActivityTest.java:43)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at java.lang.reflect.Method.invoke(Native Method)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-08 15:47:08.576 14961 14977 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-08 15:47:08.580 14961 14977 E AndroidXTracer: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-08 15:47:08.580 14961 14977 E AndroidXTracer: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+11-08 15:47:08.580 14961 14977 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+11-08 15:47:08.597 14961 15018 W .titans_project: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (unsupported, reflection, allowed)
+11-08 15:47:08.600 14986 15062 W PlayCommon: [60] aueg.n(11): No account for auth token provided
+11-08 15:47:08.601 14986 15062 I PlayCommon: [60] aueg.l(1904): Connecting to server: https://play.googleapis.com/play/log?format=raw&proto_v2=true
+11-08 15:47:08.603 10342 11050 I Finsky:background: [58] mdm.apply(316): SCH: Scheduling expedited system job 10058
+11-08 15:47:08.604 10342 10342 I Finsky:background: [2] aezy.onStartJob(127): SCH: job service start with id 10057.
+11-08 15:47:08.623 10342 10411 I Finsky:background: [47] mdn.a(323): SCH: Satisfied jobs for 10057 are: 47-30
+11-08 15:47:08.650 14961 14977 D CompatChangeReporter: Compat change id reported: 247079863; UID 10229; state: ENABLED
+11-08 15:47:08.669 10342 10342 I Finsky:background: [2] aezy.onStartJob(127): SCH: job service start with id 10058.
+11-08 15:47:08.691 10342 10419 I Finsky:background: [51] aeyi.q(56): SCH: jobFinished: 47-15. TimeElapsed: 886ms.
+11-08 15:47:08.717 10342 10342 I Finsky:background: [2] abts.accept(98): SCH: Job 47-30 starting
+11-08 15:47:08.718 10342 10342 I Finsky:background: [2] mly.ko(746): [AUC]: Finished flush job
+11-08 15:47:08.725 10342 10342 I Finsky:background: [2] aeyi.q(56): SCH: jobFinished: 47-30. TimeElapsed: 6ms.
+11-08 15:47:08.727 14986 15062 I PlayCommon: [60] aueg.l(2153): Successfully uploaded logs.
+11-08 15:47:08.731 10342 15035 I Finsky:background: [77] mdn.a(323): SCH: Satisfied jobs for 10058 are: 47-30
+11-08 15:47:08.742 10342 11057 I Finsky:background: [61] aeyb.a(15): SCH: no pending jobs to schedule.
+11-08 15:47:08.744 10342 15039 I Finsky:background: [78] aezy.a(24): SCH: job service finished with id 10056.
+11-08 15:47:08.751  1489  1907 I Finsky  : [53] oej.d(124): playLoggingServerUrl: https://play.googleapis.com/play/log
+11-08 15:47:08.751  1489  1907 I Finsky  : [53] oej.d(143): playLoggingServerTimestampUrl: https://play.googleapis.com/play/log/timestamp
+11-08 15:47:08.784 14961 14977 D EventInjectionStrategy: Creating injection strategy with input manager.
+11-08 15:47:08.784 14961 14977 W .titans_project: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
+11-08 15:47:08.788 14961 14977 W .titans_project: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
+11-08 15:47:08.788 14961 14977 W .titans_project: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
+11-08 15:47:08.805  1489 14037 I Finsky  : [445] aeyi.q(56): SCH: jobFinished: 10-12. TimeElapsed: 1567ms.
+11-08 15:47:08.844 10342 11084 I Finsky:background: [62] qpi.accept(58): SCH: Scheduling phonesky job Id: 47-15, CT: 1731106028719, Constraints: [{ L: 3600000, D: 15484295, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_NONE }]
+11-08 15:47:08.868  1489  1976 I Finsky  : [59] qpi.accept(58): SCH: Scheduling phonesky job Id: 26-1414141414, CT: 1731090937863, Constraints: [{ L: 43199999, D: 44099999, C: CHARGING_NONE, I: IDLE_NONE, N: NET_NONE }]
+11-08 15:47:08.871 10342 10432 I Finsky:background: [52] mdm.apply(151): SCH: Scheduling 1 system job(s)
+11-08 15:47:08.871 10342 10432 I Finsky:background: [52] aeyd.b(244): SCH: Scheduling system job Id: 10059, L: 3599848, D: 15484143, C: false, I: true, N: 0
+11-08 15:47:08.879 14961 14977 W .titans_project: Accessing hidden method Landroid/view/ViewConfiguration;->getDoubleTapMinTime()I (unsupported, reflection, allowed)
+11-08 15:47:08.886 10342 11057 I Finsky:background: [61] aeyb.a(15): SCH: no pending jobs to schedule.
+11-08 15:47:08.888  1489  1907 I Finsky  : [53] mdm.apply(151): SCH: Scheduling 1 system job(s)
+11-08 15:47:08.889  1489  1907 W JobInfo : Job 'com.android.vending/com.google.android.finsky.scheduler.process.mainimpl.PhoneskyJobServiceMain#9834' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+11-08 15:47:08.889  1489  1907 I Finsky  : [53] aeyd.b(244): SCH: Scheduling system job Id: 9834, L: 28108974, D: 29008974, C: false, I: false, N: 0
+11-08 15:47:08.890   589  1072 W JobInfo : Job 'com.android.vending/com.google.android.finsky.scheduler.process.mainimpl.PhoneskyJobServiceMain#9834' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+11-08 15:47:08.897 10342 11057 I Finsky:background: [61] aeyb.a(15): SCH: no pending jobs to schedule.
+11-08 15:47:08.900  1489  1977 I Finsky  : [60] qpi.accept(58): SCH: Scheduling phonesky job Id: 1-1337, CT: 1731106027218, Constraints: [{ L: 37085788, D: 80285788, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY }]
+11-08 15:47:08.900 10342 15039 I Finsky:background: [78] aezy.a(24): SCH: job service finished with id 10058.
+11-08 15:47:08.901  1489 14870 I Finsky  : [460] aezy.a(24): SCH: job service finished with id 9786.
+11-08 15:47:08.908  1489  1976 I Finsky  : [59] mdm.apply(151): SCH: Scheduling 1 system job(s)
+11-08 15:47:08.908 10342 15039 I Finsky:background: [78] aezy.a(24): SCH: job service finished with id 10057.
+11-08 15:47:08.917  1489  1976 I Finsky  : [59] aeyd.b(244): SCH: Scheduling system job Id: 9835, L: 37084098, D: 80284098, C: false, I: false, N: 1
+11-08 15:47:08.921 14961 14961 W .titans_project: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+11-08 15:47:08.921 14961 14961 W .titans_project: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+11-08 15:47:08.921 14961 14961 W .titans_project: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+11-08 15:47:08.938  1489 14870 I Finsky  : [460] aezy.a(24): SCH: job service finished with id 9819.
+11-08 15:47:08.973  1489  1489 I Finsky  : [2] xnn.onTrimMemory(11): Memory trim requested to level 40
+11-08 15:47:08.973  1489  1489 I Finsky  : [2] abvq.accept(118): Flushing in-memory image cache
+11-08 15:47:08.983 10342 10342 I Finsky:background: [2] xnn.onTrimMemory(11): Memory trim requested to level 40
+11-08 15:47:08.984 14986 14986 I Finsky:quick_launch: [2] xnn.onTrimMemory(11): Memory trim requested to level 40
+11-08 15:47:09.007   589   670 D ConnectivityService: requestNetwork for uid/pid:10229/14961 activeRequest: null callbackRequest: 379 [NetworkRequest [ REQUEST id=380, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+11-08 15:47:09.008   589   745 D ConnectivityService: NetReassign [380 : null → 104] [c 0] [a 1] [i 0]
+11-08 15:47:09.009   589   738 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=380, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:09.009   589   738 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=380, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:09.009   589   738 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=380, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:09.009   589   738 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=380, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10229 RequestorUid: 10229 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
+11-08 15:47:09.029 14961 15018 W .titans_project: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (unsupported, reflection, allowed)
+11-08 15:47:09.043 14961 14961 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131230799/com.example.titans_project:id/admin_mode>
+11-08 15:47:09.108 14961 14979 D EGL_emulation: app_time_stats: avg=129.48ms min=21.91ms max=752.63ms count=8
+11-08 15:47:09.222   589   670 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@48bdbf1b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:09.251 14961 15084 D TrafficStats: tagSocket(159) with statsTag=0xffffffff, statsUid=-1
+11-08 15:47:09.268   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:09.281   436  1592 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+11-08 15:47:09.281   589  1072 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+11-08 15:47:09.299 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: PAUSED
+11-08 15:47:09.299 14961 14961 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.titans_project.MainActivity@cd683d6
+11-08 15:47:09.315 14961 15018 D FirebaseAuth: Notifying id token listeners about user ( aZGt0hAgqCYG6biXU5LpkOhSTAD2 ).
+11-08 15:47:09.317 14961 15018 D FirebaseAuth: Notifying auth state listeners about user ( aZGt0hAgqCYG6biXU5LpkOhSTAD2 ).
+11-08 15:47:09.371 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.BrowseContentView@f6e43b2 in: PRE_ON_CREATE
+11-08 15:47:09.371 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.BrowseContentView }, activity=com.example.titans_project.BrowseContentView@f6e43b2
+11-08 15:47:09.433 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.BrowseContentView@f6e43b2 in: CREATED
+11-08 15:47:09.433 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.BrowseContentView }, activity=com.example.titans_project.BrowseContentView@f6e43b2
+11-08 15:47:09.444 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.BrowseContentView@f6e43b2 in: STARTED
+11-08 15:47:09.445 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.BrowseContentView }, activity=com.example.titans_project.BrowseContentView@f6e43b2
+11-08 15:47:09.447 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.BrowseContentView@f6e43b2 in: RESUMED
+11-08 15:47:09.448   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+11-08 15:47:09.448 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.BrowseContentView }, activity=com.example.titans_project.BrowseContentView@f6e43b2
+11-08 15:47:09.524 14961 14961 D AnonymousAuthActivity: signInAnonymously:success
+11-08 15:47:09.850   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.BrowseContentView for user 0: +627ms
+11-08 15:47:10.113 14961 14979 D EGL_emulation: app_time_stats: avg=23.93ms min=3.49ms max=118.09ms count=31
+11-08 15:47:10.144 14961 14961 D AnonymousAuthActivity: Event(Orange Monkey, null) fetched
+11-08 15:47:10.148 14961 14961 D AnonymousAuthActivity: Event(fakeEventTitle, null) fetched
+11-08 15:47:10.151 14961 14961 D AnonymousAuthActivity: Event(testEventTitle, null) fetched
+11-08 15:47:10.215  1406  2295 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3746f072-2d6c]>Handler" thread_id=64 ]
+11-08 15:47:10.225   589   745 W IPCThreadState: Sending oneway calls to frozen process.
+11-08 15:47:10.236  1406  1855 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=58 ]
+11-08 15:47:10.238  1081  1095 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+11-08 15:47:10.239  1081  1095 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+11-08 15:47:10.240   589   745 W IPCThreadState: Sending oneway calls to frozen process.
+11-08 15:47:10.264  1406  2295 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=64 ]
+11-08 15:47:10.337   589   710 I ImeTracker: com.example.titans_project:244aacda: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:10.337   589   710 I ImeTracker: com.example.titans_project:244aacda: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:10.341  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:10.355  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:10.357  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:10.358  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:10.358  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:10.393 14961 14965 I .titans_project: Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+11-08 15:47:10.552 14961 14961 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() to return non-empty rectangle)}' assertion on view an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Browse Content"
+11-08 15:47:10.565   589  1381 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4a7297ba does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:10.583   589   615 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4a7297ba does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:10.593 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.BrowseContentView@f6e43b2 in: PAUSED
+11-08 15:47:10.593 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.BrowseContentView }, activity=com.example.titans_project.BrowseContentView@f6e43b2
+11-08 15:47:10.604  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=244, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+11-08 15:47:10.629   376   376 D Zygote  : Forked child process 15091
+11-08 15:47:10.655 15091 15091 I ns_project.test: Late-enabling -Xcheck:jni
+11-08 15:47:10.683 15091 15091 I ns_project.test: Using CollectorTypeCMC GC.
+11-08 15:47:10.684 15091 15091 W ns_project.test: Unexpected CPU variant for x86: x86_64.
+11-08 15:47:10.684 15091 15091 W ns_project.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+11-08 15:47:10.698   453   466 I adbd    : jdwp connection from 15091
+11-08 15:47:10.705 15091 15091 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-08 15:47:10.748 14961 14961 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:10.982 14961 14979 D EGL_emulation: app_time_stats: avg=109.54ms min=7.66ms max=462.94ms count=10
+11-08 15:47:11.008 15091 15091 D CompatChangeReporter: Compat change id reported: 242716250; UID 10230; state: ENABLED
+11-08 15:47:11.031 15091 15091 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-08 15:47:11.044 15091 15091 D nativeloader: Configuring clns-7 for other apk /system/framework/android.test.mock.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.example.titans_project.test
+11-08 15:47:11.060 15091 15091 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-08 15:47:11.064 15091 15091 D nativeloader: Configuring clns-8 for other apk /system/framework/android.test.runner.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.example.titans_project.test
+11-08 15:47:11.064 15091 15091 W ziparchive: Unable to open '/data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/base.dm': No such file or directory
+11-08 15:47:11.064 15091 15091 W ziparchive: Unable to open '/data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/base.dm': No such file or directory
+11-08 15:47:11.090 15091 15091 D nativeloader: Configuring clns-9 for other apk /data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.example.titans_project.test
+11-08 15:47:11.105 15091 15091 V GraphicsEnvironment: Currently set values for:
+11-08 15:47:11.105 15091 15091 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-08 15:47:11.105 15091 15091 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-08 15:47:11.105 15091 15091 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+11-08 15:47:11.105 15091 15091 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-08 15:47:11.206 14961 15108 D ProfileInstaller: Installing profile for com.example.titans_project
+11-08 15:47:11.233 15091 15091 W HWUI    : Unknown dataspace 0
+11-08 15:47:11.282   445   455 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10230 pid=0
+11-08 15:47:11.282   445   455 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10230 => denied (651 us)
+11-08 15:47:11.285   445   455 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10230 pid=0
+11-08 15:47:11.285   445   455 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10230 => denied (2619 us)
+11-08 15:47:11.286   445   455 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10230 pid=0
+11-08 15:47:11.286   445   455 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10230 => denied (732 us)
+11-08 15:47:11.287   445   456 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10230 pid=15091
+11-08 15:47:11.287   445   456 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10230 => denied (4083 us)
+11-08 15:47:11.289 15091 15105 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-08 15:47:11.290 15091 15105 I EGL_emulation: Opening libGLESv2_emulation.so
+11-08 15:47:11.315 15091 15105 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-08 15:47:11.319 15091 15105 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-08 15:47:11.469   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-08 15:47:11.472 15091 15105 I Gralloc4: mapper 4.x is not supported
+11-08 15:47:11.541 14961 14961 D VRI[BrowseContentView]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:11.675   589  1807 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10230 pid=0
+11-08 15:47:11.675   589  1807 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10230 => denied (136 us)
+11-08 15:47:11.675   589  1807 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10230 pid=0
+11-08 15:47:11.675   589  1807 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10230 => denied (380 us)
+11-08 15:47:11.675   589  1807 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10230 pid=0
+11-08 15:47:11.675   589  1807 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10230 => denied (177 us)
+11-08 15:47:11.682   589   612 W ziparchive: Unable to open '/data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/base.dm': No such file or directory
+11-08 15:47:11.710   589   612 I ActivityTaskManager: Displayed com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +1s118ms
+11-08 15:47:11.727 14961 14961 D VRI[BrowseContentView]: visibilityChanged oldVisibility=false newVisibility=true
+11-08 15:47:11.735   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:11.895  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=243, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
+11-08 15:47:11.956 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.BrowseContentView@f6e43b2 in: RESUMED
+11-08 15:47:11.958 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.BrowseContentView }, activity=com.example.titans_project.BrowseContentView@f6e43b2
+11-08 15:47:11.985 14961 15066 E FrameEvents: addRelease: Did not find frame.
+11-08 15:47:11.998 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: STOPPED
+11-08 15:47:12.000 14961 14961 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.titans_project.MainActivity@cd683d6
+11-08 15:47:12.035   445   445 E SurfaceFlinger: Out of order buffers detected for RequestedLayerState{com.example.titans_project/com.example.titans_project.BrowseContentView#4048 parentId=4047} producedId=2 frameNumber=27 -> producedId=2 frameNumber=2
+11-08 15:47:12.051 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: DESTROYED
+11-08 15:47:12.051 14961 14961 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-08 15:47:12.051   841  1038 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@99936
+11-08 15:47:12.051 14961 14961 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@8878038
+11-08 15:47:12.055 14961 14977 I TestRunner: finished: testSwitchMode(com.example.titans_project.MainActivityTest)
