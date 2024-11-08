@@ -4,13 +4,13 @@
             "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/abisolaerinwusi/Downloads/FALL 2024/CMPUT 301/titans-initiative/titans_project/app/src/main/res/values-w1240dp/dimens.xml",
+                    "source": "C:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "17",
                         "endColumns": "42",
-                        "endOffsets": "54"
+                        "endOffsets": "55"
                     },
                     "to": {
                         "startLines": "2",
