@@ -86,22 +86,38 @@ public class MainActivity extends AppCompatActivity {
 
         eventRef = db.collection("events");
         userRef = db.collection("user");
-
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
         application_button = findViewById(R.id.application_button);
         admin_switch = findViewById(R.id.admin_mode);
 
-        testEvent = new Event("testEventTitle", "use1", "2024/11/5", "2024/11/8", "nothing1", "picture1");
-        fakeEvent = new Event("fakeEventTitle", "use2", "2055/11/5", "2055/11/8", "nothing2", "picture2");
-        testUser = new User("testBot1", "12345678@ualberta.ca");
-        fakeUser = new User("fakeBot1", "87654321@ualberta.ca");
-
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
         eventList.setAdapter(eventsArrayAdapter);
-        addEvent(testEvent);
-        addEvent(fakeEvent);
+        // Get Firebase event data and populate the listview
+        eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
+                if (error != null) {
+                    Log.e(TAG, "Error fetching events: " + error.getMessage());
+                    return;
+                }
+                if (querySnapshots != null) {
+                    eventsdataList.clear();
+                    for (QueryDocumentSnapshot doc: querySnapshots) {
+                        String event_name = doc.getString("event_name");
+                        String organizer = doc.getString("event_organizer");
+                        String created_date = doc.getString("created_date");
+                        String event_date = doc.getString("event_date");
+                        String description = doc.getString("description");
+
+                        Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
+                        eventsdataList.add(new Event(event_name, organizer, created_date, event_date, description));
+                    }
+                    eventsArrayAdapter.notifyDataSetChanged();
+                }
+            }
+        });
 
         usersdataList =  new ArrayList<>();
 
@@ -128,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             if (adminChecked){
                 admin.setClass(MainActivity.this, BrowseContentView.class);
                 startActivity(admin);
+                admin_switch.setChecked(false);
             }
         });
 
