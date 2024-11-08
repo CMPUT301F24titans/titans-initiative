@@ -13,12 +13,35 @@
         android:paddingRight="10dp"
         android:paddingLeft="10dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/homepage"
-            android:textColor="@color/light_gray"
-            android:textSize="14sp" />
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/homepage"
+                android:textColor="@color/light_gray"
+                android:textSize="14sp" />
+
+            <!-- Spacer to push the Switch to the right -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Switch
+                android:id="@+id/admin_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin Mode"
+                android:textColor="@color/light_gray"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

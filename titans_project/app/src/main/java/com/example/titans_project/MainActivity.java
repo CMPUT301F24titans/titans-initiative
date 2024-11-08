@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,7 +29,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -48,15 +48,18 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<User> usersdataList;
     private EventsArrayAdapter eventsArrayAdapter;
     private Button profile_button, application_button;
+    private Switch admin_switch;
     Intent profile = new Intent();
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
-    private Event testEvent, fakeEvent, viewEvent;
+    Intent admin = new Intent();
+    private Event testEvent, fakeEvent;
     private User testUser, fakeUser;
     private FirebaseFirestore db;
     private CollectionReference eventRef, userRef;
     private static final String TAG = "AnonymousAuthActivity";
     private FirebaseAuth mAuth;
+    private Boolean adminChecked;
 
 
     /**
@@ -75,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        // adminChecked false by default
+        adminChecked = false;
+
         // Check and perform anonymous sign-in
         performAnonymousSignIn();
 
@@ -84,74 +90,26 @@ public class MainActivity extends AppCompatActivity {
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
         application_button = findViewById(R.id.application_button);
+        admin_switch = findViewById(R.id.admin_mode);
+
+        testEvent = new Event("testEventTitle", "use1", "2024/11/5", "2024/11/8", "nothing1", "picture1");
+        fakeEvent = new Event("fakeEventTitle", "use2", "2055/11/5", "2055/11/8", "nothing2", "picture2");
+        testUser = new User("testBot1", "12345678@ualberta.ca");
+        fakeUser = new User("fakeBot1", "87654321@ualberta.ca");
 
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
         eventList.setAdapter(eventsArrayAdapter);
-        usersdataList =  new ArrayList<>();
+        addEvent(testEvent);
+        addEvent(fakeEvent);
 
-        db.collection("events")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println(task.getResult());
-                                //System.out.println(document.getString("organizer"));
-                                //System.out.println(document.getString("created_date"));
-//                                viewEvent.setName(document.getString("event_name"));
-//                                viewEvent.setOrganizer(document.getString("organizer"));
-//                                viewEvent.setCreated_date(document.getString("created_date"));
-//                                viewEvent.setEvent_date(document.getString("event_date"));
-//                                viewEvent.setDescription(document.getString("description"));
-//                                viewEvent.setPicture("picture");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println(viewEvent.getName());
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-                                System.out.println("\n");
-//                                eventsdataList.add(viewEvent);
-//                                eventsArrayAdapter.notifyDataSetChanged();
-                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
+        usersdataList =  new ArrayList<>();
 
         // User clicks on the Profile button
         profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 profile.setClass(MainActivity.this, ProfileView.class);
-
                 startActivity(profile);
             }
         });
@@ -165,6 +123,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // User clicks on the Admin mode
+        admin_switch.setOnCheckedChangeListener((admin_switch, adminChecked) -> {
+            if (adminChecked){
+                admin.setClass(MainActivity.this, BrowseContentView.class);
+                startActivity(admin);
+            }
+        });
+
         // User clicks on the event in events list
         eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -173,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 event_detail.putExtra("event name", eventsdataList.get(position).getName());
                 event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizer());
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
-                event_detail.putExtra("event date", eventsdataList.get(position).getEvent_date());
+                event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
                 startActivity(event_detail);
             }
         });
@@ -188,13 +154,12 @@ public class MainActivity extends AppCompatActivity {
         eventsdataList.add(event);
         eventsArrayAdapter.notifyDataSetChanged();
         HashMap<String, String> eventdata = new HashMap<>();
-        eventdata.put("Event Name", event.getName());
-        eventdata.put("Organizer", event.getOrganizer());
-        eventdata.put("Event Created Date", event.getCreated_date());
-        eventdata.put("Event Date", event.getEvent_date());
-        eventdata.put("Description", event.getDescription());
-        eventdata.put("Picture", event.getPicture());
-        eventdata.put("Event ID", event.getName()+event.getOrganizer()+event.getEvent_date());
+        eventdata.put("event_name", event.getName());
+        eventdata.put("organizer", event.getOrganizer());
+        eventdata.put("created_date", event.getCreatedDate());
+        eventdata.put("event_date", event.getEventDate());
+        eventdata.put("description", event.getDescription());
+        eventdata.put("picture", event.getPicture());
         eventRef.document(event.getName()).set(eventdata);
     }
 
@@ -203,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void performAnonymousSignIn() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
         if (currentUser == null) {
             // No current user, attempt to sign in anonymously
             mAuth.signInAnonymously()
@@ -226,7 +192,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Existing user detected
             Log.d(TAG, "User already signed in");
-            Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(),
+                    Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -243,11 +210,8 @@ public class MainActivity extends AppCompatActivity {
         userData.put("facility","");
         userData.put("notifications", Boolean.FALSE);
         // Create nested HashMap to store user's events
-        HashMap<String, Object> my_eventData = new HashMap<>();
-        my_eventData.put("event name", "1");
-        HashMap<String, Object> applciate_eventData = new HashMap<>();  // empty initially
-        userData.put("My Events", my_eventData);
-        userData.put("Applicate Events", applciate_eventData);
+        HashMap<String, Object> eventData = new HashMap<>();  // empty initially
+        userData.put("Events", eventData);
         // Store in Firebase
         userRef.document(user.getUid()).set(userData);
     }
