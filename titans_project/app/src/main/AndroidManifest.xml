@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +21,9 @@
             android:name=".ProfileView"
             android:exported="false" />
         <activity
+            android:name=".EventDetailView"
+            android:exported="false" />
+        <activity
             android:name=".MyApplicationsView"
             android:exported="false" />
         <activity
@@ -34,50 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- View Event Activity for Organizer -->
-        <activity
-            android:name=".ViewEventActivityOrganizer"
-            android:exported="true"
-            android:theme="@style/Theme.Titans_project">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <!-- QR Code Activity -->
-        <activity
-            android:name=".QRCodeActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Titans_project">
-        </activity>
-
-        <!-- Delete Event Activity -->
-        <activity
-            android:name=".DeleteEventActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Titans_project">
-        </activity>
-
-        <!-- Attendees Activity -->
-        <activity
-            android:name=".AttendeesActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Titans_project">
-        </activity>
-        <activity
-            android:name=".ViewAllEventsOrganizer"
-            android:exported="true"
-            android:theme="@style/Theme.Titans_project">
-        </activity>
-        <activity
-            android:name=".QRScannerActivity"
-            android:exported="true" />
-        <activity android:name=".EditEventActivity"
-            android:exported="true" />
-
-        <activity android:name=".CreateEventActivity"
-            android:exported="true" />
     </application>
 
 </manifest>
