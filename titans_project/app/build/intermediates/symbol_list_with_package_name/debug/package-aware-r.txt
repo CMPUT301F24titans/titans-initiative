@@ -3279,6 +3279,7 @@ id activity_chooser_view_content
 id add
 id adjust_height
 id adjust_width
+id admin_mode
 id alertTitle
 id aligned
 id all
@@ -3309,6 +3310,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id browse_content_listview
 id browser_actions_header_text
 id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
@@ -3363,6 +3365,7 @@ id custom
 id customPanel
 id cut
 id dark
+id dateOfEventHeader
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3410,9 +3413,11 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id escape
+id eventNameHeader
 id event_date
 id event_description
 id event_name
+id eventsButton
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3602,6 +3607,7 @@ id postLayout
 id pressed
 id profile_button
 id profile_pic
+id profilesButton
 id progress_circular
 id progress_horizontal
 id radio
@@ -3609,6 +3615,7 @@ id ratio
 id rectangles
 id report_drawn
 id result_title
+id returnButton
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3873,8 +3880,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout browse_events
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout content_browse_events
 layout content_my_application
 layout content_my_events
 layout custom_dialog
@@ -4010,6 +4019,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string browse_content
 string call_notification_answer_action
 string call_notification_answer_video_action
 string call_notification_decline_action

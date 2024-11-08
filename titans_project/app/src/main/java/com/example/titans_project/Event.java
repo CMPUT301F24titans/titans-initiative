@@ -38,6 +38,28 @@ public class Event {
     }
 
     /**
+     * Constructor for Event when not provided a picture
+     * @param name
+     *  Event name
+     * @param organizer
+     *  Event's organizer (facility name)
+     * @param created_date
+     *  Event's created date
+     * @param event_date
+     *  Date when event will occur
+     * @param description
+     *  Event description
+     */
+    public Event(String name, String organizer, String created_date, String event_date, String description) {
+        this.name = name;
+        this.organizer = organizer;
+        this.created_date = created_date;
+        this.event_date = event_date;
+        this.description = description;
+        this.picture = null;
+    }
+
+    /**
      * This give the name of event
      * @return
      *      return the name of event
@@ -78,7 +100,7 @@ public class Event {
      * @return
      *      return the created date of event
      */
-    public String getCreated_date() {
+    public String getCreatedDate() {
         return created_date;
     }
 
@@ -96,7 +118,7 @@ public class Event {
      * @return
      *      return the start date of event
      */
-    public String getEvent_date() {
+    public String getEventDate() {
         return event_date;
     }
 
