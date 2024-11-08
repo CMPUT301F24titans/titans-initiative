@@ -72,7 +72,15 @@ public class MainActivityTest {
      */
     @Test
     public void testProfileSave(){
+        // Click the profile button
         onView(withId(R.id.profile_button)).perform(click());
-
+        // Write name
+        onView(withId(R.id.edit_text_full_name)).perform(ViewActions.typeText("Sho H"));
+        // Click save change button
+        onView(withId(R.id.button_save_changes)).perform(click());
+        // Click the profile button again
+        onView(withId(R.id.profile_button)).perform(click());
+        // Check the user name has been stored
+        onView(withText("Sho H")).check(matches(isDisplayed()));
     }
 }
