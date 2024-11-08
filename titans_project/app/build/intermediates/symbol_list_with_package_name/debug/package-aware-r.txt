@@ -3299,6 +3299,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back_user
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3616,7 +3617,6 @@ id ratio
 id rectangles
 id report_drawn
 id result_title
-id returnButton
 id reverseSawtooth
 id right
 id rightToLeft
