@@ -108,6 +108,10 @@
         "source": "com.example.titans_project.app-main-54:/drawable/notification.png"
     },
     {
+        "merged": "com.example.titans_project.app-merged_res-52:/layout_browse_content.xml.flat",
+        "source": "com.example.titans_project.app-main-54:/layout/browse_content.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-merged_res-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "com.example.titans_project.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },

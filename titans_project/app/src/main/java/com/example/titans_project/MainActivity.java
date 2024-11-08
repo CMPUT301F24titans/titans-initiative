@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     Intent profile = new Intent();
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
+    Intent admin = new Intent();
     private Event testEvent, fakeEvent;
     private User testUser, fakeUser;
     private FirebaseFirestore db;
