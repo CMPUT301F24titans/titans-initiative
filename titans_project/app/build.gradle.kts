@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-    // Use the correct Kotlin DSL syntax for dependencies
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
@@ -47,10 +47,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    // Firebase BoM (platform version for Firebase SDKs)
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
-
-    // ZXing library for QR code generation
-    implementation("com.google.zxing:core:3.5.0")  // Correct Kotlin DSL syntax
 }
