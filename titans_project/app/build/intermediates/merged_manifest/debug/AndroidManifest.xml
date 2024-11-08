@@ -54,6 +54,26 @@
             </intent-filter>
         </activity>
 
+        <!-- Created Events View Activity -->
+        <activity
+            android:name="com.example.titans_project.CreatedEventsView"
+            android:exported="false" />
+
+        <!-- Create Event View Activity -->
+        <activity
+            android:name="com.example.titans_project.CreateEventView"
+            android:exported="false" />
+
+        <!-- Event Details View Activity -->
+        <activity
+            android:name="com.example.titans_project.EventDetailsView"
+            android:exported="true" />
+
+        <!-- Edit Event View Activity -->
+        <activity
+            android:name="com.example.titans_project.EditEventView"
+            android:exported="true" />
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"

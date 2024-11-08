@@ -1,15 +1,15 @@
 [
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_application_form.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_application_form.xml"
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_created_events.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_created_events.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/qr_popup.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/qr_popup.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/content_my_application.xml",
         "source": "com.example.titans_project.app-main-54:/layout/content_my_application.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_applications.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_my_applications.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_events.xml",
@@ -18,6 +18,30 @@
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_final_result.xml",
         "source": "com.example.titans_project.app-main-54:/layout/fragment_final_result.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_application_form.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_application_form.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_event_item.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_event_item.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_applications.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_my_applications.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_edit_event.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_edit_event.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_create_event.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_create_event.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_view_event_details.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_view_event_details.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_profile.xml",

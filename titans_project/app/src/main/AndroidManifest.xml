@@ -36,6 +36,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Created Events View Activity -->
+        <activity
+            android:name=".CreatedEventsView"
+            android:exported="false" />
+
+        <!-- Create Event View Activity -->
+        <activity
+            android:name=".CreateEventView"
+            android:exported="false" />
+
+        <!-- Event Details View Activity -->
+        <activity
+            android:name=".EventDetailsView"
+            android:exported="true" />
+
+        <!-- Edit Event View Activity -->
+        <activity
+            android:name=".EditEventView"
+            android:exported="true" />
     </application>
 
 </manifest>
