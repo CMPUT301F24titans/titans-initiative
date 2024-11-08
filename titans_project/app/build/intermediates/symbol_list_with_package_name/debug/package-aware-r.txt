@@ -3411,6 +3411,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id event_date
+id event_description
 id event_name
 id exitUntilCollapsed
 id expand_activities_button
@@ -3580,6 +3581,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id organizer
 id outline
 id outward
 id overshoot

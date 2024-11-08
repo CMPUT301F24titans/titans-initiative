@@ -18,6 +18,9 @@
             android:name=".ProfileView"
             android:exported="false" />
         <activity
+            android:name=".EventDetailView"
+            android:exported="false" />
+        <activity
             android:name=".MyApplicationsView"
             android:exported="false" />
         <activity

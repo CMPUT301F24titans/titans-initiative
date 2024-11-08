@@ -38,6 +38,9 @@
             android:name="com.example.titans_project.ProfileView"
             android:exported="false" />
         <activity
+            android:name="com.example.titans_project.EventDetailView"
+            android:exported="false" />
+        <activity
             android:name="com.example.titans_project.MyApplicationsView"
             android:exported="false" />
         <activity
