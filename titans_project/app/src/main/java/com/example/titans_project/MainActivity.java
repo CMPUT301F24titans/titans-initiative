@@ -94,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
         testEvent = new Event("testEventTitle", "use1", "2024/11/5", "2024/11/8", "nothing1", "picture1");
         fakeEvent = new Event("fakeEventTitle", "use2", "2055/11/5", "2055/11/8", "nothing2", "picture2");
-        testUser = new User("testBot1", "12345678@ualberta.ca");
-        fakeUser = new User("fakeBot1", "87654321@ualberta.ca");
 
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
@@ -128,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
             if (adminChecked){
                 admin.setClass(MainActivity.this, BrowseContentView.class);
                 startActivity(admin);
+                admin_switch.setChecked(false);
             }
         });
 

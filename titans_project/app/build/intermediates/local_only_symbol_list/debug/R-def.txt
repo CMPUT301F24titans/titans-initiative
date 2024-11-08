@@ -60,9 +60,11 @@ id scan_button
 id textView2
 id textview_initials
 id title
+id user_name
 id yes_button
 layout browse_events
 layout content_browse_events
+layout content_browse_profiles
 layout content_my_application
 layout content_my_events
 layout fragment_application_form
