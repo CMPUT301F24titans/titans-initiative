@@ -1,15 +1,12 @@
 package com.example.titans_project;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Switch;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,11 +29,7 @@ public class BrowseContentView extends AppCompatActivity {
     private ListView eventList;
     private ArrayList<Event> eventDataList = new ArrayList<>();  // Initialize the eventDataList
     private EventsArrayAdapter eventArrayAdapter;  // Custom adapter for Event
-    private Switch back_usser;
-    private Button browse_profiles, browse_events;
-    Intent event_admain = new Intent();
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +42,9 @@ public class BrowseContentView extends AppCompatActivity {
         eventRef = db.collection("events");
 
         // Initialize buttons and listview
-        browse_events = findViewById(R.id.eventsButton);
-        browse_profiles = findViewById(R.id.profilesButton);
+        Button browse_events = findViewById(R.id.eventsButton);
+        Button browse_profiles = findViewById(R.id.profilesButton);
         eventList = findViewById(R.id.browse_content_listview);  // Ensure this ID matches the one in your XML
-        back_usser = findViewById(R.id.back_user);
-
 
         // Initialize eventArrayAdapter with custom adapter
         eventArrayAdapter = new EventsArrayAdapter(this, eventDataList);
@@ -75,6 +66,7 @@ public class BrowseContentView extends AppCompatActivity {
                         String created_date = doc.getString("created_date");
                         String event_date = doc.getString("event_date");
                         String description = doc.getString("description");
+
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
                         eventDataList.add(new Event(event_name, organizer, created_date, event_date, description));
                     }
@@ -83,30 +75,10 @@ public class BrowseContentView extends AppCompatActivity {
             }
         });
 
-        back_usser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
         browse_profiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // When Profiles button clicked display all profiles
-            }
-        });
-
-        // User clicks on the event in events list
-        eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                event_admain.setClass(BrowseContentView.this, EventDetailView.class);
-                event_admain.putExtra("event name", eventDataList.get(position).getName());
-                event_admain.putExtra("event organizer", eventDataList.get(position).getOrganizer());
-                event_admain.putExtra("event description", eventDataList.get(position).getDescription());
-                event_admain.putExtra("event date", eventDataList.get(position).getEventDate());
-                startActivity(event_admain);
             }
         });
     }

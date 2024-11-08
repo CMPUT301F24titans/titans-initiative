@@ -143,11 +143,8 @@ public class ProfileView extends AppCompatActivity {
                             mAuth.signInAnonymously();
                             FirebaseUser currentUser = mAuth.getCurrentUser();
                             // Create nested HashMap to store user's events
-                            HashMap<String, Object> my_eventData = new HashMap<>();
-                            my_eventData.put("event name", "1");
-                            HashMap<String, Object> applicate_eventData = new HashMap<>();// empty initially
-                            userData.put("My Events", my_eventData);
-                            userData.put("Applicate Events", applicate_eventData);
+                            HashMap<String, Object> eventData = new HashMap<>();  // empty initially
+                            userData.put("Events", eventData);
                             // Store in Firebase
                             db.collection("user").document(currentUser.getUid()).set(userData);
                         }
