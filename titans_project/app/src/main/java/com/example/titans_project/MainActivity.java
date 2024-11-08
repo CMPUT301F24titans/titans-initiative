@@ -96,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
         addEvent(fakeEvent);
 
         usersdataList =  new ArrayList<>();
-        addUser(testUser);
-        addUser(fakeUser);
 
         // User clicks on the Profile button
         profile_button.setOnClickListener(new View.OnClickListener() {
@@ -151,20 +149,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This used for add user into wait list and also add into firebase
-     * @param user
-     *      The user want to add to wait list
-     */
-    private void addUser(User user){
-        usersdataList.add(user);
-
-        HashMap<String, String> userdata = new HashMap<>();
-        userdata.put("User name", user.getName());
-        userdata.put("User email", user.getEmail());
-        userRef.document(user.getEmail()).set(userdata);
-    }
-
-    /**
      * This performs an anonymous sign-in for new users and detects returning users
      */
     private void performAnonymousSignIn() {
@@ -215,6 +199,5 @@ public class MainActivity extends AppCompatActivity {
         userData.put("Events", eventData);
         // Store in Firebase
         userRef.document(user.getUid()).set(userData);
-        finish();
     }
 }
