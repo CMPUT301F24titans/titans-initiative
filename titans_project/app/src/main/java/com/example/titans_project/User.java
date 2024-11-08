@@ -8,33 +8,30 @@ public class User {
 
     private String name;
     private String email;
-    private String phone_number = "";  // Optional, empty by default
+    private String phone_number;
+    private String facility;
+    private Boolean notifications;
+
 
     /**
-     * This creates a user object if only a name and email are provided
-     * @param name
-     *  The user's full name
-     * @param email
-     *  The user's email address in, the general form of xxxxx@domain.ca
-     */
-    public User(String name, String email){
-        this.name = name;
-        this.email = email;
-    }
-
-    /**
-     * This creates a user object if ALL of name, email, and phone number are provided
+     * This creates a user object if ALL of name, email, phone number, facility, and notifications are provided
      * @param name
      *  The user's full name
      * @param email
      *  The user's email address, in the general form of xxxxx@domain.ca
      * @param phone_number
      *  The user's phone number, in the general form of (123) 456-7891
+     * @param facility
+     *  The user's facility name (for Organizer)
+     * @param notifications
+     *  True if the user elects to receive notifications from other Organizers and Admin
      */
-    public User(String name, String email, String phone_number){
+    public User(String name, String email, String phone_number, String facility, Boolean notifications){
         this.name = name;
         this.email = email;
         this.phone_number = phone_number;
+        this.facility = facility;
+        this.notifications = notifications;
     }
 
     /**

@@ -54,7 +54,6 @@ public class ProfileView extends AppCompatActivity {
         CheckBox notifications = findViewById(R.id.checkbox_notifications);
         Button save_changes_button = findViewById(R.id.button_save_changes);
         TextView initials = findViewById(R.id.textview_initials);
-        initials.setText("JF");
 
         // Create hashmap to store user's data from Firebase
         HashMap<String, String> userData= new HashMap<>();
@@ -75,6 +74,9 @@ public class ProfileView extends AppCompatActivity {
                                 email.setText(document.getString("email"));
                                 phone_number.setText(document.getString("phone_number"));
                                 facility.setText(document.getString("facility"));
+                                // Generate initials of user
+                                initials.setText(getInitials(name.getText().toString()));
+
                             });
                         } else {
                             Log.d("Firestore", "No document found");
@@ -155,5 +157,25 @@ public class ProfileView extends AppCompatActivity {
                 finish();
             }
     });
+    }
+
+    /**
+     * This is a function to generate initials from a string
+     * @param full_name
+     * @return
+     */
+    public static String getInitials(String full_name) {
+        // Split the string by spaces to separate each word
+        String[] words = full_name.trim().split("\\s+");  // handles multiple spaces
+        StringBuilder initials = new StringBuilder();
+
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                // Take the first character of each word and convert it to uppercase
+                initials.append(Character.toUpperCase(word.charAt(0)));
+            }
+        }
+
+        return initials.toString();
     }
 }
