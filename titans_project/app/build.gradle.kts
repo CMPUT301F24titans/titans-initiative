@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    id("com.google.gms.google-services")
+    id("com.google.gms.google-services")  // Firebase plugin
 }
 
 android {
@@ -26,25 +26,36 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
-
+    // Core libraries
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-    implementation(libs.firebase.firestore)
+
+    // Firebase libraries
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1")) // Use the Firebase BOM to manage dependencies
+    implementation("com.google.firebase:firebase-database")  // Firebase Realtime Database
+    implementation("com.google.firebase:firebase-auth")      // Firebase Authentication (optional, if needed)
+    implementation("com.google.firebase:firebase-firestore") // Firestore (optional, if you want Firestore)
+
+    // QR Code generation
+    implementation("com.google.zxing:core:3.4.1") // QR code generation dependency
+
+    // Testing libraries
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
 }

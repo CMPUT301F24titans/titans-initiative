@@ -1,82 +1,96 @@
 package com.example.titans_project;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.CollectionReference;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * This is a class that defines the main activity of the app
- */
 public class MainActivity extends AppCompatActivity {
-    private ListView eventList;
-    private ArrayList<Event> dataList;
-    private EventsArrayAdapter eventsArrayAdapter;
-    private Button profile_button, application_button;
-    Intent profile = new Intent();
-    Intent my_applications = new Intent();
 
+    private Button profile_button, application_button, created_events_button;
+    private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private CollectionReference eventRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_my_events);
+        setContentView(R.layout.fragment_my_events); // Set the layout for My Events page
 
-        // firebase
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-        eventRef = db.collection("events");
 
-        eventList = findViewById(R.id.listview_events);
+        // Find buttons
         profile_button = findViewById(R.id.profile_button);
         application_button = findViewById(R.id.application_button);
+        created_events_button = findViewById(R.id.created_events_button); // Find the Created Events button
 
-        String[] events = {"Edmonton", "Vancouver", "Toronto"};
-        String[] date = {"2024/11/5", "2024/12/5", "2025/11/5"};
-        dataList = new ArrayList<>();
-        for (int i = 0; i < events.length; i++) {
-            dataList.add(new Event(events[i], "organizer", "created date", date[i], "description", "picture"));
+        // Handle authentication status
+        if (mAuth.getCurrentUser() == null) {
+            // Show a message or provide the user with options to log in
+            Toast.makeText(this, "You are not logged in. Please log in to access the content.", Toast.LENGTH_LONG).show();
+        } else {
+            // The user is logged in
+            // Optionally fetch and display user data from Firestore if needed
+            fetchUserData();
         }
-        eventsArrayAdapter = new EventsArrayAdapter(this, dataList);
-        eventList.setAdapter(eventsArrayAdapter);
 
         // User clicks on the Profile button
-        profile_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                profile.setClass(MainActivity.this, ProfileView.class);
-                startActivity(profile);
-            }
+        profile_button.setOnClickListener(view -> {
+            Intent profile = new Intent(MainActivity.this, ProfileView.class);
+            startActivity(profile);
         });
 
         // User clicks on the My Applications button
-        application_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                my_applications.setClass(MainActivity.this, MyApplicationsView.class);
-                startActivity(my_applications);
-            }
+        application_button.setOnClickListener(view -> {
+            Intent myApplications = new Intent(MainActivity.this, MyApplicationsView.class);
+            startActivity(myApplications);
         });
+
+        // User clicks on the Created Events button
+        created_events_button.setOnClickListener(view -> {
+            // Open the Created Events Activity when the button is clicked
+            Intent createdEvents = new Intent(MainActivity.this, CreatedEventsView.class);
+            startActivity(createdEvents);
+        });
+    }
+
+    /**
+     * Optionally fetch user data from Firestore and display it.
+     */
+    private void fetchUserData() {
+        String userId = mAuth.getCurrentUser().getUid();
+
+        db.collection("users").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Example: Show the user’s name (assuming the field is "username")
+                        String username = documentSnapshot.getString("username");
+                        Toast.makeText(MainActivity.this, "Welcome back, " + username, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, "No user data found.", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(MainActivity.this, "Failed to fetch user data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Check if user is logged in when the activity starts
+        if (mAuth.getCurrentUser() == null) {
+            // If not logged in, show a message or disable buttons
+            Toast.makeText(this, "You are not logged in. Please log in to access the content.", Toast.LENGTH_LONG).show();
+        }
     }
 }

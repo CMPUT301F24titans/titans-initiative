@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-45:/values-v18/values-v18.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\811f55d9a18a2926adf25f91b6cefe00\\transformed\\appcompat-1.7.0\\res\\values-v18\\values-v18.xml",
+                    "source": "/Users/abisolaerinwusi/.gradle/caches/transforms-4/811f55d9a18a2926adf25f91b6cefe00/transformed/appcompat-1.7.0/res/values-v18/values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

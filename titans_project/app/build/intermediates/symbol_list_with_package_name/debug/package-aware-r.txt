@@ -1420,6 +1420,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -2254,6 +2258,8 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -3111,6 +3117,9 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_other_sign_in
+drawable ic_passkey
+drawable ic_password
 drawable ic_search_black_24
 drawable indeterminate_static
 drawable m3_avd_hide_password
@@ -3256,6 +3265,7 @@ id action_bar_subtitle
 id action_bar_title
 id action_container
 id action_context_bar
+id action_delete_event
 id action_divider
 id action_image
 id action_menu_divider
@@ -3264,7 +3274,9 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_settings
+id action_share_qr
 id action_text
+id action_view_details
 id actions
 id activity_chooser_view_content
 id add
@@ -3289,6 +3301,8 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backButton
+id back_icon
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3300,6 +3314,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id buttonPanel
 id button_add_profile_pic
 id button_apply
@@ -3307,7 +3326,9 @@ id button_create_profile
 id button_edit_profile_pic
 id button_return
 id button_return_home
+id button_save
 id button_save_changes
+id button_submit
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3320,6 +3341,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id checkBoxAcceptTerms
 id checkbox
 id checkbox_geolocation
 id checkbox_notifications
@@ -3330,6 +3352,7 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id clockwise
+id closeQrPopup
 id closest
 id collapseActionView
 id compress
@@ -3344,6 +3367,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id created_events_button
 id currentState
 id custom
 id customPanel
@@ -3383,6 +3407,12 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editButton
+id editTextEventDate
+id editTextEventDetails
+id editTextEventName
+id editTextEventTime
+id editTextOrganizerName
 id edit_query
 id edit_text_email
 id edit_text_full_name
@@ -3395,11 +3425,19 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id escape
+id eventDate
+id eventDateTime
+id eventDetails
+id eventImage
+id eventOrganizer
+id eventTitle
 id event_date
 id event_name
+id eventsContainer
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab_add_event
 id fade
 id fill
 id fill_horizontal
@@ -3490,6 +3528,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id menuIcon
 id message
 id middle
 id mini
@@ -3540,6 +3579,7 @@ id neverCompleteToStart
 id noScroll
 id noState
 id no_button
+id no_events_text
 id none
 id normal
 id north
@@ -3586,6 +3626,7 @@ id profile_button
 id profile_pic
 id progress_circular
 id progress_horizontal
+id qrCodeImage
 id radio
 id ratio
 id rectangles
@@ -3622,6 +3663,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id shareQrButton
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3718,6 +3760,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viewAttendeesButton
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3853,6 +3896,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout content_my_application
 layout content_my_events
 layout custom_dialog
@@ -3872,12 +3917,17 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_appliction_form
+layout fragment_create_event
 layout fragment_create_profile
+layout fragment_created_events
+layout fragment_edit_event
 layout fragment_edit_profile
 layout fragment_event_details
+layout fragment_event_item
 layout fragment_final_result
 layout fragment_my_applications
 layout fragment_my_events
+layout fragment_view_event_details
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog
@@ -3937,10 +3987,12 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout qr_popup
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu event_menu
 menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -3975,12 +4027,16 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_settings
+string add_event
+string android_credentials_TYPE_PASSWORD_CREDENTIAL
+string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
 string application_form
 string application_submit
 string apply
+string back_icon
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand
@@ -4018,8 +4074,10 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string copy_toast_msg
 string create
 string create_profile
+string created_events
 string dest_title
 string edit_remove_profile_pic
 string email
@@ -4034,6 +4092,9 @@ string event_update
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fallback_menu_item_copy_link
+string fallback_menu_item_open_in_browser
+string fallback_menu_item_share_link
 string first_fragment_label
 string full_name
 string gcm_defaultSenderId
@@ -4147,7 +4208,6 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
-string my_application_title
 string my_applications
 string my_events
 string nav_app_bar_navigate_up_description
@@ -4732,6 +4792,7 @@ style Theme_Design_Light
 style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
+style Theme_Hidden
 style Theme_Material3_Dark
 style Theme_Material3_Dark_BottomSheetDialog
 style Theme_Material3_Dark_Dialog
@@ -4809,6 +4870,7 @@ style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
+style Theme_PlayCore_Transparent
 style Theme_Titans_project
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
@@ -5481,3 +5543,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml image_share_filepaths

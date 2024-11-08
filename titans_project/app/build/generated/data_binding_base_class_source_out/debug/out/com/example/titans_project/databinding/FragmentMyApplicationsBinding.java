@@ -4,7 +4,7 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -23,7 +23,7 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final Button buttonReturn;
+  public final ImageView backIcon;
 
   @NonNull
   public final LinearLayout buttonReturnHome;
@@ -35,10 +35,10 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
   public final TextView title;
 
   private FragmentMyApplicationsBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button buttonReturn, @NonNull LinearLayout buttonReturnHome,
+      @NonNull ImageView backIcon, @NonNull LinearLayout buttonReturnHome,
       @NonNull ListView listviewEvents, @NonNull TextView title) {
     this.rootView = rootView;
-    this.buttonReturn = buttonReturn;
+    this.backIcon = backIcon;
     this.buttonReturnHome = buttonReturnHome;
     this.listviewEvents = listviewEvents;
     this.title = title;
@@ -71,9 +71,9 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_return;
-      Button buttonReturn = ViewBindings.findChildViewById(rootView, id);
-      if (buttonReturn == null) {
+      id = R.id.back_icon;
+      ImageView backIcon = ViewBindings.findChildViewById(rootView, id);
+      if (backIcon == null) {
         break missingId;
       }
 
@@ -95,7 +95,7 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMyApplicationsBinding((RelativeLayout) rootView, buttonReturn,
+      return new FragmentMyApplicationsBinding((RelativeLayout) rootView, backIcon,
           buttonReturnHome, listviewEvents, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
