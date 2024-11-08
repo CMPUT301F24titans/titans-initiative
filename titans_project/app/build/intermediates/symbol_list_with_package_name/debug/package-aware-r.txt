@@ -3299,7 +3299,6 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id back_user
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3418,7 +3417,6 @@ id eventNameHeader
 id event_date
 id event_description
 id event_name
-id event_pic
 id eventsButton
 id exitUntilCollapsed
 id expand_activities_button
@@ -3548,7 +3546,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id my_application_title
 id nav_controller_view_tag
 id nav_graph
 id nav_host_fragment_container
@@ -3609,6 +3606,7 @@ id position
 id postLayout
 id pressed
 id profile_button
+id profile_pic
 id profilesButton
 id progress_circular
 id progress_horizontal
@@ -3617,6 +3615,7 @@ id ratio
 id rectangles
 id report_drawn
 id result_title
+id returnButton
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3745,6 +3744,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_name
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3885,6 +3885,7 @@ layout browse_events
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout content_browse_events
+layout content_browse_profiles
 layout content_my_application
 layout content_my_events
 layout custom_dialog

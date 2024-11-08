@@ -4,6 +4,10 @@
         "source": "com.example.titans_project.app-main-54:/layout/fragment_application_form.xml"
     },
     {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/content_browse_profiles.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/content_browse_profiles.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/content_my_application.xml",
         "source": "com.example.titans_project.app-main-54:/layout/content_my_application.xml"
     },

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:orientation="horizontal">
 
-    <!-- First TextView (Event Name) -->
     <TextView
         android:id="@+id/event_name"
         android:layout_width="wrap_content"
@@ -14,7 +13,6 @@
         android:text="Event"
         android:textSize="14sp" />
 
-    <!-- Second TextView (Event Date) -->
     <TextView
         android:id="@+id/event_date"
         android:layout_width="0dp"

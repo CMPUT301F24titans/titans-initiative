@@ -1,21 +1,15 @@
 package com.example.titans_project;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Switch;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,14 +23,13 @@ public class BrowseContentView extends AppCompatActivity {
 
     private static final String TAG = "BrowseContentView";
     private CollectionReference eventRef;
-    private ListView eventList;
-    private ArrayList<Event> eventDataList = new ArrayList<>();  // Initialize the eventDataList
-    private EventsArrayAdapter eventArrayAdapter;  // Custom adapter for Event
-    private Switch back_usser;
-    private Button browse_profiles, browse_events;
-    Intent event_admain = new Intent();
+    private CollectionReference userRef;
+    private ListView contentList;
+    private ArrayList<Event> eventDataList = new ArrayList<>();
+    private ArrayList<User> profileDataList = new ArrayList<>();
+    private EventsArrayAdapter eventArrayAdapter;
+    private ProfilesArrayAdapter profileArrayAdapter;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,43 +40,52 @@ public class BrowseContentView extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         eventRef = db.collection("events");
+        userRef = db.collection("user");
 
         // Initialize buttons and listview
-        browse_events = findViewById(R.id.eventsButton);
-        browse_profiles = findViewById(R.id.profilesButton);
-        eventList = findViewById(R.id.browse_content_listview);  // Ensure this ID matches the one in your XML
-        back_usser = findViewById(R.id.back_user);
+        Button browse_events = findViewById(R.id.eventsButton);
+        Button return_previous = findViewById(R.id.returnButton);
+        Button browse_profiles = findViewById(R.id.profilesButton);
+        contentList = findViewById(R.id.browse_content_listview);  // Ensure this ID matches the one in your XML
 
-
-        // Initialize eventArrayAdapter with custom adapter
+        // Array adapters
+        profileArrayAdapter = new ProfilesArrayAdapter(this, profileDataList);
         eventArrayAdapter = new EventsArrayAdapter(this, eventDataList);
-        eventList.setAdapter(eventArrayAdapter);
 
-        // Get Firebase event data and populate the listview
-        eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+        browse_events.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    Log.e(TAG, "Error fetching events: " + error.getMessage());
-                    return;
-                }
-                if (querySnapshots != null) {
-                    eventDataList.clear();
-                    for (QueryDocumentSnapshot doc: querySnapshots) {
-                        String event_name = doc.getString("event_name");
-                        String organizer = doc.getString("event_organizer");
-                        String created_date = doc.getString("created_date");
-                        String event_date = doc.getString("event_date");
-                        String description = doc.getString("description");
-                        Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventDataList.add(new Event(event_name, organizer, created_date, event_date, description));
+            public void onClick(View view) {
+                // Display ALL events when Event button is clicked
+                contentList.setAdapter(eventArrayAdapter);
+
+                // Get Firebase event data and populate the listview
+                eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e(TAG, "Error fetching events: " + error.getMessage());
+                            return;
+                        }
+                        if (querySnapshots != null) {
+                            eventDataList.clear();
+                            for (QueryDocumentSnapshot doc: querySnapshots) {
+                                String event_name = doc.getString("event_name");
+                                String organizer = doc.getString("event_organizer");
+                                String created_date = doc.getString("created_date");
+                                String event_date = doc.getString("event_date");
+                                String description = doc.getString("description");
+
+                                Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
+                                eventDataList.add(new Event(event_name, organizer, created_date, event_date, description));
+                            }
+                            eventArrayAdapter.notifyDataSetChanged();
+                        }
                     }
-                    eventArrayAdapter.notifyDataSetChanged();
-                }
+                });
             }
         });
 
-        back_usser.setOnClickListener(new View.OnClickListener() {
+        return_previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -93,20 +95,33 @@ public class BrowseContentView extends AppCompatActivity {
         browse_profiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // When Profiles button clicked display all profiles
-            }
-        });
+                // Display ALL profiles when Profile button is clicked
+                contentList.setAdapter(profileArrayAdapter);
 
-        // User clicks on the event in events list
-        eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                event_admain.setClass(BrowseContentView.this, EventDetailView.class);
-                event_admain.putExtra("event name", eventDataList.get(position).getName());
-                event_admain.putExtra("event organizer", eventDataList.get(position).getOrganizer());
-                event_admain.putExtra("event description", eventDataList.get(position).getDescription());
-                event_admain.putExtra("event date", eventDataList.get(position).getEventDate());
-                startActivity(event_admain);
+                // Get Firebase event data and populate the listview
+                userRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e(TAG, "Error fetching events: " + error.getMessage());
+                            return;
+                        }
+                        if (querySnapshots != null) {
+                            profileDataList.clear();
+                            for (QueryDocumentSnapshot doc: querySnapshots) {
+                                String full_name = doc.getString("full_name");
+                                String email = doc.getString("email");
+                                String phone_number = doc.getString("phone_number");
+                                String facility = doc.getString("facility");
+                                Boolean notifications = doc.getBoolean("notifications");
+
+                                Log.d(TAG, String.format("User(%s, %s) fetched", full_name, email));
+                                profileDataList.add(new User(full_name, email, phone_number, facility, notifications));
+                            }
+                            profileArrayAdapter.notifyDataSetChanged();
+                        }
+                    }
+                });
             }
         });
     }

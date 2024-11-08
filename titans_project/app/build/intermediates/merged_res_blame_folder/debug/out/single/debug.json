@@ -60,6 +60,10 @@
         "source": "com.example.titans_project.app-main-54:/layout/content_my_application.xml"
     },
     {
+        "merged": "com.example.titans_project.app-merged_res-52:/layout_content_browse_profiles.xml.flat",
+        "source": "com.example.titans_project.app-main-54:/layout/content_browse_profiles.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-merged_res-52:/layout_content_browse_events.xml.flat",
         "source": "com.example.titans_project.app-main-54:/layout/content_browse_events.xml"
     },
