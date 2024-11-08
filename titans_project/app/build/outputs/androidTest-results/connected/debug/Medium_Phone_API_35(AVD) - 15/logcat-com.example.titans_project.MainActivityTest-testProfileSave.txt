@@ -1,593 +1,301 @@
-11-08 15:43:16.622 13737 13753 I TestRunner: started: testProfileSave(com.example.titans_project.MainActivityTest)
-11-08 15:43:16.648 13737 13753 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
-11-08 15:43:16.653   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
-11-08 15:43:16.654   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
-11-08 15:43:16.654   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={10154} in 1ms
-11-08 15:43:16.685   589  1807 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@3e80ab61 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
-11-08 15:43:16.711  1132  1132 W SplitSelectStateCtor: Missing session instanceIds
-11-08 15:43:16.711  1132  1132 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
-11-08 15:43:16.721  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=231, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
-11-08 15:43:16.734   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
-11-08 15:43:16.814  1132  1547 D EGL_emulation: app_time_stats: avg=126.36ms min=7.01ms max=2585.74ms count=23
-11-08 15:43:16.928 13737 13737 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
-11-08 15:43:16.946 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: PRE_ON_CREATE
-11-08 15:43:16.947 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
-11-08 15:43:16.953  1132  1547 D EGL_emulation: app_time_stats: avg=1218.31ms min=4.27ms max=12967.70ms count=11
-11-08 15:43:16.960   841  1073 D EGL_emulation: app_time_stats: avg=1829.97ms min=1829.97ms max=1829.97ms count=1
-11-08 15:43:16.968 13551 13567 I AidlLazyServiceRegistrar: Process has 0 (of 2 available) client(s) in use after notification android.system.virtualizationmaintenance has clients: 0
-11-08 15:43:16.968 13551 13567 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
-11-08 15:43:16.981 13551 13567 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
-11-08 15:43:17.157 13737 13737 W .titans_project: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
-11-08 15:43:17.211  1132  1132 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
-11-08 15:43:17.221  1132  1132 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
-11-08 15:43:17.417 13737 13737 D CompatChangeReporter: Compat change id reported: 3400644; UID 10223; state: ENABLED
-11-08 15:43:17.548 13737 13741 I .titans_project: Compiler allocated 4219KB to compile void android.widget.TextView.<init>(android.content.Context, android.util.AttributeSet, int, int)
-11-08 15:43:17.558 13737 13764 W System  : Ignoring header X-Firebase-Locale because its value was null.
-11-08 15:43:17.603 13737 13764 D TrafficStats: tagSocket(113) with statsTag=0xffffffff, statsUid=-1
-11-08 15:43:17.640   589  1813 D ConnectivityService: requestNetwork for uid/pid:10223/13737 activeRequest: null callbackRequest: 361 [NetworkRequest [ REQUEST id=362, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
-11-08 15:43:17.643   589   738 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=362, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:17.647   589   738 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=362, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:17.647   589   738 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=362, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:17.647   589   745 D ConnectivityService: NetReassign [362 : null → 104] [c 0] [a 2] [i 4]
-11-08 15:43:17.647   589   738 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=362, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:17.662 13737 13770 W DynamiteModule: Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
-11-08 15:43:17.682  1081  1095 W ProviderHelper: Unknown dynamite feature providerinstaller.dynamite
-11-08 15:43:17.687 13737 13770 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
-11-08 15:43:17.689 13737 13770 W ProviderInstaller: Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
-11-08 15:43:17.694 13737 13770 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
-11-08 15:43:17.701   589   745 W IPCThreadState: Sending oneway calls to frozen process.
-11-08 15:43:17.702   589   745 W IPCThreadState: Sending oneway calls to frozen process.
-11-08 15:43:17.708 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: CREATED
-11-08 15:43:17.708 13737 13737 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:17.709  1406  1855 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=58 ]
-11-08 15:43:17.712  1406  2295 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3746f072-2d6c]>Handler" thread_id=64 ]
-11-08 15:43:17.719  1081  1095 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
-11-08 15:43:17.720  1081  1095 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
-11-08 15:43:17.730 12098 12133 I Bugle   : BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of buoi@855a65
-11-08 15:43:17.736 12098 12133 I Bugle   : BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of buoi@855a65
-11-08 15:43:17.741 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: STARTED
-11-08 15:43:17.741 13737 13737 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:17.747 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: RESUMED
-11-08 15:43:17.747 13737 13737 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:17.749 13737 13770 D nativeloader: Configuring clns-10 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/lib/x86_64:/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
-11-08 15:43:17.752  1406  2295 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=64 ]
-11-08 15:43:17.769 13737 13770 D nativeloader: Configuring clns-11 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/lib/x86_64:/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
-11-08 15:43:17.777 13737 13737 W HWUI    : Unknown dataspace 0
-11-08 15:43:17.783 13737 13770 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
-11-08 15:43:17.784 13737 13770 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
-11-08 15:43:17.788 13737 13770 W .titans_project: Loading /data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/oat/x86_64/base.odex non-executable as it requires an image which we failed to load
-11-08 15:43:17.809 13737 13770 D nativeloader: Configuring clns-12 for other apk /data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/lib/x86_64:/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
-11-08 15:43:17.822 13737 13770 W ProviderInstaller: Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
-11-08 15:43:17.857   445  1091 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10223 pid=0
-11-08 15:43:17.858   445  1091 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10223 => denied (676 us)
-11-08 15:43:17.858   445  1091 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10223 pid=0
-11-08 15:43:17.858   445  1091 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10223 => denied (864 us)
-11-08 15:43:17.859   445  1091 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10223 pid=0
-11-08 15:43:17.859   445  1091 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10223 => denied (196 us)
-11-08 15:43:17.859   445  1223 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10223 pid=13737
-11-08 15:43:17.860   445  1223 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10223 => denied (1440 us)
-11-08 15:43:17.864 13737 13756 I EGL_emulation: Opening libGLESv1_CM_emulation.so
-11-08 15:43:17.865 13737 13756 I EGL_emulation: Opening libGLESv2_emulation.so
-11-08 15:43:17.922 13737 13756 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
-11-08 15:43:17.925 13737 13756 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
-11-08 15:43:18.006 13737 13770 D nativeloader: Load /data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using ns clns-12 from class loader (caller=/data/app/~~4HWBWauerLNSQZwl_bBw1w==/com.google.android.gms--q-pkihPRoSPUmDjOyoRPQ==/base.apk!classes3.dex): ok
-11-08 15:43:18.009 13737 13770 V NativeCrypto: Registering com/google/android/gms/org/conscrypt/NativeCrypto's 305 native methods...
-11-08 15:43:18.081 13737 13775 W .titans_project: Accessing hidden method Ldalvik/system/VMStack;->getStackClass2()Ljava/lang/Class; (unsupported, reflection, allowed)
-11-08 15:43:18.114 13737 13775 I ejky.a  : Unable to retrieve flag snapshot for com.google.android.gms.providerinstaller#com.google.android.gms, using defaults.
-11-08 15:43:18.131 13737 13770 W .titans_project: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (unsupported, reflection, allowed)
-11-08 15:43:18.196 13737 13770 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
-11-08 15:43:18.449   589  1807 D ConnectivityService: requestNetwork for uid/pid:10223/13737 activeRequest: null callbackRequest: 363 [NetworkRequest [ REQUEST id=364, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
-11-08 15:43:18.450   589   738 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=364, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:18.450   589   738 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=364, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:18.450   589   745 D ConnectivityService: NetReassign [364 : null → 104] [c 0] [a 0] [i 1]
-11-08 15:43:18.450   589   738 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=364, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:18.450   589   738 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=364, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10223 RequestorUid: 10223 RequestorPkg: com.example.titans_project UnderlyingNetworks: Null] ]
-11-08 15:43:18.590 13737 13764 W System  : Ignoring header X-Firebase-Locale because its value was null.
-11-08 15:43:18.602 13737 13782 D TrafficStats: tagSocket(137) with statsTag=0xffffffff, statsUid=-1
-11-08 15:43:18.612 13737 13764 D TrafficStats: tagSocket(138) with statsTag=0xffffffff, statsUid=-1
-11-08 15:43:18.647 13737 13782 W .titans_project: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (unsupported, reflection, allowed)
-11-08 15:43:18.748 13737 13782 W .titans_project: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (unsupported, reflection, allowed)
-11-08 15:43:18.912 13737 13772 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(wmsSync-VRI[MainActivity]#0) as ready
-11-08 15:43:18.915   589  1807 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10223 pid=0
-11-08 15:43:18.916   589  1807 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10223 => denied (522 us)
-11-08 15:43:18.916   589  1807 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10223 pid=0
-11-08 15:43:18.916   589  1807 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10223 => denied (102 us)
-11-08 15:43:18.916   589  1807 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10223 pid=0
-11-08 15:43:18.916   589  1807 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10223 => denied (65 us)
-11-08 15:43:18.920   589   612 W ziparchive: Unable to open '/data/app/~~zQV8uvMXHkwcN9drER7cVA==/com.example.titans_project-k8pr3yZOfUnsrEQj5U_IXw==/base.dm': No such file or directory
-11-08 15:43:18.925   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.MainActivity for user 0: +2s243ms
-11-08 15:43:18.929 13737 13772 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(VRI[MainActivity]#1) as ready
-11-08 15:43:18.985  1389  1762 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
-11-08 15:43:19.079 13737 13764 D FirebaseAuth: Notifying id token listeners about user ( K3IcIXDbcefJBx3bvjHNbQzB2jE3 ).
-11-08 15:43:19.082 13737 13764 D FirebaseAuth: Notifying auth state listeners about user ( K3IcIXDbcefJBx3bvjHNbQzB2jE3 ).
-11-08 15:43:19.218 13737 13769 W Firestore: (25.1.1) [Firestore]: Listen for Query(target=Query(events order by __name__);limitType=LIMIT_TO_FIRST) failed: Status{code=PERMISSION_DENIED, description=Missing or insufficient permissions., cause=null}
-11-08 15:43:19.661 13737 13741 I .titans_project: Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
-11-08 15:43:20.348  1251  1693 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdownVoiceInternal():140 shutdownVoiceInternal()
-11-08 15:43:20.739   841  1038 I Choreographer: Skipped 107 frames!  The application may be doing too much work on its main thread.
-11-08 15:43:20.817   589   745 W IPCThreadState: Sending oneway calls to frozen process.
-11-08 15:43:20.823  1406  1855 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=58 ]
-11-08 15:43:20.826   841  1038 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1e4c548
-11-08 15:43:20.829  1406  2295 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3746f072-2d6c]>Handler" thread_id=64 ]
-11-08 15:43:20.831   589  1638 W InputManager-JNI: Input channel object 'a358f4d Splash Screen com.example.titans_project (client)' was disposed without first being removed with the input manager!
-11-08 15:43:20.831   589   745 W IPCThreadState: Sending oneway calls to frozen process.
-11-08 15:43:20.838  1406  2295 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=64 ]
-11-08 15:43:20.838  1132  1132 D BaseDepthController: setSurface:
-11-08 15:43:20.838  1132  1132 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
-11-08 15:43:20.838  1132  1132 D BaseDepthController: 	mSurface: null
-11-08 15:43:20.839  1132  1132 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
-11-08 15:43:20.841  1132  1132 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
-11-08 15:43:20.841  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
-11-08 15:43:20.841  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
-11-08 15:43:20.841  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:34)
-11-08 15:43:20.843  1132  1132 D StatsLog: LAUNCHER_ONSTOP
-11-08 15:43:20.845  1132  1634 D OneSearchSuggestProvider: Shut down the binder channel
-11-08 15:43:20.846  1132  1132 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
-11-08 15:43:20.847  1132  3641 I IPCThreadState: oneway function results for code 2 on binder at 0x7134c0d4d470 will be dropped but finished with status UNKNOWN_TRANSACTION
-11-08 15:43:20.889   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
-11-08 15:43:20.892 13737 13756 I Gralloc4: mapper 4.x is not supported
-11-08 15:43:20.909  1081  1436 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
-11-08 15:43:20.909  1081  1436 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
-11-08 15:43:21.147 13737 13737 I Choreographer: Skipped 198 frames!  The application may be doing too much work on its main thread.
-11-08 15:43:21.169 13737 13737 D AnonymousAuthActivity: signInAnonymously:success
-11-08 15:43:21.170 13737 13748 I HWUI    : Davey! duration=3319ms; Flags=1, FrameTimelineVsyncId=314789, IntendedVsync=13827253812920, Vsync=13827253812920, InputEventId=0, HandleInputStart=13827263133400, AnimationStart=13827263159800, PerformTraversalsStart=13827263199000, DrawStart=13830411427300, FrameDeadline=13827270479586, FrameInterval=13827263115600, FrameStartTime=16666666, SyncQueued=13830462505600, SyncStart=13830494088700, IssueDrawCommandsStart=13830495510400, SwapBuffers=13830594113100, FrameCompleted=13830604587500, DequeueBufferDuration=71300, QueueBufferDuration=631500, GpuCompleted=13830604587500, SwapBuffersCompleted=13830598394100, DisplayPresentTime=0, CommandSubmissionCompleted=13830594113100,
-11-08 15:43:21.196  1081  1436 I FontLog : (REDACTED) Received query %s, URI %s
-11-08 15:43:21.196  1081  1436 I FontLog : (REDACTED) Query [%s] resolved to %s
-11-08 15:43:21.197  1081  1436 I FontLog : (REDACTED) Fetch %s end status %s
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: Failed to get service from broker.
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3242)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3226)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3209)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3151)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at amxe.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):36)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at amvl.z(:com.google.android.gms@244337038@24.43.37 (260800-693941914):143)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at amcs.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):54)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:959)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at bskq.mC(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at bskq.dispatchMessage(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:232)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:317)
-11-08 15:43:21.200 13737 13774 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
-11-08 15:43:21.211  1081  1095 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
-11-08 15:43:21.221  1081  1095 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: Failed to register com.google.android.gms.providerinstaller#com.google.android.gms
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: ejlj: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at ejll.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):13)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at fcqn.d(:com.google.android.gms@244337038@24.43.37 (260800-693941914):3)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at fcqp.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):130)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at fcsi.execute(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at fcqq.h(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at fcqq.l(:com.google.android.gms@244337038@24.43.37 (260800-693941914):101)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at fcqq.p(:com.google.android.gms@244337038@24.43.37 (260800-693941914):19)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at ebqt.hE(:com.google.android.gms@244337038@24.43.37 (260800-693941914):35)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at drdz.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):14)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at fcsi.execute(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at drea.b(:com.google.android.gms@244337038@24.43.37 (260800-693941914):18)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at drep.b(:com.google.android.gms@244337038@24.43.37 (260800-693941914):36)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at drer.c(:com.google.android.gms@244337038@24.43.37 (260800-693941914):26)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amaa.c(:com.google.android.gms@244337038@24.43.37 (260800-693941914):9)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amcq.q(:com.google.android.gms@244337038@24.43.37 (260800-693941914):48)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amcq.d(:com.google.android.gms@244337038@24.43.37 (260800-693941914):10)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amcq.g(:com.google.android.gms@244337038@24.43.37 (260800-693941914):211)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amcq.onConnectionFailed(:com.google.android.gms@244337038@24.43.37 (260800-693941914):2)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amcs.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):82)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at android.os.Handler.handleCallback(Handler.java:959)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at android.os.Handler.dispatchMessage(Handler.java:100)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at bskq.mC(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at bskq.dispatchMessage(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at android.os.Looper.loopOnce(Looper.java:232)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at android.os.Looper.loop(Looper.java:317)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at android.os.HandlerThread.run(HandlerThread.java:85)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: Caused by: alys: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null}
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amux.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):15)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amad.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	at amaa.c(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
-11-08 15:43:21.236 13737 13773 W CondFlagRegistrar: 	... 12 more
-11-08 15:43:21.240 13737 13737 E AnonymousAuthActivity: Error fetching events: PERMISSION_DENIED: Missing or insufficient permissions.
-11-08 15:43:21.245   589   710 I ImeTracker: com.example.titans_project:6eaf38d9: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
-11-08 15:43:21.246   589   710 I ImeTracker: com.example.titans_project:6eaf38d9: onCancelled at PHASE_SERVER_SHOULD_HIDE
-11-08 15:43:21.255  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
-11-08 15:43:21.261  1522  1522 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
-11-08 15:43:21.263  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
-11-08 15:43:21.263  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
-11-08 15:43:21.265  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
-11-08 15:43:21.266  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
-11-08 15:43:21.426 13737 13753 W FileTestStorage: Output properties is not supported.
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: enableTracing failed. You may need to upgrade your androidx.tracing:tracing version
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: java.lang.NoSuchMethodError: No static method forceEnableAppTracing()V in class Landroidx/tracing/Trace; or its super classes (declaration of 'androidx.tracing.Trace' appears in /data/app/~~zQV8uvMXHkwcN9drER7cVA==/com.example.titans_project-k8pr3yZOfUnsrEQj5U_IXw==/base.apk)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.platform.tracing.AndroidXTracer.enableTracing(AndroidXTracer.java:57)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<init>(Tracing.java:53)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<clinit>(Tracing.java:49)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule.providesTracing(BaseLayerModule.java:190)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.providesTracing(BaseLayerModule_ProvidesTracingFactory.java:37)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:29)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:11)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:34)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:12)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:47)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.DaggerBaseLayerComponent$BaseLayerComponentImpl.idlingResourceRegistry(DaggerBaseLayerComponent.java:275)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.espresso.Espresso.<clinit>(Espresso.java:64)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at com.example.titans_project.MainActivityTest.testProfileSave(MainActivityTest.java:75)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at java.lang.reflect.Method.invoke(Native Method)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:128)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:27)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
-11-08 15:43:21.432 13737 13753 E AndroidXTracer: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
-11-08 15:43:21.432 13737 13753 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
-11-08 15:43:21.448 13737 13753 D CompatChangeReporter: Compat change id reported: 247079863; UID 10223; state: ENABLED
-11-08 15:43:21.487 13737 13753 D EventInjectionStrategy: Creating injection strategy with input manager.
-11-08 15:43:21.487 13737 13753 W .titans_project: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
-11-08 15:43:21.490 13737 13753 W .titans_project: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
-11-08 15:43:21.490 13737 13753 W .titans_project: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
-11-08 15:43:21.521 13737 13753 W .titans_project: Accessing hidden method Landroid/view/ViewConfiguration;->getDoubleTapMinTime()I (unsupported, reflection, allowed)
-11-08 15:43:21.535 13737 13737 W .titans_project: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
-11-08 15:43:21.535 13737 13737 W .titans_project: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
-11-08 15:43:21.535 13737 13737 W .titans_project: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
-11-08 15:43:21.551 13737 13737 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131231139/com.example.titans_project:id/profile_button>
-11-08 15:43:21.758   589  1795 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@3e80ab61 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
-11-08 15:43:21.760   436  7080 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
-11-08 15:43:21.760   589  1815 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
-11-08 15:43:21.776 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: PAUSED
-11-08 15:43:21.777 13737 13737 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:21.784   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
-11-08 15:43:21.807 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@a46496b in: PRE_ON_CREATE
-11-08 15:43:21.808 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@a46496b
-11-08 15:43:21.926   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
-11-08 15:43:22.131 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@a46496b in: CREATED
-11-08 15:43:22.131 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@a46496b
-11-08 15:43:22.133 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@a46496b in: STARTED
-11-08 15:43:22.134 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@a46496b
-11-08 15:43:22.136 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@a46496b in: RESUMED
-11-08 15:43:22.137 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@a46496b
-11-08 15:43:22.165 13737 13756 D EGL_emulation: app_time_stats: avg=27.94ms min=3.25ms max=276.65ms count=31
-11-08 15:43:22.249  1522  1533 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~zQV8uvMXHkwcN9drER7cVA==/com.example.titans_project-k8pr3yZOfUnsrEQj5U_IXw==/base.apk' with 1 weak references
-11-08 15:43:22.262   589   738 D WifiConfigStore: Writing to stores completed in 40 ms.
-11-08 15:43:22.594   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.ProfileView for user 0: +825ms
-11-08 15:43:22.714 13737 13737 D Firestore: Document exists. Data: {full_name=, Events={}, phone_number=, facility=, email=, notifications=false}
-11-08 15:43:22.740 13737 13798 D ProfileInstaller: Installing profile for com.example.titans_project
-11-08 15:43:23.041   589   710 I ImeTracker: com.example.titans_project:f535a045: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
-11-08 15:43:23.041   589   710 I ImeTracker: com.example.titans_project:f535a045: onCancelled at PHASE_SERVER_SHOULD_HIDE
-11-08 15:43:23.043  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
-11-08 15:43:23.049  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
-11-08 15:43:23.049  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
-11-08 15:43:23.051  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
-11-08 15:43:23.051  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
-11-08 15:43:23.082 13737 13737 I ViewInteraction: Performing 'type text(Sho H)' action on view view.getId() is <2131230931/com.example.titans_project:id/edit_text_full_name>
-11-08 15:43:23.194 13737 13737 I ImeTracker: com.example.titans_project:aefd8f30: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser true
-11-08 15:43:23.197 13737 13737 D InputMethodManager: showSoftInput() view=androidx.appcompat.widget.AppCompatEditText{4eb506 VFED..CL. .F.P..ID 52,827-1028,945 #7f0800d3 app:id/edit_text_full_name aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
-11-08 15:43:23.206  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
-11-08 15:43:23.213  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
-11-08 15:43:23.218  1251  1251 I DeviceIntelligenceExtension: DeviceIntelligenceExtension.getInlineSuggestionsRequest():304 Inline suggestions disabled in stylus mode or vertical PK/Voice toolbar
-11-08 15:43:23.221  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=20001, inputTypeString=Normal, enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=48000005, privateImeOptions=null, actionName=NEXT, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=2131230931, fieldName=null, extras=Bundle[mParcelledData.dataSize=404], hintText=non-empty, hintLocales=[]}}, false)
-11-08 15:43:23.223  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
-11-08 15:43:23.225  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: en-US, ime_english_united_states
-11-08 15:43:23.240 13737 13737 I AssistStructure: Flattened final assist data: 3860 bytes, containing 1 windows, 18 views
-11-08 15:43:23.251  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 2
-11-08 15:43:23.253  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInputView():2098 onStartInputView(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=20001, inputTypeString=Normal, enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=48000005, privateImeOptions=null, actionName=NEXT, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=2131230931, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=9, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=non-empty, hintLocales=[]}}, false)
-11-08 15:43:23.254  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
-11-08 15:43:23.257  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.getOemKeyboardHeightRatio():206 systemKeyboardHeightRatio:1.000000.
-11-08 15:43:23.257  1251  1251 I AndroidIME: AbstractIme.onActivate():89 LatinIme.onActivate() : EditorInfo = EditorInfo{packageName=com.example.titans_project, inputType=20001, inputTypeString=Normal, enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=48000005, privateImeOptions=null, actionName=NEXT, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=2131230931, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=9, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=non-empty, hintLocales=[]}, IncognitoMode = false, DeviceLocked = false
-11-08 15:43:23.260  1251  1251 I Delight5Facilitator: Delight5Facilitator.initializeForIme():747 initializeForIme() : Locale = [en_US], layout = qwerty
-11-08 15:43:23.261  1251  1251 I VoiceInputHandler: VoiceInputHandler.onActivateIme():99 registering TalkbackStateListener
-11-08 15:43:23.262  1251  1251 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():102 cancelShutdown()
-11-08 15:43:23.263  1251  1251 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():114 syncLanguagePacks()
-11-08 15:43:23.264  1251  1251 I LatinIme: LatinIme.updateEnableInlineSuggestionsOnDecoderSideFlags():1174 inline flag updated to:false
-11-08 15:43:23.266  1251  6460 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():200 maybeScheduleAutoPackDownloadForFallback()
-11-08 15:43:23.267  1251  6460 I FallbackOnDeviceRecognitionProvider: FallbackOnDeviceRecognitionProvider.maybeScheduleAutoPackDownload():197 maybeScheduleAutoPackDownload() for language tag en-US
-11-08 15:43:23.274  1251  1251 I InputBundle: InputBundle.consumeEvent():884 Skip consuming an event as keyboard status is 0
-11-08 15:43:23.277  1251  1251 I KeyboardWrapper: KeyboardWrapper.activateKeyboard():575 activateKeyboard(): type=accessory, status=0, imeDef=ktt{stringId=ime_english_united_states, language=en-US, languageTag=en-US, processedConditions={enable_number_row=false, device=phone}, className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, label=0, keyEventInterpreter=null, inlineComposing=true, autoCapital=true, announceAutoSelectedCandidate=true, statusIcon=0, primeKeyboardType=SOFT, indicatorIcon=0, indicatorLabel=US, displayAppCompletions=true, extraValues=ktl{}, processors=kvl@7209277, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=true, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, secondaryIme=null, keyboardGroupDef=kut@b56f466, phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=true, supportsAccessPoints=true}
-11-08 15:43:23.277  1251  1251 I KeyboardManager: KeyboardManager.requestKeyboard():234 Creating keyboard accessory, imeId=ime_english_united_states, cacheKey=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign
-11-08 15:43:23.277  1251  1251 I KeyboardWrapper: KeyboardWrapper.onKeyboardReady():239 onKeyboardReady(): type=accessory(accessory), kb=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard@4e41d80
-11-08 15:43:23.278  1251  1251 I KeyboardWrapper: KeyboardWrapper.doActivateKeyboard():606 doActivateKeyboard(): accessory
-11-08 15:43:23.278  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=HEADER, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.278  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=BODY, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.279  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=HEADER, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.280  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=BODY, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.280  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=FLOATING_CANDIDATES, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.284  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=WIDGET, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.285  1251  1251 I KeyboardManager: KeyboardManager.requestKeyboard():234 Creating keyboard accessory_candidates_consumer, imeId=ime_english_united_states, cacheKey=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign
-11-08 15:43:23.286  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={global_theme_key=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign, global_locale=en_US, global_density_dpi=420, global_orientation=1}, className=.latin.keyboard.AccessoryKeyboard, resourceIds=[#0x7f170046], initialStates=0, keyboardViewDefs=[kvb{direction=null, id=#0x7f0b014d, isScalable=false, layoutId=#0x7f0e0027, type=FLOATING_CANDIDATES, touchable=true, defaultShow=false}], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=#0x7f0e068d, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=HEADER, helpersCreated=[null, null, kib@c7ece41, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.286  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={global_theme_key=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign, global_locale=en_US, global_density_dpi=420, global_orientation=1}, className=.latin.keyboard.AccessoryKeyboard, resourceIds=[#0x7f170046], initialStates=0, keyboardViewDefs=[kvb{direction=null, id=#0x7f0b014d, isScalable=false, layoutId=#0x7f0e0027, type=FLOATING_CANDIDATES, touchable=true, defaultShow=false}], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=#0x7f0e068d, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=BODY, helpersCreated=[null, null, kib@c7ece41, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
-11-08 15:43:23.290  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.startInputIfInputViewStarted():3724 startInputIfInputViewStarted(): ACCESSORY
-11-08 15:43:23.291  1251  1251 I KeyboardModeManager: KeyboardModeManager.setInputViewKeyboardViewHolderProvider():625 setInputView() : supportsOneHandedMode=true supportsSplitMode=true
-11-08 15:43:23.291  1251  1251 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():104 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
-11-08 15:43:23.291  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
-11-08 15:43:23.291  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
-11-08 15:43:23.291  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
-11-08 15:43:23.292  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
-11-08 15:43:23.292  1251  1251 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():104 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
-11-08 15:43:23.292  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
-11-08 15:43:23.293  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
-11-08 15:43:23.293  1251  1251 I KeyboardModeManager: KeyboardModeManager.setInputViewKeyboardViewHolderProvider():613 setInputView() : supportsOneHandedMode=true, supportSplitMode=true
-11-08 15:43:23.333  1005  1005 V InlineSuggestionRenderService: handleDestroySuggestionViews called for 0:995213818
-11-08 15:43:23.340  1251  1251 I AccessoryInputModeManager: AccessoryInputModeManager.onModeStarted():308 Accessory input mode started: STYLUS
-11-08 15:43:23.340  1251  1251 I WidgetViewShowingController: WidgetViewShowingController.showWidgetKeyboardInternal():466 Show companion widget
-11-08 15:43:23.345  1522  1522 D BoundBrokerSvc: onBind: Intent { act=com.google.android.mdd.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
-11-08 15:43:23.345  1522  1522 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.mdd.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
-11-08 15:43:23.386  1251  1251 W NotificationCenter: NotificationCenter$ListenerData.notifyOnExecutor():672 Heavy notify work detected on UI thread: |iom->ing| takes 46ms
-11-08 15:43:23.408  1251  1251 W AndroidIME: KeyboardViewUtil.getKeyboardView():35 Null keyboardView is found for keyboardViewType: HEADER
-11-08 15:43:23.408  1251  1251 W AutoPasteSuggestionHelper: AutoPasteSuggestionHelper.setMaxWidthOfChipTextView():1056 Failed to get the width of the proactive suggestion view holder in HEADER.
-11-08 15:43:23.409  1251  1251 W AndroidIME: KeyboardViewUtil.getKeyboardView():35 Null keyboardView is found for keyboardViewType: HEADER
-11-08 15:43:23.409  1251  1251 W AutoPasteSuggestionHelper: AutoPasteSuggestionHelper.setMaxWidthOfChipTextView():1056 Failed to get the width of the proactive suggestion view holder in HEADER.
-11-08 15:43:23.412  1251  1251 W AutoPasteSuggestionHelper: AutoPasteSuggestionHelper.setMaxWidthOfChipTextView():1056 Failed to get the width of the proactive suggestion view holder in WIDGET.
-11-08 15:43:23.438  1251  1251 I CrowdsourceExtension: CrowdsourceExtension.checkIfDefaultBrowserIsAllowed():110 Failed to get default browser. The default browser may be deactived.
-11-08 15:43:23.441  1251  1251 I VoiceImeExtension: VoiceImeExtension.shouldStartVoiceInputAutomaticallyInCurrentInputBox():415 No private IME option set to start voice input.
-11-08 15:43:23.449 13737 13737 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
-11-08 15:43:23.454  1522  1522 D BoundBrokerSvc: onBind: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
-11-08 15:43:23.454  1522  1522 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
-11-08 15:43:23.462 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: STOPPED
-11-08 15:43:23.462  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notifyWithWindow():113
-11-08 15:43:23.462  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notify():106 WindowMetricsNotification{bounds=Rect(0, 63 - 1080, 2400), insets=Rect(0, 0 - 0, 63), densityDpi=420, smallestScreenWidthDp=411, displayWidth=1080, displayHeight=2400, xdpi=420.0, ydpi=420.0}; DisplayMetrics{density=2.625, width=1080, height=2400, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
-11-08 15:43:23.462 13737 13737 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:23.603 13737 13737 D UiControllerImpl: Injecting string: "Sho H"
-11-08 15:43:23.632  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
-11-08 15:43:23.637  1251  1251 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():494 onKeyboardViewShown: keyboardType=accessory, keyboardViewType=HEADER keyboardView=null
-11-08 15:43:23.637  1251  1251 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():494 onKeyboardViewShown: keyboardType=accessory, keyboardViewType=BODY keyboardView=null
-11-08 15:43:23.638  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notifyWithWindow():113
-11-08 15:43:23.640  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notify():106 WindowMetricsNotification{bounds=Rect(0, 63 - 1080, 2400), insets=Rect(0, 0 - 0, 63), densityDpi=420, smallestScreenWidthDp=411, displayWidth=1080, displayHeight=2400, xdpi=420.0, ydpi=420.0}; DisplayMetrics{density=2.625, width=1080, height=2400, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
-11-08 15:43:23.649  1251  1251 W InputContextProxy: InputContextProxy.applyClientDiffInternal():940 Ignore [FetchSuggestions] diff due to stale request: 210<211, inputStateId=170, lastInputStateId=169
-11-08 15:43:23.677 13737 13737 D InsetsController: show(ime(), fromIme=true)
-11-08 15:43:23.692 13737 13756 D EGL_emulation: app_time_stats: avg=97.33ms min=10.50ms max=424.08ms count=11
-11-08 15:43:23.710 13737 13800 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.example.titans_project
-11-08 15:43:23.715  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: Build configuration failed!
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: java.lang.IllegalArgumentException: Must pass in a valid surface control if only instrument surface;
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at com.android.internal.jank.InteractionJankMonitor$Configuration.validate(InteractionJankMonitor.java:833)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at com.android.internal.jank.InteractionJankMonitor$Configuration.<init>(InteractionJankMonitor.java:774)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at com.android.internal.jank.InteractionJankMonitor$Configuration.<init>(Unknown Source:0)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at com.android.internal.jank.InteractionJankMonitor$Configuration$Builder.build(InteractionJankMonitor.java:753)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at com.android.internal.jank.InteractionJankMonitor.begin(InteractionJankMonitor.java:333)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.view.inputmethod.ImeTracker$ImeJankTracker.onRequestAnimation(ImeTracker.java:852)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.view.InsetsController$InternalAnimationControlListener$1.onAnimationStart(InsetsController.java:442)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.Animator$AnimatorListener.onAnimationStart(Animator.java:692)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.Animator$AnimatorCaller$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.Animator.callOnList(Animator.java:666)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.Animator.notifyListeners(Animator.java:609)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.Animator.notifyStartListeners(Animator.java:626)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.ValueAnimator.startAnimation(ValueAnimator.java:1334)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.ValueAnimator.start(ValueAnimator.java:1149)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.animation.ValueAnimator.start(ValueAnimator.java:1173)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.view.InsetsController$InternalAnimationControlListener.onReady(InsetsController.java:461)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.view.InsetsAnimationThreadControlRunner.lambda$new$0(InsetsAnimationThreadControlRunner.java:129)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.view.InsetsAnimationThreadControlRunner.$r8$lambda$DLuG7Ht_vy5T5uYr29Rzhu2CZeY(Unknown Source:0)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.view.InsetsAnimationThreadControlRunner$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.os.Handler.handleCallback(Handler.java:959)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.os.Handler.dispatchMessage(Handler.java:100)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.os.Looper.loopOnce(Looper.java:232)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.os.Looper.loop(Looper.java:317)
-11-08 15:43:23.745 13737 13800 D InteractionJankMonitor: 	at android.os.HandlerThread.run(HandlerThread.java:85)
-11-08 15:43:23.788  1251  1251 W AndroidSpellCheckerService: AndroidSpellCheckerService.initialize():73 initialize...
-11-08 15:43:23.788  1251  1251 I ShortcutsDataManager: ShortcutsDataManager.onContentChanged():72 onContentChanged()
-11-08 15:43:23.789  1251  1251 I ContactsDataManager: ContactsDataManager.onContentChanged():159 onContentChanged()
-11-08 15:43:23.789  1251  1251 W AndroidSpellCheckerService: AndroidSpellCheckerService.initialize():83 initialize...done
-11-08 15:43:23.791  1406  1855 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=58 ]
-11-08 15:43:23.794  1406  2295 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3746f072-2d6c]>Handler" thread_id=64 ]
-11-08 15:43:23.796  1251  1611 I AndroidSpellCheckerService: AndroidSpellCheckerService.createSession():139 com.google.android.keyboard.client.delight5.LanguageIdentifier@e044928 is created
-11-08 15:43:23.800   589   745 W IPCThreadState: Sending oneway calls to frozen process.
-11-08 15:43:23.804   589   745 W IPCThreadState: Sending oneway calls to frozen process.
-11-08 15:43:23.825  1406  2295 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=64 ]
-11-08 15:43:23.828  1081  1095 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
-11-08 15:43:23.828  1081  1095 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
-11-08 15:43:23.868  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
-11-08 15:43:23.940 13737 13737 I ImeTracker: com.example.titans_project:aefd8f30: onShown
-11-08 15:43:23.951  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
-11-08 15:43:24.005  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
-11-08 15:43:24.104  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
-11-08 15:43:24.137  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
-11-08 15:43:24.213 13737 13737 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131230847/com.example.titans_project:id/button_save_changes>
-11-08 15:43:24.280   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
-11-08 15:43:24.281   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
-11-08 15:43:24.281   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={10102} in 6ms
-11-08 15:43:24.281   436  7080 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
-11-08 15:43:24.282   589  1639 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
-11-08 15:43:24.296 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@a46496b in: PAUSED
-11-08 15:43:24.296 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@a46496b
-11-08 15:43:24.306   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
-11-08 15:43:24.315   436   541 D AudioFlinger: mixer(0x79f1966e58e0) throttle end: throttle time(32)
-11-08 15:43:24.384 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: RESTARTED
-11-08 15:43:24.384 13737 13737 V ActivityScenario: Update currentActivityStage to RESTARTED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:24.384 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: STARTED
-11-08 15:43:24.384 13737 13737 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:24.385 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: RESUMED
-11-08 15:43:24.385 13737 13737 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:24.543   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
-11-08 15:43:24.712 13737 13756 D EGL_emulation: app_time_stats: avg=42.46ms min=10.80ms max=127.76ms count=21
-11-08 15:43:24.788   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
-11-08 15:43:24.789   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
-11-08 15:43:24.789   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={10142} in 1ms
-11-08 15:43:24.944   589   710 I ImeTracker: com.example.titans_project:50e8be24: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
-11-08 15:43:24.947  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInputView():2393
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: InputConnectionWrapper.waitForInputConnectionFutureInternal():1773 Failed to get the input connection call's result.
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: java.util.concurrent.TimeoutException: Waited 100 milliseconds (plus 1 milliseconds, 591500 nanoseconds delay) for pxi@f62a735[status=PENDING, info=[task=[running=[RUNNING ON ICWrapper-1], fch@3f187ca]]]
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at pug.get(PG:52)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at kbd.g(PG:9)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at kbd.f(PG:20)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at kbd.t(PG:27)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at kef.e(PG:15)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at kfm.A(PG:21)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at joy.A(PG:3)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at ink.c(PG:7)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at ink.g(PG:53)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at jov.a(PG:3)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at joy.af(PG:15)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at joy.I(PG:49)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at jos.k(PG:30)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at dia.q(PG:11)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at kfm.onFinishInputView(PG:75)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.inputmethodservice.InputMethodService.finishViews(InputMethodService.java:3245)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.inputmethodservice.InputMethodService.hideWindow(InputMethodService.java:3284)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.hideSoftInput(InputMethodService.java:967)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at kfl.hideSoftInput(PG:67)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.hideSoftInputWithToken(InputMethodService.java:927)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:247)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.os.Handler.dispatchMessage(Handler.java:107)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.os.Looper.loopOnce(Looper.java:232)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.os.Looper.loop(Looper.java:317)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at android.app.ActivityThread.main(ActivityThread.java:8705)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at java.lang.reflect.Method.invoke(Native Method)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
-11-08 15:43:25.063  1251  1251 E InputConnectionWrapper: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
-11-08 15:43:25.064  1251  1251 W InputConnectionWrapper: InputConnectionWrapper.recordDuration():1694 IPC IC_REQUEST_CURSOR_UPDATES took 115 ms
-11-08 15:43:25.064  1251  1251 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():152 Tooltip with id spell_check_add_to_dictionary not found in tooltipManager.
-11-08 15:43:25.066  1251  1251 I InputBundle: InputBundle.consumeEvent():884 Skip consuming an event as keyboard status is 0
-11-08 15:43:25.068  1251  1251 I VoiceInputHandler: VoiceInputHandler.onDeactivateIme():115 unregistering TalkbackStateListener
-11-08 15:43:25.068  1251  1251 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdown():124 shutdown()
-11-08 15:43:25.070  1251  1251 I AndroidIME: AbstractIme.onDeactivate():202 LatinIme.onDeactivate()
-11-08 15:43:25.076 13737 13737 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
-11-08 15:43:25.081 13737 13737 D InsetsController: hide(ime(), fromIme=true)
-11-08 15:43:25.088  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
-11-08 15:43:25.104  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
-11-08 15:43:25.105  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
-11-08 15:43:25.108  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
-11-08 15:43:25.114  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
-11-08 15:43:25.122  1251  1942 D EGL_emulation: app_time_stats: avg=93.14ms min=6.57ms max=990.14ms count=15
-11-08 15:43:25.124 13737 13737 D ProfileView: User details updated successfully!
-11-08 15:43:25.128  1251  1251 I ShortcutsDataManager: AbstractContentDataManager.startImportContentTask():240 startImportContentTask()
-11-08 15:43:25.131  1251  1859 I ShortcutsDataManager: AbstractContentDataManager$ImportContentTask.doInBackground():255 doInBackground()
-11-08 15:43:25.133  1251  1859 I PersonalDictionaryDataHandler: PersonalDictionaryDataHandler.beginProcess():114 LanguageTags = [en-US]
-11-08 15:43:25.155  1251  1859 I ShortcutsDataManager: AbstractContentDataManager.importRecords():345 importRecords() : Success : Count = 0
-11-08 15:43:25.160  1251  1859 I ShortcutsDataManager: AbstractContentDataManager.importContentData():295 importContentData() : Ending import process
-11-08 15:43:25.168 13737 13737 I ImeTracker: com.example.titans_project:50e8be24: onCancelled at PHASE_CLIENT_ANIMATION_CANCEL
-11-08 15:43:25.171  1251  1857 I Delight5Decoder: Delight5DecoderWrapper.unloadLanguageModel():943 unloadLanguageModel() : 4, version [n/a]
-11-08 15:43:25.176 13737 13737 I ImeTracker: com.example.titans_project:58fcece8: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
-11-08 15:43:25.177 13737 13737 I ImeTracker: com.example.titans_project:58fcece8: onFailed at PHASE_CLIENT_VIEW_SERVED
-11-08 15:43:25.247  1251  1859 I PersonalLanguageModelUpdater: PersonalLanguageModelUpdater$UpdateOperation.performInternal():165 run() : Added 0 words and 0 shortcuts
-11-08 15:43:25.247  1251  1859 I DynamicLanguageModelOperation: DynamicLanguageModelOperation.perform():43 perform() : 4 : dxm : Completed
-11-08 15:43:25.248  1251  1857 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():730 loadLanguageModel() : 4, version [n/a]
-11-08 15:43:25.251 13737 13737 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131231139/com.example.titans_project:id/profile_button>
-11-08 15:43:25.252  1251  1857 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():771 Loaded dynamic LM 4.en
-11-08 15:43:25.259  1251  1251 I ShortcutsDataManager: AbstractContentDataManager$ImportContentTask.onPostExecute():266 onPostExecute() : Result = [2,0]
-11-08 15:43:25.259  1251  1251 I ShortcutsDataManager: ShortcutsDataManager.onImportFinished():82 onImportFinished() : Result = 2 : Count = 0
-11-08 15:43:25.305   589  1795 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@3e80ab61 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
-11-08 15:43:25.308   436  7080 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
-11-08 15:43:25.312   589   886 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
-11-08 15:43:25.338 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: PAUSED
-11-08 15:43:25.338 13737 13737 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:25.380 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@5b9897b in: PRE_ON_CREATE
-11-08 15:43:25.381 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@5b9897b
-11-08 15:43:25.451 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@5b9897b in: CREATED
-11-08 15:43:25.451 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@5b9897b
-11-08 15:43:25.453 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@5b9897b in: STARTED
-11-08 15:43:25.453 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@5b9897b
-11-08 15:43:25.459 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@5b9897b in: RESUMED
-11-08 15:43:25.460 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@5b9897b
-11-08 15:43:25.536   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
-11-08 15:43:25.564 13737 13742 I .titans_project: Background concurrent mark compact GC freed 9195KB AllocSpace bytes, 42(1160KB) LOS objects, 49% free, 7278KB/14MB, paused 1.123ms,6.084ms total 68.080ms
-11-08 15:43:25.730   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.ProfileView for user 0: +424ms
-11-08 15:43:25.823 13737 13737 D VRI[ProfileView]: visibilityChanged oldVisibility=true newVisibility=false
-11-08 15:43:25.825 13737 13737 D Firestore: Document exists. Data: {full_name=Sho H, Events={}, phone_number=, facility=, email=, notifications=false}
-11-08 15:43:25.842  1251 12035 I AndroidSpellCheckerService: AndroidSpellCheckerService.createSession():139 com.google.android.keyboard.client.delight5.LanguageIdentifier@d104e70 is created
-11-08 15:43:25.919 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@a46496b in: STOPPED
-11-08 15:43:25.920 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@a46496b
-11-08 15:43:25.921 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@a46496b in: DESTROYED
-11-08 15:43:25.922 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@a46496b
-11-08 15:43:25.923 13737 13737 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@f51afb8
-11-08 15:43:25.926  1251 12035 I SpellCheckerSession: SpellCheckerSession.onClose():676 com.google.android.keyboard.client.delight5.LanguageIdentifier@e044928 is closed
-11-08 15:43:25.979   589  1639 W InputManager-JNI: Input channel object 'ec58328 com.example.titans_project/com.example.titans_project.ProfileView (client)' was disposed without first being removed with the input manager!
-11-08 15:43:26.026 13737 13756 D EGL_emulation: app_time_stats: avg=51.93ms min=3.51ms max=391.56ms count=24
-11-08 15:43:26.074 13737 13737 I AssistStructure: Flattened final assist data: 3868 bytes, containing 1 windows, 18 views
-11-08 15:43:26.173   589   710 I ImeTracker: com.example.titans_project:b0dce928: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
-11-08 15:43:26.174   589   710 I ImeTracker: com.example.titans_project:b0dce928: onCancelled at PHASE_SERVER_SHOULD_HIDE
-11-08 15:43:26.178  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
-11-08 15:43:26.183  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
-11-08 15:43:26.183  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
-11-08 15:43:26.183  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
-11-08 15:43:26.187  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
-11-08 15:43:26.382 13737 13737 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() to return non-empty rectangle)}' assertion on view an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Sho H"
-11-08 15:43:26.396   589  1639 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@40358400 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
-11-08 15:43:26.414 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@5b9897b in: PAUSED
-11-08 15:43:26.415 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@5b9897b
-11-08 15:43:26.426   589   615 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@40358400 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
-11-08 15:43:26.441  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=232, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
-11-08 15:43:26.442   376   376 D Zygote  : Forked child process 13807
-11-08 15:43:26.455 13807 13807 I ns_project.test: Late-enabling -Xcheck:jni
-11-08 15:43:26.493 13807 13807 I ns_project.test: Using CollectorTypeCMC GC.
-11-08 15:43:26.494 13807 13807 W ns_project.test: Unexpected CPU variant for x86: x86_64.
-11-08 15:43:26.494 13807 13807 W ns_project.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
-11-08 15:43:26.507 13807 13807 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
-11-08 15:43:26.545   453   466 I adbd    : jdwp connection from 13807
-11-08 15:43:26.640   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
-11-08 15:43:26.644   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
-11-08 15:43:26.644   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={10143} in 4ms
-11-08 15:43:26.646   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
-11-08 15:43:26.648   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
-11-08 15:43:26.649   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={20143} in 5ms
-11-08 15:43:26.669 13807 13807 D CompatChangeReporter: Compat change id reported: 242716250; UID 10224; state: ENABLED
-11-08 15:43:26.697   841  1073 D EGL_emulation: app_time_stats: avg=275.03ms min=14.57ms max=1943.69ms count=8
-11-08 15:43:26.703 13737 13737 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
-11-08 15:43:26.722 13807 13807 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
-11-08 15:43:26.728 13807 13807 D nativeloader: Configuring clns-7 for other apk /system/framework/android.test.mock.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~j1KjdfPOUEBsGB4Y9Lus6Q==/com.example.titans_project.test-AVf4Uf7sJtu2wN0XBtc7RQ==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.example.titans_project.test
-11-08 15:43:26.745 13807 13807 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
-11-08 15:43:26.752 13807 13807 D nativeloader: Configuring clns-8 for other apk /system/framework/android.test.runner.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~j1KjdfPOUEBsGB4Y9Lus6Q==/com.example.titans_project.test-AVf4Uf7sJtu2wN0XBtc7RQ==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.example.titans_project.test
-11-08 15:43:26.753 13807 13807 W ziparchive: Unable to open '/data/app/~~j1KjdfPOUEBsGB4Y9Lus6Q==/com.example.titans_project.test-AVf4Uf7sJtu2wN0XBtc7RQ==/base.dm': No such file or directory
-11-08 15:43:26.753 13807 13807 W ziparchive: Unable to open '/data/app/~~j1KjdfPOUEBsGB4Y9Lus6Q==/com.example.titans_project.test-AVf4Uf7sJtu2wN0XBtc7RQ==/base.dm': No such file or directory
-11-08 15:43:26.789 13807 13807 D nativeloader: Configuring clns-9 for other apk /data/app/~~j1KjdfPOUEBsGB4Y9Lus6Q==/com.example.titans_project.test-AVf4Uf7sJtu2wN0XBtc7RQ==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~j1KjdfPOUEBsGB4Y9Lus6Q==/com.example.titans_project.test-AVf4Uf7sJtu2wN0XBtc7RQ==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.example.titans_project.test
-11-08 15:43:26.817 13807 13807 V GraphicsEnvironment: Currently set values for:
-11-08 15:43:26.817 13807 13807 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
-11-08 15:43:26.817 13807 13807 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
-11-08 15:43:26.817 13807 13807 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
-11-08 15:43:26.817 13807 13807 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
-11-08 15:43:26.915   589   886 W InputManager-JNI: Input channel object '1a9bed0 Toast (client)' was disposed without first being removed with the input manager!
-11-08 15:43:26.985 13807 13807 W HWUI    : Unknown dataspace 0
-11-08 15:43:27.013  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=231, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
-11-08 15:43:27.027   445  1091 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10224 pid=0
-11-08 15:43:27.027   445  1091 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10224 => denied (334 us)
-11-08 15:43:27.028   445  1091 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10224 pid=0
-11-08 15:43:27.028   445  1091 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10224 => denied (470 us)
-11-08 15:43:27.029   445  1091 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10224 pid=0
-11-08 15:43:27.029   445  1091 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10224 => denied (1641 us)
-11-08 15:43:27.030   445   455 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10224 pid=13807
-11-08 15:43:27.030   445   455 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10224 => denied (2149 us)
-11-08 15:43:27.032 13807 13821 I EGL_emulation: Opening libGLESv1_CM_emulation.so
-11-08 15:43:27.036 13807 13821 I EGL_emulation: Opening libGLESv2_emulation.so
-11-08 15:43:27.049 13807 13821 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
-11-08 15:43:27.051 13807 13821 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
-11-08 15:43:27.230   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
-11-08 15:43:27.230 13807 13821 I Gralloc4: mapper 4.x is not supported
-11-08 15:43:27.360 13737 13737 D VRI[ProfileView]: visibilityChanged oldVisibility=true newVisibility=false
-11-08 15:43:27.476   589  1795 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10224 pid=0
-11-08 15:43:27.476   589  1795 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10224 => denied (427 us)
-11-08 15:43:27.476   589  1795 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10224 pid=0
-11-08 15:43:27.477   589  1795 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10224 => denied (155 us)
-11-08 15:43:27.477   589  1795 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10224 pid=0
-11-08 15:43:27.477   589  1795 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10224 => denied (75 us)
-11-08 15:43:27.491 13737 13737 D VRI[ProfileView]: visibilityChanged oldVisibility=false newVisibility=true
-11-08 15:43:27.656 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@5b9897b in: RESUMED
-11-08 15:43:27.657 13737 13737 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@5b9897b
-11-08 15:43:27.659 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: STOPPED
-11-08 15:43:27.659 13737 13737 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.titans_project.MainActivity@cd683d6
-11-08 15:43:27.667 13737 13737 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@cd683d6 in: DESTROYED
-11-08 15:43:27.668 13737 13737 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
-11-08 15:43:27.674 13737 13753 I TestRunner: finished: testProfileSave(com.example.titans_project.MainActivityTest)
+11-08 15:47:17.896 14961 14977 I TestRunner: started: testProfileSave(com.example.titans_project.MainActivityTest)
+11-08 15:47:17.903 14961 14977 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-08 15:47:17.913   589   890 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@48bdbf1b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:17.937  1132  1132 W SplitSelectStateCtor: Missing session instanceIds
+11-08 15:47:17.937  1132  1132 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+11-08 15:47:17.950  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=247, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
+11-08 15:47:17.951   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:17.980 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: PRE_ON_CREATE
+11-08 15:47:17.980 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-08 15:47:18.047 14961 14961 D AnonymousAuthActivity: User already signed in
+11-08 15:47:18.056 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: CREATED
+11-08 15:47:18.059 14961 14961 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:18.062 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: STARTED
+11-08 15:47:18.064 14961 14961 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:18.070 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: RESUMED
+11-08 15:47:18.072 14961 14961 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:18.087 14961 14961 D AnonymousAuthActivity: Event(Orange Monkey, null) fetched
+11-08 15:47:18.090 14961 14961 D AnonymousAuthActivity: Event(fakeEventTitle, null) fetched
+11-08 15:47:18.090 14961 14961 D AnonymousAuthActivity: Event(testEventTitle, null) fetched
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: Failed to get service from broker.
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3242)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3226)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3209)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3151)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at amxe.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):36)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at amvl.z(:com.google.android.gms@244337038@24.43.37 (260800-693941914):143)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at amcs.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):54)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:959)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at bskq.mC(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at bskq.dispatchMessage(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:232)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:317)
+11-08 15:47:18.162 14961 15045 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+11-08 15:47:18.215  1132  1547 D EGL_emulation: app_time_stats: avg=48.31ms min=9.89ms max=316.10ms count=20
+11-08 15:47:18.323   589   612 W ziparchive: Unable to open '/data/app/~~FxZSx_9W6OUn7-tYSsybhA==/com.example.titans_project-eLdDnwVqkBS5Ka494O6fWg==/base.dm': No such file or directory
+11-08 15:47:18.333   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.MainActivity for user 0: +407ms
+11-08 15:47:18.386  1132  1547 D EGL_emulation: app_time_stats: avg=120.42ms min=27.51ms max=602.92ms count=9
+11-08 15:47:18.472   589   710 I ImeTracker: com.example.titans_project:e175f291: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:18.472   589   710 I ImeTracker: com.example.titans_project:e175f291: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:18.480  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:18.491  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:18.492  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:18.493  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:18.499  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:18.612  1132  1132 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:18.619 14961 14977 W SurfaceComposerClient: Sync transaction timed out waiting for commit callback.
+11-08 15:47:18.625 14961 14961 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131231139/com.example.titans_project:id/profile_button>
+11-08 15:47:18.644  1132  1132 D BaseDepthController: setSurface:
+11-08 15:47:18.644  1132  1132 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+11-08 15:47:18.644  1132  1132 D BaseDepthController: 	mSurface: null
+11-08 15:47:18.644  1132  1132 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+11-08 15:47:18.644  1132  1132 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+11-08 15:47:18.644  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
+11-08 15:47:18.644  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
+11-08 15:47:18.644  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:34)
+11-08 15:47:18.644  1132  1132 D StatsLog: LAUNCHER_ONSTOP
+11-08 15:47:18.652  1132  1132 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+11-08 15:47:18.652  1132  1132 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+11-08 15:47:18.652  1132  1634 D OneSearchSuggestProvider: Shut down the binder channel
+11-08 15:47:18.656  1132  1132 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+11-08 15:47:18.659  1132  1437 I IPCThreadState: oneway function results for code 2 on binder at 0x7134c0d4e040 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-08 15:47:18.659   841  1073 D EGL_emulation: app_time_stats: avg=238.57ms min=14.72ms max=1068.97ms count=5
+11-08 15:47:18.808   841  1038 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@922489b
+11-08 15:47:18.809   589  1795 W InputManager-JNI: Input channel object '60982c8 Splash Screen com.example.titans_project (client)' was disposed without first being removed with the input manager!
+11-08 15:47:18.827   436  7080 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+11-08 15:47:18.831   589  1808 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+11-08 15:47:18.843   436   541 D AudioFlinger: mixer(0x79f1966e58e0) throttle end: throttle time(44)
+11-08 15:47:18.920   589   890 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@48bdbf1b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:18.961 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: PAUSED
+11-08 15:47:18.961 14961 14961 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:18.980   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:19.001 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@9a94b1 in: PRE_ON_CREATE
+11-08 15:47:19.002  1389  1943 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+11-08 15:47:19.003 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@9a94b1
+11-08 15:47:19.010   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+11-08 15:47:19.081 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@9a94b1 in: CREATED
+11-08 15:47:19.088 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@9a94b1
+11-08 15:47:19.091 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@9a94b1 in: STARTED
+11-08 15:47:19.091 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@9a94b1
+11-08 15:47:19.095 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@9a94b1 in: RESUMED
+11-08 15:47:19.095 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@9a94b1
+11-08 15:47:19.213   589   745 W IPCThreadState: Sending oneway calls to frozen process.
+11-08 15:47:19.213   589   745 W IPCThreadState: Sending oneway calls to frozen process.
+11-08 15:47:19.218   589   745 W IPCThreadState: Sending oneway calls to frozen process.
+11-08 15:47:19.221  1406  1855 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=58 ]
+11-08 15:47:19.224   589   745 W IPCThreadState: Sending oneway calls to frozen process.
+11-08 15:47:19.224   589   745 W IPCThreadState: Sending oneway calls to frozen process.
+11-08 15:47:19.262  1406  2295 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3746f072-2d6c]>Handler" thread_id=64 ]
+11-08 15:47:19.304  1081  1095 I ChimeraSrvcProxy: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl
+11-08 15:47:19.305  1081  1095 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+11-08 15:47:19.346 14961 14979 D EGL_emulation: app_time_stats: avg=27.94ms min=4.16ms max=175.03ms count=27
+11-08 15:47:19.349  1406  2295 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=64 ]
+11-08 15:47:19.412   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.ProfileView for user 0: +529ms
+11-08 15:47:19.465 14961 14961 D Firestore: Document exists. Data: {full_name=, Events={}, phone_number=, facility=, notifications=false, email=}
+11-08 15:47:19.536   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-08 15:47:19.561   589   745 D InetDiagMessage: Destroyed 5 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-08 15:47:19.567   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={10142} in 32ms
+11-08 15:47:19.901   589   710 I ImeTracker: com.example.titans_project:7db9d2bd: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:19.901   589   710 I ImeTracker: com.example.titans_project:7db9d2bd: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:19.904  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:19.910  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:19.910  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:19.910  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:19.911  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:20.242 14961 14961 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:20.261 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: STOPPED
+11-08 15:47:20.262 14961 14961 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:20.292 14961 14961 I ViewInteraction: Performing 'type text(Sho H)' action on view view.getId() is <2131230931/com.example.titans_project:id/edit_text_full_name>
+11-08 15:47:20.366  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:20.367 14961 14961 I ImeTracker: com.example.titans_project:f29b59e4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser true
+11-08 15:47:20.369 14961 14961 D InputMethodManager: showSoftInput() view=androidx.appcompat.widget.AppCompatEditText{3a36bfd VFED..CL. .F.P..ID 52,827-1028,945 #7f0800d3 app:id/edit_text_full_name aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+11-08 15:47:20.373  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:20.376  1251  1251 I DeviceIntelligenceExtension: DeviceIntelligenceExtension.getInlineSuggestionsRequest():304 Inline suggestions disabled in stylus mode or vertical PK/Voice toolbar
+11-08 15:47:20.376  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=20001, inputTypeString=Normal, enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=48000005, privateImeOptions=null, actionName=NEXT, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=2131230931, fieldName=null, extras=Bundle[mParcelledData.dataSize=404], hintText=non-empty, hintLocales=[]}}, false)
+11-08 15:47:20.377  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:20.380  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: en-US, ime_english_united_states
+11-08 15:47:20.387  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 2
+11-08 15:47:20.391  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInputView():2098 onStartInputView(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=20001, inputTypeString=Normal, enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=48000005, privateImeOptions=null, actionName=NEXT, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=2131230931, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=9, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=non-empty, hintLocales=[]}}, false)
+11-08 15:47:20.395  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:20.398  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.getOemKeyboardHeightRatio():206 systemKeyboardHeightRatio:1.000000.
+11-08 15:47:20.401  1251  1251 I AndroidIME: AbstractIme.onActivate():89 LatinIme.onActivate() : EditorInfo = EditorInfo{packageName=com.example.titans_project, inputType=20001, inputTypeString=Normal, enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=48000005, privateImeOptions=null, actionName=NEXT, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=2131230931, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=9, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=non-empty, hintLocales=[]}, IncognitoMode = false, DeviceLocked = false
+11-08 15:47:20.401 14961 14961 I AssistStructure: Flattened final assist data: 3860 bytes, containing 1 windows, 18 views
+11-08 15:47:20.401  1251  1251 I Delight5Facilitator: Delight5Facilitator.initializeForIme():747 initializeForIme() : Locale = [en_US], layout = qwerty
+11-08 15:47:20.408  1251  1251 I VoiceInputHandler: VoiceInputHandler.onActivateIme():99 registering TalkbackStateListener
+11-08 15:47:20.412  1251  1251 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():102 cancelShutdown()
+11-08 15:47:20.412  1251  1251 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():114 syncLanguagePacks()
+11-08 15:47:20.413  1251  1251 I LatinIme: LatinIme.updateEnableInlineSuggestionsOnDecoderSideFlags():1174 inline flag updated to:false
+11-08 15:47:20.421  1251  1251 I InputBundle: InputBundle.consumeEvent():884 Skip consuming an event as keyboard status is 0
+11-08 15:47:20.431  1251  1251 I KeyboardWrapper: KeyboardWrapper.activateKeyboard():575 activateKeyboard(): type=accessory, status=0, imeDef=ktt{stringId=ime_english_united_states, language=en-US, languageTag=en-US, processedConditions={enable_number_row=false, device=phone}, className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, label=0, keyEventInterpreter=null, inlineComposing=true, autoCapital=true, announceAutoSelectedCandidate=true, statusIcon=0, primeKeyboardType=SOFT, indicatorIcon=0, indicatorLabel=US, displayAppCompletions=true, extraValues=ktl{}, processors=kvl@7209277, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=true, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, secondaryIme=null, keyboardGroupDef=kut@b56f466, phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=true, supportsAccessPoints=true}
+11-08 15:47:20.431  1251  1251 I KeyboardManager: KeyboardManager.requestKeyboard():234 Creating keyboard accessory, imeId=ime_english_united_states, cacheKey=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign
+11-08 15:47:20.431  1251  1251 I KeyboardWrapper: KeyboardWrapper.onKeyboardReady():239 onKeyboardReady(): type=accessory(accessory), kb=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard@4e41d80
+11-08 15:47:20.431  1251  1251 I KeyboardWrapper: KeyboardWrapper.doActivateKeyboard():606 doActivateKeyboard(): accessory
+11-08 15:47:20.432  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=HEADER, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.432  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=BODY, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.432  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=HEADER, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.432  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=BODY, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.432  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=FLOATING_CANDIDATES, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.433  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={}, className=com.google.android.libraries.inputmethod.keyboard.impl.Keyboard, resourceIds=[#0x7f170047], initialStates=0, keyboardViewDefs=[], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=0, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=WIDGET, helpersCreated=[null, null, null, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.433  1251  1251 I KeyboardManager: KeyboardManager.requestKeyboard():234 Creating keyboard accessory_candidates_consumer, imeId=ime_english_united_states, cacheKey=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign
+11-08 15:47:20.433  1251  6460 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():200 maybeScheduleAutoPackDownloadForFallback()
+11-08 15:47:20.433  1251  6460 I FallbackOnDeviceRecognitionProvider: FallbackOnDeviceRecognitionProvider.maybeScheduleAutoPackDownload():197 maybeScheduleAutoPackDownload() for language tag en-US
+11-08 15:47:20.442  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={global_theme_key=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign, global_locale=en_US, global_density_dpi=420, global_orientation=1}, className=.latin.keyboard.AccessoryKeyboard, resourceIds=[#0x7f170046], initialStates=0, keyboardViewDefs=[kvb{direction=null, id=#0x7f0b014d, isScalable=false, layoutId=#0x7f0e0027, type=FLOATING_CANDIDATES, touchable=true, defaultShow=false}], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=#0x7f0e068d, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=HEADER, helpersCreated=[null, null, kib@c7ece41, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.442  1251  1251 W Keyboard: Keyboard.getKeyboardViewHelper():574 null helper is returned: keyboardDef=kuo{processedConditions={}, globalConditions={global_theme_key=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_hover_light_phone_bottom4dp_navredesign, global_locale=en_US, global_density_dpi=420, global_orientation=1}, className=.latin.keyboard.AccessoryKeyboard, resourceIds=[#0x7f170046], initialStates=0, keyboardViewDefs=[kvb{direction=null, id=#0x7f0b014d, isScalable=false, layoutId=#0x7f0e0027, type=FLOATING_CANDIDATES, touchable=true, defaultShow=false}], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=#0x7f0e068d, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=0}, type=BODY, helpersCreated=[null, null, kib@c7ece41, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.8 fontWeightAdjustment=0}
+11-08 15:47:20.444  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.startInputIfInputViewStarted():3724 startInputIfInputViewStarted(): ACCESSORY
+11-08 15:47:20.444  1251  1251 I KeyboardModeManager: KeyboardModeManager.setInputViewKeyboardViewHolderProvider():625 setInputView() : supportsOneHandedMode=true supportsSplitMode=true
+11-08 15:47:20.444  1251  1251 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():104 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-08 15:47:20.444  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
+11-08 15:47:20.444  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
+11-08 15:47:20.444  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
+11-08 15:47:20.444  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
+11-08 15:47:20.445  1251  1251 I NormalModeController: NormalModeController.getKeyboardBodyViewHolderPaddingBottom():104 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+11-08 15:47:20.446  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
+11-08 15:47:20.448  1251  1251 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():45 leave 281 height for app when ime window height:2274, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1877
+11-08 15:47:20.449  1251  1251 I KeyboardModeManager: KeyboardModeManager.setInputViewKeyboardViewHolderProvider():613 setInputView() : supportsOneHandedMode=true, supportSplitMode=true
+11-08 15:47:20.460  1251  1251 I AccessoryInputModeManager: AccessoryInputModeManager.onModeStarted():308 Accessory input mode started: STYLUS
+11-08 15:47:20.462  1251  1251 I WidgetViewShowingController: WidgetViewShowingController.showWidgetKeyboardInternal():466 Show companion widget
+11-08 15:47:20.466   841  1073 D EGL_emulation: app_time_stats: avg=507.02ms min=115.66ms max=1638.87ms count=4
+11-08 15:47:20.489  1522  1522 D BoundBrokerSvc: onBind: Intent { act=com.google.android.mdd.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-08 15:47:20.489  1522  1522 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.mdd.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-08 15:47:20.543  1081  1095 I IPCThreadState: oneway function results for code 1 on binder at 0x7134c0d5f9b0 will be dropped but finished with status UNKNOWN_TRANSACTION and reply parcel size 80
+11-08 15:47:20.544  1005  1005 V InlineSuggestionRenderService: handleDestroySuggestionViews called for 0:1345769264
+11-08 15:47:20.553  1251  1251 I CrowdsourceExtension: CrowdsourceExtension.checkIfDefaultBrowserIsAllowed():110 Failed to get default browser. The default browser may be deactived.
+11-08 15:47:20.558  1251  1251 I VoiceImeExtension: VoiceImeExtension.shouldStartVoiceInputAutomaticallyInCurrentInputBox():415 No private IME option set to start voice input.
+11-08 15:47:20.579  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notifyWithWindow():113
+11-08 15:47:20.581  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notify():106 WindowMetricsNotification{bounds=Rect(0, 63 - 1080, 2400), insets=Rect(0, 0 - 0, 63), densityDpi=420, smallestScreenWidthDp=411, displayWidth=1080, displayHeight=2400, xdpi=420.0, ydpi=420.0}; DisplayMetrics{density=2.625, width=1080, height=2400, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
+11-08 15:47:20.590  1522  1522 D BoundBrokerSvc: onBind: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+11-08 15:47:20.590  1522  1522 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+11-08 15:47:20.661   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-08 15:47:20.661   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-08 15:47:20.662   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={10091} in 1ms
+11-08 15:47:20.662 14961 14961 D UiControllerImpl: Injecting string: "Sho H"
+11-08 15:47:20.772   589  1072 W InputManager-JNI: Input channel object 'a198b09 Toast (client)' was disposed without first being removed with the input manager!
+11-08 15:47:20.795  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
+11-08 15:47:20.810  1251  1251 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():494 onKeyboardViewShown: keyboardType=accessory, keyboardViewType=HEADER keyboardView=null
+11-08 15:47:20.811  1251  1251 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():494 onKeyboardViewShown: keyboardType=accessory, keyboardViewType=BODY keyboardView=null
+11-08 15:47:20.811  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notifyWithWindow():113
+11-08 15:47:20.812  1251  1251 I WindowMetricsNotification: WindowMetricsNotification.notify():106 WindowMetricsNotification{bounds=Rect(0, 63 - 1080, 2400), insets=Rect(0, 0 - 0, 63), densityDpi=420, smallestScreenWidthDp=411, displayWidth=1080, displayHeight=2400, xdpi=420.0, ydpi=420.0}; DisplayMetrics{density=2.625, width=1080, height=2400, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
+11-08 15:47:20.815  1251  1251 W InputContextProxy: InputContextProxy.applyClientDiffInternal():940 Ignore [FetchSuggestions] diff due to stale request: 255<256, inputStateId=217, lastInputStateId=216
+11-08 15:47:20.847 14961 14979 D EGL_emulation: app_time_stats: avg=119.80ms min=8.94ms max=417.85ms count=12
+11-08 15:47:20.849 14961 14961 D InsetsController: show(ime(), fromIme=true)
+11-08 15:47:20.866 14961 15144 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.example.titans_project
+11-08 15:47:20.925  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
+11-08 15:47:20.982  1251  1251 W AndroidSpellCheckerService: AndroidSpellCheckerService.initialize():73 initialize...
+11-08 15:47:20.982  1251  1251 I ShortcutsDataManager: ShortcutsDataManager.onContentChanged():72 onContentChanged()
+11-08 15:47:20.983  1251  1251 I ContactsDataManager: ContactsDataManager.onContentChanged():159 onContentChanged()
+11-08 15:47:20.983  1251  1251 W AndroidSpellCheckerService: AndroidSpellCheckerService.initialize():83 initialize...done
+11-08 15:47:21.025  1251  6957 I AndroidSpellCheckerService: AndroidSpellCheckerService.createSession():139 com.google.android.keyboard.client.delight5.LanguageIdentifier@7e1fabf is created
+11-08 15:47:21.069  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
+11-08 15:47:21.081 14961 14961 I ImeTracker: com.example.titans_project:f29b59e4: onShown
+11-08 15:47:21.133  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
+11-08 15:47:21.225  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
+11-08 15:47:21.273  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
+11-08 15:47:21.292  1251  1251 I StylusModule: StylusModule.onUpdateToolType():770 Update tool type = 0
+11-08 15:47:21.345 14961 14961 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131230847/com.example.titans_project:id/button_save_changes>
+11-08 15:47:21.397   436  7080 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+11-08 15:47:21.399   589   966 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+11-08 15:47:21.418   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:21.422 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@9a94b1 in: PAUSED
+11-08 15:47:21.422 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@9a94b1
+11-08 15:47:21.428   436   541 D AudioFlinger: mixer(0x79f1966e58e0) throttle end: throttle time(32)
+11-08 15:47:21.504 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: RESTARTED
+11-08 15:47:21.504 14961 14961 V ActivityScenario: Update currentActivityStage to RESTARTED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:21.505 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: STARTED
+11-08 15:47:21.506 14961 14961 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:21.508 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: RESUMED
+11-08 15:47:21.508 14961 14961 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:21.713   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+11-08 15:47:21.895 14961 14979 D EGL_emulation: app_time_stats: avg=49.21ms min=13.52ms max=119.11ms count=20
+11-08 15:47:21.990   589   710 I ImeTracker: com.example.titans_project:6e73e18d: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:22.002  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInputView():2393
+11-08 15:47:22.074 14961 14961 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+11-08 15:47:22.075 14961 14961 D InsetsController: hide(ime(), fromIme=true)
+11-08 15:47:22.076  1251  1251 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():152 Tooltip with id spell_check_add_to_dictionary not found in tooltipManager.
+11-08 15:47:22.081  1251  1251 I InputBundle: InputBundle.consumeEvent():884 Skip consuming an event as keyboard status is 0
+11-08 15:47:22.082  1251  1251 I VoiceInputHandler: VoiceInputHandler.onDeactivateIme():115 unregistering TalkbackStateListener
+11-08 15:47:22.083  1251  1251 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdown():124 shutdown()
+11-08 15:47:22.088  1251  1251 I AndroidIME: AbstractIme.onDeactivate():202 LatinIme.onDeactivate()
+11-08 15:47:22.112  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:22.122  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:22.122  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:22.123  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:22.125  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:22.134 14961 14961 D ProfileView: User details updated successfully!
+11-08 15:47:22.145  1251  1251 I ShortcutsDataManager: AbstractContentDataManager.startImportContentTask():240 startImportContentTask()
+11-08 15:47:22.150 14961 14961 I ImeTracker: com.example.titans_project:6e73e18d: onCancelled at PHASE_CLIENT_ANIMATION_CANCEL
+11-08 15:47:22.151  1251  1942 D EGL_emulation: app_time_stats: avg=92.19ms min=8.38ms max=918.06ms count=14
+11-08 15:47:22.156 14961 14961 I ImeTracker: com.example.titans_project:c98874a9: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-08 15:47:22.156  1251  1859 I ShortcutsDataManager: AbstractContentDataManager$ImportContentTask.doInBackground():255 doInBackground()
+11-08 15:47:22.160  1251  1859 I PersonalDictionaryDataHandler: PersonalDictionaryDataHandler.beginProcess():114 LanguageTags = [en-US]
+11-08 15:47:22.161 14961 14961 I ImeTracker: com.example.titans_project:c98874a9: onFailed at PHASE_CLIENT_VIEW_SERVED
+11-08 15:47:22.246  1251  1859 I ShortcutsDataManager: AbstractContentDataManager.importRecords():345 importRecords() : Success : Count = 0
+11-08 15:47:22.252  1251  1859 I ShortcutsDataManager: AbstractContentDataManager.importContentData():295 importContentData() : Ending import process
+11-08 15:47:22.253  1251  1857 I Delight5Decoder: Delight5DecoderWrapper.unloadLanguageModel():943 unloadLanguageModel() : 4, version [n/a]
+11-08 15:47:22.294 14961 14961 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131231139/com.example.titans_project:id/profile_button>
+11-08 15:47:22.314   896 12082 D ApfFilter: (wlan0): Adding RA fe80::2 -> ff02::1 1800s fec0::/64 86400s/14400s
+11-08 15:47:22.314  1251  1859 I PersonalLanguageModelUpdater: PersonalLanguageModelUpdater$UpdateOperation.performInternal():165 run() : Added 0 words and 0 shortcuts
+11-08 15:47:22.314  1251  1859 I DynamicLanguageModelOperation: DynamicLanguageModelOperation.perform():43 perform() : 4 : dxm : Completed
+11-08 15:47:22.319  1251  1857 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():730 loadLanguageModel() : 4, version [n/a]
+11-08 15:47:22.325  1251  1857 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():771 Loaded dynamic LM 4.en
+11-08 15:47:22.386  1251  1251 I ShortcutsDataManager: AbstractContentDataManager$ImportContentTask.onPostExecute():266 onPostExecute() : Result = [2,0]
+11-08 15:47:22.386  1251  1251 I ShortcutsDataManager: ShortcutsDataManager.onImportFinished():82 onImportFinished() : Result = 2 : Count = 0
+11-08 15:47:22.440   436  7080 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+11-08 15:47:22.441   589   966 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+11-08 15:47:22.449   589   890 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@48bdbf1b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:22.500 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: PAUSED
+11-08 15:47:22.501 14961 14961 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:22.556 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@c86fe9d in: PRE_ON_CREATE
+11-08 15:47:22.557 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@c86fe9d
+11-08 15:47:22.631 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@c86fe9d in: CREATED
+11-08 15:47:22.632 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@c86fe9d
+11-08 15:47:22.633 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@c86fe9d in: STARTED
+11-08 15:47:22.633 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@c86fe9d
+11-08 15:47:22.639 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@c86fe9d in: RESUMED
+11-08 15:47:22.640 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@c86fe9d
+11-08 15:47:22.665   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+11-08 15:47:22.892 14961 14979 D EGL_emulation: app_time_stats: avg=53.38ms min=8.74ms max=184.61ms count=19
+11-08 15:47:22.921   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.ProfileView for user 0: +456ms
+11-08 15:47:22.924 14961 14961 D VRI[ProfileView]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:23.108 14961 14961 D Firestore: Document exists. Data: {full_name=Sho H, Events={}, phone_number=, facility=, notifications=false, email=}
+11-08 15:47:23.114  1251  1264 I AndroidSpellCheckerService: AndroidSpellCheckerService.createSession():139 com.google.android.keyboard.client.delight5.LanguageIdentifier@1eb19cb is created
+11-08 15:47:23.192 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@9a94b1 in: STOPPED
+11-08 15:47:23.196 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@9a94b1
+11-08 15:47:23.201 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@9a94b1 in: DESTROYED
+11-08 15:47:23.202 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@9a94b1
+11-08 15:47:23.203 14961 14961 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@703acad
+11-08 15:47:23.207  1251  1264 I SpellCheckerSession: SpellCheckerSession.onClose():676 com.google.android.keyboard.client.delight5.LanguageIdentifier@7e1fabf is closed
+11-08 15:47:23.263   589  1795 W InputManager-JNI: Input channel object 'e710858 com.example.titans_project/com.example.titans_project.ProfileView (client)' was disposed without first being removed with the input manager!
+11-08 15:47:23.315 14961 14961 I AssistStructure: Flattened final assist data: 3868 bytes, containing 1 windows, 18 views
+11-08 15:47:23.331   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-08 15:47:23.332   589   745 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-08 15:47:23.332   589   745 D InetDiagMessage: Destroyed live tcp sockets for uids={10201} in 3ms
+11-08 15:47:23.356   589   710 I ImeTracker: com.example.titans_project:543b3cb8: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:23.356   589   710 I ImeTracker: com.example.titans_project:543b3cb8: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:23.364  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:23.371  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:23.371  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:23.372  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:23.373  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:23.692 14961 14961 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:23.723 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: STOPPED
+11-08 15:47:23.723 14961 14961 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.titans_project.MainActivity@15e0324
+11-08 15:47:23.779   841  1073 D EGL_emulation: app_time_stats: avg=310.85ms min=16.86ms max=1932.12ms count=7
+11-08 15:47:23.844 14961 14961 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() to return non-empty rectangle)}' assertion on view an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Sho H"
+11-08 15:47:23.854   589  1795 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4a7297ba does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:23.868   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:23.869 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.ProfileView@c86fe9d in: PAUSED
+11-08 15:47:23.870 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.ProfileView }, activity=com.example.titans_project.ProfileView@c86fe9d
+11-08 15:47:23.882  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=248, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+11-08 15:47:23.928 15091 15105 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-08 15:47:23.929 15091 15105 I EGL_emulation: Opening libGLESv2_emulation.so
+11-08 15:47:23.946 15091 15105 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-08 15:47:23.947 15091 15105 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-08 15:47:24.008 14961 14979 D EGL_emulation: app_time_stats: avg=137.94ms min=19.75ms max=460.26ms count=8
+11-08 15:47:24.145 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@15e0324 in: DESTROYED
+11-08 15:47:24.146 14961 14961 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-08 15:47:24.146 14961 14961 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1b1b099
+11-08 15:47:24.189   589   670 W InputManager-JNI: Input channel object 'b663a2c Toast (client)' was disposed without first being removed with the input manager!
+11-08 15:47:24.202   589   890 W InputManager-JNI: Input channel object 'b8ea655 com.example.titans_project/com.example.titans_project.MainActivity (client)' was disposed without first being removed with the input manager!
+11-08 15:47:24.243 14961 14977 I TestRunner: finished: testProfileSave(com.example.titans_project.MainActivityTest)

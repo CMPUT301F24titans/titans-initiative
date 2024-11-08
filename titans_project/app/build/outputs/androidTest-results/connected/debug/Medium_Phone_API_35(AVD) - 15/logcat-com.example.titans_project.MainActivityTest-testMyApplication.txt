@@ -1,0 +1,159 @@
+11-08 15:47:25.358 14961 14977 I TestRunner: started: testMyApplication(com.example.titans_project.MainActivityTest)
+11-08 15:47:25.361 14961 14977 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-08 15:47:25.364  1251  1264 I SpellCheckerSession: SpellCheckerSession.onClose():676 com.google.android.keyboard.client.delight5.LanguageIdentifier@1eb19cb is closed
+11-08 15:47:25.376   589  1795 W InputManager-JNI: Input channel object '32dbc60 com.example.titans_project/com.example.titans_project.ProfileView (client)' was disposed without first being removed with the input manager!
+11-08 15:47:25.384   589   890 W InputManager-JNI: Input channel object 'a77f2ec com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+11-08 15:47:25.374  1005  1005 V InlineSuggestionRenderService: handleDestroySuggestionViews called for 0:327859155
+11-08 15:47:25.391  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=247
+11-08 15:47:25.392  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=247
+11-08 15:47:25.404   589  1795 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@48bdbf1b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:25.420  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 76, 348341, 85297822, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 76, 348341, 85297822, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 76, 348349, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 76, 348349, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missing HWUI jank callback for vsyncId: 348349, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 76, 348431, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 76, 348431, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missing HWUI jank callback for vsyncId: 348431, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 76, 348454, 103495428, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 76, 348454, 103495428, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 88, 348491, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 88, 348491, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missing HWUI jank callback for vsyncId: 348491, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 74, 348528, 120005698, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 74, 348528, 120005698, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 74, 348566, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.421  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 74, 348566, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missing HWUI jank callback for vsyncId: 348566, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 88, 348596, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 88, 348596, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missing HWUI jank callback for vsyncId: 348596, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 72, 348613, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missing HWUI jank callback for vsyncId: 348613, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 72, 348648, 80734838, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 72, 348671, 67695806, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 88, 348680, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 88, 348680, 0, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missing HWUI jank callback for vsyncId: 348680, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 74, 348689, 70354776, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 74, 348689, 70354776, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed App frame:UNKNOWN: 74, 348698, 59774678, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 74, 348698, 59774678, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.422  1132  1132 W FrameTracker: Missed SF frame:UNKNOWN: 66, 348706, 86442912, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+11-08 15:47:25.443  1132  1132 W SplitSelectStateCtor: Missing session instanceIds
+11-08 15:47:25.443  1132  1132 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+11-08 15:47:25.472  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=249, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
+11-08 15:47:25.485  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=248
+11-08 15:47:25.485  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=248
+11-08 15:47:25.501 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@c93b2fd in: PRE_ON_CREATE
+11-08 15:47:25.501 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-08 15:47:25.537   384  3608 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 24075264
+11-08 15:47:25.541 14961 14961 D AnonymousAuthActivity: User already signed in
+11-08 15:47:25.547 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@c93b2fd in: CREATED
+11-08 15:47:25.548 14961 14961 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.example.titans_project.MainActivity@c93b2fd
+11-08 15:47:25.549 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@c93b2fd in: STARTED
+11-08 15:47:25.550 14961 14961 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.titans_project.MainActivity@c93b2fd
+11-08 15:47:25.551 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@c93b2fd in: RESUMED
+11-08 15:47:25.551 14961 14961 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.titans_project.MainActivity@c93b2fd
+11-08 15:47:25.581 14961 14961 D AnonymousAuthActivity: Event(Orange Monkey, null) fetched
+11-08 15:47:25.581 14961 14961 D AnonymousAuthActivity: Event(fakeEventTitle, null) fetched
+11-08 15:47:25.581 14961 14961 D AnonymousAuthActivity: Event(testEventTitle, null) fetched
+11-08 15:47:25.585   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:25.735  1132  1547 D EGL_emulation: app_time_stats: avg=52.94ms min=13.45ms max=382.31ms count=18
+11-08 15:47:25.821   589   612 W ziparchive: Unable to open '/data/app/~~FxZSx_9W6OUn7-tYSsybhA==/com.example.titans_project-eLdDnwVqkBS5Ka494O6fWg==/base.dm': No such file or directory
+11-08 15:47:25.841   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.MainActivity for user 0: +420ms
+11-08 15:47:25.960   589   710 I ImeTracker: com.example.titans_project:7b4c77ee: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:25.963   589   710 I ImeTracker: com.example.titans_project:7b4c77ee: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:25.973  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:25.978  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:25.978  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:25.978  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:25.980  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:25.987  1132  1547 D EGL_emulation: app_time_stats: avg=118.81ms min=12.47ms max=750.84ms count=10
+11-08 15:47:26.051  1132  1132 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:26.092 14961 14977 W SurfaceComposerClient: Sync transaction timed out waiting for commit callback.
+11-08 15:47:26.096 14961 14961 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131230810/com.example.titans_project:id/application_button>
+11-08 15:47:26.106  1132  1132 D BaseDepthController: setSurface:
+11-08 15:47:26.106  1132  1132 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+11-08 15:47:26.106  1132  1132 D BaseDepthController: 	mSurface: null
+11-08 15:47:26.111  1132  1132 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+11-08 15:47:26.113  1132  1132 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+11-08 15:47:26.113  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
+11-08 15:47:26.113  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
+11-08 15:47:26.113  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:34)
+11-08 15:47:26.116  1132  1132 D StatsLog: LAUNCHER_ONSTOP
+11-08 15:47:26.119  1132  1634 D OneSearchSuggestProvider: Shut down the binder channel
+11-08 15:47:26.120  1132  1132 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+11-08 15:47:26.121  1132  1132 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+11-08 15:47:26.123  1132  1437 I IPCThreadState: oneway function results for code 2 on binder at 0x7134c0d49930 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-08 15:47:26.126  1132  1132 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+11-08 15:47:26.165   841  1038 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@14a2c65
+11-08 15:47:26.171   589  1795 W InputManager-JNI: Input channel object 'e506bac Splash Screen com.example.titans_project (client)' was disposed without first being removed with the input manager!
+11-08 15:47:26.220   841  1073 D EGL_emulation: app_time_stats: avg=237.15ms min=10.32ms max=1232.65ms count=6
+11-08 15:47:26.262   589   966 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@48bdbf1b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:26.264   436  7080 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+11-08 15:47:26.273   589  1795 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+11-08 15:47:26.279 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@c93b2fd in: PAUSED
+11-08 15:47:26.279 14961 14961 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.titans_project.MainActivity@c93b2fd
+11-08 15:47:26.288   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 15:47:26.313 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@ea12be0 in: PRE_ON_CREATE
+11-08 15:47:26.313 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@ea12be0
+11-08 15:47:26.319   436   541 D AudioFlinger: mixer(0x79f1966e58e0) throttle end: throttle time(27)
+11-08 15:47:26.333 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@ea12be0 in: CREATED
+11-08 15:47:26.334 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@ea12be0
+11-08 15:47:26.337 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@ea12be0 in: STARTED
+11-08 15:47:26.337 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@ea12be0
+11-08 15:47:26.339 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@ea12be0 in: RESUMED
+11-08 15:47:26.340 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@ea12be0
+11-08 15:47:26.434   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+11-08 15:47:26.605   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.MyApplicationsView for user 0: +339ms
+11-08 15:47:26.896 14961 14979 D EGL_emulation: app_time_stats: avg=29.22ms min=5.61ms max=140.80ms count=27
+11-08 15:47:27.063 14961 14961 D RootViewPicker: Root not ready - waiting: 10ms for one to appear.
+11-08 15:47:27.075 14961 14961 D RootViewPicker: Root not ready - waiting: 25ms for one to appear.
+11-08 15:47:27.085   589   710 I ImeTracker: com.example.titans_project:c5cd1481: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 15:47:27.087   589   710 I ImeTracker: com.example.titans_project:c5cd1481: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:27.093  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:27.100  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:27.100  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:27.103  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:27.105  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:27.109 14961 14961 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() to return non-empty rectangle)}' assertion on view an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Applications"
+11-08 15:47:27.144   589   966 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4a7297ba does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 15:47:27.171  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=250, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+11-08 15:47:27.188 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@ea12be0 in: PAUSED
+11-08 15:47:27.188 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@ea12be0
+11-08 15:47:27.276 15091 15105 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-08 15:47:27.276 15091 15105 I EGL_emulation: Opening libGLESv2_emulation.so
+11-08 15:47:27.359   384 15164 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 15:47:27.359   384 15164 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 15:47:27.374 15091 15105 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-08 15:47:27.379 15091 15105 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-08 15:47:27.462   384 15164 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 15:47:27.463   384 15164 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 15:47:27.566   384 15164 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 15:47:27.571   384 15164 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 15:47:27.662   589   612 W ziparchive: Unable to open '/data/app/~~HXru9AB_c9kIwU1wqBHH5g==/com.example.titans_project.test-3XjHbeI6ZEnT7Bm47DxM6w==/base.dm': No such file or directory
+11-08 15:47:27.665   589   612 I ActivityTaskManager: Displayed com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +518ms
+11-08 15:47:27.675  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=249, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
+11-08 15:47:27.678   384 15164 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 15:47:27.678   384 15164 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 15:47:27.730 14961 14979 D EGL_emulation: app_time_stats: avg=107.93ms min=11.20ms max=328.03ms count=10
+11-08 15:47:27.739 14961 14961 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 15:47:27.781 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@ea12be0 in: RESUMED
+11-08 15:47:27.782 14961 14961 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@ea12be0
+11-08 15:47:27.786   384 15164 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 15:47:27.789   384 15164 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 15:47:27.799 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@c93b2fd in: STOPPED
+11-08 15:47:27.800 14961 14961 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.titans_project.MainActivity@c93b2fd
+11-08 15:47:27.803 14961 14961 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@c93b2fd in: DESTROYED
+11-08 15:47:27.803 14961 14961 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-08 15:47:27.804 14961 14961 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@659f181
+11-08 15:47:27.812   589  1381 W InputManager-JNI: Input channel object '9b7392d com.example.titans_project/com.example.titans_project.MainActivity (client)' was disposed without first being removed with the input manager!
+11-08 15:47:27.827   589   710 I ImeTracker: com.example.titans_project:ff7cd369: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false
+11-08 15:47:27.827   589   710 I ImeTracker: com.example.titans_project:ff7cd369: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 15:47:27.829  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 15:47:27.834  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 15:47:27.835  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 15:47:27.836  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 15:47:27.836  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 15:47:27.872 14961 14977 I TestRunner: finished: testMyApplication(com.example.titans_project.MainActivityTest)
