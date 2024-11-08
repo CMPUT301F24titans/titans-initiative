@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,20 +25,15 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
   public final Button buttonReturn;
 
   @NonNull
-  public final LinearLayout buttonReturnHome;
-
-  @NonNull
   public final ListView listviewEvents;
 
   @NonNull
   public final TextView title;
 
   private FragmentMyApplicationsBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button buttonReturn, @NonNull LinearLayout buttonReturnHome,
-      @NonNull ListView listviewEvents, @NonNull TextView title) {
+      @NonNull Button buttonReturn, @NonNull ListView listviewEvents, @NonNull TextView title) {
     this.rootView = rootView;
     this.buttonReturn = buttonReturn;
-    this.buttonReturnHome = buttonReturnHome;
     this.listviewEvents = listviewEvents;
     this.title = title;
   }
@@ -77,12 +71,6 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.button_return_home;
-      LinearLayout buttonReturnHome = ViewBindings.findChildViewById(rootView, id);
-      if (buttonReturnHome == null) {
-        break missingId;
-      }
-
       id = R.id.listview_events;
       ListView listviewEvents = ViewBindings.findChildViewById(rootView, id);
       if (listviewEvents == null) {
@@ -96,7 +84,7 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
       }
 
       return new FragmentMyApplicationsBinding((RelativeLayout) rootView, buttonReturn,
-          buttonReturnHome, listviewEvents, title);
+          listviewEvents, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
