@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 profile.setClass(MainActivity.this, ProfileView.class);
+
                 startActivity(profile);
             }
         });
@@ -169,7 +170,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void performAnonymousSignIn() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
         if (currentUser == null) {
             // No current user, attempt to sign in anonymously
             mAuth.signInAnonymously()
@@ -193,8 +193,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Existing user detected
             Log.d(TAG, "User already signed in");
-            Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(),
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(), Toast.LENGTH_SHORT).show();
         }
     }
 

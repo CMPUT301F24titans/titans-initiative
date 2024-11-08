@@ -53,6 +53,7 @@ public class ProfileView extends AppCompatActivity {
         TextView initials = findViewById(R.id.textview_initials);
         initials.setText("JF");
 
+
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +88,7 @@ public class ProfileView extends AppCompatActivity {
                         DocumentSnapshot user = task.getResult();
                         // Prepare data to update in a HashMap
                         HashMap<String, Object> userData = new HashMap<>();
-                        userData.put("name", nameInput);
+                        userData.put("full_name", nameInput);
                         userData.put("email", emailInput);
                         userData.put("phone_number", phoneInput);
                         userData.put("facility", facilityInput);
