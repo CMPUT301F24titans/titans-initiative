@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Switch;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class BrowseContentView extends AppCompatActivity {
     private ArrayList<User> profileDataList = new ArrayList<>();
     private EventsArrayAdapter eventArrayAdapter;
     private ProfilesArrayAdapter profileArrayAdapter;
+    private Switch back_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,9 @@ public class BrowseContentView extends AppCompatActivity {
 
         // Initialize buttons and listview
         Button browse_events = findViewById(R.id.eventsButton);
-        Button return_previous = findViewById(R.id.returnButton);
         Button browse_profiles = findViewById(R.id.profilesButton);
         contentList = findViewById(R.id.browse_content_listview);  // Ensure this ID matches the one in your XML
+        back_user = findViewById(R.id.back_user);
 
         // Array adapters
         profileArrayAdapter = new ProfilesArrayAdapter(this, profileDataList);
@@ -74,7 +76,6 @@ public class BrowseContentView extends AppCompatActivity {
                                 String created_date = doc.getString("created_date");
                                 String event_date = doc.getString("event_date");
                                 String description = doc.getString("description");
-
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
                                 eventDataList.add(new Event(event_name, organizer, created_date, event_date, description));
                             }
@@ -85,7 +86,7 @@ public class BrowseContentView extends AppCompatActivity {
             }
         });
 
-        return_previous.setOnClickListener(new View.OnClickListener() {
+        back_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

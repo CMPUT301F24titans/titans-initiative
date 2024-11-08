@@ -24,6 +24,7 @@ id action_settings
 id admin_mode
 id application_button
 id author
+id back_user
 id browse_content_listview
 id button_apply
 id button_create_profile
@@ -55,7 +56,6 @@ id profile_button
 id profile_pic
 id profilesButton
 id result_title
-id returnButton
 id scan_button
 id textView2
 id textview_initials

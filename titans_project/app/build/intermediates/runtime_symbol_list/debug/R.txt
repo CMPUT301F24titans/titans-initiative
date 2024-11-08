@@ -3298,6 +3298,7 @@ int id auto 0x7f08005f
 int id autoComplete 0x7f080060
 int id autoCompleteToEnd 0x7f080061
 int id autoCompleteToStart 0x7f080062
+int id back_user 0x7f080235
 int id barrier 0x7f080063
 int id baseline 0x7f080064
 int id beginOnFirstDraw 0x7f080065
@@ -3614,7 +3615,6 @@ int id ratio 0x7f08019b
 int id rectangles 0x7f08019c
 int id report_drawn 0x7f08019d
 int id result_title 0x7f08019e
-int id returnButton 0x7f08019f
 int id reverseSawtooth 0x7f0801a0
 int id right 0x7f0801a1
 int id rightToLeft 0x7f0801a2

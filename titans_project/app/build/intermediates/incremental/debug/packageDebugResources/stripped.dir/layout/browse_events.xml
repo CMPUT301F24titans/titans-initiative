@@ -1,9 +1,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
-    android:padding="16dp">
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homepage"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp" />
+
+        <!-- Spacer to push the Switch to the right -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Switch
+            android:id="@+id/back_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Mode"
+            android:textColor="@color/light_gray"
+            tools:ignore="UseSwitchCompatOrMaterialXml"
+            android:checked="true"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"/>
+    </LinearLayout>
     <!--  Horizontal Layout for Title and Buttons  -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +48,8 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"/>
         <!--  Button Layout  -->
         <LinearLayout android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,13 +109,4 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-    <!--  Return to Default User App Button  -->
-    <Button
-        android:id="@+id/returnButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/dark_gray"
-        android:text="Return to Default User App"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="16dp"/>
 </LinearLayout>
