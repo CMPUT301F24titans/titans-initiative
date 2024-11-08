@@ -1,2 +1,0 @@
-com.example.titans_project.test:style/WhiteBackgroundTheme = 0x7f010001
-com.example.titans_project.test:style/WhiteBackgroundDialogTheme = 0x7f010000
