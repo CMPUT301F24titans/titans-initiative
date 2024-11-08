@@ -38,6 +38,7 @@ id edit_text_phone_number
 id event_date
 id event_description
 id event_name
+id event_pic
 id leave_button
 id listview_events
 id nav_graph

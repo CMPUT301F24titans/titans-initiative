@@ -60,7 +60,7 @@
                 android:layout_height="200dp">
 
                 <ImageView
-                    android:id="@+id/profile_pic"
+                    android:id="@+id/event_pic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:srcCompat="@android:drawable/sym_def_app_icon" />

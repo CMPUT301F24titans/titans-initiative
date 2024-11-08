@@ -3397,6 +3397,7 @@ int id escape 0x7f0800cc
 int id event_date 0x7f0800cd
 int id event_description 0x7f0800ce
 int id event_name 0x7f0800cf
+int id event_pic 0x7f080225
 int id exitUntilCollapsed 0x7f0800d0
 int id expand_activities_button 0x7f0800d1
 int id expanded_menu 0x7f0800d2

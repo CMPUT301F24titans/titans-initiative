@@ -3398,6 +3398,7 @@ id escape
 id event_date
 id event_description
 id event_name
+id event_pic
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu

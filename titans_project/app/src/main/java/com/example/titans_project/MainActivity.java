@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 my_applications.setClass(MainActivity.this, MyApplicationsView.class);
+    //            my_applications.putExtra("Event", )
                 startActivity(my_applications);
             }
         });
