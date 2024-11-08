@@ -4,9 +4,10 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -18,28 +19,37 @@ import java.lang.String;
 
 public final class QrPopupBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
-  public final TextView closeQrPopup;
+  public final View blurBackground;
 
   @NonNull
-  public final ImageView qrCodeImage;
+  public final Button closeButton;
+
+  @NonNull
+  public final ImageView qrImageView;
+
+  @NonNull
+  public final LinearLayout qrPopupContainer;
 
   @NonNull
   public final ImageView shareQrButton;
 
-  private QrPopupBinding(@NonNull LinearLayout rootView, @NonNull TextView closeQrPopup,
-      @NonNull ImageView qrCodeImage, @NonNull ImageView shareQrButton) {
+  private QrPopupBinding(@NonNull FrameLayout rootView, @NonNull View blurBackground,
+      @NonNull Button closeButton, @NonNull ImageView qrImageView,
+      @NonNull LinearLayout qrPopupContainer, @NonNull ImageView shareQrButton) {
     this.rootView = rootView;
-    this.closeQrPopup = closeQrPopup;
-    this.qrCodeImage = qrCodeImage;
+    this.blurBackground = blurBackground;
+    this.closeButton = closeButton;
+    this.qrImageView = qrImageView;
+    this.qrPopupContainer = qrPopupContainer;
     this.shareQrButton = shareQrButton;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -64,15 +74,27 @@ public final class QrPopupBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.closeQrPopup;
-      TextView closeQrPopup = ViewBindings.findChildViewById(rootView, id);
-      if (closeQrPopup == null) {
+      id = R.id.blurBackground;
+      View blurBackground = ViewBindings.findChildViewById(rootView, id);
+      if (blurBackground == null) {
         break missingId;
       }
 
-      id = R.id.qrCodeImage;
-      ImageView qrCodeImage = ViewBindings.findChildViewById(rootView, id);
-      if (qrCodeImage == null) {
+      id = R.id.closeButton;
+      Button closeButton = ViewBindings.findChildViewById(rootView, id);
+      if (closeButton == null) {
+        break missingId;
+      }
+
+      id = R.id.qrImageView;
+      ImageView qrImageView = ViewBindings.findChildViewById(rootView, id);
+      if (qrImageView == null) {
+        break missingId;
+      }
+
+      id = R.id.qrPopupContainer;
+      LinearLayout qrPopupContainer = ViewBindings.findChildViewById(rootView, id);
+      if (qrPopupContainer == null) {
         break missingId;
       }
 
@@ -82,7 +104,8 @@ public final class QrPopupBinding implements ViewBinding {
         break missingId;
       }
 
-      return new QrPopupBinding((LinearLayout) rootView, closeQrPopup, qrCodeImage, shareQrButton);
+      return new QrPopupBinding((FrameLayout) rootView, blurBackground, closeButton, qrImageView,
+          qrPopupContainer, shareQrButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

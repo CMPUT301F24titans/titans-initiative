@@ -10,6 +10,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Activity for creating or editing an event.
+ * Allows users to input event details, validate input, and save the event to Firestore.
+ */
 public class CreateEventView extends AppCompatActivity {
 
     private EditText eventNameEditText, organizerNameEditText, eventDetailsEditText, eventDateEditText, eventTimeEditText;
@@ -17,6 +26,11 @@ public class CreateEventView extends AppCompatActivity {
     private Button submitButton;
     private int eventIndex = -1;  // Used to identify an existing event for editing
 
+    /**
+     * Called when the activity is created. Initializes the UI elements and sets up listeners.
+     *
+     * @param savedInstanceState The saved instance state of the activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +70,10 @@ public class CreateEventView extends AppCompatActivity {
         });
     }
 
-    // Method to validate input and submit event data
+    /**
+     * Validates input fields and submits the event data if all validations pass.
+     * Shows appropriate Toast messages for invalid inputs.
+     */
     private void validateAndSubmitEvent() {
         String eventName = eventNameEditText.getText().toString().trim();
         String organizerName = organizerNameEditText.getText().toString().trim();
@@ -81,15 +98,30 @@ public class CreateEventView extends AppCompatActivity {
         } else {
             // All validations passed, send back the data
             sendEventDataBack(eventName, organizerName, eventDetails, eventDate, eventTime);
+
+            // Add the event to Firestore
+            saveEventToFirestore(eventName, organizerName, eventDetails, eventDate, eventTime);
         }
     }
 
-    // Method to show toast messages
+    /**
+     * Displays a Toast message.
+     *
+     * @param message The message to display in the Toast.
+     */
     private void showToast(String message) {
         Toast.makeText(CreateEventView.this, message, Toast.LENGTH_SHORT).show();
     }
 
-    // Method to send the event data back to the calling activity (EventDetailsView or any other)
+    /**
+     * Sends the event data back to the calling activity (e.g., CreatedEventsView or EventDetailsView).
+     *
+     * @param eventName     The name of the event.
+     * @param organizerName The name of the event's organizer.
+     * @param eventDetails  The details of the event.
+     * @param eventDate     The date of the event.
+     * @param eventTime     The time of the event.
+     */
     private void sendEventDataBack(String eventName, String organizerName, String eventDetails, String eventDate, String eventTime) {
         Intent resultIntent = new Intent();
         resultIntent.putExtra("eventName", eventName);
@@ -105,5 +137,37 @@ public class CreateEventView extends AppCompatActivity {
 
         setResult(RESULT_OK, resultIntent);
         finish();  // Close CreateEventView and return to the calling activity
+    }
+
+    /**
+     * Saves the event data to Firestore in the "events" collection.
+     *
+     * @param eventName     The name of the event.
+     * @param organizerName The name of the event's organizer.
+     * @param eventDetails  The details of the event.
+     * @param eventDate     The date of the event.
+     * @param eventTime     The time of the event.
+     */
+    private void saveEventToFirestore(String eventName, String organizerName, String eventDetails, String eventDate, String eventTime) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Create a map to store the event data
+        Map<String, Object> eventData = new HashMap<>();
+        eventData.put("event_name", eventName);
+        eventData.put("organizerName", organizerName);
+        eventData.put("eventDetails", eventDetails);
+        eventData.put("eventDate", eventDate);
+        eventData.put("eventTime", eventTime);
+
+        // Save the event data to Firestore (in the "events" collection)
+        db.collection("events")
+                .document(eventName + organizerName + eventDate)  // Using a unique event ID
+                .set(eventData)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(CreateEventView.this, "Event saved successfully!", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(CreateEventView.this, "Failed to save event: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 }

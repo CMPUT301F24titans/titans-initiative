@@ -1,77 +1,45 @@
 package com.example.titans_project;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.EventListener;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * This is a class that defines the main activity of the app
- */
 public class MainActivity extends AppCompatActivity {
 
     private Button profile_button, application_button, created_events_button;
     private FirebaseAuth mAuth;
     private ListView eventList;
     private ArrayList<Event> eventsdataList;
-    private ArrayList<User> usersdataList;
     private EventsArrayAdapter eventsArrayAdapter;
-    Intent profile = new Intent();
-    Intent my_applications = new Intent();
-    Intent event_detail = new Intent();
-    Intent admin = new Intent();
-    private Event testEvent, fakeEvent;
-    private User testUser, fakeUser;
+    private Intent profile = new Intent();
+    private Intent my_applications = new Intent();
+    private Intent event_detail = new Intent();
+    private Intent admin = new Intent();
     private FirebaseFirestore db;
     private CollectionReference eventRef, userRef;
-    private static final String TAG = "AnonymousAuthActivity";
+    private static final String TAG = "MainActivity";
 
-    /**
-     * This runs after the onStart function above
-     *
-     * @param savedInstanceState
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_my_events); // Set the layout for My Events page
+        setContentView(R.layout.fragment_my_events); // Ensure this layout exists
 
         // Initialize Firebase
         FirebaseApp.initializeApp(this);
@@ -84,64 +52,84 @@ public class MainActivity extends AppCompatActivity {
         eventRef = db.collection("events");
         userRef = db.collection("user");
 
+        // Initialize UI components
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
         application_button = findViewById(R.id.application_button);
-        created_events_button = findViewById(R.id.created_events_button); // Find the Created Events button
+        created_events_button = findViewById(R.id.created_events_button); // Ensure this ID exists
 
-        testEvent = new Event("testEventTitle", "use1", "2024/11/5", "2024/11/8", "nothing1", "picture1");
-        fakeEvent = new Event("fakeEventTitle", "use2", "2055/11/5", "2055/11/8", "nothing2", "picture2");
-        testUser = new User("testBot1", "12345678@ualberta.ca");
-        fakeUser = new User("fakeBot1", "87654321@ualberta.ca");
-
+        // Initialize events list and adapter
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
         eventList.setAdapter(eventsArrayAdapter);
-        addEvent(testEvent);
-        addEvent(fakeEvent);
 
-        usersdataList =  new ArrayList<>();
-
-        // User clicks on the Profile button
-        profile_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                profile.setClass(MainActivity.this, ProfileView.class);
-                startActivity(profile);
-            }
+        // Set OnClickListeners for buttons
+        profile_button.setOnClickListener(view -> {
+            profile.setClass(MainActivity.this, ProfileView.class);
+            startActivity(profile);
         });
 
-        // User clicks on the Applications button
-        application_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                my_applications.setClass(MainActivity.this, MyApplicationsView.class);
-                startActivity(my_applications);
-            }
+        application_button.setOnClickListener(view -> {
+            my_applications.setClass(MainActivity.this, MyApplicationsView.class);
+            startActivity(my_applications);
         });
 
-        // User clicks on the event in events list
-        eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                event_detail.setClass(MainActivity.this, EventDetailsView.class);
-                event_detail.putExtra("event name", eventsdataList.get(position).getName());
-                event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizer());
-                event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
-                event_detail.putExtra("event date", eventsdataList.get(position).getEvent_date());
-                startActivity(event_detail);
+        created_events_button.setOnClickListener(view -> {
+            Intent createdEvents = new Intent(MainActivity.this, CreatedEventsView.class);
+            startActivity(createdEvents);
+        });
+
+        // Set OnItemClickListener for event list
+        eventList.setOnItemClickListener((adapterView, view, position, l) -> {
+            event_detail.setClass(MainActivity.this, EventDetailsView.class);
+            event_detail.putExtra("event name", eventsdataList.get(position).getName());
+            event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizer());
+            event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
+            event_detail.putExtra("event date", eventsdataList.get(position).getEvent_date());
+            startActivity(event_detail);
+        });
+
+        // Load events from Firestore
+        loadEventsFromFirestore();
+    }
+
+    // Load events from Firestore
+    private void loadEventsFromFirestore() {
+        eventRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot querySnapshot = task.getResult();
+                if (querySnapshot != null && !querySnapshot.isEmpty()) {
+                    for (DocumentSnapshot document : querySnapshot.getDocuments()) {
+                        String eventName = document.getString("Event Name");
+                        String organizer = document.getString("Organizer");
+                        String createdDate = document.getString("Event Created Date");
+                        String eventDate = document.getString("Event Date");
+                        String description = document.getString("Description");
+                        String picture = document.getString("Picture");
+
+                        Event event = new Event(eventName, organizer, createdDate, eventDate, description, picture);
+                        addEvent(event);
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "No events available.", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Log.e(TAG, "Error getting events: ", task.getException());
             }
         });
     }
 
-    /**
-     * This used for add event into events list and also add into firebase
-     * @param event
-     *      The event want to add to event list
-     */
-    private void addEvent(Event event){
+    // Add event to list and Firestore
+    private void addEvent(Event event) {
+        if (event == null || event.getName() == null || event.getOrganizer() == null) {
+            Log.e(TAG, "Invalid event data");
+            return;
+        }
+
         eventsdataList.add(event);
         eventsArrayAdapter.notifyDataSetChanged();
+
+        // Prepare data for Firestore
         HashMap<String, String> eventdata = new HashMap<>();
         eventdata.put("Event Name", event.getName());
         eventdata.put("Organizer", event.getOrganizer());
@@ -149,95 +137,55 @@ public class MainActivity extends AppCompatActivity {
         eventdata.put("Event Date", event.getEvent_date());
         eventdata.put("Description", event.getDescription());
         eventdata.put("Picture", event.getPicture());
-        eventdata.put("Event ID", event.getName()+event.getOrganizer()+event.getEvent_date());
-        eventRef.document(event.getName()).set(eventdata);
+        eventdata.put("Event ID", event.getName() + event.getOrganizer() + event.getEvent_date());
+
+        // Save to Firestore
+        eventRef.document(event.getName()).set(eventdata)
+                .addOnSuccessListener(aVoid -> Log.d(TAG, "Event successfully written to Firestore"))
+                .addOnFailureListener(e -> Log.e(TAG, "Error writing event to Firestore", e));
     }
 
-    /**
-     * This performs an anonymous sign-in for new users and detects returning users
-     */
+    // Perform anonymous sign-in for new users
     private void performAnonymousSignIn() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser == null) {
             // No current user, attempt to sign in anonymously
             mAuth.signInAnonymously()
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            // successful anonymous first time sign in
-                            if (task.isSuccessful()) {
-                                Log.d(TAG, "signInAnonymously:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                createProfile(user);  // store user in Firebase
-                            }
-                            // unsuccessful anonymous sign in
-                            else {
-                                Log.w(TAG, "signInAnonymously:failure", task.getException());
-                                Toast.makeText(MainActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
-                            }
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "signInAnonymously:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            createProfile(user);  // Store user in Firebase
+                        } else {
+                            Log.w(TAG, "signInAnonymously:failure", task.getException());
+                            Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                         }
                     });
         } else {
             // Existing user detected
             Log.d(TAG, "User already signed in");
-            Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(),
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(), Toast.LENGTH_SHORT).show();
         }
     }
 
-    /**
-     * This creates a user profile in Firebase
-     */
-    public void createProfile(FirebaseUser user){
+    // Create a user profile in Firestore
+    public void createProfile(FirebaseUser user) {
         userRef = db.collection("user");
-        // Create HashMap to store user's information
         HashMap<String, Object> userData = new HashMap<>();
-        userData.put("full_name","");
-        userData.put("email","");
-        userData.put("phone_number","");
-        userData.put("facility","");
+        userData.put("full_name", "");
+        userData.put("email", "");
+        userData.put("phone_number", "");
+        userData.put("facility", "");
         userData.put("notifications", Boolean.FALSE);
-        // Create nested HashMap to store user's events
-        HashMap<String, Object> eventData = new HashMap<>();  // empty initially
+
+        HashMap<String, Object> eventData = new HashMap<>();  // Empty initially
         userData.put("Events", eventData);
+
         // Store in Firebase
-        userRef.document(user.getUid()).set(userData);
-        // User clicks on the My Applications button
-        application_button.setOnClickListener(view -> {
-            Intent myApplications = new Intent(MainActivity.this, MyApplicationsView.class);
-            startActivity(myApplications);
-        });
-
-        // User clicks on the Created Events button
-        created_events_button.setOnClickListener(view -> {
-            // Open the Created Events Activity when the button is clicked
-            Intent createdEvents = new Intent(MainActivity.this, CreatedEventsView.class);
-            startActivity(createdEvents);
-        });
-    }
-
-    /**
-     * Optionally fetch user data from Firestore and display it.
-     */
-    private void fetchUserData() {
-        String userId = mAuth.getCurrentUser().getUid();
-
-        db.collection("users").document(userId)
-                .get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        // Example: Show the user’s name (assuming the field is "username")
-                        String username = documentSnapshot.getString("username");
-                        Toast.makeText(MainActivity.this, "Welcome back, " + username, Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(MainActivity.this, "No user data found.", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(MainActivity.this, "Failed to fetch user data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+        userRef.document(user.getUid()).set(userData)
+                .addOnSuccessListener(aVoid -> Log.d(TAG, "User profile created in Firestore"))
+                .addOnFailureListener(e -> Log.e(TAG, "Error creating user profile in Firestore", e));
     }
 
     @Override
@@ -248,6 +196,14 @@ public class MainActivity extends AppCompatActivity {
         if (mAuth.getCurrentUser() == null) {
             // If not logged in, show a message or disable buttons
             Toast.makeText(this, "You are not logged in. Please log in to access the content.", Toast.LENGTH_LONG).show();
+            profile_button.setEnabled(false);
+            application_button.setEnabled(false);
+            created_events_button.setEnabled(false);
+        } else {
+            // Enable buttons if logged in
+            profile_button.setEnabled(true);
+            application_button.setEnabled(true);
+            created_events_button.setEnabled(true);
         }
     }
 }

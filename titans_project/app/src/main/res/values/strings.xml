@@ -45,4 +45,8 @@
     <string name="created_events">Created Events</string>
     <string name="facility">Facility</string>
     <string name="browse_content">Browse Content</string>
+
+    <!-- Added missing strings -->
+    <string name="back_icon">Back</string> <!-- Add this string if it's for a back navigation button -->
+    <string name="add_event">Add Event</string> <!-- Add this string for event addition functionality -->
 </resources>

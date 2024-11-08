@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-    // Use the correct Kotlin DSL syntax for dependencies
+    // Android Libraries
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
@@ -44,13 +44,19 @@ dependencies {
     implementation(libs.navigation.ui)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.auth)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+
+    // Test Libraries
+    testImplementation(libs.junit) // JUnit for testing
+    testImplementation("org.robolectric:robolectric:4.8") // Robolectric for Android unit tests
+    testImplementation("org.mockito:mockito-core:4.6.1") // Mockito for mocking dependencies
+
+    // Android Test Libraries
+    androidTestImplementation(libs.ext.junit) // JUnit for instrumentation tests
+    androidTestImplementation(libs.espresso.core) // Espresso for UI testing
 
     // Firebase BoM (platform version for Firebase SDKs)
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
 
     // ZXing library for QR code generation
-    implementation("com.google.zxing:core:3.5.0")  // Correct Kotlin DSL syntax
+    implementation("com.google.zxing:core:3.5.0")  // ZXing for QR code generation
 }

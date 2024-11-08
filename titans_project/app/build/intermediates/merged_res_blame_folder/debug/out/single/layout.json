@@ -1,62 +1,66 @@
 [
     {
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_profile.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/content_my_application.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/content_my_application.xml"
+    },
+    {
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_view_event_details.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_view_event_details.xml"
+    },
+    {
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/browse_content.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/browse_content.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_created_events.xml",
         "source": "com.example.titans_project.app-main-54:/layout/fragment_created_events.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/qr_popup.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/qr_popup.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/qr_popup.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/qr_popup.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/content_my_application.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/content_my_application.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_application_form.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_application_form.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_events.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_my_events.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_created_events.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_created_events.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_final_result.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_final_result.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_event_details.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_event_details.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_application_form.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_application_form.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_edit_event.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_edit_event.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_event_item.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_event_item.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_final_result.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_final_result.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_applications.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_my_applications.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_events.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_my_events.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_edit_event.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_edit_event.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_create_event.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_create_event.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_create_event.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_create_event.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/content_my_events.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/content_my_events.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_view_event_details.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_view_event_details.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_event_item.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_event_item.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_profile.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_profile.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/browse_content.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/browse_content.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/content_my_events.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/content_my_events.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_event_details.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_event_details.xml"
+        "merged": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_applications.xml",
+        "source": "/Users/abisolaerinwusi/.gradle/daemon/8.7/com.example.titans_project.app-main-54:/layout/fragment_my_applications.xml"
     }
 ]

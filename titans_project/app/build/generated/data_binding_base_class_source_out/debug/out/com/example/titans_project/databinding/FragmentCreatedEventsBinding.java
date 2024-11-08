@@ -4,54 +4,81 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.titans_project.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentCreatedEventsBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final ImageView backIcon;
 
   @NonNull
+  public final View blurBackground;
+
+  @NonNull
+  public final Button closeButton;
+
+  @NonNull
   public final LinearLayout eventsContainer;
 
   @NonNull
-  public final AppCompatImageButton fabAddEvent;
+  public final FloatingActionButton fabAddEvent;
 
   @NonNull
   public final TextView noEventsText;
 
   @NonNull
+  public final ImageView qrImageView;
+
+  @NonNull
+  public final LinearLayout qrPopupContainer;
+
+  @NonNull
+  public final FrameLayout qrPopupLayout;
+
+  @NonNull
+  public final ImageView shareQrButton;
+
+  @NonNull
   public final TextView title;
 
-  private FragmentCreatedEventsBinding(@NonNull RelativeLayout rootView,
-      @NonNull ImageView backIcon, @NonNull LinearLayout eventsContainer,
-      @NonNull AppCompatImageButton fabAddEvent, @NonNull TextView noEventsText,
-      @NonNull TextView title) {
+  private FragmentCreatedEventsBinding(@NonNull LinearLayout rootView, @NonNull ImageView backIcon,
+      @NonNull View blurBackground, @NonNull Button closeButton,
+      @NonNull LinearLayout eventsContainer, @NonNull FloatingActionButton fabAddEvent,
+      @NonNull TextView noEventsText, @NonNull ImageView qrImageView,
+      @NonNull LinearLayout qrPopupContainer, @NonNull FrameLayout qrPopupLayout,
+      @NonNull ImageView shareQrButton, @NonNull TextView title) {
     this.rootView = rootView;
     this.backIcon = backIcon;
+    this.blurBackground = blurBackground;
+    this.closeButton = closeButton;
     this.eventsContainer = eventsContainer;
     this.fabAddEvent = fabAddEvent;
     this.noEventsText = noEventsText;
+    this.qrImageView = qrImageView;
+    this.qrPopupContainer = qrPopupContainer;
+    this.qrPopupLayout = qrPopupLayout;
+    this.shareQrButton = shareQrButton;
     this.title = title;
   }
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -82,6 +109,18 @@ public final class FragmentCreatedEventsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.blurBackground;
+      View blurBackground = ViewBindings.findChildViewById(rootView, id);
+      if (blurBackground == null) {
+        break missingId;
+      }
+
+      id = R.id.closeButton;
+      Button closeButton = ViewBindings.findChildViewById(rootView, id);
+      if (closeButton == null) {
+        break missingId;
+      }
+
       id = R.id.eventsContainer;
       LinearLayout eventsContainer = ViewBindings.findChildViewById(rootView, id);
       if (eventsContainer == null) {
@@ -89,7 +128,7 @@ public final class FragmentCreatedEventsBinding implements ViewBinding {
       }
 
       id = R.id.fab_add_event;
-      AppCompatImageButton fabAddEvent = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton fabAddEvent = ViewBindings.findChildViewById(rootView, id);
       if (fabAddEvent == null) {
         break missingId;
       }
@@ -100,14 +139,39 @@ public final class FragmentCreatedEventsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.qrImageView;
+      ImageView qrImageView = ViewBindings.findChildViewById(rootView, id);
+      if (qrImageView == null) {
+        break missingId;
+      }
+
+      id = R.id.qrPopupContainer;
+      LinearLayout qrPopupContainer = ViewBindings.findChildViewById(rootView, id);
+      if (qrPopupContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.qrPopupLayout;
+      FrameLayout qrPopupLayout = ViewBindings.findChildViewById(rootView, id);
+      if (qrPopupLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.shareQrButton;
+      ImageView shareQrButton = ViewBindings.findChildViewById(rootView, id);
+      if (shareQrButton == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
         break missingId;
       }
 
-      return new FragmentCreatedEventsBinding((RelativeLayout) rootView, backIcon, eventsContainer,
-          fabAddEvent, noEventsText, title);
+      return new FragmentCreatedEventsBinding((LinearLayout) rootView, backIcon, blurBackground,
+          closeButton, eventsContainer, fabAddEvent, noEventsText, qrImageView, qrPopupContainer,
+          qrPopupLayout, shareQrButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
