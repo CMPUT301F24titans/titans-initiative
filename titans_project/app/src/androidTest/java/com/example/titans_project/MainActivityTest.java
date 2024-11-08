@@ -56,5 +56,22 @@ public class MainActivityTest {
         onView(withText("Profile")).check(matches(isDisplayed()));
     }
 
+    /**
+     * This is the test of switch to my application page
+     */
+    @Test
+    public void testMyApplication(){
+        // Click on the my_application button
+        onView(withId(R.id.application_button)).perform(click());
+        // Check is switch to the my application page
+        onView(withText("Applications")).check(matches(isDisplayed()));
+    }
 
+    /**
+     * This is the test of lick on the event in events list
+     */
+    @Test
+    public void testEventDetail(){
+
+    }
 }
