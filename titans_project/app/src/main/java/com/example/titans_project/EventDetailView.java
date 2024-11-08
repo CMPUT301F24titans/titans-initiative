@@ -14,8 +14,7 @@ public class EventDetailView extends AppCompatActivity {
     private Button return_button;
     private TextView name, organizer, description, date;
     private ImageView picture;
-    private int event_image;
-    Intent upload = new Intent();
+    private int event_image=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +37,21 @@ public class EventDetailView extends AppCompatActivity {
         picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent upload = new Intent(Intent.ACTION_GET_CONTENT);
+                upload.addCategory(Intent.CATEGORY_OPENABLE);
                 upload.setType("image/*");
-                startActivityForResult(upload, event_image);
+                startActivityForResult(upload, 1);
 
+
+                System.out.println("\n");
+                System.out.println("here is the picture data");
+                System.out.println(event_image);
+                System.out.println(upload.getData());
+                System.out.println("\n");
             }
         });
+
+
 
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,5 +59,9 @@ public class EventDetailView extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void change_picture(){
+
     }
 }
