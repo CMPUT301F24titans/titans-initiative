@@ -1,20 +1,29 @@
 package com.example.titans_project;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.StorageReference;
 
 public class EventDetailView extends AppCompatActivity {
     private Button return_button;
     private TextView name, organizer, description, date;
     private ImageView picture;
     private int event_image=0;
+    private Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,24 +43,24 @@ public class EventDetailView extends AppCompatActivity {
         description.setText(getIntent().getStringExtra("event description"));
         date.setText(getIntent().getStringExtra("event date"));
 
+
+
         picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent upload = new Intent(Intent.ACTION_GET_CONTENT);
-                upload.addCategory(Intent.CATEGORY_OPENABLE);
-                upload.setType("image/*");
-                startActivityForResult(upload, 1);
+                Intent event_image = new Intent(Intent.ACTION_GET_CONTENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(event_image, 1);
 
 
                 System.out.println("\n");
                 System.out.println("here is the picture data");
                 System.out.println(event_image);
-                System.out.println(upload.getData());
+                System.out.println(event_image.getData());
                 System.out.println("\n");
+
+
             }
         });
-
-
 
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +70,16 @@ public class EventDetailView extends AppCompatActivity {
         });
     }
 
-    private void change_picture(){
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+            uri = data.getData();
+            picture.setImageURI(uri);
 
+            System.out.println("\n");
+            System.out.println("here is the picture data");
+            System.out.println(uri);
+        }
     }
 }

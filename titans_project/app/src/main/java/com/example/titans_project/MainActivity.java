@@ -28,6 +28,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     Intent profile = new Intent();
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
-    private Event testEvent, fakeEvent;
+    private Event testEvent, fakeEvent, viewEvent;
     private User testUser, fakeUser;
     private FirebaseFirestore db;
     private CollectionReference eventRef, userRef;
@@ -84,18 +85,66 @@ public class MainActivity extends AppCompatActivity {
         profile_button = findViewById(R.id.profile_button);
         application_button = findViewById(R.id.application_button);
 
-        testEvent = new Event("testEventTitle", "use1", "2024/11/5", "2024/11/8", "nothing1", "picture1");
-        fakeEvent = new Event("fakeEventTitle", "use2", "2055/11/5", "2055/11/8", "nothing2", "picture2");
-        testUser = new User("testBot1", "12345678@ualberta.ca");
-        fakeUser = new User("fakeBot1", "87654321@ualberta.ca");
-
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
         eventList.setAdapter(eventsArrayAdapter);
-        addEvent(testEvent);
-        addEvent(fakeEvent);
-
         usersdataList =  new ArrayList<>();
+
+        db.collection("events")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println(task.getResult());
+                                //System.out.println(document.getString("organizer"));
+                                //System.out.println(document.getString("created_date"));
+//                                viewEvent.setName(document.getString("event_name"));
+//                                viewEvent.setOrganizer(document.getString("organizer"));
+//                                viewEvent.setCreated_date(document.getString("created_date"));
+//                                viewEvent.setEvent_date(document.getString("event_date"));
+//                                viewEvent.setDescription(document.getString("description"));
+//                                viewEvent.setPicture("picture");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println(viewEvent.getName());
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+                                System.out.println("\n");
+//                                eventsdataList.add(viewEvent);
+//                                eventsArrayAdapter.notifyDataSetChanged();
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
 
         // User clicks on the Profile button
         profile_button.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 my_applications.setClass(MainActivity.this, MyApplicationsView.class);
-    //            my_applications.putExtra("Event", )
                 startActivity(my_applications);
             }
         });
@@ -195,8 +243,11 @@ public class MainActivity extends AppCompatActivity {
         userData.put("facility","");
         userData.put("notifications", Boolean.FALSE);
         // Create nested HashMap to store user's events
-        HashMap<String, Object> eventData = new HashMap<>();  // empty initially
-        userData.put("Events", eventData);
+        HashMap<String, Object> my_eventData = new HashMap<>();
+        my_eventData.put("event name", "1");
+        HashMap<String, Object> applciate_eventData = new HashMap<>();  // empty initially
+        userData.put("My Events", my_eventData);
+        userData.put("Applicate Events", applciate_eventData);
         // Store in Firebase
         userRef.document(user.getUid()).set(userData);
     }

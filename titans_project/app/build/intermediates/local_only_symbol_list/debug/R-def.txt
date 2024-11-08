@@ -43,6 +43,7 @@ id event_pic
 id imageView
 id leave_button
 id listview_events
+id my_application_title
 id nav_graph
 id no_button
 id notification_icon
