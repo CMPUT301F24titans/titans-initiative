@@ -1420,6 +1420,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -2254,6 +2258,8 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -3111,6 +3117,9 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_other_sign_in
+drawable ic_passkey
+drawable ic_password
 drawable ic_search_black_24
 drawable indeterminate_static
 drawable m3_avd_hide_password
@@ -3187,6 +3196,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable solid_color_background__blue_
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3241,7 +3251,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id account_type_spinner
 id actionDown
 id actionDownUp
 id actionUp
@@ -3300,14 +3309,18 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id buttonPanel
-id button_add_profile_pic
 id button_apply
 id button_create_profile
 id button_edit_profile_pic
 id button_return
-id button_return_home
 id button_save_changes
+id button_toolbar
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3344,6 +3357,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id created_events_button
 id currentState
 id custom
 id customPanel
@@ -3385,6 +3399,7 @@ id east
 id edge
 id edit_query
 id edit_text_email
+id edit_text_facility
 id edit_text_full_name
 id edit_text_id
 id edit_text_phone_number
@@ -3440,6 +3455,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3605,6 +3621,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scan_button
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3695,6 +3712,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textview_initials
 id time
 id title
 id titleDividerNoCustom
@@ -3855,6 +3873,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout content_my_application
 layout content_my_events
 layout custom_dialog
@@ -3873,13 +3893,12 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_appliction_form
-layout fragment_create_profile
-layout fragment_edit_profile
+layout fragment_application_form
 layout fragment_event_details
 layout fragment_final_result
 layout fragment_my_applications
 layout fragment_my_events
+layout fragment_profile
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog
@@ -3977,6 +3996,8 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_settings
+string android_credentials_TYPE_PASSWORD_CREDENTIAL
+string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -4020,8 +4041,10 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string copy_toast_msg
 string create
 string create_profile
+string created_events
 string dest_title
 string edit_remove_profile_pic
 string email
@@ -4036,6 +4059,10 @@ string event_update
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string facility
+string fallback_menu_item_copy_link
+string fallback_menu_item_open_in_browser
+string fallback_menu_item_share_link
 string first_fragment_label
 string full_name
 string gcm_defaultSenderId
@@ -4170,6 +4197,7 @@ string result_describe
 string result_title
 string return_to_homepage
 string save_changes
+string scan
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -4734,6 +4762,7 @@ style Theme_Design_Light
 style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
+style Theme_Hidden
 style Theme_Material3_Dark
 style Theme_Material3_Dark_BottomSheetDialog
 style Theme_Material3_Dark_Dialog
@@ -4811,6 +4840,7 @@ style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
+style Theme_PlayCore_Transparent
 style Theme_Titans_project
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
@@ -5483,3 +5513,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml image_share_filepaths
