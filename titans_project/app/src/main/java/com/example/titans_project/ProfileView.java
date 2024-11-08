@@ -1,6 +1,7 @@
 package com.example.titans_project;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -53,6 +56,36 @@ public class ProfileView extends AppCompatActivity {
         TextView initials = findViewById(R.id.textview_initials);
         initials.setText("JF");
 
+        // Create hashmap to store user's data from Firebase
+        HashMap<String, String> userData= new HashMap<>();
+
+        // User exists
+        if (user != null) {
+            userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            Log.d("Firestore", "Document exists. Data: " + document.getData());
+
+                            // Ensure this runs on the main thread
+                            runOnUiThread(() -> {
+                                name.setText(document.getString("full_name"));
+                                email.setText(document.getString("email"));
+                                phone_number.setText(document.getString("phone_number"));
+                                facility.setText(document.getString("facility"));
+                            });
+                        } else {
+                            Log.d("Firestore", "No document found");
+                        }
+                    } else {
+                        Log.e("Firestore", "Error fetching document", task.getException());
+                    }
+                }
+            });
+
+        }
 
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,13 +104,13 @@ public class ProfileView extends AppCompatActivity {
                 String facilityInput = facility.getText().toString().trim();
 
                 // Validate email
-                if (emailInput.isEmpty() || !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to validate email
+                if (!emailInput.isEmpty() && !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to validate email
                     email.setError("Please enter a valid email address");
                     return; // Don't proceed with the update if validation fails
                 }
 
                 // Validate phone number
-                if (phoneInput.isEmpty() || !phoneInput.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")) {
+                if (!phoneInput.isEmpty() && !phoneInput.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")) {
                     phone_number.setError("Please enter a valid phone number");
                     return; // Don't proceed with the update if validation fails
                 }
