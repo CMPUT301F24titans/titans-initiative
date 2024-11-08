@@ -70,7 +70,7 @@ public class ProfileView extends AppCompatActivity {
                 String facilityInput = facility.getText().toString().trim();
 
                 // Validate email
-                if (emailInput.isEmpty() || !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {
+                if (emailInput.isEmpty() || !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to validate email
                     email.setError("Please enter a valid email address");
                     return; // Don't proceed with the update if validation fails
                 }
