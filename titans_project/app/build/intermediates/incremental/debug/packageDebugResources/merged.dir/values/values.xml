@@ -15,6 +15,7 @@
     <string name="application_form">Application Form</string>
     <string name="application_submit">Submit</string>
     <string name="apply">Apply</string>
+    <string name="browse_content">Browse Content</string>
     <string name="checkbox_application">I accept the terms and conditions</string>
     <string name="checkbox_notifications">Receive notifications from Organizers and Administration</string>
     <string name="create">Create</string>

@@ -44,4 +44,5 @@
     <string name="scan">Scan</string>
     <string name="created_events">Created Events</string>
     <string name="facility">Facility</string>
+    <string name="browse_content">Browse Content</string>
 </resources>
