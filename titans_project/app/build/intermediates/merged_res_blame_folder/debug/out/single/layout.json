@@ -1,50 +1,50 @@
 [
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_my_events.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_my_events.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\browse_events.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\browse_events.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/content_browse_profiles.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/content_browse_profiles.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_my_events.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_my_events.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_browse_events.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_browse_events.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_profile.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_profile.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_browse_profiles.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_browse_profiles.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_final_result.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_final_result.xml"
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/browse_events.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/browse_events.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/content_browse_events.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/content_browse_events.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_my_application.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_my_application.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_event_details.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_event_details.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_application_form.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_application_form.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\browse_events.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\browse_events.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_my_applications.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_my_applications.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_my_application.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_my_application.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_browse_events.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_browse_events.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_application_form.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_application_form.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_final_result.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_final_result.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_my_events.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_my_events.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_event_details.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_event_details.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_my_applications.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_my_applications.xml"
+        "merged": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\fragment_my_events.xml",
+        "source": "C:\\Users\\18729\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_my_events.xml"
     }
 ]
