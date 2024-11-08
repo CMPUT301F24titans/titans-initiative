@@ -36,10 +36,6 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_browse_content.xml.flat",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\browse_content.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\drawable_notification.png.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\drawable\\notification.png"
     },
@@ -64,12 +60,12 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_event_details.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_fragment_application_form.xml.flat",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_application_form.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_content_browse_events.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_browse_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_fragment_application_form.xml.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\fragment_application_form.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_browse_events.xml.flat",
