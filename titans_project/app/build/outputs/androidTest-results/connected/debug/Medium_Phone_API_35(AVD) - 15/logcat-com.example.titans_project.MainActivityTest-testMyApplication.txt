@@ -1,0 +1,176 @@
+11-08 14:54:34.504 10815 10831 I TestRunner: started: testMyApplication(com.example.titans_project.MainActivityTest)
+11-08 14:54:34.505  1251  1264 I SpellCheckerSession: SpellCheckerSession.onClose():676 com.google.android.keyboard.client.delight5.LanguageIdentifier@b85a0a9 is closed
+11-08 14:54:34.513   589  1814 W InputManager-JNI: Input channel object 'b836b7f com.example.titans_project/com.example.titans_project.ProfileView (client)' was disposed without first being removed with the input manager!
+11-08 14:54:34.517   841  1073 D EGL_emulation: app_time_stats: avg=256.07ms min=3.86ms max=2485.99ms count=11
+11-08 14:54:34.521 10815 10831 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-08 14:54:34.537   589   710 I ImeTracker: com.google.android.apps.nexuslauncher:c02eae3d: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 14:54:34.546   589   710 I ImeTracker: com.google.android.apps.nexuslauncher:c02eae3d: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 14:54:34.564   589   889 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@269cd2af does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 14:54:34.577  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=214
+11-08 14:54:34.577  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=214
+11-08 14:54:34.589  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 14:54:34.597  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 14:54:34.601  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 14:54:34.609  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 14:54:34.614  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 14:54:34.599   841  1038 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@117ac0c
+11-08 14:54:34.624   589  1814 W InputManager-JNI: Input channel object '3c7e586 Splash Screen com.example.titans_project.test (client)' was disposed without first being removed with the input manager!
+11-08 14:54:34.630  1132  1132 W SplitSelectStateCtor: Missing session instanceIds
+11-08 14:54:34.631  1132  1132 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+11-08 14:54:34.669  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=216, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
+11-08 14:54:34.676 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@f9fe2c6 in: PRE_ON_CREATE
+11-08 14:54:34.676 10815 10815 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-08 14:54:34.748 10815 10815 D AnonymousAuthActivity: User already signed in
+11-08 14:54:34.760 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@f9fe2c6 in: CREATED
+11-08 14:54:34.764 10815 10815 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.example.titans_project.MainActivity@f9fe2c6
+11-08 14:54:34.770 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@f9fe2c6 in: STARTED
+11-08 14:54:34.772 10815 10815 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.example.titans_project.MainActivity@f9fe2c6
+11-08 14:54:34.776 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@f9fe2c6 in: RESUMED
+11-08 14:54:34.777 10815 10815 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.example.titans_project.MainActivity@f9fe2c6
+11-08 14:54:34.856 10875 10875 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 14:54:35.068   384 10915 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 14:54:35.068   384 10915 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 14:54:35.174   384 10915 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 14:54:35.174   384 10915 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 14:54:35.284   384 10915 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 14:54:35.284   384 10915 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 14:54:35.387   384 10915 W android.hardware.audio@7.1-impl.ranchu: pcmWrite:259 pcm_writei failed with 'cannot read/write stream data: I/O error' (-1)
+11-08 14:54:35.387   384 10915 E android.hardware.audio@7.1-impl.ranchu: pcmWrite:260 failure: -1
+11-08 14:54:35.418   841   841 I Choreographer: Skipped 33 frames!  The application may be doing too much work on its main thread.
+11-08 14:54:35.428   384  3608 D android.hardware.audio@7.1-impl.ranchu: threadLoop: entering standby, frames: 16655104
+11-08 14:54:35.461  1132  1547 D EGL_emulation: app_time_stats: avg=82.70ms min=4.17ms max=595.57ms count=13
+11-08 14:54:35.496  1132  1132 I Choreographer: Skipped 37 frames!  The application may be doing too much work on its main thread.
+11-08 14:54:35.506  1132  1547 D EGL_emulation: app_time_stats: avg=90.27ms min=4.14ms max=674.37ms count=11
+11-08 14:54:35.516  1132  1132 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 14:54:35.521  1132  1132 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+11-08 14:54:35.532   841  1073 D EGL_emulation: app_time_stats: avg=94.15ms min=4.93ms max=757.24ms count=10
+11-08 14:54:35.539 10815 10827 I HWUI    : Davey! duration=717ms; Flags=1, FrameTimelineVsyncId=234015, IntendedVsync=10904237263174, Vsync=10904237263174, InputEventId=0, HandleInputStart=10904244481300, AnimationStart=10904244514000, PerformTraversalsStart=10904244564100, DrawStart=10904882119100, FrameDeadline=10904253929840, FrameInterval=10904244458700, FrameStartTime=16666666, SyncQueued=10904931696800, SyncStart=10904954537700, IssueDrawCommandsStart=10904954894600, SwapBuffers=10904965091700, FrameCompleted=10904977580100, DequeueBufferDuration=51100, QueueBufferDuration=6225000, GpuCompleted=10904977361100, SwapBuffersCompleted=10904977580100, DisplayPresentTime=0, CommandSubmissionCompleted=10904965091700,
+11-08 14:54:35.540 10815 10815 D AnonymousAuthActivity: Event(Orange Monkey, null) fetched
+11-08 14:54:35.541 10815 10815 D AnonymousAuthActivity: Event(fakeEventTitle, null) fetched
+11-08 14:54:35.551 10815 10815 D AnonymousAuthActivity: Event(testEventTitle, null) fetched
+11-08 14:54:35.556   589   612 W ziparchive: Unable to open '/data/app/~~bqoH5gK_9gQY_DuYSu6FYA==/com.example.titans_project-QUvj1pCANrfHS8AXEmjJHA==/base.dm': No such file or directory
+11-08 14:54:35.560 10815 10815 I Choreographer: Skipped 45 frames!  The application may be doing too much work on its main thread.
+11-08 14:54:35.574   841  1073 D EGL_emulation: app_time_stats: avg=133.31ms min=2.49ms max=2302.35ms count=19
+11-08 14:54:35.580   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.MainActivity for user 0: +999ms
+11-08 14:54:35.626   589   710 I ImeTracker: com.example.titans_project:d32dd165: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 14:54:35.628   589   710 I ImeTracker: com.example.titans_project:d32dd165: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 14:54:35.638  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 14:54:35.644  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 14:54:35.644  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 14:54:35.645  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 14:54:35.647  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 14:54:35.657 10815 10914 I HWUI    : Davey! duration=804ms; Flags=0, FrameTimelineVsyncId=234023, IntendedVsync=10904253929840, Vsync=10905003929810, InputEventId=0, HandleInputStart=10905015052200, AnimationStart=10905015089900, PerformTraversalsStart=10905015978200, DrawStart=10905046632000, FrameDeadline=10905003929810, FrameInterval=10905013950400, FrameStartTime=16666666, SyncQueued=10905047464700, SyncStart=10905053418700, IssueDrawCommandsStart=10905053641100, SwapBuffers=10905058659900, FrameCompleted=10905064532900, DequeueBufferDuration=567100, QueueBufferDuration=1443600, GpuCompleted=10905063275800, SwapBuffersCompleted=10905064532900, DisplayPresentTime=0, CommandSubmissionCompleted=10905058659900,
+11-08 14:54:35.682 10875 10875 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@80e2f92
+11-08 14:54:35.684   589  1383 W InputManager-JNI: Input channel object '1c3800c com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+11-08 14:54:35.704 10815 10831 W SurfaceComposerClient: Sync transaction timed out waiting for commit callback.
+11-08 14:54:35.743  1132  1132 D BaseDepthController: setSurface:
+11-08 14:54:35.743  1132  1132 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+11-08 14:54:35.743  1132  1132 D BaseDepthController: 	mSurface: null
+11-08 14:54:35.746  1132  1132 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+11-08 14:54:35.752  1132  1132 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+11-08 14:54:35.752  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:4)
+11-08 14:54:35.752  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:1)
+11-08 14:54:35.752  1132  1132 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 2855a437b73635ce9cad76b9289087e631bbb67fc90008a0da13d343a00e5041:34)
+11-08 14:54:35.752  1132  1132 D StatsLog: LAUNCHER_ONSTOP
+11-08 14:54:35.755  1132  1132 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+11-08 14:54:35.757 10815 10815 I ViewInteraction: Performing 'single click' action on view view.getId() is <2131230810/com.example.titans_project:id/application_button>
+11-08 14:54:35.769  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=215
+11-08 14:54:35.769  1132  1132 I TopTaskTracker: onTaskRemoved: taskId=215
+11-08 14:54:35.799  1132  1634 D OneSearchSuggestProvider: Shut down the binder channel
+11-08 14:54:35.800  1132  1145 I IPCThreadState: oneway function results for code 2 on binder at 0x7134c0d54fd0 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-08 14:54:35.828   589  1383 W InputManager-JNI: Input channel object '4d8e702 Toast (client)' was disposed without first being removed with the input manager!
+11-08 14:54:35.865   841  1038 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@ed1c4e9
+11-08 14:54:35.883   589  1383 W InputManager-JNI: Input channel object 'e218846 Splash Screen com.example.titans_project (client)' was disposed without first being removed with the input manager!
+11-08 14:54:35.916   589  1814 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@269cd2af does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 14:54:35.931   436  4519 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+11-08 14:54:35.935   589  1383 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 15
+11-08 14:54:35.943   436   541 D AudioFlinger: mixer(0x79f1966e58e0) throttle end: throttle time(40)
+11-08 14:54:35.952   445   445 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-08 14:54:35.952 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@f9fe2c6 in: PAUSED
+11-08 14:54:35.953 10815 10815 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.example.titans_project.MainActivity@f9fe2c6
+11-08 14:54:35.985 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@1f71f7e in: PRE_ON_CREATE
+11-08 14:54:35.986 10815 10815 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@1f71f7e
+11-08 14:54:36.004 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@1f71f7e in: CREATED
+11-08 14:54:36.005 10815 10815 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@1f71f7e
+11-08 14:54:36.007 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@1f71f7e in: STARTED
+11-08 14:54:36.007 10815 10815 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@1f71f7e
+11-08 14:54:36.010 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@1f71f7e in: RESUMED
+11-08 14:54:36.011 10815 10815 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@1f71f7e
+11-08 14:54:36.117   436   541 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+11-08 14:54:36.147   589   612 I ActivityTaskManager: Displayed com.example.titans_project/.MyApplicationsView for user 0: +223ms
+11-08 14:54:36.494   589   710 I ImeTracker: com.example.titans_project:f0a5acad: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-08 14:54:36.497   589   710 I ImeTracker: com.example.titans_project:f0a5acad: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 14:54:36.515  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 14:54:36.523  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 14:54:36.524  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 14:54:36.529  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 14:54:36.532  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: Failed to get service from broker.
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3242)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3226)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3209)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3151)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at amxe.a(:com.google.android.gms@244337038@24.43.37 (260800-693941914):36)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at amvl.z(:com.google.android.gms@244337038@24.43.37 (260800-693941914):143)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at amcs.run(:com.google.android.gms@244337038@24.43.37 (260800-693941914):54)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:959)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at bskq.mC(:com.google.android.gms@244337038@24.43.37 (260800-693941914):1)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at bskq.dispatchMessage(:com.google.android.gms@244337038@24.43.37 (260800-693941914):5)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:232)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:317)
+11-08 14:54:36.610 10815 10850 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+11-08 14:54:36.614 10815 10833 D EGL_emulation: app_time_stats: avg=20.09ms min=2.50ms max=85.88ms count=42
+11-08 14:54:36.760 10815 10815 I ViewInteraction: Checking 'MatchesViewAssertion{viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() to return non-empty rectangle)}' assertion on view an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Applications"
+11-08 14:54:36.771   589  1807 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@328ebf08 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-08 14:54:36.790 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@1f71f7e in: PAUSED
+11-08 14:54:36.790 10815 10815 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@1f71f7e
+11-08 14:54:36.797  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=217, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+11-08 14:54:36.850 10875 10890 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-08 14:54:36.852 10875 10890 I EGL_emulation: Opening libGLESv2_emulation.so
+11-08 14:54:36.904 10875 10890 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-08 14:54:36.905 10875 10890 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-08 14:54:37.007 10815 10815 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-08 14:54:37.159 10815 10833 D EGL_emulation: app_time_stats: avg=70.61ms min=9.61ms max=271.08ms count=14
+11-08 14:54:37.195  7491  7606 E A       : (REDACTED) Trace %s timed out after %d ms. Complete trace: %s
+11-08 14:54:37.195  7491  7606 E A       : com.google.apps.tiktok.tracing.gc:
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.LocationUpdateRequester#isEnabled(Started After:11)
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.LocationUpdateRequester#requestOrRemoveLocationUpdates(Started After:11)
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.LocationUpdateRequestScheduler#scheduleLocationUpdateRequest(Started After:11)
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.LocationUpdateApplicationStartupListener#onApplicationStartup(Started After:1)
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.LocationUpdateApplicationStartupListener(Started After:1)
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.Startup Listeners(Started After:1)
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.Application.onCreate(Started After:1)
+11-08 14:54:37.195  7491  7606 E A       : 	at tk_trace.Application creation(Started After:0)
+11-08 14:54:37.204   589   612 W ziparchive: Unable to open '/data/app/~~R1Wp93c2p2G0hCvePN2jTQ==/com.example.titans_project.test-HRnbUWcnXgpZiV1t80Bp0g==/base.dm': No such file or directory
+11-08 14:54:37.211   589   612 I ActivityTaskManager: Displayed com.example.titans_project.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +431ms
+11-08 14:54:37.231  1132  1132 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=216, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }
+11-08 14:54:37.239 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MyApplicationsView@1f71f7e in: RESUMED
+11-08 14:54:37.239 10815 10815 V ActivityScenario: Activity lifecycle changed event received but ignored because the intent does not match. startActivityIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.example.titans_project/.MainActivity }, activity.getIntent()=Intent { cmp=com.example.titans_project/.MyApplicationsView }, activity=com.example.titans_project.MyApplicationsView@1f71f7e
+11-08 14:54:37.263  7491  7583 E A       : (REDACTED) Trace %s timed out after %d ms. Complete trace: %s
+11-08 14:54:37.263  7491  7583 E A       : com.google.apps.tiktok.tracing.gc:
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.Read clienttracing(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.Get clienttracing(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.gRPC:google.internal.search.labs.partnerservice.v1.SearchLabsPartnerService/BackgroundGetEnrollments(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.getLabsEnrollmentStatus(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.getLabsEnrollmentStatus(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.NoAccountWorkerFactory startWork()(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.com.google.apps.tiktok.sync.impl.workmanager.SyncWorker startWork()(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.com.google.apps.tiktok.sync.impl.workmanager.SyncWorker startWork()(Started After:0)
+11-08 14:54:37.263  7491  7583 E A       : 	at tk_trace.WorkManager:TikTokListenableWorker startWork(Started After:0)
+11-08 14:54:37.298  1522  1522 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+11-08 14:54:37.337   589   710 I ImeTracker: com.example.titans_project:9cb7e4f1: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false
+11-08 14:54:37.337   589   710 I ImeTracker: com.example.titans_project:9cb7e4f1: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-08 14:54:37.341  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-08 14:54:37.344  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-08 14:54:37.345  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.example.titans_project, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-08 14:54:37.346  1251  1251 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-08 14:54:37.347  1251  1251 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-08 14:54:37.374  1251  1251 W NotificationCenter: NotificationCenter$ListenerData.notifyOnExecutor():672 Heavy notify work detected on UI thread: |kga->jjc| takes 25ms
+11-08 14:54:37.397 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@f9fe2c6 in: STOPPED
+11-08 14:54:37.397 10815 10815 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.example.titans_project.MainActivity@f9fe2c6
+11-08 14:54:37.401 10815 10815 D LifecycleMonitor: Lifecycle status change: com.example.titans_project.MainActivity@f9fe2c6 in: DESTROYED
+11-08 14:54:37.401 10815 10815 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-08 14:54:37.401 10815 10815 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@b090c21
+11-08 14:54:37.401 10815 10831 I TestRunner: finished: testMyApplication(com.example.titans_project.MainActivityTest)

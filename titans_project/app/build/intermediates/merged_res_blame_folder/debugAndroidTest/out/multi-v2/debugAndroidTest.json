@@ -4,7 +4,7 @@
             "outputFile": "com.example.titans_project.test.app-merged_res-4:/values-v28_values-v28.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\552b692165565151068ba8fa1d18f8b7\\transformed\\core-1.6.1\\res\\values-v28\\values.xml",
+                    "source": "C:\\Users\\18729\\.gradle\\caches\\transforms-4\\3da766d31641bd52f4fa58aa4d4f65e7\\transformed\\core-1.6.1\\res\\values-v28\\values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
@@ -28,7 +28,7 @@
             "outputFile": "com.example.titans_project.test.app-merged_res-4:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\552b692165565151068ba8fa1d18f8b7\\transformed\\core-1.6.1\\res\\values\\values.xml",
+                    "source": "C:\\Users\\18729\\.gradle\\caches\\transforms-4\\3da766d31641bd52f4fa58aa4d4f65e7\\transformed\\core-1.6.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,11",
                         "startColumns": "0,0",
@@ -52,7 +52,7 @@
             "outputFile": "com.example.titans_project.test.app-merged_res-4:/values-v18_values-v18.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\552b692165565151068ba8fa1d18f8b7\\transformed\\core-1.6.1\\res\\values-v18\\values.xml",
+                    "source": "C:\\Users\\18729\\.gradle\\caches\\transforms-4\\3da766d31641bd52f4fa58aa4d4f65e7\\transformed\\core-1.6.1\\res\\values-v18\\values.xml",
                     "from": {
                         "startLines": "4,12",
                         "startColumns": "0,0",
@@ -76,7 +76,7 @@
             "outputFile": "com.example.titans_project.test.app-merged_res-4:/values-v21_values-v21.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\552b692165565151068ba8fa1d18f8b7\\transformed\\core-1.6.1\\res\\values-v21\\values.xml",
+                    "source": "C:\\Users\\18729\\.gradle\\caches\\transforms-4\\3da766d31641bd52f4fa58aa4d4f65e7\\transformed\\core-1.6.1\\res\\values-v21\\values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
