@@ -5,56 +5,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Main content section for the My Events page -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_above="@+id/button_return_home"
-        android:padding="10dp"
-        android:weightSum="1"
-        android:layout_alignParentTop="true">
+        android:layout_above="@+id/button_toolbar"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
 
-        <!-- Homepage Text -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/homepage"
             android:textColor="@color/light_gray"
-            android:textSize="14sp"
-            android:layout_marginTop="20dp"/>
+            android:textSize="14sp" />
 
-        <!-- Horizontal layout for Title and Created Events Button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:weightSum="1"
-            android:gravity="start|center_vertical">
+            android:orientation="horizontal">
 
-            <!-- Title Text for "My Events" -->
             <TextView
                 android:id="@+id/title"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/my_events"
                 android:textColor="@color/dark_gray"
                 android:textSize="34sp"
+                android:paddingRight="100dp"
                 android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:layout_gravity="center_vertical"/>
 
-            <!-- Created Events Button aligned to the right -->
             <Button
-                android:id="@+id/created_events_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/created_events"
-                android:backgroundTint="@color/dark_gray"
-                android:textColor="@android:color/white"
-                android:padding="10dp"
+                android:layout_margin="5dp"
                 android:textSize="14sp"
-                android:layout_marginStart="16dp"/>
+                android:backgroundTint="@color/dark_gray"
+                app:srcCompat="@android:drawable/ic_input_add"
+                android:id="@+id/created_events_button"
+                android:layout_gravity="center_vertical"/>
+
         </LinearLayout>
 
         <!-- Divider line -->
@@ -65,49 +57,56 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp" />
 
-        <!-- ListView to display events -->
         <ListView
             android:id="@+id/listview_events"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:divider="@android:color/darker_gray"
-            android:dividerHeight="0.5dp"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-    <!-- Bottom buttons section -->
     <LinearLayout
-        android:id="@+id/button_return_home"
+        android:id="@+id/button_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:layout_margin="10dp"
-        android:weightSum="2">
+        android:weightSum="3">
 
-        <!-- My Applications Button -->
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/my_applications"
             android:layout_margin="5dp"
+            android:textSize="12sp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
             app:srcCompat="@android:drawable/ic_input_add"
             android:id="@+id/application_button"/>
 
-        <!-- Profile Button -->
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/profile"
             android:layout_margin="5dp"
+            android:textSize="12sp"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"
             app:srcCompat="@android:drawable/ic_input_add"
             android:id="@+id/profile_button"/>
 
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/scan"
+            android:textSize="12sp"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/dark_gray"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:id="@+id/scan_button"/>
+
     </LinearLayout>
+
 
 </RelativeLayout>

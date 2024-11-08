@@ -8,11 +8,10 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
-    <!-- Permission to access the internet (Required for Firebase and general networking) -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-    <!-- <uses-sdk android:minSdkVersion="21"/> -->
+    <!-- <uses-sdk android:minSdkVersion="21" /> -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
@@ -35,12 +34,15 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Titans_project" >
-
-        <!-- Firebase Initialization: Firebase will automatically initialize if you have google-services.json -->
-        <!-- No additional Firebase-specific permissions are required here -->
-
-
-        <!-- Main Activity -->
+        <activity
+            android:name="com.example.titans_project.ProfileView"
+            android:exported="false" />
+        <activity
+            android:name="com.example.titans_project.EventDetailView"
+            android:exported="false" />
+        <activity
+            android:name="com.example.titans_project.MyApplicationsView"
+            android:exported="false" />
         <activity
             android:name="com.example.titans_project.MainActivity"
             android:exported="true"
@@ -51,16 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Profile View Activity -->
-        <activity
-            android:name="com.example.titans_project.ProfileView"
-            android:exported="false" />
-
-        <!-- My Applications View Activity -->
-        <activity
-            android:name="com.example.titans_project.MyApplicationsView"
-            android:exported="false" />
 
         <!-- Created Events View Activity -->
         <activity
@@ -87,19 +79,13 @@
             android:directBootAware="true"
             android:exported="false" >
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"

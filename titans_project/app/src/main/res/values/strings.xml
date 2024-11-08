@@ -22,30 +22,29 @@
     <string name="save_changes">Save Changes</string>
     <string name="user_return">Return</string>
     <string name="optional">(Optional)</string>
-
-    <!-- My Applications-related strings -->
-    <string name="my_applications">My Applications</string>
+    <string name="my_application_title">My Application</string>
     <string name="leave_waitlist">Leave Waitlist</string>
     <string name="event_name">Event Name</string>
     <string name="event_date">Event Date</string>
     <string name="return_to_homepage">Return to Homepage</string>
     <string name="yes_button">Yes</string>
     <string name="no_button">No</string>
-
-    <!-- Event and application form strings -->
     <string name="result_title">Event Result</string>
     <string name="application_form">Application Form</string>
     <string name="application_submit">Submit</string>
     <string name="checkbox_application">I accept the terms and conditions</string>
-    <string name="result_describe">Situation of result / ...</string>
+    <string name="result_describe">Situation of result</string>
     <string name="my_events">My Events</string>
     <string name="event_details">Event Details</string>
     <string name="geolocation_sharing_message">I agree to share my geolocation</string>
     <string name="apply">Apply</string>
     <string name="event_details_example">The Volunteer Event System is a platform designed to simplify organization, promotion, and participation in volunteer events. This system connects organizations, volunteers, and event coordinators by providing a centralized location to create, manage, and sign up for events.</string>
     <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
+    <string name="my_applications">Applications</string>
     <string name="homepage">Homepage</string>
     <string name="event_update">Event Update</string>
+    <string name="scan">Scan</string>
+    <string name="facility">Facility</string>
 
     <!-- Additional strings -->
     <string name="add_event">Add Event</string>

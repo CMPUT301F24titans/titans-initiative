@@ -4,8 +4,7 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,10 +22,7 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final ImageView backIcon;
-
-  @NonNull
-  public final LinearLayout buttonReturnHome;
+  public final Button buttonReturn;
 
   @NonNull
   public final ListView listviewEvents;
@@ -35,11 +31,9 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
   public final TextView title;
 
   private FragmentMyApplicationsBinding(@NonNull RelativeLayout rootView,
-      @NonNull ImageView backIcon, @NonNull LinearLayout buttonReturnHome,
-      @NonNull ListView listviewEvents, @NonNull TextView title) {
+      @NonNull Button buttonReturn, @NonNull ListView listviewEvents, @NonNull TextView title) {
     this.rootView = rootView;
-    this.backIcon = backIcon;
-    this.buttonReturnHome = buttonReturnHome;
+    this.buttonReturn = buttonReturn;
     this.listviewEvents = listviewEvents;
     this.title = title;
   }
@@ -71,15 +65,9 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.back_icon;
-      ImageView backIcon = ViewBindings.findChildViewById(rootView, id);
-      if (backIcon == null) {
-        break missingId;
-      }
-
-      id = R.id.button_return_home;
-      LinearLayout buttonReturnHome = ViewBindings.findChildViewById(rootView, id);
-      if (buttonReturnHome == null) {
+      id = R.id.button_return;
+      Button buttonReturn = ViewBindings.findChildViewById(rootView, id);
+      if (buttonReturn == null) {
         break missingId;
       }
 
@@ -95,8 +83,8 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMyApplicationsBinding((RelativeLayout) rootView, backIcon,
-          buttonReturnHome, listviewEvents, title);
+      return new FragmentMyApplicationsBinding((RelativeLayout) rootView, buttonReturn,
+          listviewEvents, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

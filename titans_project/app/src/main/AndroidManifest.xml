@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Permission to access the internet (Required for Firebase and general networking) -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -15,30 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Titans_project"
         tools:targetApi="31">
-
-        <!-- Firebase Initialization: Firebase will automatically initialize if you have google-services.json -->
-        <!-- No additional Firebase-specific permissions are required here -->
-
-        <!-- Main Activity -->
+        <activity
+            android:name=".ProfileView"
+            android:exported="false" />
+        <activity
+            android:name=".EventDetailView"
+            android:exported="false" />
+        <activity
+            android:name=".MyApplicationsView"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Titans_project">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Profile View Activity -->
-        <activity
-            android:name=".ProfileView"
-            android:exported="false" />
-
-        <!-- My Applications View Activity -->
-        <activity
-            android:name=".MyApplicationsView"
-            android:exported="false" />
 
         <!-- Created Events View Activity -->
         <activity

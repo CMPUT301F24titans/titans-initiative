@@ -3196,6 +3196,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable solid_color_background__blue_
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3250,7 +3251,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id account_type_spinner
 id actionDown
 id actionDownUp
 id actionUp
@@ -3320,15 +3320,14 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
-id button_add_profile_pic
 id button_apply
 id button_create_profile
 id button_edit_profile_pic
 id button_return
-id button_return_home
 id button_save
 id button_save_changes
 id button_submit
+id button_toolbar
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3415,6 +3414,7 @@ id editTextEventTime
 id editTextOrganizerName
 id edit_query
 id edit_text_email
+id edit_text_facility
 id edit_text_full_name
 id edit_text_id
 id edit_text_phone_number
@@ -3432,6 +3432,7 @@ id eventImage
 id eventOrganizer
 id eventTitle
 id event_date
+id event_description
 id event_name
 id eventsContainer
 id exitUntilCollapsed
@@ -3477,6 +3478,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3604,6 +3606,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id organizer
 id outline
 id outward
 id overshoot
@@ -3644,6 +3647,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scan_button
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3735,6 +3739,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textview_initials
 id time
 id title
 id titleDividerNoCustom
@@ -3916,17 +3921,16 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_appliction_form
+layout fragment_application_form
 layout fragment_create_event
-layout fragment_create_profile
 layout fragment_created_events
 layout fragment_edit_event
-layout fragment_edit_profile
 layout fragment_event_details
 layout fragment_event_item
 layout fragment_final_result
 layout fragment_my_applications
 layout fragment_my_events
+layout fragment_profile
 layout fragment_view_event_details
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
@@ -4092,6 +4096,7 @@ string event_update
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string facility
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
@@ -4208,6 +4213,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string my_application_title
 string my_applications
 string my_events
 string nav_app_bar_navigate_up_description
@@ -4228,6 +4234,7 @@ string result_describe
 string result_title
 string return_to_homepage
 string save_changes
+string scan
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description

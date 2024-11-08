@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    id("com.google.gms.google-services")  // Firebase plugin
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -26,36 +26,31 @@ android {
             )
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
     buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
-    // Core libraries
+    // Use the correct Kotlin DSL syntax for dependencies
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-
-    // Firebase libraries
-    implementation(platform("com.google.firebase:firebase-bom:33.5.1")) // Use the Firebase BOM to manage dependencies
-    implementation("com.google.firebase:firebase-database")  // Firebase Realtime Database
-    implementation("com.google.firebase:firebase-auth")      // Firebase Authentication (optional, if needed)
-    implementation("com.google.firebase:firebase-firestore") // Firestore (optional, if you want Firestore)
-
-    // QR Code generation
-    implementation("com.google.zxing:core:3.4.1") // QR code generation dependency
-
-    // Testing libraries
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Firebase BoM (platform version for Firebase SDKs)
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    // ZXing library for QR code generation
+    implementation("com.google.zxing:core:3.5.0")  // Correct Kotlin DSL syntax
 }

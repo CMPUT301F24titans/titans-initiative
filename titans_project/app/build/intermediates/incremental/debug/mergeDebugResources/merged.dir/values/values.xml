@@ -2082,6 +2082,7 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="facility">Facility</string>
     <string name="fallback_menu_item_copy_link">Copy link</string>
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
@@ -2204,7 +2205,8 @@
     <string name="mtrl_switch_track_path" translatable="false">M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16</string>
     <string description="Button text to indicate that the widget will ignore the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_cancel">Cancel</string>
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
-    <string name="my_applications">My Applications</string>
+    <string name="my_application_title">My Application</string>
+    <string name="my_applications">Applications</string>
     <string name="my_events">My Events</string>
     <string name="nav_app_bar_navigate_up_description">Navigate up</string>
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
@@ -2220,10 +2222,11 @@
     <string name="previous">Previous</string>
     <string name="profile">Profile</string>
     <string name="project_id" translatable="false">titans-initiative</string>
-    <string name="result_describe">Situation of result / ...</string>
+    <string name="result_describe">Situation of result</string>
     <string name="result_title">Event Result</string>
     <string name="return_to_homepage">Return to Homepage</string>
     <string name="save_changes">Save Changes</string>
+    <string name="scan">Scan</string>
     <string name="search_menu_title">Search</string>
     <string name="searchbar_scrolling_view_behavior" translatable="false">
     com.google.android.material.search.SearchBar$ScrollingViewBehavior
