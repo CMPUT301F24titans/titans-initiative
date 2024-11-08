@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<User> usersdataList;
     private EventsArrayAdapter eventsArrayAdapter;
     private Button profile_button, application_button;
+    private Switch admin_switch;
     Intent profile = new Intent();
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private CollectionReference eventRef, userRef;
     private static final String TAG = "AnonymousAuthActivity";
     private FirebaseAuth mAuth;
+    private Boolean adminChecked;
 
 
     /**
@@ -75,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        // adminChecked false by default
+        adminChecked = false;
+
         // Check and perform anonymous sign-in
         performAnonymousSignIn();
 
@@ -84,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
         application_button = findViewById(R.id.application_button);
+        admin_switch = findViewById(R.id.admin_mode);
 
         testEvent = new Event("testEventTitle", "use1", "2024/11/5", "2024/11/8", "nothing1", "picture1");
         fakeEvent = new Event("fakeEventTitle", "use2", "2055/11/5", "2055/11/8", "nothing2", "picture2");
@@ -116,6 +123,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // User clicks on the Admin mode
+        admin_switch.setOnCheckedChangeListener((admin_switch, adminChecked) -> {
+            if (adminChecked){
+                admin.setClass(MainActivity.this, BrowseContentView.class);
+                startActivity(admin);
+            }
+        });
+
         // User clicks on the event in events list
         eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -124,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 event_detail.putExtra("event name", eventsdataList.get(position).getName());
                 event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizer());
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
-                event_detail.putExtra("event date", eventsdataList.get(position).getEvent_date());
+                event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
                 startActivity(event_detail);
             }
         });
@@ -139,13 +154,12 @@ public class MainActivity extends AppCompatActivity {
         eventsdataList.add(event);
         eventsArrayAdapter.notifyDataSetChanged();
         HashMap<String, String> eventdata = new HashMap<>();
-        eventdata.put("Event Name", event.getName());
-        eventdata.put("Organizer", event.getOrganizer());
-        eventdata.put("Event Created Date", event.getCreated_date());
-        eventdata.put("Event Date", event.getEvent_date());
-        eventdata.put("Description", event.getDescription());
-        eventdata.put("Picture", event.getPicture());
-        eventdata.put("Event ID", event.getName()+event.getOrganizer()+event.getEvent_date());
+        eventdata.put("event_name", event.getName());
+        eventdata.put("organizer", event.getOrganizer());
+        eventdata.put("created_date", event.getCreatedDate());
+        eventdata.put("event_date", event.getEventDate());
+        eventdata.put("description", event.getDescription());
+        eventdata.put("picture", event.getPicture());
         eventRef.document(event.getName()).set(eventdata);
     }
 

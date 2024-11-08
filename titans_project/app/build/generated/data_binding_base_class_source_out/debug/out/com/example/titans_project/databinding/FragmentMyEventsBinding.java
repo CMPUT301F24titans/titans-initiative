@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ import java.lang.String;
 public final class FragmentMyEventsBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
+
+  @NonNull
+  public final Switch adminMode;
 
   @NonNull
   public final Button applicationButton;
@@ -43,11 +47,12 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
-  private FragmentMyEventsBinding(@NonNull RelativeLayout rootView,
+  private FragmentMyEventsBinding(@NonNull RelativeLayout rootView, @NonNull Switch adminMode,
       @NonNull Button applicationButton, @NonNull LinearLayout buttonToolbar,
       @NonNull Button createdEventsButton, @NonNull ListView listviewEvents,
       @NonNull Button profileButton, @NonNull Button scanButton, @NonNull TextView title) {
     this.rootView = rootView;
+    this.adminMode = adminMode;
     this.applicationButton = applicationButton;
     this.buttonToolbar = buttonToolbar;
     this.createdEventsButton = createdEventsButton;
@@ -84,6 +89,12 @@ public final class FragmentMyEventsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.admin_mode;
+      Switch adminMode = ViewBindings.findChildViewById(rootView, id);
+      if (adminMode == null) {
+        break missingId;
+      }
+
       id = R.id.application_button;
       Button applicationButton = ViewBindings.findChildViewById(rootView, id);
       if (applicationButton == null) {
@@ -126,7 +137,7 @@ public final class FragmentMyEventsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMyEventsBinding((RelativeLayout) rootView, applicationButton,
+      return new FragmentMyEventsBinding((RelativeLayout) rootView, adminMode, applicationButton,
           buttonToolbar, createdEventsButton, listviewEvents, profileButton, scanButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);

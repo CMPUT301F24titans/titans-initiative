@@ -3278,6 +3278,7 @@ int id activity_chooser_view_content 0x7f08004b
 int id add 0x7f08004c
 int id adjust_height 0x7f08004d
 int id adjust_width 0x7f08004e
+int id admin_mode 0x7f080233
 int id alertTitle 0x7f08004f
 int id aligned 0x7f080050
 int id all 0x7f080051
@@ -3878,9 +3879,10 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
-int layout browse_content 0x7f0b001c
+int layout browse_events 0x7f0b0076
 int layout browser_actions_context_menu_page 0x7f0b001d
 int layout browser_actions_context_menu_row 0x7f0b001e
+int layout content_browse_events 0x7f0b0077
 int layout content_my_application 0x7f0b001f
 int layout content_my_events 0x7f0b0020
 int layout custom_dialog 0x7f0b0021

@@ -21,6 +21,7 @@ id SecondFragment
 id action_FirstFragment_to_SecondFragment
 id action_SecondFragment_to_FirstFragment
 id action_settings
+id admin_mode
 id application_button
 id author
 id browse_content_listview
@@ -60,7 +61,8 @@ id textView2
 id textview_initials
 id title
 id yes_button
-layout browse_content
+layout browse_events
+layout content_browse_events
 layout content_my_application
 layout content_my_events
 layout fragment_application_form

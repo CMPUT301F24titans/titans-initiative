@@ -35,6 +35,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Titans_project" >
         <activity
+            android:name="com.example.titans_project.BrowseContentView"
+            android:exported="false" />
+        <activity
             android:name="com.example.titans_project.ProfileView"
             android:exported="false" />
         <activity
