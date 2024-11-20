@@ -179,4 +179,12 @@ public class ProfileView extends AppCompatActivity {
 
         return initials.toString();
     }
+
+    /**
+     * Deletes a profile from Firebase
+     * @param profile_id
+     */
+    private void deleteProfile(String profile_id){
+        db.collection("user").document(profile_id).delete();
+    }
 }
