@@ -76,6 +76,7 @@ public class ProfileView extends AppCompatActivity {
                                 facility.setText(document.getString("facility"));
                                 // Generate initials of user
                                 initials.setText(getInitials(name.getText().toString()));
+                                notifications.setChecked(document.getBoolean("notifications"));
 
                             });
                         } else {

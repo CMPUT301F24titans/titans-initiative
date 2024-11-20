@@ -46,7 +46,7 @@
     <string name="next">Next</string>
     <string name="no_button">No</string>
     <string name="optional">(Optional)</string>
-    <string name="phone_number">Phone Number</string>
+    <string name="phone_number">Phone Number (xxx-xxx-xxxx)</string>
     <string name="previous">Previous</string>
     <string name="profile">Profile</string>
     <string name="project_id" translatable="false">titans-initiative</string>

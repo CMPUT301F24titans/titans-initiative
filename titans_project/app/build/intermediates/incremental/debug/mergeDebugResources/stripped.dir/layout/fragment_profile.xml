@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textSize="60sp"
-                    android:text="PP"
+                    android:text=""
                     android:textColorHint="@color/dark_gray"
                     android:textColor="@color/white"
                     android:textStyle="bold"
