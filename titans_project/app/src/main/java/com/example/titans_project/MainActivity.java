@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizer());
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
                 event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
+                event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);
             }
         });
