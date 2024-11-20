@@ -115,7 +115,7 @@ public class ProfileView extends AppCompatActivity {
 
                     if (profileId != null) {
                         /**
-                         * DELETION WORKS JUST NEED TO CLARIFY HOW TO RETRIEVE THE PROFILE ID
+                         * DELETION WORKS JUST NEED TO CLARIFY HOW TO RETRIEVE THE PROFILE ID add
                          */
                         deleteProfile(profileId);
                     } else {
