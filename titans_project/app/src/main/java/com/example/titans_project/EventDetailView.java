@@ -1,15 +1,22 @@
 package com.example.titans_project;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EventDetailView extends AppCompatActivity {
@@ -17,6 +24,7 @@ public class EventDetailView extends AppCompatActivity {
     private TextView name, organizer, description, date;
     private String user_type;
     private FirebaseFirestore db;
+    private static final String TAG = "eventDeletion";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +68,8 @@ public class EventDetailView extends AppCompatActivity {
                      * THIS WORKS JUST NEED TO PUT IN EVENT_ID WHERE "event name" IS
                     deleteEvent(getIntent().getStringExtra("event name"));
                      **/
+                    deleteEvent("test_event");
+                    finish();
                 }
                 else {
                     // enroll entrant into event
@@ -78,9 +88,25 @@ public class EventDetailView extends AppCompatActivity {
     /**
      * Deletes event from Firebase
      * @param event_id
-     *  The event id stored in the Firebase event collection
+     *  ID of the doc to delete
      */
     private void deleteEvent(String event_id){
-        db.collection("events").document(event_id).delete();
+        db.collection("events").document(event_id).delete().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                // successful deletion of event
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "deletedEvent:success");
+                    Toast.makeText(EventDetailView.this, "Successfully deleted event.",
+                            Toast.LENGTH_SHORT).show();
+                }
+                // unsuccessful deletion of event
+                else {
+                    Log.w(TAG, "deletedEvent:failure", task.getException());
+                    Toast.makeText(EventDetailView.this, "Failed to delete event.",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
