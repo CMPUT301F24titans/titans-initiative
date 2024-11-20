@@ -88,7 +88,7 @@ public class EventDetailView extends AppCompatActivity {
     /**
      * Deletes event from Firebase
      * @param event_id
-     *  ID of the doc to delete
+     *  ID of the event to delete.
      */
     private void deleteEvent(String event_id){
         db.collection("events").document(event_id).delete().addOnCompleteListener(this, new OnCompleteListener<Void>() {

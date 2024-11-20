@@ -35,6 +35,7 @@ public class BrowseContentView extends AppCompatActivity {
     private Switch back_user;
     private Boolean browsingEvents;
     Intent event_detail = new Intent();
+    Intent profile_detail = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,9 +123,10 @@ public class BrowseContentView extends AppCompatActivity {
                                 String phone_number = doc.getString("phone_number");
                                 String facility = doc.getString("facility");
                                 Boolean notifications = doc.getBoolean("notifications");
+                                String user_id = doc.getString("user_id");
 
                                 Log.d(TAG, String.format("User(%s, %s) fetched", full_name, email));
-                                profileDataList.add(new User(full_name, email, phone_number, facility, notifications));
+                                profileDataList.add(new User(full_name, email, phone_number, facility, notifications, user_id));
                             }
                             profileArrayAdapter.notifyDataSetChanged();
                         }
@@ -150,6 +152,10 @@ public class BrowseContentView extends AppCompatActivity {
                 // user currently browsing profiles
                 else {
                     User clickedUser = profileDataList.get(position);
+                    profile_detail.setClass(BrowseContentView.this, ProfileView.class);
+                    profile_detail.putExtra("user_id", clickedUser.getUserID());
+                    profile_detail.putExtra("viewer", "admin");
+                    startActivity(profile_detail);
                 }
             }
         });

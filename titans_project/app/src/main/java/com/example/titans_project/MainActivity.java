@@ -226,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
         userData.put("phone_number","");
         userData.put("facility","");
         userData.put("notifications", Boolean.FALSE);
+        userData.put("user_id", user.getUid());
         // Create nested HashMap to store user's events
         HashMap<String, Object> eventData = new HashMap<>();  // empty initially
         userData.put("Events", eventData);
