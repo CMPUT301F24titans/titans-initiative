@@ -1,6 +1,10 @@
 package com.example.titans_project;
 
 import androidx.annotation.NonNull;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.io.Serializable;
 
 /**
  * This is a class that defines a Event.

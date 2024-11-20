@@ -1,8 +1,10 @@
 package com.example.titans_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -31,6 +33,8 @@ public class BrowseContentView extends AppCompatActivity {
     private EventsArrayAdapter eventArrayAdapter;
     private ProfilesArrayAdapter profileArrayAdapter;
     private Switch back_user;
+    private Boolean browsingEvents;
+    Intent event_detail = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +58,11 @@ public class BrowseContentView extends AppCompatActivity {
         profileArrayAdapter = new ProfilesArrayAdapter(this, profileDataList);
         eventArrayAdapter = new EventsArrayAdapter(this, eventDataList);
 
+        // check if admin user clicked on browse events button
         browse_events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                browsingEvents = true;
                 // Display ALL events when Event button is clicked
                 contentList.setAdapter(eventArrayAdapter);
 
@@ -92,10 +98,11 @@ public class BrowseContentView extends AppCompatActivity {
                 finish();
             }
         });
-
+        // check if admin user clicked on browse profiles button
         browse_profiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                browsingEvents = false;
                 // Display ALL profiles when Profile button is clicked
                 contentList.setAdapter(profileArrayAdapter);
 
@@ -123,6 +130,27 @@ public class BrowseContentView extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+        // check if admin user clicked on an item in the contentList
+        contentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                // check if currently browsing profiles or events
+                if (browsingEvents){  // user browsing events
+                    Event clickedEvent = eventDataList.get(position);
+                    event_detail.setClass(BrowseContentView.this, EventDetailView.class);
+                    event_detail.putExtra("event name", clickedEvent.getName());
+                    event_detail.putExtra("event organizer", clickedEvent.getOrganizer());
+                    event_detail.putExtra("event description", clickedEvent.getDescription());
+                    event_detail.putExtra("event date", clickedEvent.getEventDate());
+                    event_detail.putExtra("viewer", "admin");
+                    startActivity(event_detail);
+                }
+                // user currently browsing profiles
+                else {
+                    User clickedUser = profileDataList.get(position);
+                }
             }
         });
     }
