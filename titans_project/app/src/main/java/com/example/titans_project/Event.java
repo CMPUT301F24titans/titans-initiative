@@ -1,6 +1,8 @@
 package com.example.titans_project;
 
 import androidx.annotation.NonNull;
+
+import com.google.firebase.firestore.Exclude;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
@@ -11,7 +13,7 @@ import java.io.Serializable;
  */
 public class Event {
     private String name;
-    private String organizer;
+    private String facility_name;
     private String created_date;
     private String event_date;
     private String description;
@@ -22,7 +24,7 @@ public class Event {
      * This initial the class Event
      * @param name
      *      The private attribute event name
-     * @param organizer
+     * @param facility_name
      *      The private attribute organizer of the event
      * @param created_date
      *      The private attribute created date of event
@@ -33,22 +35,49 @@ public class Event {
      * @param picture
      *      The private attribute picture of event
      */
-    public Event(String name, String organizer, String created_date, String event_date, String description, String picture) {
+    public Event(String name, String facility_name, String created_date, String event_date, String description, String picture) {
         this.name = name;
-        this.organizer = organizer;
+        this.facility_name = facility_name;
         this.created_date = created_date;
         this.event_date = event_date;
         this.description = description;
         this.picture = picture;
-        this.event_id = name + organizer + created_date;
+        this.event_id = null;
     }
 
     /**
-     * Constructor for Event when not provided a picture
+     * Constructor for Event when provided the event_id
+     * @param event_id
+     *  Event id
      * @param name
      *  Event name
-     * @param organizer
-     *  Event's organizer (facility name)
+     * @param facility_name
+     *  Event's facility_name (facility name)
+     * @param created_date
+     *  Event's created date
+     * @param event_date
+     *  Date when event will occur
+     * @param description
+     *  Event description
+     * @param picture
+     *  Event poster
+     */
+    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, String picture) {
+        this.name = name;
+        this.facility_name = facility_name;
+        this.created_date = created_date;
+        this.event_date = event_date;
+        this.description = description;
+        this.picture = null;
+        this.event_id = event_id;
+    }
+
+    /**
+     * Constructor for Event when not provided a picture or event_id
+     * @param name
+     *  Event name
+     * @param facility_name
+     *  Event's facility_name (facility name)
      * @param created_date
      *  Event's created date
      * @param event_date
@@ -56,13 +85,14 @@ public class Event {
      * @param description
      *  Event description
      */
-    public Event(String name, String organizer, String created_date, String event_date, String description) {
+    public Event(String name, String facility_name, String created_date, String event_date, String description) {
         this.name = name;
-        this.organizer = organizer;
+        this.facility_name = facility_name;
         this.created_date = created_date;
         this.event_date = event_date;
         this.description = description;
         this.picture = null;
+        this.event_id = null;
     }
 
     /**
@@ -71,6 +101,15 @@ public class Event {
      *  return the id of event
      */
     public String getEventID(){return event_id;    }
+
+    /**
+     * This sets the id of an event
+     * @param event_id
+     *  The new event id to set to the event
+     */
+    public void setEventID(String event_id){
+        this.event_id = event_id;
+    }
 
     /**
      * This gets the name of an event
@@ -95,17 +134,17 @@ public class Event {
      * @return
      *      return the organizer of event
      */
-    public String getOrganizer() {
-        return organizer;
+    public String getFacilityName() {
+        return facility_name;
     }
 
     /**
      * This set the organizer of event
-     * @param organizer
+     * @param facility_name
      *      The private attribute organizer of the event
      */
-    public void setOrganizer(String organizer) {
-        this.organizer = organizer;
+    public void setFacilityName(String facility_name) {
+        this.facility_name = facility_name;
     }
 
     /**
@@ -178,5 +217,17 @@ public class Event {
      */
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    /**
+     * Evaluates whether the current event is a valid event
+     * @return
+     *  returns true if event is valid
+     */
+    @Exclude
+    public boolean isValid() {
+        return facility_name != null && !facility_name.isEmpty() &&
+                name != null && !name.isEmpty() &&
+                event_date != null && !event_date.isEmpty();
     }
 }

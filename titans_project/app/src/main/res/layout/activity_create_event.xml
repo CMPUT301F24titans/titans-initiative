@@ -48,6 +48,33 @@
             android:layout_height="wrap_content"
             android:hint="Event Name" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/facility_name"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/organizerEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/facility_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_date"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/eventDateEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Date"
+            android:layout_marginTop="16dp" />
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,19 +114,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="Facility Name"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/organizerEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Full Name (Organizer)" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
             android:text="@string/event_details"
             android:textStyle="bold"/>
 
@@ -107,30 +121,16 @@
             android:id="@+id/eventDetailsEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Event Details"
+            android:hint="(Optional)"
             android:inputType="textMultiLine"
             android:minLines="3" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/event_date"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/eventDateEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Event Date"
-            android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/dark_gray"
-            android:text="Submit"
+            android:text="@string/create"
             android:layout_marginTop="24dp" />
     </LinearLayout>
 </ScrollView>

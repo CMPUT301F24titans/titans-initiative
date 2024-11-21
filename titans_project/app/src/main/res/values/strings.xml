@@ -47,4 +47,7 @@
     <string name="browse_content">Browse Content</string>
     <string name="create_an_event">Create an Event</string>
     <string name="add_poster">Add Poster</string>
+    <string name="facility_name">Facility Name</string>
+    <string name="create_event">Create Event</string>
+    <string name="date_of_event">Date of Event</string>
 </resources>

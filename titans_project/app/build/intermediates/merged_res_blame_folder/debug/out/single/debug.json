@@ -44,6 +44,10 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\attendee_item.xml"
     },
     {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_browse_content.xml.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\browse_content.xml"
+    },
+    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
@@ -78,10 +82,6 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_activity_qr_scanner.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\activity_qr_scanner.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-merged_res-52:/layout_fragment_profile.xml.flat",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\layout_activity_attendees.xml.flat",
@@ -126,6 +126,10 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-merged_res-52:/layout_browse_content.xml.flat",
+        "source": "com.example.titans_project.app-main-54:/layout/browse_content.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-52:\\mipmap-hdpi_ic_launcher.webp.flat",
