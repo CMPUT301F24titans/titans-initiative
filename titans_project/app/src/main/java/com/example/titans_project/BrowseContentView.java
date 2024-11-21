@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -138,20 +139,23 @@ public class BrowseContentView extends AppCompatActivity {
         contentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // check if currently browsing profiles or events
-                if (browsingEvents){  // user browsing events
+                // user currently browsing events
+                if (browsingEvents){
                     Event clickedEvent = eventDataList.get(position);
                     event_detail.setClass(BrowseContentView.this, EventDetailView.class);
                     event_detail.putExtra("event name", clickedEvent.getName());
                     event_detail.putExtra("event organizer", clickedEvent.getOrganizer());
                     event_detail.putExtra("event description", clickedEvent.getDescription());
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
+                    event_detail.putExtra("event_id", clickedEvent.getEventID());
+
                     event_detail.putExtra("viewer", "admin");
                     startActivity(event_detail);
                 }
                 // user currently browsing profiles
                 else {
                     User clickedUser = profileDataList.get(position);
+
                     profile_detail.setClass(BrowseContentView.this, ProfileView.class);
                     profile_detail.putExtra("user_id", clickedUser.getUserID());
                     profile_detail.putExtra("viewer", "admin");

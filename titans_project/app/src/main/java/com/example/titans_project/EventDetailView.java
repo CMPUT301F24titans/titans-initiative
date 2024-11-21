@@ -63,12 +63,7 @@ public class EventDetailView extends AppCompatActivity {
             public void onClick(View view) {
                 if ("admin".equals(user_type)){
                     // delete event
-
-                    /**
-                     * THIS WORKS JUST NEED TO PUT IN EVENT_ID WHERE "event name" IS
-                    deleteEvent(getIntent().getStringExtra("event name"));
-                     **/
-                    deleteEvent("test_event");
+                    deleteEvent(getIntent().getStringExtra("event_id"));
                     finish();
                 }
                 else {
