@@ -45,4 +45,6 @@
     <string name="created_events">Created Events</string>
     <string name="facility">Facility</string>
     <string name="browse_content">Browse Content</string>
+    <string name="create_an_event">Create an Event</string>
+    <string name="add_poster">Add Poster</string>
 </resources>
