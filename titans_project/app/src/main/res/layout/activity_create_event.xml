@@ -9,41 +9,114 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="20"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/event_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/create_an_event"
+                android:textColor="@color/dark_gray"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_weight="15" />
+
+            <Button
+                android:id="@+id/button_return"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/user_return"
+                android:backgroundTint="@color/dark_gray"
+                android:layout_weight="5" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create an Event"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:paddingTop="10dp"
+            android:text="@string/event_name"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/eventTitleEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Event Name"
-            android:layout_marginTop="16dp" />
+            android:hint="Event Name" />
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            android:background="#CCC" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="4dp">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="3dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_add_poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_poster"
+            android:backgroundTint="@color/dark_gray"
+            android:contentDescription="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Facility Name"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/organizerEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name (Organizer)"
-            android:layout_marginTop="16dp" />
+            android:hint="Full Name (Organizer)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_details"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/eventDetailsEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Event Details"
-            android:layout_marginTop="16dp"
             android:inputType="textMultiLine"
             android:minLines="3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_date"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/eventDateEdit"
@@ -56,6 +129,7 @@
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_gray"
             android:text="Submit"
             android:layout_marginTop="24dp" />
     </LinearLayout>
