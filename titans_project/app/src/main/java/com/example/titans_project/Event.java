@@ -42,7 +42,7 @@ public class Event {
         this.event_date = event_date;
         this.description = description;
         this.picture = picture;
-        this.event_id = name + facility_name + created_date;
+        this.event_id = null;
     }
 
     /**
@@ -65,6 +65,7 @@ public class Event {
         this.event_date = event_date;
         this.description = description;
         this.picture = null;
+        this.event_id = null;
     }
 
     /**
@@ -73,6 +74,15 @@ public class Event {
      *  return the id of event
      */
     public String getEventID(){return event_id;    }
+
+    /**
+     * This sets the id of an event
+     * @param event_id
+     *  The new event id to set to the event
+     */
+    public void setEventID(String event_id){
+        this.event_id = event_id;
+    }
 
     /**
      * This gets the name of an event

@@ -90,9 +90,11 @@ public class CreateEventView extends AppCompatActivity {
                 String eventNameInput = event_name.getText().toString().trim();
                 String eventDetailsInput = event_details.getText().toString().trim();
 
-                Event event = null;
+                Event event;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput);
+                } else {
+                    event = null;
                 }
 
                 if (!event.isValid()) {
@@ -108,6 +110,8 @@ public class CreateEventView extends AppCompatActivity {
                         .add(event)
                         .addOnSuccessListener(documentReference -> {
                             Log.d("Firestore", "Event added with ID: " + documentReference.getId());
+                            event.setEventID(documentReference.getId());
+                            db.collection("events").document(documentReference.getId()).update("eventID", documentReference.getId());
                             Toast.makeText(CreateEventView.this, "Event Successfully Created",
                                     Toast.LENGTH_SHORT).show();
                             finish(); // Optionally return to the previous activity
