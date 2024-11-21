@@ -18,7 +18,7 @@ import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
-public final class BrowseEventsBinding implements ViewBinding {
+public final class BrowseContentBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
 
@@ -43,7 +43,7 @@ public final class BrowseEventsBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
-  private BrowseEventsBinding(@NonNull LinearLayout rootView, @NonNull Switch backUser,
+  private BrowseContentBinding(@NonNull LinearLayout rootView, @NonNull Switch backUser,
       @NonNull ListView browseContentListview, @NonNull TextView dateOfEventHeader,
       @NonNull TextView eventNameHeader, @NonNull Button eventsButton,
       @NonNull Button profilesButton, @NonNull TextView title) {
@@ -64,14 +64,14 @@ public final class BrowseEventsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static BrowseEventsBinding inflate(@NonNull LayoutInflater inflater) {
+  public static BrowseContentBinding inflate(@NonNull LayoutInflater inflater) {
     return inflate(inflater, null, false);
   }
 
   @NonNull
-  public static BrowseEventsBinding inflate(@NonNull LayoutInflater inflater,
+  public static BrowseContentBinding inflate(@NonNull LayoutInflater inflater,
       @Nullable ViewGroup parent, boolean attachToParent) {
-    View root = inflater.inflate(R.layout.browse_events, parent, false);
+    View root = inflater.inflate(R.layout.browse_content, parent, false);
     if (attachToParent) {
       parent.addView(root);
     }
@@ -79,7 +79,7 @@ public final class BrowseEventsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static BrowseEventsBinding bind(@NonNull View rootView) {
+  public static BrowseContentBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
@@ -126,7 +126,7 @@ public final class BrowseEventsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new BrowseEventsBinding((LinearLayout) rootView, backUser, browseContentListview,
+      return new BrowseContentBinding((LinearLayout) rootView, backUser, browseContentListview,
           dateOfEventHeader, eventNameHeader, eventsButton, profilesButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);

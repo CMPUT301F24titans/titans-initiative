@@ -3323,6 +3323,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
+id button_add_poster
 id button_apply
 id button_create_profile
 id button_edit_profile_pic
@@ -3910,7 +3911,7 @@ layout activity_edit_event
 layout activity_qr_code
 layout activity_qr_scanner
 layout attendee_item
-layout browse_events
+layout browse_content
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout content_browse_events
@@ -4036,6 +4037,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_settings
+string add_poster
 string android_credentials_TYPE_PASSWORD_CREDENTIAL
 string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL
 string androidx_startup
@@ -4084,6 +4086,8 @@ string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
 string create
+string create_an_event
+string create_event
 string create_profile
 string created_events
 string dest_title
@@ -4101,6 +4105,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string facility
+string facility_name
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link

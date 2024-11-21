@@ -87,14 +87,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="Facility Name"
+            android:text="@string/facility_name"
             android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/organizerEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name (Organizer)" />
+            android:hint="@string/facility_name" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -121,7 +121,7 @@
             android:id="@+id/eventDetailsEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Event Details"
+            android:hint="(Optional)"
             android:inputType="textMultiLine"
             android:minLines="3" />
 

@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_my_events.xml"
     },
     {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\browse_content.xml",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\browse_content.xml"
+    },
+    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\attendee_item.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\attendee_item.xml"
     },
@@ -14,6 +18,10 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_browse_events.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\content_browse_events.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_my_events.xml",
+        "source": "com.example.titans_project.app-main-54:/layout/fragment_my_events.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\content_browse_profiles.xml",
@@ -66,10 +74,6 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\activity_create_event.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-54:\\layout\\activity_create_event.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-51:/layout/fragment_profile.xml",
-        "source": "com.example.titans_project.app-main-54:/layout/fragment_profile.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-51:\\layout\\activity_qr_code.xml",

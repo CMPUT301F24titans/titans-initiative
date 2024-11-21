@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +40,7 @@ public class BrowseContentView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.browse_events);
+        setContentView(R.layout.browse_content);
 
         // Initialize Firebase
         FirebaseApp.initializeApp(this);
@@ -144,7 +143,7 @@ public class BrowseContentView extends AppCompatActivity {
                     Event clickedEvent = eventDataList.get(position);
                     event_detail.setClass(BrowseContentView.this, EventDetailView.class);
                     event_detail.putExtra("event name", clickedEvent.getName());
-                    event_detail.putExtra("event organizer", clickedEvent.getOrganizer());
+                    event_detail.putExtra("event organizer", clickedEvent.getFacilityName());
                     event_detail.putExtra("event description", clickedEvent.getDescription());
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
                     event_detail.putExtra("event_id", clickedEvent.getEventID());

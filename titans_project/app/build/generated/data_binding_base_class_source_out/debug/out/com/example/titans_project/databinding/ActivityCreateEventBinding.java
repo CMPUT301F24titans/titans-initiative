@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,13 +23,25 @@ public final class ActivityCreateEventBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final Button buttonAddPoster;
+
+  @NonNull
+  public final Button buttonReturn;
+
+  @NonNull
   public final EditText eventDateEdit;
 
   @NonNull
   public final EditText eventDetailsEdit;
 
   @NonNull
+  public final TextView eventName;
+
+  @NonNull
   public final EditText eventTitleEdit;
+
+  @NonNull
+  public final ImageView imageView;
 
   @NonNull
   public final EditText organizerEdit;
@@ -35,13 +49,19 @@ public final class ActivityCreateEventBinding implements ViewBinding {
   @NonNull
   public final Button submitButton;
 
-  private ActivityCreateEventBinding(@NonNull ScrollView rootView, @NonNull EditText eventDateEdit,
-      @NonNull EditText eventDetailsEdit, @NonNull EditText eventTitleEdit,
+  private ActivityCreateEventBinding(@NonNull ScrollView rootView, @NonNull Button buttonAddPoster,
+      @NonNull Button buttonReturn, @NonNull EditText eventDateEdit,
+      @NonNull EditText eventDetailsEdit, @NonNull TextView eventName,
+      @NonNull EditText eventTitleEdit, @NonNull ImageView imageView,
       @NonNull EditText organizerEdit, @NonNull Button submitButton) {
     this.rootView = rootView;
+    this.buttonAddPoster = buttonAddPoster;
+    this.buttonReturn = buttonReturn;
     this.eventDateEdit = eventDateEdit;
     this.eventDetailsEdit = eventDetailsEdit;
+    this.eventName = eventName;
     this.eventTitleEdit = eventTitleEdit;
+    this.imageView = imageView;
     this.organizerEdit = organizerEdit;
     this.submitButton = submitButton;
   }
@@ -73,6 +93,18 @@ public final class ActivityCreateEventBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_add_poster;
+      Button buttonAddPoster = ViewBindings.findChildViewById(rootView, id);
+      if (buttonAddPoster == null) {
+        break missingId;
+      }
+
+      id = R.id.button_return;
+      Button buttonReturn = ViewBindings.findChildViewById(rootView, id);
+      if (buttonReturn == null) {
+        break missingId;
+      }
+
       id = R.id.eventDateEdit;
       EditText eventDateEdit = ViewBindings.findChildViewById(rootView, id);
       if (eventDateEdit == null) {
@@ -85,9 +117,21 @@ public final class ActivityCreateEventBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.event_name;
+      TextView eventName = ViewBindings.findChildViewById(rootView, id);
+      if (eventName == null) {
+        break missingId;
+      }
+
       id = R.id.eventTitleEdit;
       EditText eventTitleEdit = ViewBindings.findChildViewById(rootView, id);
       if (eventTitleEdit == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
         break missingId;
       }
 
@@ -103,8 +147,9 @@ public final class ActivityCreateEventBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCreateEventBinding((ScrollView) rootView, eventDateEdit, eventDetailsEdit,
-          eventTitleEdit, organizerEdit, submitButton);
+      return new ActivityCreateEventBinding((ScrollView) rootView, buttonAddPoster, buttonReturn,
+          eventDateEdit, eventDetailsEdit, eventName, eventTitleEdit, imageView, organizerEdit,
+          submitButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

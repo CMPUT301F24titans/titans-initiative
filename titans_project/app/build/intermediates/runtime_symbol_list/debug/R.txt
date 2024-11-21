@@ -3322,6 +3322,7 @@ int id browser_actions_menu_item_text 0x7f080077
 int id browser_actions_menu_items 0x7f080078
 int id browser_actions_menu_view 0x7f080079
 int id buttonPanel 0x7f08007a
+int id button_add_poster 0x7f08024b
 int id button_apply 0x7f08007b
 int id button_create_profile 0x7f08007c
 int id button_edit_profile_pic 0x7f08007d
@@ -3909,7 +3910,7 @@ int layout activity_edit_event 0x7f0b001f
 int layout activity_qr_code 0x7f0b0020
 int layout activity_qr_scanner 0x7f0b0021
 int layout attendee_item 0x7f0b0022
-int layout browse_events 0x7f0b0023
+int layout browse_content 0x7f0b007f
 int layout browser_actions_context_menu_page 0x7f0b0024
 int layout browser_actions_context_menu_row 0x7f0b0025
 int layout content_browse_events 0x7f0b0026
@@ -4035,6 +4036,7 @@ int string abc_shareactionprovider_share_with 0x7f120018
 int string abc_shareactionprovider_share_with_application 0x7f120019
 int string abc_toolbar_collapse_description 0x7f12001a
 int string action_settings 0x7f12001b
+int string add_poster 0x7f1200f3
 int string android_credentials_TYPE_PASSWORD_CREDENTIAL 0x7f12001c
 int string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL 0x7f12001d
 int string androidx_startup 0x7f12001e
@@ -4083,6 +4085,8 @@ int string common_signin_button_text 0x7f120048
 int string common_signin_button_text_long 0x7f120049
 int string copy_toast_msg 0x7f12004a
 int string create 0x7f12004b
+int string create_an_event 0x7f1200f4
+int string create_event 0x7f1200f6
 int string create_profile 0x7f12004c
 int string created_events 0x7f12004d
 int string dest_title 0x7f12004e
@@ -4100,6 +4104,7 @@ int string exposed_dropdown_menu_content_description 0x7f120059
 int string fab_transformation_scrim_behavior 0x7f12005a
 int string fab_transformation_sheet_behavior 0x7f12005b
 int string facility 0x7f12005c
+int string facility_name 0x7f1200f5
 int string fallback_menu_item_copy_link 0x7f12005d
 int string fallback_menu_item_open_in_browser 0x7f12005e
 int string fallback_menu_item_share_link 0x7f12005f

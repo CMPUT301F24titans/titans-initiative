@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class EventDetailView extends AppCompatActivity {
     private Button return_button, apply_button;
     private TextView name, organizer, description, date;
+    CheckBox geolocation;
     private String user_type;
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
@@ -43,14 +45,17 @@ public class EventDetailView extends AppCompatActivity {
         date = findViewById(R.id.event_date);
         return_button = findViewById(R.id.button_return);
         apply_button = findViewById(R.id.button_apply);
+        geolocation = findViewById(R.id.checkbox_geolocation);
 
         // admin user viewing
         if ("admin".equals(user_type)){
             apply_button.setText("Delete Event");  // apply button becomes delete button for admin
+            geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
         }
         // already enrolled/applied entrant viewing
         else if ("enrolled".equals(user_type)) {
             apply_button.setVisibility(View.GONE);  // remove button for entrant users already enrolled/applied
+            geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
         }
 
         name.setText(getIntent().getStringExtra("event name"));
