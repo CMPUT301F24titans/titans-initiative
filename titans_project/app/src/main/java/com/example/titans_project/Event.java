@@ -16,6 +16,7 @@ public class Event {
     private String event_date;
     private String description;
     private String  picture;
+    private String event_id;
 
     /**
      * This initial the class Event
@@ -39,6 +40,7 @@ public class Event {
         this.event_date = event_date;
         this.description = description;
         this.picture = picture;
+        this.event_id = name + organizer + created_date;
     }
 
     /**
@@ -64,7 +66,14 @@ public class Event {
     }
 
     /**
-     * This give the name of event
+     * This gets the id of an event
+     * @return
+     *  return the id of event
+     */
+    public String getEventID(){return event_id;    }
+
+    /**
+     * This gets the name of an event
      * @return
      *      return the name of event
      */

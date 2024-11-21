@@ -209,6 +209,21 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Existing user detected
             Log.d(TAG, "User already signed in");
+            // check if user exists in Firebase
+            db.collection("user").document(currentUser.getUid())
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            if (!task.getResult().exists()) {
+                                // User document does not exist, create profile
+                                createProfile(currentUser);
+                            }
+                        } else {
+                            Log.e(TAG, "Error checking user existence", task.getException());
+                        }
+                    });
+            // User does not exist in Firebase, create new user profile for them
+            db.collection("user").document(currentUser.getUid()).update("user_id", currentUser.getUid());
             Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(),
                     Toast.LENGTH_SHORT).show();
         }

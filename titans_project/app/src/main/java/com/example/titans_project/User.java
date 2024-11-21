@@ -48,6 +48,15 @@ public class User {
     }
 
     /**
+     * This sets the user's id to a new value
+     * @param user_id
+     *  The new id to set to the user
+     */
+    public void setUserID(String user_id){
+        this.user_id = user_id;
+    }
+
+    /**
      * This returns the user's full name
      * @return
      *  Return user's full name

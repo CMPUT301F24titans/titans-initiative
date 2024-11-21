@@ -114,9 +114,6 @@ public class ProfileView extends AppCompatActivity {
                     Log.d(TAG, "Deleting profile with ID: " + profileId);
 
                     if (profileId != null) {
-                        /**
-                         * DELETION WORKS JUST NEED TO CLARIFY HOW TO RETRIEVE THE PROFILE ID add
-                         */
                         deleteProfile(profileId);
                     } else {
                         Log.e(TAG, "Profile ID is null. Cannot delete.");
@@ -225,6 +222,7 @@ public class ProfileView extends AppCompatActivity {
                     Toast.makeText(ProfileView.this, "Failed to delete user.",
                             Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
     }
