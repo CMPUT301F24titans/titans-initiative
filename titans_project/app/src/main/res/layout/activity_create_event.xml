@@ -100,6 +100,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:text="@string/event_date"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/eventDateEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Date"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:text="@string/event_details"
             android:textStyle="bold"/>
 
@@ -110,20 +124,6 @@
             android:hint="Event Details"
             android:inputType="textMultiLine"
             android:minLines="3" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/event_date"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/eventDateEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Event Date"
-            android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/submitButton"
