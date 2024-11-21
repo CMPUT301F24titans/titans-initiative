@@ -46,7 +46,34 @@ public class Event {
     }
 
     /**
-     * Constructor for Event when not provided a picture
+     * Constructor for Event when provided the event_id
+     * @param event_id
+     *  Event id
+     * @param name
+     *  Event name
+     * @param facility_name
+     *  Event's facility_name (facility name)
+     * @param created_date
+     *  Event's created date
+     * @param event_date
+     *  Date when event will occur
+     * @param description
+     *  Event description
+     * @param picture
+     *  Event poster
+     */
+    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, String picture) {
+        this.name = name;
+        this.facility_name = facility_name;
+        this.created_date = created_date;
+        this.event_date = event_date;
+        this.description = description;
+        this.picture = null;
+        this.event_id = event_id;
+    }
+
+    /**
+     * Constructor for Event when not provided a picture or event_id
      * @param name
      *  Event name
      * @param facility_name

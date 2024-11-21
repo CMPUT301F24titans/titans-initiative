@@ -4089,6 +4089,7 @@ int string create_an_event 0x7f1200f4
 int string create_event 0x7f1200f6
 int string create_profile 0x7f12004c
 int string created_events 0x7f12004d
+int string date_of_event 0x7f1200f7
 int string dest_title 0x7f12004e
 int string edit_remove_profile_pic 0x7f12004f
 int string email 0x7f120050

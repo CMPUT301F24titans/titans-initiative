@@ -24,6 +24,7 @@
     <string name="create_event">Create Event</string>
     <string name="create_profile">Create Profile</string>
     <string name="created_events">Created Events</string>
+    <string name="date_of_event">Date of Event</string>
     <string name="edit_remove_profile_pic">Edit/Remove Profile Pic</string>
     <string name="email">Email</string>
     <string name="event_date">Event Date</string>

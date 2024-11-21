@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +37,7 @@ public class BrowseContentView extends AppCompatActivity {
     private Boolean browsingEvents;
     Intent event_detail = new Intent();
     Intent profile_detail = new Intent();
+    TextView header1, header2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,8 @@ public class BrowseContentView extends AppCompatActivity {
         Button browse_profiles = findViewById(R.id.profilesButton);
         contentList = findViewById(R.id.browse_content_listview);  // Ensure this ID matches the one in your XML
         back_user = findViewById(R.id.back_user);
+        header1 = findViewById(R.id.eventNameHeader);
+        header2 = findViewById(R.id.dateOfEventHeader);
 
         // Array adapters
         profileArrayAdapter = new ProfilesArrayAdapter(this, profileDataList);
@@ -63,6 +67,8 @@ public class BrowseContentView extends AppCompatActivity {
         browse_events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                header1.setText("Event Name");
+                header2.setText("Date of Event");
                 browsingEvents = true;
                 // Display ALL events when Event button is clicked
                 contentList.setAdapter(eventArrayAdapter);
@@ -78,13 +84,14 @@ public class BrowseContentView extends AppCompatActivity {
                         if (querySnapshots != null) {
                             eventDataList.clear();
                             for (QueryDocumentSnapshot doc: querySnapshots) {
-                                String event_name = doc.getString("event_name");
-                                String organizer = doc.getString("event_organizer");
-                                String created_date = doc.getString("created_date");
-                                String event_date = doc.getString("event_date");
+                                String event_id = doc.getString("eventID");
+                                String event_name = doc.getString("name");
+                                String organizer = doc.getString("facilityName");
+                                String created_date = doc.getString("createdDate");
+                                String event_date = doc.getString("eventDate");
                                 String description = doc.getString("description");
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_name, organizer, created_date, event_date, description));
+                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, null));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }
@@ -103,6 +110,8 @@ public class BrowseContentView extends AppCompatActivity {
         browse_profiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                header1.setText("User Name");
+                header2.setText("");
                 browsingEvents = false;
                 // Display ALL profiles when Profile button is clicked
                 contentList.setAdapter(profileArrayAdapter);
@@ -124,6 +133,11 @@ public class BrowseContentView extends AppCompatActivity {
                                 String facility = doc.getString("facility");
                                 Boolean notifications = doc.getBoolean("notifications");
                                 String user_id = doc.getString("user_id");
+
+                                // Replace name with user id if name is empty
+                                if (full_name.isEmpty()){
+                                    full_name = "Anonymous User " + user_id;
+                                }
 
                                 Log.d(TAG, String.format("User(%s, %s) fetched", full_name, email));
                                 profileDataList.add(new User(full_name, email, phone_number, facility, notifications, user_id));

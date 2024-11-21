@@ -121,6 +121,7 @@ string create_an_event
 string create_event
 string create_profile
 string created_events
+string date_of_event
 string edit_remove_profile_pic
 string email
 string event_date
