@@ -38,11 +38,26 @@ public class MainActivityTest {
      * This is the test of switch to admin mode
      */
     @Test
-    public void testSwitchMode(){
+    public void testSwitchAdminMode(){
         // Click on admin mode switch
         onView(withId(R.id.admin_mode)).perform(click());
         // Check is switch to the admin mode
         onView(withText("Browse Content")).check(matches(isDisplayed()));
+    }
+
+    /**
+     * This is the test of switch to user
+     */
+    @Test
+    public void testSwitchUserMode(){
+        // Click on admin mode switch
+        onView(withId(R.id.admin_mode)).perform(click());
+        // Check is switch to the admin mode
+        onView(withText("Browse Content")).check(matches(isDisplayed()));
+        // Click on admin mode switch again
+        onView(withId(R.id.back_user)).perform(click());
+        // Check is switch to the user mode
+        onView(withText("My Events")).check(matches(isDisplayed()));
     }
 
     /**
