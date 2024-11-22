@@ -45,7 +45,7 @@ public class CreateEventView extends AppCompatActivity {
         Button return_button = findViewById(R.id.button_return);
         Button submit_button = findViewById(R.id.submitButton);
         EditText facility_name = findViewById(R.id.organizerEdit);
-        EditText event_name = findViewById(R.id.organizerEdit);
+        EditText event_name = findViewById(R.id.eventTitleEdit);
         EditText event_date = findViewById(R.id.eventDateEdit);
         EditText event_details = findViewById(R.id.eventDetailsEdit);
 
