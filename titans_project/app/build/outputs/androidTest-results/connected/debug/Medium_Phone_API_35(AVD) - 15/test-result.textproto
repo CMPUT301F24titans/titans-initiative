@@ -1,4 +1,4 @@
-# 2024-11-22T01:13:04.015Z:
+# 2024-11-22T02:35:14.984Z:
 test_suite_meta_data {
   scheduled_test_case_count: 1
 }
@@ -9,12 +9,12 @@ test_result {
     test_package: "com.example.titans_project"
     test_method: "testSwitchUserMode"
     start_time {
-      seconds: 1732237973
-      nanos: 601000000
+      seconds: 1732242904
+      nanos: 356000000
     }
     end_time {
-      seconds: 1732237982
-      nanos: 6000000
+      seconds: 1732242912
+      nanos: 867000000
     }
   }
   test_status: PASSED
