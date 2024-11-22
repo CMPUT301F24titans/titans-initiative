@@ -1,20 +1,20 @@
-# 2024-11-08T22:47:34.664Z:
+# 2024-11-22T01:13:04.015Z:
 test_suite_meta_data {
-  scheduled_test_case_count: 4
+  scheduled_test_case_count: 1
 }
 test_status: PASSED
 test_result {
   test_case {
     test_class: "MainActivityTest"
     test_package: "com.example.titans_project"
-    test_method: "testSwitchMode"
+    test_method: "testSwitchUserMode"
     start_time {
-      seconds: 1731106029
-      nanos: 791000000
+      seconds: 1732237973
+      nanos: 601000000
     }
     end_time {
-      seconds: 1731106036
-      nanos: 523000000
+      seconds: 1732237982
+      nanos: 6000000
     }
   }
   test_status: PASSED
@@ -24,163 +24,7 @@ test_result {
       namespace: "android"
     }
     source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.titans_project.MainActivityTest-testSwitchMode.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "MainActivityTest"
-    test_package: "com.example.titans_project"
-    test_method: "testProfilePage"
-    start_time {
-      seconds: 1731106037
-      nanos: 753000000
-    }
-    end_time {
-      seconds: 1731106041
-      nanos: 183000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.titans_project.MainActivityTest-testProfilePage.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "MainActivityTest"
-    test_package: "com.example.titans_project"
-    test_method: "testProfileSave"
-    start_time {
-      seconds: 1731106042
-      nanos: 296000000
-    }
-    end_time {
-      seconds: 1731106048
-      nanos: 680000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.titans_project.MainActivityTest-testProfileSave.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\cpuinfo"
-    }
-  }
-}
-test_result {
-  test_case {
-    test_class: "MainActivityTest"
-    test_package: "com.example.titans_project"
-    test_method: "testMyApplication"
-    start_time {
-      seconds: 1731106049
-      nanos: 765000000
-    }
-    end_time {
-      seconds: 1731106052
-      nanos: 270000000
-    }
-  }
-  test_status: PASSED
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.titans_project.MainActivityTest-testMyApplication.txt"
+      path: "C:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\outputs\\androidTest-results\\connected\\debug\\Medium_Phone_API_35(AVD) - 15\\logcat-com.example.titans_project.MainActivityTest-testSwitchUserMode.txt"
     }
   }
   output_artifact {

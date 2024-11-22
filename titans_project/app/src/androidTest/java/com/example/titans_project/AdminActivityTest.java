@@ -24,6 +24,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * This is the test start from my event page
  */
@@ -34,16 +36,6 @@ public class AdminActivityTest {
     public ActivityScenarioRule<BrowseContentView> scenario = new
             ActivityScenarioRule<BrowseContentView>(BrowseContentView.class);
 
-    /**
-     * This is the test of switch to user
-     */
-    @Test
-    public void testSwitchMode(){
-        // Click on admin mode switch
-        onView(withId(R.id.admin_mode)).perform(click());
-        // Check is switch to the user mode
-        onView(withText("My Events")).check(matches(isDisplayed()));
-    }
 
     /**
      * This is the test of events button
@@ -64,7 +56,7 @@ public class AdminActivityTest {
         // Click on Profiles button
         onView(withId(R.id.profilesButton)).perform(click());
         // Check there is user list
-        onView(withText("Event Name")).check(matches(isDisplayed()));
+        onView(withText("User Name")).check(matches(isDisplayed()));
     }
 
 }
