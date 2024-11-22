@@ -73,7 +73,6 @@ id profile_pic
 id profilesButton
 id qrCodeImageView
 id qrImageView
-id regenerateButton
 id result_title
 id returnButton
 id saveButton

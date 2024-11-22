@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\db8ffb525ca08b5c2b7ed6fc65f71cd4\\transformed\\play-services-base-18.0.1\\res\\values-pt-rPT\\values.xml",

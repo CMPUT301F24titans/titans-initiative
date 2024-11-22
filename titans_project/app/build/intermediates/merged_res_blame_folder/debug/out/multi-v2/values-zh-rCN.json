@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\5861c4c5858af994e22c938b22dd2f8d\\transformed\\material-1.12.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
@@ -37,6 +37,23 @@
                         "startOffsets": "6162,6435,6527,6628",
                         "endColumns": "82,91,100,92",
                         "endOffsets": "6240,6522,6623,6716"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\b825fbe2fd019a1f1f236bfe912d8ef6\\transformed\\zxing-android-embedded-4.3.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,104,151,238",
+                        "endColumns": "48,46,86,68",
+                        "endOffsets": "99,146,233,302"
+                    },
+                    "to": {
+                        "startLines": "143,144,145,146",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "11544,11593,11640,11727",
+                        "endColumns": "48,46,86,68",
+                        "endOffsets": "11588,11635,11722,11791"
                     }
                 },
                 {

@@ -149,6 +149,9 @@ public class CreateEventView extends AppCompatActivity {
                             db.collection("events").document(documentReference.getId()).update("eventID", documentReference.getId());
                             Toast.makeText(CreateEventView.this, "Event Successfully Created",
                                     Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(CreateEventView.this, QRCodeActivity.class);
+                            intent.putExtra("eventID", documentReference.getId());
+                            startActivity(intent);
                             finish(); // Optionally return to the previous activity
                         })
                         .addOnFailureListener(e -> {
