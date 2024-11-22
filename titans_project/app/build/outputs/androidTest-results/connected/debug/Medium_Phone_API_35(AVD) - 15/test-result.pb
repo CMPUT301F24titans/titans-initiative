@@ -1,7 +1,7 @@
 
-É
-]
-MainActivityTestcom.example.titans_projecttestSwitchUserMode2•µÿ¹ÀÊ:µÿ¹€›î"ÿ
+Ê
+^
+MainActivityTestcom.example.titans_projecttestSwitchUserMode2ØÛÿ¹€Âà©:àÛÿ¹À½µ"ÿ
 
 logcatandroidé
 æC:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\build\outputs\androidTest-results\connected\debug\Medium_Phone_API_35(AVD) - 15\logcat-com.example.titans_project.MainActivityTest-testSwitchUserMode.txt"É

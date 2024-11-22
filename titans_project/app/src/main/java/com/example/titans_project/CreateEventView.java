@@ -1,14 +1,18 @@
 package com.example.titans_project;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +30,11 @@ public class CreateEventView extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private ImageView picture;
+    private int eventIndex = -1, event_image=0;
+    private Button add_poster, return_button, submit_button;
+    private EditText facility_name, event_name, event_date, event_details;
+    private Uri uri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +51,14 @@ public class CreateEventView extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_create_event);
 
-        Button return_button = findViewById(R.id.button_return);
-        Button submit_button = findViewById(R.id.submitButton);
-        EditText facility_name = findViewById(R.id.organizerEdit);
-        EditText event_name = findViewById(R.id.eventTitleEdit);
-        EditText event_date = findViewById(R.id.eventDateEdit);
-        EditText event_details = findViewById(R.id.eventDetailsEdit);
+        return_button = findViewById(R.id.button_return);
+        add_poster = findViewById(R.id.button_add_poster);
+        submit_button = findViewById(R.id.submitButton);
+        facility_name = findViewById(R.id.organizerEdit);
+        event_name = findViewById(R.id.eventTitleEdit);
+        event_date = findViewById(R.id.eventDateEdit);
+        event_details = findViewById(R.id.eventDetailsEdit);
+        picture = findViewById(R.id.imageView);
 
         // User exists
         if (user != null) {
@@ -81,6 +92,17 @@ public class CreateEventView extends AppCompatActivity {
                 finish();
             }
         });
+
+
+        add_poster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent event_image = new Intent(Intent.ACTION_GET_CONTENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(event_image, 1);
+            }
+        });
+
+
         // user clicks to submit and create event -> store in Firebase
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,4 +148,11 @@ public class CreateEventView extends AppCompatActivity {
 
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+            uri = data.getData();
+            picture.setImageURI(uri);
+        }
+    }
 }
