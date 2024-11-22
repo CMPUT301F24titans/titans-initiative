@@ -97,13 +97,13 @@ public class EventDetailView extends AppCompatActivity {
                 // successful deletion of event
                 if (task.isSuccessful()) {
                     Log.d(TAG, "deletedEvent:success");
-                    Toast.makeText(EventDetailView.this, "Successfully deleted event.",
+                    Toast.makeText(EventDetailView.this, "Successfully deleted event",
                             Toast.LENGTH_SHORT).show();
                 }
                 // unsuccessful deletion of event
                 else {
                     Log.w(TAG, "deletedEvent:failure", task.getException());
-                    Toast.makeText(EventDetailView.this, "Failed to delete event.",
+                    Toast.makeText(EventDetailView.this, "Failed to delete event",
                             Toast.LENGTH_SHORT).show();
                 }
             }
