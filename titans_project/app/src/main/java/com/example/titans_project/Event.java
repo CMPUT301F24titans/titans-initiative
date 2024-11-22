@@ -19,6 +19,8 @@ public class Event {
     private String description;
     private String  picture;
     private String event_id;
+    private Integer applicant_limit;
+    private Integer default_applicant_limit = 10000;
 
     /**
      * This initial the class Event
@@ -43,6 +45,7 @@ public class Event {
         this.description = description;
         this.picture = picture;
         this.event_id = null;
+        this.applicant_limit = default_applicant_limit;
     }
 
     /**
@@ -70,6 +73,35 @@ public class Event {
         this.description = description;
         this.picture = null;
         this.event_id = event_id;
+        this.applicant_limit = default_applicant_limit;
+    }
+
+    /**
+     * Constructor for Event when not provided a picture
+     * @param event_id
+     *  Event's id in Firebase
+     * @param name
+     *  Event name
+     * @param facility_name
+     *  Event's facility_name (facility name)
+     * @param created_date
+     *  Event's created date
+     * @param event_date
+     *  Date when event will occur
+     * @param description
+     *  Event description
+     * @param applicantLimit
+     *  Event applicant limit
+     */
+    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit) {
+        this.name = name;
+        this.facility_name = facility_name;
+        this.created_date = created_date;
+        this.event_date = event_date;
+        this.description = description;
+        this.picture = null;
+        this.event_id = event_id;
+        this.applicant_limit = applicantLimit;
     }
 
     /**
@@ -84,8 +116,10 @@ public class Event {
      *  Date when event will occur
      * @param description
      *  Event description
+     * @param applicantLimit
+     *  Event applicant limit
      */
-    public Event(String name, String facility_name, String created_date, String event_date, String description) {
+    public Event(String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit) {
         this.name = name;
         this.facility_name = facility_name;
         this.created_date = created_date;
@@ -93,6 +127,23 @@ public class Event {
         this.description = description;
         this.picture = null;
         this.event_id = null;
+        this.applicant_limit = applicantLimit;
+    }
+
+    /**
+     * This gets the applicant limit for the event
+     * @return
+     *  returns the applicant limit
+     */
+    public Integer getApplicantLimit(){ return applicant_limit; }
+
+    /**
+     * This sets the applicant limit to a new value
+     * @param applicant_limit
+     *  The new applicant limit for the event
+     */
+    public void setApplicantLimit(Integer applicant_limit){
+        this.applicant_limit = applicant_limit;
     }
 
     /**

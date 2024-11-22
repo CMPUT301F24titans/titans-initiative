@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-hy/values-hy.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-hy/values-hy.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\16907fe4bc20cae217c8aecc0f231dd9\\transformed\\navigation-ui-2.8.3\\res\\values-hy\\values-hy.xml",

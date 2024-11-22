@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-ja/values-ja.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\590a5a2fb7b212321dbb9ad8785b406e\\transformed\\credentials-1.2.0-rc01\\res\\values-ja\\values-ja.xml",
@@ -35,6 +35,23 @@
                         "startOffsets": "4406,4510,4644,4764,4870,5002,5122,5227,5448,5582,5683,5816,5935,6055,6175,6235,6294",
                         "endColumns": "103,133,119,105,131,119,104,98,133,100,132,118,119,119,59,58,70",
                         "endOffsets": "4505,4639,4759,4865,4997,5117,5222,5321,5577,5678,5811,5930,6050,6170,6230,6289,6360"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\b825fbe2fd019a1f1f236bfe912d8ef6\\transformed\\zxing-android-embedded-4.3.0\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,109,156,256",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "104,151,251,333"
+                    },
+                    "to": {
+                        "startLines": "143,144,145,146",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "11860,11914,11961,12061",
+                        "endColumns": "53,46,99,81",
+                        "endOffsets": "11909,11956,12056,12138"
                     }
                 },
                 {

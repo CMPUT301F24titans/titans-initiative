@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\c755a95095da96308e30c28b35067188\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",

@@ -114,6 +114,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:text="@string/limit_of_applicants"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/eventLimitEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="(Optional)"
+            android:inputType="number"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:text="@string/event_details"
             android:textStyle="bold"/>
 
