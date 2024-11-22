@@ -31,6 +31,7 @@ id author
 id backButton
 id back_user
 id browse_content_listview
+id button_add_poster
 id button_apply
 id button_create_profile
 id button_edit_profile_pic
@@ -91,7 +92,7 @@ layout activity_edit_event
 layout activity_qr_code
 layout activity_qr_scanner
 layout attendee_item
-layout browse_events
+layout browse_content
 layout content_browse_events
 layout content_browse_profiles
 layout content_my_application
@@ -107,6 +108,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
 string action_settings
+string add_poster
 string app_name
 string application_form
 string application_submit
@@ -115,8 +117,11 @@ string browse_content
 string checkbox_application
 string checkbox_notifications
 string create
+string create_an_event
+string create_event
 string create_profile
 string created_events
+string date_of_event
 string edit_remove_profile_pic
 string email
 string event_date
@@ -126,6 +131,7 @@ string event_details_example
 string event_name
 string event_update
 string facility
+string facility_name
 string first_fragment_label
 string full_name
 string gcm_defaultSenderId

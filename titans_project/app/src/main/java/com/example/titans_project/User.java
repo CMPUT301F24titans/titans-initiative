@@ -11,6 +11,7 @@ public class User {
     private String phone_number;
     private String facility;
     private Boolean notifications;
+    private String user_id;
 
 
     /**
@@ -25,13 +26,34 @@ public class User {
      *  The user's facility name (for Organizer)
      * @param notifications
      *  True if the user elects to receive notifications from other Organizers and Admin
+     * @param user_id
+     *  The user's anonymous sign in id
      */
-    public User(String name, String email, String phone_number, String facility, Boolean notifications){
+    public User(String name, String email, String phone_number, String facility, Boolean notifications, String user_id){
         this.name = name;
         this.email = email;
         this.phone_number = phone_number;
         this.facility = facility;
         this.notifications = notifications;
+        this.user_id = user_id;
+    }
+
+    /**
+     * This returns the user's anonymous sign in id
+     * @return
+     *  Return user's anonymous sign in id
+     */
+    public String getUserID(){
+        return this.user_id;
+    }
+
+    /**
+     * This sets the user's id to a new value
+     * @param user_id
+     *  The new id to set to the user
+     */
+    public void setUserID(String user_id){
+        this.user_id = user_id;
     }
 
     /**

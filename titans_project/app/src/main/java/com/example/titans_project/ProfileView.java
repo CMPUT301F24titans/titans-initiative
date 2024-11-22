@@ -31,6 +31,8 @@ public class ProfileView extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private static final String TAG = "userDeletion";
+    private Boolean adminView = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,7 @@ public class ProfileView extends AppCompatActivity {
                                 facility.setText(document.getString("facility"));
                                 // Generate initials of user
                                 initials.setText(getInitials(name.getText().toString()));
+                                notifications.setChecked(document.getBoolean("notifications"));
 
                             });
                         } else {
@@ -95,66 +98,85 @@ public class ProfileView extends AppCompatActivity {
                 finish();
             }
         });
-
+        // admin is viewing another profile
+        if ("admin".equals(getIntent().getStringExtra("viewer"))){
+            // save changes button becomes deletion button
+            save_changes_button.setText("Delete User");
+            adminView = Boolean.TRUE;
+        }
         save_changes_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Input validation before proceeding with the update
-                String nameInput = name.getText().toString().trim();
-                String emailInput = email.getText().toString().trim();
-                String phoneInput = phone_number.getText().toString().trim();
-                String facilityInput = facility.getText().toString().trim();
 
-                // Validate email
-                if (!emailInput.isEmpty() && !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to validate email
-                    email.setError("Please enter a valid email address");
-                    return; // Don't proceed with the update if validation fails
-                }
+                // admin deletes a user
+                if (adminView) {
+                    String profileId = getIntent().getStringExtra("user_id");
+                    Log.d(TAG, "Deleting profile with ID: " + profileId);
 
-                // Validate phone number
-                if (!phoneInput.isEmpty() && !phoneInput.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")) {
-                    phone_number.setError("Please enter a valid phone number");
-                    return; // Don't proceed with the update if validation fails
-                }
-
-                // Get the document
-                userRef.get().addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot user = task.getResult();
-                        // Prepare data to update in a HashMap
-                        HashMap<String, Object> userData = new HashMap<>();
-                        userData.put("full_name", nameInput);
-                        userData.put("email", emailInput);
-                        userData.put("phone_number", phoneInput);
-                        userData.put("facility", facilityInput);
-                        userData.put("notifications", notifications.isChecked());
-
-                        if (user.exists()) {
-                            // Perform the update in Firestore
-                            userRef.update(userData)
-                                    .addOnSuccessListener(aVoid -> {
-                                        // Handle success
-                                        Log.d("ProfileView", "User details updated successfully!");
-                                    })
-                                    .addOnFailureListener(e -> {
-                                        // Handle failure
-                                        Log.e("ProfileView", "Error updating user details", e);
-                                    });
-                        }
-                        else {
-                            mAuth.signInAnonymously();
-                            FirebaseUser currentUser = mAuth.getCurrentUser();
-                            // Create nested HashMap to store user's events
-                            HashMap<String, Object> eventData = new HashMap<>();  // empty initially
-                            userData.put("Events", eventData);
-                            // Store in Firebase
-                            db.collection("user").document(currentUser.getUid()).set(userData);
-                        }
+                    if (profileId != null) {
+                        deleteProfile(profileId);
+                    } else {
+                        Log.e(TAG, "Profile ID is null. Cannot delete.");
                     }
-        });
-                Toast.makeText(ProfileView.this, "Changes Saved",
-                        Toast.LENGTH_SHORT).show();
-                finish();
+                }
+                // user editing their OWN profile
+                else {
+                    // Input validation before proceeding with the update
+                    String nameInput = name.getText().toString().trim();
+                    String emailInput = email.getText().toString().trim();
+                    String phoneInput = phone_number.getText().toString().trim();
+                    String facilityInput = facility.getText().toString().trim();
+
+                    // Validate email
+                    if (!emailInput.isEmpty() && !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to validate email
+                        email.setError("Please enter a valid email address");
+                        return; // Don't proceed with the update if validation fails
+                    }
+
+                    // Validate phone number
+                    if (!phoneInput.isEmpty() && !phoneInput.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")) {
+                        phone_number.setError("Please enter a valid phone number");
+                        return; // Don't proceed with the update if validation fails
+                    }
+
+                    // Get the document
+                    userRef.get().addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot user = task.getResult();
+                            // Prepare data to update in a HashMap
+                            HashMap<String, Object> userData = new HashMap<>();
+                            userData.put("full_name", nameInput);
+                            userData.put("email", emailInput);
+                            userData.put("phone_number", phoneInput);
+                            userData.put("facility", facilityInput);
+                            userData.put("notifications", notifications.isChecked());
+
+                            if (user.exists()) {
+                                // Perform the update in Firestore
+                                userRef.update(userData)
+                                        .addOnSuccessListener(aVoid -> {
+                                            // Handle success
+                                            Log.d("ProfileView", "User details updated successfully!");
+                                        })
+                                        .addOnFailureListener(e -> {
+                                            // Handle failure
+                                            Log.e("ProfileView", "Error updating user details", e);
+                                        });
+                            } else {
+                                mAuth.signInAnonymously();
+                                FirebaseUser currentUser = mAuth.getCurrentUser();
+                                // Create nested HashMap to store user's events
+                                HashMap<String, Object> eventData = new HashMap<>();  // empty initially
+                                userData.put("Events", eventData);
+                                // Store in Firebase
+                                db.collection("user").document(currentUser.getUid()).set(userData);
+                            }
+                        }
+                    });
+                    Toast.makeText(ProfileView.this, "Changes Saved",
+                            Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
     });
     }
@@ -177,5 +199,31 @@ public class ProfileView extends AppCompatActivity {
         }
 
         return initials.toString();
+    }
+
+    /**
+     * Deletes a profile from Firebase
+     * @param profile_id
+     *  ID of the profile to delete.
+     */
+    private void deleteProfile(String profile_id){
+        db.collection("user").document(profile_id).delete().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                // successful deletion of user
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "deletedUser:success");
+                    Toast.makeText(ProfileView.this, "Successfully deleted user.",
+                            Toast.LENGTH_SHORT).show();
+                }
+                // unsuccessful deletion of user
+                else {
+                    Log.w(TAG, "deletedUser:failure", task.getException());
+                    Toast.makeText(ProfileView.this, "Failed to delete user.",
+                            Toast.LENGTH_SHORT).show();
+                }
+                finish();
+            }
+        });
     }
 }

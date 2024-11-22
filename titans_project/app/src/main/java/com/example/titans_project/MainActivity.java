@@ -47,12 +47,13 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Event> eventsdataList;
     private ArrayList<User> usersdataList;
     private EventsArrayAdapter eventsArrayAdapter;
-    private Button profile_button, application_button;
+    private Button profile_button, application_button, create_event_button;
     private Switch admin_switch;
     Intent profile = new Intent();
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
     Intent admin = new Intent();
+    Intent create_event = new Intent();
     private Event testEvent, fakeEvent;
     private User testUser, fakeUser;
     private FirebaseFirestore db;
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
+        create_event_button = findViewById(R.id.created_events_button);
         application_button = findViewById(R.id.application_button);
         admin_switch = findViewById(R.id.admin_mode);
 
@@ -107,10 +109,10 @@ public class MainActivity extends AppCompatActivity {
                 if (querySnapshots != null) {
                     eventsdataList.clear();
                     for (QueryDocumentSnapshot doc: querySnapshots) {
-                        String event_name = doc.getString("event_name");
-                        String organizer = doc.getString("event_organizer");
-                        String created_date = doc.getString("created_date");
-                        String event_date = doc.getString("event_date");
+                        String event_name = doc.getString("name");
+                        String organizer = doc.getString("facilityName");
+                        String created_date = doc.getString("createdDate");
+                        String event_date = doc.getString("eventDate");
                         String description = doc.getString("description");
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
                         eventsdataList.add(new Event(event_name, organizer, created_date, event_date, description));
@@ -147,15 +149,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // User clicks on Create Event button
+        create_event_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                create_event.setClass(MainActivity.this, CreateEventView.class);
+                startActivity(create_event);
+            }
+        });
+
         // User clicks on the event in events list
         eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 event_detail.setClass(MainActivity.this, EventDetailView.class);
                 event_detail.putExtra("event name", eventsdataList.get(position).getName());
-                event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizer());
+                event_detail.putExtra("event organizer", eventsdataList.get(position).getFacilityName());
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
                 event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
+                event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);
             }
         });
@@ -171,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
         eventsArrayAdapter.notifyDataSetChanged();
         HashMap<String, String> eventdata = new HashMap<>();
         eventdata.put("event_name", event.getName());
-        eventdata.put("organizer", event.getOrganizer());
+        eventdata.put("organizer", event.getFacilityName());
         eventdata.put("created_date", event.getCreatedDate());
         eventdata.put("event_date", event.getEventDate());
         eventdata.put("description", event.getDescription());
@@ -208,6 +220,21 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Existing user detected
             Log.d(TAG, "User already signed in");
+            // check if user exists in Firebase
+            db.collection("user").document(currentUser.getUid())
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            if (!task.getResult().exists()) {
+                                // User document does not exist, create profile
+                                createProfile(currentUser);
+                            }
+                        } else {
+                            Log.e(TAG, "Error checking user existence", task.getException());
+                        }
+                    });
+            // User does not exist in Firebase, create new user profile for them
+            db.collection("user").document(currentUser.getUid()).update("user_id", currentUser.getUid());
             Toast.makeText(MainActivity.this, "Successfully Signed In, User UID: " + currentUser.getUid(),
                     Toast.LENGTH_SHORT).show();
         }
@@ -225,6 +252,7 @@ public class MainActivity extends AppCompatActivity {
         userData.put("phone_number","");
         userData.put("facility","");
         userData.put("notifications", Boolean.FALSE);
+        userData.put("user_id", user.getUid());
         // Create nested HashMap to store user's events
         HashMap<String, Object> eventData = new HashMap<>();  // empty initially
         userData.put("Events", eventData);

@@ -13,7 +13,7 @@
     <string name="create">Create</string>
     <string name="full_name">Full Name</string>
     <string name="email">Email</string>
-    <string name="phone_number">Phone Number</string>
+    <string name="phone_number">Phone Number (xxx-xxx-xxxx)</string>
     <string name="checkbox_notifications">Receive notifications from Organizers and Administration</string>
     <string name="profile">Profile</string>
     <string name="edit_remove_profile_pic">Edit/Remove Profile Pic</string>
@@ -45,4 +45,9 @@
     <string name="created_events">Created Events</string>
     <string name="facility">Facility</string>
     <string name="browse_content">Browse Content</string>
+    <string name="create_an_event">Create an Event</string>
+    <string name="add_poster">Add Poster</string>
+    <string name="facility_name">Facility Name</string>
+    <string name="create_event">Create Event</string>
+    <string name="date_of_event">Date of Event</string>
 </resources>
