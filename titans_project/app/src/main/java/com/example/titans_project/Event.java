@@ -77,6 +77,34 @@ public class Event {
     }
 
     /**
+     * Constructor for Event when not provided a picture
+     * @param event_id
+     *  Event's id in Firebase
+     * @param name
+     *  Event name
+     * @param facility_name
+     *  Event's facility_name (facility name)
+     * @param created_date
+     *  Event's created date
+     * @param event_date
+     *  Date when event will occur
+     * @param description
+     *  Event description
+     * @param applicantLimit
+     *  Event applicant limit
+     */
+    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit) {
+        this.name = name;
+        this.facility_name = facility_name;
+        this.created_date = created_date;
+        this.event_date = event_date;
+        this.description = description;
+        this.picture = null;
+        this.event_id = event_id;
+        this.applicant_limit = applicantLimit;
+    }
+
+    /**
      * Constructor for Event when not provided a picture or event_id
      * @param name
      *  Event name
@@ -88,6 +116,8 @@ public class Event {
      *  Date when event will occur
      * @param description
      *  Event description
+     * @param applicantLimit
+     *  Event applicant limit
      */
     public Event(String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit) {
         this.name = name;

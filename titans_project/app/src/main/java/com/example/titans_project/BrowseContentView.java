@@ -89,6 +89,7 @@ public class BrowseContentView extends AppCompatActivity {
                                 String organizer = doc.getString("facilityName");
                                 String created_date = doc.getString("createdDate");
                                 String event_date = doc.getString("eventDate");
+                                String event_id = doc.getString("eventID");
                                 String description = doc.getString("description");
                                 Integer applicant_limit = default_applicant_limit;
                                 Object applicantLimitObj = doc.get("applicantLimit");
@@ -99,7 +100,7 @@ public class BrowseContentView extends AppCompatActivity {
                                     Log.w(TAG, "applicantLimit is missing or null");
                                 }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_name, organizer, created_date, event_date, description, applicant_limit));
+                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }

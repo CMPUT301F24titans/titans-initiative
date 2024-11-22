@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     for (QueryDocumentSnapshot doc: querySnapshots) {
                         String event_name = doc.getString("name");
                         String organizer = doc.getString("facilityName");
+                        String event_id = doc.getString("eventID");
                         String created_date = doc.getString("createdDate");
                         String event_date = doc.getString("eventDate");
                         String description = doc.getString("description");
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "applicantLimit is missing or null");
                         }
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_name, organizer, created_date, event_date, description, applicant_limit));
+                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit));
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
                 }
