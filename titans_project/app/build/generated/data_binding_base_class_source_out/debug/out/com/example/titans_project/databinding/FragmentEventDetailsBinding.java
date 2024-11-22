@@ -32,6 +32,9 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
   public final CheckBox checkboxGeolocation;
 
   @NonNull
+  public final TextView eventApplicantLimit;
+
+  @NonNull
   public final TextView eventDate;
 
   @NonNull
@@ -48,12 +51,14 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
 
   private FragmentEventDetailsBinding(@NonNull RelativeLayout rootView, @NonNull Button buttonApply,
       @NonNull Button buttonReturn, @NonNull CheckBox checkboxGeolocation,
-      @NonNull TextView eventDate, @NonNull TextView eventDescription, @NonNull TextView eventName,
-      @NonNull TextView organizer, @NonNull ImageView profilePic) {
+      @NonNull TextView eventApplicantLimit, @NonNull TextView eventDate,
+      @NonNull TextView eventDescription, @NonNull TextView eventName, @NonNull TextView organizer,
+      @NonNull ImageView profilePic) {
     this.rootView = rootView;
     this.buttonApply = buttonApply;
     this.buttonReturn = buttonReturn;
     this.checkboxGeolocation = checkboxGeolocation;
+    this.eventApplicantLimit = eventApplicantLimit;
     this.eventDate = eventDate;
     this.eventDescription = eventDescription;
     this.eventName = eventName;
@@ -106,6 +111,12 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.event_applicant_limit;
+      TextView eventApplicantLimit = ViewBindings.findChildViewById(rootView, id);
+      if (eventApplicantLimit == null) {
+        break missingId;
+      }
+
       id = R.id.event_date;
       TextView eventDate = ViewBindings.findChildViewById(rootView, id);
       if (eventDate == null) {
@@ -137,7 +148,8 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
       }
 
       return new FragmentEventDetailsBinding((RelativeLayout) rootView, buttonApply, buttonReturn,
-          checkboxGeolocation, eventDate, eventDescription, eventName, organizer, profilePic);
+          checkboxGeolocation, eventApplicantLimit, eventDate, eventDescription, eventName,
+          organizer, profilePic);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

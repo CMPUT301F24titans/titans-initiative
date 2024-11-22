@@ -19,6 +19,8 @@ public class Event {
     private String description;
     private String  picture;
     private String event_id;
+    private Integer applicant_limit;
+    private Integer default_applicant_limit = 10000;
 
     /**
      * This initial the class Event
@@ -43,6 +45,7 @@ public class Event {
         this.description = description;
         this.picture = picture;
         this.event_id = null;
+        this.applicant_limit = default_applicant_limit;
     }
 
     /**
@@ -70,6 +73,7 @@ public class Event {
         this.description = description;
         this.picture = null;
         this.event_id = event_id;
+        this.applicant_limit = default_applicant_limit;
     }
 
     /**
@@ -85,7 +89,7 @@ public class Event {
      * @param description
      *  Event description
      */
-    public Event(String name, String facility_name, String created_date, String event_date, String description) {
+    public Event(String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit) {
         this.name = name;
         this.facility_name = facility_name;
         this.created_date = created_date;
@@ -93,6 +97,23 @@ public class Event {
         this.description = description;
         this.picture = null;
         this.event_id = null;
+        this.applicant_limit = applicantLimit;
+    }
+
+    /**
+     * This gets the applicant limit for the event
+     * @return
+     *  returns the applicant limit
+     */
+    public Integer getApplicantLimit(){ return applicant_limit; }
+
+    /**
+     * This sets the applicant limit to a new value
+     * @param applicant_limit
+     *  The new applicant limit for the event
+     */
+    public void setApplicantLimit(Integer applicant_limit){
+        this.applicant_limit = applicant_limit;
     }
 
     /**

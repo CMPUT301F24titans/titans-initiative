@@ -3424,8 +3424,10 @@ int id escape 0x7f0800dd
 int id eventDateEdit 0x7f0800de
 int id eventDetailsEdit 0x7f0800df
 int id eventImageEdit 0x7f0800e0
+int id eventLimitEdit 0x7f08024c
 int id eventNameHeader 0x7f0800e1
 int id eventTitleEdit 0x7f0800e2
+int id event_applicant_limit 0x7f08024d
 int id event_date 0x7f0800e3
 int id event_description 0x7f0800e4
 int id event_name 0x7f0800e5
@@ -4122,6 +4124,7 @@ int string homepage 0x7f12006e
 int string icon_content_description 0x7f12006f
 int string item_view_role_description 0x7f120070
 int string leave_waitlist 0x7f120071
+int string limit_of_applicants 0x7f1200f8
 int string m3_exceed_max_badge_text_suffix 0x7f120072
 int string m3_ref_typeface_brand_medium 0x7f120073
 int string m3_ref_typeface_brand_regular 0x7f120074
@@ -4252,6 +4255,7 @@ int string second_fragment_label 0x7f1200f0
 int string side_sheet_accessibility_pane_title 0x7f1200f1
 int string side_sheet_behavior 0x7f1200f2
 int string status_bar_notification_info_overflow 0x7f1200f3
+int string there_is_no_limit_on_the_amount_of_applicants_for_this_event 0x7f1200f9
 int string upload_profile_pic 0x7f1200f4
 int string user_return 0x7f1200f5
 int string user_type 0x7f1200f6

@@ -3425,8 +3425,10 @@ id escape
 id eventDateEdit
 id eventDetailsEdit
 id eventImageEdit
+id eventLimitEdit
 id eventNameHeader
 id eventTitleEdit
+id event_applicant_limit
 id event_date
 id event_description
 id event_name
@@ -4123,6 +4125,7 @@ string homepage
 string icon_content_description
 string item_view_role_description
 string leave_waitlist
+string limit_of_applicants
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -4253,6 +4256,7 @@ string second_fragment_label
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
 string user_type

@@ -51,8 +51,10 @@ id edit_text_phone_number
 id eventDateEdit
 id eventDetailsEdit
 id eventImageEdit
+id eventLimitEdit
 id eventNameHeader
 id eventTitleEdit
+id event_applicant_limit
 id event_date
 id event_description
 id event_name
@@ -142,6 +144,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string homepage
 string leave_waitlist
+string limit_of_applicants
 string my_application_title
 string my_applications
 string my_events
@@ -158,6 +161,7 @@ string return_to_homepage
 string save_changes
 string scan
 string second_fragment_label
+string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
 string user_type

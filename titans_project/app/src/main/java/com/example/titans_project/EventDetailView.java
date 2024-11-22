@@ -22,11 +22,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EventDetailView extends AppCompatActivity {
     private Button return_button, apply_button;
-    private TextView name, organizer, description, date;
+    private TextView name, organizer, description, date, application_limit;
     CheckBox geolocation;
     private String user_type;
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
+    private Integer default_applicant_limit = 10000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,7 @@ public class EventDetailView extends AppCompatActivity {
         return_button = findViewById(R.id.button_return);
         apply_button = findViewById(R.id.button_apply);
         geolocation = findViewById(R.id.checkbox_geolocation);
+        application_limit = findViewById(R.id.event_applicant_limit);
 
         // admin user viewing
         if ("admin".equals(user_type)){
@@ -60,8 +63,17 @@ public class EventDetailView extends AppCompatActivity {
 
         name.setText(getIntent().getStringExtra("event name"));
         organizer.setText(getIntent().getStringExtra("event organizer"));
-        description.setText(getIntent().getStringExtra("event description"));
+        // Only display description if user set one
+        if (!(getIntent().getStringExtra("event description").isEmpty())){
+            description.setText(getIntent().getStringExtra("event description"));
+        }
         date.setText(getIntent().getStringExtra("event date"));
+        // Display the limit event if user set one
+        int eventLimit = getIntent().getIntExtra("event limit", default_applicant_limit); // defaultLimit is a fallback value if "event limit" is not found
+        Log.w(TAG, "applicantLimit (from EventDetailView): " + eventLimit);
+        if (eventLimit != default_applicant_limit) {
+            application_limit.setText("The limit of applicants is " + eventLimit);
+        }
 
         apply_button.setOnClickListener(new View.OnClickListener() {
             @Override

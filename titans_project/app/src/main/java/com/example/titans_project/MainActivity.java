@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "AnonymousAuthActivity";
     private FirebaseAuth mAuth;
     private Boolean adminChecked;
+    Integer default_applicant_limit = 10000;
 
 
     /**
@@ -114,8 +115,16 @@ public class MainActivity extends AppCompatActivity {
                         String created_date = doc.getString("createdDate");
                         String event_date = doc.getString("eventDate");
                         String description = doc.getString("description");
+                        Integer applicant_limit = default_applicant_limit;
+                        Object applicantLimitObj = doc.get("applicantLimit");
+                        if (applicantLimitObj != null) {
+                            applicant_limit = ((Long) applicantLimitObj).intValue(); // Cast to Integer
+                            Log.w(TAG, "applicantLimit: " + applicant_limit);
+                        } else {
+                            Log.w(TAG, "applicantLimit is missing or null");
+                        }
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_name, organizer, created_date, event_date, description));
+                        eventsdataList.add(new Event(event_name, organizer, created_date, event_date, description, applicant_limit));
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
                 }
@@ -167,28 +176,12 @@ public class MainActivity extends AppCompatActivity {
                 event_detail.putExtra("event organizer", eventsdataList.get(position).getFacilityName());
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
                 event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
+                event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
+                Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);
             }
         });
-    }
-
-    /**
-     * This used for add event into events list and also add into firebase
-     * @param event
-     *      The event want to add to event list
-     */
-    private void addEvent(Event event){
-        eventsdataList.add(event);
-        eventsArrayAdapter.notifyDataSetChanged();
-        HashMap<String, String> eventdata = new HashMap<>();
-        eventdata.put("event_name", event.getName());
-        eventdata.put("organizer", event.getFacilityName());
-        eventdata.put("created_date", event.getCreatedDate());
-        eventdata.put("event_date", event.getEventDate());
-        eventdata.put("description", event.getDescription());
-        eventdata.put("picture", event.getPicture());
-        eventRef.document(event.getName()).set(eventdata);
     }
 
     /**

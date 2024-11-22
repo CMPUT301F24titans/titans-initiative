@@ -30,7 +30,7 @@
     <string name="event_date">Event Date</string>
     <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
     <string name="event_details">Event Details</string>
-    <string name="event_details_example">The Volunteer Event System is a platform designed to simplify the organization, promotion, and participation in volunteer events. This system connects organizations, volunteers, and event coordinators by providing a centralized location to create, manage, and sign up for events.</string>
+    <string name="event_details_example">There is no description available for this event.</string>
     <string name="event_name">Event Name</string>
     <string name="event_update">Event Update</string>
     <string name="facility">Facility</string>
@@ -45,6 +45,7 @@
     <string name="google_storage_bucket" translatable="false">titans-initiative.firebasestorage.app</string>
     <string name="homepage">Homepage</string>
     <string name="leave_waitlist">Leave Waitlist</string>
+    <string name="limit_of_applicants">Number Limit of Applicants</string>
     <string name="my_application_title">My Application</string>
     <string name="my_applications">Applications</string>
     <string name="my_events">My Events</string>
@@ -61,6 +62,7 @@
     <string name="save_changes">Save Changes</string>
     <string name="scan">Scan</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="there_is_no_limit_on_the_amount_of_applicants_for_this_event">There is no limit on the amount of applicants for this event</string>
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="user_return">Return</string>
     <string name="user_type">User Type</string>

@@ -38,6 +38,7 @@ public class BrowseContentView extends AppCompatActivity {
     Intent event_detail = new Intent();
     Intent profile_detail = new Intent();
     TextView header1, header2;
+    Integer default_applicant_limit = 10000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,14 +85,21 @@ public class BrowseContentView extends AppCompatActivity {
                         if (querySnapshots != null) {
                             eventDataList.clear();
                             for (QueryDocumentSnapshot doc: querySnapshots) {
-                                String event_id = doc.getString("eventID");
                                 String event_name = doc.getString("name");
                                 String organizer = doc.getString("facilityName");
                                 String created_date = doc.getString("createdDate");
                                 String event_date = doc.getString("eventDate");
                                 String description = doc.getString("description");
+                                Integer applicant_limit = default_applicant_limit;
+                                Object applicantLimitObj = doc.get("applicantLimit");
+                                if (applicantLimitObj != null) {
+                                    applicant_limit = ((Long) applicantLimitObj).intValue(); // Cast to Integer
+                                    Log.w(TAG, "applicantLimit: " + applicant_limit);
+                                } else {
+                                    Log.w(TAG, "applicantLimit is missing or null");
+                                }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, null));
+                                eventDataList.add(new Event(event_name, organizer, created_date, event_date, description, applicant_limit));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }
@@ -116,7 +124,7 @@ public class BrowseContentView extends AppCompatActivity {
                 // Display ALL profiles when Profile button is clicked
                 contentList.setAdapter(profileArrayAdapter);
 
-                // Get Firebase event data and populate the listview
+                // Get Firebase user data and populate the listview
                 userRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
@@ -161,6 +169,7 @@ public class BrowseContentView extends AppCompatActivity {
                     event_detail.putExtra("event description", clickedEvent.getDescription());
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
                     event_detail.putExtra("event_id", clickedEvent.getEventID());
+                    event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
 
                     event_detail.putExtra("viewer", "admin");
                     startActivity(event_detail);
