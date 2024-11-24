@@ -139,6 +139,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(my_applications);
             }
         });
+        // QR code scanner
+        Button scanButton = findViewById(R.id.scan_button);
+
+        scanButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, QRScannerActivity.class);
+            startActivity(intent);
+        });
 
         // User clicks on the Admin mode
         admin_switch.setOnCheckedChangeListener((admin_switch, adminChecked) -> {

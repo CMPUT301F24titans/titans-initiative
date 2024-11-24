@@ -7,6 +7,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This is a class that defines a Event.
@@ -19,6 +22,7 @@ public class Event {
     private String description;
     private String  picture;
     private String event_id;
+    private List<Map<String, String>> attendees;
 
     /**
      * This initial the class Event
@@ -43,6 +47,7 @@ public class Event {
         this.description = description;
         this.picture = picture;
         this.event_id = null;
+        this.attendees = new ArrayList<>();
     }
 
     /**
@@ -70,6 +75,7 @@ public class Event {
         this.description = description;
         this.picture = null;
         this.event_id = event_id;
+        this.attendees = new ArrayList<>();
     }
 
     /**
@@ -93,6 +99,7 @@ public class Event {
         this.description = description;
         this.picture = null;
         this.event_id = null;
+        this.attendees = new ArrayList<>();
     }
 
     /**
@@ -219,6 +226,14 @@ public class Event {
         this.picture = picture;
     }
 
+    // Getter and Setter for attendees
+    public List<Map<String, String>> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(List<Map<String, String>> attendees) {
+        this.attendees = attendees;
+    }
     /**
      * Evaluates whether the current event is a valid event
      * @return

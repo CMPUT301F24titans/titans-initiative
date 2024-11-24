@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-50:/values-w600dp-v13/values-w600dp-v13.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "C:\\Users\\24634\\Documents\\GitHub\\titans-initiative\\titans_project\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

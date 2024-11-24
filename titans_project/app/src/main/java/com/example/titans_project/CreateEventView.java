@@ -131,12 +131,15 @@ public class CreateEventView extends AppCompatActivity {
                 db.collection("events")
                         .add(event)
                         .addOnSuccessListener(documentReference -> {
+                            String eventID = documentReference.getId();
                             Log.d("Firestore", "Event added with ID: " + documentReference.getId());
                             event.setEventID(documentReference.getId());
                             db.collection("events").document(documentReference.getId()).update("eventID", documentReference.getId());
                             Toast.makeText(CreateEventView.this, "Event Successfully Created",
                                     Toast.LENGTH_SHORT).show();
-                            finish(); // Optionally return to the previous activity
+                            Intent intent = new Intent(CreateEventView.this, QRCodeActivity.class);
+                            intent.putExtra("eventID", eventID);
+                            startActivity(intent);
                         })
                         .addOnFailureListener(e -> {
                             Log.e("Firestore", "Error adding event", e);

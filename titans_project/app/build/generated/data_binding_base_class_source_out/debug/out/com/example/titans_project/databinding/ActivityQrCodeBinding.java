@@ -28,18 +28,13 @@ public final class ActivityQrCodeBinding implements ViewBinding {
   public final ImageView qrCodeImageView;
 
   @NonNull
-  public final Button regenerateButton;
-
-  @NonNull
   public final Button saveToLocalButton;
 
   private ActivityQrCodeBinding(@NonNull RelativeLayout rootView, @NonNull ImageButton backButton,
-      @NonNull ImageView qrCodeImageView, @NonNull Button regenerateButton,
-      @NonNull Button saveToLocalButton) {
+      @NonNull ImageView qrCodeImageView, @NonNull Button saveToLocalButton) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.qrCodeImageView = qrCodeImageView;
-    this.regenerateButton = regenerateButton;
     this.saveToLocalButton = saveToLocalButton;
   }
 
@@ -82,12 +77,6 @@ public final class ActivityQrCodeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.regenerateButton;
-      Button regenerateButton = ViewBindings.findChildViewById(rootView, id);
-      if (regenerateButton == null) {
-        break missingId;
-      }
-
       id = R.id.saveToLocalButton;
       Button saveToLocalButton = ViewBindings.findChildViewById(rootView, id);
       if (saveToLocalButton == null) {
@@ -95,7 +84,7 @@ public final class ActivityQrCodeBinding implements ViewBinding {
       }
 
       return new ActivityQrCodeBinding((RelativeLayout) rootView, backButton, qrCodeImageView,
-          regenerateButton, saveToLocalButton);
+          saveToLocalButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
