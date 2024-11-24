@@ -81,7 +81,6 @@ public class EventDetailView extends AppCompatActivity {
                 if ("admin".equals(user_type)){
                     // delete event
                     deleteEvent(getIntent().getStringExtra("event_id"));
-                    finish();
                 }
                 else {
                     // enroll entrant into event
@@ -118,6 +117,7 @@ public class EventDetailView extends AppCompatActivity {
                     Toast.makeText(EventDetailView.this, "Failed to delete event",
                             Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
     }
