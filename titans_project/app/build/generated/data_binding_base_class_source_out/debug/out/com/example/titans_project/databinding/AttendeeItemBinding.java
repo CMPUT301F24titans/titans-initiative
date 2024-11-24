@@ -4,8 +4,7 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,29 +17,24 @@ import java.lang.String;
 
 public final class AttendeeItemBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final TextView attendeeDescription;
+  public final TextView emailTextView;
 
   @NonNull
-  public final ImageView attendeeImage;
+  public final TextView nameTextView;
 
-  @NonNull
-  public final TextView attendeeName;
-
-  private AttendeeItemBinding(@NonNull RelativeLayout rootView,
-      @NonNull TextView attendeeDescription, @NonNull ImageView attendeeImage,
-      @NonNull TextView attendeeName) {
+  private AttendeeItemBinding(@NonNull LinearLayout rootView, @NonNull TextView emailTextView,
+      @NonNull TextView nameTextView) {
     this.rootView = rootView;
-    this.attendeeDescription = attendeeDescription;
-    this.attendeeImage = attendeeImage;
-    this.attendeeName = attendeeName;
+    this.emailTextView = emailTextView;
+    this.nameTextView = nameTextView;
   }
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -65,26 +59,19 @@ public final class AttendeeItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.attendeeDescription;
-      TextView attendeeDescription = ViewBindings.findChildViewById(rootView, id);
-      if (attendeeDescription == null) {
+      id = R.id.emailTextView;
+      TextView emailTextView = ViewBindings.findChildViewById(rootView, id);
+      if (emailTextView == null) {
         break missingId;
       }
 
-      id = R.id.attendeeImage;
-      ImageView attendeeImage = ViewBindings.findChildViewById(rootView, id);
-      if (attendeeImage == null) {
+      id = R.id.nameTextView;
+      TextView nameTextView = ViewBindings.findChildViewById(rootView, id);
+      if (nameTextView == null) {
         break missingId;
       }
 
-      id = R.id.attendeeName;
-      TextView attendeeName = ViewBindings.findChildViewById(rootView, id);
-      if (attendeeName == null) {
-        break missingId;
-      }
-
-      return new AttendeeItemBinding((RelativeLayout) rootView, attendeeDescription, attendeeImage,
-          attendeeName);
+      return new AttendeeItemBinding((LinearLayout) rootView, emailTextView, nameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
