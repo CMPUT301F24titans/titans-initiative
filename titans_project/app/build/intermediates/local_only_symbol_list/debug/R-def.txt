@@ -32,6 +32,10 @@ id back_user
 id browse_content_listview
 id button_add_poster
 id button_apply
+id button_clear_email
+id button_clear_facility
+id button_clear_full_name
+id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
 id button_return
@@ -40,6 +44,7 @@ id button_toolbar
 id checkbox_geolocation
 id checkbox_notifications
 id chooseImageButton
+id create_event_button
 id created_events_button
 id dateOfEventHeader
 id deleteEventTitle
@@ -95,6 +100,7 @@ id yesButton
 id yes_button
 layout activity_attendees
 layout activity_create_event
+layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
 layout activity_qr_code
@@ -125,6 +131,7 @@ string apply
 string browse_content
 string checkbox_application
 string checkbox_notifications
+string clear
 string create
 string create_an_event
 string create_event
@@ -154,6 +161,7 @@ string leave_waitlist
 string limit_of_applicants
 string my_application_title
 string my_applications
+string my_created_events
 string my_events
 string next
 string no_button

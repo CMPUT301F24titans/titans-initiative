@@ -3343,6 +3343,10 @@ int id browser_actions_menu_view 0x7f080078
 int id buttonPanel 0x7f080079
 int id button_add_poster 0x7f08007a
 int id button_apply 0x7f08007b
+int id button_clear_email 0x7f080262
+int id button_clear_facility 0x7f080263
+int id button_clear_full_name 0x7f080264
+int id button_clear_phone_number 0x7f080265
 int id button_create_profile 0x7f08007c
 int id button_edit_profile_pic 0x7f08007d
 int id button_return 0x7f08007e
@@ -3385,6 +3389,7 @@ int id coordinator 0x7f0800a2
 int id cos 0x7f0800a3
 int id counterclockwise 0x7f0800a4
 int id cradle 0x7f0800a5
+int id create_event_button 0x7f080261
 int id created_events_button 0x7f0800a6
 int id currentState 0x7f0800a7
 int id custom 0x7f0800a8
@@ -3946,6 +3951,7 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_attendees 0x7f0b001c
 int layout activity_create_event 0x7f0b001d
+int layout activity_created_events 0x7f0b0082
 int layout activity_delete_event 0x7f0b001e
 int layout activity_edit_event 0x7f0b001f
 int layout activity_qr_code 0x7f0b0020
@@ -4110,6 +4116,7 @@ int string character_counter_overflowed_content_description 0x7f120035
 int string character_counter_pattern 0x7f120036
 int string checkbox_application 0x7f120037
 int string checkbox_notifications 0x7f120038
+int string clear 0x7f12010b
 int string clear_text_end_icon_content_description 0x7f120039
 int string common_google_play_services_enable_button 0x7f12003a
 int string common_google_play_services_enable_text 0x7f12003b
@@ -4281,6 +4288,7 @@ int string mtrl_timepicker_cancel 0x7f1200e0
 int string mtrl_timepicker_confirm 0x7f1200e1
 int string my_application_title 0x7f1200e2
 int string my_applications 0x7f1200e3
+int string my_created_events 0x7f12010a
 int string my_events 0x7f1200e4
 int string nav_app_bar_navigate_up_description 0x7f1200e5
 int string nav_app_bar_open_drawer_description 0x7f1200e6

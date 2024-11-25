@@ -53,4 +53,6 @@
     <string name="limit_of_applicants">Number Limit of Applicants</string>
     <string name="there_is_no_limit_on_the_amount_of_applicants_for_this_event">There is no limit on the amount of applicants for this event</string>
     <string name="view_attendees">View Attendees</string>
+    <string name="my_created_events">My Created Events</string>
+    <string name="clear">Clear</string>
 </resources>
