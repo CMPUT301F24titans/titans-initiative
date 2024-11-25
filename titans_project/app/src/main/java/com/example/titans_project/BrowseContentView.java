@@ -179,7 +179,7 @@ public class BrowseContentView extends AppCompatActivity {
                     event_detail.putExtra("event organizer", clickedEvent.getFacilityName());
                     event_detail.putExtra("event description", clickedEvent.getDescription());
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
-                    event_detail.putExtra("event_id", clickedEvent.getEventID());
+                    event_detail.putExtra("eventID", clickedEvent.getEventID());
                     event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
 
                     event_detail.putExtra("viewer", "admin");

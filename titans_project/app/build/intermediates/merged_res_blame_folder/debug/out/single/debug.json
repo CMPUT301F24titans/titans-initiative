@@ -52,16 +52,20 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_profile.xml"
     },
     {
+        "merged": "com.example.titans_project.app-merged_res-53:/layout_activity_qr_scanner.xml.flat",
+        "source": "com.example.titans_project.app-main-55:/layout/activity_qr_scanner.xml"
+    },
+    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\drawable_notification_bell_red_circle_20623.png.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\drawable\\notification_bell_red_circle_20623.png"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\mipmap-mdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\layout_activity_qr_scanner.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_qr_scanner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\navigation_nav_graph.xml.flat",
@@ -120,10 +124,6 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\content_my_application.xml"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-53:/layout_fragment_profile.xml.flat",
-        "source": "com.example.titans_project.app-main-55:/layout/fragment_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\mipmap-mdpi\\ic_launcher.webp"
     },
@@ -136,16 +136,8 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-53:/layout_activity_created_events.xml.flat",
-        "source": "com.example.titans_project.app-main-55:/layout/activity_created_events.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\layout_content_my_events.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\content_my_events.xml"
-    },
-    {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\layout_activity_created_events.xml.flat",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_created_events.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\layout_activity_scanned_event_detail.xml.flat",
@@ -158,6 +150,10 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\layout_attendee_item.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\attendee_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\layout_activity_created_events.xml.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_created_events.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\mipmap-xhdpi_ic_launcher_round.webp.flat",

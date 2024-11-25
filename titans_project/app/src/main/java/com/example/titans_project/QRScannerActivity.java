@@ -3,6 +3,8 @@ package com.example.titans_project;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -32,6 +34,17 @@ public class QRScannerActivity extends AppCompatActivity {
 
         findViewById(R.id.scan_button).setOnClickListener(v -> startCameraScan());
         findViewById(R.id.chooseImageButton).setOnClickListener(v -> openGalleryForImage());
+
+        findViewById(R.id.button_return).setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the return button, returns user to previous activity
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void startCameraScan() {

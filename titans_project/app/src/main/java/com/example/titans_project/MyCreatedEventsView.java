@@ -161,8 +161,9 @@ public class MyCreatedEventsView extends AppCompatActivity {
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
                 event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
                 event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
+                event_detail.putExtra("eventID", eventsdataList.get(position).getEventID());
+                event_detail.putExtra("viewer", "organizer");
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
-                event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);
             }
         });
