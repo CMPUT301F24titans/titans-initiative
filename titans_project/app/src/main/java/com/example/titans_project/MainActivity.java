@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 if (querySnapshots != null) {
                     eventsdataList.clear();
                     for (QueryDocumentSnapshot doc: querySnapshots) {
+                        String organizer_id = mAuth.getCurrentUser().getUid();
                         String event_name = doc.getString("name");
                         String organizer = doc.getString("facilityName");
                         String event_id = doc.getString("eventID");
@@ -125,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "applicantLimit is missing or null");
                         }
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit));
+                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id));
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
                 }

@@ -4313,11 +4313,12 @@ int string there_is_no_limit_on_the_amount_of_applicants_for_this_event 0x7f1201
 int string upload_profile_pic 0x7f120101
 int string user_return 0x7f120102
 int string user_type 0x7f120103
-int string yes_button 0x7f120104
-int string zxing_app_name 0x7f120105
-int string zxing_button_ok 0x7f120106
-int string zxing_msg_camera_framework_bug 0x7f120107
-int string zxing_msg_default_status 0x7f120108
+int string view_attendees 0x7f120104
+int string yes_button 0x7f120105
+int string zxing_app_name 0x7f120106
+int string zxing_button_ok 0x7f120107
+int string zxing_msg_camera_framework_bug 0x7f120108
+int string zxing_msg_default_status 0x7f120109
 int style AlertDialog_AppCompat 0x7f130000
 int style AlertDialog_AppCompat_Light 0x7f130001
 int style Animation_AppCompat_Dialog 0x7f130002

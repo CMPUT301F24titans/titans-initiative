@@ -66,6 +66,7 @@
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="user_return">Return</string>
     <string name="user_type">User Type</string>
+    <string name="view_attendees">View Attendees</string>
     <string name="yes_button">Yes</string>
     <style name="Base.Theme.Titans_project" parent="Theme.Material3.DayNight.NoActionBar">
         
