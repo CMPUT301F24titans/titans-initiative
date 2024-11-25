@@ -1,5 +1,6 @@
 package com.example.titans_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +29,7 @@ public class EventDetailView extends AppCompatActivity {
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
     private Integer default_applicant_limit = 10000;
+    Intent view_attendees = new Intent();
 
     /**
      * Called when activity starts, create all activity objects here
@@ -65,6 +67,11 @@ public class EventDetailView extends AppCompatActivity {
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
         }
 
+        // organizer viewing their own event
+        else if ("organizer".equals(user_type)) {
+            apply_button.setText("View Attendees");
+        }
+
         name.setText(getIntent().getStringExtra("event name"));
         organizer.setText(getIntent().getStringExtra("event organizer"));
         // Only display description if user set one
@@ -80,12 +87,25 @@ public class EventDetailView extends AppCompatActivity {
         }
 
         apply_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the apply/delete/view attendees button
+             * @param view
+             */
             @Override
             public void onClick(View view) {
+                // admin clicks delete event button
                 if ("admin".equals(user_type)){
                     // delete event
-                    deleteEvent(getIntent().getStringExtra("event_id"));
+                    deleteEvent(getIntent().getStringExtra("eventID"));
                 }
+                // organizer clicks view attendees button
+                else if ("organizer".equals(user_type)){
+                    // go to view attendees
+                    view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
+                    view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
+                    startActivity(view_attendees);
+                }
+                // entrant clicks enroll button
                 else {
                     // enroll entrant into event
                 }
