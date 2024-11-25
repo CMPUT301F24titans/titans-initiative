@@ -27,6 +27,11 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
+
+    /**
+     * Called when activity starts, create all activity objects here
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
