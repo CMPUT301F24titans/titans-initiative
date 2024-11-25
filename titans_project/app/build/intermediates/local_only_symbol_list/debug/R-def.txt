@@ -32,6 +32,10 @@ id back_user
 id browse_content_listview
 id button_add_poster
 id button_apply
+id button_clear_email
+id button_clear_facility
+id button_clear_full_name
+id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
 id button_return
@@ -127,6 +131,7 @@ string apply
 string browse_content
 string checkbox_application
 string checkbox_notifications
+string clear
 string create
 string create_an_event
 string create_event

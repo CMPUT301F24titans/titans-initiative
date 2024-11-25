@@ -56,9 +56,16 @@ public class ProfileView extends AppCompatActivity {
         CheckBox notifications = findViewById(R.id.checkbox_notifications);
         Button save_changes_button = findViewById(R.id.button_save_changes);
         TextView initials = findViewById(R.id.textview_initials);
+        Button clear_name = findViewById(R.id.button_clear_full_name);
+        Button clear_email = findViewById(R.id.button_clear_email);
+        Button clear_phone_number = findViewById(R.id.button_clear_phone_number);
+        Button clear_facility = findViewById(R.id.button_clear_facility);
 
         // Create hashmap to store user's data from Firebase
         HashMap<String, String> userData= new HashMap<>();
+
+        adminView = "admin".equals(getIntent().getStringExtra("viewer"));
+        String profileId = getIntent().getStringExtra("user_id");
 
         // User exists
         if (user != null) {
@@ -99,18 +106,97 @@ public class ProfileView extends AppCompatActivity {
             }
         });
         // admin is viewing another profile
-        if ("admin".equals(getIntent().getStringExtra("viewer"))){
+        if (adminView){
             // save changes button becomes deletion button
             save_changes_button.setText("Delete User");
-            adminView = Boolean.TRUE;
         }
+        // user is viewing their own profile -> do not give option to clear fields (only admin may do that)
+        else {
+            clear_name.setVisibility(View.GONE);
+            clear_facility.setVisibility(View.GONE);
+            clear_phone_number.setVisibility(View.GONE);
+            clear_email.setVisibility(View.GONE);
+        }
+
+        clear_name.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the clear name button
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                name.setText("");  // update locally
+                if (profileId != null) {
+                    db.collection("user").document(profileId).update("full_name", "");  // update in firebase
+                    }
+                else{
+                    Toast.makeText(ProfileView.this, "Failed to clear name.",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        clear_facility.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the clear facility button
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                facility.setText("");  // update locally
+                if (profileId != null) {
+                    db.collection("user").document(profileId).update("facility", "");  // update in firebase
+                }
+                else{
+                    Toast.makeText(ProfileView.this, "Failed to clear facility.",
+                            Toast.LENGTH_SHORT).show();
+                }            }
+        });
+
+        clear_email.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the clear email button
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                email.setText("");  // update locally
+                if (profileId != null) {
+                    db.collection("user").document(profileId).update("email", "");  // update in firebase
+                }
+                else{
+                    Toast.makeText(ProfileView.this, "Failed to clear email.",
+                            Toast.LENGTH_SHORT).show();
+                }            }
+        });
+
+        clear_phone_number.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the clear phone_number button
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                phone_number.setText("");  // update locally
+                if (profileId != null) {
+                    db.collection("user").document(profileId).update("phone_number", "");  // update in firebase
+                }
+                else{
+                    Toast.makeText(ProfileView.this, "Failed to clear phone number.",
+                            Toast.LENGTH_SHORT).show();
+                }            }
+        });
+
         save_changes_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the save changes button
+             * @param view
+             */
             @Override
             public void onClick(View view) {
 
                 // admin deletes a user
                 if (adminView) {
-                    String profileId = getIntent().getStringExtra("user_id");
                     Log.d(TAG, "Deleting profile with ID: " + profileId);
 
                     if (profileId != null) {

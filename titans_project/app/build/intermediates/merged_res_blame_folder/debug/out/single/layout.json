@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_scanned_event_detail.xml"
     },
     {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/fragment_profile.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/fragment_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_qr_code.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_qr_code.xml"
     },
@@ -42,6 +46,10 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_create_event.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_create_event.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_created_events.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/activity_created_events.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_delete_event.xml",
@@ -78,9 +86,5 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_event_details.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_event_details.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/fragment_my_events.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/fragment_my_events.xml"
     }
 ]

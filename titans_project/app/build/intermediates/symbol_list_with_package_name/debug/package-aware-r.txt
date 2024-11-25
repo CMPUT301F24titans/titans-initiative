@@ -3344,6 +3344,10 @@ id browser_actions_menu_view
 id buttonPanel
 id button_add_poster
 id button_apply
+id button_clear_email
+id button_clear_facility
+id button_clear_full_name
+id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
 id button_return
@@ -4113,6 +4117,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string checkbox_application
 string checkbox_notifications
+string clear
 string clear_text_end_icon_content_description
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text

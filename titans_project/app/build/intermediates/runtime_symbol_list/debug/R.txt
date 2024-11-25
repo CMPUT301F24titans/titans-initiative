@@ -3343,6 +3343,10 @@ int id browser_actions_menu_view 0x7f080078
 int id buttonPanel 0x7f080079
 int id button_add_poster 0x7f08007a
 int id button_apply 0x7f08007b
+int id button_clear_email 0x7f080262
+int id button_clear_facility 0x7f080263
+int id button_clear_full_name 0x7f080264
+int id button_clear_phone_number 0x7f080265
 int id button_create_profile 0x7f08007c
 int id button_edit_profile_pic 0x7f08007d
 int id button_return 0x7f08007e
@@ -4112,6 +4116,7 @@ int string character_counter_overflowed_content_description 0x7f120035
 int string character_counter_pattern 0x7f120036
 int string checkbox_application 0x7f120037
 int string checkbox_notifications 0x7f120038
+int string clear 0x7f12010b
 int string clear_text_end_icon_content_description 0x7f120039
 int string common_google_play_services_enable_button 0x7f12003a
 int string common_google_play_services_enable_text 0x7f12003b
