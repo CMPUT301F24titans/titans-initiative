@@ -127,7 +127,7 @@
         android:id="@+id/button_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apply"
+        android:text=""
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:contentDescription=""

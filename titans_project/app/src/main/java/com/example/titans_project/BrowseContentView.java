@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,6 +37,7 @@ public class BrowseContentView extends AppCompatActivity {
     private ProfilesArrayAdapter profileArrayAdapter;
     private Switch back_user;
     private Boolean browsingEvents;
+    private FirebaseAuth mAuth;
     Intent event_detail = new Intent();
     Intent profile_detail = new Intent();
     TextView header1, header2;
@@ -85,6 +88,7 @@ public class BrowseContentView extends AppCompatActivity {
                         if (querySnapshots != null) {
                             eventDataList.clear();
                             for (QueryDocumentSnapshot doc: querySnapshots) {
+                                String organizer_id = mAuth.getCurrentUser().getUid();
                                 String event_name = doc.getString("name");
                                 String organizer = doc.getString("facilityName");
                                 String created_date = doc.getString("createdDate");
@@ -100,7 +104,7 @@ public class BrowseContentView extends AppCompatActivity {
                                     Log.w(TAG, "applicantLimit is missing or null");
                                 }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit));
+                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }

@@ -4314,6 +4314,7 @@ string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
 string user_type
+string view_attendees
 string yes_button
 string zxing_app_name
 string zxing_button_ok

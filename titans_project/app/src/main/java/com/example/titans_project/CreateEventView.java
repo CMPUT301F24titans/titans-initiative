@@ -36,6 +36,7 @@ public class CreateEventView extends AppCompatActivity {
     private EditText facility_name, event_name, event_date, event_details, applicant_limit;
     private Uri uri;
     private Integer default_limit = 10000;
+    private String organizer_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,10 @@ public class CreateEventView extends AppCompatActivity {
         picture = findViewById(R.id.imageView);
         applicant_limit = findViewById(R.id.eventLimitEdit);
 
-        // User exists
+        // Only assign value to organizer_id if the device id is found
+        organizer_id = null;
+
+        // User exists and continue
         if (user != null) {
             userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -75,6 +79,7 @@ public class CreateEventView extends AppCompatActivity {
                             // Ensure this runs on the main thread
                             runOnUiThread(() -> {
                                 facility_name.setText(document.getString("facility"));
+                                organizer_id = document.getString("user_id");
                             });
                         } else {
                             Log.d("Firestore", "No document found");
@@ -109,6 +114,11 @@ public class CreateEventView extends AppCompatActivity {
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (organizer_id == null){
+                    Toast.makeText(CreateEventView.this, "Invalid User ID: Please Sign In Again",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String facilityInput = facility_name.getText().toString().trim();
                 String dateInput = event_date.getText().toString().trim();
                 String eventNameInput = event_name.getText().toString().trim();
@@ -127,7 +137,7 @@ public class CreateEventView extends AppCompatActivity {
 
                 Event event;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput);
+                    event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput, organizer_id);
                 } else {
                     event = null;
                 }
