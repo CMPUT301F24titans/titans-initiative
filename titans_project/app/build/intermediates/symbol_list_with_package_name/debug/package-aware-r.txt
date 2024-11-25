@@ -3311,13 +3311,12 @@ id animateToStart
 id antiClockwise
 id anticipate
 id application_button
+id applyButton
 id arc
 id asConfigured
 id async
-id attendeeDescription
-id attendeeImage
-id attendeeName
 id attendeesRecyclerView
+id attendeesTitle
 id author
 id auto
 id autoComplete
@@ -3436,6 +3435,7 @@ id edit_text_full_name
 id edit_text_id
 id edit_text_phone_number
 id elastic
+id emailTextView
 id embed
 id end
 id endToStart
@@ -3443,10 +3443,14 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id eventDateEdit
+id eventDateTextView
+id eventDescriptionTextView
 id eventDetailsEdit
 id eventImageEdit
+id eventImageView
 id eventLimitEdit
 id eventNameHeader
+id eventNameTextView
 id eventTitleEdit
 id event_applicant_limit
 id event_date
@@ -3473,6 +3477,7 @@ id forever
 id fragment_container_view_tag
 id frost
 id fullscreen_header
+id geolocationCheckBox
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3581,6 +3586,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nameTextView
 id nav_controller_view_tag
 id nav_graph
 id nav_host_fragment_container
@@ -3649,6 +3655,7 @@ id progress_circular
 id progress_horizontal
 id qrCodeImageView
 id qrImageView
+id qrScannerTitle
 id radio
 id ratio
 id rectangles
@@ -3669,7 +3676,6 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
-id scanButton
 id scan_button
 id screen
 id scroll
@@ -3789,6 +3795,7 @@ id up
 id useLogo
 id user_name
 id vertical_only
+id viewAttendeesButton
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3944,6 +3951,7 @@ layout activity_delete_event
 layout activity_edit_event
 layout activity_qr_code
 layout activity_qr_scanner
+layout activity_scanned_event_detail
 layout attendee_item
 layout browse_content
 layout browser_actions_context_menu_page

@@ -85,6 +85,15 @@
             android:exported="true"
             android:theme="@style/Theme.Titans_project" >
         </activity>
+        <activity
+            android:name="com.example.titans_project.QRScannerActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.titans_project.ScannedEventDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.titans_project.AttendeesActivity"
+            android:exported="true" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

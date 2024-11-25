@@ -29,6 +29,10 @@ public class EventDetailView extends AppCompatActivity {
     private static final String TAG = "eventDeletion";
     private Integer default_applicant_limit = 10000;
 
+    /**
+     * Called when activity starts, create all activity objects here
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
