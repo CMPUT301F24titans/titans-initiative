@@ -40,6 +40,7 @@ id button_toolbar
 id checkbox_geolocation
 id checkbox_notifications
 id chooseImageButton
+id create_event_button
 id created_events_button
 id dateOfEventHeader
 id deleteEventTitle
@@ -95,6 +96,7 @@ id yesButton
 id yes_button
 layout activity_attendees
 layout activity_create_event
+layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
 layout activity_qr_code
@@ -154,6 +156,7 @@ string leave_waitlist
 string limit_of_applicants
 string my_application_title
 string my_applications
+string my_created_events
 string my_events
 string next
 string no_button

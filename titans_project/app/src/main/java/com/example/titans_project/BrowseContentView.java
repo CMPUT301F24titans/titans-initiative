@@ -88,7 +88,7 @@ public class BrowseContentView extends AppCompatActivity {
                         if (querySnapshots != null) {
                             eventDataList.clear();
                             for (QueryDocumentSnapshot doc: querySnapshots) {
-                                String organizer_id = mAuth.getCurrentUser().getUid();
+                                String organizer_id = doc.getString("organizerID");
                                 String event_name = doc.getString("name");
                                 String organizer = doc.getString("facilityName");
                                 String created_date = doc.getString("createdDate");
@@ -161,8 +161,14 @@ public class BrowseContentView extends AppCompatActivity {
                 });
             }
         });
-        // check if admin user clicked on an item in the contentList
         contentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * Check if user click on an item in the contentList
+             * @param adapterView
+             * @param view
+             * @param position
+             * @param l
+             */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // user currently browsing events

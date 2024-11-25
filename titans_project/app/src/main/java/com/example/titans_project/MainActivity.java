@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
     Intent admin = new Intent();
-    Intent create_event = new Intent();
+    Intent created_event = new Intent();
     private Event testEvent, fakeEvent;
     private User testUser, fakeUser;
     private FirebaseFirestore db;
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 if (querySnapshots != null) {
                     eventsdataList.clear();
                     for (QueryDocumentSnapshot doc: querySnapshots) {
-                        String organizer_id = mAuth.getCurrentUser().getUid();
+                        String organizer_id = doc.getString("organizerID");
                         String event_name = doc.getString("name");
                         String organizer = doc.getString("facilityName");
                         String event_id = doc.getString("eventID");
@@ -171,8 +171,8 @@ public class MainActivity extends AppCompatActivity {
         create_event_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                create_event.setClass(MainActivity.this, CreateEventView.class);
-                startActivity(create_event);
+                created_event.setClass(MainActivity.this, MyCreatedEventsView.class);
+                startActivity(created_event);
             }
         });
 

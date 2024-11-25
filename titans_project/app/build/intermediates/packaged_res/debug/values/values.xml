@@ -48,6 +48,7 @@
     <string name="limit_of_applicants">Number Limit of Applicants</string>
     <string name="my_application_title">My Application</string>
     <string name="my_applications">Applications</string>
+    <string name="my_created_events">My Created Events</string>
     <string name="my_events">My Events</string>
     <string name="next">Next</string>
     <string name="no_button">No</string>
