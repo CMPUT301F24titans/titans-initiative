@@ -1,30 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/qrScannerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan QR Code"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="24dp" />
 
     <Button
-        android:id="@+id/scanButton"
+        android:id="@+id/scan_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/dark_gray"
-        android:text="Scan QR Code with Camera" />
+        android:layout_marginBottom="16dp"
+        android:text="Scan QR Code with Camera"
+        android:background="#000000"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/chooseImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Choose QR Code from Gallery"
-        android:backgroundTint="@color/dark_gray"
-        android:layout_marginTop="16dp" />
+        android:background="#000000"
+        android:textColor="#FFFFFF" />
 
     <ImageView
         android:id="@+id/qrImageView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="24dp"
         android:scaleType="centerInside"
-        android:layout_marginTop="16dp" />
+        android:contentDescription="QR Code Display" />
 
 </LinearLayout>
