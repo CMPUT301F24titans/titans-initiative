@@ -2,7 +2,7 @@ package com.example.titans_project;
 
 
 /**
- * This is a class that defines a user
+ * This is a class that defines a User.
  */
 public class User {
 

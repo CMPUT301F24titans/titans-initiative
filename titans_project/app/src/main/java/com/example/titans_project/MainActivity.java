@@ -41,7 +41,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This is a class that defines the main activity of the app
+ * This is a class that defines the homepage of the app
  */
 public class MainActivity extends AppCompatActivity {
     private ListView eventList;
@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
     Intent event_detail = new Intent();
     Intent admin = new Intent();
     Intent created_event = new Intent();
-    private Event testEvent, fakeEvent;
-    private User testUser, fakeUser;
     private FirebaseFirestore db;
     private CollectionReference eventRef, userRef;
     private static final String TAG = "AnonymousAuthActivity";
