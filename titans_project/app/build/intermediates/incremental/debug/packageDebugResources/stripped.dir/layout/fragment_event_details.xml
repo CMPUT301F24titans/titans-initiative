@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button_apply"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="20"
+            android:paddingTop="30dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/event_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/event_name"
+                android:textColor="@color/dark_gray"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_weight="15" />
+
+            <Button
+                android:id="@+id/button_return"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/user_return"
+                android:backgroundTint="@color/dark_gray"
+                android:layout_weight="5" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/organizer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Organized by user"
+            android:textColor="@color/material_dynamic_neutral50"
+            android:paddingBottom="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/profile_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@android:drawable/sym_def_app_icon" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_details"
+            android:textStyle="bold"
+            android:textColor="@color/dark_gray"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/event_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_details_example"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_date"
+            android:textStyle="bold"
+            android:textColor="@color/dark_gray"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/event_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_date_example"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_geolocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/geolocation_sharing_message"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/apply"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:contentDescription=""
+        android:backgroundTint="@color/dark_gray"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</RelativeLayout>
