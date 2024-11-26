@@ -4,7 +4,6 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,18 +24,13 @@ public final class ActivityAttendeesBinding implements ViewBinding {
   public final RecyclerView attendeesRecyclerView;
 
   @NonNull
-  public final TextView attendeesTitle;
-
-  @NonNull
-  public final Button returnButton;
+  public final TextView emptyTextView;
 
   private ActivityAttendeesBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView attendeesTitle,
-      @NonNull Button returnButton) {
+      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView emptyTextView) {
     this.rootView = rootView;
     this.attendeesRecyclerView = attendeesRecyclerView;
-    this.attendeesTitle = attendeesTitle;
-    this.returnButton = returnButton;
+    this.emptyTextView = emptyTextView;
   }
 
   @Override
@@ -72,20 +66,14 @@ public final class ActivityAttendeesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.attendeesTitle;
-      TextView attendeesTitle = ViewBindings.findChildViewById(rootView, id);
-      if (attendeesTitle == null) {
-        break missingId;
-      }
-
-      id = R.id.returnButton;
-      Button returnButton = ViewBindings.findChildViewById(rootView, id);
-      if (returnButton == null) {
+      id = R.id.emptyTextView;
+      TextView emptyTextView = ViewBindings.findChildViewById(rootView, id);
+      if (emptyTextView == null) {
         break missingId;
       }
 
       return new ActivityAttendeesBinding((LinearLayout) rootView, attendeesRecyclerView,
-          attendeesTitle, returnButton);
+          emptyTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

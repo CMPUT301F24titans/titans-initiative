@@ -56,6 +56,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Titans_project" >
         <activity
+            android:name="com.example.titans_project.MyCreatedEventsView"
+            android:exported="false" />
+        <activity
             android:name="com.example.titans_project.CreateEventView"
             android:exported="false" />
         <activity
@@ -93,6 +96,9 @@
             android:exported="true" />
         <activity
             android:name="com.example.titans_project.AttendeesActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.titans_project.WaitlistActivity"
             android:exported="true" />
 
         <service

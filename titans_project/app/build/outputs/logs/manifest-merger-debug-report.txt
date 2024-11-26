@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
+INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
+INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
+INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
 MERGED from [androidx.databinding:viewbinding:8.2.1] C:\Users\24634\.gradle\caches\transforms-4\9029bf83d0bd1ca798e326c57b516d44\transformed\viewbinding-8.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.8.3] C:\Users\24634\.gradle\caches\transforms-4\6a58261531e2436bccf80e6120c2bc85\transformed\navigation-common-2.8.3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.8.3] C:\Users\24634\.gradle\caches\transforms-4\9a2618f5a417411b0689fe73b43193a3\transformed\navigation-runtime-2.8.3\AndroidManifest.xml:17:1-22:12
@@ -118,8 +118,8 @@ MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] C:\Users\24634\.grad
 	android:name
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:7:5-57:19
-INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:7:5-57:19
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:7:5-64:19
+INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:7:5-64:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\24634\.gradle\caches\transforms-4\5861c4c5858af994e22c938b22dd2f8d\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\24634\.gradle\caches\transforms-4\5861c4c5858af994e22c938b22dd2f8d\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\24634\.gradle\caches\transforms-4\de74e4ebb1807abebe82c0e073f51899\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -202,80 +202,92 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\24634\.gradle\c
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:15:9-52
 	android:dataExtractionRules
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:9:9-65
-activity#com.example.titans_project.CreateEventView
+activity#com.example.titans_project.MyCreatedEventsView
 ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:17:9-19:40
 	android:exported
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:19:13-37
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:18:13-44
-activity#com.example.titans_project.BrowseContentView
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:20:9-22:39
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:18:13-48
+activity#com.example.titans_project.CreateEventView
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:20:9-22:40
 	android:exported
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:21:13-46
-activity#com.example.titans_project.ProfileView
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:23:9-25:40
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:21:13-44
+activity#com.example.titans_project.BrowseContentView
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:23:9-25:39
 	android:exported
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:24:13-40
-activity#com.example.titans_project.EventDetailView
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:24:13-46
+activity#com.example.titans_project.ProfileView
 ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:26:9-28:40
 	android:exported
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:27:13-44
-activity#com.example.titans_project.MyApplicationsView
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:27:13-40
+activity#com.example.titans_project.EventDetailView
 ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:29:9-31:40
 	android:exported
 		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:30:13-47
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:30:13-44
+activity#com.example.titans_project.MyApplicationsView
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:33:13-47
 activity#com.example.titans_project.MainActivity
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:32:9-42:20
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:35:9-46:20
 	android:exported
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:34:13-36
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:37:13-36
 	android:theme
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:35:13-56
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:38:13-56
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:33:13-41
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:36:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:36:13-40:29
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:39:13-43:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:37:17-69
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:40:17-69
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:37:25-66
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:40:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:39:17-77
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:42:17-77
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:39:27-74
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:42:27-74
 activity#com.example.titans_project.QRCodeActivity
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:43:9-47:20
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:47:9-51:20
 	android:exported
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:45:13-36
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:49:13-36
 	android:theme
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:46:13-56
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:50:13-56
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:44:13-43
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:48:13-43
 activity#com.example.titans_project.QRScannerActivity
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:48:9-50:39
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:52:9-54:39
 	android:exported
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:50:13-36
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:54:13-36
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:49:13-46
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:53:13-46
 activity#com.example.titans_project.ScannedEventDetailActivity
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:51:9-53:39
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:55:9-57:39
 	android:exported
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:53:13-36
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:57:13-36
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:52:13-55
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:56:13-55
 activity#com.example.titans_project.AttendeesActivity
-ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:54:9-56:39
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:58:9-60:39
 	android:exported
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:56:13-36
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:60:13-36
 	android:name
-		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:55:13-46
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:59:13-46
+activity#com.example.titans_project.WaitlistActivity
+ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:61:9-63:39
+	android:exported
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:63:13-36
+	android:name
+		ADDED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:62:13-45
 uses-sdk
 INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\24634\Documents\GitHub\titans-initiative\titans_project\app\src\main\AndroidManifest.xml

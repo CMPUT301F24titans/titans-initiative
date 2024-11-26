@@ -33,8 +33,10 @@ public class CreateEventView extends AppCompatActivity {
     private ImageView picture;
     private int eventIndex = -1, event_image=0;
     private Button add_poster, return_button, submit_button;
-    private EditText facility_name, event_name, event_date, event_details;
+    private EditText facility_name, event_name, event_date, event_details, applicant_limit;
     private Uri uri;
+    private Integer default_limit = 10000;
+    private String organizer_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +61,12 @@ public class CreateEventView extends AppCompatActivity {
         event_date = findViewById(R.id.eventDateEdit);
         event_details = findViewById(R.id.eventDetailsEdit);
         picture = findViewById(R.id.imageView);
+        applicant_limit = findViewById(R.id.eventLimitEdit);
 
-        // User exists
+        // Only assign value to organizer_id if the device id is found
+        organizer_id = null;
+
+        // User exists and continue
         if (user != null) {
             userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -73,6 +79,7 @@ public class CreateEventView extends AppCompatActivity {
                             // Ensure this runs on the main thread
                             runOnUiThread(() -> {
                                 facility_name.setText(document.getString("facility"));
+                                organizer_id = document.getString("user_id");
                             });
                         } else {
                             Log.d("Firestore", "No document found");
@@ -107,14 +114,30 @@ public class CreateEventView extends AppCompatActivity {
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (organizer_id == null){
+                    Toast.makeText(CreateEventView.this, "Invalid User ID: Please Sign In Again",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String facilityInput = facility_name.getText().toString().trim();
                 String dateInput = event_date.getText().toString().trim();
                 String eventNameInput = event_name.getText().toString().trim();
                 String eventDetailsInput = event_details.getText().toString().trim();
 
+                String applicantLimitString = applicant_limit.getText().toString();
+                Integer applicantLimitInput;
+                // User does not enter a value -> default limit value
+                if (applicantLimitString.isEmpty()){
+                    applicantLimitInput = default_limit;
+                }
+                // User enters a value
+                else {
+                    applicantLimitInput = Integer.parseInt(applicantLimitString);
+                }
+
                 Event event;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput);
+                    event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput, organizer_id);
                 } else {
                     event = null;
                 }
@@ -131,15 +154,15 @@ public class CreateEventView extends AppCompatActivity {
                 db.collection("events")
                         .add(event)
                         .addOnSuccessListener(documentReference -> {
-                            String eventID = documentReference.getId();
                             Log.d("Firestore", "Event added with ID: " + documentReference.getId());
                             event.setEventID(documentReference.getId());
                             db.collection("events").document(documentReference.getId()).update("eventID", documentReference.getId());
                             Toast.makeText(CreateEventView.this, "Event Successfully Created",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(CreateEventView.this, QRCodeActivity.class);
-                            intent.putExtra("eventID", eventID);
+                            intent.putExtra("eventID", documentReference.getId());
                             startActivity(intent);
+                            finish(); // Optionally return to the previous activity
                         })
                         .addOnFailureListener(e -> {
                             Log.e("Firestore", "Error adding event", e);

@@ -1,11 +1,51 @@
 [
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/attendee_item.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/attendee_item.xml"
-    },
-    {
         "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_scanned_event_detail.xml",
         "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_scanned_event_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_attendees.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_attendees.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\attendee_item.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\attendee_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_application_form.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_application_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_delete_event.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_delete_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\content_my_events.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\content_my_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\waitlist_item.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\waitlist_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_qr_code.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_qr_code.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_event_details.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_event_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_my_applications.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_my_applications.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/waitlist_item.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/waitlist_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_waitlist.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_waitlist.xml"
     },
     {
         "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_edit_event.xml",
@@ -24,24 +64,12 @@
         "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_final_result.xml"
     },
     {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_attendees.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_attendees.xml"
+        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_created_events.xml",
+        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_created_events.xml"
     },
     {
         "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_qr_scanner.xml",
         "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_qr_scanner.xml"
-    },
-    {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\attendee_item.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\attendee_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_application_form.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_application_form.xml"
-    },
-    {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_delete_event.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_delete_event.xml"
     },
     {
         "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\content_my_application.xml",
@@ -52,10 +80,6 @@
         "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\content_browse_events.xml"
     },
     {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\content_my_events.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\content_my_events.xml"
-    },
-    {
         "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\browse_content.xml",
         "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\browse_content.xml"
     },
@@ -64,19 +88,11 @@
         "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\content_browse_profiles.xml"
     },
     {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_qr_code.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_qr_code.xml"
-    },
-    {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_event_details.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_event_details.xml"
-    },
-    {
         "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_my_events.xml",
         "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_my_events.xml"
     },
     {
-        "merged": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\fragment_my_applications.xml",
-        "source": "C:\\Users\\24634\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_my_applications.xml"
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_waitlist.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/activity_waitlist.xml"
     }
 ]

@@ -12,33 +12,33 @@
         android:padding="10dp"
         android:orientation="vertical">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:weightSum="20"
             android:paddingTop="30dp"
-            android:gravity="center_vertical">
+            android:weightSum="20">
 
             <TextView
                 android:id="@+id/event_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="15"
                 android:text="@string/event_name"
                 android:textColor="@color/dark_gray"
                 android:textSize="34sp"
-                android:textStyle="bold"
-                android:layout_weight="15" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button_return"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/user_return"
+                android:layout_weight="5"
                 android:backgroundTint="@color/dark_gray"
-                android:layout_weight="5" />
+                android:text="@string/user_return" />
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/organizer"
@@ -72,6 +72,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:text="@string/event_date"
+            android:textStyle="bold"
+            android:textColor="@color/dark_gray"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/event_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/event_date_example"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:text="@string/event_details"
             android:textStyle="bold"
             android:textColor="@color/dark_gray"
@@ -87,21 +105,13 @@
             android:textSize="14sp"/>
 
         <TextView
+            android:id="@+id/event_applicant_limit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="@string/event_date"
-            android:textStyle="bold"
+            android:text="@string/there_is_no_limit_on_the_amount_of_applicants_for_this_event"
             android:textColor="@color/dark_gray"
-            android:textSize="24sp"/>
-
-        <TextView
-            android:id="@+id/event_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/event_date_example"
-            android:textColor="@color/dark_gray"
+            android:textStyle="italic"
             android:textSize="14sp"/>
 
         <CheckBox
@@ -111,17 +121,33 @@
             android:text="@string/geolocation_sharing_message"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"/>
+
+
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/viewWaitlistButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/dark_gray"
+        android:text="View Waitlist"
+        android:textColor="@android:color/white" />
+
 
     <Button
         android:id="@+id/button_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apply"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
-        android:contentDescription=""
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="11dp"
         android:backgroundTint="@color/dark_gray"
+        android:contentDescription=""
+        android:text=""
         app:srcCompat="@android:drawable/ic_input_add" />
+
 
 </RelativeLayout>

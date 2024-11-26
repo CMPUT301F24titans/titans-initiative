@@ -1,5 +1,6 @@
 package com.example.titans_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,11 +23,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EventDetailView extends AppCompatActivity {
     private Button return_button, apply_button;
-    private TextView name, organizer, description, date;
+    private TextView name, organizer, description, date, application_limit;
     CheckBox geolocation;
     private String user_type;
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
+    private Integer default_applicant_limit = 10000;
+    Intent view_attendees = new Intent();
+
+    /**
+     * Called when activity starts, create all activity objects here
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +54,8 @@ public class EventDetailView extends AppCompatActivity {
         return_button = findViewById(R.id.button_return);
         apply_button = findViewById(R.id.button_apply);
         geolocation = findViewById(R.id.checkbox_geolocation);
+        application_limit = findViewById(R.id.event_applicant_limit);
+        Button viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
 
         // admin user viewing
         if ("admin".equals(user_type)){
@@ -58,19 +68,52 @@ public class EventDetailView extends AppCompatActivity {
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
         }
 
+        // organizer viewing their own event
+        else if ("organizer".equals(user_type)) {
+            apply_button.setText("View Attendees");
+        }
+
         name.setText(getIntent().getStringExtra("event name"));
         organizer.setText(getIntent().getStringExtra("event organizer"));
-        description.setText(getIntent().getStringExtra("event description"));
+        // Only display description if user set one
+        if (!(getIntent().getStringExtra("event description").isEmpty())){
+            description.setText(getIntent().getStringExtra("event description"));
+        }
         date.setText(getIntent().getStringExtra("event date"));
+        // Display the limit event if user set one
+        int eventLimit = getIntent().getIntExtra("event limit", default_applicant_limit); // defaultLimit is a fallback value if "event limit" is not found
+        Log.w(TAG, "applicantLimit (from EventDetailView): " + eventLimit);
+        if (eventLimit != default_applicant_limit) {
+            application_limit.setText("The limit of applicants is " + eventLimit);
+        }
+
+        viewWaitlistButton.setOnClickListener(v -> {
+            Intent intent = new Intent(EventDetailView.this, WaitlistActivity.class);
+            intent.putExtra("eventID", getIntent().getStringExtra("eventID"));
+            startActivity(intent);
+        });
 
         apply_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the apply/delete/view attendees button
+             * @param view
+             */
             @Override
             public void onClick(View view) {
+                // admin clicks delete event button
                 if ("admin".equals(user_type)){
                     // delete event
-                    deleteEvent(getIntent().getStringExtra("event_id"));
-                    finish();
+                    deleteEvent(getIntent().getStringExtra("eventID"));
                 }
+                // organizer clicks view attendees button
+                else if ("organizer".equals(user_type)){
+                    // go to view attendees
+                    view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
+                    view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
+                    startActivity(view_attendees);
+                }
+
+                // entrant clicks enroll button
                 else {
                     // enroll entrant into event
                 }
@@ -106,6 +149,7 @@ public class EventDetailView extends AppCompatActivity {
                     Toast.makeText(EventDetailView.this, "Failed to delete event",
                             Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
     }

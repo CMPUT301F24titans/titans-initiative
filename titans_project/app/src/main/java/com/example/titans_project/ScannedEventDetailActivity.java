@@ -27,6 +27,12 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
+
+    /**
+     * Called when activity starts, create all activity objects here
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,34 +89,37 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                 if (documentSnapshot.exists()) {
                     String fullName = documentSnapshot.getString("full_name");
 
-                    // Check if the user already applied
+                    // Check if the user is already in the waitlist
                     db.collection("events").document(eventID).get()
                             .addOnSuccessListener(eventSnapshot -> {
                                 if (eventSnapshot.exists()) {
-                                    List<Map<String, String>> attendees = (List<Map<String, String>>) eventSnapshot.get("attendees");
-                                    if (attendees != null) {
-                                        for (Map<String, String> attendee : attendees) {
-                                            if (userID.equals(attendee.get("user_id"))) {
-                                                Toast.makeText(this, "You have already applied to this event.", Toast.LENGTH_SHORT).show();
+                                    List<Map<String, String>> waitlist = (List<Map<String, String>>) eventSnapshot.get("waitlist");
+                                    if (waitlist != null) {
+                                        for (Map<String, String> entry : waitlist) {
+                                            if (userID.equals(entry.get("user_id"))) {
+                                                Toast.makeText(this, "You are already in the waitlist for this event.", Toast.LENGTH_SHORT).show();
                                                 return;
                                             }
                                         }
                                     }
 
-                                    // Add the user to the attendees list
-                                    Map<String, String> newAttendee = new HashMap<>();
-                                    newAttendee.put("user_id", userID);
-                                    newAttendee.put("full_name", fullName);
+                                    // Add the user to the waitlist
+                                    Map<String, String> newEntry = new HashMap<>();
+                                    newEntry.put("user_id", userID);
+                                    newEntry.put("full_name", fullName);
 
                                     db.collection("events").document(eventID)
-                                            .update("attendees", FieldValue.arrayUnion(newAttendee))
+                                            .update("waitlist", FieldValue.arrayUnion(newEntry))
                                             .addOnSuccessListener(aVoid -> {
-                                                Toast.makeText(this, "Successfully applied to the event!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this, "Successfully added to the waitlist!", Toast.LENGTH_SHORT).show();
                                             })
                                             .addOnFailureListener(e -> {
-                                                Toast.makeText(this, "Failed to apply to the event", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this, "Failed to join the waitlist.", Toast.LENGTH_SHORT).show();
                                             });
                                 }
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(this, "Failed to fetch event details.", Toast.LENGTH_SHORT).show();
                             });
                 } else {
                     Toast.makeText(this, "User details not found.", Toast.LENGTH_SHORT).show();

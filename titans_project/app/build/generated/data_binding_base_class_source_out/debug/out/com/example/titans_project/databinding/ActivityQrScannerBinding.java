@@ -22,6 +22,9 @@ public final class ActivityQrScannerBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button buttonReturn;
+
+  @NonNull
   public final Button chooseImageButton;
 
   @NonNull
@@ -33,10 +36,11 @@ public final class ActivityQrScannerBinding implements ViewBinding {
   @NonNull
   public final Button scanButton;
 
-  private ActivityQrScannerBinding(@NonNull LinearLayout rootView,
+  private ActivityQrScannerBinding(@NonNull LinearLayout rootView, @NonNull Button buttonReturn,
       @NonNull Button chooseImageButton, @NonNull ImageView qrImageView,
       @NonNull TextView qrScannerTitle, @NonNull Button scanButton) {
     this.rootView = rootView;
+    this.buttonReturn = buttonReturn;
     this.chooseImageButton = chooseImageButton;
     this.qrImageView = qrImageView;
     this.qrScannerTitle = qrScannerTitle;
@@ -70,6 +74,12 @@ public final class ActivityQrScannerBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_return;
+      Button buttonReturn = ViewBindings.findChildViewById(rootView, id);
+      if (buttonReturn == null) {
+        break missingId;
+      }
+
       id = R.id.chooseImageButton;
       Button chooseImageButton = ViewBindings.findChildViewById(rootView, id);
       if (chooseImageButton == null) {
@@ -94,8 +104,8 @@ public final class ActivityQrScannerBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityQrScannerBinding((LinearLayout) rootView, chooseImageButton, qrImageView,
-          qrScannerTitle, scanButton);
+      return new ActivityQrScannerBinding((LinearLayout) rootView, buttonReturn, chooseImageButton,
+          qrImageView, qrScannerTitle, scanButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3312,11 +3312,13 @@ id antiClockwise
 id anticipate
 id application_button
 id applyButton
+id approveButton
 id arc
 id asConfigured
 id async
+id attendee_email
+id attendee_name
 id attendeesRecyclerView
-id attendeesTitle
 id author
 id auto
 id autoComplete
@@ -3344,6 +3346,10 @@ id browser_actions_menu_view
 id buttonPanel
 id button_add_poster
 id button_apply
+id button_clear_email
+id button_clear_facility
+id button_clear_full_name
+id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
 id button_return
@@ -3386,6 +3392,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id create_event_button
 id created_events_button
 id currentState
 id custom
@@ -3437,6 +3444,7 @@ id edit_text_phone_number
 id elastic
 id emailTextView
 id embed
+id emptyTextView
 id end
 id endToStart
 id enterAlways
@@ -3448,9 +3456,11 @@ id eventDescriptionTextView
 id eventDetailsEdit
 id eventImageEdit
 id eventImageView
+id eventLimitEdit
 id eventNameHeader
 id eventNameTextView
 id eventTitleEdit
+id event_applicant_limit
 id event_date
 id event_description
 id event_name
@@ -3657,6 +3667,7 @@ id qrScannerTitle
 id radio
 id ratio
 id rectangles
+id rejectButton
 id report_drawn
 id result_title
 id returnButton
@@ -3794,6 +3805,7 @@ id useLogo
 id user_name
 id vertical_only
 id viewAttendeesButton
+id viewWaitlistButton
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3802,6 +3814,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id waitlistRecyclerView
 id west
 id wide
 id withText
@@ -3945,11 +3958,13 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attendees
 layout activity_create_event
+layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
 layout activity_qr_code
 layout activity_qr_scanner
 layout activity_scanned_event_detail
+layout activity_waitlist
 layout attendee_item
 layout browse_content
 layout browser_actions_context_menu_page
@@ -4043,6 +4058,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout waitlist_item
 layout zxing_barcode_scanner
 layout zxing_capture
 menu menu_main
@@ -4109,6 +4125,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string checkbox_application
 string checkbox_notifications
+string clear
 string clear_text_end_icon_content_description
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -4177,6 +4194,7 @@ string library_zxingandroidembedded_libraryVersion
 string library_zxingandroidembedded_libraryWebsite
 string library_zxingandroidembedded_licenseId
 string library_zxingandroidembedded_repositoryLink
+string limit_of_applicants
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -4279,6 +4297,7 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string my_application_title
 string my_applications
+string my_created_events
 string my_events
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
@@ -4307,9 +4326,11 @@ string second_fragment_label
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
 string user_type
+string view_attendees
 string yes_button
 string zxing_app_name
 string zxing_button_ok
