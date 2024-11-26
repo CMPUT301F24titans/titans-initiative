@@ -4,8 +4,9 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,24 +19,29 @@ import java.lang.String;
 
 public final class ActivityAttendeesBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final RecyclerView attendeesRecyclerView;
 
   @NonNull
-  public final ImageButton backButton;
+  public final TextView attendeesTitle;
 
-  private ActivityAttendeesBinding(@NonNull RelativeLayout rootView,
-      @NonNull RecyclerView attendeesRecyclerView, @NonNull ImageButton backButton) {
+  @NonNull
+  public final Button returnButton;
+
+  private ActivityAttendeesBinding(@NonNull LinearLayout rootView,
+      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView attendeesTitle,
+      @NonNull Button returnButton) {
     this.rootView = rootView;
     this.attendeesRecyclerView = attendeesRecyclerView;
-    this.backButton = backButton;
+    this.attendeesTitle = attendeesTitle;
+    this.returnButton = returnButton;
   }
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -66,14 +72,20 @@ public final class ActivityAttendeesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.backButton;
-      ImageButton backButton = ViewBindings.findChildViewById(rootView, id);
-      if (backButton == null) {
+      id = R.id.attendeesTitle;
+      TextView attendeesTitle = ViewBindings.findChildViewById(rootView, id);
+      if (attendeesTitle == null) {
         break missingId;
       }
 
-      return new ActivityAttendeesBinding((RelativeLayout) rootView, attendeesRecyclerView,
-          backButton);
+      id = R.id.returnButton;
+      Button returnButton = ViewBindings.findChildViewById(rootView, id);
+      if (returnButton == null) {
+        break missingId;
+      }
+
+      return new ActivityAttendeesBinding((LinearLayout) rootView, attendeesRecyclerView,
+          attendeesTitle, returnButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

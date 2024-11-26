@@ -1,6 +1,7 @@
 package com.example.titans_project;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,6 +38,7 @@ public class BrowseContentView extends AppCompatActivity {
     private ProfilesArrayAdapter profileArrayAdapter;
     private Switch back_user;
     private Boolean browsingEvents;
+    private FirebaseAuth mAuth;
     Intent event_detail = new Intent();
     Intent profile_detail = new Intent();
     TextView header1, header2;
@@ -85,12 +89,14 @@ public class BrowseContentView extends AppCompatActivity {
                         if (querySnapshots != null) {
                             eventDataList.clear();
                             for (QueryDocumentSnapshot doc: querySnapshots) {
+                                String organizer_id = doc.getString("organizerID");
                                 String event_name = doc.getString("name");
                                 String organizer = doc.getString("facilityName");
                                 String created_date = doc.getString("createdDate");
                                 String event_date = doc.getString("eventDate");
                                 String event_id = doc.getString("eventID");
                                 String description = doc.getString("description");
+                                String uri = doc.getString("picture");
                                 Integer applicant_limit = default_applicant_limit;
                                 Object applicantLimitObj = doc.get("applicantLimit");
                                 if (applicantLimitObj != null) {
@@ -100,7 +106,7 @@ public class BrowseContentView extends AppCompatActivity {
                                     Log.w(TAG, "applicantLimit is missing or null");
                                 }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit));
+                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, uri));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }
@@ -157,8 +163,14 @@ public class BrowseContentView extends AppCompatActivity {
                 });
             }
         });
-        // check if admin user clicked on an item in the contentList
         contentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * Check if user click on an item in the contentList
+             * @param adapterView
+             * @param view
+             * @param position
+             * @param l
+             */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // user currently browsing events
@@ -169,7 +181,7 @@ public class BrowseContentView extends AppCompatActivity {
                     event_detail.putExtra("event organizer", clickedEvent.getFacilityName());
                     event_detail.putExtra("event description", clickedEvent.getDescription());
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
-                    event_detail.putExtra("event_id", clickedEvent.getEventID());
+                    event_detail.putExtra("eventID", clickedEvent.getEventID());
                     event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
 
                     event_detail.putExtra("viewer", "admin");

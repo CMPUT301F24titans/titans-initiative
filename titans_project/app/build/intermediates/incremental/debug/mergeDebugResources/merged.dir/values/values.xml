@@ -1848,6 +1848,7 @@
     <item name="fragment_container_view_tag" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
+    <item name="glide_custom_view_target_tag" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
     <item name="line1" type="id"/>
@@ -2063,6 +2064,7 @@
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="checkbox_application">I accept the terms and conditions</string>
     <string name="checkbox_notifications">Receive notifications from Organizers and Administration</string>
+    <string name="clear">Clear</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
@@ -2242,6 +2244,7 @@
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
     <string name="my_application_title">My Application</string>
     <string name="my_applications">Applications</string>
+    <string name="my_created_events">My Created Events</string>
     <string name="my_events">My Events</string>
     <string name="nav_app_bar_navigate_up_description">Navigate up</string>
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
@@ -2276,6 +2279,7 @@
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="user_return">Return</string>
     <string name="user_type">User Type</string>
+    <string name="view_attendees">View Attendees</string>
     <string name="yes_button">Yes</string>
     <string name="zxing_app_name">Barcode Scanner</string>
     <string name="zxing_button_ok">OK</string>

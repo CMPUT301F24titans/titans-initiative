@@ -3311,13 +3311,12 @@ id animateToStart
 id antiClockwise
 id anticipate
 id application_button
+id applyButton
 id arc
 id asConfigured
 id async
-id attendeeDescription
-id attendeeImage
-id attendeeName
 id attendeesRecyclerView
+id attendeesTitle
 id author
 id auto
 id autoComplete
@@ -3345,6 +3344,10 @@ id browser_actions_menu_view
 id buttonPanel
 id button_add_poster
 id button_apply
+id button_clear_email
+id button_clear_facility
+id button_clear_full_name
+id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
 id button_return
@@ -3387,6 +3390,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id create_event_button
 id created_events_button
 id currentState
 id custom
@@ -3436,6 +3440,7 @@ id edit_text_full_name
 id edit_text_id
 id edit_text_phone_number
 id elastic
+id emailTextView
 id embed
 id end
 id endToStart
@@ -3443,10 +3448,14 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id eventDateEdit
+id eventDateTextView
+id eventDescriptionTextView
 id eventDetailsEdit
 id eventImageEdit
+id eventImageView
 id eventLimitEdit
 id eventNameHeader
+id eventNameTextView
 id eventTitleEdit
 id event_applicant_limit
 id event_date
@@ -3473,8 +3482,10 @@ id forever
 id fragment_container_view_tag
 id frost
 id fullscreen_header
+id geolocationCheckBox
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -3581,6 +3592,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nameTextView
 id nav_controller_view_tag
 id nav_graph
 id nav_host_fragment_container
@@ -3649,6 +3661,7 @@ id progress_circular
 id progress_horizontal
 id qrCodeImageView
 id qrImageView
+id qrScannerTitle
 id radio
 id ratio
 id rectangles
@@ -3669,7 +3682,6 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
-id scanButton
 id scan_button
 id screen
 id scroll
@@ -3789,6 +3801,7 @@ id up
 id useLogo
 id user_name
 id vertical_only
+id viewAttendeesButton
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3940,10 +3953,12 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attendees
 layout activity_create_event
+layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
 layout activity_qr_code
 layout activity_qr_scanner
+layout activity_scanned_event_detail
 layout attendee_item
 layout browse_content
 layout browser_actions_context_menu_page
@@ -4103,6 +4118,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string checkbox_application
 string checkbox_notifications
+string clear
 string clear_text_end_icon_content_description
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -4274,6 +4290,7 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string my_application_title
 string my_applications
+string my_created_events
 string my_events
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
@@ -4306,6 +4323,7 @@ string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
 string user_type
+string view_attendees
 string yes_button
 string zxing_app_name
 string zxing_button_ok

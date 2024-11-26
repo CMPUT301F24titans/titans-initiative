@@ -27,6 +27,18 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final RelativeLayout ProfileView;
 
   @NonNull
+  public final Button buttonClearEmail;
+
+  @NonNull
+  public final Button buttonClearFacility;
+
+  @NonNull
+  public final Button buttonClearFullName;
+
+  @NonNull
+  public final Button buttonClearPhoneNumber;
+
+  @NonNull
   public final Button buttonEditProfilePic;
 
   @NonNull
@@ -57,7 +69,9 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView textviewInitials;
 
   private FragmentProfileBinding(@NonNull RelativeLayout rootView,
-      @NonNull RelativeLayout ProfileView, @NonNull Button buttonEditProfilePic,
+      @NonNull RelativeLayout ProfileView, @NonNull Button buttonClearEmail,
+      @NonNull Button buttonClearFacility, @NonNull Button buttonClearFullName,
+      @NonNull Button buttonClearPhoneNumber, @NonNull Button buttonEditProfilePic,
       @NonNull Button buttonReturn, @NonNull Button buttonSaveChanges,
       @NonNull CheckBox checkboxNotifications, @NonNull EditText editTextEmail,
       @NonNull EditText editTextFacility, @NonNull EditText editTextFullName,
@@ -65,6 +79,10 @@ public final class FragmentProfileBinding implements ViewBinding {
       @NonNull TextView textviewInitials) {
     this.rootView = rootView;
     this.ProfileView = ProfileView;
+    this.buttonClearEmail = buttonClearEmail;
+    this.buttonClearFacility = buttonClearFacility;
+    this.buttonClearFullName = buttonClearFullName;
+    this.buttonClearPhoneNumber = buttonClearPhoneNumber;
     this.buttonEditProfilePic = buttonEditProfilePic;
     this.buttonReturn = buttonReturn;
     this.buttonSaveChanges = buttonSaveChanges;
@@ -105,6 +123,30 @@ public final class FragmentProfileBinding implements ViewBinding {
     int id;
     missingId: {
       RelativeLayout ProfileView = (RelativeLayout) rootView;
+
+      id = R.id.button_clear_email;
+      Button buttonClearEmail = ViewBindings.findChildViewById(rootView, id);
+      if (buttonClearEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.button_clear_facility;
+      Button buttonClearFacility = ViewBindings.findChildViewById(rootView, id);
+      if (buttonClearFacility == null) {
+        break missingId;
+      }
+
+      id = R.id.button_clear_full_name;
+      Button buttonClearFullName = ViewBindings.findChildViewById(rootView, id);
+      if (buttonClearFullName == null) {
+        break missingId;
+      }
+
+      id = R.id.button_clear_phone_number;
+      Button buttonClearPhoneNumber = ViewBindings.findChildViewById(rootView, id);
+      if (buttonClearPhoneNumber == null) {
+        break missingId;
+      }
 
       id = R.id.button_edit_profile_pic;
       Button buttonEditProfilePic = ViewBindings.findChildViewById(rootView, id);
@@ -166,10 +208,10 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentProfileBinding((RelativeLayout) rootView, ProfileView,
-          buttonEditProfilePic, buttonReturn, buttonSaveChanges, checkboxNotifications,
-          editTextEmail, editTextFacility, editTextFullName, editTextPhoneNumber, imageView,
-          textviewInitials);
+      return new FragmentProfileBinding((RelativeLayout) rootView, ProfileView, buttonClearEmail,
+          buttonClearFacility, buttonClearFullName, buttonClearPhoneNumber, buttonEditProfilePic,
+          buttonReturn, buttonSaveChanges, checkboxNotifications, editTextEmail, editTextFacility,
+          editTextFullName, editTextPhoneNumber, imageView, textviewInitials);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

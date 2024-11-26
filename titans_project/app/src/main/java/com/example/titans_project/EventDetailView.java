@@ -1,16 +1,27 @@
 package com.example.titans_project;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,6 +30,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.StorageReference;
+
+import android.Manifest;
+
+import java.io.File;
 
 public class EventDetailView extends AppCompatActivity {
     private Button return_button, apply_button;
@@ -28,7 +44,15 @@ public class EventDetailView extends AppCompatActivity {
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
     private Integer default_applicant_limit = 10000;
+    Intent view_attendees = new Intent();
+    private ImageView picture;
+    private StorageReference storageReference;
 
+
+    /**
+     * Called when activity starts, create all activity objects here
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +85,16 @@ public class EventDetailView extends AppCompatActivity {
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
         }
 
+        // organizer viewing their own event
+        else if ("organizer".equals(user_type)) {
+            apply_button.setText("View Attendees");
+        }
+
         name.setText(getIntent().getStringExtra("event name"));
         organizer.setText(getIntent().getStringExtra("event organizer"));
+
+        // displayImage();
+
         // Only display description if user set one
         if (!(getIntent().getStringExtra("event description").isEmpty())){
             description.setText(getIntent().getStringExtra("event description"));
@@ -76,13 +108,25 @@ public class EventDetailView extends AppCompatActivity {
         }
 
         apply_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the apply/delete/view attendees button
+             * @param view
+             */
             @Override
             public void onClick(View view) {
+                // admin clicks delete event button
                 if ("admin".equals(user_type)){
                     // delete event
-                    deleteEvent(getIntent().getStringExtra("event_id"));
-                    finish();
+                    deleteEvent(getIntent().getStringExtra("eventID"));
                 }
+                // organizer clicks view attendees button
+                else if ("organizer".equals(user_type)){
+                    // go to view attendees
+                    view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
+                    view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
+                    startActivity(view_attendees);
+                }
+                // entrant clicks enroll button
                 else {
                     // enroll entrant into event
                 }
@@ -96,6 +140,7 @@ public class EventDetailView extends AppCompatActivity {
             }
         });
     }
+
 
     /**
      * Deletes event from Firebase
@@ -118,7 +163,20 @@ public class EventDetailView extends AppCompatActivity {
                     Toast.makeText(EventDetailView.this, "Failed to delete event",
                             Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
+    }
+
+    private void displayImage(){
+        StorageReference imageRef = storageReference.child("test_image.jpg");
+        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "download_image.jpg");
+        imageRef.getFile(localFile)
+                .addOnSuccessListener(taskSnapshot -> {
+                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    picture.setImageBitmap(bitmap);
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(EventDetailView.this, "There was an error while display image", Toast.LENGTH_SHORT).show();
+                });
     }
 }

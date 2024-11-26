@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
     Intent admin = new Intent();
-    Intent create_event = new Intent();
+    Intent created_event = new Intent();
     private Event testEvent, fakeEvent;
     private User testUser, fakeUser;
     private FirebaseFirestore db;
@@ -110,12 +111,14 @@ public class MainActivity extends AppCompatActivity {
                 if (querySnapshots != null) {
                     eventsdataList.clear();
                     for (QueryDocumentSnapshot doc: querySnapshots) {
+                        String organizer_id = doc.getString("organizerID");
                         String event_name = doc.getString("name");
                         String organizer = doc.getString("facilityName");
                         String event_id = doc.getString("eventID");
                         String created_date = doc.getString("createdDate");
                         String event_date = doc.getString("eventDate");
                         String description = doc.getString("description");
+                        String uri = doc.getString("picture");
                         Integer applicant_limit = default_applicant_limit;
                         Object applicantLimitObj = doc.get("applicantLimit");
                         if (applicantLimitObj != null) {
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "applicantLimit is missing or null");
                         }
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit));
+                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, uri));
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
                 }
@@ -149,6 +152,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(my_applications);
             }
         });
+        // QR code scanner
+        Button scanButton = findViewById(R.id.scan_button);
+
+        scanButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, QRScannerActivity.class);
+            startActivity(intent);
+        });
 
         // User clicks on the Admin mode
         admin_switch.setOnCheckedChangeListener((admin_switch, adminChecked) -> {
@@ -163,8 +173,8 @@ public class MainActivity extends AppCompatActivity {
         create_event_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                create_event.setClass(MainActivity.this, CreateEventView.class);
-                startActivity(create_event);
+                created_event.setClass(MainActivity.this, MyCreatedEventsView.class);
+                startActivity(created_event);
             }
         });
 
@@ -178,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
                 event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
                 event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
+                event_detail.putExtra("event picture", eventsdataList.get(position).getPicture());
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);
