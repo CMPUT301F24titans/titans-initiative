@@ -26,6 +26,7 @@ public class Event {
     private Integer applicant_limit;
     private Integer default_applicant_limit = 10000;
     private List<Map<String, String>> attendees;
+    private List<Map<String, String>> waitlist;
 
     /**
      * This initial the class Event
@@ -53,6 +54,7 @@ public class Event {
         this.applicant_limit = default_applicant_limit;
         this.attendees = new ArrayList<>();
         this.organizer_id = organizer_id;
+        this.waitlist = new ArrayList<>();
     }
 
     /**
@@ -82,6 +84,8 @@ public class Event {
         this.event_id = event_id;
         this.applicant_limit = default_applicant_limit;
         this.organizer_id = organizer_id;
+        this.attendees = new ArrayList<>();
+        this.waitlist = new ArrayList<>();
     }
 
     /**
@@ -114,6 +118,7 @@ public class Event {
         this.applicant_limit = applicantLimit;
         this.attendees = new ArrayList<>();
         this.organizer_id = organizer_id;
+        this.waitlist = new ArrayList<>();
 
     }
 
@@ -144,6 +149,8 @@ public class Event {
         this.event_id = null;
         this.applicant_limit = applicantLimit;
         this.organizer_id = organizer_id;
+        this.attendees = new ArrayList<>();
+        this.waitlist = new ArrayList<>();
     }
 
     /**
@@ -324,6 +331,14 @@ public class Event {
      */
     public void setAttendees(List<Map<String, String>> attendees) {
         this.attendees = attendees;
+    }
+
+    public List<Map<String, String>> getWaitlist() {
+        return waitlist;
+    }
+
+    public void setWaitlist(List<Map<String, String>> waitlist) {
+        this.waitlist = waitlist;
     }
     /**
      * Evaluates whether the current event is a valid event
