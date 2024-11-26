@@ -16,7 +16,7 @@
     <string name="phone_number">Phone Number (xxx-xxx-xxxx)</string>
     <string name="checkbox_notifications">Receive notifications from Organizers and Administration</string>
     <string name="profile">Profile</string>
-    <string name="edit_remove_profile_pic">Edit/Remove Profile Pic</string>
+    <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="save_changes">Save Changes</string>
     <string name="user_return">Return</string>
     <string name="optional">(Optional)</string>
