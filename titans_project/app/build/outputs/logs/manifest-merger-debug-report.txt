@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
-INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-66:12
+ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:2:1-69:12
 MERGED from [androidx.databinding:viewbinding:8.2.1] C:\Users\18729\.gradle\caches\transforms-4\d4a8ae12eff1ae89de065561b974fb9b\transformed\viewbinding-8.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.8.3] C:\Users\18729\.gradle\caches\transforms-4\4f984ad0ba05bcacf3382a6839ce6d15\transformed\navigation-common-2.8.3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.8.3] C:\Users\18729\.gradle\caches\transforms-4\0146425e15974658d190e9137b0ce75b\transformed\navigation-runtime-2.8.3\AndroidManifest.xml:17:1-22:12
@@ -136,8 +136,8 @@ ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_proj
 	android:name
 		ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:8:22-79
 application
-ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:10:5-64:19
-INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:10:5-64:19
+ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:10:5-67:19
+INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:10:5-67:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\18729\.gradle\caches\transforms-4\085d979dfc2ad6e5928f7ee8a9e321a2\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\18729\.gradle\caches\transforms-4\085d979dfc2ad6e5928f7ee8a9e321a2\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\18729\.gradle\caches\transforms-4\25a4280a164ff77ee828596587983440\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -304,6 +304,12 @@ ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_proj
 		ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:63:13-36
 	android:name
 		ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:62:13-46
+activity#com.example.titans_project.WaitlistActivity
+ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:64:9-66:39
+	android:exported
+		ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:66:13-36
+	android:name
+		ADDED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml:65:13-45
 uses-sdk
 INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\src\main\AndroidManifest.xml

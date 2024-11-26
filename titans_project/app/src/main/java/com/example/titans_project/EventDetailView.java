@@ -73,6 +73,7 @@ public class EventDetailView extends AppCompatActivity {
         apply_button = findViewById(R.id.button_apply);
         geolocation = findViewById(R.id.checkbox_geolocation);
         application_limit = findViewById(R.id.event_applicant_limit);
+        Button viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
 
         // admin user viewing
         if ("admin".equals(user_type)){
@@ -107,6 +108,12 @@ public class EventDetailView extends AppCompatActivity {
             application_limit.setText("The limit of applicants is " + eventLimit);
         }
 
+        viewWaitlistButton.setOnClickListener(v -> {
+            Intent intent = new Intent(EventDetailView.this, WaitlistActivity.class);
+            intent.putExtra("eventID", getIntent().getStringExtra("eventID"));
+            startActivity(intent);
+        });
+
         apply_button.setOnClickListener(new View.OnClickListener() {
             /**
              * User clicks on the apply/delete/view attendees button
@@ -126,6 +133,7 @@ public class EventDetailView extends AppCompatActivity {
                     view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
                     startActivity(view_attendees);
                 }
+
                 // entrant clicks enroll button
                 else {
                     // enroll entrant into event

@@ -168,6 +168,20 @@ public class MyCreatedEventsView extends AppCompatActivity {
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 startActivity(event_detail);
             }
+
         });
+
+        eventList.setOnItemLongClickListener((adapterView, view, position, l) -> {
+            // Show options for Waitlist or Attendees
+            Event selectedEvent = eventsdataList.get(position);
+
+            // Navigate to WaitlistActivity
+            Intent waitlistIntent = new Intent(MyCreatedEventsView.this, WaitlistActivity.class);
+            waitlistIntent.putExtra("eventID", selectedEvent.getEventID());
+            startActivity(waitlistIntent);
+
+            return true;
+        });
+
     }
 }

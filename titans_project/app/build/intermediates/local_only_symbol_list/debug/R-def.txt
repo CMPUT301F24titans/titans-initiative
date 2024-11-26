@@ -24,8 +24,10 @@ id action_settings
 id admin_mode
 id application_button
 id applyButton
+id approveButton
+id attendee_email
+id attendee_name
 id attendeesRecyclerView
-id attendeesTitle
 id author
 id backButton
 id back_user
@@ -53,6 +55,7 @@ id edit_text_facility
 id edit_text_full_name
 id edit_text_phone_number
 id emailTextView
+id emptyTextView
 id eventDateEdit
 id eventDateTextView
 id eventDescriptionTextView
@@ -85,6 +88,7 @@ id profilesButton
 id qrCodeImageView
 id qrImageView
 id qrScannerTitle
+id rejectButton
 id result_title
 id returnButton
 id saveButton
@@ -96,6 +100,8 @@ id textview_initials
 id title
 id user_name
 id viewAttendeesButton
+id viewWaitlistButton
+id waitlistRecyclerView
 id yesButton
 id yes_button
 layout activity_attendees
@@ -106,6 +112,7 @@ layout activity_edit_event
 layout activity_qr_code
 layout activity_qr_scanner
 layout activity_scanned_event_detail
+layout activity_waitlist
 layout attendee_item
 layout browse_content
 layout content_browse_events
@@ -118,6 +125,7 @@ layout fragment_final_result
 layout fragment_my_applications
 layout fragment_my_events
 layout fragment_profile
+layout waitlist_item
 menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round

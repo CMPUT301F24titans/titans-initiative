@@ -28,8 +28,16 @@
         "source": "com.example.titans_project.app-main-56:/layout/fragment_profile.xml"
     },
     {
+        "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/activity_waitlist.xml",
+        "source": "com.example.titans_project.app-main-56:/layout/activity_waitlist.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/activity_qr_code.xml",
         "source": "com.example.titans_project.app-main-56:/layout/activity_qr_code.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/waitlist_item.xml",
+        "source": "com.example.titans_project.app-main-56:/layout/waitlist_item.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/fragment_my_events.xml",
