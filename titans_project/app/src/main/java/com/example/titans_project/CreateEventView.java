@@ -55,20 +55,6 @@ public class CreateEventView extends AppCompatActivity {
     private String organizer_id;
     private StorageReference storageReference;
     private Uri uri;
-    private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-        @Override
-        public void onActivityResult(ActivityResult result) {
-            if(result.getResultCode() == RESULT_OK){
-                if (result.getData() != null){
-                    uri = result.getData().getData();
-                    Glide.with(getApplicationContext()).load(uri).into(picture);
-                }
-            }
-            else{
-                Toast.makeText(CreateEventView.this, "Please select an image", Toast.LENGTH_SHORT).show();
-            }
-        }
-    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

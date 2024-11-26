@@ -4,8 +4,16 @@
         "source": "com.example.titans_project.app-main-56:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.example.titans_project.app-merged_res-54:/layout_activity_waitlist.xml.flat",
+        "source": "com.example.titans_project.app-main-56:/layout/activity_waitlist.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-merged_res-54:/layout_fragment_event_details.xml.flat",
         "source": "com.example.titans_project.app-main-56:/layout/fragment_event_details.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-merged_res-54:/layout_waitlist_item.xml.flat",
+        "source": "com.example.titans_project.app-main-56:/layout/waitlist_item.xml"
     },
     {
         "merged": "com.example.titans_project.app-merged_res-54:/mipmap-xxhdpi_ic_launcher_round.webp.flat",

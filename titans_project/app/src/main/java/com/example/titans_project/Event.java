@@ -1,6 +1,6 @@
 package com.example.titans_project;
 
-import android.net.Uri;
+import androidx.annotation.NonNull;
 
 import com.google.firebase.firestore.Exclude;
 
@@ -23,6 +23,7 @@ public class Event {
     private Integer applicant_limit;
     private Integer default_applicant_limit = 10000;
     private List<Map<String, String>> attendees;
+    private List<Map<String, String>> waitlist;
 
     /**
      * This initial the class Event
@@ -39,7 +40,7 @@ public class Event {
      * @param organizer_id
      *      The private attribute picture of event
      */
-    public Event(String name, String facility_name, String created_date, String event_date, String description, String organizer_id, String picture) {
+    public Event(String name, String facility_name, String created_date, String event_date, String description, String organizer_id) {
         this.name = name;
         this.facility_name = facility_name;
         this.created_date = created_date;
@@ -50,9 +51,39 @@ public class Event {
         this.applicant_limit = default_applicant_limit;
         this.attendees = new ArrayList<>();
         this.organizer_id = organizer_id;
+        this.waitlist = new ArrayList<>();
     }
 
-
+    /**
+     * Constructor for Event when provided the event_id
+     * @param event_id
+     *  Event id
+     * @param name
+     *  Event name
+     * @param facility_name
+     *  Event's facility_name (facility name)
+     * @param created_date
+     *  Event's created date
+     * @param event_date
+     *  Date when event will occur
+     * @param description
+     *  Event description
+     * @param picture
+     *  Event poster
+     */
+    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, String picture) {
+        this.name = name;
+        this.facility_name = facility_name;
+        this.created_date = created_date;
+        this.event_date = event_date;
+        this.description = description;
+        this.picture = null;
+        this.event_id = event_id;
+        this.applicant_limit = default_applicant_limit;
+        this.organizer_id = organizer_id;
+        this.attendees = new ArrayList<>();
+        this.waitlist = new ArrayList<>();
+    }
 
     /**
      * Constructor for Event when not provided a picture
@@ -84,6 +115,7 @@ public class Event {
         this.applicant_limit = applicantLimit;
         this.attendees = new ArrayList<>();
         this.organizer_id = organizer_id;
+        this.waitlist = new ArrayList<>();
 
     }
 
@@ -108,6 +140,8 @@ public class Event {
         this.event_id = null;
         this.applicant_limit = applicantLimit;
         this.organizer_id = organizer_id;
+        this.attendees = new ArrayList<>();
+        this.waitlist = new ArrayList<>();
     }
 
     /**
@@ -267,13 +301,35 @@ public class Event {
         this.picture = picture;
     }
 
-    // Getter and Setter for attendees
+    /**
+     * This clears and sets the picture URI of an event to null
+     */
+    public void clearPicture() {
+        this.picture = null;
+    }
+
+    /**
+     * Getter for attendees
+     */
     public List<Map<String, String>> getAttendees() {
         return attendees;
     }
 
+    /**
+     * Setter for attendees
+     * @param attendees
+     *  New attendees to set to event
+     */
     public void setAttendees(List<Map<String, String>> attendees) {
         this.attendees = attendees;
+    }
+
+    public List<Map<String, String>> getWaitlist() {
+        return waitlist;
+    }
+
+    public void setWaitlist(List<Map<String, String>> waitlist) {
+        this.waitlist = waitlist;
     }
     /**
      * Evaluates whether the current event is a valid event

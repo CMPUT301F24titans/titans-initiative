@@ -49,11 +49,14 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
   @NonNull
   public final ImageView profilePic;
 
+  @NonNull
+  public final Button viewWaitlistButton;
+
   private FragmentEventDetailsBinding(@NonNull RelativeLayout rootView, @NonNull Button buttonApply,
       @NonNull Button buttonReturn, @NonNull CheckBox checkboxGeolocation,
       @NonNull TextView eventApplicantLimit, @NonNull TextView eventDate,
       @NonNull TextView eventDescription, @NonNull TextView eventName, @NonNull TextView organizer,
-      @NonNull ImageView profilePic) {
+      @NonNull ImageView profilePic, @NonNull Button viewWaitlistButton) {
     this.rootView = rootView;
     this.buttonApply = buttonApply;
     this.buttonReturn = buttonReturn;
@@ -64,6 +67,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
     this.eventName = eventName;
     this.organizer = organizer;
     this.profilePic = profilePic;
+    this.viewWaitlistButton = viewWaitlistButton;
   }
 
   @Override
@@ -147,9 +151,15 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.viewWaitlistButton;
+      Button viewWaitlistButton = ViewBindings.findChildViewById(rootView, id);
+      if (viewWaitlistButton == null) {
+        break missingId;
+      }
+
       return new FragmentEventDetailsBinding((RelativeLayout) rootView, buttonApply, buttonReturn,
           checkboxGeolocation, eventApplicantLimit, eventDate, eventDescription, eventName,
-          organizer, profilePic);
+          organizer, profilePic, viewWaitlistButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

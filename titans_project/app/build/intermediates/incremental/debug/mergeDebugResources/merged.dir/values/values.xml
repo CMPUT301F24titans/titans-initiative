@@ -2093,7 +2093,7 @@
     <string name="date_of_event">Date of Event</string>
     <string name="define_zxingandroidembedded" translatable="false"/>
     <string name="dest_title">destination title</string>
-    <string name="edit_remove_profile_pic">Edit/Remove Profile Pic</string>
+    <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="email">Email</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
