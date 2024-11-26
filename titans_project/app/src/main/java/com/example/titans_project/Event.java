@@ -303,11 +303,25 @@ public class Event {
         this.picture = picture;
     }
 
-    // Getter and Setter for attendees
+    /**
+     * This clears and sets the picture URI of an event to null
+     */
+    public void clearPicture() {
+        this.picture = null;
+    }
+
+    /**
+     * Getter for attendees
+     */
     public List<Map<String, String>> getAttendees() {
         return attendees;
     }
 
+    /**
+     * Setter for attendees
+     * @param attendees
+     *  New attendees to set to event
+     */
     public void setAttendees(List<Map<String, String>> attendees) {
         this.attendees = attendees;
     }

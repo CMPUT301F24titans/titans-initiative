@@ -3,6 +3,7 @@ package com.example.titans_project;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -60,6 +61,7 @@ public class ProfileView extends AppCompatActivity {
         Button clear_email = findViewById(R.id.button_clear_email);
         Button clear_phone_number = findViewById(R.id.button_clear_phone_number);
         Button clear_facility = findViewById(R.id.button_clear_facility);
+        Button edit_profile_pic = findViewById(R.id.button_edit_profile_pic);
 
         // Create hashmap to store user's data from Firebase
         HashMap<String, String> userData= new HashMap<>();
@@ -109,6 +111,10 @@ public class ProfileView extends AppCompatActivity {
         if (adminView){
             // save changes button becomes deletion button
             save_changes_button.setText("Delete User");
+            save_changes_button.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.red));
+            // edit profile pic button becomes remove profile pic
+            edit_profile_pic.setText("Remove Profile Pic");
+            edit_profile_pic.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.red));
         }
         // user is viewing their own profile -> do not give option to clear fields (only admin may do that)
         else {
@@ -117,6 +123,26 @@ public class ProfileView extends AppCompatActivity {
             clear_phone_number.setVisibility(View.GONE);
             clear_email.setVisibility(View.GONE);
         }
+
+        edit_profile_pic.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the edit/remove profile pic button
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                // button removes profile pics for admin users
+                if (adminView ){
+                    if (profileId != null){
+                        db.collection("user").document(profileId).update("profile_pic", null);  // update in firebase
+                    }
+                    else {
+                        Toast.makeText(ProfileView.this, "Failed to remove profile pic.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
 
         clear_name.setOnClickListener(new View.OnClickListener() {
             /**
