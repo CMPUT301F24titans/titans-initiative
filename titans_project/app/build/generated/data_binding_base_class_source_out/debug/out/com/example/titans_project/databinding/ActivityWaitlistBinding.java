@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,12 +25,16 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   public final Button returnButton;
 
   @NonNull
+  public final TextView title;
+
+  @NonNull
   public final RecyclerView waitlistRecyclerView;
 
   private ActivityWaitlistBinding(@NonNull LinearLayout rootView, @NonNull Button returnButton,
-      @NonNull RecyclerView waitlistRecyclerView) {
+      @NonNull TextView title, @NonNull RecyclerView waitlistRecyclerView) {
     this.rootView = rootView;
     this.returnButton = returnButton;
+    this.title = title;
     this.waitlistRecyclerView = waitlistRecyclerView;
   }
 
@@ -66,13 +71,19 @@ public final class ActivityWaitlistBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
+        break missingId;
+      }
+
       id = R.id.waitlistRecyclerView;
       RecyclerView waitlistRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (waitlistRecyclerView == null) {
         break missingId;
       }
 
-      return new ActivityWaitlistBinding((LinearLayout) rootView, returnButton,
+      return new ActivityWaitlistBinding((LinearLayout) rootView, returnButton, title,
           waitlistRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);

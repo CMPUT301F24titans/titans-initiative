@@ -2,6 +2,8 @@ package com.example.titans_project;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +26,7 @@ public class AttendeesActivity extends AppCompatActivity {
     private List<Attendee> attendeesList;
     private FirebaseFirestore db;
     private String eventID;
+    private Button back;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class AttendeesActivity extends AppCompatActivity {
         // 初始化视图
         recyclerView = findViewById(R.id.attendeesRecyclerView);
         emptyTextView = findViewById(R.id.emptyTextView);
+        back = findViewById(R.id.returnButton_finalList);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         attendeesList = new ArrayList<>();
@@ -49,6 +53,13 @@ public class AttendeesActivity extends AppCompatActivity {
         }
 
         loadAttendees();
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void loadAttendees() {

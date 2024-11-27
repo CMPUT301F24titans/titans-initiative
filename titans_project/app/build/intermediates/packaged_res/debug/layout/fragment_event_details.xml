@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/button_apply"
+        android:layout_above="@id/viewWaitlistButton"
         android:padding="10dp"
         android:orientation="vertical">
 
@@ -121,8 +121,6 @@
             android:text="@string/geolocation_sharing_message"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"/>
-
-
     </LinearLayout>
 
 
@@ -130,23 +128,24 @@
         android:id="@+id/viewWaitlistButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_above="@id/button_apply"
         android:backgroundTint="@color/dark_gray"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:text="View Waitlist"
         android:textColor="@android:color/white" />
-
 
     <Button
         android:id="@+id/button_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/dark_gray"
-        android:contentDescription=""
-        android:text=""
         app:srcCompat="@android:drawable/ic_input_add" />
 
 
