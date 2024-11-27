@@ -1,5 +1,0 @@
-com.example.titans_project.test.app-core-1.6.1-0 C:\Users\18729\.gradle\caches\transforms-4\3da766d31641bd52f4fa58aa4d4f65e7\transformed\core-1.6.1\res
-com.example.titans_project.test.app-androidTest-1 C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\build\generated\res\resValues\androidTest\debug
-com.example.titans_project.test.app-mergeDebugAndroidTestResources-2 C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.titans_project.test.app-mergeDebugAndroidTestResources-3 C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.titans_project.test.app-merged_res-4 C:\Users\18729\GitRepo\Cmput301_project\titans-initiative\titans_project\app\build\intermediates\merged_res\debugAndroidTest
