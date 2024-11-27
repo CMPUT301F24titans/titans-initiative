@@ -4,6 +4,7 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -26,11 +27,20 @@ public final class ActivityAttendeesBinding implements ViewBinding {
   @NonNull
   public final TextView emptyTextView;
 
+  @NonNull
+  public final Button returnButtonFinalList;
+
+  @NonNull
+  public final TextView title;
+
   private ActivityAttendeesBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView emptyTextView) {
+      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView emptyTextView,
+      @NonNull Button returnButtonFinalList, @NonNull TextView title) {
     this.rootView = rootView;
     this.attendeesRecyclerView = attendeesRecyclerView;
     this.emptyTextView = emptyTextView;
+    this.returnButtonFinalList = returnButtonFinalList;
+    this.title = title;
   }
 
   @Override
@@ -72,8 +82,20 @@ public final class ActivityAttendeesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.returnButton_finalList;
+      Button returnButtonFinalList = ViewBindings.findChildViewById(rootView, id);
+      if (returnButtonFinalList == null) {
+        break missingId;
+      }
+
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
+        break missingId;
+      }
+
       return new ActivityAttendeesBinding((LinearLayout) rootView, attendeesRecyclerView,
-          emptyTextView);
+          emptyTextView, returnButtonFinalList, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

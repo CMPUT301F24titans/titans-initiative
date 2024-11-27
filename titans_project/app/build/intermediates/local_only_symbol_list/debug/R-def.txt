@@ -91,6 +91,7 @@ id qrScannerTitle
 id rejectButton
 id result_title
 id returnButton
+id returnButton_finalList
 id saveButton
 id saveToLocalButton
 id scan_button
