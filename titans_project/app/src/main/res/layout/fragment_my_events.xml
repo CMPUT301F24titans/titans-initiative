@@ -29,10 +29,11 @@
                 android:src="@drawable/notification" />
 
             <TextView
+                android:id="@+id/notifications_counter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="@string/notifications"
+                android:text="@string/notifications_0"
                 android:textColor="@color/light_gray"
                 android:textSize="14sp" />
 

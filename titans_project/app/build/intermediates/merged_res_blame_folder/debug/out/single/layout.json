@@ -8,10 +8,6 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_edit_event.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/content_notifications.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/content_notifications.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_scanned_event_detail.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_scanned_event_detail.xml"
     },
@@ -90,5 +86,9 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-52:\\layout\\activity_notifications.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\activity_notifications.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/fragment_my_events.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/fragment_my_events.xml"
     }
 ]

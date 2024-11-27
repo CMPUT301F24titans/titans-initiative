@@ -10,6 +10,7 @@ color red
 color teal
 color white
 dimen fab_margin
+drawable exclamation_mark
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable notification
@@ -81,6 +82,7 @@ id noButton
 id no_button
 id notification_icon
 id notifications_button
+id notifications_counter
 id organizer
 id organizerEdit
 id profile_button
@@ -178,6 +180,7 @@ string next
 string no_button
 string notification_title
 string notifications
+string notifications_0
 string optional
 string phone_number
 string previous

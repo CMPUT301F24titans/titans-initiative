@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +24,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private EventsArrayAdapter eventsArrayAdapter;
     private Button profile_button, application_button, created_events_button, scan_button;
     private ImageButton notifications_button;
+    private TextView notification_counter;
     private Switch admin_switch;
     Intent profile = new Intent();
     Intent my_applications = new Intent();
@@ -91,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         admin_switch = findViewById(R.id.admin_mode);
         notifications_button = findViewById(R.id.notifications_button);
         scan_button = findViewById(R.id.scan_button);
+        notification_counter = findViewById(R.id.notifications_counter);
 
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
@@ -98,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
         usersdataList =  new ArrayList<>();
 
         eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            /**
+             * Display all of user's enrolled events
+             * @param querySnapshots The value of the event. {@code null} if there was an error.
+             * @param error The error if there was error. {@code null} otherwise.
+             */
             @Override
             public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -248,6 +258,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
         } else {
+            checkForNotifications(db.collection("user").document(currentUser.getUid()));
             // Existing user detected
             Log.d(TAG, "User already signed in");
             // check if user exists in Firebase
@@ -298,4 +309,36 @@ public class MainActivity extends AppCompatActivity {
         // Store in Firebase
         userRef.document(user.getUid()).set(userData);
     }
+
+
+    /**
+     * Checks if the user has any notifications
+     * @param userRef
+     */
+    private void checkForNotifications(DocumentReference userRef) {
+        userRef.get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Retrieve the notification_list as an ArrayList
+                        ArrayList<Notification> notificationList = (ArrayList<Notification>) documentSnapshot.get("notification_list");
+                        // The list is not empty
+                        if (notificationList != null && !notificationList.isEmpty()) {
+                            notification_counter.setText("Notifications: " + notificationList.size());
+                            notification_counter.setTextColor(getResources().getColor(R.color.red));
+                        }
+                        else {
+                            // The list is either null or empty
+                            Log.d(TAG, "Notification list is empty.");
+                        }
+                    } else {
+                        // Document doesn't exist
+                        Log.d(TAG, "Document does not exist.");
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Handle error
+                    Log.w(TAG, "Failed to retrieve notification list", e);
+                });
+    }
+
 }

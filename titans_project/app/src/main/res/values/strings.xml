@@ -62,4 +62,5 @@
     <string name="admin_mode">Admin Mode</string>
     <string name="button_for_user_s_notifications">Button for user\'s notifications</string>
     <string name="date">date</string>
+    <string name="notifications_0">Notifications: 0</string>
 </resources>

@@ -3115,6 +3115,7 @@ int drawable design_ic_visibility 0x7f070096
 int drawable design_ic_visibility_off 0x7f070097
 int drawable design_password_eye 0x7f070098
 int drawable design_snackbar_background 0x7f070099
+int drawable exclamation_mark 0x7f070102
 int drawable googleg_disabled_color_18 0x7f07009a
 int drawable googleg_standard_color_18 0x7f07009b
 int drawable ic_arrow_back_black_24 0x7f07009c
@@ -3619,6 +3620,7 @@ int id notification_icon 0x7f08018b
 int id notification_main_column 0x7f08018c
 int id notification_main_column_container 0x7f08018d
 int id notifications_button 0x7f08018e
+int id notifications_counter 0x7f08026a
 int id off 0x7f08018f
 int id on 0x7f080190
 int id onInterceptTouchReturnSwipe 0x7f080191
@@ -4307,6 +4309,7 @@ int string next 0x7f1200ed
 int string no_button 0x7f1200ee
 int string notification_title 0x7f1200ef
 int string notifications 0x7f1200f0
+int string notifications_0 0x7f120113
 int string optional 0x7f1200f1
 int string password_toggle_content_description 0x7f1200f2
 int string path_password_eye 0x7f1200f3

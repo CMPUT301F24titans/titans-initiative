@@ -3116,6 +3116,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable exclamation_mark
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3620,6 +3621,7 @@ id notification_icon
 id notification_main_column
 id notification_main_column_container
 id notifications_button
+id notifications_counter
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -4308,6 +4310,7 @@ string next
 string no_button
 string notification_title
 string notifications
+string notifications_0
 string optional
 string password_toggle_content_description
 string path_password_eye
