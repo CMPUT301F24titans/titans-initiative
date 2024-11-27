@@ -5,6 +5,7 @@ color blue
 color dark_gray
 color gray
 color green
+color light_blue
 color light_gray
 color red
 color teal

@@ -1504,6 +1504,7 @@ color gray
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_blue
 color light_gray
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color

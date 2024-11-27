@@ -1,6 +1,8 @@
 package com.example.titans_project;
 
 
+import com.google.firebase.firestore.DocumentReference;
+
 import java.util.ArrayList;
 
 /**
@@ -184,12 +186,12 @@ public class User {
     }
 
     /**
-     * Add a notification to pendingNotifications
+     * Adds notification to pendingNotifications
      * @param notification
-     *  The notification to add
+     *  Notification to insert into user's notification list
      */
     public void addNotification(Notification notification) {
-
+        pendingNotifications.add(notification);
     }
 
     /**
@@ -206,4 +208,5 @@ public class User {
         }
         return false;
     }
+
 }

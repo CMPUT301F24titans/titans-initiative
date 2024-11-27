@@ -324,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
                         // The list is not empty
                         if (notificationList != null && !notificationList.isEmpty()) {
                             notification_counter.setText("Notifications: " + notificationList.size());
-                            notification_counter.setTextColor(getResources().getColor(R.color.red));
+                            notification_counter.setTextColor(getResources().getColor(R.color.light_blue));
                         }
                         else {
                             // The list is either null or empty

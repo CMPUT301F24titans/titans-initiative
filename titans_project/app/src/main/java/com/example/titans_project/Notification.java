@@ -1,5 +1,7 @@
 package com.example.titans_project;
 
+import com.google.firebase.firestore.DocumentReference;
+
 public class Notification {
     private String title;
     private String description;
