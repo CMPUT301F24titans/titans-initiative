@@ -55,4 +55,12 @@
     <string name="view_attendees">View Attendees</string>
     <string name="my_created_events">My Created Events</string>
     <string name="clear">Clear</string>
+    <string name="notifications">Notifications</string>
+    <string name="description">description</string>
+    <string name="notification_title">notification title</string>
+    <string name="delete">Delete</string>
+    <string name="admin_mode">Admin Mode</string>
+    <string name="button_for_user_s_notifications">Button for user\'s notifications</string>
+    <string name="date">date</string>
+    <string name="notifications_0">Notifications: 0</string>
 </resources>

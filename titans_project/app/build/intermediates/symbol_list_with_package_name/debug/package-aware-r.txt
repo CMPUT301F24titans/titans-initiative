@@ -3116,6 +3116,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable exclamation_mark
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3399,6 +3400,7 @@ id custom
 id customPanel
 id cut
 id dark
+id date
 id dateOfEventHeader
 id date_picker_actions
 id decelerate
@@ -3408,6 +3410,7 @@ id default_activity_button
 id deleteEventTitle
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3532,6 +3535,7 @@ id linear
 id listMode
 id list_item
 id listview_events
+id listview_notifications
 id locale
 id ltr
 id m3_side_sheet
@@ -3619,6 +3623,8 @@ id notification_background
 id notification_icon
 id notification_main_column
 id notification_main_column_container
+id notifications_button
+id notifications_counter
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3962,6 +3968,7 @@ layout activity_create_event
 layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
+layout activity_notifications
 layout activity_qr_code
 layout activity_qr_scanner
 layout activity_scanned_event_detail
@@ -3974,6 +3981,7 @@ layout content_browse_events
 layout content_browse_profiles
 layout content_my_application
 layout content_my_events
+layout content_notifications
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -4098,6 +4106,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_settings
 string add_poster
+string admin_mode
 string android_credentials_TYPE_PASSWORD_CREDENTIAL
 string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL
 string androidx_startup
@@ -4114,6 +4123,7 @@ string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
 string browse_content
+string button_for_user_s_notifications
 string call_notification_answer_action
 string call_notification_answer_video_action
 string call_notification_decline_action
@@ -4152,8 +4162,11 @@ string create_an_event
 string create_event
 string create_profile
 string created_events
+string date
 string date_of_event
 string define_zxingandroidembedded
+string delete
+string description
 string dest_title
 string edit_remove_profile_pic
 string email
@@ -4304,6 +4317,9 @@ string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string next
 string no_button
+string notification_title
+string notifications
+string notifications_0
 string optional
 string password_toggle_content_description
 string path_password_eye

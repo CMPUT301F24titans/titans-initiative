@@ -3,41 +3,37 @@ package com.example.titans_project;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This is a class that defines the main activity of the app
@@ -47,13 +43,16 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Event> eventsdataList;
     private ArrayList<User> usersdataList;
     private EventsArrayAdapter eventsArrayAdapter;
-    private Button profile_button, application_button, create_event_button;
+    private Button profile_button, application_button, created_events_button, scan_button;
+    private ImageButton notifications_button;
+    private TextView notification_counter;
     private Switch admin_switch;
     Intent profile = new Intent();
     Intent my_applications = new Intent();
     Intent event_detail = new Intent();
     Intent admin = new Intent();
     Intent created_event = new Intent();
+    Intent notifications = new Intent();
     private Event testEvent, fakeEvent;
     private User testUser, fakeUser;
     private FirebaseFirestore db;
@@ -91,9 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
         eventList = findViewById(R.id.listview_events);
         profile_button = findViewById(R.id.profile_button);
-        create_event_button = findViewById(R.id.created_events_button);
+        created_events_button = findViewById(R.id.created_events_button);
         application_button = findViewById(R.id.application_button);
         admin_switch = findViewById(R.id.admin_mode);
+        notifications_button = findViewById(R.id.notifications_button);
+        scan_button = findViewById(R.id.scan_button);
+        notification_counter = findViewById(R.id.notifications_counter);
 
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
@@ -101,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
         usersdataList =  new ArrayList<>();
 
         eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            /**
+             * Display all of user's enrolled events
+             * @param querySnapshots The value of the event. {@code null} if there was an error.
+             * @param error The error if there was error. {@code null} otherwise.
+             */
             @Override
             public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -133,8 +140,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // User clicks on the Profile button
+        notifications_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the Notifications button, bring user to NotificationView
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                notifications.setClass(MainActivity.this, NotificationView.class);
+                startActivity(notifications);
+            }
+        });
+
         profile_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the Profile button, bring user to ProfileView
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 profile.setClass(MainActivity.this, ProfileView.class);
@@ -142,23 +164,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // User clicks on the Applications button
         application_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the Applications button, bring user to MyApplicationsView
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 my_applications.setClass(MainActivity.this, MyApplicationsView.class);
                 startActivity(my_applications);
             }
         });
-        // QR code scanner
-        Button scanButton = findViewById(R.id.scan_button);
 
-        scanButton.setOnClickListener(v -> {
+
+        /**
+         * User clicks on the Scan button, bring user to QRScannerActivity
+         */
+        scan_button.setOnClickListener(v -> {
             Intent intent = new Intent(this, QRScannerActivity.class);
             startActivity(intent);
         });
 
-        // User clicks on the Admin mode
+        /**
+         * User clicks on the Admin mode, switch the app to admin mode
+         */
         admin_switch.setOnCheckedChangeListener((admin_switch, adminChecked) -> {
             if (adminChecked){
                 admin.setClass(MainActivity.this, BrowseContentView.class);
@@ -167,8 +196,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // User clicks on Create Event button
-        create_event_button.setOnClickListener(new View.OnClickListener() {
+        created_events_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on Create Event button, bring user to CreatedEventsView
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 created_event.setClass(MainActivity.this, MyCreatedEventsView.class);
@@ -176,8 +208,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // User clicks on the event in events list
         eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * User clicks on the event in events list, bring user to EventDetailView
+             * @param adapterView
+             * @param view
+             * @param position
+             * @param l
+             */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 event_detail.setClass(MainActivity.this, EventDetailView.class);
@@ -220,6 +258,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
         } else {
+            checkForNotifications(db.collection("user").document(currentUser.getUid()));
             // Existing user detected
             Log.d(TAG, "User already signed in");
             // check if user exists in Firebase
@@ -255,10 +294,51 @@ public class MainActivity extends AppCompatActivity {
         userData.put("facility","");
         userData.put("notifications", Boolean.FALSE);
         userData.put("user_id", user.getUid());
+        // Store ArrayList for user's notifications
+
+        // ************************************* DELETE LATER *****************************************************
+        ArrayList<Notification> NOTIFICATIONSTESTER= new ArrayList<>();
+        NOTIFICATIONSTESTER.add(new Notification("Test_Notification1", "Test Notification description1", LocalDate.now().toString()));
+        NOTIFICATIONSTESTER.add(new Notification("Test_Notification2", "Test Notification description2", LocalDate.now().toString()));
+        // ********************************************************************************************************
+
+        userData.put("notification_list", NOTIFICATIONSTESTER);  // ******** CHANGE NOTIFICATIONSTESTER TO new ArrayList<Notification>() ********
         // Create nested HashMap to store user's events
         HashMap<String, Object> eventData = new HashMap<>();  // empty initially
         userData.put("Events", eventData);
         // Store in Firebase
         userRef.document(user.getUid()).set(userData);
     }
+
+
+    /**
+     * Checks if the user has any notifications
+     * @param userRef
+     */
+    private void checkForNotifications(DocumentReference userRef) {
+        userRef.get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Retrieve the notification_list as an ArrayList
+                        ArrayList<Notification> notificationList = (ArrayList<Notification>) documentSnapshot.get("notification_list");
+                        // The list is not empty
+                        if (notificationList != null && !notificationList.isEmpty()) {
+                            notification_counter.setText("Notifications: " + notificationList.size());
+                            notification_counter.setTextColor(getResources().getColor(R.color.red));
+                        }
+                        else {
+                            // The list is either null or empty
+                            Log.d(TAG, "Notification list is empty.");
+                        }
+                    } else {
+                        // Document doesn't exist
+                        Log.d(TAG, "Document does not exist.");
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Handle error
+                    Log.w(TAG, "Failed to retrieve notification list", e);
+                });
+    }
+
 }

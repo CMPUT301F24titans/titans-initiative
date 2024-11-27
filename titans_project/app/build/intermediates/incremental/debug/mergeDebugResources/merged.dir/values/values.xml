@@ -2035,6 +2035,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="action_settings">Settings</string>
     <string name="add_poster">Add Poster</string>
+    <string name="admin_mode">Admin Mode</string>
     <string name="android.credentials.TYPE_PASSWORD_CREDENTIAL">Password</string>
     <string name="androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL">Passkey</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
@@ -2051,6 +2052,7 @@
     <string description="An accessibility feedback when the bottom sheet drag handle is clicked [CHAR LIMIT=NONE]" name="bottomsheet_drag_handle_clicked">Drag handle double-tapped</string>
     <string description="The content description of bottom sheet drag handles [CHAR LIMIT=NONE]" name="bottomsheet_drag_handle_content_description">Drag handle</string>
     <string name="browse_content">Browse Content</string>
+    <string name="button_for_user_s_notifications">Button for user\'s notifications</string>
     <string name="call_notification_answer_action">Answer</string>
     <string name="call_notification_answer_video_action">Video</string>
     <string name="call_notification_decline_action">Decline</string>
@@ -2089,8 +2091,11 @@
     <string name="create_event">Create Event</string>
     <string name="create_profile">Create Profile</string>
     <string name="created_events">Created Events</string>
+    <string name="date">date</string>
     <string name="date_of_event">Date of Event</string>
     <string name="define_zxingandroidembedded" translatable="false"/>
+    <string name="delete">Delete</string>
+    <string name="description">description</string>
     <string name="dest_title">destination title</string>
     <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="email">Email</string>
@@ -2249,6 +2254,9 @@
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
     <string name="next">Next</string>
     <string name="no_button">No</string>
+    <string name="notification_title">notification title</string>
+    <string name="notifications">Notifications</string>
+    <string name="notifications_0">Notifications: 0</string>
     <string name="optional">(Optional)</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
