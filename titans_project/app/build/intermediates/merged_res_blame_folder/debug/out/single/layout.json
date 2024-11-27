@@ -1,11 +1,43 @@
 [
     {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/content_notifications.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/content_notifications.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/fragment_final_result.xml",
         "source": "com.example.titans_project.app-main-55:/layout/fragment_final_result.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/attendee_item.xml",
         "source": "com.example.titans_project.app-main-55:/layout/attendee_item.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_qr_code.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/activity_qr_code.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_notifications.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/activity_notifications.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/browse_content.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/browse_content.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_scanned_event_detail.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/activity_scanned_event_detail.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/content_my_events.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/content_my_events.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/waitlist_item.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/waitlist_item.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/fragment_my_events.xml",
+        "source": "com.example.titans_project.app-main-55:/layout/fragment_my_events.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/fragment_event_details.xml",
@@ -20,10 +52,6 @@
         "source": "com.example.titans_project.app-main-55:/layout/content_browse_profiles.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_qr_code.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/activity_qr_code.xml"
-    },
-    {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_delete_event.xml",
         "source": "com.example.titans_project.app-main-55:/layout/activity_delete_event.xml"
     },
@@ -32,20 +60,8 @@
         "source": "com.example.titans_project.app-main-55:/layout/fragment_my_applications.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/browse_content.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/browse_content.xml"
-    },
-    {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/content_browse_events.xml",
         "source": "com.example.titans_project.app-main-55:/layout/content_browse_events.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_scanned_event_detail.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/activity_scanned_event_detail.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/content_my_events.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/content_my_events.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_edit_event.xml",
@@ -72,19 +88,11 @@
         "source": "com.example.titans_project.app-main-55:/layout/activity_attendees.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/waitlist_item.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/waitlist_item.xml"
-    },
-    {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/content_my_application.xml",
         "source": "com.example.titans_project.app-main-55:/layout/content_my_application.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/activity_waitlist.xml",
         "source": "com.example.titans_project.app-main-55:/layout/activity_waitlist.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-52:/layout/fragment_my_events.xml",
-        "source": "com.example.titans_project.app-main-55:/layout/fragment_my_events.xml"
     }
 ]

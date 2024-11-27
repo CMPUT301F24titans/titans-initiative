@@ -104,6 +104,10 @@
         "source": "com.example.titans_project.app-main-55:/layout/content_browse_profiles.xml"
     },
     {
+        "merged": "com.example.titans_project.app-merged_res-53:/drawable_exclamation_mark.png.flat",
+        "source": "com.example.titans_project.app-main-55:/drawable/exclamation_mark.png"
+    },
+    {
         "merged": "com.example.titans_project.app-merged_res-53:/layout_content_my_application.xml.flat",
         "source": "com.example.titans_project.app-main-55:/layout/content_my_application.xml"
     },
@@ -114,6 +118,10 @@
     {
         "merged": "com.example.titans_project.app-merged_res-53:/layout_fragment_final_result.xml.flat",
         "source": "com.example.titans_project.app-main-55:/layout/fragment_final_result.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-merged_res-53:/layout_activity_notifications.xml.flat",
+        "source": "com.example.titans_project.app-main-55:/layout/activity_notifications.xml"
     },
     {
         "merged": "com.example.titans_project.app-merged_res-53:/layout_content_my_events.xml.flat",
@@ -170,5 +178,9 @@
     {
         "merged": "com.example.titans_project.app-merged_res-53:/drawable_ic_launcher_foreground.xml.flat",
         "source": "com.example.titans_project.app-main-55:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-merged_res-53:/layout_content_notifications.xml.flat",
+        "source": "com.example.titans_project.app-main-55:/layout/content_notifications.xml"
     }
 ]
