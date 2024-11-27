@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -39,6 +40,9 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   public final ListView listviewEvents;
 
   @NonNull
+  public final ImageButton notificationsButton;
+
+  @NonNull
   public final Button profileButton;
 
   @NonNull
@@ -50,13 +54,15 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   private FragmentMyEventsBinding(@NonNull RelativeLayout rootView, @NonNull Switch adminMode,
       @NonNull Button applicationButton, @NonNull LinearLayout buttonToolbar,
       @NonNull Button createdEventsButton, @NonNull ListView listviewEvents,
-      @NonNull Button profileButton, @NonNull Button scanButton, @NonNull TextView title) {
+      @NonNull ImageButton notificationsButton, @NonNull Button profileButton,
+      @NonNull Button scanButton, @NonNull TextView title) {
     this.rootView = rootView;
     this.adminMode = adminMode;
     this.applicationButton = applicationButton;
     this.buttonToolbar = buttonToolbar;
     this.createdEventsButton = createdEventsButton;
     this.listviewEvents = listviewEvents;
+    this.notificationsButton = notificationsButton;
     this.profileButton = profileButton;
     this.scanButton = scanButton;
     this.title = title;
@@ -119,6 +125,12 @@ public final class FragmentMyEventsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.notifications_button;
+      ImageButton notificationsButton = ViewBindings.findChildViewById(rootView, id);
+      if (notificationsButton == null) {
+        break missingId;
+      }
+
       id = R.id.profile_button;
       Button profileButton = ViewBindings.findChildViewById(rootView, id);
       if (profileButton == null) {
@@ -138,7 +150,8 @@ public final class FragmentMyEventsBinding implements ViewBinding {
       }
 
       return new FragmentMyEventsBinding((RelativeLayout) rootView, adminMode, applicationButton,
-          buttonToolbar, createdEventsButton, listviewEvents, profileButton, scanButton, title);
+          buttonToolbar, createdEventsButton, listviewEvents, notificationsButton, profileButton,
+          scanButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

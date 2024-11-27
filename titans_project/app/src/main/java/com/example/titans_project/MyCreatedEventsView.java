@@ -86,7 +86,7 @@ public class MyCreatedEventsView extends AppCompatActivity {
 
         eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
             /**
-             * Displays the events in Firebase in app for user to view all user creaed events
+             * Displays the events in Firebase in app for user to view all user created events
              * @param querySnapshots The value of the event. {@code null} if there was an error.
              * @param error The error if there was error. {@code null} otherwise.
              */

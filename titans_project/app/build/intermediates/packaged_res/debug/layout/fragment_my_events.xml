@@ -19,12 +19,23 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
+            <ImageButton
+                android:id="@+id/notifications_button"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:contentDescription="@string/button_for_user_s_notifications"
+                android:src="@drawable/notification" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/homepage"
+                android:paddingLeft="10dp"
+                android:text="@string/notifications"
                 android:textColor="@color/light_gray"
                 android:textSize="14sp" />
+
 
             <!-- Spacer to push the Switch to the right -->
             <View
@@ -32,13 +43,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+
             <Switch
                 android:id="@+id/admin_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Admin Mode"
+                android:text="@string/admin_mode"
                 android:textColor="@color/light_gray"
+                android:textSize="14sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
+
         </LinearLayout>
 
 
