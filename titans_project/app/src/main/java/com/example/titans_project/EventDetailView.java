@@ -22,7 +22,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EventDetailView extends AppCompatActivity {
-    private Button return_button, apply_button;
+    private Button return_button, apply_button, viewWaitlistButton;
     private TextView name, organizer, description, date, application_limit;
     CheckBox geolocation;
     private String user_type;
@@ -55,16 +55,19 @@ public class EventDetailView extends AppCompatActivity {
         apply_button = findViewById(R.id.button_apply);
         geolocation = findViewById(R.id.checkbox_geolocation);
         application_limit = findViewById(R.id.event_applicant_limit);
+        viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
 
         // admin user viewing
         if ("admin".equals(user_type)){
             apply_button.setText("Delete Event");  // apply button becomes delete button for admin
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
+            viewWaitlistButton.setVisibility(View.GONE);
         }
         // already enrolled/applied entrant viewing
         else if ("enrolled".equals(user_type)) {
             apply_button.setVisibility(View.GONE);  // remove button for entrant users already enrolled/applied
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
+            viewWaitlistButton.setVisibility(View.GONE);
         }
 
         // organizer viewing their own event
@@ -86,6 +89,12 @@ public class EventDetailView extends AppCompatActivity {
             application_limit.setText("The limit of applicants is " + eventLimit);
         }
 
+        viewWaitlistButton.setOnClickListener(v -> {
+            Intent intent = new Intent(EventDetailView.this, WaitlistActivity.class);
+            intent.putExtra("eventID", getIntent().getStringExtra("eventID"));
+            startActivity(intent);
+        });
+
         apply_button.setOnClickListener(new View.OnClickListener() {
             /**
              * User clicks on the apply/delete/view attendees button
@@ -105,6 +114,7 @@ public class EventDetailView extends AppCompatActivity {
                     view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
                     startActivity(view_attendees);
                 }
+
                 // entrant clicks enroll button
                 else {
                     // enroll entrant into event

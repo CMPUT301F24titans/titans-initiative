@@ -3313,11 +3313,13 @@ id antiClockwise
 id anticipate
 id application_button
 id applyButton
+id approveButton
 id arc
 id asConfigured
 id async
+id attendee_email
+id attendee_name
 id attendeesRecyclerView
-id attendeesTitle
 id author
 id auto
 id autoComplete
@@ -3445,6 +3447,7 @@ id edit_text_phone_number
 id elastic
 id emailTextView
 id embed
+id emptyTextView
 id end
 id endToStart
 id enterAlways
@@ -3670,9 +3673,11 @@ id qrScannerTitle
 id radio
 id ratio
 id rectangles
+id rejectButton
 id report_drawn
 id result_title
 id returnButton
+id returnButton_finalList
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3807,6 +3812,7 @@ id useLogo
 id user_name
 id vertical_only
 id viewAttendeesButton
+id viewWaitlistButton
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3815,6 +3821,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id waitlistRecyclerView
 id west
 id wide
 id withText
@@ -3965,6 +3972,7 @@ layout activity_notifications
 layout activity_qr_code
 layout activity_qr_scanner
 layout activity_scanned_event_detail
+layout activity_waitlist
 layout attendee_item
 layout browse_content
 layout browser_actions_context_menu_page
@@ -4059,6 +4067,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout waitlist_item
 layout zxing_barcode_scanner
 layout zxing_capture
 menu menu_main

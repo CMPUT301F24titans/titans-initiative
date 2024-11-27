@@ -20,16 +20,16 @@ public final class AttendeeItemBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final TextView emailTextView;
+  public final TextView attendeeEmail;
 
   @NonNull
-  public final TextView nameTextView;
+  public final TextView attendeeName;
 
-  private AttendeeItemBinding(@NonNull LinearLayout rootView, @NonNull TextView emailTextView,
-      @NonNull TextView nameTextView) {
+  private AttendeeItemBinding(@NonNull LinearLayout rootView, @NonNull TextView attendeeEmail,
+      @NonNull TextView attendeeName) {
     this.rootView = rootView;
-    this.emailTextView = emailTextView;
-    this.nameTextView = nameTextView;
+    this.attendeeEmail = attendeeEmail;
+    this.attendeeName = attendeeName;
   }
 
   @Override
@@ -59,19 +59,19 @@ public final class AttendeeItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.emailTextView;
-      TextView emailTextView = ViewBindings.findChildViewById(rootView, id);
-      if (emailTextView == null) {
+      id = R.id.attendee_email;
+      TextView attendeeEmail = ViewBindings.findChildViewById(rootView, id);
+      if (attendeeEmail == null) {
         break missingId;
       }
 
-      id = R.id.nameTextView;
-      TextView nameTextView = ViewBindings.findChildViewById(rootView, id);
-      if (nameTextView == null) {
+      id = R.id.attendee_name;
+      TextView attendeeName = ViewBindings.findChildViewById(rootView, id);
+      if (attendeeName == null) {
         break missingId;
       }
 
-      return new AttendeeItemBinding((LinearLayout) rootView, emailTextView, nameTextView);
+      return new AttendeeItemBinding((LinearLayout) rootView, attendeeEmail, attendeeName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

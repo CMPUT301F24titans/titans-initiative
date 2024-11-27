@@ -25,18 +25,22 @@ public final class ActivityAttendeesBinding implements ViewBinding {
   public final RecyclerView attendeesRecyclerView;
 
   @NonNull
-  public final TextView attendeesTitle;
+  public final TextView emptyTextView;
 
   @NonNull
-  public final Button returnButton;
+  public final Button returnButtonFinalList;
+
+  @NonNull
+  public final TextView title;
 
   private ActivityAttendeesBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView attendeesTitle,
-      @NonNull Button returnButton) {
+      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView emptyTextView,
+      @NonNull Button returnButtonFinalList, @NonNull TextView title) {
     this.rootView = rootView;
     this.attendeesRecyclerView = attendeesRecyclerView;
-    this.attendeesTitle = attendeesTitle;
-    this.returnButton = returnButton;
+    this.emptyTextView = emptyTextView;
+    this.returnButtonFinalList = returnButtonFinalList;
+    this.title = title;
   }
 
   @Override
@@ -72,20 +76,26 @@ public final class ActivityAttendeesBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.attendeesTitle;
-      TextView attendeesTitle = ViewBindings.findChildViewById(rootView, id);
-      if (attendeesTitle == null) {
+      id = R.id.emptyTextView;
+      TextView emptyTextView = ViewBindings.findChildViewById(rootView, id);
+      if (emptyTextView == null) {
         break missingId;
       }
 
-      id = R.id.returnButton;
-      Button returnButton = ViewBindings.findChildViewById(rootView, id);
-      if (returnButton == null) {
+      id = R.id.returnButton_finalList;
+      Button returnButtonFinalList = ViewBindings.findChildViewById(rootView, id);
+      if (returnButtonFinalList == null) {
+        break missingId;
+      }
+
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
         break missingId;
       }
 
       return new ActivityAttendeesBinding((LinearLayout) rootView, attendeesRecyclerView,
-          attendeesTitle, returnButton);
+          emptyTextView, returnButtonFinalList, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
