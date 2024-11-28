@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-eu/values-eu.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-52:/values-eu/values-eu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\18729\\.gradle\\caches\\transforms-4\\590a5a2fb7b212321dbb9ad8785b406e\\transformed\\credentials-1.2.0-rc01\\res\\values-eu\\values-eu.xml",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\18729\\.gradle\\caches\\transforms-4\\db8ffb525ca08b5c2b7ed6fc65f71cd4\\transformed\\play-services-base-18.0.1\\res\\values-eu\\values.xml",
+                    "source": "C:\\Users\\18729\\.gradle\\caches\\transforms-4\\ce78cc9bd451affe8fd761890a3c1747\\transformed\\play-services-base-18.1.0\\res\\values-eu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

@@ -3,8 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:padding="16dp">
 
     <Button
         android:id="@+id/button_return"
@@ -23,6 +22,15 @@
         android:textStyle="bold"
         android:textColor="#000000"
         android:layout_marginBottom="24dp" />
+    
+
+    <ImageView
+        android:id="@+id/qrImageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerInside"
+        android:contentDescription="QR Code Display" />
 
     <Button
         android:id="@+id/scan_button"
@@ -40,13 +48,5 @@
         android:text="Choose QR Code from Gallery"
         android:backgroundTint="@color/dark_gray"
         android:textColor="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/qrImageView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="24dp"
-        android:scaleType="centerInside"
-        android:contentDescription="QR Code Display" />
 
 </LinearLayout>

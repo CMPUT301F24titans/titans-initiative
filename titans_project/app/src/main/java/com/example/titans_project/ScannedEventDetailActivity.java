@@ -2,6 +2,7 @@ package com.example.titans_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
     private String eventID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private  Button return_button, applyButton;
 
 
     /**
@@ -41,8 +43,8 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
         eventNameTextView = findViewById(R.id.eventNameTextView);
         eventDateTextView = findViewById(R.id.eventDateTextView);
         eventDescriptionTextView = findViewById(R.id.eventDescriptionTextView);
-        Button applyButton = findViewById(R.id.applyButton);
-        Button viewAttendeesButton = findViewById(R.id.viewAttendeesButton);
+        applyButton = findViewById(R.id.applyButton);
+        return_button = findViewById(R.id.returnButton);
 
         eventID = getIntent().getStringExtra("eventID");
         mAuth = FirebaseAuth.getInstance();
@@ -57,11 +59,13 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
 
         applyButton.setOnClickListener(v -> applyToEvent());
 
-        viewAttendeesButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ScannedEventDetailActivity.this, AttendeesActivity.class);
-            intent.putExtra("eventID", eventID);
-            startActivity(intent);
+        return_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
         });
+
     }
 
     private void loadEventDetails(String eventID) {

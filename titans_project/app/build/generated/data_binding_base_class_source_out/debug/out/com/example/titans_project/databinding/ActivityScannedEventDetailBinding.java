@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.titans_project.R;
@@ -20,7 +20,7 @@ import java.lang.String;
 
 public final class ActivityScannedEventDetailBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final Button applyButton;
@@ -43,14 +43,11 @@ public final class ActivityScannedEventDetailBinding implements ViewBinding {
   @NonNull
   public final Button returnButton;
 
-  @NonNull
-  public final Button viewAttendeesButton;
-
-  private ActivityScannedEventDetailBinding(@NonNull ScrollView rootView,
+  private ActivityScannedEventDetailBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button applyButton, @NonNull TextView eventDateTextView,
       @NonNull TextView eventDescriptionTextView, @NonNull ImageView eventImageView,
       @NonNull TextView eventNameTextView, @NonNull CheckBox geolocationCheckBox,
-      @NonNull Button returnButton, @NonNull Button viewAttendeesButton) {
+      @NonNull Button returnButton) {
     this.rootView = rootView;
     this.applyButton = applyButton;
     this.eventDateTextView = eventDateTextView;
@@ -59,12 +56,11 @@ public final class ActivityScannedEventDetailBinding implements ViewBinding {
     this.eventNameTextView = eventNameTextView;
     this.geolocationCheckBox = geolocationCheckBox;
     this.returnButton = returnButton;
-    this.viewAttendeesButton = viewAttendeesButton;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -131,15 +127,9 @@ public final class ActivityScannedEventDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.viewAttendeesButton;
-      Button viewAttendeesButton = ViewBindings.findChildViewById(rootView, id);
-      if (viewAttendeesButton == null) {
-        break missingId;
-      }
-
-      return new ActivityScannedEventDetailBinding((ScrollView) rootView, applyButton,
+      return new ActivityScannedEventDetailBinding((ConstraintLayout) rootView, applyButton,
           eventDateTextView, eventDescriptionTextView, eventImageView, eventNameTextView,
-          geolocationCheckBox, returnButton, viewAttendeesButton);
+          geolocationCheckBox, returnButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
