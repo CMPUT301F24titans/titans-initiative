@@ -65,4 +65,6 @@
     <string name="notifications_0">Notifications: 0</string>
     <string name="send_notification">Send Notification</string>
     <string name="create_notification">Create Notification</string>
+    <string name="insert_description">Insert Description</string>
+    <string name="insert_notification_title">Insert Notification Title</string>
 </resources>

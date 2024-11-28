@@ -34,6 +34,7 @@ id author
 id backButton
 id back_user
 id browse_content_listview
+id buttonSendNotification
 id button_add_poster
 id button_apply
 id button_clear_email
@@ -54,10 +55,12 @@ id date
 id dateOfEventHeader
 id deleteEventTitle
 id description
+id edit_description
 id edit_text_email
 id edit_text_facility
 id edit_text_full_name
 id edit_text_phone_number
+id edit_title
 id emailTextView
 id emptyTextView
 id eventDateEdit
@@ -138,6 +141,7 @@ layout fragment_my_applications
 layout fragment_my_events
 layout fragment_notification_details
 layout fragment_profile
+layout fragment_send_notification
 layout waitlist_item
 menu menu_main
 mipmap ic_launcher
@@ -158,6 +162,7 @@ string clear
 string create
 string create_an_event
 string create_event
+string create_notification
 string create_profile
 string created_events
 string date
@@ -183,6 +188,8 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string homepage
+string insert_description
+string insert_notification_title
 string leave_waitlist
 string limit_of_applicants
 string my_application_title
@@ -205,6 +212,7 @@ string return_to_homepage
 string save_changes
 string scan
 string second_fragment_label
+string send_notification
 string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
