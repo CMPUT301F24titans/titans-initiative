@@ -23,11 +23,6 @@ public class SendNotification extends DialogFragment {
 
     private static final String TAG = "AddNotification";
 
-    interface AddNotificationDialogListener {
-        void addNotification(Notification notification);
-    }
-
-    private AddNotificationDialogListener listener;
     private ArrayList<String> users; // Add this to hold the list of users
 
     // Accept a list of users when initializing the fragment
@@ -39,16 +34,6 @@ public class SendNotification extends DialogFragment {
         return fragment;
     }
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if (context instanceof AddNotificationDialogListener) {
-            listener = (AddNotificationDialogListener) context;
-        } else {
-            throw new RuntimeException(context + " must implement AddNotificationDialogListener");
-        }
-    }
-
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -56,11 +41,6 @@ public class SendNotification extends DialogFragment {
 
         EditText editTitle = view.findViewById(R.id.edit_title);
         EditText editDescription = view.findViewById(R.id.edit_description);
-
-        // Retrieve the list of users
-        if (getArguments() != null) {
-            users = getArguments().getStringArrayList("users");
-        }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         AlertDialog dialog = builder
@@ -79,21 +59,10 @@ public class SendNotification extends DialogFragment {
             // Create Notification
             Notification notification = new Notification(title, description, LocalDate.now().toString());
             // Send notification to selected users in the list
-            sendNotificationToUsers(notification);
             dialog.dismiss();
         });
 
         return dialog;
-    }
-
-    private void sendNotificationToUsers(Notification notification) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        // Iterate over the list of users and send the notification
-        for (String userId : users) {
-            DocumentReference userRef = db.collection("user").document(userId);
-            userRef.update("notification_list", FieldValue.arrayUnion(notification));
-        }
     }
 }
 

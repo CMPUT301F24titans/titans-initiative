@@ -1,6 +1,7 @@
 package com.example.titans_project;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -53,20 +54,13 @@ public class WaitlistActivity extends AppCompatActivity {
 
         // When sending notification, get the selected users
         findViewById(R.id.buttonSendNotification).setOnClickListener(v -> {
-            ArrayList<String> users = new ArrayList<>();
-            if (waitlist != null && !(waitlist.isEmpty())) {
-                for (Attendee attendee : waitlist) {
-                    users.add(attendee.getUserId());
-                }
-                // Pass all users to the SendNotification fragment
-                SendNotification sendNotificationFragment = SendNotification.newInstance(users);
-                sendNotificationFragment.show(getSupportFragmentManager(), "SendNotification");
-            }
-            else {
-                Toast.makeText(WaitlistActivity.this, "No recipients for notification",
-                        Toast.LENGTH_SHORT).show();
-            }
+            ArrayList<String> arrayList= new ArrayList<>();
+            arrayList.add("BUJ2DZFnyzU1SOCSvyyQqMTU3Os2");
+            SendNotification notificationDetailsView = SendNotification.newInstance(arrayList);
+            notificationDetailsView.show(getSupportFragmentManager(),
+                    "View Notification");
         });
+
     }
 
     private void loadWaitlist() {
