@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Title and Return button section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,8 +30,9 @@
             android:backgroundTint="@color/dark_gray"
             android:id="@+id/returnButton"
             android:layout_gravity="center_vertical"/>
-
     </LinearLayout>
+
+    <!-- Divider line -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -38,9 +40,20 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp" />
 
+    <!-- RecyclerView for the list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/waitlistRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="8dp" />
+
+    <!-- Button at the bottom -->
+    <Button
+        android:id="@+id/buttonSendNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_notifications"
+        android:backgroundTint="@color/dark_gray" />
 </LinearLayout>
+
