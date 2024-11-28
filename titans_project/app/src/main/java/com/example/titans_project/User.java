@@ -1,6 +1,13 @@
 package com.example.titans_project;
 
 
+import android.app.Notification;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * This is a class that defines a user
  */
@@ -13,6 +20,7 @@ public class User {
     private Boolean notifications;
     private String user_id;
     private String profile_pic;
+    private List<Map<String, String>> notificationList;
 
 
     /**
@@ -38,6 +46,7 @@ public class User {
         this.notifications = notifications;
         this.user_id = user_id;
         this.profile_pic = null;
+        this.notificationList = new ArrayList<>();
     }
 
     /**
@@ -65,6 +74,7 @@ public class User {
         this.notifications = notifications;
         this.user_id = user_id;
         this.profile_pic = profile_pic;
+        this.notificationList = new ArrayList<>();
     }
 
     /**
@@ -158,7 +168,20 @@ public class User {
     /**
      * This clears profile pic URI to null
      */
-    public void clearProfilePic() {
-        this.profile_pic = null;
+    public List<Map<String, String>> getNotificationList() {
+        return notificationList;
+    }
+
+    public void setNotificationList(List<Map<String, String>> notificationList) {
+        this.notificationList = notificationList;
+    }
+
+    public void addNotification(Map<String, String> notification) {
+        if (notificationList == null) {
+            notificationList = new ArrayList<>();
+        }
+        notificationList.add(notification);
     }
 }
+
+

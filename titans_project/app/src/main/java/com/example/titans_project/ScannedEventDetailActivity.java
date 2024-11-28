@@ -2,6 +2,7 @@ package com.example.titans_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
     private String eventID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private String userId;
+    private String fullName;
 
 
     /**
@@ -48,6 +51,9 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        userId = getIntent().getStringExtra("userId");
+        fullName = getIntent().getStringExtra("fullName");
+
         if (eventID != null) {
             loadEventDetails(eventID);
         } else {
@@ -55,7 +61,10 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
             finish();
         }
 
-        applyButton.setOnClickListener(v -> applyToEvent());
+        applyButton.setOnClickListener(v -> {
+            applyToEvent();
+            addNotificationToUser(userId, fullName);
+        });
 
         viewAttendeesButton.setOnClickListener(v -> {
             Intent intent = new Intent(ScannedEventDetailActivity.this, AttendeesActivity.class);
@@ -131,4 +140,24 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
             Toast.makeText(this, "You need to log in to apply.", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void addNotificationToUser(String userId, String fullName) {
+        // Create notification content
+        Map<String, Object> notification = new HashMap<>();
+        notification.put("title", "Waitlist Application Successful");
+        notification.put("content", "Hi " + fullName + ", you have successfully applied to the event!");
+        notification.put("timestamp", String.valueOf(System.currentTimeMillis()));
+
+        // Update user's notificationList in the database
+        DocumentReference userRef = db.collection("user").document(userId);
+
+        userRef.update("notificationList", FieldValue.arrayUnion(notification))
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("Notification", "Notification added to user: " + fullName);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("Notification", "Failed to add notification: ", e);
+                });
+    }
 }
+
