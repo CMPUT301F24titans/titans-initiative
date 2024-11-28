@@ -84,7 +84,9 @@ id nameTextView
 id nav_graph
 id noButton
 id no_button
+id notification_description
 id notification_icon
+id notification_title
 id notifications_button
 id notifications_counter
 id organizer
@@ -134,6 +136,7 @@ layout fragment_event_details
 layout fragment_final_result
 layout fragment_my_applications
 layout fragment_my_events
+layout fragment_notification_details
 layout fragment_profile
 layout waitlist_item
 menu menu_main

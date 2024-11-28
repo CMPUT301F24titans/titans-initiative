@@ -2,7 +2,11 @@ package com.example.titans_project;
 
 import com.google.firebase.firestore.DocumentReference;
 
-public class Notification {
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Notification implements Serializable {
     private String title;
     private String description;
     private String date;
@@ -64,6 +68,18 @@ public class Notification {
      */
     public void setDate(String date) {
         this.date = date;
+    }
+
+    /**
+     * Converts notification to map format (which is used to store notifications in Firebase)
+     * @return
+     */
+    public Map<String, Object> toMap() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("title", title);
+        map.put("description", description);
+        map.put("date", date);
+        return map;
     }
 
 }

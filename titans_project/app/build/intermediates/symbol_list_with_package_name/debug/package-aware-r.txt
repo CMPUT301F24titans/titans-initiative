@@ -3621,9 +3621,11 @@ id none
 id normal
 id north
 id notification_background
+id notification_description
 id notification_icon
 id notification_main_column
 id notification_main_column_container
+id notification_title
 id notifications_button
 id notifications_counter
 id off
@@ -4004,6 +4006,7 @@ layout fragment_event_details
 layout fragment_final_result
 layout fragment_my_applications
 layout fragment_my_events
+layout fragment_notification_details
 layout fragment_profile
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity

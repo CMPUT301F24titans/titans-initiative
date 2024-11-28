@@ -3620,9 +3620,11 @@ int id none 0x7f08018b
 int id normal 0x7f08018c
 int id north 0x7f08018d
 int id notification_background 0x7f08018e
+int id notification_description 0x7f080272
 int id notification_icon 0x7f08018f
 int id notification_main_column 0x7f080190
 int id notification_main_column_container 0x7f080191
+int id notification_title 0x7f080273
 int id notifications_button 0x7f080192
 int id notifications_counter 0x7f080193
 int id off 0x7f080194
@@ -4003,6 +4005,7 @@ int layout fragment_event_details 0x7f0b0040
 int layout fragment_final_result 0x7f0b0041
 int layout fragment_my_applications 0x7f0b0042
 int layout fragment_my_events 0x7f0b0043
+int layout fragment_notification_details 0x7f0b0087
 int layout fragment_profile 0x7f0b0044
 int layout ime_base_split_test_activity 0x7f0b0045
 int layout ime_secondary_split_test_activity 0x7f0b0046

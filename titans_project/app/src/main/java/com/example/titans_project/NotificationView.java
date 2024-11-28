@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -110,7 +111,23 @@ public class NotificationView extends AppCompatActivity {
              */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Notification clickedNotification = notificationDataList.get(position);
+                // Display dialog
+                NotificationDetailsView notificationDetailsView = NotificationDetailsView.newInstance(clickedNotification);
 
+                // Set the delete listener
+                notificationDetailsView.setOnDeleteListener(notification -> {
+                    // Remove the notification locally
+                    notificationDataList.remove(notification);
+                    // Notify the adapter of the change
+                    notificationArrayAdapter.notifyDataSetChanged();
+                    // Notify the user that they have successfully deleted the notification
+                    Toast.makeText(NotificationView.this, "Successfully Deleted Notification",
+                            Toast.LENGTH_SHORT).show();
+                });
+
+                notificationDetailsView.show(getSupportFragmentManager(),
+                        "View Notification");
             }
         });
     }
