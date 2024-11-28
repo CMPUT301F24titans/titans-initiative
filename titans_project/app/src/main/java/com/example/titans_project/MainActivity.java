@@ -62,6 +62,37 @@ public class MainActivity extends AppCompatActivity {
     private Boolean adminChecked;
     Integer default_applicant_limit = 10000;
 
+    /**
+     * This is called as soon as the activity begins
+     */
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Get the current user
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser != null) {
+            // Check for notifications only if the user is signed in
+            checkForNotifications(db.collection("user").document(currentUser.getUid()));
+        }
+    }
+
+    /**
+     * This is called after the activity is resumed (after being in background/another activity finishes)
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Get the current user
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser != null) {
+            // Check for notifications only if the user is signed in
+            checkForNotifications(db.collection("user").document(currentUser.getUid()));
+        }
+    }
 
     /**
      * This runs after the onStart function above
@@ -258,7 +289,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
         } else {
-            checkForNotifications(db.collection("user").document(currentUser.getUid()));
             // Existing user detected
             Log.d(TAG, "User already signed in");
             // check if user exists in Firebase
@@ -328,6 +358,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
                             // The list is either null or empty
+                            notification_counter.setText("Notifications: 0");
+                            notification_counter.setTextColor(getResources().getColor(R.color.light_gray));
                             Log.d(TAG, "Notification list is empty.");
                         }
                     } else {
