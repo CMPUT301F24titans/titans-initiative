@@ -202,6 +202,7 @@ string notification_title
 string notifications
 string notifications_0
 string optional
+string organized_by_user
 string phone_number
 string previous
 string profile

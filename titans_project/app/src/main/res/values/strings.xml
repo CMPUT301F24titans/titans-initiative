@@ -67,4 +67,5 @@
     <string name="create_notification">Create Notification</string>
     <string name="insert_description">Insert Description</string>
     <string name="insert_notification_title">Insert Notification Title</string>
+    <string name="organized_by_user">Organized by user</string>
 </resources>

@@ -66,6 +66,7 @@
     <string name="notifications">Notifications</string>
     <string name="notifications_0">Notifications: 0</string>
     <string name="optional">(Optional)</string>
+    <string name="organized_by_user">Organized by user</string>
     <string name="phone_number">Phone Number (xxx-xxx-xxxx)</string>
     <string name="previous">Previous</string>
     <string name="profile">Profile</string>

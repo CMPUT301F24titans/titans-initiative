@@ -12,13 +12,21 @@
         android:padding="10dp"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/event_name"
+            android:paddingTop="20dp"
+            android:textColor="@color/light_gray"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingTop="30dp"
             android:weightSum="20">
 
             <TextView
@@ -45,8 +53,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Organized by user"
-            android:textColor="@color/material_dynamic_neutral50"
+            android:text="@string/organized_by_user"
+            android:textColor="@color/light_gray"
+            android:textStyle="bold"
+            android:textSize="14sp"
             android:paddingBottom="10dp"
             />
 
