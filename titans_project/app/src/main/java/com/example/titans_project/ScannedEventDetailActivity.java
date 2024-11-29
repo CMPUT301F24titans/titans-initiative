@@ -63,7 +63,7 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
 
         applyButton.setOnClickListener(v -> {
             applyToEvent();
-            addNotificationToUser(userId, fullName);
+            //addNotificationToUser(userId, fullName);
         });
 
         viewAttendeesButton.setOnClickListener(v -> {
@@ -159,5 +159,5 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                     Log.e("Notification", "Failed to add notification: ", e);
                 });
     }
-}
 
+}
