@@ -4332,6 +4332,7 @@ int string notification_title 0x7f1200f3
 int string notifications 0x7f1200f4
 int string notifications_0 0x7f1200f5
 int string optional 0x7f1200f6
+int string organized_by_user 0x7f120118
 int string password_toggle_content_description 0x7f1200f7
 int string path_password_eye 0x7f1200f8
 int string path_password_eye_mask_strike_through 0x7f1200f9

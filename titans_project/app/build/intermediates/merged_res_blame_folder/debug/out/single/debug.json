@@ -116,8 +116,8 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-55:\\layout\\fragment_my_applications.xml"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-53:/layout_fragment_send_notification.xml.flat",
-        "source": "com.example.titans_project.app-main-55:/layout/fragment_send_notification.xml"
+        "merged": "com.example.titans_project.app-merged_res-53:/layout_fragment_event_details.xml.flat",
+        "source": "com.example.titans_project.app-main-55:/layout/fragment_event_details.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-53:\\layout_fragment_final_result.xml.flat",

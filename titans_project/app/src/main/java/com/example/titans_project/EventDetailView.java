@@ -76,7 +76,7 @@ public class EventDetailView extends AppCompatActivity {
         }
 
         name.setText(getIntent().getStringExtra("event name"));
-        organizer.setText(getIntent().getStringExtra("event organizer"));
+        organizer.setText("Organized by " + getIntent().getStringExtra("event organizer"));
         // Only display description if user set one
         if (!(getIntent().getStringExtra("event description").isEmpty())){
             description.setText(getIntent().getStringExtra("event description"));
