@@ -327,17 +327,11 @@ public class MainActivity extends AppCompatActivity {
         userData.put("notifications", Boolean.FALSE);
         userData.put("user_id", user.getUid());
         // Store ArrayList for user's notifications
-
-        // ************************************* DELETE LATER *****************************************************
-        ArrayList<Notification> NOTIFICATIONSTESTER= new ArrayList<>();
-        NOTIFICATIONSTESTER.add(new Notification("Test_Notification1", "Test Notification description1", LocalDate.now().toString()));
-        NOTIFICATIONSTESTER.add(new Notification("Test_Notification2", "Test Notification description2", LocalDate.now().toString()));
-        // ********************************************************************************************************
-
-        userData.put("notification_list", NOTIFICATIONSTESTER);  // ******** CHANGE NOTIFICATIONSTESTER TO new ArrayList<Notification>() ********
+        userData.put("notification_list", new ArrayList<>());
         // Create nested HashMap to store user's events
-        HashMap<String, Object> eventData = new HashMap<>();  // empty initially
-        userData.put("Events", eventData);
+        userData.put("applications", new ArrayList<>());
+        userData.put("accepted", new ArrayList<>());
+        userData.put("enrolled", new ArrayList<>());
         // Store in Firebase
         userRef.document(user.getUid()).set(userData);
     }

@@ -94,7 +94,7 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                     String fullName = documentSnapshot.getString("full_name");
 
                     // Check if the user is already in the waitlist
-                    db.collection("events").document(eventID).get()
+                    db.collection("applications").document(eventID).get()
                             .addOnSuccessListener(eventSnapshot -> {
                                 if (eventSnapshot.exists()) {
                                     List<Map<String, String>> waitlist = (List<Map<String, String>>) eventSnapshot.get("waitlist");
@@ -120,6 +120,8 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                                             .addOnFailureListener(e -> {
                                                 Toast.makeText(this, "Failed to join the waitlist.", Toast.LENGTH_SHORT).show();
                                             });
+                                    // Add the event to the user's applications
+                                    userRef.update("applications", FieldValue.arrayUnion(eventID));
                                 }
                             })
                             .addOnFailureListener(e -> {
