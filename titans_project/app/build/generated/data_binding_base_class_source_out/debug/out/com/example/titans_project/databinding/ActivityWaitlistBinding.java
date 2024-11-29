@@ -22,6 +22,9 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button buttonSendNotification;
+
+  @NonNull
   public final Button returnButton;
 
   @NonNull
@@ -30,9 +33,11 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   @NonNull
   public final RecyclerView waitlistRecyclerView;
 
-  private ActivityWaitlistBinding(@NonNull LinearLayout rootView, @NonNull Button returnButton,
-      @NonNull TextView title, @NonNull RecyclerView waitlistRecyclerView) {
+  private ActivityWaitlistBinding(@NonNull LinearLayout rootView,
+      @NonNull Button buttonSendNotification, @NonNull Button returnButton, @NonNull TextView title,
+      @NonNull RecyclerView waitlistRecyclerView) {
     this.rootView = rootView;
+    this.buttonSendNotification = buttonSendNotification;
     this.returnButton = returnButton;
     this.title = title;
     this.waitlistRecyclerView = waitlistRecyclerView;
@@ -65,6 +70,12 @@ public final class ActivityWaitlistBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonSendNotification;
+      Button buttonSendNotification = ViewBindings.findChildViewById(rootView, id);
+      if (buttonSendNotification == null) {
+        break missingId;
+      }
+
       id = R.id.returnButton;
       Button returnButton = ViewBindings.findChildViewById(rootView, id);
       if (returnButton == null) {
@@ -83,8 +94,8 @@ public final class ActivityWaitlistBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityWaitlistBinding((LinearLayout) rootView, returnButton, title,
-          waitlistRecyclerView);
+      return new ActivityWaitlistBinding((LinearLayout) rootView, buttonSendNotification,
+          returnButton, title, waitlistRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

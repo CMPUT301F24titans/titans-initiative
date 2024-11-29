@@ -26,12 +26,13 @@
     <string name="create">Create</string>
     <string name="create_an_event">Create an Event</string>
     <string name="create_event">Create Event</string>
+    <string name="create_notification">Create Notification</string>
     <string name="create_profile">Create Profile</string>
     <string name="created_events">Created Events</string>
     <string name="date">date</string>
     <string name="date_of_event">Date of Event</string>
     <string name="delete">Delete</string>
-    <string name="description">description</string>
+    <string name="description">Description</string>
     <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="email">Email</string>
     <string name="event_date">Event Date</string>
@@ -51,6 +52,8 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD8PM_NS6OBr4UBe1eSoQKEup52WGLe9ZU</string>
     <string name="google_storage_bucket" translatable="false">titans-initiative.firebasestorage.app</string>
     <string name="homepage">Homepage</string>
+    <string name="insert_description">Insert Description</string>
+    <string name="insert_notification_title">Insert Notification Title</string>
     <string name="leave_waitlist">Leave Waitlist</string>
     <string name="limit_of_applicants">Number Limit of Applicants</string>
     <string name="my_application_title">My Application</string>
@@ -59,7 +62,7 @@
     <string name="my_events">My Events</string>
     <string name="next">Next</string>
     <string name="no_button">No</string>
-    <string name="notification_title">notification title</string>
+    <string name="notification_title">Notification Title</string>
     <string name="notifications">Notifications</string>
     <string name="notifications_0">Notifications: 0</string>
     <string name="optional">(Optional)</string>
@@ -73,6 +76,7 @@
     <string name="save_changes">Save Changes</string>
     <string name="scan">Scan</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="send_notification">Send Notification</string>
     <string name="there_is_no_limit_on_the_amount_of_applicants_for_this_event">There is no limit on the amount of applicants for this event</string>
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="user_return">Return</string>

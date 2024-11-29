@@ -3346,6 +3346,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
+id buttonSendNotification
 id button_add_poster
 id button_apply
 id button_clear_email
@@ -3356,6 +3357,7 @@ id button_create_profile
 id button_edit_profile_pic
 id button_return
 id button_save_changes
+id button_send_notification
 id button_toolbar
 id cache_measures
 id callMeasure
@@ -3439,12 +3441,14 @@ id easeInOut
 id easeOut
 id east
 id edge
+id edit_description
 id edit_query
 id edit_text_email
 id edit_text_facility
 id edit_text_full_name
 id edit_text_id
 id edit_text_phone_number
+id edit_title
 id elastic
 id emailTextView
 id embed
@@ -4008,6 +4012,7 @@ layout fragment_my_applications
 layout fragment_my_events
 layout fragment_notification_details
 layout fragment_profile
+layout fragment_send_notification
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog
@@ -4164,6 +4169,7 @@ string copy_toast_msg
 string create
 string create_an_event
 string create_event
+string create_notification
 string create_profile
 string created_events
 string date
@@ -4201,6 +4207,8 @@ string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string homepage
 string icon_content_description
+string insert_description
+string insert_notification_title
 string item_view_role_description
 string leave_waitlist
 string library_zxingandroidembedded_author
@@ -4344,6 +4352,7 @@ string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string second_fragment_label
+string send_notification
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
