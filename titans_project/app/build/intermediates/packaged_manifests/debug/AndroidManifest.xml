@@ -56,6 +56,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Titans_project" >
         <activity
+            android:name="com.example.titans_project.SendNotification"
+            android:exported="false" />
+        <activity
             android:name="com.example.titans_project.NotificationView"
             android:exported="false" />
         <activity

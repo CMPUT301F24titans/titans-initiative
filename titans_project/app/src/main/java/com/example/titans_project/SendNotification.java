@@ -1,68 +1,101 @@
 package com.example.titans_project;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class SendNotification extends DialogFragment {
+public class SendNotification extends AppCompatActivity{
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
-    private static final String TAG = "AddNotification";
-
-    private ArrayList<String> users; // Add this to hold the list of users
-
-    // Accept a list of users when initializing the fragment
-    static SendNotification newInstance(ArrayList<String> users) {
-        Bundle args = new Bundle();
-        args.putStringArrayList("users", users);  // Pass the list of user IDs to the fragment
-        SendNotification fragment = new SendNotification();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @NonNull
     @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_send_notification, null);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        EditText editTitle = view.findViewById(R.id.edit_title);
-        EditText editDescription = view.findViewById(R.id.edit_description);
+        // Initialize Firebase
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        db = FirebaseFirestore.getInstance();
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        AlertDialog dialog = builder
-                .setView(view)
-                .setNegativeButton("Cancel", null)
-                .setPositiveButton("Send", null)  // Temporarily set to null
-                .create();
+        // Get ref to current user in Firebase
+        DocumentReference userRef = db.collection("user").document(user.getUid());
 
-        dialog.show();
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.fragment_send_notification);
 
-        // Handle the send button click manually
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
-            String title = editTitle.getText().toString();
-            String description = editDescription.getText().toString();
+        Button returnButton = findViewById(R.id.button_return);
+        Button sendButton = findViewById(R.id.button_send_notification);
+        EditText editTitle = findViewById(R.id.edit_title);
+        EditText editDescription = findViewById(R.id.edit_description);
 
-            // Create Notification
-            Notification notification = new Notification(title, description, LocalDate.now().toString());
-            // Send notification to selected users in the list
-            dialog.dismiss();
+        // ArrayList of all user ids of users on the waitlist
+        ArrayList<String> waitlist = getIntent().getStringArrayListExtra("waitlist");
+        Log.d("SendNotification", "Waitlist: " + waitlist);
+
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks return button, return to previous activity
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
         });
 
-        return dialog;
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * When send notification button is clicked, send notification to all users in waitlist
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                if (waitlist != null && !waitlist.isEmpty()) {
+                    Notification notification = new Notification(
+                            editTitle.getText().toString().trim(),
+                            editDescription.getText().toString().trim(),
+                            LocalDate.now().toString()
+                    );
+
+                    Map<String, Object> notification_map = notification.toMap();
+
+                    for (String user_id : waitlist) {
+                        Log.d("SendNotification", "Sending notification to user: " + user_id);
+                        db.collection("user").document(user_id)
+                                .update("notification_list", FieldValue.arrayUnion(notification_map))
+                                .addOnSuccessListener(aVoid -> runOnUiThread(() -> {
+                                }))
+                                .addOnFailureListener(e -> runOnUiThread(() -> {
+                                    Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
+                                }));
+                    }
+                    Toast.makeText(SendNotification.this, "Sent notification", Toast.LENGTH_SHORT).show();
+                    finish(); // Close the activity after updates
+                } else {
+                    Toast.makeText(SendNotification.this, "No recipients for notification", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
 }
-

@@ -3356,6 +3356,7 @@ int id button_create_profile 0x7f080083
 int id button_edit_profile_pic 0x7f080084
 int id button_return 0x7f080085
 int id button_save_changes 0x7f080086
+int id button_send_notification 0x7f080277
 int id button_toolbar 0x7f080087
 int id cache_measures 0x7f080088
 int id callMeasure 0x7f080089

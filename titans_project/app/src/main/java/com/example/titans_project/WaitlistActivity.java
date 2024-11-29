@@ -1,5 +1,6 @@
 package com.example.titans_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -24,6 +25,7 @@ public class WaitlistActivity extends AppCompatActivity {
     private List<Attendee> waitlist;
     private FirebaseFirestore db;
     private String eventID;
+    Intent send_notification = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +56,16 @@ public class WaitlistActivity extends AppCompatActivity {
 
         // When sending notification, get the selected users
         findViewById(R.id.buttonSendNotification).setOnClickListener(v -> {
-            ArrayList<String> arrayList= new ArrayList<>();
-            arrayList.add("BUJ2DZFnyzU1SOCSvyyQqMTU3Os2");
-            SendNotification notificationDetailsView = SendNotification.newInstance(arrayList);
-            notificationDetailsView.show(getSupportFragmentManager(),
-                    "View Notification");
+            send_notification.setClass(WaitlistActivity.this, SendNotification.class);
+            // Retrieve list of attendees' user ids to send to next activity
+            ArrayList<String> waitlist_ids = new ArrayList<>();
+            if (waitlist != null && (!waitlist.isEmpty())) {
+                for (Attendee attendee: waitlist) {
+                    waitlist_ids.add(attendee.getUserId());
+                }
+            }
+            send_notification.putExtra("waitlist", waitlist_ids);
+            startActivity(send_notification);
         });
 
     }

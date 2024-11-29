@@ -45,6 +45,7 @@ id button_create_profile
 id button_edit_profile_pic
 id button_return
 id button_save_changes
+id button_send_notification
 id button_toolbar
 id checkbox_geolocation
 id checkbox_notifications

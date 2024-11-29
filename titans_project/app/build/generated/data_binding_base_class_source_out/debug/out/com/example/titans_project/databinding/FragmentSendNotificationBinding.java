@@ -4,6 +4,7 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +22,12 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button buttonReturn;
+
+  @NonNull
+  public final Button buttonSendNotification;
+
+  @NonNull
   public final EditText editDescription;
 
   @NonNull
@@ -33,9 +40,12 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
   public final TextView notificationTitle;
 
   private FragmentSendNotificationBinding(@NonNull LinearLayout rootView,
+      @NonNull Button buttonReturn, @NonNull Button buttonSendNotification,
       @NonNull EditText editDescription, @NonNull EditText editTitle,
       @NonNull TextView notificationDescription, @NonNull TextView notificationTitle) {
     this.rootView = rootView;
+    this.buttonReturn = buttonReturn;
+    this.buttonSendNotification = buttonSendNotification;
     this.editDescription = editDescription;
     this.editTitle = editTitle;
     this.notificationDescription = notificationDescription;
@@ -69,6 +79,18 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_return;
+      Button buttonReturn = ViewBindings.findChildViewById(rootView, id);
+      if (buttonReturn == null) {
+        break missingId;
+      }
+
+      id = R.id.button_send_notification;
+      Button buttonSendNotification = ViewBindings.findChildViewById(rootView, id);
+      if (buttonSendNotification == null) {
+        break missingId;
+      }
+
       id = R.id.edit_description;
       EditText editDescription = ViewBindings.findChildViewById(rootView, id);
       if (editDescription == null) {
@@ -93,8 +115,9 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSendNotificationBinding((LinearLayout) rootView, editDescription,
-          editTitle, notificationDescription, notificationTitle);
+      return new FragmentSendNotificationBinding((LinearLayout) rootView, buttonReturn,
+          buttonSendNotification, editDescription, editTitle, notificationDescription,
+          notificationTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3357,6 +3357,7 @@ id button_create_profile
 id button_edit_profile_pic
 id button_return
 id button_save_changes
+id button_send_notification
 id button_toolbar
 id cache_measures
 id callMeasure
