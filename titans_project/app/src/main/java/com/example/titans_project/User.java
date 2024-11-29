@@ -1,6 +1,10 @@
 package com.example.titans_project;
 
 
+import com.google.firebase.firestore.DocumentReference;
+
+import java.util.ArrayList;
+
 /**
  * This is a class that defines a user
  */
@@ -13,6 +17,7 @@ public class User {
     private Boolean notifications;
     private String user_id;
     private String profile_pic;
+    private ArrayList<Notification> pendingNotifications;
 
 
     /**
@@ -38,6 +43,7 @@ public class User {
         this.notifications = notifications;
         this.user_id = user_id;
         this.profile_pic = null;
+        this.pendingNotifications = new ArrayList<>();
     }
 
     /**
@@ -65,6 +71,7 @@ public class User {
         this.notifications = notifications;
         this.user_id = user_id;
         this.profile_pic = profile_pic;
+        this.pendingNotifications = new ArrayList<>();
     }
 
     /**
@@ -161,4 +168,45 @@ public class User {
     public void clearProfilePic() {
         this.profile_pic = null;
     }
+
+    /**
+     * Gets the current arraylist of notifications
+     * @return
+     *  returns arraylist of user's notifications
+     */
+    public ArrayList<Notification> getPendingNotifications(){   return pendingNotifications;    }
+
+    /**
+     * Set pendingNotifications to a new ArrayList of notifications
+     * @param notifications
+     *  The new arrayList of notifications to assign to pendingNotifications
+     */
+    public void setPendingNotifications(ArrayList<Notification> notifications) {
+        this.pendingNotifications = notifications;
+    }
+
+    /**
+     * Adds notification to pendingNotifications
+     * @param notification
+     *  Notification to insert into user's notification list
+     */
+    public void addNotification(Notification notification) {
+        pendingNotifications.add(notification);
+    }
+
+    /**
+     * Delete notification from pendingNotifications
+     * @param notification
+     *  The notification to delete
+     * @return
+     *  Returns true if notification was found inside pendingNotifications and deleted, false otherwise
+     */
+    public Boolean deleteNotification(Notification notification) {
+        if (pendingNotifications.contains(notification)){
+            pendingNotifications.remove(notification);
+            return true;
+        }
+        return false;
+    }
+
 }
