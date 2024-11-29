@@ -28,12 +28,14 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
+import java.util.UUID;
+
 
 public class EventDetailView extends AppCompatActivity {
     private Button return_button, apply_button, viewWaitlistButton;
     private TextView name, organizer, description, date, application_limit;
     CheckBox geolocation;
-    private String user_type;
+    private String user_type, picture_name;
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
     private Integer default_applicant_limit = 10000;
@@ -91,7 +93,15 @@ public class EventDetailView extends AppCompatActivity {
 
         name.setText(getIntent().getStringExtra("event name"));
         organizer.setText(getIntent().getStringExtra("event organizer"));
-        displayImage();
+        picture_name = getIntent().getStringExtra("event image");
+        if (picture_name != null){
+            displayImage(getIntent().getStringExtra("event image"));
+        }
+        else{
+            Toast.makeText(EventDetailView.this, "no image found",
+                    Toast.LENGTH_SHORT).show();
+        }
+
         // Only display description if user set one
         if (!(getIntent().getStringExtra("event description").isEmpty())){
             description.setText(getIntent().getStringExtra("event description"));
@@ -171,15 +181,15 @@ public class EventDetailView extends AppCompatActivity {
         });
     }
 
-    private void displayImage(){
-        StorageReference imageRef = storageReference.child("test_image.jpg");
-        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "download_image.jpg");
+    private void displayImage(String picture_name){
+        StorageReference imageRef = storageReference.child(picture_name);
+        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "downloaded_image.jpg");
         imageRef.getFile(localFile)
                 .addOnSuccessListener(taskSnapshot -> {
                     Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     picture.setImageBitmap(bitmap);
                 }).addOnFailureListener(e -> {
-                    Toast.makeText(EventDetailView.this, e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EventDetailView.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 }

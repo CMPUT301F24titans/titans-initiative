@@ -27,6 +27,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.time.LocalDate;
+import java.util.Optional;
+import java.util.UUID;
 
 public class CreateEventView extends AppCompatActivity {
 
@@ -40,7 +42,7 @@ public class CreateEventView extends AppCompatActivity {
     private String organizer_id;
     private StorageReference storageReference;
     private Uri uri;
-
+    private Event event = new Event(Optional.ofNullable(null), null, null, null, null, null, null, null, null);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,7 +131,6 @@ public class CreateEventView extends AppCompatActivity {
                 String dateInput = event_date.getText().toString().trim();
                 String eventNameInput = event_name.getText().toString().trim();
                 String eventDetailsInput = event_details.getText().toString().trim();
-
                 String applicantLimitString = applicant_limit.getText().toString();
                 Integer applicantLimitInput;
                 // User does not enter a value -> default limit value
@@ -141,9 +142,17 @@ public class CreateEventView extends AppCompatActivity {
                     applicantLimitInput = Integer.parseInt(applicantLimitString);
                 }
 
-                Event event;
+                uploadImage(uri);
+
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput, organizer_id);
+                    event.setName(eventNameInput);
+                    event.setFacilityName(facilityInput);
+                    event.setCreated_date(LocalDate.now().toString());
+                    event.setEvent_date(dateInput);
+                    event.setDescription(eventDetailsInput);
+                    event.setApplicantLimit(applicantLimitInput);
+                    event.setOrganizerID(organizer_id);
+                    //event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput, organizer_id);
                 } else {
                     event = null;
                 }
@@ -204,7 +213,6 @@ public class CreateEventView extends AppCompatActivity {
         if (requestCode == image_code && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uri = data.getData();
             picture.setImageURI(uri);
-            uploadImage(uri);
         }
     }
 
@@ -214,7 +222,9 @@ public class CreateEventView extends AppCompatActivity {
      *  The uri of the image
      */
     private void uploadImage(Uri uri){
-        StorageReference  reference = storageReference.child("test_image.jpg");
+        String picture_name = UUID.randomUUID().toString();
+        event.setPicture(picture_name);
+        StorageReference  reference = storageReference.child(picture_name);
         reference.putFile(uri)
                 .addOnSuccessListener(taskSnapshot -> {
                     Toast.makeText(CreateEventView.this, "Image successfully upload!", Toast.LENGTH_SHORT).show();
