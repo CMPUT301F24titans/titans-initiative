@@ -1,15 +1,11 @@
 package com.example.titans_project;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,24 +20,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import java.io.File;
-import java.util.UUID;
-
 
 public class EventDetailView extends AppCompatActivity {
     private Button return_button, apply_button, viewWaitlistButton;
     private TextView name, organizer, description, date, application_limit;
     CheckBox geolocation;
-    private String user_type, picture_name;
+    private String user_type;
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
     private Integer default_applicant_limit = 10000;
     Intent view_attendees = new Intent();
-    private ImageView picture;
-    private StorageReference storageReference;
 
     /**
      * Called when activity starts, create all activity objects here
@@ -52,9 +40,6 @@ public class EventDetailView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_event_details);
-
-        // Initialize storage
-        storageReference = FirebaseStorage.getInstance().getReference("event image");
 
         // Initialize Firebase
         FirebaseApp.initializeApp(this);
@@ -71,7 +56,6 @@ public class EventDetailView extends AppCompatActivity {
         geolocation = findViewById(R.id.checkbox_geolocation);
         application_limit = findViewById(R.id.event_applicant_limit);
         viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
-        picture = findViewById(R.id.profile_pic);
 
         // admin user viewing
         if ("admin".equals(user_type)){
@@ -92,16 +76,7 @@ public class EventDetailView extends AppCompatActivity {
         }
 
         name.setText(getIntent().getStringExtra("event name"));
-        organizer.setText(getIntent().getStringExtra("event organizer"));
-        picture_name = getIntent().getStringExtra("event image");
-        if (picture_name != null){
-            displayImage(getIntent().getStringExtra("event image"));
-        }
-        else{
-            Toast.makeText(EventDetailView.this, "no image found",
-                    Toast.LENGTH_SHORT).show();
-        }
-
+        organizer.setText("Organized by " + getIntent().getStringExtra("event organizer"));
         // Only display description if user set one
         if (!(getIntent().getStringExtra("event description").isEmpty())){
             description.setText(getIntent().getStringExtra("event description"));
@@ -179,17 +154,5 @@ public class EventDetailView extends AppCompatActivity {
                 finish();
             }
         });
-    }
-
-    private void displayImage(String picture_name){
-        StorageReference imageRef = storageReference.child(picture_name);
-        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "downloaded_image.jpg");
-        imageRef.getFile(localFile)
-                .addOnSuccessListener(taskSnapshot -> {
-                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    picture.setImageBitmap(bitmap);
-                }).addOnFailureListener(e -> {
-                    Toast.makeText(EventDetailView.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
     }
 }
