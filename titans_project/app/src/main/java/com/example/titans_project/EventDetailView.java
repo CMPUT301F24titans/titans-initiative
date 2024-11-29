@@ -23,6 +23,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -60,8 +61,7 @@ public class EventDetailView extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
 
-        user_type = getIntent().getStringExtra("viewer");
-
+        // Initialize Objects in layout
         name = findViewById(R.id.event_name);
         organizer = findViewById(R.id.organizer);
         description = findViewById(R.id.event_description);
@@ -72,6 +72,8 @@ public class EventDetailView extends AppCompatActivity {
         application_limit = findViewById(R.id.event_applicant_limit);
         viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
         picture = findViewById(R.id.profile_pic);
+
+        user_type = getIntent().getStringExtra("viewer");
 
         // admin user viewing
         if ("admin".equals(user_type)){
@@ -85,17 +87,31 @@ public class EventDetailView extends AppCompatActivity {
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
             viewWaitlistButton.setVisibility(View.GONE);
         }
-
         // organizer viewing their own event
         else if ("organizer".equals(user_type)) {
             apply_button.setText("View Attendees");
         }
 
         name.setText(getIntent().getStringExtra("event name"));
-        organizer.setText(getIntent().getStringExtra("event organizer"));
+        db.collection("user")
+                .document(getIntent().getStringExtra("event organizer"))
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            organizer.setText(document.getString("full_name"));
+                            Log.d("Firestore", "get organizer name");
+                        } else {
+                            Log.d("Firestore", "No such document");
+                        }
+                    } else {
+                        Log.w("Firestore", "Error getting document.", task.getException());
+                    }
+                });
         picture_name = getIntent().getStringExtra("event image");
         if (picture_name != null){
-            displayImage(getIntent().getStringExtra("event image"));
+            displayImage(picture_name);
         }
         else{
             Toast.makeText(EventDetailView.this, "no image found",
@@ -108,7 +124,7 @@ public class EventDetailView extends AppCompatActivity {
         }
         date.setText(getIntent().getStringExtra("event date"));
         // Display the limit event if user set one
-        int eventLimit = getIntent().getIntExtra("event limit", default_applicant_limit); // defaultLimit is a fallback value if "event limit" is not found
+        Object eventLimit = getIntent().getIntExtra("event limit", default_applicant_limit); // defaultLimit is a fallback value if "event limit" is not found
         Log.w(TAG, "applicantLimit (from EventDetailView): " + eventLimit);
         if (eventLimit != default_applicant_limit) {
             application_limit.setText("The limit of applicants is " + eventLimit);

@@ -103,12 +103,13 @@ public class MyCreatedEventsView extends AppCompatActivity {
                         String organizer_id = doc.getString("organizerID");
                         // Check if user is owner of event
                         if (user_id.equals(organizer_id)) {
-                            String event_name = doc.getString("name");
-                            String organizer = doc.getString("facilityName");
                             String event_id = doc.getString("eventID");
+                            String event_name = doc.getString("name");
+                            String facility_name = doc.getString("facilityName");
                             String created_date = doc.getString("createdDate");
                             String event_date = doc.getString("eventDate");
                             String description = doc.getString("description");
+                            String picture = doc.getString("picture");
                             Integer applicant_limit = default_applicant_limit;
                             Object applicantLimitObj = doc.get("applicantLimit");
                             if (applicantLimitObj != null) {
@@ -118,7 +119,7 @@ public class MyCreatedEventsView extends AppCompatActivity {
                                 Log.w(TAG, "applicantLimit is missing or null");
                             }
                             Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                            eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, "1"));
+                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
                         }
                     }
                     eventsArrayAdapter.notifyDataSetChanged();

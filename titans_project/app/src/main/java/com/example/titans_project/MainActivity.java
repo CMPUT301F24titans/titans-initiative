@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
     Intent admin = new Intent();
     Intent created_event = new Intent();
     Intent notifications = new Intent();
-    private Event testEvent, fakeEvent;
-    private User testUser, fakeUser;
+    Intent scan =  new Intent();
     private FirebaseFirestore db;
     private CollectionReference eventRef, userRef;
     private static final String TAG = "AnonymousAuthActivity";
@@ -68,10 +67,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         // Get the current user
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
         if (currentUser != null) {
             // Check for notifications only if the user is signed in
             checkForNotifications(db.collection("user").document(currentUser.getUid()));
@@ -84,10 +81,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         // Get the current user
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
         if (currentUser != null) {
             // Check for notifications only if the user is signed in
             checkForNotifications(db.collection("user").document(currentUser.getUid()));
@@ -119,21 +114,22 @@ public class MainActivity extends AppCompatActivity {
         eventRef = db.collection("events");
         userRef = db.collection("user");
 
-        eventList = findViewById(R.id.listview_events);
-        profile_button = findViewById(R.id.profile_button);
+
+        notifications_button = findViewById(R.id.notifications_button);
         created_events_button = findViewById(R.id.created_events_button);
         application_button = findViewById(R.id.application_button);
-        admin_switch = findViewById(R.id.admin_mode);
-        notifications_button = findViewById(R.id.notifications_button);
+        profile_button = findViewById(R.id.profile_button);
         scan_button = findViewById(R.id.scan_button);
         notification_counter = findViewById(R.id.notifications_counter);
+        eventList = findViewById(R.id.listview_events);
+        admin_switch = findViewById(R.id.admin_mode);
 
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
         eventList.setAdapter(eventsArrayAdapter);
         usersdataList =  new ArrayList<>();
-
         eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+
             /**
              * Display all of user's enrolled events
              * @param querySnapshots The value of the event. {@code null} if there was an error.
@@ -148,13 +144,13 @@ public class MainActivity extends AppCompatActivity {
                 if (querySnapshots != null) {
                     eventsdataList.clear();
                     for (QueryDocumentSnapshot doc: querySnapshots) {
-                        String organizer_id = doc.getString("organizerID");
-                        String event_name = doc.getString("name");
-                        String organizer = doc.getString("facilityName");
                         String event_id = doc.getString("eventID");
+                        String event_name = doc.getString("name");
+                        String facility_name = doc.getString("facilityName");
                         String created_date = doc.getString("createdDate");
                         String event_date = doc.getString("eventDate");
                         String description = doc.getString("description");
+                        String organizer_id = doc.getString("organizerID");
                         String picture = doc.getString("picture");
                         Integer applicant_limit = default_applicant_limit;
                         Object applicantLimitObj = doc.get("applicantLimit");
@@ -165,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "applicantLimit is missing or null");
                         }
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, picture));
+                        eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
                 }
@@ -184,18 +180,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        profile_button.setOnClickListener(new View.OnClickListener() {
-            /**
-             * User clicks on the Profile button, bring user to ProfileView
-             * @param view
-             */
-            @Override
-            public void onClick(View view) {
-                profile.setClass(MainActivity.this, ProfileView.class);
-                startActivity(profile);
-            }
-        });
-
         application_button.setOnClickListener(new View.OnClickListener() {
             /**
              * User clicks on the Applications button, bring user to MyApplicationsView
@@ -208,13 +192,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        profile_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the Profile button, bring user to ProfileView
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                profile.setClass(MainActivity.this, ProfileView.class);
+                startActivity(profile);
+            }
+        });
 
-        /**
-         * User clicks on the Scan button, bring user to QRScannerActivity
-         */
-        scan_button.setOnClickListener(v -> {
-            Intent intent = new Intent(this, QRScannerActivity.class);
-            startActivity(intent);
+        scan_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the Scan button, bring user to Scan page
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                scan.setClass(MainActivity.this, QRScannerActivity.class);
+                startActivity(scan);
+            }
         });
 
         /**
@@ -251,12 +250,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 event_detail.setClass(MainActivity.this, EventDetailView.class);
+                event_detail.putExtra("event ID", eventsdataList.get(position).getEventID());
                 event_detail.putExtra("event name", eventsdataList.get(position).getName());
-                event_detail.putExtra("event organizer", eventsdataList.get(position).getFacilityName());
-                event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
+                event_detail.putExtra("event facility", eventsdataList.get(position).getFacilityName());
+                event_detail.putExtra("event create date", eventsdataList.get(position).getCreatedDate());
                 event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
-                event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
+                event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
+                event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizerID());
                 event_detail.putExtra("event image", eventsdataList.get(position).getPicture());
+                event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);

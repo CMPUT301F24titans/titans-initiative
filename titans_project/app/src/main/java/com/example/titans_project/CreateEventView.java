@@ -42,10 +42,14 @@ public class CreateEventView extends AppCompatActivity {
     private String organizer_id;
     private StorageReference storageReference;
     private Uri uri;
-    private Event event = new Event(Optional.ofNullable(null), null, null, null, null, null, null, null, null);
+    private Event event = new Event(null, null, null, null, null, null, null, null, null);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_create_event);
+
 
         // Initialize storage
         storageReference = FirebaseStorage.getInstance().getReference("event image");
@@ -58,8 +62,6 @@ public class CreateEventView extends AppCompatActivity {
         // Get ref to current user in Firebase
         DocumentReference userRef = db.collection("user").document(user.getUid());
 
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_create_event);
 
         return_button = findViewById(R.id.button_return);
         add_poster = findViewById(R.id.button_add_poster);
@@ -127,9 +129,9 @@ public class CreateEventView extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
+                String eventNameInput = event_name.getText().toString().trim();
                 String facilityInput = facility_name.getText().toString().trim();
                 String dateInput = event_date.getText().toString().trim();
-                String eventNameInput = event_name.getText().toString().trim();
                 String eventDetailsInput = event_details.getText().toString().trim();
                 String applicantLimitString = applicant_limit.getText().toString();
                 Integer applicantLimitInput;
@@ -150,9 +152,8 @@ public class CreateEventView extends AppCompatActivity {
                     event.setCreated_date(LocalDate.now().toString());
                     event.setEvent_date(dateInput);
                     event.setDescription(eventDetailsInput);
-                    event.setApplicantLimit(applicantLimitInput);
                     event.setOrganizerID(organizer_id);
-                    //event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput, organizer_id);
+                    event.setApplicantLimit(applicantLimitInput);
                 } else {
                     event = null;
                 }

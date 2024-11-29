@@ -88,13 +88,14 @@ public class BrowseContentView extends AppCompatActivity {
                         if (querySnapshots != null) {
                             eventDataList.clear();
                             for (QueryDocumentSnapshot doc: querySnapshots) {
-                                String organizer_id = doc.getString("organizerID");
+                                String event_id = doc.getString("eventID");
                                 String event_name = doc.getString("name");
-                                String organizer = doc.getString("facilityName");
+                                String facility_name = doc.getString("facilityName");
                                 String created_date = doc.getString("createdDate");
                                 String event_date = doc.getString("eventDate");
-                                String event_id = doc.getString("eventID");
                                 String description = doc.getString("description");
+                                String organizer_id = doc.getString("organizerID");
+                                String picture = doc.getString("picture");
                                 Integer applicant_limit = default_applicant_limit;
                                 Object applicantLimitObj = doc.get("applicantLimit");
                                 if (applicantLimitObj != null) {
@@ -104,7 +105,7 @@ public class BrowseContentView extends AppCompatActivity {
                                     Log.w(TAG, "applicantLimit is missing or null");
                                 }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, "1"));
+                                eventDataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }
@@ -181,7 +182,6 @@ public class BrowseContentView extends AppCompatActivity {
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
                     event_detail.putExtra("eventID", clickedEvent.getEventID());
                     event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
-
                     event_detail.putExtra("viewer", "admin");
                     startActivity(event_detail);
                 }
