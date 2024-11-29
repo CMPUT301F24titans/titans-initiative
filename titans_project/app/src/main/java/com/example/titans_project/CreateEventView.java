@@ -23,24 +23,32 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.time.LocalDate;
+import java.util.Optional;
+import java.util.UUID;
 
 public class CreateEventView extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private ImageView picture;
-    private int eventIndex = -1, event_image=0;
+    private int eventIndex = -1, image_code=1;
     private Button add_poster, return_button, submit_button;
     private EditText facility_name, event_name, event_date, event_details, applicant_limit;
-    private Uri uri;
     private Integer default_limit = 10000;
     private String organizer_id;
-
+    private StorageReference storageReference;
+    private Uri uri;
+    private Event event = new Event(Optional.ofNullable(null), null, null, null, null, null, null, null, null);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Initialize storage
+        storageReference = FirebaseStorage.getInstance().getReference("event image");
 
         // Initialize Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -101,11 +109,11 @@ public class CreateEventView extends AppCompatActivity {
         });
 
 
+        // Click add poster button to select the image for event
         add_poster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent event_image = new Intent(Intent.ACTION_GET_CONTENT, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(event_image, 1);
+                selectImage();
             }
         });
 
@@ -123,7 +131,6 @@ public class CreateEventView extends AppCompatActivity {
                 String dateInput = event_date.getText().toString().trim();
                 String eventNameInput = event_name.getText().toString().trim();
                 String eventDetailsInput = event_details.getText().toString().trim();
-
                 String applicantLimitString = applicant_limit.getText().toString();
                 Integer applicantLimitInput;
                 // User does not enter a value -> default limit value
@@ -135,9 +142,17 @@ public class CreateEventView extends AppCompatActivity {
                     applicantLimitInput = Integer.parseInt(applicantLimitString);
                 }
 
-                Event event;
+                uploadImage(uri);
+
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput, organizer_id);
+                    event.setName(eventNameInput);
+                    event.setFacilityName(facilityInput);
+                    event.setCreated_date(LocalDate.now().toString());
+                    event.setEvent_date(dateInput);
+                    event.setDescription(eventDetailsInput);
+                    event.setApplicantLimit(applicantLimitInput);
+                    event.setOrganizerID(organizer_id);
+                    //event = new Event(eventNameInput, facilityInput, LocalDate.now().toString(), dateInput, eventDetailsInput, applicantLimitInput, organizer_id);
                 } else {
                     event = null;
                 }
@@ -174,11 +189,47 @@ public class CreateEventView extends AppCompatActivity {
 
     }
 
+    /**
+     * This select the image form local device
+     */
+    private void selectImage(){
+        Intent event_image = new Intent(Intent.ACTION_GET_CONTENT);
+        event_image.setType("image/*");
+        startActivityForResult(event_image, image_code);
+    }
+
+
+    /**
+     * This make the image display on image view
+     * @param requestCode
+     *  The action code
+     * @param resultCode
+     *  The result of action
+     * @param data
+     *  The data return from intent
+     */
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+        if (requestCode == image_code && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uri = data.getData();
             picture.setImageURI(uri);
         }
+    }
+
+    /**
+     * This upload the image to the firebase storage
+     * @param uri
+     *  The uri of the image
+     */
+    private void uploadImage(Uri uri){
+        String picture_name = UUID.randomUUID().toString();
+        event.setPicture(picture_name);
+        StorageReference  reference = storageReference.child(picture_name);
+        reference.putFile(uri)
+                .addOnSuccessListener(taskSnapshot -> {
+                    Toast.makeText(CreateEventView.this, "Image successfully upload!", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(CreateEventView.this, "There was an error while upload", Toast.LENGTH_SHORT).show();
+                });
     }
 }

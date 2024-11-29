@@ -1,12 +1,7 @@
 package com.example.titans_project;
 
-import androidx.annotation.NonNull;
-
 import com.google.firebase.firestore.Exclude;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -31,19 +26,19 @@ public class Event {
     /**
      * This initial the class Event
      * @param name
-     *      The private attribute event name
+     *  The private attribute event name
      * @param facility_name
-     *      The private attribute organizer of the event
+     *  The private attribute organizer of the event
      * @param created_date
-     *      The private attribute created date of event
+     *  The private attribute created date of event
      * @param event_date
-     *      The private attribute date when the event start
+     *  The private attribute date when the event start
      * @param description
-     *      The private attribute description of event
+     *  The private attribute description of event
      * @param organizer_id
-     *      The private attribute picture of event
+     *  The private attribute picture of event
      */
-    public Event(String name, String facility_name, String created_date, String event_date, String description, String organizer_id) {
+    public Event(String name, String facility_name, String created_date, String event_date, String description, String organizer_id, String picture) {
         this.name = name;
         this.facility_name = facility_name;
         this.created_date = created_date;
@@ -59,22 +54,18 @@ public class Event {
 
     /**
      * Constructor for Event when provided the event_id
-     * @param event_id
-     *  Event id
-     * @param name
-     *  Event name
-     * @param facility_name
-     *  Event's facility_name (facility name)
-     * @param created_date
-     *  Event's created date
-     * @param event_date
-     *  Date when event will occur
-     * @param description
-     *  Event description
-     * @param picture
-     *  Event poster
+     *
+     * @param object
+     * @param o
+     * @param event_id      Event id
+     * @param name          Event name
+     * @param facility_name Event's facility_name (facility name)
+     * @param created_date  Event's created date
+     * @param event_date    Date when event will occur
+     * @param description   Event description
+     * @param picture       Event poster
      */
-    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, String picture) {
+    public Event(Object object, Object o, String event_id, String name, String facility_name, String created_date, String event_date, String description, String picture) {
         this.name = name;
         this.facility_name = facility_name;
         this.created_date = created_date;
@@ -107,13 +98,13 @@ public class Event {
      * @param organizer_id
      *  User's device id
      */
-    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit, String organizer_id) {
+    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit, String organizer_id, String picture) {
         this.name = name;
         this.facility_name = facility_name;
         this.created_date = created_date;
         this.event_date = event_date;
         this.description = description;
-        this.picture = null;
+        this.picture = picture;
         this.event_id = event_id;
         this.applicant_limit = applicantLimit;
         this.attendees = new ArrayList<>();
@@ -205,7 +196,7 @@ public class Event {
     /**
      * This gets the name of an event
      * @return
-     *      return the name of event
+     *  return the name of event
      */
     public String getName() {
         return name;
@@ -214,7 +205,7 @@ public class Event {
     /**
      * This set the name of event
      * @param name
-     *      The private attribute event name
+     *  The private attribute event name
      */
     public void setName(String name) {
         this.name = name;
@@ -223,7 +214,7 @@ public class Event {
     /**
      * This give the organizer of event
      * @return
-     *      return the organizer of event
+     *  return the organizer of event
      */
     public String getFacilityName() {
         return facility_name;
@@ -232,7 +223,7 @@ public class Event {
     /**
      * This set the organizer of event
      * @param facility_name
-     *      The private attribute organizer of the event
+     *  The private attribute organizer of the event
      */
     public void setFacilityName(String facility_name) {
         this.facility_name = facility_name;
@@ -241,7 +232,7 @@ public class Event {
     /**
      * This give the created date of event
      * @return
-     *      return the created date of event
+     *  return the created date of event
      */
     public String getCreatedDate() {
         return created_date;
@@ -250,7 +241,7 @@ public class Event {
     /**
      * This set the created date of event
      * @param created_date
-     *      The private attribute created date of the event
+     *  The private attribute created date of the event
      */
     public void setCreated_date(String created_date) {
         this.created_date = created_date;
@@ -259,7 +250,7 @@ public class Event {
     /**
      * This give the start date of event
      * @return
-     *      return the start date of event
+     *  return the start date of event
      */
     public String getEventDate() {
         return event_date;
@@ -268,7 +259,7 @@ public class Event {
     /**
      * This set the start date of event
      * @param event_date
-     *      The private attribute start date of the event
+     *  The private attribute start date of the event
      */
     public void setEvent_date(String event_date) {
         this.event_date = event_date;
@@ -277,7 +268,7 @@ public class Event {
     /**
      * This give the description of event
      * @return
-     *      return the description of event
+     *  return the description of event
      */
     public String getDescription() {
         return description;
@@ -286,7 +277,7 @@ public class Event {
     /**
      * This set the description of event
      * @param description
-     *      The private attribute description of the event
+     *  The private attribute description of the event
      */
     public void setDescription(String description) {
         this.description = description;
@@ -295,7 +286,7 @@ public class Event {
     /**
      * This give the picture of event
      * @return
-     *      return the picture of event
+     *  return the picture of event
      */
     public String getPicture() {
         return picture;
@@ -304,7 +295,7 @@ public class Event {
     /**
      * This set the picture of event
      * @param picture
-     *      The private attribute picture of the event
+     *  The private attribute picture of the event
      */
     public void setPicture(String picture) {
         this.picture = picture;

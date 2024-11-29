@@ -33,27 +33,30 @@ public class AttendeesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendees);
 
-        // 初始化视图
+        // initial the objects in layout
         recyclerView = findViewById(R.id.attendeesRecyclerView);
         emptyTextView = findViewById(R.id.emptyTextView);
         back = findViewById(R.id.returnButton_finalList);
+        // initial the firebase
+        db = FirebaseFirestore.getInstance();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         attendeesList = new ArrayList<>();
         attendeesAdapter = new AttendeesAdapter(this, attendeesList);
         recyclerView.setAdapter(attendeesAdapter);
 
-        db = FirebaseFirestore.getInstance();
+        // get the name of event
         eventID = getIntent().getStringExtra("eventID");
-
         if (eventID == null || eventID.isEmpty()) {
             Toast.makeText(this, "Invalid event ID", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
 
+        // load the attendees
         loadAttendees();
 
+        // Click the return button
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -50,4 +50,8 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation("com.google.mlkit:barcode-scanning:17.0.2")
+    implementation ("com.google.zxing:core:3.5.1")
+    implementation ("com.google.zxing:javase:3.5.1")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.google.firebase:firebase-storage:20.2.1")
 }

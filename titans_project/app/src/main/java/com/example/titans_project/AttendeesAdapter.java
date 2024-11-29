@@ -31,7 +31,7 @@ public class AttendeesAdapter extends RecyclerView.Adapter<AttendeesAdapter.Atte
     public void onBindViewHolder(@NonNull AttendeeViewHolder holder, int position) {
         Attendee attendee = attendees.get(position);
         holder.nameTextView.setText(attendee.getName());
-        holder.emailTextView.setText(attendee.getUserID());
+        holder.emailTextView.setText(attendee.getUserId());
     }
 
     @Override

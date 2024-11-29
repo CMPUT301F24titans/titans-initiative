@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-v23/values-v23.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-52:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\5804c7b1be2753822f73033e895eafde\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",

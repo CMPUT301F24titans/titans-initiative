@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                         String created_date = doc.getString("createdDate");
                         String event_date = doc.getString("eventDate");
                         String description = doc.getString("description");
+                        String picture = doc.getString("picture");
                         Integer applicant_limit = default_applicant_limit;
                         Object applicantLimitObj = doc.get("applicantLimit");
                         if (applicantLimitObj != null) {
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "applicantLimit is missing or null");
                         }
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id));
+                        eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, picture));
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
                 }
@@ -255,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
                 event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
                 event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
                 event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
+                event_detail.putExtra("event image", eventsdataList.get(position).getPicture());
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);

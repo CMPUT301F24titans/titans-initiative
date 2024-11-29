@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.titans_project.app-mergeDebugResources-51:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.titans_project.app-mergeDebugResources-52:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Jakob\\.gradle\\caches\\transforms-4\\5861c4c5858af994e22c938b22dd2f8d\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",

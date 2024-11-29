@@ -118,7 +118,7 @@ public class MyCreatedEventsView extends AppCompatActivity {
                                 Log.w(TAG, "applicantLimit is missing or null");
                             }
                             Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                            eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id));
+                            eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, "1"));
                         }
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
