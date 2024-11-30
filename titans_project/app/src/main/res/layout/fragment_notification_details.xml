@@ -7,6 +7,16 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notification"
+        android:textColor="@color/dark_gray"
+        android:textSize="34sp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <TextView
         android:id="@+id/notification_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

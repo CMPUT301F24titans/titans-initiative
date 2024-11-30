@@ -199,6 +199,7 @@ string my_created_events
 string my_events
 string next
 string no_button
+string notification
 string notification_title
 string notifications
 string notifications_0

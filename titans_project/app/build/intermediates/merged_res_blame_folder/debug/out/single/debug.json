@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.example.titans_project.app-merged_res-54:/layout_fragment_event_details.xml.flat",
-        "source": "com.example.titans_project.app-main-56:/layout/fragment_event_details.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-54:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -50,6 +46,10 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-54:\\layout_content_browse_profiles.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\layout\\content_browse_profiles.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-merged_res-54:/layout_fragment_notification_details.xml.flat",
+        "source": "com.example.titans_project.app-main-56:/layout/fragment_notification_details.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-54:\\layout_activity_attendees.xml.flat",
