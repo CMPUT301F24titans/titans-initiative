@@ -26,6 +26,7 @@ public class WaitlistActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private String eventID;
     Intent send_notification = new Intent();
+    Intent generate_lottery = new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class WaitlistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_waitlist);
 
         Button sendNotification = findViewById(R.id.buttonSendNotification);
+        Button generateLottery = findViewById(R.id.buttonGenerateLottery);
 
         waitlistRecyclerView = findViewById(R.id.waitlistRecyclerView);
         waitlistRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -53,6 +55,13 @@ public class WaitlistActivity extends AppCompatActivity {
         loadWaitlist();
 
         findViewById(R.id.returnButton).setOnClickListener(v -> finish());
+
+        // User clicks generate lottery button
+        findViewById(R.id.buttonGenerateLottery).setOnClickListener(v -> {
+            generate_lottery.setClass(WaitlistActivity.this, LotteryActivity.class);
+            generate_lottery.putExtra("eventID", eventID);
+            startActivity(generate_lottery);
+        });
 
         // When sending notification, get the selected users
         findViewById(R.id.buttonSendNotification).setOnClickListener(v -> {

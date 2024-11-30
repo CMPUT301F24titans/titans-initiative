@@ -47,6 +47,7 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="full_name">Full Name</string>
     <string name="gcm_defaultSenderId" translatable="false">660667334823</string>
+    <string name="generate_lottery">Generate Lottery</string>
     <string name="geolocation_sharing_message">I agree to share my geolocation</string>
     <string name="google_api_key" translatable="false">AIzaSyD8PM_NS6OBr4UBe1eSoQKEup52WGLe9ZU</string>
     <string name="google_app_id" translatable="false">1:660667334823:android:4d676fc90c8ed142cedb82</string>

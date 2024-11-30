@@ -3344,6 +3344,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id buttonGenerateLottery
 id buttonPanel
 id buttonSendNotification
 id button_add_poster
@@ -4203,6 +4204,7 @@ string fallback_menu_item_share_link
 string first_fragment_label
 string full_name
 string gcm_defaultSenderId
+string generate_lottery
 string geolocation_sharing_message
 string google_api_key
 string google_app_id

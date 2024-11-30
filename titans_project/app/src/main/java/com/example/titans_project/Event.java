@@ -26,6 +26,8 @@ public class Event {
     private List<Map<String, String>> lottery;
     private List<Map<String, String>> cancelled;
 
+    public Event() {}
+
     /**
      * Constructor for Event when not provided a picture
      * @param event_id
