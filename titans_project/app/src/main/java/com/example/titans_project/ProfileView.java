@@ -105,10 +105,12 @@ public class ProfileView extends AppCompatActivity {
                                 email.setText(document.getString("email"));
                                 phone_number.setText(document.getString("phone_number"));
                                 facility.setText(document.getString("facility"));
+                                // profile pic not assigned value (null)
                                 if (document.getString("profile_pic") == null) {
                                     // Generate initials of user
                                     initials.setText(getInitials(name.getText().toString()));
                                 }
+                                // profile pic assigned to uri value
                                 else {
                                     displayImage(document.getString("profile_pic"));
                                 }
