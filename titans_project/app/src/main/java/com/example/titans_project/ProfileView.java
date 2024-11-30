@@ -7,8 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -101,8 +105,15 @@ public class ProfileView extends AppCompatActivity {
                                 email.setText(document.getString("email"));
                                 phone_number.setText(document.getString("phone_number"));
                                 facility.setText(document.getString("facility"));
-                                // Generate initials of user
-                                initials.setText(getInitials(name.getText().toString()));
+                                // profile pic not assigned value (null)
+                                if (document.getString("profile_pic") == null) {
+                                    // Generate initials of user
+                                    initials.setText(getInitials(name.getText().toString()));
+                                }
+                                // profile pic assigned to uri value
+                                else {
+                                    displayImage(document.getString("profile_pic"));
+                                }
                                 notifications.setChecked(document.getBoolean("notifications"));
                             });
                         } else {
@@ -158,6 +169,9 @@ public class ProfileView extends AppCompatActivity {
                 }
                 else{
                     selectImage();
+                    if (uri == null) {
+                        initials.setText("");
+                    }
                 }
             }
         });
@@ -172,7 +186,7 @@ public class ProfileView extends AppCompatActivity {
                 name.setText("");  // update locally
                 if (profileId != null) {
                     db.collection("user").document(profileId).update("full_name", "");  // update in firebase
-                    }
+                }
                 else{
                     Toast.makeText(ProfileView.this, "Failed to clear name.",
                             Toast.LENGTH_SHORT).show();
@@ -395,6 +409,22 @@ public class ProfileView extends AppCompatActivity {
                     Toast.makeText(ProfileView.this, "Image successfully upload!", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(e -> {
                     Toast.makeText(ProfileView.this, "There was an error while upload", Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    /**
+     * Retrieve image from firebase storage and display it
+     * @param picture_name
+     */
+    private void displayImage(String picture_name){
+        StorageReference imageRef = storageReference.child(picture_name);
+        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), picture_name+".jpg");
+        imageRef.getFile(localFile)
+                .addOnSuccessListener(taskSnapshot -> {
+                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    profile_pic.setImageBitmap(bitmap);
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(ProfileView.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 }
