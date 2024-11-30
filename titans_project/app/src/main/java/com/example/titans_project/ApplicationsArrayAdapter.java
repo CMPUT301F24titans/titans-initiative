@@ -19,17 +19,39 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This is a class that that an ApplicationsArrayAdapter
+ */
 public class ApplicationsArrayAdapter extends ArrayAdapter<Event> {
 
     private Context context;
     private ArrayList<Event> events;
 
+    /**
+     * Constructor for ApplicationsArrayAdapter
+     * @param context
+     *  The context in which the adapter is being used, this is used for accessing resources and services needed by the adapter
+     * @param events
+     *  The list of Event objects to be displayed in the adapter
+     */
     public ApplicationsArrayAdapter(Context context, ArrayList<Event> events) {
         super(context, 0, events);  // Call the superclass constructor
         this.context = context;
         this.events = events;
     }
 
+    /**
+     * Returns a View for an item in the adapter's data set.
+     *
+     * @param position
+     *  The position of the item within the adapter's data set for which the View is required
+     * @param convertView
+     *  The recycled View to reuse, if possible. If null, a new View will be created
+     * @param parent
+     *  The parent ViewGroup that this View will be attached to
+     * @return
+     *  Returns a View corresponding to the data at the specified position
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
