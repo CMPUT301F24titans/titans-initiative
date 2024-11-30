@@ -1,5 +1,7 @@
 package com.example.titans_project;
 
+import androidx.annotation.Nullable;
+
 import com.google.firebase.firestore.Exclude;
 
 import java.util.ArrayList;
@@ -10,83 +12,21 @@ import java.util.Map;
  * This is a class that defines a Event.
  */
 public class Event {
+    private String event_id;
     private String name;
     private String facility_name;
     private String created_date;
     private String event_date;
     private String description;
-    private String  picture;
-    private String event_id;
     private String organizer_id;
+    private String picture;
     private Integer applicant_limit;
-    private Integer default_applicant_limit = 10000;
     private List<Map<String, String>> attendees;
     private List<Map<String, String>> waitlist;
     private List<Map<String, String>> lottery;
     private List<Map<String, String>> cancelled;
 
     public Event() {}
-
-    /**
-     * This initial the class Event
-     * @param name
-     *  The private attribute event name
-     * @param facility_name
-     *  The private attribute organizer of the event
-     * @param created_date
-     *  The private attribute created date of event
-     * @param event_date
-     *  The private attribute date when the event start
-     * @param description
-     *  The private attribute description of event
-     * @param organizer_id
-     *  The private attribute picture of event
-     */
-    public Event(String name, String facility_name, String created_date, String event_date, String description, String organizer_id, String picture) {
-        this.name = name;
-        this.facility_name = facility_name;
-        this.created_date = created_date;
-        this.event_date = event_date;
-        this.description = description;
-        this.picture = picture;
-        this.event_id = null;
-        this.applicant_limit = default_applicant_limit;
-        this.attendees = new ArrayList<>();
-        this.organizer_id = organizer_id;
-        this.attendees = new ArrayList<>();
-        this.waitlist = new ArrayList<>();
-        this.lottery = new ArrayList<>();
-        this.cancelled = new ArrayList<>();
-    }
-
-    /**
-     * Constructor for Event when provided the event_id
-     *
-     * @param object
-     * @param o
-     * @param event_id      Event id
-     * @param name          Event name
-     * @param facility_name Event's facility_name (facility name)
-     * @param created_date  Event's created date
-     * @param event_date    Date when event will occur
-     * @param description   Event description
-     * @param picture       Event poster
-     */
-    public Event(Object object, Object o, String event_id, String name, String facility_name, String created_date, String event_date, String description, String picture) {
-        this.name = name;
-        this.facility_name = facility_name;
-        this.created_date = created_date;
-        this.event_date = event_date;
-        this.description = description;
-        this.picture = null;
-        this.event_id = event_id;
-        this.applicant_limit = default_applicant_limit;
-        this.organizer_id = organizer_id;
-        this.attendees = new ArrayList<>();
-        this.waitlist = new ArrayList<>();
-        this.lottery = new ArrayList<>();
-        this.cancelled = new ArrayList<>();
-    }
 
     /**
      * Constructor for Event when not provided a picture
@@ -102,91 +42,41 @@ public class Event {
      *  Date when event will occur
      * @param description
      *  Event description
-     * @param applicantLimit
-     *  Event applicant limit
      * @param organizer_id
      *  User's device id
+     * @param picture
+     *  Event image
      */
-    public Event(String event_id, String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit, String organizer_id, String picture) {
-        this.name = name;
-        this.facility_name = facility_name;
-        this.created_date = created_date;
-        this.event_date = event_date;
-        this.description = description;
-        this.picture = picture;
+    public Event(@Nullable String event_id, @Nullable String name, @Nullable String facility_name, @Nullable String created_date, @Nullable String event_date, @Nullable String description, @Nullable String organizer_id, @Nullable String picture, @Nullable Integer applicant_limit ) {
         this.event_id = event_id;
-        this.applicant_limit = applicantLimit;
-        this.organizer_id = organizer_id;
-        this.attendees = new ArrayList<>();
-        this.waitlist = new ArrayList<>();
-        this.lottery = new ArrayList<>();
-        this.cancelled = new ArrayList<>();
-    }
-
-    /**
-     * Constructor for Event when not provided a picture or event_id
-     * @param name
-     *  Event name
-     * @param facility_name
-     *  Event's facility_name (facility name)
-     * @param created_date
-     *  Event's created date
-     * @param event_date
-     *  Date when event will occur
-     * @param description
-     *  Event description
-     * @param applicantLimit
-     *  Event applicant limit
-     * @param organizer_id
-     *  The organizer's device id
-     */
-    public Event(String name, String facility_name, String created_date, String event_date, String description, Integer applicantLimit, String organizer_id) {
         this.name = name;
         this.facility_name = facility_name;
         this.created_date = created_date;
         this.event_date = event_date;
         this.description = description;
-        this.picture = null;
-        this.event_id = null;
-        this.applicant_limit = applicantLimit;
         this.organizer_id = organizer_id;
-        this.attendees = new ArrayList<>();
-        this.waitlist = new ArrayList<>();
-        this.lottery = new ArrayList<>();
-        this.cancelled = new ArrayList<>();
-    }
-
-    /**
-     * This gets the applicant limit for the event
-     * @return
-     *  returns the applicant limit
-     */
-    public Integer getApplicantLimit(){ return applicant_limit; }
-
-    /**
-     * This sets the applicant limit to a new value
-     * @param applicant_limit
-     *  The new applicant limit for the event
-     */
-    public void setApplicantLimit(Integer applicant_limit){
+        this.picture = picture;
         this.applicant_limit = applicant_limit;
         this.attendees = new ArrayList<>();
+        this.waitlist = new ArrayList<>();
+        this.lottery = new ArrayList<>();
+        this.cancelled = new ArrayList<>();
     }
 
-    /**
-     * This gets the id of the organizer who created the event
-     * @return
-     *  return the organizer's device id
-     */
-    public String getOrganizerID(){ return organizer_id;    }
-
-    /**
-     * This sets the id of the organizer of the event
-     * @param organizer_id
-     *  The new organizer id
-     */
-    public void setOrganizerID(String organizer_id){
-        this.organizer_id = organizer_id;
+    public void default_event(){
+        this.event_id = null;
+        this.name = null;
+        this.facility_name = null;
+        this.created_date = null;
+        this.event_date = null;
+        this.description = null;
+        this.organizer_id = null;
+        this.picture = null;
+        this.applicant_limit = 10000;
+        this.attendees = new ArrayList<>();
+        this.waitlist = new ArrayList<>();
+        this.lottery = new ArrayList<>();
+        this.cancelled = new ArrayList<>();
     }
 
     /**
@@ -194,7 +84,7 @@ public class Event {
      * @return
      *  return the id of event
      */
-    public String getEventID(){return event_id;    }
+    public String getEventID(){return event_id; }
 
     /**
      * This sets the id of an event
@@ -296,6 +186,22 @@ public class Event {
     }
 
     /**
+     * This gets the id of the organizer who created the event
+     * @return
+     *  return the organizer's device id
+     */
+    public String getOrganizerID(){ return organizer_id; }
+
+    /**
+     * This sets the id of the organizer of the event
+     * @param organizer_id
+     *  The new organizer id
+     */
+    public void setOrganizerID(String organizer_id){
+        this.organizer_id = organizer_id;
+    }
+
+    /**
      * This give the picture of event
      * @return
      *  return the picture of event
@@ -314,32 +220,54 @@ public class Event {
     }
 
     /**
-     * This clears and sets the picture URI of an event to null
+     * This gets the applicant limit for the event
+     * @return
+     *  returns the applicant limit
      */
-    public void clearPicture() {
-        this.picture = null;
+    public Integer getApplicantLimit(){ return applicant_limit; }
+
+    /**
+     * This sets the applicant limit to a new value
+     * @param applicant_limit
+     *  The new applicant limit for the event
+     */
+    public void setApplicantLimit(Integer applicant_limit){
+        this.applicant_limit = applicant_limit;
+        this.attendees = new ArrayList<>();
     }
 
     /**
-     * Getter for attendees
+     * This gets the attendee list for the event
+     * @return
+     *  return the attendee list
      */
     public List<Map<String, String>> getAttendees() {
         return attendees;
     }
 
     /**
-     * Setter for attendees
+     * This sets the attendee list
      * @param attendees
-     *  New attendees to set to event
+     *  The new attendees to set to event
      */
     public void setAttendees(List<Map<String, String>> attendees) {
         this.attendees = attendees;
     }
 
+    /**
+     * This gets the wait list for the event
+     * @return
+     *  return the wait list
+     */
     public List<Map<String, String>> getWaitlist() {
         return waitlist;
     }
 
+    /**
+     * This sets the wait list
+     * @param waitlist
+     *  The new wait to set to event
+     */
     public void setWaitlist(List<Map<String, String>> waitlist) {
         this.waitlist = waitlist;
     }

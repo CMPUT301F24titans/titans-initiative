@@ -2,15 +2,19 @@ package com.example.titans_project;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +25,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 
 /**
@@ -30,14 +37,20 @@ import java.util.HashMap;
  */
 public class ProfileView extends AppCompatActivity {
 
+    private ImageView profile_pic;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private static final String TAG = "userDeletion";
     private Boolean adminView = false;
+    private StorageReference storageReference;
+    private Integer image_code=1;
+    private Uri uri = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_profile);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -45,9 +58,11 @@ public class ProfileView extends AppCompatActivity {
 
         // Get ref to user in Firebase
         DocumentReference userRef = db.collection("user").document(user.getUid());
+        // Initialize storage
+        storageReference = FirebaseStorage.getInstance().getReference("user image");
+
 
         EdgeToEdge.enable(this);
-        setContentView(R.layout.fragment_profile);
 
         Button return_button = findViewById(R.id.button_return);
         EditText name = findViewById(R.id.edit_text_full_name);
@@ -62,6 +77,7 @@ public class ProfileView extends AppCompatActivity {
         Button clear_phone_number = findViewById(R.id.button_clear_phone_number);
         Button clear_facility = findViewById(R.id.button_clear_facility);
         Button edit_profile_pic = findViewById(R.id.button_edit_profile_pic);
+        profile_pic = findViewById(R.id.imageView);
 
         // Create hashmap to store user's data from Firebase
         HashMap<String, String> userData= new HashMap<>();
@@ -88,7 +104,6 @@ public class ProfileView extends AppCompatActivity {
                                 // Generate initials of user
                                 initials.setText(getInitials(name.getText().toString()));
                                 notifications.setChecked(document.getBoolean("notifications"));
-
                             });
                         } else {
                             Log.d("Firestore", "No document found");
@@ -132,7 +147,7 @@ public class ProfileView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // button removes profile pics for admin users
-                if (adminView ){
+                if (adminView){
                     if (profileId != null){
                         db.collection("user").document(profileId).update("profile_pic", null);  // update in firebase
                     }
@@ -140,6 +155,9 @@ public class ProfileView extends AppCompatActivity {
                         Toast.makeText(ProfileView.this, "Failed to remove profile pic.",
                                 Toast.LENGTH_SHORT).show();
                     }
+                }
+                else{
+                    selectImage();
                 }
             }
         });
@@ -238,18 +256,18 @@ public class ProfileView extends AppCompatActivity {
                     String emailInput = email.getText().toString().trim();
                     String phoneInput = phone_number.getText().toString().trim();
                     String facilityInput = facility.getText().toString().trim();
-
                     // Validate email
                     if (!emailInput.isEmpty() && !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to validate email
                         email.setError("Please enter a valid email address");
                         return; // Don't proceed with the update if validation fails
                     }
-
                     // Validate phone number
                     if (!phoneInput.isEmpty() && !phoneInput.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")) {
                         phone_number.setError("Please enter a valid phone number");
                         return; // Don't proceed with the update if validation fails
                     }
+
+                    uploadImage(uri, user.getUid());
 
                     // Get the document
                     userRef.get().addOnCompleteListener(task -> {
@@ -290,7 +308,7 @@ public class ProfileView extends AppCompatActivity {
                     finish();
                 }
             }
-    });
+        });
     }
 
     /**
@@ -302,14 +320,12 @@ public class ProfileView extends AppCompatActivity {
         // Split the string by spaces to separate each word
         String[] words = full_name.trim().split("\\s+");  // handles multiple spaces
         StringBuilder initials = new StringBuilder();
-
         for (String word : words) {
             if (!word.isEmpty()) {
                 // Take the first character of each word and convert it to uppercase
                 initials.append(Character.toUpperCase(word.charAt(0)));
             }
         }
-
         return initials.toString();
     }
 
@@ -337,5 +353,48 @@ public class ProfileView extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    /**
+     * This select the image form local device
+     */
+    private void selectImage(){
+        Intent event_image = new Intent(Intent.ACTION_GET_CONTENT);
+        event_image.setType("image/*");
+        startActivityForResult(event_image, image_code);
+    }
+
+    /**
+     * This make the image display on image view
+     * @param requestCode
+     *  The action code
+     * @param resultCode
+     *  The result of action
+     * @param data
+     *  The data return from intent
+     */
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == image_code && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            uri = data.getData();
+            profile_pic.setImageURI(uri);
+        }
+    }
+
+    /**
+     * This upload the image to the firebase storage
+     * @param uri
+     *  The uri of the image
+     */
+    private void uploadImage(Uri uri, String uid){
+        String picture_name = UUID.randomUUID().toString();
+        db.collection("user").document(uid).update("profile_pic", picture_name);
+        StorageReference  reference = storageReference.child(picture_name);
+        reference.putFile(uri)
+                .addOnSuccessListener(taskSnapshot -> {
+                    Toast.makeText(ProfileView.this, "Image successfully upload!", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(ProfileView.this, "There was an error while upload", Toast.LENGTH_SHORT).show();
+                });
     }
 }

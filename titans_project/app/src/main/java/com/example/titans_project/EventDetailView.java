@@ -1,7 +1,10 @@
 package com.example.titans_project;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,16 +25,29 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
-import org.w3c.dom.Text;
+import java.io.File;
+import java.util.UUID;
+
 
 public class EventDetailView extends AppCompatActivity {
-    private String user_type;
+    private Button return_button, apply_button, viewWaitlistButton, viewAttendeeButton;
+    private TextView name, organizer, description, date, application_limit;
+    private CheckBox geolocation;
+    private String user_type, picture_name;
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
     private Integer default_applicant_limit = 10000;
     Intent view_attendees = new Intent();
+    Intent view_waitList = new Intent();
+    Intent edit_event = new Intent();
+    private ImageView picture;
+    private StorageReference storageReference;
+    private Event event = new Event(null, null, null, null, null, null, null, null, null);
 
     /**
      * Called when activity starts, create all activity objects here
@@ -43,114 +59,113 @@ public class EventDetailView extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_event_details);
 
+        // Initialize storage
+        storageReference = FirebaseStorage.getInstance().getReference("event image");
+
         // Initialize Firebase
         FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
 
+        // Initialize Objects in layout
+        name = findViewById(R.id.event_name);
+        organizer = findViewById(R.id.organizer);
+        picture = findViewById(R.id.profile_pic);
+        date = findViewById(R.id.event_date);
+        description = findViewById(R.id.event_description);
+        application_limit = findViewById(R.id.event_applicant_limit);
+        geolocation = findViewById(R.id.checkbox_geolocation);
+        return_button = findViewById(R.id.button_return);
+        apply_button = findViewById(R.id.button_apply);
+        viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
+        viewAttendeeButton = findViewById(R.id.viewAttendeesButton);
+
+        // get the user type
         user_type = getIntent().getStringExtra("viewer");
-
-        // Initialize TextViews
-        TextView name = findViewById(R.id.event_name);
-        TextView organizer = findViewById(R.id.organizer);
-        TextView description = findViewById(R.id.event_description);
-        TextView date = findViewById(R.id.event_date);
-        TextView application_limit = findViewById(R.id.event_applicant_limit);
-
-        // Initialize Buttons
-        Button return_button = findViewById(R.id.button_return);
-        Button apply_button = findViewById(R.id.button_apply);
-        Button view_waitlist_button = findViewById(R.id.button_view_waitlist);
-        Button remove_poster_button = findViewById(R.id.button_remove_poster);
-
-        // Initialize ImageView
-        ImageView event_poster = findViewById(R.id.event_poster);
-
-        // Initialize Checkbox
-        CheckBox geolocation = findViewById(R.id.checkbox_geolocation);
-
         // admin user viewing
         if ("admin".equals(user_type)){
             apply_button.setText("Delete Event");  // apply button becomes delete button for admin
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
-            view_waitlist_button.setVisibility(View.GONE);
+            viewWaitlistButton.setVisibility(View.GONE);
+            viewAttendeeButton.setVisibility(View.GONE);
         }
         // already enrolled/applied entrant viewing
         else if ("enrolled".equals(user_type)) {
             apply_button.setVisibility(View.GONE);  // remove button for entrant users already enrolled/applied
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
-            view_waitlist_button.setVisibility(View.GONE);  // remove view waitlist button for entrants
-            remove_poster_button.setVisibility(View.GONE);  // do not allow entrants to delete event posters
+            viewWaitlistButton.setVisibility(View.GONE);
+            viewAttendeeButton.setVisibility(View.GONE);
         }
 
         // organizer viewing their own event
         else if ("organizer".equals(user_type)) {
-            apply_button.setText("View Attendees");
-            remove_poster_button.setText("Edit Poster");  // remove poster button becomes edit poster button for organizers
+            apply_button.setText("Edit Event");
+            geolocation.setVisibility(View.GONE);
         }
 
-        name.setText(getIntent().getStringExtra("event name"));
-        organizer.setText("Organized by " + getIntent().getStringExtra("event organizer"));
-        // Only display description if user set one
-        if (!(getIntent().getStringExtra("event description").isEmpty())){
-            description.setText(getIntent().getStringExtra("event description"));
+        // get the event data
+        get_event();
+        // display all event data
+        name.setText(event.getName());
+        db.collection("user")
+                .document(event.getOrganizerID())
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            organizer.setText(document.getString("full_name"));
+                            Log.d("Firestore", "get organizer name");
+                        } else {
+                            Log.d("Firestore", "No such document");
+                        }
+                    } else {
+                        Log.w("Firestore", "Error getting document.", task.getException());
+                    }
+                });
+        picture_name = event.getPicture();
+        if (picture_name != null){
+            displayImage(picture_name);
         }
-        date.setText(getIntent().getStringExtra("event date"));
+        else{
+            Toast.makeText(EventDetailView.this, "no image found",
+                    Toast.LENGTH_SHORT).show();
+        }
+        // Only display description if user set one
+        if (!(event.getDescription().isEmpty())){
+            description.setText(event.getDescription());
+        }
+        date.setText(event.getEventDate());
         // Display the limit event if user set one
-        int eventLimit = getIntent().getIntExtra("event limit", default_applicant_limit); // defaultLimit is a fallback value if "event limit" is not found
+        Object eventLimit = getIntent().getIntExtra("event limit", default_applicant_limit); // defaultLimit is a fallback value if "event limit" is not found
         Log.w(TAG, "applicantLimit (from EventDetailView): " + eventLimit);
         if (eventLimit != default_applicant_limit) {
             application_limit.setText("The limit of applicants is " + eventLimit);
         }
 
-        remove_poster_button.setOnClickListener(new View.OnClickListener() {
+        viewWaitlistButton.setOnClickListener(new View.OnClickListener() {
             /**
-             * User clicks on the Remove/Edit Poster button, allow organizers to edit poster and allow admin to delete poster
+             * User click on view wait list button, go to my wait list page
              * @param view
              */
             @Override
             public void onClick(View view) {
-                // Delete the event poster
-                if ("admin".equals(user_type)) {
-                    // First delete locally
-                    event_poster.setImageDrawable(null);
-                    // Get the event ID from the intent
-                    String eventID = getIntent().getStringExtra("eventID");
-                    if (eventID != null && !eventID.isEmpty()) {
-                        // Update the "picture" field to null
-                        db.collection("events").document(eventID)
-                                .update("picture", null)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        Log.d("FirestoreUpdate", "Picture Field updated successfully");
-                                        Toast.makeText(EventDetailView.this, "Poster successfully deleted", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.w("FirestoreUpdate", "Error updating document", e);
-                                        Toast.makeText(EventDetailView.this, "Error deleting poster", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                    } else {
-                        Log.w("FirestoreUpdate", "Event ID is null or empty");
-                    }
-                }
-                // Edit the event poster
-                else if ("organizer".equals(user_type)) {
-
-                }
+                view_waitList.setClass(EventDetailView.this, WaitlistActivity.class);
+                view_waitList.putExtra("eventID", event.getEventID());
+                startActivity(view_waitList);
             }
         });
 
-        /**
-         * User clicks on the View Waitlist button
-         */
-        view_waitlist_button.setOnClickListener(v -> {
-            Intent intent = new Intent(EventDetailView.this, WaitlistActivity.class);
-            intent.putExtra("eventID", getIntent().getStringExtra("eventID"));
-            startActivity(intent);
+        viewAttendeeButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User click on view attendee button, go to view attendees page
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
+                view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
+                startActivity(view_attendees);
+            }
         });
 
         apply_button.setOnClickListener(new View.OnClickListener() {
@@ -167,12 +182,10 @@ public class EventDetailView extends AppCompatActivity {
                 }
                 // organizer clicks view attendees button
                 else if ("organizer".equals(user_type)){
-                    // go to view attendees
-                    view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
-                    view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
-                    startActivity(view_attendees);
+//                    edit_event.setClass(EventDetailView.this, EditEventView.class);
+//                    editEvent();
+//                    startActivity(edit_event);
                 }
-
                 // entrant clicks enroll button
                 else {
                     // enroll entrant into event
@@ -186,6 +199,36 @@ public class EventDetailView extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    /**
+     * set up the event with the data passed by previous page
+     */
+    private void get_event(){
+        event.setEventID(getIntent().getStringExtra("event ID"));
+        event.setName(getIntent().getStringExtra("event name"));
+        event.setFacilityName(getIntent().getStringExtra("event facility"));
+        event.setCreated_date(getIntent().getStringExtra("event create date"));
+        event.setEvent_date(getIntent().getStringExtra("event date"));
+        event.setDescription(getIntent().getStringExtra("event description"));
+        event.setOrganizerID(getIntent().getStringExtra("event organizer"));
+        event.setPicture(getIntent().getStringExtra("event image"));
+    }
+
+    /**
+     * Retrieve image from firebase storage and display it
+     * @param picture_name
+     */
+    private void displayImage(String picture_name){
+        StorageReference imageRef = storageReference.child(picture_name);
+        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), picture_name+".jpg");
+        imageRef.getFile(localFile)
+                .addOnSuccessListener(taskSnapshot -> {
+                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    picture.setImageBitmap(bitmap);
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(EventDetailView.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
     /**
@@ -212,5 +255,19 @@ public class EventDetailView extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    /**
+     * Store the event information want to pass the edit event page
+     */
+    private void editEvent(){
+        edit_event.putExtra("event ID", event.getEventID());
+        edit_event.putExtra("event name", event.getName());
+        edit_event.putExtra("event facility", event.getFacilityName());
+        edit_event.putExtra("event create date", event.getCreatedDate());
+        edit_event.putExtra("event date", event.getEventDate());
+        edit_event.putExtra("event description", event.getDescription());
+        edit_event.putExtra("event organizer", event.getOrganizerID());
+        edit_event.putExtra("event image", event.getPicture());
     }
 }

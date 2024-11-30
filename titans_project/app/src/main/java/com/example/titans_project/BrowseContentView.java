@@ -88,13 +88,14 @@ public class BrowseContentView extends AppCompatActivity {
                         if (querySnapshots != null) {
                             eventDataList.clear();
                             for (QueryDocumentSnapshot doc: querySnapshots) {
-                                String organizer_id = doc.getString("organizerID");
+                                String event_id = doc.getString("eventID");
                                 String event_name = doc.getString("name");
-                                String organizer = doc.getString("facilityName");
+                                String facility_name = doc.getString("facilityName");
                                 String created_date = doc.getString("createdDate");
                                 String event_date = doc.getString("eventDate");
-                                String event_id = doc.getString("eventID");
                                 String description = doc.getString("description");
+                                String organizer_id = doc.getString("organizerID");
+                                String picture = doc.getString("picture");
                                 Integer applicant_limit = default_applicant_limit;
                                 Object applicantLimitObj = doc.get("applicantLimit");
                                 if (applicantLimitObj != null) {
@@ -104,7 +105,7 @@ public class BrowseContentView extends AppCompatActivity {
                                     Log.w(TAG, "applicantLimit is missing or null");
                                 }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, "1"));
+                                eventDataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }
@@ -146,14 +147,14 @@ public class BrowseContentView extends AppCompatActivity {
                                 String facility = doc.getString("facility");
                                 Boolean notifications = doc.getBoolean("notifications");
                                 String user_id = doc.getString("user_id");
-
+                                String picture = doc.getString("picture");
                                 // Replace name with user id if name is empty
                                 if (full_name.isEmpty()){
                                     full_name = "Anonymous User " + user_id;
                                 }
 
                                 Log.d(TAG, String.format("User(%s, %s) fetched", full_name, email));
-                                profileDataList.add(new User(full_name, email, phone_number, facility, notifications, user_id));
+                                profileDataList.add(new User(full_name, email, phone_number, facility, notifications, user_id, picture));
                             }
                             profileArrayAdapter.notifyDataSetChanged();
                         }
@@ -161,6 +162,7 @@ public class BrowseContentView extends AppCompatActivity {
                 });
             }
         });
+
         contentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             /**
              * Check if user click on an item in the contentList
@@ -175,13 +177,15 @@ public class BrowseContentView extends AppCompatActivity {
                 if (browsingEvents){
                     Event clickedEvent = eventDataList.get(position);
                     event_detail.setClass(BrowseContentView.this, EventDetailView.class);
+                    event_detail.putExtra("event ID", clickedEvent.getEventID());
                     event_detail.putExtra("event name", clickedEvent.getName());
-                    event_detail.putExtra("event organizer", clickedEvent.getFacilityName());
-                    event_detail.putExtra("event description", clickedEvent.getDescription());
+                    event_detail.putExtra("event facility", clickedEvent.getFacilityName());
+                    event_detail.putExtra("event create date", clickedEvent.getCreatedDate());
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
-                    event_detail.putExtra("eventID", clickedEvent.getEventID());
+                    event_detail.putExtra("event description", clickedEvent.getDescription());
+                    event_detail.putExtra("event organizer", clickedEvent.getOrganizerID());
+                    event_detail.putExtra("event image", clickedEvent.getPicture());
                     event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
-
                     event_detail.putExtra("viewer", "admin");
                     startActivity(event_detail);
                 }

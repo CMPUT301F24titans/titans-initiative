@@ -63,7 +63,6 @@ public class MyCreatedEventsView extends AppCompatActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_created_events);
 
@@ -103,12 +102,13 @@ public class MyCreatedEventsView extends AppCompatActivity {
                         String organizer_id = doc.getString("organizerID");
                         // Check if user is owner of event
                         if (user_id.equals(organizer_id)) {
-                            String event_name = doc.getString("name");
-                            String organizer = doc.getString("facilityName");
                             String event_id = doc.getString("eventID");
+                            String event_name = doc.getString("name");
+                            String facility_name = doc.getString("facilityName");
                             String created_date = doc.getString("createdDate");
                             String event_date = doc.getString("eventDate");
                             String description = doc.getString("description");
+                            String picture = doc.getString("picture");
                             Integer applicant_limit = default_applicant_limit;
                             Object applicantLimitObj = doc.get("applicantLimit");
                             if (applicantLimitObj != null) {
@@ -118,7 +118,7 @@ public class MyCreatedEventsView extends AppCompatActivity {
                                 Log.w(TAG, "applicantLimit is missing or null");
                             }
                             Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                            eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, "1"));
+                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
                         }
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
@@ -155,13 +155,17 @@ public class MyCreatedEventsView extends AppCompatActivity {
              */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Event clickedEvent = eventsdataList.get(position);
                 event_detail.setClass(MyCreatedEventsView.this, EventDetailView.class);
-                event_detail.putExtra("event name", eventsdataList.get(position).getName());
-                event_detail.putExtra("event organizer", eventsdataList.get(position).getFacilityName());
-                event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
-                event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
-                event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
-                event_detail.putExtra("eventID", eventsdataList.get(position).getEventID());
+                event_detail.putExtra("event ID", clickedEvent.getEventID());
+                event_detail.putExtra("event name", clickedEvent.getName());
+                event_detail.putExtra("event facility", clickedEvent.getFacilityName());
+                event_detail.putExtra("event create date", clickedEvent.getCreatedDate());
+                event_detail.putExtra("event date", clickedEvent.getEventDate());
+                event_detail.putExtra("event description", clickedEvent.getDescription());
+                event_detail.putExtra("event organizer", clickedEvent.getOrganizerID());
+                event_detail.putExtra("event image", clickedEvent.getPicture());
+                event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
                 event_detail.putExtra("viewer", "organizer");
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 startActivity(event_detail);
@@ -177,9 +181,7 @@ public class MyCreatedEventsView extends AppCompatActivity {
             Intent waitlistIntent = new Intent(MyCreatedEventsView.this, WaitlistActivity.class);
             waitlistIntent.putExtra("eventID", selectedEvent.getEventID());
             startActivity(waitlistIntent);
-
             return true;
         });
-
     }
 }
