@@ -43,10 +43,12 @@ id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
 id button_leave_waitlist
+id button_remove_poster
 id button_return
 id button_save_changes
 id button_send_notification
 id button_toolbar
+id button_view_waitlist
 id checkbox_geolocation
 id checkbox_notifications
 id chooseImageButton
@@ -78,6 +80,7 @@ id event_applicant_limit
 id event_date
 id event_description
 id event_name
+id event_poster
 id eventsButton
 id geolocationCheckBox
 id imageView
@@ -95,7 +98,6 @@ id notifications_counter
 id organizer
 id organizerEdit
 id profile_button
-id profile_pic
 id profilesButton
 id qrCodeImageView
 id qrImageView
@@ -112,7 +114,6 @@ id textView2
 id textview_initials
 id title
 id user_name
-id viewWaitlistButton
 id waitlistRecyclerView
 id yesButton
 id yes_button
@@ -208,6 +209,7 @@ string previous
 string profile
 string project_id
 string reject
+string remove_poster
 string result_describe
 string result_title
 string return_to_homepage

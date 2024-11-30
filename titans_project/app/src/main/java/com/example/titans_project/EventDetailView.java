@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,10 +24,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.w3c.dom.Text;
+
 public class EventDetailView extends AppCompatActivity {
-    private Button return_button, apply_button, viewWaitlistButton;
-    private TextView name, organizer, description, date, application_limit;
-    CheckBox geolocation;
     private String user_type;
     private FirebaseFirestore db;
     private static final String TAG = "eventDeletion";
@@ -47,32 +49,43 @@ public class EventDetailView extends AppCompatActivity {
 
         user_type = getIntent().getStringExtra("viewer");
 
-        name = findViewById(R.id.event_name);
-        organizer = findViewById(R.id.organizer);
-        description = findViewById(R.id.event_description);
-        date = findViewById(R.id.event_date);
-        return_button = findViewById(R.id.button_return);
-        apply_button = findViewById(R.id.button_apply);
-        geolocation = findViewById(R.id.checkbox_geolocation);
-        application_limit = findViewById(R.id.event_applicant_limit);
-        viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
+        // Initialize TextViews
+        TextView name = findViewById(R.id.event_name);
+        TextView organizer = findViewById(R.id.organizer);
+        TextView description = findViewById(R.id.event_description);
+        TextView date = findViewById(R.id.event_date);
+        TextView application_limit = findViewById(R.id.event_applicant_limit);
+
+        // Initialize Buttons
+        Button return_button = findViewById(R.id.button_return);
+        Button apply_button = findViewById(R.id.button_apply);
+        Button view_waitlist_button = findViewById(R.id.button_view_waitlist);
+        Button remove_poster_button = findViewById(R.id.button_remove_poster);
+
+        // Initialize ImageView
+        ImageView event_poster = findViewById(R.id.event_poster);
+
+        // Initialize Checkbox
+        CheckBox geolocation = findViewById(R.id.checkbox_geolocation);
 
         // admin user viewing
         if ("admin".equals(user_type)){
             apply_button.setText("Delete Event");  // apply button becomes delete button for admin
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
-            viewWaitlistButton.setVisibility(View.GONE);
+            view_waitlist_button.setVisibility(View.GONE);
         }
         // already enrolled/applied entrant viewing
         else if ("enrolled".equals(user_type)) {
             apply_button.setVisibility(View.GONE);  // remove button for entrant users already enrolled/applied
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
-            viewWaitlistButton.setVisibility(View.GONE);
+            view_waitlist_button.setVisibility(View.GONE);  // remove view waitlist button for entrants
+            remove_poster_button.setVisibility(View.GONE);  // do not allow entrants to delete event posters
         }
 
         // organizer viewing their own event
         else if ("organizer".equals(user_type)) {
             apply_button.setText("View Attendees");
+            remove_poster_button.setText("Edit Poster");  // remove poster button becomes edit poster button for organizers
         }
 
         name.setText(getIntent().getStringExtra("event name"));
@@ -89,7 +102,52 @@ public class EventDetailView extends AppCompatActivity {
             application_limit.setText("The limit of applicants is " + eventLimit);
         }
 
-        viewWaitlistButton.setOnClickListener(v -> {
+        remove_poster_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * User clicks on the Remove/Edit Poster button, allow organizers to edit poster and allow admin to delete poster
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                // Delete the event poster
+                if ("admin".equals(user_type)) {
+                    // First delete locally
+                    event_poster.setImageDrawable(null);
+                    // Get the event ID from the intent
+                    String eventID = getIntent().getStringExtra("eventID");
+                    if (eventID != null && !eventID.isEmpty()) {
+                        // Update the "picture" field to null
+                        db.collection("events").document(eventID)
+                                .update("picture", null)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Log.d("FirestoreUpdate", "Picture Field updated successfully");
+                                        Toast.makeText(EventDetailView.this, "Poster successfully deleted", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w("FirestoreUpdate", "Error updating document", e);
+                                        Toast.makeText(EventDetailView.this, "Error deleting poster", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    } else {
+                        Log.w("FirestoreUpdate", "Event ID is null or empty");
+                    }
+                }
+                // Edit the event poster
+                else if ("organizer".equals(user_type)) {
+
+                }
+            }
+        });
+
+        /**
+         * User clicks on the View Waitlist button
+         */
+        view_waitlist_button.setOnClickListener(v -> {
             Intent intent = new Intent(EventDetailView.this, WaitlistActivity.class);
             intent.putExtra("eventID", getIntent().getStringExtra("eventID"));
             startActivity(intent);
