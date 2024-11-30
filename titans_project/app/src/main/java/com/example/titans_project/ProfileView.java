@@ -158,6 +158,9 @@ public class ProfileView extends AppCompatActivity {
                 }
                 else{
                     selectImage();
+                    if (uri == null) {
+                        initials.setText("");
+                    }
                 }
             }
         });
