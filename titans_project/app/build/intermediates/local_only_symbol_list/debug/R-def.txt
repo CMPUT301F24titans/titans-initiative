@@ -30,7 +30,6 @@ id approveButton
 id attendee_email
 id attendee_name
 id attendeesRecyclerView
-id author
 id backButton
 id back_user
 id browse_content_listview
@@ -43,6 +42,7 @@ id button_clear_full_name
 id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
+id button_leave_waitlist
 id button_return
 id button_save_changes
 id button_send_notification
@@ -81,7 +81,6 @@ id event_name
 id eventsButton
 id geolocationCheckBox
 id imageView
-id leave_button
 id listview_events
 id listview_notifications
 id nameTextView
@@ -131,7 +130,7 @@ layout attendee_item
 layout browse_content
 layout content_browse_events
 layout content_browse_profiles
-layout content_my_application
+layout content_my_applications
 layout content_my_events
 layout content_notifications
 layout fragment_application_form
@@ -147,6 +146,7 @@ menu menu_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
+string accept
 string action_settings
 string add_poster
 string admin_mode
@@ -207,6 +207,7 @@ string phone_number
 string previous
 string profile
 string project_id
+string reject
 string result_describe
 string result_title
 string return_to_homepage

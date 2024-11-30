@@ -33,5 +33,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/dark_gray"
-        android:text="Reject" />
+        android:text="Reject"
+        android:layout_marginStart="10dp"/>
 </LinearLayout>
