@@ -147,14 +147,14 @@ public class BrowseContentView extends AppCompatActivity {
                                 String facility = doc.getString("facility");
                                 Boolean notifications = doc.getBoolean("notifications");
                                 String user_id = doc.getString("user_id");
-
+                                String picture = doc.getString("picture");
                                 // Replace name with user id if name is empty
                                 if (full_name.isEmpty()){
                                     full_name = "Anonymous User " + user_id;
                                 }
 
                                 Log.d(TAG, String.format("User(%s, %s) fetched", full_name, email));
-                                profileDataList.add(new User(full_name, email, phone_number, facility, notifications, user_id));
+                                profileDataList.add(new User(full_name, email, phone_number, facility, notifications, user_id, picture));
                             }
                             profileArrayAdapter.notifyDataSetChanged();
                         }

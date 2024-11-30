@@ -19,33 +19,6 @@ public class User {
     private String profile_pic;
     private ArrayList<Notification> pendingNotifications;
 
-
-    /**
-     * This creates a user object if name, email, phone number, facility, and notifications are provided
-     * @param name
-     *  The user's full name
-     * @param email
-     *  The user's email address, in the general form of xxxxx@domain.ca
-     * @param phone_number
-     *  The user's phone number, in the general form of (123) 456-7891
-     * @param facility
-     *  The user's facility name (for Organizer)
-     * @param notifications
-     *  True if the user elects to receive notifications from other Organizers and Admin
-     * @param user_id
-     *  The user's anonymous sign in id
-     */
-    public User(String name, String email, String phone_number, String facility, Boolean notifications, String user_id){
-        this.name = name;
-        this.email = email;
-        this.phone_number = phone_number;
-        this.facility = facility;
-        this.notifications = notifications;
-        this.user_id = user_id;
-        this.profile_pic = null;
-        this.pendingNotifications = new ArrayList<>();
-    }
-
     /**
      * This creates a user object if ALL of name, email, phone number, facility, notifications, and profile pic are provided
      * @param name
@@ -151,7 +124,7 @@ public class User {
      * @return
      *  Returns URI of user's current profile_pic
      */
-    public String getProfilePic(){ return this.profile_pic;    }
+    public String getProfilePic(){ return this.profile_pic; }
 
     /**
      * This sets the profile_pic to a new value

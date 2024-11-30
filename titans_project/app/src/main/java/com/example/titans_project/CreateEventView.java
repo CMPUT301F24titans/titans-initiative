@@ -50,7 +50,6 @@ public class CreateEventView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
-
         // Initialize storage
         storageReference = FirebaseStorage.getInstance().getReference("event image");
 
@@ -61,7 +60,6 @@ public class CreateEventView extends AppCompatActivity {
 
         // Get ref to current user in Firebase
         DocumentReference userRef = db.collection("user").document(user.getUid());
-
 
         return_button = findViewById(R.id.button_return);
         add_poster = findViewById(R.id.button_add_poster);

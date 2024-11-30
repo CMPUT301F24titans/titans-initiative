@@ -328,12 +328,12 @@ public class MainActivity extends AppCompatActivity {
         userData.put("facility","");
         userData.put("notifications", Boolean.FALSE);
         userData.put("user_id", user.getUid());
+        userData.put("profile_pic", "");
         // Store ArrayList for user's notifications
 
         // ************************************* DELETE LATER *****************************************************
         ArrayList<Notification> NOTIFICATIONSTESTER= new ArrayList<>();
-        NOTIFICATIONSTESTER.add(new Notification("Test_Notification1", "Test Notification description1", LocalDate.now().toString()));
-        NOTIFICATIONSTESTER.add(new Notification("Test_Notification2", "Test Notification description2", LocalDate.now().toString()));
+
         // ********************************************************************************************************
 
         userData.put("notification_list", NOTIFICATIONSTESTER);  // ******** CHANGE NOTIFICATIONSTESTER TO new ArrayList<Notification>() ********
