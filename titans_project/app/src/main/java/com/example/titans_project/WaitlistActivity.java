@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +34,7 @@ public class WaitlistActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_waitlist);
 
-        Button sendNotification = findViewById(R.id.buttonSendNotification);
+        ImageButton sendNotification = findViewById(R.id.buttonSendNotification);
         Button generateLottery = findViewById(R.id.buttonGenerateLottery);
 
         waitlistRecyclerView = findViewById(R.id.waitlistRecyclerView);
