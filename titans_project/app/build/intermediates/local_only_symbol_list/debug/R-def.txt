@@ -42,6 +42,7 @@ id button_clear_facility
 id button_clear_full_name
 id button_clear_phone_number
 id button_create_profile
+id button_delete_poster
 id button_edit_profile_pic
 id button_leave_waitlist
 id button_return

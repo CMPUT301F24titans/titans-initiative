@@ -182,9 +182,9 @@ public class EventDetailView extends AppCompatActivity {
                 }
                 // organizer clicks view attendees button
                 else if ("organizer".equals(user_type)){
-//                    edit_event.setClass(EventDetailView.this, EditEventView.class);
-//                    editEvent();
-//                    startActivity(edit_event);
+                    edit_event.setClass(EventDetailView.this, CreateEventView.class);
+                    editEvent();
+                    startActivity(edit_event);
                 }
                 // entrant clicks enroll button
                 else {
@@ -269,5 +269,6 @@ public class EventDetailView extends AppCompatActivity {
         edit_event.putExtra("event description", event.getDescription());
         edit_event.putExtra("event organizer", event.getOrganizerID());
         edit_event.putExtra("event image", event.getPicture());
+        edit_event.putExtra("viewer", "edit");
     }
 }
