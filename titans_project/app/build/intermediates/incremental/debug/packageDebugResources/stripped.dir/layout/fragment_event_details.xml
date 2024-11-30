@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/viewWaitlistButton"
+        android:layout_above="@id/button_view_waitlist"
         android:padding="10dp"
         android:orientation="vertical">
 
@@ -71,12 +71,19 @@
                 android:layout_height="200dp">
 
                 <ImageView
-                    android:id="@+id/profile_pic"
+                    android:id="@+id/event_poster"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:srcCompat="@android:drawable/sym_def_app_icon" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/button_remove_poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remove_poster"
+            android:backgroundTint="@color/dark_gray" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -135,7 +142,7 @@
 
 
     <Button
-        android:id="@+id/viewWaitlistButton"
+        android:id="@+id/button_view_waitlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/button_apply"
