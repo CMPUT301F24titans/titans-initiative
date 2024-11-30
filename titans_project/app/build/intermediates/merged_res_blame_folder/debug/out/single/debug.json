@@ -144,6 +144,10 @@
         "source": "com.example.titans_project.app-main-56:/drawable/notification_bell_red_circle_20623.png"
     },
     {
+        "merged": "com.example.titans_project.app-merged_res-54:/layout_activity_lottery.xml.flat",
+        "source": "com.example.titans_project.app-main-56:/layout/activity_lottery.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-merged_res-54:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "com.example.titans_project.app-main-56:/mipmap-mdpi/ic_launcher.webp"
     },

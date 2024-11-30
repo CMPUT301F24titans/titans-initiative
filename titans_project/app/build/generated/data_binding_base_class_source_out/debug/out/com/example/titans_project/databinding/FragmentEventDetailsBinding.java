@@ -26,13 +26,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
   public final Button buttonApply;
 
   @NonNull
-  public final Button buttonRemovePoster;
-
-  @NonNull
   public final Button buttonReturn;
-
-  @NonNull
-  public final Button buttonViewWaitlist;
 
   @NonNull
   public final CheckBox checkboxGeolocation;
@@ -50,29 +44,35 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
   public final TextView eventName;
 
   @NonNull
-  public final ImageView eventPoster;
-
-  @NonNull
   public final TextView organizer;
 
+  @NonNull
+  public final ImageView profilePic;
+
+  @NonNull
+  public final Button viewAttendeesButton;
+
+  @NonNull
+  public final Button viewWaitlistButton;
+
   private FragmentEventDetailsBinding(@NonNull RelativeLayout rootView, @NonNull Button buttonApply,
-      @NonNull Button buttonRemovePoster, @NonNull Button buttonReturn,
-      @NonNull Button buttonViewWaitlist, @NonNull CheckBox checkboxGeolocation,
+      @NonNull Button buttonReturn, @NonNull CheckBox checkboxGeolocation,
       @NonNull TextView eventApplicantLimit, @NonNull TextView eventDate,
-      @NonNull TextView eventDescription, @NonNull TextView eventName,
-      @NonNull ImageView eventPoster, @NonNull TextView organizer) {
+      @NonNull TextView eventDescription, @NonNull TextView eventName, @NonNull TextView organizer,
+      @NonNull ImageView profilePic, @NonNull Button viewAttendeesButton,
+      @NonNull Button viewWaitlistButton) {
     this.rootView = rootView;
     this.buttonApply = buttonApply;
-    this.buttonRemovePoster = buttonRemovePoster;
     this.buttonReturn = buttonReturn;
-    this.buttonViewWaitlist = buttonViewWaitlist;
     this.checkboxGeolocation = checkboxGeolocation;
     this.eventApplicantLimit = eventApplicantLimit;
     this.eventDate = eventDate;
     this.eventDescription = eventDescription;
     this.eventName = eventName;
-    this.eventPoster = eventPoster;
     this.organizer = organizer;
+    this.profilePic = profilePic;
+    this.viewAttendeesButton = viewAttendeesButton;
+    this.viewWaitlistButton = viewWaitlistButton;
   }
 
   @Override
@@ -108,21 +108,9 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.button_remove_poster;
-      Button buttonRemovePoster = ViewBindings.findChildViewById(rootView, id);
-      if (buttonRemovePoster == null) {
-        break missingId;
-      }
-
       id = R.id.button_return;
       Button buttonReturn = ViewBindings.findChildViewById(rootView, id);
       if (buttonReturn == null) {
-        break missingId;
-      }
-
-      id = R.id.button_view_waitlist;
-      Button buttonViewWaitlist = ViewBindings.findChildViewById(rootView, id);
-      if (buttonViewWaitlist == null) {
         break missingId;
       }
 
@@ -156,21 +144,33 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.event_poster;
-      ImageView eventPoster = ViewBindings.findChildViewById(rootView, id);
-      if (eventPoster == null) {
-        break missingId;
-      }
-
       id = R.id.organizer;
       TextView organizer = ViewBindings.findChildViewById(rootView, id);
       if (organizer == null) {
         break missingId;
       }
 
-      return new FragmentEventDetailsBinding((RelativeLayout) rootView, buttonApply,
-          buttonRemovePoster, buttonReturn, buttonViewWaitlist, checkboxGeolocation,
-          eventApplicantLimit, eventDate, eventDescription, eventName, eventPoster, organizer);
+      id = R.id.profile_pic;
+      ImageView profilePic = ViewBindings.findChildViewById(rootView, id);
+      if (profilePic == null) {
+        break missingId;
+      }
+
+      id = R.id.viewAttendeesButton;
+      Button viewAttendeesButton = ViewBindings.findChildViewById(rootView, id);
+      if (viewAttendeesButton == null) {
+        break missingId;
+      }
+
+      id = R.id.viewWaitlistButton;
+      Button viewWaitlistButton = ViewBindings.findChildViewById(rootView, id);
+      if (viewWaitlistButton == null) {
+        break missingId;
+      }
+
+      return new FragmentEventDetailsBinding((RelativeLayout) rootView, buttonApply, buttonReturn,
+          checkboxGeolocation, eventApplicantLimit, eventDate, eventDescription, eventName,
+          organizer, profilePic, viewAttendeesButton, viewWaitlistButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

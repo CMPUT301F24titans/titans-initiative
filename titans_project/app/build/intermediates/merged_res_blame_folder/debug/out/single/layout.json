@@ -4,6 +4,10 @@
         "source": "com.example.titans_project.app-main-56:/layout/content_browse_events.xml"
     },
     {
+        "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/activity_lottery.xml",
+        "source": "com.example.titans_project.app-main-56:/layout/activity_lottery.xml"
+    },
+    {
         "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/activity_delete_event.xml",
         "source": "com.example.titans_project.app-main-56:/layout/activity_delete_event.xml"
     },

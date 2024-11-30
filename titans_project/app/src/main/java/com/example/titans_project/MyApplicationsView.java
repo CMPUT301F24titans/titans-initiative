@@ -109,20 +109,20 @@ public class MyApplicationsView extends AppCompatActivity {
                     .get()
                     .addOnSuccessListener(document -> {
                         if (document.exists()) {
-                            String organizer_id = document.getString("organizerID");
-                            String event_name = document.getString("name");
-                            String organizer = document.getString("facilityName");
                             String event_id = document.getString("eventID");
+                            String event_name = document.getString("name");
+                            String facility_name = document.getString("facilityName");
                             String created_date = document.getString("createdDate");
                             String event_date = document.getString("eventDate");
                             String description = document.getString("description");
+                            String organizer_id = document.getString("organizerID");
                             String picture = document.getString("picture");
                             Integer applicant_limit = default_applicant_limit;
                             Object applicantLimitObj = document.get("applicantLimit");
                             if (applicantLimitObj != null) {
                                 applicant_limit = ((Long) applicantLimitObj).intValue(); // Cast to Integer
                             }
-                            eventsdataList.add(new Event(event_id, event_name, organizer, created_date, event_date, description, applicant_limit, organizer_id, picture));
+                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
                         }
                         completedCount[0]++; // Increment the counter
                         if (completedCount[0] == documentIds.size()) {

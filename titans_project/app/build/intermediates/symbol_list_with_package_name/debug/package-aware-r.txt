@@ -3355,12 +3355,10 @@ id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
 id button_leave_waitlist
-id button_remove_poster
 id button_return
 id button_save_changes
 id button_send_notification
 id button_toolbar
-id button_view_waitlist
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3474,7 +3472,6 @@ id event_applicant_limit
 id event_date
 id event_description
 id event_name
-id event_poster
 id eventsButton
 id exitUntilCollapsed
 id expand_activities_button
@@ -3545,6 +3542,8 @@ id list_item
 id listview_events
 id listview_notifications
 id locale
+id lottery_progress
+id lottery_status
 id ltr
 id m3_side_sheet
 id marquee
@@ -3673,6 +3672,7 @@ id position
 id postLayout
 id pressed
 id profile_button
+id profile_pic
 id profilesButton
 id progress_circular
 id progress_horizontal
@@ -3820,6 +3820,8 @@ id up
 id useLogo
 id user_name
 id vertical_only
+id viewAttendeesButton
+id viewWaitlistButton
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3975,6 +3977,7 @@ layout activity_create_event
 layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
+layout activity_lottery
 layout activity_notifications
 layout activity_qr_code
 layout activity_qr_scanner
