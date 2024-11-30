@@ -50,13 +50,17 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
   public final ImageView profilePic;
 
   @NonNull
+  public final Button viewAttendeesButton;
+
+  @NonNull
   public final Button viewWaitlistButton;
 
   private FragmentEventDetailsBinding(@NonNull RelativeLayout rootView, @NonNull Button buttonApply,
       @NonNull Button buttonReturn, @NonNull CheckBox checkboxGeolocation,
       @NonNull TextView eventApplicantLimit, @NonNull TextView eventDate,
       @NonNull TextView eventDescription, @NonNull TextView eventName, @NonNull TextView organizer,
-      @NonNull ImageView profilePic, @NonNull Button viewWaitlistButton) {
+      @NonNull ImageView profilePic, @NonNull Button viewAttendeesButton,
+      @NonNull Button viewWaitlistButton) {
     this.rootView = rootView;
     this.buttonApply = buttonApply;
     this.buttonReturn = buttonReturn;
@@ -67,6 +71,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
     this.eventName = eventName;
     this.organizer = organizer;
     this.profilePic = profilePic;
+    this.viewAttendeesButton = viewAttendeesButton;
     this.viewWaitlistButton = viewWaitlistButton;
   }
 
@@ -151,6 +156,12 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.viewAttendeesButton;
+      Button viewAttendeesButton = ViewBindings.findChildViewById(rootView, id);
+      if (viewAttendeesButton == null) {
+        break missingId;
+      }
+
       id = R.id.viewWaitlistButton;
       Button viewWaitlistButton = ViewBindings.findChildViewById(rootView, id);
       if (viewWaitlistButton == null) {
@@ -159,7 +170,7 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
 
       return new FragmentEventDetailsBinding((RelativeLayout) rootView, buttonApply, buttonReturn,
           checkboxGeolocation, eventApplicantLimit, eventDate, eventDescription, eventName,
-          organizer, profilePic, viewWaitlistButton);
+          organizer, profilePic, viewAttendeesButton, viewWaitlistButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

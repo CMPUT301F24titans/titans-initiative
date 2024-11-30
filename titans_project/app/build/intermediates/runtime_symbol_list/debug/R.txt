@@ -3818,6 +3818,7 @@ int id up 0x7f080251
 int id useLogo 0x7f080252
 int id user_name 0x7f080253
 int id vertical_only 0x7f080254
+int id viewAttendeesButton 0x7f080278
 int id viewWaitlistButton 0x7f080255
 int id view_offset_helper 0x7f080256
 int id view_transition 0x7f080257

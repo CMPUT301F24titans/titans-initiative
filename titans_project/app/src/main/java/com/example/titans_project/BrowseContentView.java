@@ -162,6 +162,7 @@ public class BrowseContentView extends AppCompatActivity {
                 });
             }
         });
+
         contentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             /**
              * Check if user click on an item in the contentList
@@ -176,11 +177,14 @@ public class BrowseContentView extends AppCompatActivity {
                 if (browsingEvents){
                     Event clickedEvent = eventDataList.get(position);
                     event_detail.setClass(BrowseContentView.this, EventDetailView.class);
+                    event_detail.putExtra("event ID", clickedEvent.getEventID());
                     event_detail.putExtra("event name", clickedEvent.getName());
-                    event_detail.putExtra("event organizer", clickedEvent.getFacilityName());
-                    event_detail.putExtra("event description", clickedEvent.getDescription());
+                    event_detail.putExtra("event facility", clickedEvent.getFacilityName());
+                    event_detail.putExtra("event create date", clickedEvent.getCreatedDate());
                     event_detail.putExtra("event date", clickedEvent.getEventDate());
-                    event_detail.putExtra("eventID", clickedEvent.getEventID());
+                    event_detail.putExtra("event description", clickedEvent.getDescription());
+                    event_detail.putExtra("event organizer", clickedEvent.getOrganizerID());
+                    event_detail.putExtra("event image", clickedEvent.getPicture());
                     event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
                     event_detail.putExtra("viewer", "admin");
                     startActivity(event_detail);

@@ -249,16 +249,17 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Event clickedEvent = eventsdataList.get(position);
                 event_detail.setClass(MainActivity.this, EventDetailView.class);
-                event_detail.putExtra("event ID", eventsdataList.get(position).getEventID());
-                event_detail.putExtra("event name", eventsdataList.get(position).getName());
-                event_detail.putExtra("event facility", eventsdataList.get(position).getFacilityName());
-                event_detail.putExtra("event create date", eventsdataList.get(position).getCreatedDate());
-                event_detail.putExtra("event date", eventsdataList.get(position).getEventDate());
-                event_detail.putExtra("event description", eventsdataList.get(position).getDescription());
-                event_detail.putExtra("event organizer", eventsdataList.get(position).getOrganizerID());
-                event_detail.putExtra("event image", eventsdataList.get(position).getPicture());
-                event_detail.putExtra("event limit", eventsdataList.get(position).getApplicantLimit());
+                event_detail.putExtra("event ID", clickedEvent.getEventID());
+                event_detail.putExtra("event name", clickedEvent.getName());
+                event_detail.putExtra("event facility", clickedEvent.getFacilityName());
+                event_detail.putExtra("event create date", clickedEvent.getCreatedDate());
+                event_detail.putExtra("event date", clickedEvent.getEventDate());
+                event_detail.putExtra("event description", clickedEvent.getDescription());
+                event_detail.putExtra("event organizer", clickedEvent.getOrganizerID());
+                event_detail.putExtra("event image", clickedEvent.getPicture());
+                event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 event_detail.putExtra("viewer", "enrolled");
                 startActivity(event_detail);
@@ -271,7 +272,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void performAnonymousSignIn() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
         if (currentUser == null) {
             // No current user, attempt to sign in anonymously
             mAuth.signInAnonymously()

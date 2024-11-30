@@ -8,9 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/viewWaitlistButton"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
 
         <LinearLayout
@@ -44,17 +43,16 @@
             android:id="@+id/organizer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Organized by user"
-            android:textColor="@color/material_dynamic_neutral50"
             android:paddingBottom="10dp"
-            />
+            android:text="Organized by user"
+            android:textAlignment="center"
+            android:textColor="@color/material_dynamic_neutral50" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:paddingBottom="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="200dp"
@@ -73,9 +71,9 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="@string/event_date"
-            android:textStyle="bold"
             android:textColor="@color/dark_gray"
-            android:textSize="24sp"/>
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/event_date"
@@ -84,16 +82,16 @@
             android:paddingTop="10dp"
             android:text="@string/event_date_example"
             android:textColor="@color/dark_gray"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="@string/event_details"
-            android:textStyle="bold"
             android:textColor="@color/dark_gray"
-            android:textSize="24sp"/>
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/event_description"
@@ -102,7 +100,7 @@
             android:paddingTop="10dp"
             android:text="@string/event_details_example"
             android:textColor="@color/dark_gray"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/event_applicant_limit"
@@ -111,30 +109,44 @@
             android:paddingTop="10dp"
             android:text="@string/there_is_no_limit_on_the_amount_of_applicants_for_this_event"
             android:textColor="@color/dark_gray"
-            android:textStyle="italic"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:textStyle="italic" />
 
         <CheckBox
             android:id="@+id/checkbox_geolocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/geolocation_sharing_message"
+            android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:paddingTop="10dp"/>
+            android:text="@string/geolocation_sharing_message" />
     </LinearLayout>
 
 
     <Button
         android:id="@+id/viewWaitlistButton"
-        android:layout_width="match_parent"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_above="@id/button_apply"
-        android:backgroundTint="@color/dark_gray"
+        android:layout_alignParentStart="true"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/dark_gray"
+        android:text="View Waitlist"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/viewAttendeesButton"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button_apply"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:text="View Waitlist"
+        android:backgroundTint="@color/dark_gray"
+        android:text="View Attendee"
         android:textColor="@android:color/white" />
 
     <Button
