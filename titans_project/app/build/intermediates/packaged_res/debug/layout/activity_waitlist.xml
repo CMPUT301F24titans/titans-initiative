@@ -4,6 +4,44 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/buttonSendNotification"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:contentDescription="@string/send_notification"
+            android:src="@drawable/notification" />
+
+        <TextView
+            android:id="@+id/notifications_counter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/send_notification"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/returnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Return"
+            android:textSize="14sp"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
     <!-- Title and Return button section -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,15 +59,6 @@
             android:textStyle="bold"
             android:layout_gravity="center_vertical"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Return"
-            android:layout_margin="5dp"
-            android:textSize="14sp"
-            android:backgroundTint="@color/dark_gray"
-            android:id="@+id/returnButton"
-            android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
     <!-- Divider line -->
@@ -51,8 +80,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lottery_size"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:layout_gravity="center_vertical" />
 
         <Button
             android:id="@+id/buttonGenerateLottery"
@@ -61,15 +105,6 @@
             android:text="@string/generate_lottery"
             android:backgroundTint="@color/dark_gray"
             android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/buttonSendNotification"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/send_notification"
-            android:backgroundTint="@color/dark_gray"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"/>
 
     </LinearLayout>
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,7 +26,10 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   public final Button buttonGenerateLottery;
 
   @NonNull
-  public final Button buttonSendNotification;
+  public final ImageButton buttonSendNotification;
+
+  @NonNull
+  public final TextView notificationsCounter;
 
   @NonNull
   public final Button returnButton;
@@ -37,12 +41,13 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   public final RecyclerView waitlistRecyclerView;
 
   private ActivityWaitlistBinding(@NonNull LinearLayout rootView,
-      @NonNull Button buttonGenerateLottery, @NonNull Button buttonSendNotification,
-      @NonNull Button returnButton, @NonNull TextView title,
+      @NonNull Button buttonGenerateLottery, @NonNull ImageButton buttonSendNotification,
+      @NonNull TextView notificationsCounter, @NonNull Button returnButton, @NonNull TextView title,
       @NonNull RecyclerView waitlistRecyclerView) {
     this.rootView = rootView;
     this.buttonGenerateLottery = buttonGenerateLottery;
     this.buttonSendNotification = buttonSendNotification;
+    this.notificationsCounter = notificationsCounter;
     this.returnButton = returnButton;
     this.title = title;
     this.waitlistRecyclerView = waitlistRecyclerView;
@@ -82,8 +87,14 @@ public final class ActivityWaitlistBinding implements ViewBinding {
       }
 
       id = R.id.buttonSendNotification;
-      Button buttonSendNotification = ViewBindings.findChildViewById(rootView, id);
+      ImageButton buttonSendNotification = ViewBindings.findChildViewById(rootView, id);
       if (buttonSendNotification == null) {
+        break missingId;
+      }
+
+      id = R.id.notifications_counter;
+      TextView notificationsCounter = ViewBindings.findChildViewById(rootView, id);
+      if (notificationsCounter == null) {
         break missingId;
       }
 
@@ -106,7 +117,7 @@ public final class ActivityWaitlistBinding implements ViewBinding {
       }
 
       return new ActivityWaitlistBinding((LinearLayout) rootView, buttonGenerateLottery,
-          buttonSendNotification, returnButton, title, waitlistRecyclerView);
+          buttonSendNotification, notificationsCounter, returnButton, title, waitlistRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

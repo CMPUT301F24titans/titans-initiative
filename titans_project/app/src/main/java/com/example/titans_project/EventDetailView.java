@@ -163,7 +163,7 @@ public class EventDetailView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
-                view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
+                view_attendees.putExtra("eventID", event.getEventID());
                 startActivity(view_attendees);
             }
         });
