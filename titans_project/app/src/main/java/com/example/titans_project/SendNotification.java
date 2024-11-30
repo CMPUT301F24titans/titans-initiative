@@ -70,43 +70,17 @@ public class SendNotification extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 if (waitlist != null && !waitlist.isEmpty()) {
-                    Notification notification = new Notification(
-                            editTitle.getText().toString().trim(),
-                            editDescription.getText().toString().trim(),
-                            LocalDate.now().toString()
-                    );
+                    String title = editTitle.getText().toString().trim();
+                    String description = editDescription.getText().toString().trim();
+                    String date = LocalDate.now().toString();
 
+                    Notification notification = new Notification(title, description, date);
                     Map<String, Object> notification_map = notification.toMap();
 
                     for (String user_id : waitlist) {
-                        Log.d("SendNotification", "Checking notification preference for user: " + user_id);
-
-                        db.collection("user").document(user_id).get()
-                                .addOnSuccessListener(documentSnapshot -> {
-                                    if (documentSnapshot.exists()) {
-                                        Boolean notificationsEnabled = documentSnapshot.getBoolean("notifications");
-
-                                        if (notificationsEnabled != null && notificationsEnabled) {
-                                            // Notifications are enabled, update the notification_list field
-                                            db.collection("user").document(user_id)
-                                                    .update("notification_list", FieldValue.arrayUnion(notification_map))
-                                                    .addOnSuccessListener(aVoid -> {
-                                                        Log.d("SendNotification", "Notification sent to user: " + user_id);
-                                                    })
-                                                    .addOnFailureListener(e -> {
-                                                        Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
-                                                    });
-                                        } else {
-                                            Log.d("SendNotification", "Notifications are disabled for user: " + user_id);
-                                        }
-                                    } else {
-                                        Log.w("SendNotification", "User document not found: " + user_id);
-                                    }
-                                })
-                                .addOnFailureListener(e -> {
-                                    Log.e("SendNotification", "Error fetching Firestore document for user: " + user_id, e);
-                                });
+                        sendNotificationToUser(user_id, notification_map);
                     }
+
                     Toast.makeText(SendNotification.this, "Sent notification", Toast.LENGTH_SHORT).show();
                     finish(); // Close the activity after updates
                 } else {
@@ -115,5 +89,37 @@ public class SendNotification extends AppCompatActivity{
             }
         });
 
+    }
+
+    private void sendNotificationToUser(String user_id, Map<String, Object> notification_map) {
+        Log.d("SendNotification", "Checking notification preference for user: " + user_id);
+
+        db.collection("user").document(user_id).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        Boolean notificationsEnabled = documentSnapshot.getBoolean("notifications");
+                        if (notificationsEnabled != null && notificationsEnabled) {
+                            updateUserNotificationList(user_id, notification_map);
+                        } else {
+                            Log.d("SendNotification", "Notifications are disabled for user: " + user_id);
+                        }
+                    } else {
+                        Log.w("SendNotification", "User document not found: " + user_id);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("SendNotification", "Error fetching Firestore document for user: " + user_id, e);
+                });
+    }
+
+    private void updateUserNotificationList(String user_id, Map<String, Object> notification_map) {
+        db.collection("user").document(user_id)
+                .update("notification_list", FieldValue.arrayUnion(notification_map))
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("SendNotification", "Notification sent to user: " + user_id);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
+                });
     }
 }

@@ -63,6 +63,7 @@
     <string name="my_events">My Events</string>
     <string name="next">Next</string>
     <string name="no_button">No</string>
+    <string name="notification">Notification</string>
     <string name="notification_title">Notification Title</string>
     <string name="notifications">Notifications</string>
     <string name="notifications_0">Notifications: 0</string>
