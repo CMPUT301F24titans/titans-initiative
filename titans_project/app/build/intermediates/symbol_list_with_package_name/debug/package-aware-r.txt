@@ -3344,6 +3344,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id buttonGenerateLottery
 id buttonPanel
 id buttonSendNotification
 id button_add_poster
@@ -3545,6 +3546,8 @@ id list_item
 id listview_events
 id listview_notifications
 id locale
+id lottery_progress
+id lottery_status
 id ltr
 id m3_side_sheet
 id marquee
@@ -3975,6 +3978,7 @@ layout activity_create_event
 layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
+layout activity_lottery
 layout activity_notifications
 layout activity_qr_code
 layout activity_qr_scanner
@@ -4200,6 +4204,7 @@ string fallback_menu_item_share_link
 string first_fragment_label
 string full_name
 string gcm_defaultSenderId
+string generate_lottery
 string geolocation_sharing_message
 string google_api_key
 string google_app_id

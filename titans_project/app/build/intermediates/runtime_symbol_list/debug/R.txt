@@ -3343,6 +3343,7 @@ int id browser_actions_menu_item_icon 0x7f080076
 int id browser_actions_menu_item_text 0x7f080077
 int id browser_actions_menu_items 0x7f080078
 int id browser_actions_menu_view 0x7f080079
+int id buttonGenerateLottery 0x7f080278
 int id buttonPanel 0x7f08007a
 int id buttonSendNotification 0x7f08007b
 int id button_add_poster 0x7f08007c
@@ -3544,6 +3545,8 @@ int id list_item 0x7f08013f
 int id listview_events 0x7f080140
 int id listview_notifications 0x7f080141
 int id locale 0x7f080142
+int id lottery_progress 0x7f080279
+int id lottery_status 0x7f08027a
 int id ltr 0x7f080143
 int id m3_side_sheet 0x7f080144
 int id marquee 0x7f080145
@@ -3974,6 +3977,7 @@ int layout activity_create_event 0x7f0b001d
 int layout activity_created_events 0x7f0b001e
 int layout activity_delete_event 0x7f0b001f
 int layout activity_edit_event 0x7f0b0020
+int layout activity_lottery 0x7f0b0089
 int layout activity_notifications 0x7f0b0021
 int layout activity_qr_code 0x7f0b0022
 int layout activity_qr_scanner 0x7f0b0023
@@ -4199,6 +4203,7 @@ int string fallback_menu_item_share_link 0x7f12006e
 int string first_fragment_label 0x7f12006f
 int string full_name 0x7f120070
 int string gcm_defaultSenderId 0x7f120071
+int string generate_lottery 0x7f12011d
 int string geolocation_sharing_message 0x7f120072
 int string google_api_key 0x7f120073
 int string google_app_id 0x7f120074

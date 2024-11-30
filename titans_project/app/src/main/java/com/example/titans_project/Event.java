@@ -25,6 +25,8 @@ public class Event {
     private List<Map<String, String>> lottery;
     private List<Map<String, String>> cancelled;
 
+    public Event() {}
+
     /**
      * This initial the class Event
      * @param name

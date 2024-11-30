@@ -67,6 +67,9 @@
         <activity
             android:name=".WaitlistActivity"
             android:exported="true" />
+        <activity
+            android:name=".LotteryActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

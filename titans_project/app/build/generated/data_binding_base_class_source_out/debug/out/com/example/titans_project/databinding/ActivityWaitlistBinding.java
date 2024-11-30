@@ -22,6 +22,9 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button buttonGenerateLottery;
+
+  @NonNull
   public final Button buttonSendNotification;
 
   @NonNull
@@ -34,9 +37,11 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   public final RecyclerView waitlistRecyclerView;
 
   private ActivityWaitlistBinding(@NonNull LinearLayout rootView,
-      @NonNull Button buttonSendNotification, @NonNull Button returnButton, @NonNull TextView title,
+      @NonNull Button buttonGenerateLottery, @NonNull Button buttonSendNotification,
+      @NonNull Button returnButton, @NonNull TextView title,
       @NonNull RecyclerView waitlistRecyclerView) {
     this.rootView = rootView;
+    this.buttonGenerateLottery = buttonGenerateLottery;
     this.buttonSendNotification = buttonSendNotification;
     this.returnButton = returnButton;
     this.title = title;
@@ -70,6 +75,12 @@ public final class ActivityWaitlistBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonGenerateLottery;
+      Button buttonGenerateLottery = ViewBindings.findChildViewById(rootView, id);
+      if (buttonGenerateLottery == null) {
+        break missingId;
+      }
+
       id = R.id.buttonSendNotification;
       Button buttonSendNotification = ViewBindings.findChildViewById(rootView, id);
       if (buttonSendNotification == null) {
@@ -94,8 +105,8 @@ public final class ActivityWaitlistBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityWaitlistBinding((LinearLayout) rootView, buttonSendNotification,
-          returnButton, title, waitlistRecyclerView);
+      return new ActivityWaitlistBinding((LinearLayout) rootView, buttonGenerateLottery,
+          buttonSendNotification, returnButton, title, waitlistRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
