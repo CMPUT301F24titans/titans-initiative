@@ -35,7 +35,7 @@ import java.util.UUID;
 
 
 public class EventDetailView extends AppCompatActivity {
-    private Button return_button, apply_button, viewWaitlistButton, viewAttendeeButton;
+    private Button return_button, apply_button, viewWaitlistButton, viewAttendeeButton, viewLotteryButton;
     private TextView name, organizer, description, date, application_limit;
     private CheckBox geolocation;
     private String user_type, picture_name;
@@ -78,6 +78,7 @@ public class EventDetailView extends AppCompatActivity {
         apply_button = findViewById(R.id.button_apply);
         viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
         viewAttendeeButton = findViewById(R.id.viewAttendeesButton);
+        viewLotteryButton = findViewById(R.id.viewLotteryButton);
 
         // get the user type
         user_type = getIntent().getStringExtra("viewer");
@@ -142,6 +143,12 @@ public class EventDetailView extends AppCompatActivity {
             application_limit.setText("The limit of applicants is " + eventLimit);
         }
 
+        viewLotteryButton.setOnClickListener(v -> {
+            Intent intent = new Intent(EventDetailView.this, ViewLotteryActivity.class);
+            intent.putExtra("eventID", event.getEventID());
+            startActivity(intent);
+        });
+
         viewWaitlistButton.setOnClickListener(new View.OnClickListener() {
             /**
              * User click on view wait list button, go to my wait list page
@@ -163,7 +170,7 @@ public class EventDetailView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
-                view_attendees.putExtra("eventID", getIntent().getStringExtra("eventID"));
+                view_attendees.putExtra("eventID", event.getEventID());
                 startActivity(view_attendees);
             }
         });

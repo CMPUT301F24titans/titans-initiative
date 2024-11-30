@@ -132,6 +132,13 @@
             android:text="@string/geolocation_sharing_message" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/viewLotteryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Lottery"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal" />
 
     <Button
         android:id="@+id/viewWaitlistButton"

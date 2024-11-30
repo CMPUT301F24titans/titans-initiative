@@ -3542,6 +3542,8 @@ int id list_item 0x7f08013d
 int id listview_events 0x7f08013e
 int id listview_notifications 0x7f08013f
 int id locale 0x7f080140
+int id lotteryRecyclerView 0x7f08027b
+int id lotteryTitle 0x7f08027c
 int id lottery_progress 0x7f080141
 int id lottery_status 0x7f080142
 int id ltr 0x7f080143
@@ -3818,9 +3820,11 @@ int id uniform 0x7f080251
 int id unlabeled 0x7f080252
 int id up 0x7f080253
 int id useLogo 0x7f080254
+int id userName 0x7f08027d
 int id user_name 0x7f080255
 int id vertical_only 0x7f080256
 int id viewAttendeesButton 0x7f080257
+int id viewLotteryButton 0x7f08027e
 int id viewWaitlistButton 0x7f080258
 int id view_offset_helper 0x7f080259
 int id view_transition 0x7f08025a
@@ -3982,6 +3986,7 @@ int layout activity_notifications 0x7f0b0022
 int layout activity_qr_code 0x7f0b0023
 int layout activity_qr_scanner 0x7f0b0024
 int layout activity_scanned_event_detail 0x7f0b0025
+int layout activity_view_lottery 0x7f0b008a
 int layout activity_waitlist 0x7f0b0026
 int layout attendee_item 0x7f0b0027
 int layout browse_content 0x7f0b0028
@@ -4018,6 +4023,7 @@ int layout fragment_profile 0x7f0b0046
 int layout fragment_send_notification 0x7f0b0047
 int layout ime_base_split_test_activity 0x7f0b0048
 int layout ime_secondary_split_test_activity 0x7f0b0049
+int layout lottery_item 0x7f0b008b
 int layout m3_alert_dialog 0x7f0b004a
 int layout m3_alert_dialog_actions 0x7f0b004b
 int layout m3_alert_dialog_title 0x7f0b004c
