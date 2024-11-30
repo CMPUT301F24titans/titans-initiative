@@ -10,13 +10,11 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.Firebase;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +27,7 @@ public class MyApplicationsView extends AppCompatActivity {
     private FirebaseFirestore db;
     private ListView eventList;
     private ArrayList<Event> eventsdataList;
-    private EventsArrayAdapter eventsArrayAdapter;
+    private ApplicationsArrayAdapter applicationsArrayAdapter;
     private Integer default_applicant_limit = 10000;
 
 
@@ -47,8 +45,8 @@ public class MyApplicationsView extends AppCompatActivity {
         return_button = findViewById(R.id.button_return);
         eventList = findViewById(R.id.listview_events);
         eventsdataList = new ArrayList<>();
-        eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
-        eventList.setAdapter(eventsArrayAdapter);
+        applicationsArrayAdapter = new ApplicationsArrayAdapter(this, eventsdataList);
+        eventList.setAdapter(applicationsArrayAdapter);
 
         // Retrieve applications
         retrieveApplications(applications -> {
@@ -56,7 +54,7 @@ public class MyApplicationsView extends AppCompatActivity {
                 // now applications should contain all of the user's applied events' event ids
                 Log.d("retrieveApplications","Applications: " + applications);
                 retrieveEventsById(applications);
-                eventsArrayAdapter.notifyDataSetChanged();
+                applicationsArrayAdapter.notifyDataSetChanged();
             } else {
                 Log.d("retrieveApplications","No applications retrieved.");
             }
@@ -129,14 +127,14 @@ public class MyApplicationsView extends AppCompatActivity {
                         completedCount[0]++; // Increment the counter
                         if (completedCount[0] == documentIds.size()) {
                             // Notify adapter only when all documents are fetched
-                            runOnUiThread(() -> eventsArrayAdapter.notifyDataSetChanged());
+                            runOnUiThread(() -> applicationsArrayAdapter.notifyDataSetChanged());
                         }
                     })
                     .addOnFailureListener(e -> {
                         completedCount[0]++;
                         Log.e("MyApplicationsView", "Error fetching document with ID " + docId, e);
                         if (completedCount[0] == documentIds.size()) {
-                            runOnUiThread(() -> eventsArrayAdapter.notifyDataSetChanged());
+                            runOnUiThread(() -> applicationsArrayAdapter.notifyDataSetChanged());
                         }
                     });
         }

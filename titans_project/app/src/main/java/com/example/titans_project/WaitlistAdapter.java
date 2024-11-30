@@ -55,12 +55,12 @@ public class WaitlistAdapter extends RecyclerView.Adapter<WaitlistAdapter.Waitli
 
             eventRef.update("waitlist", FieldValue.arrayRemove(attendeeMap))
                     .addOnSuccessListener(aVoid -> {
-                        eventRef.update("attendees", FieldValue.arrayUnion(attendeeMap))
+                        eventRef.update("waitlist", FieldValue.arrayUnion(attendeeMap))
                                 .addOnSuccessListener(aVoid1 -> {
                                     waitlist.remove(position);
                                     notifyItemRemoved(position);
                                     notifyItemRangeChanged(position, waitlist.size());
-                                    Toast.makeText(context, "User approved!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "User approved", Toast.LENGTH_SHORT).show();
                                 })
                                 .addOnFailureListener(e -> Toast.makeText(context, "Failed to add user to attendees.", Toast.LENGTH_SHORT).show());
                     })
@@ -80,7 +80,7 @@ public class WaitlistAdapter extends RecyclerView.Adapter<WaitlistAdapter.Waitli
                         waitlist.remove(position);
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position, waitlist.size());
-                        Toast.makeText(context, "User rejected!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "User rejected", Toast.LENGTH_SHORT).show();
                     })
                     .addOnFailureListener(e -> Toast.makeText(context, "Failed to remove user from waitlist.", Toast.LENGTH_SHORT).show());
         });

@@ -4,6 +4,8 @@ package com.example.titans_project;
 import com.google.firebase.firestore.DocumentReference;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This is a class that defines a user
@@ -264,5 +266,16 @@ public class User {
      */
     public void setEnrolled(ArrayList<String> enrolled) {
         this.enrolled = enrolled;
+    }
+
+    /**
+     * Converts user to map format (which is used to store user's in Firebase)
+     * @return
+     */
+    public Map<String, Object> toMap() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("full_name", name);
+        map.put("user_id", getUserID());
+        return map;
     }
 }

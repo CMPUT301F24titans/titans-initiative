@@ -3320,7 +3320,6 @@ int id async 0x7f08005f
 int id attendee_email 0x7f080060
 int id attendee_name 0x7f080061
 int id attendeesRecyclerView 0x7f080062
-int id author 0x7f080063
 int id auto 0x7f080064
 int id autoComplete 0x7f080065
 int id autoCompleteToEnd 0x7f080066
@@ -3354,6 +3353,7 @@ int id button_clear_full_name 0x7f080081
 int id button_clear_phone_number 0x7f080082
 int id button_create_profile 0x7f080083
 int id button_edit_profile_pic 0x7f080084
+int id button_leave_waitlist 0x7f08027a
 int id button_return 0x7f080085
 int id button_save_changes 0x7f080086
 int id button_send_notification 0x7f080087
@@ -3529,7 +3529,6 @@ int id jumpToEnd 0x7f080130
 int id jumpToStart 0x7f080131
 int id labeled 0x7f080132
 int id layout 0x7f080133
-int id leave_button 0x7f080134
 int id left 0x7f080135
 int id leftToRight 0x7f080136
 int id legacy 0x7f080137
@@ -3985,7 +3984,7 @@ int layout browser_actions_context_menu_page 0x7f0b0028
 int layout browser_actions_context_menu_row 0x7f0b0029
 int layout content_browse_events 0x7f0b002a
 int layout content_browse_profiles 0x7f0b002b
-int layout content_my_application 0x7f0b002c
+int layout content_my_applications 0x7f0b0089
 int layout content_my_events 0x7f0b002d
 int layout content_notifications 0x7f0b002e
 int layout custom_dialog 0x7f0b002f
@@ -4112,6 +4111,7 @@ int string abc_searchview_description_voice 0x7f120017
 int string abc_shareactionprovider_share_with 0x7f120018
 int string abc_shareactionprovider_share_with_application 0x7f120019
 int string abc_toolbar_collapse_description 0x7f12001a
+int string accept 0x7f120119
 int string action_settings 0x7f12001b
 int string add_poster 0x7f12001c
 int string admin_mode 0x7f12001d
@@ -4342,6 +4342,7 @@ int string phone_number 0x7f1200fd
 int string previous 0x7f1200fe
 int string profile 0x7f1200ff
 int string project_id 0x7f120100
+int string reject 0x7f12011a
 int string result_describe 0x7f120101
 int string result_title 0x7f120102
 int string return_to_homepage 0x7f120103

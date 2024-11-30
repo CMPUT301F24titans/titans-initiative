@@ -3321,7 +3321,6 @@ id async
 id attendee_email
 id attendee_name
 id attendeesRecyclerView
-id author
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -3355,6 +3354,7 @@ id button_clear_full_name
 id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
+id button_leave_waitlist
 id button_return
 id button_save_changes
 id button_send_notification
@@ -3530,7 +3530,6 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
-id leave_button
 id left
 id leftToRight
 id legacy
@@ -3986,7 +3985,7 @@ layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout content_browse_events
 layout content_browse_profiles
-layout content_my_application
+layout content_my_applications
 layout content_my_events
 layout content_notifications
 layout custom_dialog
@@ -4113,6 +4112,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accept
 string action_settings
 string add_poster
 string admin_mode
@@ -4343,6 +4343,7 @@ string phone_number
 string previous
 string profile
 string project_id
+string reject
 string result_describe
 string result_title
 string return_to_homepage
