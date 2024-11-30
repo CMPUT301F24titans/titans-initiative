@@ -36,108 +36,155 @@ public class ApplicationsArrayAdapter extends ArrayAdapter<Event> {
             convertView = LayoutInflater.from(context).inflate(R.layout.content_my_applications, parent, false);
         }
 
-        Event event = getItem(position);  // Use getItem to retrieve the event at the given position
+        Event event = getItem(position);
         TextView name = convertView.findViewById(R.id.event_name);
         Button leave_waitlist_button = convertView.findViewById(R.id.button_leave_waitlist);
 
         name.setText(event.getName());
 
-        leave_waitlist_button.setOnClickListener(new View.OnClickListener() {
-            /**
-             * User clicks leave waitlist button, remove them from waitlist
-             * @param view
-             */
-            @Override
-            public void onClick(View view) {
-                // Get the current user
-                FirebaseAuth mAuth = FirebaseAuth.getInstance();
-                String userId = mAuth.getCurrentUser().getUid();
-
-                // Get the Firestore database instance
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-                // Get the document reference for the current user's application data
-                db.collection("user").document(userId)
-                        .get()
-                        .addOnSuccessListener(documentSnapshot -> {
-                            if (documentSnapshot.exists()) {
-                                // Retrieve the current list of waitlisted events (stored in an array)
-                                ArrayList<String> waitlist = (ArrayList<String>) documentSnapshot.get("applications");
-
-                                if (waitlist != null) {
-                                    // Remove the event from the user's waitlist
-                                    String eventIdToRemove = event.getEventID();
-                                    waitlist.remove(eventIdToRemove);
-
-                                    // Update in Firebase
-                                    db.collection("user").document(userId)
-                                            .update("applications", waitlist)
-                                            .addOnSuccessListener(aVoid -> {
-                                                // Successfully removed from user’s waitlist
-
-                                                // Remove the user from the event's waitlist
-                                                db.collection("events").document(eventIdToRemove)
-                                                        .get()
-                                                        .addOnSuccessListener(eventDocument -> {
-                                                            if (eventDocument.exists()) {
-                                                                // Retrieve the event's current waitlist
-                                                                ArrayList<HashMap<String, String>> eventWaitlist =
-                                                                        (ArrayList<HashMap<String, String>>) eventDocument.get("waitlist");
-
-                                                                if (eventWaitlist != null) {
-                                                                    // Iterate over the waitlist to find the user by user_id
-                                                                    for (int i = 0; i < eventWaitlist.size(); i++) {
-                                                                        HashMap<String, String> userWaitlistEntry = eventWaitlist.get(i);
-                                                                        if (userWaitlistEntry.containsKey("user_id") &&
-                                                                                userWaitlistEntry.get("user_id").equals(userId)) {
-                                                                            // User found in the waitlist, remove them
-                                                                            eventWaitlist.remove(i);
-                                                                            break;
-                                                                        }
-                                                                    }
-
-                                                                    // Update the event document with the modified waitlist
-                                                                    db.collection("events").document(eventIdToRemove)
-                                                                            .update("waitlist", eventWaitlist)
-                                                                            .addOnSuccessListener(aVoid1 -> {
-                                                                                // Successfully updated event document
-                                                                                events.remove(event);  // Remove from the local list
-                                                                                notifyDataSetChanged();  // Update UI
-                                                                                Toast.makeText(context, "Successfully left waitlist", Toast.LENGTH_SHORT).show();
-                                                                            })
-                                                                            .addOnFailureListener(e -> {
-                                                                                // Handle failure
-                                                                                Toast.makeText(context, "Failed to update event waitlist", Toast.LENGTH_SHORT).show();
-                                                                            });
-                                                                }
-                                                            }
-                                                        })
-                                                        .addOnFailureListener(e -> {
-                                                            // Handle Firestore error for event retrieval
-                                                            Toast.makeText(context, "Failed to retrieve event data", Toast.LENGTH_SHORT).show();
-                                                        });
-                                            })
-                                            .addOnFailureListener(e -> {
-                                                // Handle failure for user document update
-                                                Toast.makeText(context, "Failed to leave waitlist", Toast.LENGTH_SHORT).show();
-                                            });
-                                }
-                            } else {
-                                // Document does not exist
-                                Toast.makeText(context, "User data not found", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(e -> {
-                            // Handle Firestore error for user document retrieval
-                            Toast.makeText(context, "Failed to retrieve user data", Toast.LENGTH_SHORT).show();
-                        });
-            }
-
-
-        });
+        leave_waitlist_button.setOnClickListener(view -> onLeaveWaitlistClick(event));
 
         return convertView;
     }
 
-}
+    /**
+     * Method that triggers when user clicks leave waitlist fro an event
+     * @param event
+     *  Event to leave the waitlist for
+     */
+    private void onLeaveWaitlistClick(Event event) {
+        // Get the current user ID
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+        // Get Firestore instance
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Retrieve user's waitlist data
+        retrieveUserWaitlist(userId, db, event);
+    }
+
+    /**
+     * Retrieves the user's waitlist from Firebase
+     * @param userId
+     *  Current user's id
+     * @param db
+     *  Firebase database
+     * @param event
+     *  Event to unlink the user from (user leaves event waitlist)
+     */
+    private void retrieveUserWaitlist(String userId, FirebaseFirestore db, Event event) {
+        db.collection("user").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        ArrayList<String> waitlist = (ArrayList<String>) documentSnapshot.get("applications");
+
+                        if (waitlist != null && waitlist.contains(event.getEventID())) {
+                            removeUserFromWaitlist(userId, db, event, waitlist);
+                        }
+                    } else {
+                        showToast("User data not found");
+                    }
+                })
+                .addOnFailureListener(e -> showToast("Failed to retrieve user data"));
+    }
+
+    /**
+     * Method to remove the USER from EVENT waitlist AND remove the EVENT from the USER applications
+     * @param userId
+     *  Current user's id
+     * @param db
+     *  Firebase database
+     * @param event
+     *  Event to unlink from user
+     * @param waitlist
+     *  The user's waitlist
+     */
+    private void removeUserFromWaitlist(String userId, FirebaseFirestore db, Event event, ArrayList<String> waitlist) {
+        // Remove the event from user's waitlist
+        waitlist.remove(event.getEventID());
+
+        db.collection("user").document(userId)
+                .update("applications", waitlist)
+                .addOnSuccessListener(aVoid -> updateEventWaitlist(userId, db, event))
+                .addOnFailureListener(e -> showToast("Failed to leave waitlist"));
+    }
+
+    /**
+     * Method to update the event waitlist
+     * @param userId
+     *  Current user's id
+     * @param db
+     *  Firebase database
+     * @param event
+     *  Event to remove user from waitlist
+     */
+    private void updateEventWaitlist(String userId, FirebaseFirestore db, Event event) {
+        db.collection("events").document(event.getEventID())
+                .get()
+                .addOnSuccessListener(eventDocument -> {
+                    if (eventDocument.exists()) {
+                        ArrayList<HashMap<String, String>> eventWaitlist =
+                                (ArrayList<HashMap<String, String>>) eventDocument.get("waitlist");
+
+                        if (eventWaitlist != null) {
+                            removeUserFromEventWaitlist(userId, eventWaitlist, db, event);
+                        }
+                    } else {
+                        showToast("Failed to retrieve event data");
+                    }
+                })
+                .addOnFailureListener(e -> showToast("Failed to retrieve event data"));
+    }
+
+    /**
+     * Method to remove the user from the event waitlist (locally first and then use local waitlist to update Firebase waitlist)
+     * @param userId
+     *  Current user's id
+     * @param eventWaitlist
+     *  The local event waitlist of the user
+     * @param db
+     *  Firebase database
+     * @param event
+     *  Event to remove user from (waitlist)
+     */
+    private void removeUserFromEventWaitlist(String userId, ArrayList<HashMap<String, String>> eventWaitlist,
+                                             FirebaseFirestore db, Event event) {
+        for (int i = 0; i < eventWaitlist.size(); i++) {
+            HashMap<String, String> userWaitlistEntry = eventWaitlist.get(i);
+            if (userWaitlistEntry.containsKey("user_id") && userWaitlistEntry.get("user_id").equals(userId)) {
+                eventWaitlist.remove(i);
+                break;
+            }
+        }
+
+        // Update the event's waitlist in Firestore
+        db.collection("events").document(event.getEventID())
+                .update("waitlist", eventWaitlist)
+                .addOnSuccessListener(aVoid -> {
+                    // Successfully updated event document
+                    removeEventLocally(event);
+                    showToast("Successfully left waitlist");
+                })
+                .addOnFailureListener(e -> showToast("Failed to update event waitlist"));
+    }
+
+    /**
+     * Method to remove the event from the local ArrayList
+     * @param event
+     *  Event to remove
+     */
+    private void removeEventLocally(Event event) {
+        events.remove(event);
+        notifyDataSetChanged();
+    }
+
+    /**
+     * ShowToast method for short duration
+     * @param message
+     *  Message to display in toast
+     */
+    private void showToast(String message) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+}
