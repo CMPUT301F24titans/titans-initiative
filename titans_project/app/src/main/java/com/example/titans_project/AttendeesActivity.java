@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This is a class that defines the AttendeesActivity
+ */
 public class AttendeesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView emptyTextView;
