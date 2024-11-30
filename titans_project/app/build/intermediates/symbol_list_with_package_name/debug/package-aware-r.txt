@@ -3544,6 +3544,8 @@ id list_item
 id listview_events
 id listview_notifications
 id locale
+id lotteryRecyclerView
+id lotteryTitle
 id lottery_progress
 id lottery_status
 id ltr
@@ -3820,9 +3822,11 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userName
 id user_name
 id vertical_only
 id viewAttendeesButton
+id viewLotteryButton
 id viewWaitlistButton
 id view_offset_helper
 id view_transition
@@ -3984,6 +3988,7 @@ layout activity_notifications
 layout activity_qr_code
 layout activity_qr_scanner
 layout activity_scanned_event_detail
+layout activity_view_lottery
 layout activity_waitlist
 layout attendee_item
 layout browse_content
@@ -4020,6 +4025,7 @@ layout fragment_profile
 layout fragment_send_notification
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout lottery_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
