@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -37,6 +38,8 @@ public class WaitlistActivity extends AppCompatActivity {
         ImageButton sendNotification = findViewById(R.id.buttonSendNotification);
         Button generateLottery = findViewById(R.id.buttonGenerateLottery);
 
+        EditText lotterySize = findViewById(R.id.editTextLotterySize);
+
         waitlistRecyclerView = findViewById(R.id.waitlistRecyclerView);
         waitlistRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -58,14 +61,25 @@ public class WaitlistActivity extends AppCompatActivity {
         findViewById(R.id.returnButton).setOnClickListener(v -> finish());
 
         // User clicks generate lottery button
-        findViewById(R.id.buttonGenerateLottery).setOnClickListener(v -> {
-            generate_lottery.setClass(WaitlistActivity.this, LotteryActivity.class);
-            generate_lottery.putExtra("eventID", eventID);
-            startActivity(generate_lottery);
+        generateLottery.setOnClickListener(v -> {
+
+            if (lotterySize.getText().toString().isEmpty()) {
+                lotterySize.setError("Lottery size required");
+                Toast.makeText(WaitlistActivity.this,
+                        "Please enter a lottery size",
+                        Toast.LENGTH_SHORT).show();
+            }
+            else {
+                db.collection("events").document(eventID).update("lotterySize", Integer.parseInt(lotterySize.getText().toString()));
+                generate_lottery.setClass(WaitlistActivity.this, LotteryActivity.class);
+                generate_lottery.putExtra("eventID", eventID);
+                generate_lottery.putExtra("lotterySize", Integer.parseInt(lotterySize.getText().toString()));
+                startActivity(generate_lottery);
+            }
         });
 
         // When sending notification, get the selected users
-        findViewById(R.id.buttonSendNotification).setOnClickListener(v -> {
+        sendNotification.setOnClickListener(v -> {
             send_notification.setClass(WaitlistActivity.this, SendNotification.class);
             // Retrieve list of attendees' user ids to send to next activity
             ArrayList<String> waitlist_ids = new ArrayList<>();

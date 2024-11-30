@@ -21,6 +21,7 @@ public class Event {
     private String organizer_id;
     private String picture;
     private Integer applicant_limit;
+    private Integer lottery_size;
     private List<Map<String, String>> attendees;
     private List<Map<String, String>> waitlist;
     private List<Map<String, String>> lottery;
@@ -61,6 +62,7 @@ public class Event {
         this.waitlist = new ArrayList<>();
         this.lottery = new ArrayList<>();
         this.cancelled = new ArrayList<>();
+        this.lottery_size = null;
     }
 
     public void default_event(){
@@ -77,6 +79,7 @@ public class Event {
         this.waitlist = new ArrayList<>();
         this.lottery = new ArrayList<>();
         this.cancelled = new ArrayList<>();
+        this.lottery_size = null;
     }
 
     /**
@@ -286,6 +289,12 @@ public class Event {
 
     public void setCancelled(List<Map<String, String>> cancelled) {
         this.cancelled = cancelled;
+    }
+
+    public Integer getLotterySize(){ return lottery_size; }
+
+    public void setLotterySize(Integer lottery_size) {
+        this.lottery_size = lottery_size;
     }
 
     /**

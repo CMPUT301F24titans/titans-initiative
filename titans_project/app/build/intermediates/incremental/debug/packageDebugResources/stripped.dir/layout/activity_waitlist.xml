@@ -91,9 +91,11 @@
             android:layout_gravity="center_vertical"/>
 
         <EditText
+            android:id="@+id/editTextLotterySize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint=""
+            android:inputType="number"
             android:layout_weight="1"
             android:textSize="14sp"
             android:layout_gravity="center_vertical" />

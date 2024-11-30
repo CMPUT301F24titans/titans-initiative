@@ -3442,6 +3442,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextLotterySize
 id edit_description
 id edit_query
 id edit_text_email

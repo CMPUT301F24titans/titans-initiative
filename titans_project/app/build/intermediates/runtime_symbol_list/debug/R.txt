@@ -3441,6 +3441,7 @@ int id easeInOut 0x7f0800d8
 int id easeOut 0x7f0800d9
 int id east 0x7f0800da
 int id edge 0x7f0800db
+int id editTextLotterySize 0x7f08027b
 int id edit_description 0x7f0800dc
 int id edit_query 0x7f0800dd
 int id edit_text_email 0x7f0800de
