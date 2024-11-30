@@ -3442,6 +3442,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextLotterySize
 id edit_description
 id edit_query
 id edit_text_email
@@ -4233,6 +4234,7 @@ string library_zxingandroidembedded_libraryWebsite
 string library_zxingandroidembedded_licenseId
 string library_zxingandroidembedded_repositoryLink
 string limit_of_applicants
+string lottery_size
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular

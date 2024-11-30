@@ -22,6 +22,7 @@ public class LotteryActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
     private String eventID;
+    private Integer lotterySize;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class LotteryActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
         eventID = getIntent().getStringExtra("eventID");
+        lotterySize = getIntent().getIntExtra("lotterySize", 0);
 
         // check for non-null or empty eventID
         if (eventID == null || eventID.isEmpty()) {
@@ -58,13 +60,12 @@ public class LotteryActivity extends AppCompatActivity {
 
             // Validate waitlist and applicant limit
             List<Map<String, String>> waitlist = event.getWaitlist();
-            Integer applicantLimit = event.getApplicantLimit();
             if (waitlist == null || waitlist.isEmpty()) {
                 Toast.makeText(this, "Waitlist is empty. No lottery needed.", Toast.LENGTH_SHORT).show();
                 finish();
                 return;
             }
-            if (applicantLimit == null || waitlist.size() <= applicantLimit) {
+            if (lotterySize == null || waitlist.size() <= lotterySize) {
                 Toast.makeText(this, "Applicants are fewer than or equal to the limit. No lottery needed.", Toast.LENGTH_SHORT).show();
                 finish();
                 return;
@@ -73,7 +74,7 @@ public class LotteryActivity extends AppCompatActivity {
             // Shuffle and select applicants
             List<Map<String, String>> selectedLottery = new ArrayList<>();
             Collections.shuffle(waitlist);
-            for (int i = 0; i < applicantLimit; i++) {
+            for (int i = 0; i < lotterySize; i++) {
                 selectedLottery.add(waitlist.get(i));
             }
 

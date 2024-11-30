@@ -57,6 +57,7 @@ id date
 id dateOfEventHeader
 id deleteEventTitle
 id description
+id editTextLotterySize
 id edit_description
 id edit_text_email
 id edit_text_facility
@@ -204,6 +205,7 @@ string insert_description
 string insert_notification_title
 string leave_waitlist
 string limit_of_applicants
+string lottery_size
 string my_application_title
 string my_applications
 string my_created_events
