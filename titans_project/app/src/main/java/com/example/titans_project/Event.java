@@ -22,6 +22,8 @@ public class Event {
     private Integer default_applicant_limit = 10000;
     private List<Map<String, String>> attendees;
     private List<Map<String, String>> waitlist;
+    private List<Map<String, String>> lottery;
+    private List<Map<String, String>> cancelled;
 
     /**
      * This initial the class Event
@@ -49,7 +51,10 @@ public class Event {
         this.applicant_limit = default_applicant_limit;
         this.attendees = new ArrayList<>();
         this.organizer_id = organizer_id;
+        this.attendees = new ArrayList<>();
         this.waitlist = new ArrayList<>();
+        this.lottery = new ArrayList<>();
+        this.cancelled = new ArrayList<>();
     }
 
     /**
@@ -77,6 +82,8 @@ public class Event {
         this.organizer_id = organizer_id;
         this.attendees = new ArrayList<>();
         this.waitlist = new ArrayList<>();
+        this.lottery = new ArrayList<>();
+        this.cancelled = new ArrayList<>();
     }
 
     /**
@@ -107,10 +114,11 @@ public class Event {
         this.picture = picture;
         this.event_id = event_id;
         this.applicant_limit = applicantLimit;
-        this.attendees = new ArrayList<>();
         this.organizer_id = organizer_id;
+        this.attendees = new ArrayList<>();
         this.waitlist = new ArrayList<>();
-
+        this.lottery = new ArrayList<>();
+        this.cancelled = new ArrayList<>();
     }
 
     /**
@@ -142,6 +150,8 @@ public class Event {
         this.organizer_id = organizer_id;
         this.attendees = new ArrayList<>();
         this.waitlist = new ArrayList<>();
+        this.lottery = new ArrayList<>();
+        this.cancelled = new ArrayList<>();
     }
 
     /**
@@ -331,6 +341,23 @@ public class Event {
     public void setWaitlist(List<Map<String, String>> waitlist) {
         this.waitlist = waitlist;
     }
+
+    public List<Map<String, String>> getLottery() {
+        return lottery;
+    }
+
+    public void setLottery(List<Map<String, String>> lottery) {
+        this.lottery = lottery;
+    }
+
+    public List<Map<String, String>> getCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(List<Map<String, String>> cancelled) {
+        this.cancelled = cancelled;
+    }
+
     /**
      * Evaluates whether the current event is a valid event
      * @return
