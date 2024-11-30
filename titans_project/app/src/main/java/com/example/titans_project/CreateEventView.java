@@ -142,7 +142,9 @@ public class CreateEventView extends AppCompatActivity {
                     applicantLimitInput = Integer.parseInt(applicantLimitString);
                 }
 
-                uploadImage(uri);
+                if (uri != null) {
+                    uploadImage(uri);
+                }
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     event.setName(eventNameInput);

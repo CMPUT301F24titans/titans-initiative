@@ -18,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -93,6 +95,7 @@ public class EventDetailView extends AppCompatActivity {
             viewWaitlistButton.setVisibility(View.GONE);
             viewAttendeeButton.setVisibility(View.GONE);
         }
+
         // organizer viewing their own event
         else if ("organizer".equals(user_type)) {
             apply_button.setText("Edit Event");

@@ -3321,7 +3321,6 @@ id async
 id attendee_email
 id attendee_name
 id attendeesRecyclerView
-id author
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -3355,6 +3354,7 @@ id button_clear_full_name
 id button_clear_phone_number
 id button_create_profile
 id button_edit_profile_pic
+id button_leave_waitlist
 id button_return
 id button_save_changes
 id button_send_notification
@@ -3530,7 +3530,6 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
-id leave_button
 id left
 id leftToRight
 id legacy
@@ -3543,6 +3542,8 @@ id list_item
 id listview_events
 id listview_notifications
 id locale
+id lottery_progress
+id lottery_status
 id ltr
 id m3_side_sheet
 id marquee
@@ -3976,6 +3977,7 @@ layout activity_create_event
 layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
+layout activity_lottery
 layout activity_notifications
 layout activity_qr_code
 layout activity_qr_scanner
@@ -3987,7 +3989,7 @@ layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout content_browse_events
 layout content_browse_profiles
-layout content_my_application
+layout content_my_applications
 layout content_my_events
 layout content_notifications
 layout custom_dialog
@@ -4114,6 +4116,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accept
 string action_settings
 string add_poster
 string admin_mode
@@ -4330,10 +4333,12 @@ string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string next
 string no_button
+string notification
 string notification_title
 string notifications
 string notifications_0
 string optional
+string organized_by_user
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4343,6 +4348,8 @@ string phone_number
 string previous
 string profile
 string project_id
+string reject
+string remove_poster
 string result_describe
 string result_title
 string return_to_homepage

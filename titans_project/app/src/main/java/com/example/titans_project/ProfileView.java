@@ -44,7 +44,7 @@ public class ProfileView extends AppCompatActivity {
     private Boolean adminView = false;
     private StorageReference storageReference;
     private Integer image_code=1;
-    private Uri uri;
+    private Uri uri = null;
 
 
     @Override
@@ -63,7 +63,6 @@ public class ProfileView extends AppCompatActivity {
 
 
         EdgeToEdge.enable(this);
-
 
         Button return_button = findViewById(R.id.button_return);
         EditText name = findViewById(R.id.edit_text_full_name);
@@ -105,7 +104,6 @@ public class ProfileView extends AppCompatActivity {
                                 // Generate initials of user
                                 initials.setText(getInitials(name.getText().toString()));
                                 notifications.setChecked(document.getBoolean("notifications"));
-
                             });
                         } else {
                             Log.d("Firestore", "No document found");
@@ -149,7 +147,7 @@ public class ProfileView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // button removes profile pics for admin users
-                if (adminView ){
+                if (adminView){
                     if (profileId != null){
                         db.collection("user").document(profileId).update("profile_pic", null);  // update in firebase
                     }
@@ -258,13 +256,11 @@ public class ProfileView extends AppCompatActivity {
                     String emailInput = email.getText().toString().trim();
                     String phoneInput = phone_number.getText().toString().trim();
                     String facilityInput = facility.getText().toString().trim();
-
                     // Validate email
                     if (!emailInput.isEmpty() && !emailInput.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {  // regex to validate email
                         email.setError("Please enter a valid email address");
                         return; // Don't proceed with the update if validation fails
                     }
-
                     // Validate phone number
                     if (!phoneInput.isEmpty() && !phoneInput.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}")) {
                         phone_number.setError("Please enter a valid phone number");
@@ -324,14 +320,12 @@ public class ProfileView extends AppCompatActivity {
         // Split the string by spaces to separate each word
         String[] words = full_name.trim().split("\\s+");  // handles multiple spaces
         StringBuilder initials = new StringBuilder();
-
         for (String word : words) {
             if (!word.isEmpty()) {
                 // Take the first character of each word and convert it to uppercase
                 initials.append(Character.toUpperCase(word.charAt(0)));
             }
         }
-
         return initials.toString();
     }
 

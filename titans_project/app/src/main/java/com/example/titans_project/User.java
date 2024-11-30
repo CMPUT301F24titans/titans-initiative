@@ -4,6 +4,8 @@ package com.example.titans_project;
 import com.google.firebase.firestore.DocumentReference;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This is a class that defines a user
@@ -18,6 +20,9 @@ public class User {
     private String user_id;
     private String profile_pic;
     private ArrayList<Notification> pendingNotifications;
+    private ArrayList<String> applications;
+    private ArrayList<String> accepted;
+    private ArrayList<String> enrolled;
 
     /**
      * This creates a user object if ALL of name, email, phone number, facility, notifications, and profile pic are provided
@@ -45,6 +50,9 @@ public class User {
         this.user_id = user_id;
         this.profile_pic = profile_pic;
         this.pendingNotifications = new ArrayList<>();
+        this.applications = new ArrayList<>();
+        this.accepted = new ArrayList<>();
+        this.enrolled = new ArrayList<>();
     }
 
     /**
@@ -182,4 +190,62 @@ public class User {
         return false;
     }
 
+    /**
+     * Gets all of the user's currently applied events
+     * @return
+     *  Returns the event ids for events the user has applied for
+     */
+    public ArrayList<String> getApplications(){ return applications; }
+
+    /**
+     * Sets a new value to applications
+     * @param applications
+     *  The new ArrayList to assign to applications
+     */
+    public void setApplications(ArrayList<String> applications) {
+        this.applications = applications;
+    }
+
+    /**
+     * Gets all of the event ids for the events the user has won the lottery (but not accepted/declined)
+     * @return
+     *  Returns the event ids for events the user won lottery for
+     */
+    public ArrayList<String> getAccepted(){ return accepted; }
+
+    /**
+     * Sets a new value to accepted
+     * @param accepted
+     *  The new ArrayList to assign to accepted
+     */
+    public void setAccepted(ArrayList<String> accepted) {
+        this.accepted = accepted;
+    }
+
+    /**
+     * Gets all of the events the user has enrolled in
+     * @return
+     *  Returns the event ids for events the user has enrolled in
+     */
+    public ArrayList<String> getEnrolled(){ return enrolled; }
+
+    /**
+     * Sets a new value to enrolled
+     * @param enrolled
+     *  The new ArrayList to assign to enrolled
+     */
+    public void setEnrolled(ArrayList<String> enrolled) {
+        this.enrolled = enrolled;
+    }
+
+    /**
+     * Converts user to map format (which is used to store user's in Firebase)
+     * @return
+     */
+    public Map<String, Object> toMap() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("full_name", name);
+        map.put("user_id", getUserID());
+        return map;
+    }
 }
