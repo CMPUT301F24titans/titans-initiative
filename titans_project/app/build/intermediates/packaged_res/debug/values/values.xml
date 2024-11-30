@@ -58,6 +58,7 @@
     <string name="insert_notification_title">Insert Notification Title</string>
     <string name="leave_waitlist">Leave Waitlist</string>
     <string name="limit_of_applicants">Number Limit of Applicants</string>
+    <string name="lottery_size">Lottery Size: </string>
     <string name="my_application_title">My Application</string>
     <string name="my_applications">Applications</string>
     <string name="my_created_events">My Created Events</string>

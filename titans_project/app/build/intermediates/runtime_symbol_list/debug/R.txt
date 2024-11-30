@@ -3441,6 +3441,7 @@ int id easeInOut 0x7f0800d8
 int id easeOut 0x7f0800d9
 int id east 0x7f0800da
 int id edge 0x7f0800db
+int id editTextLotterySize 0x7f08027b
 int id edit_description 0x7f0800dc
 int id edit_query 0x7f0800dd
 int id edit_text_email 0x7f0800de
@@ -4226,6 +4227,7 @@ int string library_zxingandroidembedded_libraryWebsite 0x7f120085
 int string library_zxingandroidembedded_licenseId 0x7f120086
 int string library_zxingandroidembedded_repositoryLink 0x7f120087
 int string limit_of_applicants 0x7f120088
+int string lottery_size 0x7f12011e
 int string m3_exceed_max_badge_text_suffix 0x7f120089
 int string m3_ref_typeface_brand_medium 0x7f12008a
 int string m3_ref_typeface_brand_regular 0x7f12008b
