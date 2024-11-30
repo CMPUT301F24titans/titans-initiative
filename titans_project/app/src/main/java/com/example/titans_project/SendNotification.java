@@ -79,14 +79,33 @@ public class SendNotification extends AppCompatActivity{
                     Map<String, Object> notification_map = notification.toMap();
 
                     for (String user_id : waitlist) {
-                        Log.d("SendNotification", "Sending notification to user: " + user_id);
-                        db.collection("user").document(user_id)
-                                .update("notification_list", FieldValue.arrayUnion(notification_map))
-                                .addOnSuccessListener(aVoid -> runOnUiThread(() -> {
-                                }))
-                                .addOnFailureListener(e -> runOnUiThread(() -> {
-                                    Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
-                                }));
+                        Log.d("SendNotification", "Checking notification preference for user: " + user_id);
+
+                        db.collection("user").document(user_id).get()
+                                .addOnSuccessListener(documentSnapshot -> {
+                                    if (documentSnapshot.exists()) {
+                                        Boolean notificationsEnabled = documentSnapshot.getBoolean("notifications");
+
+                                        if (notificationsEnabled != null && notificationsEnabled) {
+                                            // Notifications are enabled, update the notification_list field
+                                            db.collection("user").document(user_id)
+                                                    .update("notification_list", FieldValue.arrayUnion(notification_map))
+                                                    .addOnSuccessListener(aVoid -> {
+                                                        Log.d("SendNotification", "Notification sent to user: " + user_id);
+                                                    })
+                                                    .addOnFailureListener(e -> {
+                                                        Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
+                                                    });
+                                        } else {
+                                            Log.d("SendNotification", "Notifications are disabled for user: " + user_id);
+                                        }
+                                    } else {
+                                        Log.w("SendNotification", "User document not found: " + user_id);
+                                    }
+                                })
+                                .addOnFailureListener(e -> {
+                                    Log.e("SendNotification", "Error fetching Firestore document for user: " + user_id, e);
+                                });
                     }
                     Toast.makeText(SendNotification.this, "Sent notification", Toast.LENGTH_SHORT).show();
                     finish(); // Close the activity after updates
@@ -95,7 +114,6 @@ public class SendNotification extends AppCompatActivity{
                 }
             }
         });
-
 
     }
 }
