@@ -75,6 +75,7 @@ public class SendNotification extends AppCompatActivity{
                     String date = LocalDate.now().toString();
 
                     Notification notification = new Notification(title, description, date);
+
                     Map<String, Object> notification_map = notification.toMap();
 
                     for (String user_id : waitlist) {
@@ -91,6 +92,13 @@ public class SendNotification extends AppCompatActivity{
 
     }
 
+    /**
+     * Method for sending notifications to user
+     * @param user_id
+     *  User ID of user to send the notification to
+     * @param notification_map
+     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     */
     private void sendNotificationToUser(String user_id, Map<String, Object> notification_map) {
         Log.d("SendNotification", "Checking notification preference for user: " + user_id);
 
@@ -112,6 +120,13 @@ public class SendNotification extends AppCompatActivity{
                 });
     }
 
+    /**
+     * Method to update (add notification) to user in Firebase
+     * @param user_id
+     *  User ID of user to add notification to in Firebase
+     * @param notification_map
+     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     */
     private void updateUserNotificationList(String user_id, Map<String, Object> notification_map) {
         db.collection("user").document(user_id)
                 .update("notification_list", FieldValue.arrayUnion(notification_map))
