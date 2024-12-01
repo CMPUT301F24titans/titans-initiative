@@ -32,7 +32,7 @@
             android:id="@+id/rejectButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel"
+            android:text="Reject"
             android:backgroundTint="@color/red"
             android:textColor="@android:color/white" />
 

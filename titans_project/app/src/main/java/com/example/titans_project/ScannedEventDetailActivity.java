@@ -1,12 +1,19 @@
 package com.example.titans_project;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,7 +32,7 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private  Button return_button, applyButton;
-
+    private LocationManager locationManager;
 
     /**
      * Called when activity starts, create all activity objects here
@@ -47,6 +54,9 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        // Geolocation stuff
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
         if (eventID != null) {
             loadEventDetails(eventID);
         } else {
@@ -54,7 +64,10 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
             finish();
         }
 
-        applyButton.setOnClickListener(v -> applyToEvent());
+        applyButton.setOnClickListener(v -> {
+            applyToEvent();
+            getOneTimeLocation();
+        });
 
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +145,42 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
             });
         } else {
             Toast.makeText(this, "You need to log in to apply.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void getOneTimeLocation() {
+        // Check for permissions (you should handle this appropriately in your app)
+        try {
+            // Request the location update using GPS or Network Provider
+            locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+                    // Use the location here
+                    HashMap<String, Double> locationCoordinates = new HashMap<String, Double>();
+                    locationCoordinates.put("latitude", location.getLatitude());
+                    locationCoordinates.put("longitude", location.getLongitude());
+                    // add latitude and longitude values into Firebase
+                    db.collection("events").document(eventID).update("locations", FieldValue.arrayUnion(locationCoordinates));
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+                    // Handle status change if needed
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+                    // Handle provider enabled if needed
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+                    // Handle provider disabled if needed
+                }
+            }, null);
+        } catch (SecurityException e) {
+            // Handle permission exception
+            Toast.makeText(this, "Permission issue: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 }
