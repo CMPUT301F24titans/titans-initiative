@@ -6,8 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +21,7 @@ import java.lang.String;
 
 public final class FragmentEventDetailsBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final Button buttonApply;
@@ -30,6 +31,9 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
 
   @NonNull
   public final CheckBox checkboxGeolocation;
+
+  @NonNull
+  public final ImageButton dropdownMenu;
 
   @NonNull
   public final TextView eventApplicantLimit;
@@ -49,39 +53,27 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
   @NonNull
   public final ImageView profilePic;
 
-  @NonNull
-  public final Button viewAttendeesButton;
-
-  @NonNull
-  public final Button viewLotteryButton;
-
-  @NonNull
-  public final Button viewWaitlistButton;
-
-  private FragmentEventDetailsBinding(@NonNull RelativeLayout rootView, @NonNull Button buttonApply,
+  private FragmentEventDetailsBinding(@NonNull LinearLayout rootView, @NonNull Button buttonApply,
       @NonNull Button buttonReturn, @NonNull CheckBox checkboxGeolocation,
-      @NonNull TextView eventApplicantLimit, @NonNull TextView eventDate,
-      @NonNull TextView eventDescription, @NonNull TextView eventName, @NonNull TextView organizer,
-      @NonNull ImageView profilePic, @NonNull Button viewAttendeesButton,
-      @NonNull Button viewLotteryButton, @NonNull Button viewWaitlistButton) {
+      @NonNull ImageButton dropdownMenu, @NonNull TextView eventApplicantLimit,
+      @NonNull TextView eventDate, @NonNull TextView eventDescription, @NonNull TextView eventName,
+      @NonNull TextView organizer, @NonNull ImageView profilePic) {
     this.rootView = rootView;
     this.buttonApply = buttonApply;
     this.buttonReturn = buttonReturn;
     this.checkboxGeolocation = checkboxGeolocation;
+    this.dropdownMenu = dropdownMenu;
     this.eventApplicantLimit = eventApplicantLimit;
     this.eventDate = eventDate;
     this.eventDescription = eventDescription;
     this.eventName = eventName;
     this.organizer = organizer;
     this.profilePic = profilePic;
-    this.viewAttendeesButton = viewAttendeesButton;
-    this.viewLotteryButton = viewLotteryButton;
-    this.viewWaitlistButton = viewWaitlistButton;
   }
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -124,6 +116,12 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.dropdown_menu;
+      ImageButton dropdownMenu = ViewBindings.findChildViewById(rootView, id);
+      if (dropdownMenu == null) {
+        break missingId;
+      }
+
       id = R.id.event_applicant_limit;
       TextView eventApplicantLimit = ViewBindings.findChildViewById(rootView, id);
       if (eventApplicantLimit == null) {
@@ -160,27 +158,9 @@ public final class FragmentEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.viewAttendeesButton;
-      Button viewAttendeesButton = ViewBindings.findChildViewById(rootView, id);
-      if (viewAttendeesButton == null) {
-        break missingId;
-      }
-
-      id = R.id.viewLotteryButton;
-      Button viewLotteryButton = ViewBindings.findChildViewById(rootView, id);
-      if (viewLotteryButton == null) {
-        break missingId;
-      }
-
-      id = R.id.viewWaitlistButton;
-      Button viewWaitlistButton = ViewBindings.findChildViewById(rootView, id);
-      if (viewWaitlistButton == null) {
-        break missingId;
-      }
-
-      return new FragmentEventDetailsBinding((RelativeLayout) rootView, buttonApply, buttonReturn,
-          checkboxGeolocation, eventApplicantLimit, eventDate, eventDescription, eventName,
-          organizer, profilePic, viewAttendeesButton, viewLotteryButton, viewWaitlistButton);
+      return new FragmentEventDetailsBinding((LinearLayout) rootView, buttonApply, buttonReturn,
+          checkboxGeolocation, dropdownMenu, eventApplicantLimit, eventDate, eventDescription,
+          eventName, organizer, profilePic);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

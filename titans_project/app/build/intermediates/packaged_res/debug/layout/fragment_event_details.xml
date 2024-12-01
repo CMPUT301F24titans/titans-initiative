@@ -1,51 +1,69 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/dropdown_menu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/three_dot_menu"
+            android:scaleType="centerInside"
+            android:background="@null" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/button_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Return"
+            android:textSize="14sp"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_above="@id/button_apply"
+        android:layout_weight="1"
         android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/event_name"
-            android:paddingTop="20dp"
             android:textColor="@color/light_gray"
             android:textStyle="bold"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/event_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:weightSum="20">
-
-            <TextView
-                android:id="@+id/event_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="15"
-                android:text="@string/event_name"
-                android:textColor="@color/dark_gray"
-                android:textSize="34sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/button_return"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:backgroundTint="@color/dark_gray"
-                android:text="@string/user_return" />
-        </LinearLayout>
+            android:text="@string/event_name"
+            android:textColor="@color/dark_gray"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/organizer"
@@ -56,8 +74,7 @@
             android:textColor="@color/material_dynamic_neutral50"
             android:text="@string/organized_by_user"
             android:textStyle="bold"
-            android:textSize="14sp"
-            />
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -133,50 +150,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/viewLotteryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Lottery"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
-        android:id="@+id/viewWaitlistButton"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/button_apply"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="@color/dark_gray"
-        android:text="View Waitlist"
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/viewAttendeesButton"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/button_apply"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="@color/dark_gray"
-        android:text="View Attendee"
-        android:textColor="@android:color/white" />
-
-    <Button
         android:id="@+id/button_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/dark_gray"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        android:text="Apply"
+        android:textColor="@android:color/white" />
 
-
-</RelativeLayout>
+</LinearLayout>

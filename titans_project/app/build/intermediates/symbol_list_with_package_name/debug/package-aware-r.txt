@@ -3220,6 +3220,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable solid_color_background__blue_
 drawable test_level_drawable
+drawable three_dot_menu
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -3826,9 +3827,6 @@ id useLogo
 id userName
 id user_name
 id vertical_only
-id viewAttendeesButton
-id viewLotteryButton
-id viewWaitlistButton
 id view_accepted_events_button
 id view_offset_helper
 id view_transition
@@ -4385,6 +4383,9 @@ string user_return
 string user_type
 string view_accepted_events
 string view_attendees
+string view_cancelled
+string view_lottery
+string view_waitlist
 string won_lotteries
 string yes_button
 string zxing_app_name
