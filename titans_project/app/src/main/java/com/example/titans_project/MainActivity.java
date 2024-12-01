@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +30,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_my_events);
+        setContentView(R.layout.fragment_enrolled_events);
 
         // Initialize Firebase
         FirebaseApp.initializeApp(this);
@@ -161,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "applicantLimit is missing or null");
                         }
                         Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
+                        eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
                     }
                     eventsArrayAdapter.notifyDataSetChanged();
                 }

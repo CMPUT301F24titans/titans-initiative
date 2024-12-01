@@ -26,6 +26,7 @@ public class Event {
     private List<Map<String, String>> waitlist;
     private List<Map<String, String>> lottery;
     private List<Map<String, String>> cancelled;
+    private Boolean geolocation;
 
     public Event() {}
 
@@ -48,7 +49,7 @@ public class Event {
      * @param picture
      *  Event image
      */
-    public Event(@Nullable String event_id, @Nullable String name, @Nullable String facility_name, @Nullable String created_date, @Nullable String event_date, @Nullable String description, @Nullable String organizer_id, @Nullable String picture, @Nullable Integer applicant_limit ) {
+    public Event(@Nullable String event_id, @Nullable String name, @Nullable String facility_name, @Nullable String created_date, @Nullable String event_date, @Nullable String description, @Nullable String organizer_id, @Nullable String picture, @Nullable Integer applicant_limit, @Nullable Boolean geolocation ) {
         this.event_id = event_id;
         this.name = name;
         this.facility_name = facility_name;
@@ -63,6 +64,7 @@ public class Event {
         this.lottery = new ArrayList<>();
         this.cancelled = new ArrayList<>();
         this.lottery_size = null;
+        this.geolocation = geolocation;
     }
 
     public void default_event(){
@@ -80,6 +82,7 @@ public class Event {
         this.lottery = new ArrayList<>();
         this.cancelled = new ArrayList<>();
         this.lottery_size = null;
+        this.geolocation = null;
     }
 
     /**
@@ -295,6 +298,12 @@ public class Event {
 
     public void setLotterySize(Integer lottery_size) {
         this.lottery_size = lottery_size;
+    }
+
+    public Boolean getGeolocation() { return geolocation; }
+
+    public void setGeolocation(Boolean geolocation) {
+        this.geolocation = geolocation;
     }
 
     /**

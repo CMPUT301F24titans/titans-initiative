@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="dropdown_items">
+            <item>Waitlist</item>
+            <item>Lottery</item>
+            <item>Attendees</item>
+            <item>Cancelled</item>
+        </string-array>
+</resources>

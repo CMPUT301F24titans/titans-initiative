@@ -2,20 +2,19 @@ package com.example.titans_project;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +22,7 @@ import java.util.Map;
 public class WaitlistActivity extends AppCompatActivity {
 
     private RecyclerView waitlistRecyclerView;
-    private WaitlistAdapter waitlistAdapter;
+    private WaitlistArrayAdapter waitlistAdapter;
     private List<Attendee> waitlist;
     private FirebaseFirestore db;
     private String eventID;
@@ -33,10 +32,11 @@ public class WaitlistActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_waitlist);
+        setContentView(R.layout.fragment_waitlist);
 
         ImageButton sendNotification = findViewById(R.id.buttonSendNotification);
         Button generateLottery = findViewById(R.id.buttonGenerateLottery);
+        TextView lotterySizeTextView = findViewById(R.id.textViewLotterySize);
 
         EditText lotterySize = findViewById(R.id.editTextLotterySize);
 
@@ -47,13 +47,28 @@ public class WaitlistActivity extends AppCompatActivity {
         waitlist = new ArrayList<>();
         eventID = getIntent().getStringExtra("eventID");
 
+        // Check if lottery has already been generated for the event
+        db.collection("events").document(eventID)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Check if the generatedLottery field exists
+                        if (documentSnapshot.contains("generatedLottery")) {
+                            // Remove option to generate lottery is lottery has already been generated
+                            lotterySize.setVisibility(View.GONE);
+                            generateLottery.setVisibility(View.GONE);
+                            lotterySizeTextView.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
         if (eventID == null || eventID.isEmpty()) {
             Toast.makeText(this, "Invalid event ID", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
 
-        waitlistAdapter = new WaitlistAdapter(this, waitlist, eventID);
+        waitlistAdapter = new WaitlistArrayAdapter(this, waitlist, eventID);
         waitlistRecyclerView.setAdapter(waitlistAdapter);
 
         loadWaitlist();
@@ -65,9 +80,6 @@ public class WaitlistActivity extends AppCompatActivity {
 
             if (lotterySize.getText().toString().isEmpty()) {
                 lotterySize.setError("Lottery size required");
-                Toast.makeText(WaitlistActivity.this,
-                        "Please enter a lottery size",
-                        Toast.LENGTH_SHORT).show();
             }
             else {
                 db.collection("events").document(eventID).update("lotterySize", Integer.parseInt(lotterySize.getText().toString()));
@@ -81,14 +93,7 @@ public class WaitlistActivity extends AppCompatActivity {
         // When sending notification, get the selected users
         sendNotification.setOnClickListener(v -> {
             send_notification.setClass(WaitlistActivity.this, SendNotification.class);
-            // Retrieve list of attendees' user ids to send to next activity
-            ArrayList<String> waitlist_ids = new ArrayList<>();
-            if (waitlist != null && (!waitlist.isEmpty())) {
-                for (Attendee attendee: waitlist) {
-                    waitlist_ids.add(attendee.getUserId());
-                }
-            }
-            send_notification.putExtra("waitlist", waitlist_ids);
+            send_notification.putExtra("eventID", eventID);
             startActivity(send_notification);
         });
 

@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -46,7 +45,7 @@ public class BrowseContentView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.browse_content);
+        setContentView(R.layout.fragment_browse_content);
 
         // Initialize Firebase
         FirebaseApp.initializeApp(this);
@@ -105,7 +104,7 @@ public class BrowseContentView extends AppCompatActivity {
                                     Log.w(TAG, "applicantLimit is missing or null");
                                 }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
+                                eventDataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }

@@ -70,7 +70,7 @@ public class ApplicationsArrayAdapter extends ArrayAdapter<Event> {
     }
 
     /**
-     * Method that triggers when user clicks leave waitlist fro an event
+     * Method that triggers when user clicks leave waitlist for an event
      * @param event
      *  Event to leave the waitlist for
      */

@@ -1,15 +1,21 @@
 package com.example.titans_project;
 
+import static com.example.titans_project.R.id.dropdown_menu;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,24 +24,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
-import java.util.UUID;
 
 
 public class EventDetailView extends AppCompatActivity {
-    private Button return_button, apply_button, viewWaitlistButton, viewAttendeeButton, viewLotteryButton;
+    private Button return_button, apply_button;
     private TextView name, organizer, description, date, application_limit;
     private CheckBox geolocation;
     private String user_type, picture_name;
@@ -45,9 +45,12 @@ public class EventDetailView extends AppCompatActivity {
     Intent view_attendees = new Intent();
     Intent view_waitList = new Intent();
     Intent edit_event = new Intent();
+    Intent view_lottery = new Intent();
+    Intent view_cancelled = new Intent();
+    Intent send_notification = new Intent();
     private ImageView picture;
     private StorageReference storageReference;
-    private Event event = new Event(null, null, null, null, null, null, null, null, null);
+    private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
     /**
      * Called when activity starts, create all activity objects here
@@ -76,9 +79,7 @@ public class EventDetailView extends AppCompatActivity {
         geolocation = findViewById(R.id.checkbox_geolocation);
         return_button = findViewById(R.id.button_return);
         apply_button = findViewById(R.id.button_apply);
-        viewWaitlistButton = findViewById(R.id.viewWaitlistButton);
-        viewAttendeeButton = findViewById(R.id.viewAttendeesButton);
-        viewLotteryButton = findViewById(R.id.viewLotteryButton);
+        final ImageButton dropdown_button = findViewById(R.id.dropdown_menu);
 
         // get the user type
         user_type = getIntent().getStringExtra("viewer");
@@ -86,15 +87,13 @@ public class EventDetailView extends AppCompatActivity {
         if ("admin".equals(user_type)){
             apply_button.setText("Delete Event");  // apply button becomes delete button for admin
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
-            viewWaitlistButton.setVisibility(View.GONE);
-            viewAttendeeButton.setVisibility(View.GONE);
+            dropdown_button.setVisibility(View.GONE);
         }
         // already enrolled/applied entrant viewing
         else if ("enrolled".equals(user_type)) {
             apply_button.setVisibility(View.GONE);  // remove button for entrant users already enrolled/applied
             geolocation.setVisibility(View.GONE);  // remove geolocation option for users already enrolled/applied
-            viewWaitlistButton.setVisibility(View.GONE);
-            viewAttendeeButton.setVisibility(View.GONE);
+            dropdown_button.setVisibility(View.GONE);
         }
 
         // organizer viewing their own event
@@ -143,35 +142,54 @@ public class EventDetailView extends AppCompatActivity {
             application_limit.setText("The limit of applicants is " + eventLimit);
         }
 
-        viewLotteryButton.setOnClickListener(v -> {
-            Intent intent = new Intent(EventDetailView.this, ViewLotteryActivity.class);
-            intent.putExtra("eventID", event.getEventID());
-            startActivity(intent);
-        });
+        final PopupMenu dropDownMenu = new PopupMenu(EventDetailView.this, dropdown_button);
+        final Menu menu = dropDownMenu.getMenu();
 
-        viewWaitlistButton.setOnClickListener(new View.OnClickListener() {
-            /**
-             * User click on view wait list button, go to my wait list page
-             * @param view
-             */
+        // add your items:
+        menu.add(0, 0, 0, "View Waitlist");
+        menu.add(0, 1, 0, "View Lottery");
+        menu.add(0, 2, 0, "View Attendees");
+        menu.add(0, 3, 0, "View Cancelled Users");
+        menu.add(0, 4, 0, "Send Notification");
+
+        dropDownMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
-            public void onClick(View view) {
-                view_waitList.setClass(EventDetailView.this, WaitlistActivity.class);
-                view_waitList.putExtra("eventID", event.getEventID());
-                startActivity(view_waitList);
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case 0:
+                        view_waitList.setClass(EventDetailView.this, WaitlistActivity.class);
+                        view_waitList.putExtra("eventID", event.getEventID());
+                        startActivity(view_waitList);
+                        return true;
+                    case 1:
+                        view_lottery.setClass(EventDetailView.this, ViewLotteryActivity.class);
+                        view_lottery.putExtra("eventID", event.getEventID());
+                        startActivity(view_lottery);
+                        return true;
+                    case 2:
+                        view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
+                        view_attendees.putExtra("eventID", event.getEventID());
+                        startActivity(view_attendees);
+                        return true;
+                    case 3:
+                        view_cancelled.setClass(EventDetailView.this, CancelledEntrantsActivity.class);
+                        view_cancelled.putExtra("eventID", event.getEventID());
+                        startActivity(view_cancelled);
+                        return true;
+                    case 4:
+                        send_notification.setClass(EventDetailView.this, SendNotification.class);
+                        send_notification.putExtra("eventID", event.getEventID());
+                        startActivity(send_notification);
+                        return true;
+                }
+                return false;
             }
         });
 
-        viewAttendeeButton.setOnClickListener(new View.OnClickListener() {
-            /**
-             * User click on view attendee button, go to view attendees page
-             * @param view
-             */
+        dropdown_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                view_attendees.setClass(EventDetailView.this, AttendeesActivity.class);
-                view_attendees.putExtra("eventID", event.getEventID());
-                startActivity(view_attendees);
+            public void onClick(View v) {
+                dropDownMenu.show();
             }
         });
 

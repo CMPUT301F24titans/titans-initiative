@@ -54,4 +54,5 @@ dependencies {
     implementation ("com.google.zxing:javase:3.5.1")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("com.google.firebase:firebase-storage:20.2.1")
+    implementation ("com.google.android.gms:play-services-location:21.3.0")
 }

@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +22,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -32,7 +32,6 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.time.LocalDate;
-import java.util.Optional;
 import java.util.UUID;
 
 public class CreateEventView extends AppCompatActivity {
@@ -44,18 +43,19 @@ public class CreateEventView extends AppCompatActivity {
     private TextView title;
     private Button add_poster, return_button, submit_button, delete_poster;
     private EditText facility_name, event_name, event_date, event_details, applicant_limit;
+    private CheckBox geolocation;
     private Integer default_limit = 10000;
     private String organizer_id, user_type;
     Intent return_created = new Intent();
     private StorageReference storageReference;
     private Uri uri;
-    private Event event = new Event(null, null, null, null, null, null, null, null, null);
+    private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_event);
+        setContentView(R.layout.fragment_create_event);
 
         // Initialize storage
         storageReference = FirebaseStorage.getInstance().getReference("event image");
@@ -79,6 +79,7 @@ public class CreateEventView extends AppCompatActivity {
         event_details = findViewById(R.id.eventDetailsEdit);
         picture = findViewById(R.id.imageView);
         applicant_limit = findViewById(R.id.eventLimitEdit);
+        geolocation = findViewById(R.id.checkbox_geolocation);
 
         // Only assign value to organizer_id if the device id is found
         organizer_id = null;
@@ -165,6 +166,7 @@ public class CreateEventView extends AppCompatActivity {
                 String eventDetailsInput = event_details.getText().toString().trim();
                 String applicantLimitString = applicant_limit.getText().toString();
                 Integer applicantLimitInput;
+                Boolean geolocationInput = geolocation.isChecked();
                 // User does not enter a value -> default limit value
                 if (applicantLimitString.isEmpty()){
                     applicantLimitInput = default_limit;
@@ -186,6 +188,8 @@ public class CreateEventView extends AppCompatActivity {
                     event.setDescription(eventDetailsInput);
                     event.setOrganizerID(organizer_id);
                     event.setApplicantLimit(applicantLimitInput);
+                    event.setGeolocation(geolocationInput);
+
                 } else {
                     event = null;
                 }

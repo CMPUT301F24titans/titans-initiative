@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="dropdown_items">
+            <item>Waitlist</item>
+            <item>Lottery</item>
+            <item>Attendees</item>
+            <item>Cancelled</item>
+        </string-array>
     <color name="black">#FF000000</color>
     <color name="blue">#FF0001FF</color>
     <color name="dark_gray">#FF333333</color>
     <color name="gray">#FFA9A9A9</color>
-    <color name="green">#FF008000</color>
+    <color name="green">#31A631</color>
     <color name="light_blue">#0592FF</color>
     <color name="light_gray">#FF999999</color>
     <color name="red">#FFFF0000</color>
@@ -21,6 +27,7 @@
     <string name="apply">Apply</string>
     <string name="browse_content">Browse Content</string>
     <string name="button_for_user_s_notifications">Button for user\'s notifications</string>
+    <string name="cancelled_entrants">Cancelled Entrants</string>
     <string name="checkbox_application">I accept the terms and conditions</string>
     <string name="checkbox_notifications">Receive notifications from Organizers and Administration</string>
     <string name="clear">Clear</string>
@@ -32,10 +39,13 @@
     <string name="created_events">Created Events</string>
     <string name="date">date</string>
     <string name="date_of_event">Date of Event</string>
+    <string name="decline">Decline</string>
     <string name="delete">Delete</string>
     <string name="description">Description</string>
     <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="email">Email</string>
+    <string name="enroll">Enroll</string>
+    <string name="enrollable_events">Enrollable Events</string>
     <string name="event_date">Event Date</string>
     <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
     <string name="event_details">Event Details</string>
@@ -61,6 +71,7 @@
     <string name="lottery_size">Lottery Size: </string>
     <string name="my_application_title">My Application</string>
     <string name="my_applications">Applications</string>
+    <string name="my_attendees">My Attendees</string>
     <string name="my_created_events">My Created Events</string>
     <string name="my_events">My Events</string>
     <string name="next">Next</string>
@@ -75,8 +86,10 @@
     <string name="previous">Previous</string>
     <string name="profile">Profile</string>
     <string name="project_id" translatable="false">titans-initiative</string>
+    <string name="recipients">Recipients</string>
     <string name="reject">Reject</string>
     <string name="remove_poster">Remove Poster</string>
+    <string name="require_geolocation_from_applicants">Require Geolocation from Applicants</string>
     <string name="result_describe">Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result /</string>
     <string name="result_title">Event Result</string>
     <string name="return_to_homepage">Return to Homepage</string>
@@ -88,7 +101,12 @@
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="user_return">Return</string>
     <string name="user_type">User Type</string>
+    <string name="view_accepted_events">View Accepted Events</string>
     <string name="view_attendees">View Attendees</string>
+    <string name="view_cancelled">View Cancelled</string>
+    <string name="view_lottery">View Lottery</string>
+    <string name="view_waitlist">View Waitlist</string>
+    <string name="won_lotteries">Won Lotteries</string>
     <string name="yes_button">Yes</string>
     <style name="Base.Theme.Titans_project" parent="Theme.Material3.DayNight.NoActionBar">
         

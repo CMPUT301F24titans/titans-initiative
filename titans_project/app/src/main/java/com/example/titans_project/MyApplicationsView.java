@@ -1,5 +1,6 @@
 package com.example.titans_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +23,7 @@ import java.util.List;
  * This is a class that defines the My Applications screen
  */
 public class MyApplicationsView extends AppCompatActivity {
-    private Button return_button;
+    private Button return_button, view_accepted_events_button;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private ListView eventList;
@@ -43,6 +44,8 @@ public class MyApplicationsView extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         return_button = findViewById(R.id.button_return);
+        view_accepted_events_button = findViewById(R.id.view_accepted_events_button);
+
         eventList = findViewById(R.id.listview_events);
         eventsdataList = new ArrayList<>();
         applicationsArrayAdapter = new ApplicationsArrayAdapter(this, eventsdataList);
@@ -57,6 +60,15 @@ public class MyApplicationsView extends AppCompatActivity {
                 applicationsArrayAdapter.notifyDataSetChanged();
             } else {
                 Log.d("retrieveApplications","No applications retrieved.");
+            }
+        });
+
+        view_accepted_events_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent accepted_events = new Intent();
+                accepted_events.setClass(MyApplicationsView.this, AcceptedEventsActivity.class);
+                startActivity(accepted_events);
             }
         });
 
@@ -122,7 +134,7 @@ public class MyApplicationsView extends AppCompatActivity {
                             if (applicantLimitObj != null) {
                                 applicant_limit = ((Long) applicantLimitObj).intValue(); // Cast to Integer
                             }
-                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
+                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
                         }
                         completedCount[0]++; // Increment the counter
                         if (completedCount[0] == documentIds.size()) {
