@@ -3548,7 +3548,6 @@ id listview_events
 id listview_notifications
 id locale
 id lotteryRecyclerView
-id lotteryTitle
 id lottery_progress
 id lottery_status
 id ltr
