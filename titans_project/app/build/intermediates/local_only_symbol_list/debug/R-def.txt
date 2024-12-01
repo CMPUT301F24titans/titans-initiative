@@ -17,6 +17,7 @@ drawable ic_launcher_foreground
 drawable notification
 drawable notification_bell_red_circle_20623
 drawable solid_color_background__blue_
+drawable three_dot_menu
 id FirstFragment
 id ProfileView
 id SecondFragment
@@ -58,6 +59,7 @@ id created_events_button
 id date
 id dateOfEventHeader
 id description
+id dropdown_menu
 id editTextLotterySize
 id edit_description
 id edit_text_email
@@ -120,9 +122,6 @@ id textview_initials
 id title
 id userName
 id user_name
-id viewAttendeesButton
-id viewLotteryButton
-id viewWaitlistButton
 id view_accepted_events_button
 id waitlistRecyclerView
 id yes_button
@@ -242,6 +241,9 @@ string user_return
 string user_type
 string view_accepted_events
 string view_attendees
+string view_cancelled
+string view_lottery
+string view_waitlist
 string won_lotteries
 string yes_button
 style Base.Theme.Titans_project

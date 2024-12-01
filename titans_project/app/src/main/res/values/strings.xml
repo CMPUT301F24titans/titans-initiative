@@ -79,4 +79,7 @@
     <string name="decline">Decline</string>
     <string name="view_accepted_events">View Accepted Events</string>
     <string name="enrollable_events">Enrollable Events</string>
+    <string name="view_lottery">View Lottery</string>
+    <string name="view_waitlist">View Waitlist</string>
+    <string name="view_cancelled">View Cancelled</string>
 </resources>
