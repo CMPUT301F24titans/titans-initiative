@@ -58,6 +58,7 @@ id date
 id dateOfEventHeader
 id deleteEventTitle
 id description
+id editTextLotterySize
 id edit_description
 id edit_text_email
 id edit_text_facility
@@ -85,6 +86,8 @@ id geolocationCheckBox
 id imageView
 id listview_events
 id listview_notifications
+id lotteryRecyclerView
+id lotteryTitle
 id lottery_progress
 id lottery_status
 id nameTextView
@@ -115,8 +118,10 @@ id submitButton
 id textView2
 id textview_initials
 id title
+id userName
 id user_name
 id viewAttendeesButton
+id viewLotteryButton
 id viewWaitlistButton
 id waitlistRecyclerView
 id yesButton
@@ -131,6 +136,7 @@ layout activity_notifications
 layout activity_qr_code
 layout activity_qr_scanner
 layout activity_scanned_event_detail
+layout activity_view_lottery
 layout activity_waitlist
 layout attendee_item
 layout browse_content
@@ -147,6 +153,7 @@ layout fragment_my_events
 layout fragment_notification_details
 layout fragment_profile
 layout fragment_send_notification
+layout lottery_item
 layout waitlist_item
 menu menu_main
 mipmap ic_launcher
@@ -199,6 +206,7 @@ string insert_description
 string insert_notification_title
 string leave_waitlist
 string limit_of_applicants
+string lottery_size
 string my_application_title
 string my_applications
 string my_created_events
