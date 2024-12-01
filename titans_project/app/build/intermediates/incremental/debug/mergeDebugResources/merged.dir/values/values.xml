@@ -2105,6 +2105,7 @@
     <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="email">Email</string>
     <string name="enroll">Enroll</string>
+    <string name="enrollable_events">Enrollable Events</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
   </string>

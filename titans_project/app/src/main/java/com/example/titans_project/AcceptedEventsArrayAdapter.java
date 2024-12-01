@@ -49,7 +49,7 @@ public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.content_accepted_events, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.content_enrollable_events, parent, false);
         }
 
         Event event = getItem(position);

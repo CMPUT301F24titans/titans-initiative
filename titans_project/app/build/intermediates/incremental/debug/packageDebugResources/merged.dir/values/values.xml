@@ -38,6 +38,7 @@
     <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="email">Email</string>
     <string name="enroll">Enroll</string>
+    <string name="enrollable_events">Enrollable Events</string>
     <string name="event_date">Event Date</string>
     <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
     <string name="event_details">Event Details</string>

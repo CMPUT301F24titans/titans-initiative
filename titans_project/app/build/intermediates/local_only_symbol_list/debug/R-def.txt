@@ -130,12 +130,12 @@ id view_accepted_events_button
 id waitlistRecyclerView
 id yesButton
 id yes_button
-layout activity_accepted_events
 layout activity_attendees
 layout activity_create_event
 layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
+layout activity_enrollable_events
 layout activity_lottery
 layout activity_notifications
 layout activity_qr_code
@@ -145,9 +145,9 @@ layout activity_view_lottery
 layout activity_waitlist
 layout attendee_item
 layout browse_content
-layout content_accepted_events
 layout content_browse_events
 layout content_browse_profiles
+layout content_enrollable_events
 layout content_my_applications
 layout content_my_events
 layout content_notifications
@@ -192,6 +192,7 @@ string description
 string edit_remove_profile_pic
 string email
 string enroll
+string enrollable_events
 string event_date
 string event_date_example
 string event_details

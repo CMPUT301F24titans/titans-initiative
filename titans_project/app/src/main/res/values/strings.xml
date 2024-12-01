@@ -78,4 +78,5 @@
     <string name="enroll">Enroll</string>
     <string name="decline">Decline</string>
     <string name="view_accepted_events">View Accepted Events</string>
+    <string name="enrollable_events">Enrollable Events</string>
 </resources>

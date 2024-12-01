@@ -3982,12 +3982,12 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
-int layout activity_accepted_events 0x7f0b008c
 int layout activity_attendees 0x7f0b001c
 int layout activity_create_event 0x7f0b001d
 int layout activity_created_events 0x7f0b001e
 int layout activity_delete_event 0x7f0b001f
 int layout activity_edit_event 0x7f0b0020
+int layout activity_enrollable_events 0x7f0b008e
 int layout activity_lottery 0x7f0b0021
 int layout activity_notifications 0x7f0b0022
 int layout activity_qr_code 0x7f0b0023
@@ -3999,9 +3999,9 @@ int layout attendee_item 0x7f0b0028
 int layout browse_content 0x7f0b0029
 int layout browser_actions_context_menu_page 0x7f0b002a
 int layout browser_actions_context_menu_row 0x7f0b002b
-int layout content_accepted_events 0x7f0b008d
 int layout content_browse_events 0x7f0b002c
 int layout content_browse_profiles 0x7f0b002d
+int layout content_enrollable_events 0x7f0b008f
 int layout content_my_applications 0x7f0b002e
 int layout content_my_events 0x7f0b002f
 int layout content_notifications 0x7f0b0030
@@ -4200,6 +4200,7 @@ int string dest_title 0x7f12005c
 int string edit_remove_profile_pic 0x7f12005d
 int string email 0x7f12005e
 int string enroll 0x7f120120
+int string enrollable_events 0x7f120123
 int string error_a11y_label 0x7f12005f
 int string error_icon_content_description 0x7f120060
 int string event_date 0x7f120061

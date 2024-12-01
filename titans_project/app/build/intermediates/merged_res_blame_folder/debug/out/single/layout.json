@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\layout\\activity_qr_code.xml"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-53:\\layout\\fragment_send_notification.xml",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\layout\\fragment_send_notification.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-53:\\layout\\waitlist_item.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\layout\\waitlist_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-53:\\layout\\fragment_send_notification.xml",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\layout\\fragment_send_notification.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-53:\\layout\\content_notifications.xml",
@@ -84,8 +84,8 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\layout\\activity_lottery.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/fragment_my_applications.xml",
-        "source": "com.example.titans_project.app-main-56:/layout/fragment_my_applications.xml"
+        "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/content_enrollable_events.xml",
+        "source": "com.example.titans_project.app-main-56:/layout/content_enrollable_events.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-53:\\layout\\content_my_events.xml",
@@ -106,6 +106,10 @@
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-53:\\layout\\activity_create_event.xml",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-56:\\layout\\activity_create_event.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-mergeDebugResources-53:/layout/activity_enrollable_events.xml",
+        "source": "com.example.titans_project.app-main-56:/layout/activity_enrollable_events.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-mergeDebugResources-53:\\layout\\fragment_my_applications.xml",
