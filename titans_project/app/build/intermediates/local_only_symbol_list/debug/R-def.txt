@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array dropdown_items
 color black
 color blue
 color dark_gray
@@ -60,6 +61,7 @@ id date
 id dateOfEventHeader
 id description
 id dropdown_menu
+id dropdown_recipients
 id editTextLotterySize
 id edit_description
 id edit_text_email
@@ -96,6 +98,7 @@ id nav_graph
 id no_button
 id notification_description
 id notification_icon
+id notification_recipients
 id notification_title
 id notifications_button
 id notifications_counter
@@ -227,6 +230,7 @@ string phone_number
 string previous
 string profile
 string project_id
+string recipients
 string reject
 string remove_poster
 string result_describe

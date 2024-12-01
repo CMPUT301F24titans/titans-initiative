@@ -178,6 +178,7 @@ public class EventDetailView extends AppCompatActivity {
                         return true;
                     case 4:
                         send_notification.setClass(EventDetailView.this, SendNotification.class);
+                        send_notification.putExtra("eventID", event.getEventID());
                         startActivity(send_notification);
                         return true;
                 }

@@ -85,6 +85,7 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array dropdown_items
 attr SharedValue
 attr SharedValueId
 attr action
@@ -3439,6 +3440,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id dropdown_recipients
 id easeIn
 id easeInOut
 id easeOut
@@ -3635,6 +3637,7 @@ id notification_description
 id notification_icon
 id notification_main_column
 id notification_main_column_container
+id notification_recipients
 id notification_title
 id notifications_button
 id notifications_counter
@@ -4362,6 +4365,7 @@ string phone_number
 string previous
 string profile
 string project_id
+string recipients
 string reject
 string remove_poster
 string result_describe

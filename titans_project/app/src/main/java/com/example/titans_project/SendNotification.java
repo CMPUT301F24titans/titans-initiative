@@ -4,23 +4,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SendNotification extends AppCompatActivity{
@@ -36,6 +44,8 @@ public class SendNotification extends AppCompatActivity{
         FirebaseUser user = mAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
 
+        String eventID = getIntent().getStringExtra("eventID");
+
         // Get ref to current user in Firebase
         DocumentReference userRef = db.collection("user").document(user.getUid());
 
@@ -46,6 +56,13 @@ public class SendNotification extends AppCompatActivity{
         Button sendButton = findViewById(R.id.button_send_notification);
         EditText editTitle = findViewById(R.id.edit_title);
         EditText editDescription = findViewById(R.id.edit_description);
+        Spinner dropdownSpinner = findViewById(R.id.dropdown_recipients);
+
+        // Setup the spinner
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.dropdown_items, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdownSpinner.setAdapter(adapter);
 
         // ArrayList of all user ids of users on the waitlist
         ArrayList<String> waitlist = getIntent().getStringArrayListExtra("waitlist");
@@ -69,24 +86,37 @@ public class SendNotification extends AppCompatActivity{
              */
             @Override
             public void onClick(View view) {
-                if (waitlist != null && !waitlist.isEmpty()) {
-                    String title = editTitle.getText().toString().trim();
-                    String description = editDescription.getText().toString().trim();
-                    String date = LocalDate.now().toString();
 
-                    Notification notification = new Notification(title, description, date);
+                String selectedRecipient = dropdownSpinner.getSelectedItem().toString();
 
-                    Map<String, Object> notification_map = notification.toMap();
-
-                    for (String user_id : waitlist) {
-                        sendNotificationToUser(user_id, notification_map);
-                    }
-
-                    Toast.makeText(SendNotification.this, "Sent notification", Toast.LENGTH_SHORT).show();
-                    finish(); // Close the activity after updates
-                } else {
-                    Toast.makeText(SendNotification.this, "No recipients for notification", Toast.LENGTH_SHORT).show();
+                if (eventID == null || eventID.isEmpty()) {
+                    Toast.makeText(SendNotification.this, "Invalid event ID", Toast.LENGTH_SHORT).show();
+                    finish();
+                    return;
                 }
+
+                // Create notification
+                String title = editTitle.getText().toString().trim();
+                String description = editDescription.getText().toString().trim();
+                String date = LocalDate.now().toString();
+
+                Notification notification = new Notification(title, description, date);
+
+                Map<String, Object> notification_map = notification.toMap();
+
+                getRecipients(eventID, selectedRecipient, new FirestoreCallback() {
+                    @Override
+                    public void onCallback(ArrayList<String> recipients) {
+                        // Handle the recipients list here
+                        for (String recipient : recipients) {
+                            Log.d("Recipient", recipient);
+                            sendNotificationToUser(recipient, notification_map);
+                        }
+                    }
+                });
+
+                Toast.makeText(SendNotification.this, "Sent notification", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
@@ -137,4 +167,40 @@ public class SendNotification extends AppCompatActivity{
                     Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
                 });
     }
+
+    public interface FirestoreCallback {
+        void onCallback(ArrayList<String> recipients);
+    }
+
+    private void getRecipients(String eventID, String selectedRecipient, FirestoreCallback callback) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("events").document(eventID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        // Extract the data
+                        ArrayList<HashMap<String, String>> recipientsMap =
+                                (ArrayList<HashMap<String, String>>) document.get(selectedRecipient.toLowerCase());
+                        ArrayList<String> recipients = new ArrayList<>();
+                        if (recipientsMap != null) {
+                            for (HashMap<String, String> recipient : recipientsMap) {
+                                recipients.add(recipient.get("user_id"));
+                            }
+                        }
+                        callback.onCallback(recipients);
+                    } else {
+                        Log.d("Firestore", "No such document!");
+                        callback.onCallback(new ArrayList<>()); // Return an empty list
+                    }
+                } else {
+                    Log.e("Firestore", "Error getting document: ", task.getException());
+                    callback.onCallback(new ArrayList<>()); // Return an empty list
+                }
+            }
+        });
+    }
+
 }

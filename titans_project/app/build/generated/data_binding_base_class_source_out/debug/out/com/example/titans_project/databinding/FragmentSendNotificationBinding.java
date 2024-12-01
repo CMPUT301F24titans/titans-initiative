@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,6 +29,9 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
   public final Button buttonSendNotification;
 
   @NonNull
+  public final Spinner dropdownRecipients;
+
+  @NonNull
   public final EditText editDescription;
 
   @NonNull
@@ -37,18 +41,24 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
   public final TextView notificationDescription;
 
   @NonNull
+  public final TextView notificationRecipients;
+
+  @NonNull
   public final TextView notificationTitle;
 
   private FragmentSendNotificationBinding(@NonNull LinearLayout rootView,
       @NonNull Button buttonReturn, @NonNull Button buttonSendNotification,
-      @NonNull EditText editDescription, @NonNull EditText editTitle,
-      @NonNull TextView notificationDescription, @NonNull TextView notificationTitle) {
+      @NonNull Spinner dropdownRecipients, @NonNull EditText editDescription,
+      @NonNull EditText editTitle, @NonNull TextView notificationDescription,
+      @NonNull TextView notificationRecipients, @NonNull TextView notificationTitle) {
     this.rootView = rootView;
     this.buttonReturn = buttonReturn;
     this.buttonSendNotification = buttonSendNotification;
+    this.dropdownRecipients = dropdownRecipients;
     this.editDescription = editDescription;
     this.editTitle = editTitle;
     this.notificationDescription = notificationDescription;
+    this.notificationRecipients = notificationRecipients;
     this.notificationTitle = notificationTitle;
   }
 
@@ -91,6 +101,12 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.dropdown_recipients;
+      Spinner dropdownRecipients = ViewBindings.findChildViewById(rootView, id);
+      if (dropdownRecipients == null) {
+        break missingId;
+      }
+
       id = R.id.edit_description;
       EditText editDescription = ViewBindings.findChildViewById(rootView, id);
       if (editDescription == null) {
@@ -109,6 +125,12 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.notification_recipients;
+      TextView notificationRecipients = ViewBindings.findChildViewById(rootView, id);
+      if (notificationRecipients == null) {
+        break missingId;
+      }
+
       id = R.id.notification_title;
       TextView notificationTitle = ViewBindings.findChildViewById(rootView, id);
       if (notificationTitle == null) {
@@ -116,8 +138,8 @@ public final class FragmentSendNotificationBinding implements ViewBinding {
       }
 
       return new FragmentSendNotificationBinding((LinearLayout) rootView, buttonReturn,
-          buttonSendNotification, editDescription, editTitle, notificationDescription,
-          notificationTitle);
+          buttonSendNotification, dropdownRecipients, editDescription, editTitle,
+          notificationDescription, notificationRecipients, notificationTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
