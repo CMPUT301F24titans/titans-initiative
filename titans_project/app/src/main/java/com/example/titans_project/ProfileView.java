@@ -186,7 +186,7 @@ public class ProfileView extends AppCompatActivity {
                 name.setText("");  // update locally
                 if (profileId != null) {
                     db.collection("user").document(profileId).update("full_name", "");  // update in firebase
-                    }
+                }
                 else{
                     Toast.makeText(ProfileView.this, "Failed to clear name.",
                             Toast.LENGTH_SHORT).show();

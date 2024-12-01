@@ -3353,6 +3353,7 @@ int id button_clear_facility 0x7f080080
 int id button_clear_full_name 0x7f080081
 int id button_clear_phone_number 0x7f080082
 int id button_create_profile 0x7f080083
+int id button_delete_poster 0x7f08027b
 int id button_edit_profile_pic 0x7f080084
 int id button_leave_waitlist 0x7f080085
 int id button_return 0x7f080086

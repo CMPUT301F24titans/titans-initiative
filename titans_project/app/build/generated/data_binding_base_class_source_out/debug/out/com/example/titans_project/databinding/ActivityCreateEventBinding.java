@@ -26,6 +26,9 @@ public final class ActivityCreateEventBinding implements ViewBinding {
   public final Button buttonAddPoster;
 
   @NonNull
+  public final Button buttonDeletePoster;
+
+  @NonNull
   public final Button buttonReturn;
 
   @NonNull
@@ -53,12 +56,14 @@ public final class ActivityCreateEventBinding implements ViewBinding {
   public final Button submitButton;
 
   private ActivityCreateEventBinding(@NonNull ScrollView rootView, @NonNull Button buttonAddPoster,
-      @NonNull Button buttonReturn, @NonNull EditText eventDateEdit,
-      @NonNull EditText eventDetailsEdit, @NonNull EditText eventLimitEdit,
-      @NonNull TextView eventName, @NonNull EditText eventTitleEdit, @NonNull ImageView imageView,
+      @NonNull Button buttonDeletePoster, @NonNull Button buttonReturn,
+      @NonNull EditText eventDateEdit, @NonNull EditText eventDetailsEdit,
+      @NonNull EditText eventLimitEdit, @NonNull TextView eventName,
+      @NonNull EditText eventTitleEdit, @NonNull ImageView imageView,
       @NonNull EditText organizerEdit, @NonNull Button submitButton) {
     this.rootView = rootView;
     this.buttonAddPoster = buttonAddPoster;
+    this.buttonDeletePoster = buttonDeletePoster;
     this.buttonReturn = buttonReturn;
     this.eventDateEdit = eventDateEdit;
     this.eventDetailsEdit = eventDetailsEdit;
@@ -100,6 +105,12 @@ public final class ActivityCreateEventBinding implements ViewBinding {
       id = R.id.button_add_poster;
       Button buttonAddPoster = ViewBindings.findChildViewById(rootView, id);
       if (buttonAddPoster == null) {
+        break missingId;
+      }
+
+      id = R.id.button_delete_poster;
+      Button buttonDeletePoster = ViewBindings.findChildViewById(rootView, id);
+      if (buttonDeletePoster == null) {
         break missingId;
       }
 
@@ -157,9 +168,9 @@ public final class ActivityCreateEventBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityCreateEventBinding((ScrollView) rootView, buttonAddPoster, buttonReturn,
-          eventDateEdit, eventDetailsEdit, eventLimitEdit, eventName, eventTitleEdit, imageView,
-          organizerEdit, submitButton);
+      return new ActivityCreateEventBinding((ScrollView) rootView, buttonAddPoster,
+          buttonDeletePoster, buttonReturn, eventDateEdit, eventDetailsEdit, eventLimitEdit,
+          eventName, eventTitleEdit, imageView, organizerEdit, submitButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
