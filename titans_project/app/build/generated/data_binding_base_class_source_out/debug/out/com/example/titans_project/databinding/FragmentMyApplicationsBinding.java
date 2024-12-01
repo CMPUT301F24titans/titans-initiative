@@ -30,12 +30,17 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
+  @NonNull
+  public final Button viewAcceptedEventsButton;
+
   private FragmentMyApplicationsBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button buttonReturn, @NonNull ListView listviewEvents, @NonNull TextView title) {
+      @NonNull Button buttonReturn, @NonNull ListView listviewEvents, @NonNull TextView title,
+      @NonNull Button viewAcceptedEventsButton) {
     this.rootView = rootView;
     this.buttonReturn = buttonReturn;
     this.listviewEvents = listviewEvents;
     this.title = title;
+    this.viewAcceptedEventsButton = viewAcceptedEventsButton;
   }
 
   @Override
@@ -83,8 +88,14 @@ public final class FragmentMyApplicationsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.view_accepted_events_button;
+      Button viewAcceptedEventsButton = ViewBindings.findChildViewById(rootView, id);
+      if (viewAcceptedEventsButton == null) {
+        break missingId;
+      }
+
       return new FragmentMyApplicationsBinding((RelativeLayout) rootView, buttonReturn,
-          listviewEvents, title);
+          listviewEvents, title, viewAcceptedEventsButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

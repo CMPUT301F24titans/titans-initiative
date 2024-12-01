@@ -77,4 +77,5 @@
     <string name="won_lotteries">Won Lotteries</string>
     <string name="enroll">Enroll</string>
     <string name="decline">Decline</string>
+    <string name="view_accepted_events">View Accepted Events</string>
 </resources>

@@ -42,8 +42,10 @@ id button_clear_facility
 id button_clear_full_name
 id button_clear_phone_number
 id button_create_profile
+id button_decline
 id button_delete_poster
 id button_edit_profile_pic
+id button_enroll
 id button_leave_waitlist
 id button_return
 id button_save_changes
@@ -124,9 +126,11 @@ id user_name
 id viewAttendeesButton
 id viewLotteryButton
 id viewWaitlistButton
+id view_accepted_events_button
 id waitlistRecyclerView
 id yesButton
 id yes_button
+layout activity_accepted_events
 layout activity_attendees
 layout activity_create_event
 layout activity_created_events
@@ -141,6 +145,7 @@ layout activity_view_lottery
 layout activity_waitlist
 layout attendee_item
 layout browse_content
+layout content_accepted_events
 layout content_browse_events
 layout content_browse_profiles
 layout content_my_applications
@@ -181,10 +186,12 @@ string create_profile
 string created_events
 string date
 string date_of_event
+string decline
 string delete
 string description
 string edit_remove_profile_pic
 string email
+string enroll
 string event_date
 string event_date_example
 string event_details
@@ -237,7 +244,9 @@ string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
 string user_type
+string view_accepted_events
 string view_attendees
+string won_lotteries
 string yes_button
 style Base.Theme.Titans_project
 style Theme.Titans_project

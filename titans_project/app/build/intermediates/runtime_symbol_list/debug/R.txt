@@ -3353,8 +3353,10 @@ int id button_clear_facility 0x7f080080
 int id button_clear_full_name 0x7f080081
 int id button_clear_phone_number 0x7f080082
 int id button_create_profile 0x7f080083
+int id button_decline 0x7f080282
 int id button_delete_poster 0x7f080084
 int id button_edit_profile_pic 0x7f080085
+int id button_enroll 0x7f080283
 int id button_leave_waitlist 0x7f080086
 int id button_return 0x7f080087
 int id button_save_changes 0x7f080088
@@ -3829,6 +3831,7 @@ int id vertical_only 0x7f08025b
 int id viewAttendeesButton 0x7f08025c
 int id viewLotteryButton 0x7f08025d
 int id viewWaitlistButton 0x7f08025e
+int id view_accepted_events_button 0x7f080284
 int id view_offset_helper 0x7f08025f
 int id view_transition 0x7f080260
 int id view_tree_lifecycle_owner 0x7f080261
@@ -3979,6 +3982,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_accepted_events 0x7f0b008c
 int layout activity_attendees 0x7f0b001c
 int layout activity_create_event 0x7f0b001d
 int layout activity_created_events 0x7f0b001e
@@ -3995,6 +3999,7 @@ int layout attendee_item 0x7f0b0028
 int layout browse_content 0x7f0b0029
 int layout browser_actions_context_menu_page 0x7f0b002a
 int layout browser_actions_context_menu_row 0x7f0b002b
+int layout content_accepted_events 0x7f0b008d
 int layout content_browse_events 0x7f0b002c
 int layout content_browse_profiles 0x7f0b002d
 int layout content_my_applications 0x7f0b002e
@@ -4187,12 +4192,14 @@ int string create_profile 0x7f120055
 int string created_events 0x7f120056
 int string date 0x7f120057
 int string date_of_event 0x7f120058
+int string decline 0x7f12011f
 int string define_zxingandroidembedded 0x7f120059
 int string delete 0x7f12005a
 int string description 0x7f12005b
 int string dest_title 0x7f12005c
 int string edit_remove_profile_pic 0x7f12005d
 int string email 0x7f12005e
+int string enroll 0x7f120120
 int string error_a11y_label 0x7f12005f
 int string error_icon_content_description 0x7f120060
 int string event_date 0x7f120061
@@ -4379,7 +4386,9 @@ int string there_is_no_limit_on_the_amount_of_applicants_for_this_event 0x7f1201
 int string upload_profile_pic 0x7f120116
 int string user_return 0x7f120117
 int string user_type 0x7f120118
+int string view_accepted_events 0x7f120122
 int string view_attendees 0x7f120119
+int string won_lotteries 0x7f120121
 int string yes_button 0x7f12011a
 int string zxing_app_name 0x7f12011b
 int string zxing_button_ok 0x7f12011c
