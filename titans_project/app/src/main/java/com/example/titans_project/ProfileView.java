@@ -44,7 +44,7 @@ public class ProfileView extends AppCompatActivity {
     private ImageView profile_pic;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private static final String TAG = "userDeletion";
+    private static final String TAG = "ProfileView";
     private Boolean adminView = false;
     private StorageReference storageReference;
     private Integer image_code=1;
@@ -62,6 +62,9 @@ public class ProfileView extends AppCompatActivity {
 
         // Get ref to user in Firebase
         DocumentReference userRef = db.collection("user").document(user.getUid());
+
+        Log.d(TAG, "user id: " + user.getUid());
+
         // Initialize storage
         storageReference = FirebaseStorage.getInstance().getReference("user image");
 
@@ -106,7 +109,8 @@ public class ProfileView extends AppCompatActivity {
                                 phone_number.setText(document.getString("phone_number"));
                                 facility.setText(document.getString("facility"));
                                 // profile pic not assigned value (null)
-                                if (document.getString("profile_pic") == null) {
+                                Log.d(TAG, "profile_pic: " + document.getString("profile_pic"));
+                                if (document.getString("profile_pic") == null || document.getString("profile_pic").isEmpty()) {
                                     // Generate initials of user
                                     initials.setText(getInitials(name.getText().toString()));
                                 }
@@ -400,17 +404,22 @@ public class ProfileView extends AppCompatActivity {
      * @param uri
      *  The uri of the image
      */
-    private void uploadImage(Uri uri, String uid){
+    private void uploadImage(Uri uri, String uid) {
+        if (uri == null) {
+            Log.d(TAG, "No image selected");
+            return;
+        }
         String picture_name = UUID.randomUUID().toString();
         db.collection("user").document(uid).update("profile_pic", picture_name);
-        StorageReference  reference = storageReference.child(picture_name);
+        StorageReference reference = storageReference.child(picture_name);
         reference.putFile(uri)
                 .addOnSuccessListener(taskSnapshot -> {
-                    Toast.makeText(ProfileView.this, "Image successfully upload!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileView.this, "Image successfully uploaded!", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(e -> {
-                    Toast.makeText(ProfileView.this, "There was an error while upload", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileView.this, "There was an error while uploading", Toast.LENGTH_SHORT).show();
                 });
     }
+
 
     /**
      * Retrieve image from firebase storage and display it
@@ -424,7 +433,7 @@ public class ProfileView extends AppCompatActivity {
                     Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     profile_pic.setImageBitmap(bitmap);
                 }).addOnFailureListener(e -> {
-                    Toast.makeText(ProfileView.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, e.getMessage());
                 });
     }
 }
