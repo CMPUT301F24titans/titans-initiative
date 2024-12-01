@@ -92,6 +92,7 @@ id listview_notifications
 id lotteryRecyclerView
 id lottery_progress
 id lottery_status
+id map
 id nameTextView
 id nav_graph
 id no_button
@@ -146,6 +147,7 @@ layout fragment_enrolled_events
 layout fragment_event_details
 layout fragment_final_result
 layout fragment_lottery
+layout fragment_maps
 layout fragment_my_applications
 layout fragment_notification_details
 layout fragment_notifications

@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import com.google.firebase.firestore.Exclude;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +28,7 @@ public class Event {
     private List<Map<String, String>> lottery;
     private List<Map<String, String>> cancelled;
     private Boolean geolocation;
+    private List<Map<String, Double>> locations;
 
     public Event() {}
 
@@ -65,6 +67,7 @@ public class Event {
         this.cancelled = new ArrayList<>();
         this.lottery_size = null;
         this.geolocation = geolocation;
+        this.locations = new ArrayList<>();
     }
 
     public void default_event(){
@@ -83,6 +86,7 @@ public class Event {
         this.cancelled = new ArrayList<>();
         this.lottery_size = null;
         this.geolocation = null;
+        this.locations = new ArrayList<>();
     }
 
     /**
@@ -304,6 +308,12 @@ public class Event {
 
     public void setGeolocation(Boolean geolocation) {
         this.geolocation = geolocation;
+    }
+
+    public List<Map<String, Double>> getLocations() { return locations; }
+
+    public void setLocations(List<Map<String, Double>> locations) {
+        this.locations = locations;
     }
 
     /**
