@@ -4,7 +4,6 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,25 +20,16 @@ public final class WaitlistItemBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button approveButton;
-
-  @NonNull
   public final TextView emailTextView;
 
   @NonNull
   public final TextView nameTextView;
 
-  @NonNull
-  public final Button rejectButton;
-
-  private WaitlistItemBinding(@NonNull LinearLayout rootView, @NonNull Button approveButton,
-      @NonNull TextView emailTextView, @NonNull TextView nameTextView,
-      @NonNull Button rejectButton) {
+  private WaitlistItemBinding(@NonNull LinearLayout rootView, @NonNull TextView emailTextView,
+      @NonNull TextView nameTextView) {
     this.rootView = rootView;
-    this.approveButton = approveButton;
     this.emailTextView = emailTextView;
     this.nameTextView = nameTextView;
-    this.rejectButton = rejectButton;
   }
 
   @Override
@@ -69,12 +59,6 @@ public final class WaitlistItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.approveButton;
-      Button approveButton = ViewBindings.findChildViewById(rootView, id);
-      if (approveButton == null) {
-        break missingId;
-      }
-
       id = R.id.emailTextView;
       TextView emailTextView = ViewBindings.findChildViewById(rootView, id);
       if (emailTextView == null) {
@@ -87,14 +71,7 @@ public final class WaitlistItemBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rejectButton;
-      Button rejectButton = ViewBindings.findChildViewById(rootView, id);
-      if (rejectButton == null) {
-        break missingId;
-      }
-
-      return new WaitlistItemBinding((LinearLayout) rootView, approveButton, emailTextView,
-          nameTextView, rejectButton);
+      return new WaitlistItemBinding((LinearLayout) rootView, emailTextView, nameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

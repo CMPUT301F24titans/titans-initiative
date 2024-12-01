@@ -44,46 +44,6 @@ public class WaitlistAdapter extends RecyclerView.Adapter<WaitlistAdapter.Waitli
 
         holder.nameTextView.setText(attendee.getName());
         holder.emailTextView.setText(attendee.getUserId());
-
-        holder.approveButton.setOnClickListener(v -> {
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            DocumentReference eventRef = db.collection("events").document(eventID);
-
-            Map<String, String> attendeeMap = new HashMap<>();
-            attendeeMap.put("full_name", attendee.getName());
-            attendeeMap.put("user_id", attendee.getUserId());
-
-            eventRef.update("waitlist", FieldValue.arrayRemove(attendeeMap))
-                    .addOnSuccessListener(aVoid -> {
-                        eventRef.update("waitlist", FieldValue.arrayUnion(attendeeMap))
-                                .addOnSuccessListener(aVoid1 -> {
-                                    waitlist.remove(position);
-                                    notifyItemRemoved(position);
-                                    notifyItemRangeChanged(position, waitlist.size());
-                                    Toast.makeText(context, "User approved", Toast.LENGTH_SHORT).show();
-                                })
-                                .addOnFailureListener(e -> Toast.makeText(context, "Failed to add user to attendees.", Toast.LENGTH_SHORT).show());
-                    })
-                    .addOnFailureListener(e -> Toast.makeText(context, "Failed to remove user from waitlist.", Toast.LENGTH_SHORT).show());
-        });
-
-        holder.rejectButton.setOnClickListener(v -> {
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            DocumentReference eventRef = db.collection("events").document(eventID);
-
-            Map<String, String> attendeeMap = new HashMap<>();
-            attendeeMap.put("full_name", attendee.getName());
-            attendeeMap.put("user_id", attendee.getUserId());
-
-            eventRef.update("waitlist", FieldValue.arrayRemove(attendeeMap))
-                    .addOnSuccessListener(aVoid -> {
-                        waitlist.remove(position);
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, waitlist.size());
-                        Toast.makeText(context, "User rejected", Toast.LENGTH_SHORT).show();
-                    })
-                    .addOnFailureListener(e -> Toast.makeText(context, "Failed to remove user from waitlist.", Toast.LENGTH_SHORT).show());
-        });
     }
 
     @Override
@@ -99,8 +59,6 @@ public class WaitlistAdapter extends RecyclerView.Adapter<WaitlistAdapter.Waitli
             super(itemView);
             nameTextView = itemView.findViewById(R.id.nameTextView);
             emailTextView = itemView.findViewById(R.id.emailTextView);
-            approveButton = itemView.findViewById(R.id.approveButton);
-            rejectButton = itemView.findViewById(R.id.rejectButton);
         }
     }
 }

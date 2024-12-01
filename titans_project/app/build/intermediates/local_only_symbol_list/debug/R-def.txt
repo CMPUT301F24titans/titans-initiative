@@ -26,7 +26,6 @@ id action_settings
 id admin_mode
 id application_button
 id applyButton
-id approveButton
 id attendee_email
 id attendee_name
 id attendeesRecyclerView
