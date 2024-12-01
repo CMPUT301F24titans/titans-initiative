@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -32,6 +33,9 @@ public final class FragmentCreateEventBinding implements ViewBinding {
   public final Button buttonReturn;
 
   @NonNull
+  public final CheckBox checkboxGeolocation;
+
+  @NonNull
   public final EditText eventDateEdit;
 
   @NonNull
@@ -57,14 +61,15 @@ public final class FragmentCreateEventBinding implements ViewBinding {
 
   private FragmentCreateEventBinding(@NonNull ScrollView rootView, @NonNull Button buttonAddPoster,
       @NonNull Button buttonDeletePoster, @NonNull Button buttonReturn,
-      @NonNull EditText eventDateEdit, @NonNull EditText eventDetailsEdit,
-      @NonNull EditText eventLimitEdit, @NonNull TextView eventName,
-      @NonNull EditText eventTitleEdit, @NonNull ImageView imageView,
+      @NonNull CheckBox checkboxGeolocation, @NonNull EditText eventDateEdit,
+      @NonNull EditText eventDetailsEdit, @NonNull EditText eventLimitEdit,
+      @NonNull TextView eventName, @NonNull EditText eventTitleEdit, @NonNull ImageView imageView,
       @NonNull EditText organizerEdit, @NonNull Button submitButton) {
     this.rootView = rootView;
     this.buttonAddPoster = buttonAddPoster;
     this.buttonDeletePoster = buttonDeletePoster;
     this.buttonReturn = buttonReturn;
+    this.checkboxGeolocation = checkboxGeolocation;
     this.eventDateEdit = eventDateEdit;
     this.eventDetailsEdit = eventDetailsEdit;
     this.eventLimitEdit = eventLimitEdit;
@@ -120,6 +125,12 @@ public final class FragmentCreateEventBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkbox_geolocation;
+      CheckBox checkboxGeolocation = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxGeolocation == null) {
+        break missingId;
+      }
+
       id = R.id.eventDateEdit;
       EditText eventDateEdit = ViewBindings.findChildViewById(rootView, id);
       if (eventDateEdit == null) {
@@ -169,8 +180,8 @@ public final class FragmentCreateEventBinding implements ViewBinding {
       }
 
       return new FragmentCreateEventBinding((ScrollView) rootView, buttonAddPoster,
-          buttonDeletePoster, buttonReturn, eventDateEdit, eventDetailsEdit, eventLimitEdit,
-          eventName, eventTitleEdit, imageView, organizerEdit, submitButton);
+          buttonDeletePoster, buttonReturn, checkboxGeolocation, eventDateEdit, eventDetailsEdit,
+          eventLimitEdit, eventName, eventTitleEdit, imageView, organizerEdit, submitButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

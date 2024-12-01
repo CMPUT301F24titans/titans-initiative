@@ -104,7 +104,7 @@ public class BrowseContentView extends AppCompatActivity {
                                     Log.w(TAG, "applicantLimit is missing or null");
                                 }
                                 Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                                eventDataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
+                                eventDataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
                             }
                             eventArrayAdapter.notifyDataSetChanged();
                         }
