@@ -48,6 +48,7 @@ public class EventDetailView extends AppCompatActivity {
     Intent view_lottery = new Intent();
     Intent view_cancelled = new Intent();
     Intent send_notification = new Intent();
+    Intent view_map = new Intent();
     private ImageView picture;
     private StorageReference storageReference;
     private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
@@ -151,6 +152,7 @@ public class EventDetailView extends AppCompatActivity {
         menu.add(0, 2, 0, "View Attendees");
         menu.add(0, 3, 0, "View Cancelled Users");
         menu.add(0, 4, 0, "Send Notification");
+        menu.add(0,5,0,"View Map");
 
         dropDownMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
@@ -181,6 +183,10 @@ public class EventDetailView extends AppCompatActivity {
                         send_notification.putExtra("eventID", event.getEventID());
                         startActivity(send_notification);
                         return true;
+                    case 5:
+                        view_map.setClass(EventDetailView.this, MapsActivity.class);
+                        view_map.putExtra("eventID", event.getEventID());
+                        startActivity(view_map);
                 }
                 return false;
             }

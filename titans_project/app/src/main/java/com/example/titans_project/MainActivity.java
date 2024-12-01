@@ -16,6 +16,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        GoogleApiAvailability.getInstance().makeGooglePlayServicesAvailable(this);
+
         // Get the current user
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
