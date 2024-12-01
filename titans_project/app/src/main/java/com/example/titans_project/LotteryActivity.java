@@ -34,6 +34,10 @@ public class LotteryActivity extends AppCompatActivity {
         eventID = getIntent().getStringExtra("eventID");
         lotterySize = getIntent().getIntExtra("lotterySize", 0);
 
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String documentPath = "collectionName/documentID";
+        String fieldName = "fieldToCheck";
+
         // check for non-null or empty eventID
         if (eventID == null || eventID.isEmpty()) {
             Toast.makeText(this, "Event ID not found.", Toast.LENGTH_SHORT).show();
@@ -41,6 +45,8 @@ public class LotteryActivity extends AppCompatActivity {
             return;
         }
         startLottery();
+        // mark that the event has already generated a lottery (max once allowed)
+        db.collection("events").document(eventID).update("generatedLottery", true);
     }
 
     private void startLottery() {

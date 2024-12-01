@@ -3788,6 +3788,7 @@ int id textSpacerNoTitle 0x7f080233
 int id textStart 0x7f080234
 int id textTop 0x7f080235
 int id textView2 0x7f080236
+int id textViewLotterySize 0x7f080281
 int id text_input_end_icon 0x7f080237
 int id text_input_error_icon 0x7f080238
 int id text_input_start_icon 0x7f080239

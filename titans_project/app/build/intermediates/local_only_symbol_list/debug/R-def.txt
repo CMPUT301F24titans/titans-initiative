@@ -116,6 +116,7 @@ id saveToLocalButton
 id scan_button
 id submitButton
 id textView2
+id textViewLotterySize
 id textview_initials
 id title
 id userName

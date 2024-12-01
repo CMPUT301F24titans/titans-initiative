@@ -39,6 +39,9 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   public final Button returnButton;
 
   @NonNull
+  public final TextView textViewLotterySize;
+
+  @NonNull
   public final TextView title;
 
   @NonNull
@@ -47,7 +50,7 @@ public final class ActivityWaitlistBinding implements ViewBinding {
   private ActivityWaitlistBinding(@NonNull LinearLayout rootView,
       @NonNull Button buttonGenerateLottery, @NonNull ImageButton buttonSendNotification,
       @NonNull EditText editTextLotterySize, @NonNull TextView notificationsCounter,
-      @NonNull Button returnButton, @NonNull TextView title,
+      @NonNull Button returnButton, @NonNull TextView textViewLotterySize, @NonNull TextView title,
       @NonNull RecyclerView waitlistRecyclerView) {
     this.rootView = rootView;
     this.buttonGenerateLottery = buttonGenerateLottery;
@@ -55,6 +58,7 @@ public final class ActivityWaitlistBinding implements ViewBinding {
     this.editTextLotterySize = editTextLotterySize;
     this.notificationsCounter = notificationsCounter;
     this.returnButton = returnButton;
+    this.textViewLotterySize = textViewLotterySize;
     this.title = title;
     this.waitlistRecyclerView = waitlistRecyclerView;
   }
@@ -116,6 +120,12 @@ public final class ActivityWaitlistBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textViewLotterySize;
+      TextView textViewLotterySize = ViewBindings.findChildViewById(rootView, id);
+      if (textViewLotterySize == null) {
+        break missingId;
+      }
+
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
@@ -129,8 +139,8 @@ public final class ActivityWaitlistBinding implements ViewBinding {
       }
 
       return new ActivityWaitlistBinding((LinearLayout) rootView, buttonGenerateLottery,
-          buttonSendNotification, editTextLotterySize, notificationsCounter, returnButton, title,
-          waitlistRecyclerView);
+          buttonSendNotification, editTextLotterySize, notificationsCounter, returnButton,
+          textViewLotterySize, title, waitlistRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
