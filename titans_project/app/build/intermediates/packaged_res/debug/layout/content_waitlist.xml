@@ -42,7 +42,7 @@
             android:textColor="@color/light_gray"/>
 
         <TextView
-            android:id="@+id/emailTextView"
+            android:id="@+id/userIdTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="UserID"

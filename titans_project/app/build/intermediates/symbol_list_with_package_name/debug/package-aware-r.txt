@@ -3454,7 +3454,6 @@ id edit_text_id
 id edit_text_phone_number
 id edit_title
 id elastic
-id emailTextView
 id embed
 id emptyTextView
 id end
@@ -3823,6 +3822,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userIdTextView
 id userName
 id user_name
 id vertical_only

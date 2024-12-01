@@ -3453,7 +3453,6 @@ int id edit_text_id 0x7f0800e5
 int id edit_text_phone_number 0x7f0800e6
 int id edit_title 0x7f0800e7
 int id elastic 0x7f0800e8
-int id emailTextView 0x7f0800e9
 int id embed 0x7f0800ea
 int id emptyTextView 0x7f0800eb
 int id end 0x7f0800ec
@@ -3822,6 +3821,7 @@ int id uniform 0x7f080258
 int id unlabeled 0x7f080259
 int id up 0x7f08025a
 int id useLogo 0x7f08025b
+int id userIdTextView 0x7f080290
 int id userName 0x7f08025c
 int id user_name 0x7f08025d
 int id vertical_only 0x7f08025e

@@ -22,7 +22,7 @@ import java.util.Map;
 public class WaitlistActivity extends AppCompatActivity {
 
     private RecyclerView waitlistRecyclerView;
-    private WaitlistAdapter waitlistAdapter;
+    private WaitlistArrayAdapter waitlistAdapter;
     private List<Attendee> waitlist;
     private FirebaseFirestore db;
     private String eventID;
@@ -68,7 +68,7 @@ public class WaitlistActivity extends AppCompatActivity {
             return;
         }
 
-        waitlistAdapter = new WaitlistAdapter(this, waitlist, eventID);
+        waitlistAdapter = new WaitlistArrayAdapter(this, waitlist, eventID);
         waitlistRecyclerView.setAdapter(waitlistAdapter);
 
         loadWaitlist();
@@ -93,14 +93,7 @@ public class WaitlistActivity extends AppCompatActivity {
         // When sending notification, get the selected users
         sendNotification.setOnClickListener(v -> {
             send_notification.setClass(WaitlistActivity.this, SendNotification.class);
-            // Retrieve list of attendees' user ids to send to next activity
-            ArrayList<String> waitlist_ids = new ArrayList<>();
-            if (waitlist != null && (!waitlist.isEmpty())) {
-                for (Attendee attendee: waitlist) {
-                    waitlist_ids.add(attendee.getUserId());
-                }
-            }
-            send_notification.putExtra("waitlist", waitlist_ids);
+            send_notification.putExtra("eventID", eventID);
             startActivity(send_notification);
         });
 

@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class CancelledEntrantsActivity extends AppCompatActivity {
     private RecyclerView waitlistRecyclerView;
-    private WaitlistAdapter waitlistAdapter;
+    private WaitlistArrayAdapter waitlistAdapter;
     private List<Attendee> waitlist;
     private FirebaseFirestore db;
     private String eventID;
@@ -58,7 +58,7 @@ public class CancelledEntrantsActivity extends AppCompatActivity {
             return;
         }
 
-        waitlistAdapter = new WaitlistAdapter(this, waitlist, eventID);
+        waitlistAdapter = new WaitlistArrayAdapter(this, waitlist, eventID);
         waitlistRecyclerView.setAdapter(waitlistAdapter);
 
         loadCancelledEntrants();
@@ -68,6 +68,7 @@ public class CancelledEntrantsActivity extends AppCompatActivity {
         // When sending notification, get the selected users
         sendNotification.setOnClickListener(v -> {
             send_notification.setClass(CancelledEntrantsActivity.this, SendNotification.class);
+            send_notification.putExtra("eventID", eventID);
             startActivity(send_notification);
         });
 

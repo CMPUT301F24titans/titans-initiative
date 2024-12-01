@@ -67,7 +67,6 @@ id edit_text_facility
 id edit_text_full_name
 id edit_text_phone_number
 id edit_title
-id emailTextView
 id emptyTextView
 id eventDateEdit
 id eventDateTextView
@@ -119,6 +118,7 @@ id textView2
 id textViewLotterySize
 id textview_initials
 id title
+id userIdTextView
 id userName
 id user_name
 id view_accepted_events_button
