@@ -251,6 +251,8 @@ public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
                 .addOnFailureListener(e -> showToast("Failed to decline event"));
         // add user to the cancelled list of entrants for the event
         addUserToCancelled(userId, db, event);
+        // trigger random selection of another entrant from waitlist
+        selectRandomUserFromWaitlist(db, event);
     }
 
     /**
@@ -379,6 +381,88 @@ public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
                 .addOnFailureListener(e -> {
                     Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
                 });
+    }
+
+    /**
+     * Method to randomly select a new user from waitlist and move them into lottery
+     * @param db
+     *  Firebase database
+     * @param event
+     *  Event to do the random selection on
+     */
+    private void selectRandomUserFromWaitlist(FirebaseFirestore db, Event event) {
+        db.collection("events").document(event.getEventID())
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Get the waitlist from the event
+                        ArrayList<HashMap<String, String>> waitlist =
+                                (ArrayList<HashMap<String, String>>) documentSnapshot.get("waitlist");
+
+                        if (waitlist != null && !waitlist.isEmpty()) {
+                            // Randomly select a user
+                            int randomIndex = (int) (Math.random() * waitlist.size());
+                            HashMap<String, String> selectedUser = waitlist.get(randomIndex);
+                            String newUserId = selectedUser.get("user_id");
+
+                            // Remove the user from the waitlist
+                            waitlist.remove(randomIndex);
+
+                            // Update Firestore with the new waitlist
+                            db.collection("events").document(event.getEventID())
+                                    .update("waitlist", waitlist)
+                                    .addOnSuccessListener(aVoid -> {
+                                        // Add the selected user to the lottery list
+                                        db.collection("events").document(event.getEventID())
+                                                .update("lottery", FieldValue.arrayUnion(selectedUser))
+                                                .addOnSuccessListener(aVoid2 -> {
+                                                    Log.d("ReplacementRandomSelection", "New user added to lottery");
+                                                    updateUserLists(newUserId, db, event);
+                                                })
+                                                .addOnFailureListener(e ->  Log.d("ReplacementRandomSelection", "Failed to add user to lottery"));
+                                    })
+                                    .addOnFailureListener(e -> showToast("Failed to update waitlist"));
+                        } else {
+                            Log.d("ReplacementRandomSelection", "No users in waitlist");
+                        }
+                    } else {
+                        Log.d("ReplacementRandomSelection", "Event not found");
+                    }
+                })
+                .addOnFailureListener(e -> Log.d("ReplacementRandomSelection", "Failed to retrieve event data"));
+    }
+
+
+    /**
+     * Method to update the replacement user's applications and accepted events in Firebase
+     * @param userId
+     *  New replacement user's user id
+     * @param db
+     *  Firebase database
+     * @param event
+     *  Event that did the replacement pool draw on
+     */
+    private void updateUserLists(String userId, FirebaseFirestore db, Event event) {
+        db.collection("user").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Remove the event from the user's applications list
+                        db.collection("user").document(userId)
+                                .update("applications", FieldValue.arrayRemove(event.getEventID()))
+                                .addOnSuccessListener(aVoid -> {
+                                    // Add the event to the user's accepted list
+                                    db.collection("user").document(userId)
+                                            .update("accepted", FieldValue.arrayUnion(event.getEventID()))
+                                            .addOnSuccessListener(aVoid2 -> Log.d("ReplacementRandomSelection", "User's lists updated successfully"))
+                                            .addOnFailureListener(e -> Log.d("ReplacementRandomSelection", "Failed to add event to user's accepted list"));
+                                })
+                                .addOnFailureListener(e -> Log.d("ReplacementRandomSelection", "Failed to remove event from user's applications list"));
+                    } else {
+                        Log.d("ReplacementRandomSelection", "User document not found");
+                    }
+                })
+                .addOnFailureListener(e -> Log.d("ReplacementRandomSelection", "Failed to retrieve user data"));
     }
 }
 

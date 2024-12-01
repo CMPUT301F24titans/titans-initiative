@@ -151,7 +151,7 @@ public class LotteryActivity extends AppCompatActivity {
                 for (Map<String, String> applicant : currentWaitlist) {
                     String userID = applicant.get("user_id");
                     Notification notification = new Notification(eventName,
-                            "You were not unable to join " + eventName + ".",
+                            "You were not able to join " + eventName + ".",
                             LocalDate.now().toString());
                     sendNotificationToUser(userID, notification.toMap());
                 }
