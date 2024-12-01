@@ -3354,8 +3354,10 @@ id button_clear_facility
 id button_clear_full_name
 id button_clear_phone_number
 id button_create_profile
+id button_decline
 id button_delete_poster
 id button_edit_profile_pic
+id button_enroll
 id button_leave_waitlist
 id button_return
 id button_save_changes
@@ -3789,6 +3791,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView2
+id textViewLotterySize
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3829,6 +3832,7 @@ id vertical_only
 id viewAttendeesButton
 id viewLotteryButton
 id viewWaitlistButton
+id view_accepted_events_button
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3984,6 +3988,7 @@ layout activity_create_event
 layout activity_created_events
 layout activity_delete_event
 layout activity_edit_event
+layout activity_enrollable_events
 layout activity_lottery
 layout activity_notifications
 layout activity_qr_code
@@ -3997,8 +4002,9 @@ layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout content_browse_events
 layout content_browse_profiles
+layout content_enrollable_events
+layout content_enrolled_events
 layout content_my_applications
-layout content_my_events
 layout content_notifications
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -4017,10 +4023,10 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_application_form
+layout fragment_enrolled_events
 layout fragment_event_details
 layout fragment_final_result
 layout fragment_my_applications
-layout fragment_my_events
 layout fragment_notification_details
 layout fragment_profile
 layout fragment_send_notification
@@ -4187,12 +4193,15 @@ string create_profile
 string created_events
 string date
 string date_of_event
+string decline
 string define_zxingandroidembedded
 string delete
 string description
 string dest_title
 string edit_remove_profile_pic
 string email
+string enroll
+string enrollable_events
 string error_a11y_label
 string error_icon_content_description
 string event_date
@@ -4379,7 +4388,9 @@ string there_is_no_limit_on_the_amount_of_applicants_for_this_event
 string upload_profile_pic
 string user_return
 string user_type
+string view_accepted_events
 string view_attendees
+string won_lotteries
 string yes_button
 string zxing_app_name
 string zxing_button_ok

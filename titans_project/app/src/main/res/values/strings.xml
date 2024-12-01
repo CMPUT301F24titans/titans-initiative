@@ -74,4 +74,9 @@
     <string name="notification">Notification</string>
     <string name="generate_lottery">Generate Lottery</string>
     <string name="lottery_size">Lottery Size: </string>
+    <string name="won_lotteries">Won Lotteries</string>
+    <string name="enroll">Enroll</string>
+    <string name="decline">Decline</string>
+    <string name="view_accepted_events">View Accepted Events</string>
+    <string name="enrollable_events">Enrollable Events</string>
 </resources>

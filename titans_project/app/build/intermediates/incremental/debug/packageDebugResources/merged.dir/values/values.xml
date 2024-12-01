@@ -4,7 +4,7 @@
     <color name="blue">#FF0001FF</color>
     <color name="dark_gray">#FF333333</color>
     <color name="gray">#FFA9A9A9</color>
-    <color name="green">#FF008000</color>
+    <color name="green">#31A631</color>
     <color name="light_blue">#0592FF</color>
     <color name="light_gray">#FF999999</color>
     <color name="red">#FFFF0000</color>
@@ -32,10 +32,13 @@
     <string name="created_events">Created Events</string>
     <string name="date">date</string>
     <string name="date_of_event">Date of Event</string>
+    <string name="decline">Decline</string>
     <string name="delete">Delete</string>
     <string name="description">Description</string>
     <string name="edit_remove_profile_pic">Edit Profile Pic</string>
     <string name="email">Email</string>
+    <string name="enroll">Enroll</string>
+    <string name="enrollable_events">Enrollable Events</string>
     <string name="event_date">Event Date</string>
     <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
     <string name="event_details">Event Details</string>
@@ -88,7 +91,9 @@
     <string name="upload_profile_pic">Upload Profile Pic</string>
     <string name="user_return">Return</string>
     <string name="user_type">User Type</string>
+    <string name="view_accepted_events">View Accepted Events</string>
     <string name="view_attendees">View Attendees</string>
+    <string name="won_lotteries">Won Lotteries</string>
     <string name="yes_button">Yes</string>
     <style name="Base.Theme.Titans_project" parent="Theme.Material3.DayNight.NoActionBar">
         

@@ -112,6 +112,9 @@
         <activity
             android:name="com.example.titans_project.ViewLotteryActivity"
             android:exported="true" />
+        <activity
+            android:name="com.example.titans_project.AcceptedEventsActivity"
+            android:exported="true" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

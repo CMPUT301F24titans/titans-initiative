@@ -73,6 +73,9 @@
         <activity
             android:name=".ViewLotteryActivity"
             android:exported="true" />
+        <activity
+            android:name=".AcceptedEventsActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

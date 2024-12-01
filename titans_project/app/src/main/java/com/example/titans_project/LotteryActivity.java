@@ -12,6 +12,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -33,6 +34,10 @@ public class LotteryActivity extends AppCompatActivity {
         eventID = getIntent().getStringExtra("eventID");
         lotterySize = getIntent().getIntExtra("lotterySize", 0);
 
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String documentPath = "collectionName/documentID";
+        String fieldName = "fieldToCheck";
+
         // check for non-null or empty eventID
         if (eventID == null || eventID.isEmpty()) {
             Toast.makeText(this, "Event ID not found.", Toast.LENGTH_SHORT).show();
@@ -40,6 +45,8 @@ public class LotteryActivity extends AppCompatActivity {
             return;
         }
         startLottery();
+        // mark that the event has already generated a lottery (max once allowed)
+        db.collection("events").document(eventID).update("generatedLottery", true);
     }
 
     private void startLottery() {
@@ -78,6 +85,7 @@ public class LotteryActivity extends AppCompatActivity {
                 selectedLottery.add(waitlist.get(i));
             }
 
+            String eventName = documentSnapshot.getString("name");
             // Transaction to update event and user waitlists/lotteries
             db.runTransaction(transaction -> {
                 DocumentSnapshot eventSnapshot = transaction.get(db.collection("events").document(eventID));
@@ -132,6 +140,23 @@ public class LotteryActivity extends AppCompatActivity {
                         Log.e("Lottery", "userID is null for applicant: " + applicant);
                     }
                 }
+                // Send notifications to "winners"
+                for (Map<String, String> applicant : selectedLottery) {
+                    String userID = applicant.get("user_id");
+                    Notification notification = new Notification(eventName,
+                            "Congratulations! You have been accepted to join " + eventName + ". Please sign up as soon as possible!",
+                            LocalDate.now().toString());
+
+                    sendNotificationToUser(userID, notification.toMap());
+                }
+                // Send notifications to "losers"
+                for (Map<String, String> applicant : currentWaitlist) {
+                    String userID = applicant.get("user_id");
+                    Notification notification = new Notification(eventName,
+                            "You were not unable to join " + eventName + ".",
+                            LocalDate.now().toString());
+                    sendNotificationToUser(userID, notification.toMap());
+                }
 
                 // Perform the event updates
                 transaction.update(db.collection("events").document(eventID), "waitlist", currentWaitlist);
@@ -150,5 +175,53 @@ public class LotteryActivity extends AppCompatActivity {
             Toast.makeText(this, "Failed to fetch event data.", Toast.LENGTH_SHORT).show();
             Log.e("Lottery", "Error fetching document", e);
         });
+    }
+
+
+    /**
+     * Method for sending notifications to user
+     * @param user_id
+     *  User ID of user to send the notification to
+     * @param notification_map
+     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     */
+    private void sendNotificationToUser(String user_id, Map<String, Object> notification_map) {
+        Log.d("SendNotification", "Checking notification preference for user: " + user_id);
+
+        db.collection("user").document(user_id).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        Boolean notificationsEnabled = documentSnapshot.getBoolean("notifications");
+                        if (notificationsEnabled != null && notificationsEnabled) {
+                            updateUserNotificationList(user_id, notification_map);
+                        } else {
+                            Log.d("SendNotification", "Notifications are disabled for user: " + user_id);
+                        }
+                    } else {
+                        Log.w("SendNotification", "User document not found: " + user_id);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("SendNotification", "Error fetching Firestore document for user: " + user_id, e);
+                });
+    }
+
+
+    /**
+     * Method to update (add notification) to user in Firebase
+     * @param user_id
+     *  User ID of user to add notification to in Firebase
+     * @param notification_map
+     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     */
+    private void updateUserNotificationList(String user_id, Map<String, Object> notification_map) {
+        db.collection("user").document(user_id)
+                .update("notification_list", FieldValue.arrayUnion(notification_map))
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("SendNotification", "Notification sent to user: " + user_id);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
+                });
     }
 }

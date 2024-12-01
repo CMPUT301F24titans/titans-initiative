@@ -3,9 +3,11 @@ package com.example.titans_project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -37,6 +41,7 @@ public class WaitlistActivity extends AppCompatActivity {
 
         ImageButton sendNotification = findViewById(R.id.buttonSendNotification);
         Button generateLottery = findViewById(R.id.buttonGenerateLottery);
+        TextView lotterySizeTextView = findViewById(R.id.textViewLotterySize);
 
         EditText lotterySize = findViewById(R.id.editTextLotterySize);
 
@@ -46,6 +51,21 @@ public class WaitlistActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         waitlist = new ArrayList<>();
         eventID = getIntent().getStringExtra("eventID");
+
+        // Check if lottery has already been generated for the event
+        db.collection("events").document(eventID)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Check if the generatedLottery field exists
+                        if (documentSnapshot.contains("generatedLottery")) {
+                            // Remove option to generate lottery is lottery has already been generated
+                            lotterySize.setVisibility(View.GONE);
+                            generateLottery.setVisibility(View.GONE);
+                            lotterySizeTextView.setVisibility(View.GONE);
+                        }
+                    }
+                });
 
         if (eventID == null || eventID.isEmpty()) {
             Toast.makeText(this, "Invalid event ID", Toast.LENGTH_SHORT).show();
@@ -65,9 +85,6 @@ public class WaitlistActivity extends AppCompatActivity {
 
             if (lotterySize.getText().toString().isEmpty()) {
                 lotterySize.setError("Lottery size required");
-                Toast.makeText(WaitlistActivity.this,
-                        "Please enter a lottery size",
-                        Toast.LENGTH_SHORT).show();
             }
             else {
                 db.collection("events").document(eventID).update("lotterySize", Integer.parseInt(lotterySize.getText().toString()));
