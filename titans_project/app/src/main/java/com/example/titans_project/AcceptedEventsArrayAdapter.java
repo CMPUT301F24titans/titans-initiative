@@ -1,6 +1,7 @@
 package com.example.titans_project;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -142,6 +143,44 @@ public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
     }
 
     /**
+     * Method to move the user to the cancelled list of entrants for an event in Firebase
+     * @param userId
+     *  Current user's id
+     * @param db
+     *  Firebase database
+     * @param event
+     *  Event which will have user added to cancelled list
+     */
+    private void addUserToCancelled(String userId, FirebaseFirestore db, Event event) {
+        db.collection("user").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String full_name = documentSnapshot.getString("full_name");
+                        HashMap<String, String> user = new HashMap<>();
+                        user.put("user_id", userId);
+                        user.put("full_name", full_name);
+
+                        // Update the attendees field in the event document
+                        db.collection("events").document(event.getEventID())
+                                .update("cancelled", FieldValue.arrayUnion(user))
+                                .addOnSuccessListener(aVoid -> {
+                                    Log.d("EntrantCancelled", "Successfully Cancelled Entrant from Event");
+                                })
+                                .addOnFailureListener(e -> {
+                                    Log.d("EntrantCancelled", "Failed to Cancel Entrant from Event");
+                                });
+                    } else {
+                        showToast("User does not exist.");
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Handle the failure case for getting the user document (optional)
+                    showToast("Failed to retrieve user data.");
+                });
+    }
+
+    /**
      * Method to add the user to the event's enrolled list
      * @param userId
      *  Current user's id
@@ -200,6 +239,8 @@ public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
                 .update("accepted", accepted)
                 .addOnSuccessListener(aVoid -> updateEventLottery(userId, db, event, false))
                 .addOnFailureListener(e -> showToast("Failed to decline event"));
+        // add user to the cancelled list of entrants for the event
+        addUserToCancelled(userId, db, event);
     }
 
     /**
