@@ -84,6 +84,7 @@ int animator nav_default_enter_anim 0x7f020022
 int animator nav_default_exit_anim 0x7f020023
 int animator nav_default_pop_enter_anim 0x7f020024
 int animator nav_default_pop_exit_anim 0x7f020025
+int array dropdown_items 0x7f160000
 int attr SharedValue 0x7f030000
 int attr SharedValueId 0x7f030001
 int attr action 0x7f030002
@@ -3438,6 +3439,7 @@ int id dragRight 0x7f0800d6
 int id dragStart 0x7f0800d7
 int id dragUp 0x7f0800d8
 int id dropdown_menu 0x7f0800d9
+int id dropdown_recipients 0x7f080291
 int id easeIn 0x7f0800da
 int id easeInOut 0x7f0800db
 int id easeOut 0x7f0800dc
@@ -3453,7 +3455,6 @@ int id edit_text_id 0x7f0800e5
 int id edit_text_phone_number 0x7f0800e6
 int id edit_title 0x7f0800e7
 int id elastic 0x7f0800e8
-int id emailTextView 0x7f0800e9
 int id embed 0x7f0800ea
 int id emptyTextView 0x7f0800eb
 int id end 0x7f0800ec
@@ -3546,7 +3547,6 @@ int id listview_events 0x7f080142
 int id listview_notifications 0x7f080143
 int id locale 0x7f080144
 int id lotteryRecyclerView 0x7f080145
-int id lotteryTitle 0x7f080146
 int id lottery_progress 0x7f080147
 int id lottery_status 0x7f080148
 int id ltr 0x7f080149
@@ -3635,6 +3635,7 @@ int id notification_description 0x7f08019c
 int id notification_icon 0x7f08019d
 int id notification_main_column 0x7f08019e
 int id notification_main_column_container 0x7f08019f
+int id notification_recipients 0x7f080292
 int id notification_title 0x7f0801a0
 int id notifications_button 0x7f0801a1
 int id notifications_counter 0x7f0801a2
@@ -3690,7 +3691,6 @@ int id rejectButton 0x7f0801d3
 int id report_drawn 0x7f0801d4
 int id result_title 0x7f0801d5
 int id returnButton 0x7f0801d6
-int id returnButton_finalList 0x7f0801d7
 int id reverseSawtooth 0x7f0801d8
 int id right 0x7f0801d9
 int id rightToLeft 0x7f0801da
@@ -3823,6 +3823,7 @@ int id uniform 0x7f080258
 int id unlabeled 0x7f080259
 int id up 0x7f08025a
 int id useLogo 0x7f08025b
+int id userIdTextView 0x7f080290
 int id userName 0x7f08025c
 int id user_name 0x7f08025d
 int id vertical_only 0x7f08025e
@@ -4151,6 +4152,7 @@ int string call_notification_hang_up_action 0x7f120033
 int string call_notification_incoming_text 0x7f120034
 int string call_notification_ongoing_text 0x7f120035
 int string call_notification_screening_text 0x7f120036
+int string cancelled_entrants 0x7f120127
 int string character_counter_content_description 0x7f120037
 int string character_counter_overflowed_content_description 0x7f120038
 int string character_counter_pattern 0x7f120039
@@ -4339,6 +4341,7 @@ int string mtrl_timepicker_cancel 0x7f1200ef
 int string mtrl_timepicker_confirm 0x7f1200f0
 int string my_application_title 0x7f1200f1
 int string my_applications 0x7f1200f2
+int string my_attendees 0x7f120128
 int string my_created_events 0x7f1200f3
 int string my_events 0x7f1200f4
 int string nav_app_bar_navigate_up_description 0x7f1200f5
@@ -4360,6 +4363,7 @@ int string phone_number 0x7f120104
 int string previous 0x7f120105
 int string profile 0x7f120106
 int string project_id 0x7f120107
+int string recipients 0x7f120129
 int string reject 0x7f120108
 int string remove_poster 0x7f120109
 int string result_describe 0x7f12010a

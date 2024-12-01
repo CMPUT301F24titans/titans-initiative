@@ -1,8 +1,10 @@
 package com.example.titans_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,17 +31,21 @@ public class AttendeesActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private String eventID;
     private Button back;
+    private ImageButton sendNotification;
+    Intent send_notification = new Intent();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_attendees);
 
-        // initial the objects in layout
+        // Initialize the objects in layout
         recyclerView = findViewById(R.id.attendeesRecyclerView);
         emptyTextView = findViewById(R.id.emptyTextView);
-        back = findViewById(R.id.returnButton_finalList);
-        // initial the firebase
+        back = findViewById(R.id.returnButton);
+        sendNotification = findViewById(R.id.buttonSendNotification);
+
+        // Initialize the firebase
         db = FirebaseFirestore.getInstance();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -57,6 +63,15 @@ public class AttendeesActivity extends AppCompatActivity {
 
         // load the attendees
         loadAttendees();
+
+        sendNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                send_notification.setClass(AttendeesActivity.this, SendNotification.class);
+                send_notification.putExtra("eventID", eventID);
+                startActivity(send_notification);
+            }
+        });
 
         // Click the return button
         back.setOnClickListener(new View.OnClickListener() {

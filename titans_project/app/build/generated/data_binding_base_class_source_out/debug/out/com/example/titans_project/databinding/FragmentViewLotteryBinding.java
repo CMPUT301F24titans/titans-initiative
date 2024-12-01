@@ -4,6 +4,8 @@ package com.example.titans_project.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,16 +23,30 @@ public final class FragmentViewLotteryBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageButton buttonSendNotification;
+
+  @NonNull
+  public final TextView emptyTextView;
+
+  @NonNull
   public final RecyclerView lotteryRecyclerView;
 
   @NonNull
-  public final TextView lotteryTitle;
+  public final Button returnButton;
+
+  @NonNull
+  public final TextView title;
 
   private FragmentViewLotteryBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView lotteryRecyclerView, @NonNull TextView lotteryTitle) {
+      @NonNull ImageButton buttonSendNotification, @NonNull TextView emptyTextView,
+      @NonNull RecyclerView lotteryRecyclerView, @NonNull Button returnButton,
+      @NonNull TextView title) {
     this.rootView = rootView;
+    this.buttonSendNotification = buttonSendNotification;
+    this.emptyTextView = emptyTextView;
     this.lotteryRecyclerView = lotteryRecyclerView;
-    this.lotteryTitle = lotteryTitle;
+    this.returnButton = returnButton;
+    this.title = title;
   }
 
   @Override
@@ -60,20 +76,38 @@ public final class FragmentViewLotteryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonSendNotification;
+      ImageButton buttonSendNotification = ViewBindings.findChildViewById(rootView, id);
+      if (buttonSendNotification == null) {
+        break missingId;
+      }
+
+      id = R.id.emptyTextView;
+      TextView emptyTextView = ViewBindings.findChildViewById(rootView, id);
+      if (emptyTextView == null) {
+        break missingId;
+      }
+
       id = R.id.lotteryRecyclerView;
       RecyclerView lotteryRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (lotteryRecyclerView == null) {
         break missingId;
       }
 
-      id = R.id.lotteryTitle;
-      TextView lotteryTitle = ViewBindings.findChildViewById(rootView, id);
-      if (lotteryTitle == null) {
+      id = R.id.returnButton;
+      Button returnButton = ViewBindings.findChildViewById(rootView, id);
+      if (returnButton == null) {
         break missingId;
       }
 
-      return new FragmentViewLotteryBinding((LinearLayout) rootView, lotteryRecyclerView,
-          lotteryTitle);
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
+        break missingId;
+      }
+
+      return new FragmentViewLotteryBinding((LinearLayout) rootView, buttonSendNotification,
+          emptyTextView, lotteryRecyclerView, returnButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -82,4 +82,7 @@
     <string name="view_lottery">View Lottery</string>
     <string name="view_waitlist">View Waitlist</string>
     <string name="view_cancelled">View Cancelled</string>
+    <string name="my_attendees">My Attendees</string>
+    <string name="cancelled_entrants">Cancelled Entrants</string>
+    <string name="recipients">Recipients</string>
 </resources>

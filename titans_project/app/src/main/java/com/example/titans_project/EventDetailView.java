@@ -46,6 +46,7 @@ public class EventDetailView extends AppCompatActivity {
     Intent view_waitList = new Intent();
     Intent edit_event = new Intent();
     Intent view_lottery = new Intent();
+    Intent view_cancelled = new Intent();
     Intent send_notification = new Intent();
     private ImageView picture;
     private StorageReference storageReference;
@@ -148,7 +149,7 @@ public class EventDetailView extends AppCompatActivity {
         menu.add(0, 0, 0, "View Waitlist");
         menu.add(0, 1, 0, "View Lottery");
         menu.add(0, 2, 0, "View Attendees");
-        menu.add(0, 3, 0, "View Cancelled");
+        menu.add(0, 3, 0, "View Cancelled Users");
         menu.add(0, 4, 0, "Send Notification");
 
         dropDownMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -171,10 +172,15 @@ public class EventDetailView extends AppCompatActivity {
                         startActivity(view_attendees);
                         return true;
                     case 3:
+                        view_cancelled.setClass(EventDetailView.this, CancelledEntrantsActivity.class);
+                        view_cancelled.putExtra("eventID", event.getEventID());
+                        startActivity(view_cancelled);
                         return true;
                     case 4:
                         send_notification.setClass(EventDetailView.this, SendNotification.class);
+                        send_notification.putExtra("eventID", event.getEventID());
                         startActivity(send_notification);
+                        return true;
                 }
                 return false;
             }

@@ -85,6 +85,7 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+array dropdown_items
 attr SharedValue
 attr SharedValueId
 attr action
@@ -3439,6 +3440,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id dropdown_recipients
 id easeIn
 id easeInOut
 id easeOut
@@ -3454,7 +3456,6 @@ id edit_text_id
 id edit_text_phone_number
 id edit_title
 id elastic
-id emailTextView
 id embed
 id emptyTextView
 id end
@@ -3547,7 +3548,6 @@ id listview_events
 id listview_notifications
 id locale
 id lotteryRecyclerView
-id lotteryTitle
 id lottery_progress
 id lottery_status
 id ltr
@@ -3636,6 +3636,7 @@ id notification_description
 id notification_icon
 id notification_main_column
 id notification_main_column_container
+id notification_recipients
 id notification_title
 id notifications_button
 id notifications_counter
@@ -3691,7 +3692,6 @@ id rejectButton
 id report_drawn
 id result_title
 id returnButton
-id returnButton_finalList
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3824,6 +3824,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userIdTextView
 id userName
 id user_name
 id vertical_only
@@ -4152,6 +4153,7 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string cancelled_entrants
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -4340,6 +4342,7 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string my_application_title
 string my_applications
+string my_attendees
 string my_created_events
 string my_events
 string nav_app_bar_navigate_up_description
@@ -4361,6 +4364,7 @@ string phone_number
 string previous
 string profile
 string project_id
+string recipients
 string reject
 string remove_poster
 string result_describe

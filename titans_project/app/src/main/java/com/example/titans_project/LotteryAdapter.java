@@ -57,17 +57,31 @@ public class LotteryAdapter extends RecyclerView.Adapter<LotteryAdapter.LotteryV
     }
 
     private void removeUserFromLottery(Map<String, String> user, int position) {
+        String userId = user.get("user_id");
+
+        // Remove user from the lottery list in Firestore
         db.collection("events").document(eventID).update("lottery", com.google.firebase.firestore.FieldValue.arrayRemove(user))
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(context, "User removed from lottery.", Toast.LENGTH_SHORT).show();
-                    lotteryList.remove(position);
-                    notifyItemRemoved(position);
+                    // Remove event from the user's accepted list in Firestore
+                    db.collection("user").document(userId)
+                            .update("accepted", com.google.firebase.firestore.FieldValue.arrayRemove(eventID))
+                            .addOnSuccessListener(aVoid2 -> {
+                                Toast.makeText(context, "User removed from lottery.", Toast.LENGTH_SHORT).show();
+                                // Update local list
+                                lotteryList.remove(position);
+                                notifyItemRemoved(position);
+                            })
+                            .addOnFailureListener(e -> {
+                                Log.e("LotteryAdapter", "Failed to update user's accepted list: " + e.getMessage());
+                                Toast.makeText(context, "Failed to update user's accepted list.", Toast.LENGTH_SHORT).show();
+                            });
                 })
                 .addOnFailureListener(e -> {
-                    Log.e("LotteryAdapter", "Failed to remove user: " + e.getMessage());
-                    Toast.makeText(context, "Failed to remove user.", Toast.LENGTH_SHORT).show();
+                    Log.e("LotteryAdapter", "Failed to remove user from lottery: " + e.getMessage());
+                    Toast.makeText(context, "Failed to remove user from lottery.", Toast.LENGTH_SHORT).show();
                 });
     }
+
 
     public static class LotteryViewHolder extends RecyclerView.ViewHolder {
         TextView userName;

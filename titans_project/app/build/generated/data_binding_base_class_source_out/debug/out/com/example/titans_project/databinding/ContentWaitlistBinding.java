@@ -20,16 +20,16 @@ public final class ContentWaitlistBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final TextView emailTextView;
-
-  @NonNull
   public final TextView nameTextView;
 
-  private ContentWaitlistBinding(@NonNull LinearLayout rootView, @NonNull TextView emailTextView,
-      @NonNull TextView nameTextView) {
+  @NonNull
+  public final TextView userIdTextView;
+
+  private ContentWaitlistBinding(@NonNull LinearLayout rootView, @NonNull TextView nameTextView,
+      @NonNull TextView userIdTextView) {
     this.rootView = rootView;
-    this.emailTextView = emailTextView;
     this.nameTextView = nameTextView;
+    this.userIdTextView = userIdTextView;
   }
 
   @Override
@@ -59,19 +59,19 @@ public final class ContentWaitlistBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.emailTextView;
-      TextView emailTextView = ViewBindings.findChildViewById(rootView, id);
-      if (emailTextView == null) {
-        break missingId;
-      }
-
       id = R.id.nameTextView;
       TextView nameTextView = ViewBindings.findChildViewById(rootView, id);
       if (nameTextView == null) {
         break missingId;
       }
 
-      return new ContentWaitlistBinding((LinearLayout) rootView, emailTextView, nameTextView);
+      id = R.id.userIdTextView;
+      TextView userIdTextView = ViewBindings.findChildViewById(rootView, id);
+      if (userIdTextView == null) {
+        break missingId;
+      }
+
+      return new ContentWaitlistBinding((LinearLayout) rootView, nameTextView, userIdTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

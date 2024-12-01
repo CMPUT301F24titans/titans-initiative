@@ -115,6 +115,9 @@
         <activity
             android:name="com.example.titans_project.AcceptedEventsActivity"
             android:exported="true" />
+        <activity
+            android:name="com.example.titans_project.CancelledEntrantsActivity"
+            android:exported="true" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

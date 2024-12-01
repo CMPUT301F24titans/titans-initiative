@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,21 +26,25 @@ public final class FragmentAttendeesBinding implements ViewBinding {
   public final RecyclerView attendeesRecyclerView;
 
   @NonNull
+  public final ImageButton buttonSendNotification;
+
+  @NonNull
   public final TextView emptyTextView;
 
   @NonNull
-  public final Button returnButtonFinalList;
+  public final Button returnButton;
 
   @NonNull
   public final TextView title;
 
   private FragmentAttendeesBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView attendeesRecyclerView, @NonNull TextView emptyTextView,
-      @NonNull Button returnButtonFinalList, @NonNull TextView title) {
+      @NonNull RecyclerView attendeesRecyclerView, @NonNull ImageButton buttonSendNotification,
+      @NonNull TextView emptyTextView, @NonNull Button returnButton, @NonNull TextView title) {
     this.rootView = rootView;
     this.attendeesRecyclerView = attendeesRecyclerView;
+    this.buttonSendNotification = buttonSendNotification;
     this.emptyTextView = emptyTextView;
-    this.returnButtonFinalList = returnButtonFinalList;
+    this.returnButton = returnButton;
     this.title = title;
   }
 
@@ -76,15 +81,21 @@ public final class FragmentAttendeesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.buttonSendNotification;
+      ImageButton buttonSendNotification = ViewBindings.findChildViewById(rootView, id);
+      if (buttonSendNotification == null) {
+        break missingId;
+      }
+
       id = R.id.emptyTextView;
       TextView emptyTextView = ViewBindings.findChildViewById(rootView, id);
       if (emptyTextView == null) {
         break missingId;
       }
 
-      id = R.id.returnButton_finalList;
-      Button returnButtonFinalList = ViewBindings.findChildViewById(rootView, id);
-      if (returnButtonFinalList == null) {
+      id = R.id.returnButton;
+      Button returnButton = ViewBindings.findChildViewById(rootView, id);
+      if (returnButton == null) {
         break missingId;
       }
 
@@ -95,7 +106,7 @@ public final class FragmentAttendeesBinding implements ViewBinding {
       }
 
       return new FragmentAttendeesBinding((LinearLayout) rootView, attendeesRecyclerView,
-          emptyTextView, returnButtonFinalList, title);
+          buttonSendNotification, emptyTextView, returnButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

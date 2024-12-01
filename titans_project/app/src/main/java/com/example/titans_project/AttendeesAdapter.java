@@ -23,7 +23,7 @@ public class AttendeesAdapter extends RecyclerView.Adapter<AttendeesAdapter.Atte
     @NonNull
     @Override
     public AttendeeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.content_attendee, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.content_waitlist, parent, false);
         return new AttendeeViewHolder(view);
     }
 
@@ -31,7 +31,7 @@ public class AttendeesAdapter extends RecyclerView.Adapter<AttendeesAdapter.Atte
     public void onBindViewHolder(@NonNull AttendeeViewHolder holder, int position) {
         Attendee attendee = attendees.get(position);
         holder.nameTextView.setText(attendee.getName());
-        holder.emailTextView.setText(attendee.getUserId());
+        holder.userIdTextView.setText(attendee.getUserId());
     }
 
     @Override
@@ -40,12 +40,12 @@ public class AttendeesAdapter extends RecyclerView.Adapter<AttendeesAdapter.Atte
     }
 
     public static class AttendeeViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView, emailTextView;
+        TextView nameTextView, userIdTextView;
 
         public AttendeeViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.attendee_name);
-            emailTextView = itemView.findViewById(R.id.attendee_email);
+            nameTextView = itemView.findViewById(R.id.nameTextView);
+            userIdTextView = itemView.findViewById(R.id.userIdTextView);
         }
     }
 }
