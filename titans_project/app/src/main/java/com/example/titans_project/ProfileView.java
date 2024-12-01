@@ -238,6 +238,7 @@ public class ProfileView extends AppCompatActivity {
                 phone_number.setText("");  // update locally
                 if (profileId != null) {
                     db.collection("user").document(profileId).update("phone_number", "");  // update in firebase
+                    displayImage(null);
                 }
                 else{
                     Toast.makeText(ProfileView.this, "Failed to clear phone number.",
