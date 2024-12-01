@@ -6,6 +6,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -65,18 +67,35 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
         }
 
         applyButton.setOnClickListener(v -> {
-            applyToEvent();
-
-            // check if event has geolocation setting
             db.collection("events").document(eventID).get()
-                    .addOnSuccessListener(documentSnapshot -> {
-                        if (documentSnapshot.exists()) {
-                            Boolean geolocation = documentSnapshot.getBoolean("geolocation"); // Get the field value
-                            if (geolocation != null && geolocation) {
-                                getOneTimeLocation();
-                            }
-                        }
-                    });
+                            .addOnSuccessListener(documentSnapshot -> {
+                               if (documentSnapshot.exists()) {
+                                   Long applicant_limit_long = documentSnapshot.getLong("applicantLimit");
+                                   Integer applicant_limit = applicant_limit_long.intValue();
+                                   ArrayList<HashMap<String, String>> applications = (ArrayList<HashMap<String, String>>) documentSnapshot.get("waitlist");
+                                   if (applications != null) {
+                                       Log.d("ApplicantLimitCheck","ApplicantLimit = " + applicant_limit);
+                                       Log.d("ApplicantLimitCheck","Waitlist = " + applications);
+                                       Log.d("ApplicantLimitCheck","WaitlistSize = " + applications.size());
+                                       // entrant may only apply if there is room in waitlist
+                                       if (applications.size() < applicant_limit) {
+                                           applyToEvent();
+                                           // check if geolocation enabled
+                                           Boolean geolocation = documentSnapshot.getBoolean("geolocation"); // Get the field value
+                                           if (geolocation != null && geolocation) {
+                                               getOneTimeLocation();
+                                           }
+                                       }
+                                       else {
+                                           Toast.makeText(ScannedEventDetailActivity.this, "Event Full: Unable to join event", Toast.LENGTH_SHORT).show();
+                                       }
+                                   }
+                                   else {
+                                       Toast.makeText(ScannedEventDetailActivity.this, "Waitlist Error: Unable to join event", Toast.LENGTH_SHORT).show();
+                                   }
+                               }
+                            });
+
         });
 
         return_button.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +133,7 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                     String fullName = documentSnapshot.getString("full_name");
 
                     // Check if the user is already in the waitlist
-                    db.collection("applications").document(eventID).get()
+                    db.collection("events").document(eventID).get()
                             .addOnSuccessListener(eventSnapshot -> {
                                 if (eventSnapshot.exists()) {
                                     List<Map<String, String>> waitlist = (List<Map<String, String>>) eventSnapshot.get("waitlist");

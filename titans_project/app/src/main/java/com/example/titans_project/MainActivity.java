@@ -252,8 +252,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Event clickedEvent = eventsdataList.get(position);
-                event_detail.setClass(MainActivity.this, EventDetailView.class);
-                event_detail.putExtra("event ID", clickedEvent.getEventID());
+                event_detail.setClass(MainActivity.this, ScannedEventDetailActivity.class);
+                event_detail.putExtra("eventID", clickedEvent.getEventID());
                 event_detail.putExtra("event name", clickedEvent.getName());
                 event_detail.putExtra("event facility", clickedEvent.getFacilityName());
                 event_detail.putExtra("event create date", clickedEvent.getCreatedDate());
