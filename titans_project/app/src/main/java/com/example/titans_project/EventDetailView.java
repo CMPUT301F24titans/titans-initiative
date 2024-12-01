@@ -50,7 +50,7 @@ public class EventDetailView extends AppCompatActivity {
     Intent send_notification = new Intent();
     private ImageView picture;
     private StorageReference storageReference;
-    private Event event = new Event(null, null, null, null, null, null, null, null, null);
+    private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
     /**
      * Called when activity starts, create all activity objects here

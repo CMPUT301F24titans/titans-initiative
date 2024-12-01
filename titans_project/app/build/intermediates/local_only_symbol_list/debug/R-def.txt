@@ -232,6 +232,7 @@ string project_id
 string recipients
 string reject
 string remove_poster
+string require_geolocation_from_applicants
 string result_describe
 string result_title
 string return_to_homepage

@@ -89,6 +89,7 @@
     <string name="recipients">Recipients</string>
     <string name="reject">Reject</string>
     <string name="remove_poster">Remove Poster</string>
+    <string name="require_geolocation_from_applicants">Require Geolocation from Applicants</string>
     <string name="result_describe">Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result / Situation of result /</string>
     <string name="result_title">Event Result</string>
     <string name="return_to_homepage">Return to Homepage</string>

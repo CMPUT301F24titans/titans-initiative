@@ -120,7 +120,7 @@ public class AcceptedEventsActivity extends AppCompatActivity {
                             if (applicantLimitObj != null) {
                                 applicant_limit = ((Long) applicantLimitObj).intValue(); // Cast to Integer
                             }
-                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit));
+                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
                         }
                         completedCount[0]++; // Increment the counter
                         if (completedCount[0] == documentIds.size()) {

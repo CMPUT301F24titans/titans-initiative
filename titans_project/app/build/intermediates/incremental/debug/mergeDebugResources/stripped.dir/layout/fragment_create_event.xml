@@ -153,6 +153,12 @@
             android:inputType="textMultiLine"
             android:minLines="3" />
 
+        <CheckBox
+            android:id="@+id/checkbox_geolocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/require_geolocation_from_applicants"/>
+
         <Button
             android:id="@+id/submitButton"
             android:layout_width="match_parent"

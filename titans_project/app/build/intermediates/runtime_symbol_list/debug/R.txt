@@ -4366,6 +4366,7 @@ int string project_id 0x7f130109
 int string recipients 0x7f13010a
 int string reject 0x7f13010b
 int string remove_poster 0x7f13010c
+int string require_geolocation_from_applicants 0x7f13012a
 int string result_describe 0x7f13010d
 int string result_title 0x7f13010e
 int string return_to_homepage 0x7f13010f

@@ -66,7 +66,17 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
 
         applyButton.setOnClickListener(v -> {
             applyToEvent();
-            getOneTimeLocation();
+
+            // check if event has geolocation setting
+            db.collection("events").document(eventID).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if (documentSnapshot.exists()) {
+                            Boolean geolocation = documentSnapshot.getBoolean("geolocation"); // Get the field value
+                            if (geolocation != null && geolocation) {
+                                getOneTimeLocation();
+                            }
+                        }
+                    });
         });
 
         return_button.setOnClickListener(new View.OnClickListener() {
