@@ -17,6 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Titans_project"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCiXKRBmlxXHar_nT0BnfAJzcGWzY6_v_Q" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:exported="true" />
         <activity
             android:name=".SendNotification"
             android:exported="false" />
