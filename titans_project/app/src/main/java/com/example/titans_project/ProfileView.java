@@ -108,16 +108,18 @@ public class ProfileView extends AppCompatActivity {
                                 email.setText(document.getString("email"));
                                 phone_number.setText(document.getString("phone_number"));
                                 facility.setText(document.getString("facility"));
-                                // profile pic not assigned value (null)
-                                Log.d(TAG, "profile_pic: " + document.getString("profile_pic"));
-                                if (document.getString("profile_pic") == null || document.getString("profile_pic").isEmpty()) {
-                                    // Generate initials of user
+
+                                // Check if profile_pic field is null or empty
+                                String profilePic = document.getString("profile_pic");
+                                if (profilePic == null || profilePic.isEmpty()) {
+                                    // If no profile pic, display the initials
                                     initials.setText(getInitials(name.getText().toString()));
+                                    Log.d(TAG, "Initials Value: " + initials.getText());
+                                } else {
+                                    // If there is a profile pic, display it
+                                    displayImage(profilePic);
                                 }
-                                // profile pic assigned to uri value
-                                else {
-                                    displayImage(document.getString("profile_pic"));
-                                }
+
                                 notifications.setChecked(document.getBoolean("notifications"));
                             });
                         } else {
@@ -173,9 +175,6 @@ public class ProfileView extends AppCompatActivity {
                 }
                 else{
                     selectImage();
-                    if (uri == null) {
-                        initials.setText("");
-                    }
                 }
             }
         });
@@ -339,8 +338,8 @@ public class ProfileView extends AppCompatActivity {
         String[] words = full_name.trim().split("\\s+");  // handles multiple spaces
         StringBuilder initials = new StringBuilder();
         for (String word : words) {
-            if (!word.isEmpty()) {
-                // Take the first character of each word and convert it to uppercase
+            if (!word.isEmpty() && initials.length() < 2) {
+                // Take the first character of each word and convert it to uppercase (2 initials max)
                 initials.append(Character.toUpperCase(word.charAt(0)));
             }
         }
