@@ -6,18 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FieldValue;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class WaitlistAdapter extends RecyclerView.Adapter<WaitlistAdapter.WaitlistViewHolder> {
 
@@ -34,7 +27,7 @@ public class WaitlistAdapter extends RecyclerView.Adapter<WaitlistAdapter.Waitli
     @NonNull
     @Override
     public WaitlistViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.waitlist_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.content_waitlist, parent, false);
         return new WaitlistViewHolder(view);
     }
 
