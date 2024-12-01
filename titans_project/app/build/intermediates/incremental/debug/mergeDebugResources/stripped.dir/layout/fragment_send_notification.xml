@@ -71,6 +71,23 @@
         android:layout_height="wrap_content"
         android:hint="@string/insert_description" />
 
+    <TextView
+        android:id="@+id/notification_recipients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recipients"
+        android:textColor="@color/dark_gray"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/dropdown_recipients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:entries="@array/dropdown_items"/>
+
     <!-- Empty View to push the button down -->
     <View
         android:layout_width="match_parent"

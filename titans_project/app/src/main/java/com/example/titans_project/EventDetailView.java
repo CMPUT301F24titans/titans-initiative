@@ -209,6 +209,7 @@ public class EventDetailView extends AppCompatActivity {
                 else if ("organizer".equals(user_type)){
                     edit_event.setClass(EventDetailView.this, CreateEventView.class);
                     editEvent();
+                    Toast.makeText(EventDetailView.this, "event detail page", Toast.LENGTH_SHORT).show();
                     startActivity(edit_event);
                 }
                 // entrant clicks enroll button

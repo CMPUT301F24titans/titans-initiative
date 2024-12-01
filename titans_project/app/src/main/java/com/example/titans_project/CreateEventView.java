@@ -53,9 +53,11 @@ public class CreateEventView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_create_event);
+
+        Toast.makeText(CreateEventView.this, "create event view", Toast.LENGTH_SHORT).show();
 
         // Initialize storage
         storageReference = FirebaseStorage.getInstance().getReference("event image");
@@ -107,7 +109,6 @@ public class CreateEventView extends AppCompatActivity {
                     }
                 }
             });
-
         }
 
         // get the user type
