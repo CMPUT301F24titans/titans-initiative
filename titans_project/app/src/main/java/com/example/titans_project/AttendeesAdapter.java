@@ -23,7 +23,7 @@ public class AttendeesAdapter extends RecyclerView.Adapter<AttendeesAdapter.Atte
     @NonNull
     @Override
     public AttendeeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.attendee_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.content_attendee, parent, false);
         return new AttendeeViewHolder(view);
     }
 

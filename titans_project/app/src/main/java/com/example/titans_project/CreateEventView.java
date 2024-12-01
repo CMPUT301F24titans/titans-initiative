@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -32,7 +31,6 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.time.LocalDate;
-import java.util.Optional;
 import java.util.UUID;
 
 public class CreateEventView extends AppCompatActivity {
@@ -54,7 +52,7 @@ public class CreateEventView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_event);
+        setContentView(R.layout.fragment_create_event);
 
         // Initialize storage
         storageReference = FirebaseStorage.getInstance().getReference("event image");

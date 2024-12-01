@@ -14,8 +14,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
     private Context context;
@@ -104,9 +106,17 @@ public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
 
                         if (accepted_events != null && accepted_events.contains(event.getEventID()) && !join) {
                             removeUserFromLottery(userId, db, event, accepted_events);
+                            Notification notification = new Notification(event.getName(),
+                                    "You have left successfully declined your invitation to " + event.getName() + ".",
+                                    LocalDate.now().toString());
+                            sendNotificationToUser(userId, db, notification.toMap());
                         }
                         else if (accepted_events != null && accepted_events.contains(event.getEventID()) && join) {
                             addUserFromLottery(userId, db, event, accepted_events);
+                            Notification notification = new Notification(event.getName(),
+                                    "You have successfully enrolled in " + event.getName() + ". We look forward to seeing you!",
+                                    LocalDate.now().toString());
+                            sendNotificationToUser(userId, db, notification.toMap());
                         }
                     } else {
                         showToast("User data not found");
@@ -323,6 +333,52 @@ public class AcceptedEventsArrayAdapter extends ArrayAdapter<Event> {
      */
     private void showToast(String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Method for sending notifications to user
+     * @param user_id
+     *  User ID of user to send the notification to
+     * @param notification_map
+     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     */
+    private void sendNotificationToUser(String user_id, FirebaseFirestore db, Map<String, Object> notification_map) {
+        Log.d("SendNotification", "Checking notification preference for user: " + user_id);
+
+        db.collection("user").document(user_id).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        Boolean notificationsEnabled = documentSnapshot.getBoolean("notifications");
+                        if (notificationsEnabled != null && notificationsEnabled) {
+                            updateUserNotificationList(user_id, db, notification_map);
+                        } else {
+                            Log.d("SendNotification", "Notifications are disabled for user: " + user_id);
+                        }
+                    } else {
+                        Log.w("SendNotification", "User document not found: " + user_id);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("SendNotification", "Error fetching Firestore document for user: " + user_id, e);
+                });
+    }
+
+    /**
+     * Method to update (add notification) to user in Firebase
+     * @param user_id
+     *  User ID of user to add notification to in Firebase
+     * @param notification_map
+     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     */
+    private void updateUserNotificationList(String user_id, FirebaseFirestore db, Map<String, Object> notification_map) {
+        db.collection("user").document(user_id)
+                .update("notification_list", FieldValue.arrayUnion(notification_map))
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("SendNotification", "Notification sent to user: " + user_id);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("SendNotification", "Error updating Firestore for user: " + user_id, e);
+                });
     }
 }
 

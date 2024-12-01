@@ -34,7 +34,7 @@ public class LotteryAdapter extends RecyclerView.Adapter<LotteryAdapter.LotteryV
     @NonNull
     @Override
     public LotteryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.lottery_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.content_lottery, parent, false);
         return new LotteryViewHolder(view);
     }
 

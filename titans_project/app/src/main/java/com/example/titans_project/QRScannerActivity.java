@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -18,8 +17,6 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-import java.util.List;
-
 public class QRScannerActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST_CODE = 100;
@@ -28,7 +25,7 @@ public class QRScannerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qr_scanner);
+        setContentView(R.layout.fragment_qr_scanner);
 
         qrImageView = findViewById(R.id.qrImageView);
 

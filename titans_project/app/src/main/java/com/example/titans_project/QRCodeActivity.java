@@ -2,7 +2,6 @@ package com.example.titans_project;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
@@ -30,7 +29,7 @@ public class QRCodeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qr_code);
+        setContentView(R.layout.fragment_qr_code);
 
         qrCodeImageView = findViewById(R.id.qrCodeImageView);
         saveToLocalButton = findViewById(R.id.saveToLocalButton);
