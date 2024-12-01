@@ -35,11 +35,12 @@ public class AttendeesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_attendees);
 
-        // initial the objects in layout
+        // Initialize the objects in layout
         recyclerView = findViewById(R.id.attendeesRecyclerView);
         emptyTextView = findViewById(R.id.emptyTextView);
-        back = findViewById(R.id.returnButton_finalList);
-        // initial the firebase
+        back = findViewById(R.id.returnButton);
+
+        // Initialize the firebase
         db = FirebaseFirestore.getInstance();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

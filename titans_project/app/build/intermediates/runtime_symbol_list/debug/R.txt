@@ -3690,7 +3690,6 @@ int id rejectButton 0x7f0801d3
 int id report_drawn 0x7f0801d4
 int id result_title 0x7f0801d5
 int id returnButton 0x7f0801d6
-int id returnButton_finalList 0x7f0801d7
 int id reverseSawtooth 0x7f0801d8
 int id right 0x7f0801d9
 int id rightToLeft 0x7f0801da
@@ -4151,6 +4150,7 @@ int string call_notification_hang_up_action 0x7f120033
 int string call_notification_incoming_text 0x7f120034
 int string call_notification_ongoing_text 0x7f120035
 int string call_notification_screening_text 0x7f120036
+int string cancelled_entrants 0x7f120127
 int string character_counter_content_description 0x7f120037
 int string character_counter_overflowed_content_description 0x7f120038
 int string character_counter_pattern 0x7f120039
@@ -4339,6 +4339,7 @@ int string mtrl_timepicker_cancel 0x7f1200ef
 int string mtrl_timepicker_confirm 0x7f1200f0
 int string my_application_title 0x7f1200f1
 int string my_applications 0x7f1200f2
+int string my_attendees 0x7f120128
 int string my_created_events 0x7f1200f3
 int string my_events 0x7f1200f4
 int string nav_app_bar_navigate_up_description 0x7f1200f5

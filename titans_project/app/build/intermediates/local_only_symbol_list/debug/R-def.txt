@@ -111,7 +111,6 @@ id qrScannerTitle
 id rejectButton
 id result_title
 id returnButton
-id returnButton_finalList
 id saveButton
 id saveToLocalButton
 id scan_button
@@ -169,6 +168,7 @@ string application_submit
 string apply
 string browse_content
 string button_for_user_s_notifications
+string cancelled_entrants
 string checkbox_application
 string checkbox_notifications
 string clear
@@ -212,6 +212,7 @@ string limit_of_applicants
 string lottery_size
 string my_application_title
 string my_applications
+string my_attendees
 string my_created_events
 string my_events
 string next

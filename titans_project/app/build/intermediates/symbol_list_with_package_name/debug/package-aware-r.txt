@@ -3691,7 +3691,6 @@ id rejectButton
 id report_drawn
 id result_title
 id returnButton
-id returnButton_finalList
 id reverseSawtooth
 id right
 id rightToLeft
@@ -4152,6 +4151,7 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string cancelled_entrants
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -4340,6 +4340,7 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string my_application_title
 string my_applications
+string my_attendees
 string my_created_events
 string my_events
 string nav_app_bar_navigate_up_description
