@@ -20,7 +20,7 @@ import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
-public final class FragmentMyEventsBinding implements ViewBinding {
+public final class FragmentEnrolledEventsBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
 
@@ -54,7 +54,7 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
-  private FragmentMyEventsBinding(@NonNull RelativeLayout rootView, @NonNull Switch adminMode,
+  private FragmentEnrolledEventsBinding(@NonNull RelativeLayout rootView, @NonNull Switch adminMode,
       @NonNull Button applicationButton, @NonNull LinearLayout buttonToolbar,
       @NonNull Button createdEventsButton, @NonNull ListView listviewEvents,
       @NonNull ImageButton notificationsButton, @NonNull TextView notificationsCounter,
@@ -79,14 +79,14 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static FragmentMyEventsBinding inflate(@NonNull LayoutInflater inflater) {
+  public static FragmentEnrolledEventsBinding inflate(@NonNull LayoutInflater inflater) {
     return inflate(inflater, null, false);
   }
 
   @NonNull
-  public static FragmentMyEventsBinding inflate(@NonNull LayoutInflater inflater,
+  public static FragmentEnrolledEventsBinding inflate(@NonNull LayoutInflater inflater,
       @Nullable ViewGroup parent, boolean attachToParent) {
-    View root = inflater.inflate(R.layout.fragment_my_events, parent, false);
+    View root = inflater.inflate(R.layout.fragment_enrolled_events, parent, false);
     if (attachToParent) {
       parent.addView(root);
     }
@@ -94,7 +94,7 @@ public final class FragmentMyEventsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static FragmentMyEventsBinding bind(@NonNull View rootView) {
+  public static FragmentEnrolledEventsBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
@@ -159,9 +159,9 @@ public final class FragmentMyEventsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMyEventsBinding((RelativeLayout) rootView, adminMode, applicationButton,
-          buttonToolbar, createdEventsButton, listviewEvents, notificationsButton,
-          notificationsCounter, profileButton, scanButton, title);
+      return new FragmentEnrolledEventsBinding((RelativeLayout) rootView, adminMode,
+          applicationButton, buttonToolbar, createdEventsButton, listviewEvents,
+          notificationsButton, notificationsCounter, profileButton, scanButton, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

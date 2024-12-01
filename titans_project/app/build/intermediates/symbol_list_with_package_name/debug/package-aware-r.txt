@@ -4003,8 +4003,8 @@ layout browser_actions_context_menu_row
 layout content_browse_events
 layout content_browse_profiles
 layout content_enrollable_events
+layout content_enrolled_events
 layout content_my_applications
-layout content_my_events
 layout content_notifications
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -4023,10 +4023,10 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_application_form
+layout fragment_enrolled_events
 layout fragment_event_details
 layout fragment_final_result
 layout fragment_my_applications
-layout fragment_my_events
 layout fragment_notification_details
 layout fragment_profile
 layout fragment_send_notification

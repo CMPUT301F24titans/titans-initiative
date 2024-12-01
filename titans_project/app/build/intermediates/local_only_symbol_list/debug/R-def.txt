@@ -148,14 +148,14 @@ layout browse_content
 layout content_browse_events
 layout content_browse_profiles
 layout content_enrollable_events
+layout content_enrolled_events
 layout content_my_applications
-layout content_my_events
 layout content_notifications
 layout fragment_application_form
+layout fragment_enrolled_events
 layout fragment_event_details
 layout fragment_final_result
 layout fragment_my_applications
-layout fragment_my_events
 layout fragment_notification_details
 layout fragment_profile
 layout fragment_send_notification

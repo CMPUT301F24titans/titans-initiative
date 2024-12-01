@@ -15,7 +15,7 @@ import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
-public final class ContentMyEventsBinding implements ViewBinding {
+public final class ContentEnrolledEventsBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
 
@@ -25,7 +25,7 @@ public final class ContentMyEventsBinding implements ViewBinding {
   @NonNull
   public final TextView eventName;
 
-  private ContentMyEventsBinding(@NonNull LinearLayout rootView, @NonNull TextView eventDate,
+  private ContentEnrolledEventsBinding(@NonNull LinearLayout rootView, @NonNull TextView eventDate,
       @NonNull TextView eventName) {
     this.rootView = rootView;
     this.eventDate = eventDate;
@@ -39,14 +39,14 @@ public final class ContentMyEventsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static ContentMyEventsBinding inflate(@NonNull LayoutInflater inflater) {
+  public static ContentEnrolledEventsBinding inflate(@NonNull LayoutInflater inflater) {
     return inflate(inflater, null, false);
   }
 
   @NonNull
-  public static ContentMyEventsBinding inflate(@NonNull LayoutInflater inflater,
+  public static ContentEnrolledEventsBinding inflate(@NonNull LayoutInflater inflater,
       @Nullable ViewGroup parent, boolean attachToParent) {
-    View root = inflater.inflate(R.layout.content_my_events, parent, false);
+    View root = inflater.inflate(R.layout.content_enrolled_events, parent, false);
     if (attachToParent) {
       parent.addView(root);
     }
@@ -54,7 +54,7 @@ public final class ContentMyEventsBinding implements ViewBinding {
   }
 
   @NonNull
-  public static ContentMyEventsBinding bind(@NonNull View rootView) {
+  public static ContentEnrolledEventsBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
@@ -71,7 +71,7 @@ public final class ContentMyEventsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ContentMyEventsBinding((LinearLayout) rootView, eventDate, eventName);
+      return new ContentEnrolledEventsBinding((LinearLayout) rootView, eventDate, eventName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
