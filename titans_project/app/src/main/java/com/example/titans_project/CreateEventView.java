@@ -1,13 +1,17 @@
 package com.example.titans_project;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +30,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.Optional;
 import java.util.UUID;
@@ -36,10 +41,11 @@ public class CreateEventView extends AppCompatActivity {
     private FirebaseFirestore db;
     private ImageView picture;
     private int eventIndex = -1, image_code=1;
-    private Button add_poster, return_button, submit_button;
+    private TextView title;
+    private Button add_poster, return_button, submit_button, delete_poster;
     private EditText facility_name, event_name, event_date, event_details, applicant_limit;
     private Integer default_limit = 10000;
-    private String organizer_id;
+    private String organizer_id, user_type;
     private StorageReference storageReference;
     private Uri uri;
     private Event event = new Event(null, null, null, null, null, null, null, null, null);
@@ -61,8 +67,10 @@ public class CreateEventView extends AppCompatActivity {
         // Get ref to current user in Firebase
         DocumentReference userRef = db.collection("user").document(user.getUid());
 
+        title = findViewById(R.id.event_name);
         return_button = findViewById(R.id.button_return);
         add_poster = findViewById(R.id.button_add_poster);
+        delete_poster = findViewById(R.id.button_delete_poster);
         submit_button = findViewById(R.id.submitButton);
         facility_name = findViewById(R.id.organizerEdit);
         event_name = findViewById(R.id.eventTitleEdit);
@@ -100,6 +108,19 @@ public class CreateEventView extends AppCompatActivity {
 
         }
 
+        // get the user type
+        user_type = getIntent().getStringExtra("viewer");
+        if("edit".equals(user_type)){
+            get_event();
+            title.setText("Edit Event");
+            add_poster.setText("Edit Poster");
+            event_name.setText(event.getName());
+            facility_name.setText(event.getFacilityName());
+            event_date.setText(event.getEventDate());
+            displayImage(event.getPicture());
+            submit_button.setText("Edit");
+        }
+
         // return to previous activity if user clicks return button
         return_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +138,14 @@ public class CreateEventView extends AppCompatActivity {
             }
         });
 
+        // Click delete poster button to delete image
+        delete_poster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                picture.setImageURI(null);
+                uri = null;
+            }
+        });
 
         // user clicks to submit and create event -> store in Firebase
         submit_button.setOnClickListener(new View.OnClickListener() {
@@ -191,6 +220,20 @@ public class CreateEventView extends AppCompatActivity {
     }
 
     /**
+     * set up the event with the data passed by previous page
+     */
+    private void get_event(){
+        event.setEventID(getIntent().getStringExtra("event ID"));
+        event.setName(getIntent().getStringExtra("event name"));
+        event.setFacilityName(getIntent().getStringExtra("event facility"));
+        event.setCreated_date(getIntent().getStringExtra("event create date"));
+        event.setEvent_date(getIntent().getStringExtra("event date"));
+        event.setDescription(getIntent().getStringExtra("event description"));
+        event.setOrganizerID(getIntent().getStringExtra("event organizer"));
+        event.setPicture(getIntent().getStringExtra("event image"));
+    }
+
+    /**
      * This select the image form local device
      */
     private void selectImage(){
@@ -231,6 +274,22 @@ public class CreateEventView extends AppCompatActivity {
                     Toast.makeText(CreateEventView.this, "Image successfully upload!", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(e -> {
                     Toast.makeText(CreateEventView.this, "There was an error while upload", Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    /**
+     * Retrieve image from firebase storage and display it
+     * @param picture_name
+     */
+    private void displayImage(String picture_name){
+        StorageReference imageRef = storageReference.child(picture_name);
+        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), picture_name+".jpg");
+        imageRef.getFile(localFile)
+                .addOnSuccessListener(taskSnapshot -> {
+                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    picture.setImageBitmap(bitmap);
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(CreateEventView.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 }
