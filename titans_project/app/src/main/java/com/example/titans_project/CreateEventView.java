@@ -114,7 +114,7 @@ public class CreateEventView extends AppCompatActivity {
         // get the user type
         user_type = getIntent().getStringExtra("viewer");
         if("edit".equals(user_type)){
-            get_event();
+            getEvent();
             title.setText("Edit Event");
             add_poster.setText("Edit Poster");
             event_name.setText(event.getName());
@@ -237,7 +237,7 @@ public class CreateEventView extends AppCompatActivity {
     /**
      * set up the event with the data passed by previous page
      */
-    private void get_event(){
+    private void getEvent(){
         event.setEventID(getIntent().getStringExtra("event ID"));
         event.setName(getIntent().getStringExtra("event name"));
         event.setFacilityName(getIntent().getStringExtra("event facility"));
