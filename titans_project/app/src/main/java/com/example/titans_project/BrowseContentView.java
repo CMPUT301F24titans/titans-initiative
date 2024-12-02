@@ -24,6 +24,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+/**
+ * Activity that allows the admin to browse either events or user profiles and view details.
+ */
 public class BrowseContentView extends AppCompatActivity {
 
     private static final String TAG = "BrowseContentView";
@@ -36,12 +39,16 @@ public class BrowseContentView extends AppCompatActivity {
     private ProfilesArrayAdapter profileArrayAdapter;
     private Switch back_user;
     private Boolean browsingEvents;
-    private FirebaseAuth mAuth;
     Intent event_detail = new Intent();
     Intent profile_detail = new Intent();
     TextView header1, header2;
     Integer default_applicant_limit = 10000;
 
+    /**
+     * Initializes the activity, sets up the UI elements, and fetches event/profile data.
+     *
+     * @param savedInstanceState the saved instance state, if any.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +73,7 @@ public class BrowseContentView extends AppCompatActivity {
         profileArrayAdapter = new ProfilesArrayAdapter(this, profileDataList);
         eventArrayAdapter = new EventsArrayAdapter(this, eventDataList);
 
-        // check if admin user clicked on browse events button
+        // Check if admin user clicked on the browse events button
         browse_events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,13 +120,15 @@ public class BrowseContentView extends AppCompatActivity {
             }
         });
 
+        // Back button to return to previous activity
         back_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-        // check if admin user clicked on browse profiles button
+
+        // Check if admin user clicked on browse profiles button
         browse_profiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,17 +171,19 @@ public class BrowseContentView extends AppCompatActivity {
             }
         });
 
+        // Set up the item click listener for the content list (events or profiles)
         contentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             /**
-             * Check if user click on an item in the contentList
-             * @param adapterView
-             * @param view
-             * @param position
-             * @param l
+             * Handles item clicks for events or profiles in the content list.
+             *
+             * @param adapterView the AdapterView where the click occurred
+             * @param view the view that was clicked
+             * @param position the position of the clicked item in the list
+             * @param l the row ID of the clicked item
              */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // user currently browsing events
+                // User is browsing events
                 if (browsingEvents){
                     Event clickedEvent = eventDataList.get(position);
                     event_detail.setClass(BrowseContentView.this, EventDetailView.class);
@@ -188,7 +199,7 @@ public class BrowseContentView extends AppCompatActivity {
                     event_detail.putExtra("viewer", "admin");
                     startActivity(event_detail);
                 }
-                // user currently browsing profiles
+                // User is browsing profiles
                 else {
                     User clickedUser = profileDataList.get(position);
 
@@ -201,5 +212,3 @@ public class BrowseContentView extends AppCompatActivity {
         });
     }
 }
-
-

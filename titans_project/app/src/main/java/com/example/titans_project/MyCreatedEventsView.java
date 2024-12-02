@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,26 +24,28 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 /**
- * This is a class that defines the My Created Events activity of the app
+ * This activity allows the user to view all events they have created.
+ * The user can also create new events, view event details, and manage attendees or waitlists.
  */
 public class MyCreatedEventsView extends AppCompatActivity {
-    private ListView eventList;
-    private ArrayList<Event> eventsdataList;
-    private EventsArrayAdapter eventsArrayAdapter;
-    private Button create_event_button, return_button;
-    Intent event_detail = new Intent();
-    Intent create_event = new Intent();
-    private FirebaseFirestore db;
-    private CollectionReference eventRef, userRef;
-    private static final String TAG = "AnonymousAuthActivity";
-    private FirebaseAuth mAuth;
-    Integer default_applicant_limit = 10000;
 
+    private ListView eventList;                     // ListView to display the list of events created by the user
+    private ArrayList<Event> eventsdataList;        // List of events to display in the ListView
+    private EventsArrayAdapter eventsArrayAdapter;  // Adapter to bind the event list to the ListView
+    private Button create_event_button, return_button; // Buttons for creating events and returning to previous screen
+    private Intent event_detail = new Intent();     // Intent to navigate to EventDetailView
+    private Intent create_event = new Intent();     // Intent to navigate to CreateEventView
+    private FirebaseFirestore db;                   // Firebase Firestore instance for accessing data
+    private CollectionReference eventRef, userRef; // References to the Firestore collections
+    private static final String TAG = "AnonymousAuthActivity"; // Tag for logging
+    private FirebaseAuth mAuth;                     // FirebaseAuth instance for authentication
+    private Integer default_applicant_limit = 10000; // Default applicant limit for events
 
     /**
-     * This runs after the onStart function above
+     * Called when the activity is created. Initializes Firebase, sets up UI components,
+     * listens for changes to the events collection, and handles user interactions.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The saved instance state, if any.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,23 +57,28 @@ public class MyCreatedEventsView extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        // Set up Firestore references
         eventRef = db.collection("events");
         userRef = db.collection("user");
 
+        // Initialize UI components
         eventList = findViewById(R.id.listview_events);
         create_event_button = findViewById(R.id.create_event_button);
         return_button = findViewById(R.id.button_return);
 
+        // Initialize the event data list and adapter
         eventsdataList = new ArrayList<>();
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
         eventList.setAdapter(eventsArrayAdapter);
 
-
+        // Listen for real-time updates to the events collection
         eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
             /**
-             * Displays the events in Firebase in app for user to view all user created events
-             * @param querySnapshots The value of the event. {@code null} if there was an error.
-             * @param error The error if there was error. {@code null} otherwise.
+             * This method is called every time the events collection is updated.
+             * It checks if the current user is the organizer of each event and updates the event list.
+             *
+             * @param querySnapshots The query snapshot containing event data.
+             * @param error The error, if any, that occurred while fetching data.
              */
             @Override
             public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
@@ -79,12 +87,16 @@ public class MyCreatedEventsView extends AppCompatActivity {
                     return;
                 }
                 if (querySnapshots != null) {
-                    eventsdataList.clear();
-                    for (QueryDocumentSnapshot doc: querySnapshots) {
-                        String user_id = mAuth.getCurrentUser().getUid();
-                        String organizer_id = doc.getString("organizerID");
-                        // Check if user is owner of event
+                    eventsdataList.clear(); // Clear the existing event list
+
+                    // Iterate over each document in the snapshot
+                    for (QueryDocumentSnapshot doc : querySnapshots) {
+                        String user_id = mAuth.getCurrentUser().getUid();  // Get the current user's ID
+                        String organizer_id = doc.getString("organizerID"); // Get the event organizer's ID
+
+                        // Check if the current user is the organizer of the event
                         if (user_id.equals(organizer_id)) {
+                            // Retrieve event details from Firestore
                             String event_id = doc.getString("eventID");
                             String event_name = doc.getString("name");
                             String facility_name = doc.getString("facilityName");
@@ -92,6 +104,8 @@ public class MyCreatedEventsView extends AppCompatActivity {
                             String event_date = doc.getString("eventDate");
                             String description = doc.getString("description");
                             String picture = doc.getString("picture");
+
+                            // Set the applicant limit, or use the default if not specified
                             Integer applicant_limit = default_applicant_limit;
                             Object applicantLimitObj = doc.get("applicantLimit");
                             if (applicantLimitObj != null) {
@@ -100,19 +114,25 @@ public class MyCreatedEventsView extends AppCompatActivity {
                             } else {
                                 Log.w(TAG, "applicantLimit is missing or null");
                             }
+
+                            // Add the event to the data list
                             Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
                             eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
                         }
                     }
+
+                    // Notify the adapter that the data has been updated
                     eventsArrayAdapter.notifyDataSetChanged();
                 }
             }
         });
 
+        // Set up the "Create Event" button
         create_event_button.setOnClickListener(new View.OnClickListener() {
             /**
-             * User clicks on Create Event button, send user to Create Event activity
-             * @param view
+             * When the user clicks the "Create Event" button, they are navigated to the Create Event screen.
+             *
+             * @param view The view that was clicked.
              */
             @Override
             public void onClick(View view) {
@@ -121,10 +141,12 @@ public class MyCreatedEventsView extends AppCompatActivity {
             }
         });
 
+        // Set up the "Return" button
         return_button.setOnClickListener(new View.OnClickListener() {
             /**
-             * User clicks on Return button, return to previous activity
-             * @param view
+             * When the user clicks the "Return" button, the activity finishes and returns to the previous screen.
+             *
+             * @param view The view that was clicked.
              */
             @Override
             public void onClick(View view) {
@@ -132,13 +154,21 @@ public class MyCreatedEventsView extends AppCompatActivity {
             }
         });
 
+        // Set up item click listener for the events list
         eventList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             /**
-             * User clicks on an Event in the events list, send user to Event Detail activity
+             * When the user clicks on an event, they are navigated to the Event Detail screen.
+             *
+             * @param adapterView The AdapterView where the click occurred.
+             * @param view The view that was clicked.
+             * @param position The position of the clicked item.
+             * @param l The row ID of the clicked item.
              */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Event clickedEvent = eventsdataList.get(position);
+
+                // Set up the EventDetailView intent with event data
                 event_detail.setClass(MyCreatedEventsView.this, EventDetailView.class);
                 event_detail.putExtra("event ID", clickedEvent.getEventID());
                 event_detail.putExtra("event name", clickedEvent.getName());
@@ -150,17 +180,18 @@ public class MyCreatedEventsView extends AppCompatActivity {
                 event_detail.putExtra("event image", clickedEvent.getPicture());
                 event_detail.putExtra("event limit", clickedEvent.getApplicantLimit());
                 event_detail.putExtra("viewer", "organizer");
+
                 Log.w(TAG, "applicantLimit (when clicked on from MainActivity): " + eventsdataList.get(position).getApplicantLimit());
                 startActivity(event_detail);
             }
-
         });
 
+        // Set up long click listener for event items
         eventList.setOnItemLongClickListener((adapterView, view, position, l) -> {
             // Show options for Waitlist or Attendees
             Event selectedEvent = eventsdataList.get(position);
 
-            // Navigate to WaitlistActivity
+            // Navigate to WaitlistActivity with event data
             Intent waitlistIntent = new Intent(MyCreatedEventsView.this, WaitlistActivity.class);
             waitlistIntent.putExtra("eventID", selectedEvent.getEventID());
             startActivity(waitlistIntent);

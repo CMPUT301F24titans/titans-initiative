@@ -28,6 +28,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 // Design Rationale: I am using a ViewBookFragment here to keep the user interface on the main activity cleaner,
 // this way the user will have an entirely new screen to view details for a specific book. Not to mention
 // this will also reduce the clutter that would otherwise be in the main activity class.
+
+/**
+ * Fragment that displays the details of a notification. Allows the user to view, and delete a notification
+ * from their notification list. The fragment is designed to be used in a dialog for better user interaction.
+ *
+ * <p>The notification details are passed as a serializable object to this fragment, and the user can either
+ * cancel or delete the notification. If the notification is deleted, it is removed from the Firestore database.</p>
+ *
+ * <p>Design rationale: This fragment is used to show notification details in a cleaner, separate screen
+ * instead of cluttering the main activity.</p>
+ */
 public class NotificationDetailsView extends DialogFragment {
 
     private static final String TAG = "NotificationDeletion";
@@ -39,6 +50,13 @@ public class NotificationDetailsView extends DialogFragment {
 
     private OnDeleteListener onDeleteListener;
 
+    /**
+     * Static method to create a new instance of this fragment with a specific Notification.
+     *
+     * @param notification The Notification object that contains details of the notification to be displayed.
+     * @return A new instance of NotificationDetailsView with the notification passed as an argument.
+     */
+
     static NotificationDetailsView newInstance(Notification notification) {
         Bundle args = new Bundle();
         args.putSerializable("notification", notification);
@@ -47,10 +65,22 @@ public class NotificationDetailsView extends DialogFragment {
         return fragment;
     }
 
+    /**
+     * Sets the OnDeleteListener callback to be triggered when a notification is deleted.
+     *
+     * @param listener The listener to be called when the notification is deleted.
+     */
+
     public void setOnDeleteListener(OnDeleteListener listener) {
         this.onDeleteListener = listener;
     }
 
+    /**
+     * Called to create the dialog for displaying the notification details.
+     *
+     * @param savedInstanceState The saved instance state, if any.
+     * @return A Dialog that shows the details of the notification and allows the user to delete it.
+     */
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -89,6 +119,13 @@ public class NotificationDetailsView extends DialogFragment {
         return dialog;
     }
 
+
+    /**
+     * Deletes the notification from the Firestore database by searching for the notification in the user's
+     * notification list and removing it.
+     *
+     * @param notification The notification to be deleted from the database.
+     */
     private void deleteNotificationFromFirestore(Notification notification) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 

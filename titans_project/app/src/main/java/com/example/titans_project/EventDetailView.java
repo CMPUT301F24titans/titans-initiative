@@ -1,7 +1,5 @@
 package com.example.titans_project;
 
-import static com.example.titans_project.R.id.dropdown_menu;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -107,7 +105,7 @@ public class EventDetailView extends AppCompatActivity {
         }
 
         // get the event data
-        get_event();
+        getEvent();
         // display all event data
         name.setText(event.getName());
         db.collection("user")
@@ -144,6 +142,7 @@ public class EventDetailView extends AppCompatActivity {
         Log.w(TAG, "applicantLimit (from EventDetailView): " + eventLimit);
         if (eventLimit != default_applicant_limit) {
             application_limit.setText("The limit of applicants is " + eventLimit);
+            event.setApplicantLimit((Integer) eventLimit);
         }
 
         final PopupMenu dropDownMenu = new PopupMenu(EventDetailView.this, dropdown_button);
@@ -238,7 +237,7 @@ public class EventDetailView extends AppCompatActivity {
     /**
      * set up the event with the data passed by previous page
      */
-    private void get_event(){
+    private void getEvent(){
         event.setEventID(getIntent().getStringExtra("event ID"));
         event.setName(getIntent().getStringExtra("event name"));
         event.setFacilityName(getIntent().getStringExtra("event facility"));
@@ -303,6 +302,7 @@ public class EventDetailView extends AppCompatActivity {
         edit_event.putExtra("event description", event.getDescription());
         edit_event.putExtra("event organizer", event.getOrganizerID());
         edit_event.putExtra("event image", event.getPicture());
+        edit_event.putExtra("event limit", event.getApplicantLimit());
         edit_event.putExtra("viewer", "edit");
     }
 }

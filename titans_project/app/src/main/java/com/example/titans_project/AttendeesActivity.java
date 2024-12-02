@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * This is a class that defines the AttendeesActivity
+ * This activity displays the list of attendees for a particular event.
  */
 public class AttendeesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -34,6 +34,11 @@ public class AttendeesActivity extends AppCompatActivity {
     private ImageButton sendNotification;
     Intent send_notification = new Intent();
 
+    /**
+     * Initializes the activity, sets up the layout, and loads the attendees for the event.
+     *
+     * @param savedInstanceState the previous saved instance state, if any.
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +58,7 @@ public class AttendeesActivity extends AppCompatActivity {
         attendeesAdapter = new AttendeesAdapter(this, attendeesList);
         recyclerView.setAdapter(attendeesAdapter);
 
-        // get the name of event
+        // Get the event ID from the Intent
         eventID = getIntent().getStringExtra("eventID");
         if (eventID == null || eventID.isEmpty()) {
             Toast.makeText(this, "Invalid event ID", Toast.LENGTH_SHORT).show();
@@ -61,9 +66,10 @@ public class AttendeesActivity extends AppCompatActivity {
             return;
         }
 
-        // load the attendees
+        // Load the attendees for the event
         loadAttendees();
 
+        // Set up the send notification button
         sendNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +79,7 @@ public class AttendeesActivity extends AppCompatActivity {
             }
         });
 
-        // Click the return button
+        // Set up the back button to return to the previous screen
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,17 +88,22 @@ public class AttendeesActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Loads the list of attendees for the event from Firebase Firestore.
+     */
     private void loadAttendees() {
         DocumentReference eventRef = db.collection("events").document(eventID);
         eventRef.get().addOnSuccessListener(documentSnapshot -> {
             attendeesList.clear();
             try {
+                // Retrieve the list of attendees from the document
                 List<Map<String, String>> attendees = (List<Map<String, String>>) documentSnapshot.get("attendees");
                 if (attendees != null && !attendees.isEmpty()) {
+                    // Populate the attendees list with data
                     for (Map<String, String> attendeeData : attendees) {
                         String name = attendeeData.get("full_name");
                         String userID = attendeeData.get("user_id");
-                        String email = attendeeData.get("email"); //
+                        String email = attendeeData.get("email");
                         attendeesList.add(new Attendee(name, userID, email));
                     }
                     attendeesAdapter.notifyDataSetChanged();
@@ -105,15 +116,5 @@ public class AttendeesActivity extends AppCompatActivity {
         }).addOnFailureListener(e -> {
             Toast.makeText(this, "Error loading attendees: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         });
-    }
-
-    private void toggleEmptyState(boolean isEmpty) {
-        if (isEmpty) {
-            emptyTextView.setVisibility(TextView.VISIBLE);
-            recyclerView.setVisibility(RecyclerView.GONE);
-        } else {
-            emptyTextView.setVisibility(TextView.GONE);
-            recyclerView.setVisibility(RecyclerView.VISIBLE);
-        }
     }
 }

@@ -24,17 +24,26 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SendNotification extends AppCompatActivity{
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+/**
+ * Activity that allows an admin or event organizer to send a notification to users on the event's waitlist.
+ * The user can select the recipient group from a dropdown menu and enter a title and description for the notification.
+ */
+public class SendNotification extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;  // Firebase authentication instance for user management
+    private FirebaseFirestore db;  // Firestore instance for interacting with Firestore database
+
+    /**
+     * Called when the activity is created. Initializes UI components and sets up event listeners for sending notifications.
+     *
+     * @param savedInstanceState The saved instance state of the activity if it was previously destroyed.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,34 +53,41 @@ public class SendNotification extends AppCompatActivity{
         FirebaseUser user = mAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
 
+        // Get the event ID passed from the previous activity
         String eventID = getIntent().getStringExtra("eventID");
 
-        // Get ref to current user in Firebase
+        // Get reference to the current user in Firestore
         DocumentReference userRef = db.collection("user").document(user.getUid());
 
+        // Enable EdgeToEdge for this activity
         EdgeToEdge.enable(this);
+
+        // Set the layout for this activity
         setContentView(R.layout.fragment_send_notification);
 
+        // Initialize UI components
         Button returnButton = findViewById(R.id.button_return);
         Button sendButton = findViewById(R.id.button_send_notification);
         EditText editTitle = findViewById(R.id.edit_title);
         EditText editDescription = findViewById(R.id.edit_description);
         Spinner dropdownSpinner = findViewById(R.id.dropdown_recipients);
 
-        // Setup the spinner
+        // Setup the dropdown spinner with recipient options (waitlist)
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.dropdown_items, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdownSpinner.setAdapter(adapter);
 
-        // ArrayList of all user ids of users on the waitlist
+        // Retrieve the waitlist from the intent
         ArrayList<String> waitlist = getIntent().getStringArrayListExtra("waitlist");
         Log.d("SendNotification", "Waitlist: " + waitlist);
 
+        // Set click listener for the return button to go back to the previous activity
         returnButton.setOnClickListener(new View.OnClickListener() {
             /**
-             * User clicks return button, return to previous activity
-             * @param view
+             * Navigates back to the previous activity when the return button is clicked.
+             *
+             * @param view The view that was clicked
              */
             @Override
             public void onClick(View view) {
@@ -79,35 +95,39 @@ public class SendNotification extends AppCompatActivity{
             }
         });
 
+        // Set click listener for the send button to send the notification
         sendButton.setOnClickListener(new View.OnClickListener() {
             /**
-             * When send notification button is clicked, send notification to all users in waitlist
-             * @param view
+             * Sends the notification to the selected recipient(s) when the send button is clicked.
+             *
+             * @param view The view that was clicked
              */
             @Override
             public void onClick(View view) {
-
+                // Get the recipient group selected from the spinner
                 String selectedRecipient = dropdownSpinner.getSelectedItem().toString();
 
+                // Validate the event ID
                 if (eventID == null || eventID.isEmpty()) {
                     Toast.makeText(SendNotification.this, "Invalid event ID", Toast.LENGTH_SHORT).show();
                     finish();
                     return;
                 }
 
-                // Create notification
+                // Create the notification using input data
                 String title = editTitle.getText().toString().trim();
                 String description = editDescription.getText().toString().trim();
                 String date = LocalDate.now().toString();
 
+                // Create Notification object and convert it to a Map
                 Notification notification = new Notification(title, description, date);
-
                 Map<String, Object> notification_map = notification.toMap();
 
+                // Retrieve the list of recipients based on the selected recipient group (waitlist or others)
                 getRecipients(eventID, selectedRecipient, new FirestoreCallback() {
                     @Override
                     public void onCallback(ArrayList<String> recipients) {
-                        // Handle the recipients list here
+                        // Send notification to all recipients
                         for (String recipient : recipients) {
                             Log.d("Recipient", recipient);
                             sendNotificationToUser(recipient, notification_map);
@@ -115,28 +135,30 @@ public class SendNotification extends AppCompatActivity{
                     }
                 });
 
+                // Notify the user that the notification has been sent
                 Toast.makeText(SendNotification.this, "Sent notification", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
-
     }
 
     /**
-     * Method for sending notifications to user
-     * @param user_id
-     *  User ID of user to send the notification to
-     * @param notification_map
-     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     * Sends a notification to a specific user if they have notifications enabled.
+     *
+     * @param user_id       The user ID of the recipient.
+     * @param notification_map A map representation of the notification.
      */
     private void sendNotificationToUser(String user_id, Map<String, Object> notification_map) {
         Log.d("SendNotification", "Checking notification preference for user: " + user_id);
 
+        // Retrieve the user's document from Firestore
         db.collection("user").document(user_id).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
+                        // Check if the user has notifications enabled
                         Boolean notificationsEnabled = documentSnapshot.getBoolean("notifications");
                         if (notificationsEnabled != null && notificationsEnabled) {
+                            // If notifications are enabled, add the notification to the user's notification list
                             updateUserNotificationList(user_id, notification_map);
                         } else {
                             Log.d("SendNotification", "Notifications are disabled for user: " + user_id);
@@ -151,11 +173,10 @@ public class SendNotification extends AppCompatActivity{
     }
 
     /**
-     * Method to update (add notification) to user in Firebase
-     * @param user_id
-     *  User ID of user to add notification to in Firebase
-     * @param notification_map
-     *  Notification converted into Map format since that is how notifications are stored in Firebase
+     * Adds the notification to the user's notification list in Firestore.
+     *
+     * @param user_id       The user ID of the recipient.
+     * @param notification_map A map representation of the notification.
      */
     private void updateUserNotificationList(String user_id, Map<String, Object> notification_map) {
         db.collection("user").document(user_id)
@@ -168,10 +189,20 @@ public class SendNotification extends AppCompatActivity{
                 });
     }
 
+    /**
+     * Interface to handle the callback for fetching the list of recipients.
+     */
     public interface FirestoreCallback {
         void onCallback(ArrayList<String> recipients);
     }
 
+    /**
+     * Retrieves the list of recipients for the notification based on the selected recipient group.
+     *
+     * @param eventID            The ID of the event.
+     * @param selectedRecipient  The selected recipient group (e.g., waitlist).
+     * @param callback           The callback to handle the retrieved list of recipients.
+     */
     private void getRecipients(String eventID, String selectedRecipient, FirestoreCallback callback) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -181,7 +212,7 @@ public class SendNotification extends AppCompatActivity{
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        // Extract the data
+                        // Extract the list of recipients based on the selected recipient group
                         ArrayList<HashMap<String, String>> recipientsMap =
                                 (ArrayList<HashMap<String, String>>) document.get(selectedRecipient.toLowerCase());
                         ArrayList<String> recipients = new ArrayList<>();
@@ -190,17 +221,16 @@ public class SendNotification extends AppCompatActivity{
                                 recipients.add(recipient.get("user_id"));
                             }
                         }
-                        callback.onCallback(recipients);
+                        callback.onCallback(recipients);  // Pass the list of recipients to the callback
                     } else {
                         Log.d("Firestore", "No such document!");
-                        callback.onCallback(new ArrayList<>()); // Return an empty list
+                        callback.onCallback(new ArrayList<>());  // Return an empty list if document does not exist
                     }
                 } else {
                     Log.e("Firestore", "Error getting document: ", task.getException());
-                    callback.onCallback(new ArrayList<>()); // Return an empty list
+                    callback.onCallback(new ArrayList<>());  // Return an empty list on failure
                 }
             }
         });
     }
-
 }

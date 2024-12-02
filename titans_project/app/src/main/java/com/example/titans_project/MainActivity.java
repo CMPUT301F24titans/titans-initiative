@@ -33,6 +33,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * This is a class that defines the main activity of the app
@@ -130,43 +131,17 @@ public class MainActivity extends AppCompatActivity {
         eventsArrayAdapter = new EventsArrayAdapter(this, eventsdataList);
         eventList.setAdapter(eventsArrayAdapter);
         usersdataList =  new ArrayList<>();
-        eventRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
 
-            /**
-             * Display all of user's enrolled events
-             * @param querySnapshots The value of the event. {@code null} if there was an error.
-             * @param error The error if there was error. {@code null} otherwise.
-             */
-            @Override
-            public void onEvent(@Nullable QuerySnapshot querySnapshots, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    Log.e(TAG, "Error fetching events: " + error.getMessage());
-                    return;
-                }
-                if (querySnapshots != null) {
-                    eventsdataList.clear();
-                    for (QueryDocumentSnapshot doc: querySnapshots) {
-                        String event_id = doc.getString("eventID");
-                        String event_name = doc.getString("name");
-                        String facility_name = doc.getString("facilityName");
-                        String created_date = doc.getString("createdDate");
-                        String event_date = doc.getString("eventDate");
-                        String description = doc.getString("description");
-                        String organizer_id = doc.getString("organizerID");
-                        String picture = doc.getString("picture");
-                        Integer applicant_limit = default_applicant_limit;
-                        Object applicantLimitObj = doc.get("applicantLimit");
-                        if (applicantLimitObj != null) {
-                            applicant_limit = ((Long) applicantLimitObj).intValue(); // Cast to Integer
-                            Log.w(TAG, "applicantLimit: " + applicant_limit);
-                        } else {
-                            Log.w(TAG, "applicantLimit is missing or null");
-                        }
-                        Log.d(TAG, String.format("Event(%s, %s) fetched", event_name, event_date));
-                        eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
-                    }
-                    eventsArrayAdapter.notifyDataSetChanged();
-                }
+
+        // Retrieve enrolled events
+        retrieveEnrolledEvents(enrolled_events -> {
+            if (enrolled_events != null) {
+                // now enrolled_events should contain all of the user's enrolled events' event ids
+                Log.d("retrieveEnrolledEvents","Enrolled Events: " + enrolled_events);
+                retrieveEventsById(enrolled_events);
+                eventsArrayAdapter.notifyDataSetChanged();
+            } else {
+                Log.d("retrieveApplications","No accepted_events retrieved.");
             }
         });
 
@@ -202,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 profile.setClass(MainActivity.this, ProfileView.class);
+                profile.putExtra("viwer", "entrance");
                 startActivity(profile);
             }
         });
@@ -372,6 +348,78 @@ public class MainActivity extends AppCompatActivity {
                     // Handle error
                     Log.w(TAG, "Failed to retrieve notification list", e);
                 });
+    }
+
+    private void retrieveEnrolledEvents(MainActivity.OnEnrolledEventsRetrievedListener listener) {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser != null) {
+            db.collection("user").document(currentUser.getUid())
+                    .get()
+                    .addOnSuccessListener(document -> {
+                        if (document.exists()) {
+                            ArrayList<String> enrolled = (ArrayList<String>) document.get("enrolled");
+                            listener.onEnrolledEventsRetrieved(enrolled);
+                        } else {
+                            Toast.makeText(MainActivity.this, "No enrolled events found in the database",
+                                    Toast.LENGTH_SHORT).show();
+                            listener.onEnrolledEventsRetrieved(null);
+                        }
+                    })
+                    .addOnFailureListener(exception -> {
+                        Toast.makeText(MainActivity.this, "Error retrieving enrolled events",
+                                Toast.LENGTH_SHORT).show();
+                        listener.onEnrolledEventsRetrieved(null);
+                    });
+        } else {
+            Toast.makeText(MainActivity.this, "User not logged in",
+                    Toast.LENGTH_SHORT).show();
+            listener.onEnrolledEventsRetrieved(null);
+        }
+    }
+
+    public interface OnEnrolledEventsRetrievedListener {
+        void onEnrolledEventsRetrieved(ArrayList<String> accepted_events);
+    }
+
+    private void retrieveEventsById(List<String> documentIds) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        int[] completedCount = {0}; // Counter for completed fetches
+
+        for (String docId : documentIds) {
+            db.collection("events").document(docId)
+                    .get()
+                    .addOnSuccessListener(document -> {
+                        if (document.exists()) {
+                            String event_id = document.getString("eventID");
+                            String event_name = document.getString("name");
+                            String facility_name = document.getString("facilityName");
+                            String created_date = document.getString("createdDate");
+                            String event_date = document.getString("eventDate");
+                            String description = document.getString("description");
+                            String organizer_id = document.getString("organizerID");
+                            String picture = document.getString("picture");
+                            Integer applicant_limit = default_applicant_limit;
+                            Object applicantLimitObj = document.get("applicantLimit");
+                            if (applicantLimitObj != null) {
+                                applicant_limit = ((Long) applicantLimitObj).intValue(); // Cast to Integer
+                            }
+                            eventsdataList.add(new Event(event_id, event_name, facility_name, created_date, event_date, description, organizer_id, picture, applicant_limit, null));
+                        }
+                        completedCount[0]++; // Increment the counter
+                        if (completedCount[0] == documentIds.size()) {
+                            // Notify adapter only when all documents are fetched
+                            runOnUiThread(() -> eventsArrayAdapter.notifyDataSetChanged());
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        completedCount[0]++;
+                        Log.e("MyApplicationsView", "Error fetching document with ID " + docId, e);
+                        if (completedCount[0] == documentIds.size()) {
+                            runOnUiThread(() -> eventsArrayAdapter.notifyDataSetChanged());
+                        }
+                    });
+        }
     }
 
 }

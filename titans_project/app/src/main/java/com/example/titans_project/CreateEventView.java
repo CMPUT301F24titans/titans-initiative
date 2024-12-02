@@ -34,6 +34,11 @@ import java.io.File;
 import java.time.LocalDate;
 import java.util.UUID;
 
+
+/**
+ * Activity for creating or editing an event. It allows the user to input event details, upload a poster image,
+ * and either create a new event or edit an existing one.
+ */
 public class CreateEventView extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -46,11 +51,19 @@ public class CreateEventView extends AppCompatActivity {
     private CheckBox geolocation;
     private Integer default_limit = 10000;
     private String organizer_id, user_type;
+    Intent return_created = new Intent();
     private StorageReference storageReference;
     private Uri uri;
     private static final String DEFAULT_PIC = "default_image.jpg";
     private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
+
+    /**
+     * Initializes the activity, sets up UI components, and handles user input to create or edit an event.
+     * Also loads user data and event information if editing an event.
+     *
+     * @param savedInstanceState the saved instance state, if any.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         EdgeToEdge.enable(this);
@@ -108,13 +121,12 @@ public class CreateEventView extends AppCompatActivity {
                     }
                 }
             });
-
         }
 
         // get the user type
         user_type = getIntent().getStringExtra("viewer");
         if("edit".equals(user_type)){
-            get_event();
+            getEvent();
             title.setText("Edit Event");
             add_poster.setText("Edit Poster");
             event_name.setText(event.getName());
@@ -126,6 +138,10 @@ public class CreateEventView extends AppCompatActivity {
             else {
                 displayImage(event.getPicture());
             }
+            if (event.getApplicantLimit() != null){
+                applicant_limit.setText(event.getApplicantLimit().toString());
+            }
+            event_details.setText(event.getDescription());
             submit_button.setText("Edit");
         }
 
@@ -136,7 +152,6 @@ public class CreateEventView extends AppCompatActivity {
                 finish();
             }
         });
-
 
         // Click add poster button to select the image for event
         add_poster.setOnClickListener(new View.OnClickListener() {
@@ -151,7 +166,7 @@ public class CreateEventView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 picture.setImageURI(null);
-                uri = null;
+                event.setPicture(null);
                 displayImage(DEFAULT_PIC);
             }
         });
@@ -197,7 +212,6 @@ public class CreateEventView extends AppCompatActivity {
                     event.setOrganizerID(organizer_id);
                     event.setApplicantLimit(applicantLimitInput);
                     event.setGeolocation(geolocationInput);
-
                 } else {
                     event = null;
                 }
@@ -210,34 +224,42 @@ public class CreateEventView extends AppCompatActivity {
                     return;
                 }
 
-                // Add event to Firestore
-                db.collection("events")
-                        .add(event)
-                        .addOnSuccessListener(documentReference -> {
-                            Log.d("Firestore", "Event added with ID: " + documentReference.getId());
-                            event.setEventID(documentReference.getId());
-                            db.collection("events").document(documentReference.getId()).update("eventID", documentReference.getId());
-                            Toast.makeText(CreateEventView.this, "Event Successfully Created",
-                                    Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(CreateEventView.this, QRCodeActivity.class);
-                            intent.putExtra("eventID", documentReference.getId());
-                            startActivity(intent);
-                            finish(); // Optionally return to the previous activity
-                        })
-                        .addOnFailureListener(e -> {
-                            Log.e("Firestore", "Error adding event", e);
-                            Toast.makeText(CreateEventView.this, "Failed To Create Event",
-                                    Toast.LENGTH_SHORT).show();
-                        });
+                if("edit".equals(user_type)){
+                    update_event();
+                    Toast.makeText(CreateEventView.this, "Event Successfully Edit",
+                            Toast.LENGTH_SHORT).show();
+                    return_created.setClass(CreateEventView.this, MyCreatedEventsView.class);
+                    startActivity(return_created);
+                }
+                else{
+                    // Add event to Firestore
+                    db.collection("events")
+                            .add(event)
+                            .addOnSuccessListener(documentReference -> {
+                                Log.d("Firestore", "Event added with ID: " + documentReference.getId());
+                                event.setEventID(documentReference.getId());
+                                db.collection("events").document(documentReference.getId()).update("eventID", documentReference.getId());
+                                Toast.makeText(CreateEventView.this, "Event Successfully Created",
+                                        Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(CreateEventView.this, QRCodeActivity.class);
+                                intent.putExtra("eventID", documentReference.getId());
+                                startActivity(intent);
+                                finish(); // Optionally return to the previous activity
+                            })
+                            .addOnFailureListener(e -> {
+                                Log.e("Firestore", "Error adding event", e);
+                                Toast.makeText(CreateEventView.this, "Failed To Create Event",
+                                        Toast.LENGTH_SHORT).show();
+                            });
+                }
             }
         });
-
     }
 
     /**
      * set up the event with the data passed by previous page
      */
-    private void get_event(){
+    private void getEvent(){
         event.setEventID(getIntent().getStringExtra("event ID"));
         event.setName(getIntent().getStringExtra("event name"));
         event.setFacilityName(getIntent().getStringExtra("event facility"));
@@ -246,6 +268,19 @@ public class CreateEventView extends AppCompatActivity {
         event.setDescription(getIntent().getStringExtra("event description"));
         event.setOrganizerID(getIntent().getStringExtra("event organizer"));
         event.setPicture(getIntent().getStringExtra("event image"));
+        event.setApplicantLimit(getIntent().getIntExtra("event limit", -1));
+    }
+
+    /**
+     * update the value in firebase
+     */
+    private void update_event(){
+        db.collection("events").document(event.getEventID()).update("name", event.getName());
+        db.collection("events").document(event.getEventID()).update("facilityName", event.getFacilityName());
+        db.collection("events").document(event.getEventID()).update("eventDate", event.getEventDate());
+        db.collection("events").document(event.getEventID()).update("picture", event.getPicture());
+        db.collection("events").document(event.getEventID()).update("applicantLimit", event.getApplicantLimit());
+        db.collection("events").document(event.getEventID()).update("description", event.getDescription());
     }
 
     /**
