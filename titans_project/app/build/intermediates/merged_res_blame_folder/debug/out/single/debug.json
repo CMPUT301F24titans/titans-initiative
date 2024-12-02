@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\drawable\\three_dot_menu.png"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\layout_fragment_waitlist.xml.flat",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\layout\\fragment_waitlist.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\drawable_exclamation_mark.png.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\drawable\\exclamation_mark.png"
+    },
+    {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\layout_fragment_waitlist.xml.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\layout\\fragment_waitlist.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\layout_fragment_send_notification.xml.flat",
@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\drawable_notification.png.flat",
-        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\drawable\\notification.png"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\drawable_notification.png.flat",
+        "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\drawable\\notification.png"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\layout_content_enrolled_events.xml.flat",
@@ -196,12 +196,12 @@
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\layout\\fragment_browse_content.xml"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-55:/layout_fragment_create_event.xml.flat",
-        "source": "com.example.titans_project.app-main-57:/layout/fragment_create_event.xml"
-    },
-    {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-main-57:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.titans_project.app-merged_res-55:/layout_fragment_created_events.xml.flat",
+        "source": "com.example.titans_project.app-main-57:/layout/fragment_created_events.xml"
     },
     {
         "merged": "C:\\Users\\Jakob\\.gradle\\daemon\\8.7\\com.example.titans_project.app-merged_res-55:\\drawable_notification_bell_red_circle_20623.png.flat",
