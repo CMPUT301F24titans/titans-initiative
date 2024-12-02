@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -154,6 +155,14 @@ public class ProfileView extends AppCompatActivity {
             clear_email.setVisibility(View.GONE);
         }
 
+        profile_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectImage();
+                initials.setVisibility(View.INVISIBLE);
+            }
+        });
+
         edit_profile_pic.setOnClickListener(new View.OnClickListener() {
             /**
              * User clicks on the edit/remove profile pic button
@@ -172,10 +181,9 @@ public class ProfileView extends AppCompatActivity {
                     }
                 }
                 else{
-                    selectImage();
-                    if (uri == null) {
-                        initials.setText("");
-                    }
+                    profile_pic.setImageDrawable(Drawable.createFromPath("@drawable/solid_color_background__blue_"));
+                    uri = null;
+                    initials.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -242,7 +250,7 @@ public class ProfileView extends AppCompatActivity {
                 phone_number.setText("");  // update locally
                 if (profileId != null) {
                     db.collection("user").document(profileId).update("phone_number", "");  // update in firebase
-                    displayImage(null);
+                    profile_pic.setImageURI(null);
                 }
                 else{
                     Toast.makeText(ProfileView.this, "Failed to clear phone number.",
