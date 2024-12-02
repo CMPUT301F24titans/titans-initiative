@@ -50,6 +50,7 @@ public class EventDetailView extends AppCompatActivity {
     Intent send_notification = new Intent();
     Intent view_map = new Intent();
     private ImageView picture;
+    private static final String DEFAULT_PIC = "default_image.jpg";
     private StorageReference storageReference;
     private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
@@ -81,6 +82,8 @@ public class EventDetailView extends AppCompatActivity {
         return_button = findViewById(R.id.button_return);
         apply_button = findViewById(R.id.button_apply);
         final ImageButton dropdown_button = findViewById(R.id.dropdown_menu);
+
+        picture.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         // get the user type
         user_type = getIntent().getStringExtra("viewer");
@@ -114,7 +117,7 @@ public class EventDetailView extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
-                            organizer.setText(document.getString("full_name"));
+                            organizer.setText("Organized by " + document.getString("full_name"));
                             Log.d("Firestore", "get organizer name");
                         } else {
                             Log.d("Firestore", "No such document");
@@ -129,6 +132,7 @@ public class EventDetailView extends AppCompatActivity {
         }
         else{
             Log.d(TAG, "no image found");
+            displayImage(DEFAULT_PIC);
         }
         // Only display description if user set one
         if (!(event.getDescription().isEmpty())){

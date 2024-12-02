@@ -49,15 +49,14 @@ public class CreateEventView extends AppCompatActivity {
     Intent return_created = new Intent();
     private StorageReference storageReference;
     private Uri uri;
+    private static final String DEFAULT_PIC = "default_image.jpg";
     private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_create_event);
-
-        Toast.makeText(CreateEventView.this, "create event view", Toast.LENGTH_SHORT).show();
 
         // Initialize storage
         storageReference = FirebaseStorage.getInstance().getReference("event image");
@@ -83,6 +82,8 @@ public class CreateEventView extends AppCompatActivity {
         applicant_limit = findViewById(R.id.eventLimitEdit);
         geolocation = findViewById(R.id.checkbox_geolocation);
 
+        picture.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
         // Only assign value to organizer_id if the device id is found
         organizer_id = null;
 
@@ -98,7 +99,6 @@ public class CreateEventView extends AppCompatActivity {
 
                             // Ensure this runs on the main thread
                             runOnUiThread(() -> {
-                                facility_name.setText(document.getString("facility"));
                                 organizer_id = document.getString("user_id");
                             });
                         } else {
@@ -120,7 +120,12 @@ public class CreateEventView extends AppCompatActivity {
             event_name.setText(event.getName());
             facility_name.setText(event.getFacilityName());
             event_date.setText(event.getEventDate());
-            displayImage(event.getPicture());
+            if (event.getPicture() == null || event.getPicture().isEmpty()){
+                displayImage(DEFAULT_PIC);
+            }
+            else {
+                displayImage(event.getPicture());
+            }
             applicant_limit.setText(event.getApplicantLimit());
             event_details.setText(event.getDescription());
             submit_button.setText("Edit");
@@ -149,6 +154,7 @@ public class CreateEventView extends AppCompatActivity {
             public void onClick(View view) {
                 picture.setImageURI(null);
                 uri = null;
+                displayImage(DEFAULT_PIC);
             }
         });
 
@@ -180,6 +186,9 @@ public class CreateEventView extends AppCompatActivity {
                 if (uri != null) {
                     uploadImage(uri);
                 }
+                else {
+                    displayImage("default_image.jpg");
+                }
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     event.setName(eventNameInput);
@@ -190,7 +199,6 @@ public class CreateEventView extends AppCompatActivity {
                     event.setOrganizerID(organizer_id);
                     event.setApplicantLimit(applicantLimitInput);
                     event.setGeolocation(geolocationInput);
-
                 } else {
                     event = null;
                 }

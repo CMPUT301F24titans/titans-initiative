@@ -4,10 +4,6 @@
         "source": "com.example.titans_project.app-main-57:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.titans_project.app-merged_res-55:/layout_fragment_application_form.xml.flat",
-        "source": "com.example.titans_project.app-main-57:/layout/fragment_application_form.xml"
-    },
-    {
         "merged": "com.example.titans_project.app-merged_res-55:/layout_fragment_my_applications.xml.flat",
         "source": "com.example.titans_project.app-main-57:/layout/fragment_my_applications.xml"
     },

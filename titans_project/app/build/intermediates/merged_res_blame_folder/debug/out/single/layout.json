@@ -48,16 +48,16 @@
         "source": "com.example.titans_project.app-main-57:/layout/fragment_view_lottery.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/content_attendee.xml",
-        "source": "com.example.titans_project.app-main-57:/layout/content_attendee.xml"
+        "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_create_event.xml",
+        "source": "com.example.titans_project.app-main-57:/layout/fragment_create_event.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_waitlist.xml",
         "source": "com.example.titans_project.app-main-57:/layout/fragment_waitlist.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_create_event.xml",
-        "source": "com.example.titans_project.app-main-57:/layout/fragment_create_event.xml"
+        "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/content_attendee.xml",
+        "source": "com.example.titans_project.app-main-57:/layout/content_attendee.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/content_browse_events.xml",
@@ -110,10 +110,6 @@
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_edit_event.xml",
         "source": "com.example.titans_project.app-main-57:/layout/fragment_edit_event.xml"
-    },
-    {
-        "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_application_form.xml",
-        "source": "com.example.titans_project.app-main-57:/layout/fragment_application_form.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_notification_details.xml",
