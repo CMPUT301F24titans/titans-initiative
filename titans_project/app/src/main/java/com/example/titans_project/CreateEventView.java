@@ -34,6 +34,11 @@ import java.io.File;
 import java.time.LocalDate;
 import java.util.UUID;
 
+
+/**
+ * Activity for creating or editing an event. It allows the user to input event details, upload a poster image,
+ * and either create a new event or edit an existing one.
+ */
 public class CreateEventView extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -52,6 +57,13 @@ public class CreateEventView extends AppCompatActivity {
     private static final String DEFAULT_PIC = "default_image.jpg";
     private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
+
+    /**
+     * Initializes the activity, sets up UI components, and handles user input to create or edit an event.
+     * Also loads user data and event information if editing an event.
+     *
+     * @param savedInstanceState the saved instance state, if any.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         EdgeToEdge.enable(this);

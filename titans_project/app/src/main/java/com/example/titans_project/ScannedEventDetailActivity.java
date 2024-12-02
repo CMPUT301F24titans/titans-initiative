@@ -28,27 +28,33 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This activity shows the details of a scanned event and allows the user to apply to the event's waitlist.
+ * The user can also check whether geolocation is required for the event and allow location data to be submitted if necessary.
+ */
 public class ScannedEventDetailActivity extends AppCompatActivity {
 
     private TextView eventNameTextView, eventDateTextView, eventDescriptionTextView;
-    private CheckBox geolocationCheckbox;
-    private String eventID;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
-    private  Button return_button, applyButton;
-    private LocationManager locationManager;
-    private Boolean geolocationRequired;
+    private CheckBox geolocationCheckbox;  // Checkbox to indicate whether the user needs to enable geolocation
+    private String eventID;  // The event ID passed from the previous activity
+    private FirebaseAuth mAuth;  // Firebase authentication instance for user authentication
+    private FirebaseFirestore db;  // Firestore database instance to interact with event and user data
+    private Button return_button, applyButton;  // Buttons for navigating back and applying to the event
+    private LocationManager locationManager;  // Manages location services
+    private Boolean geolocationRequired;  // Boolean flag indicating if geolocation is required for this event
 
     /**
-     * Called when activity starts, create all activity objects here
+     * Called when the activity is created. Initializes UI components, fetches event details from Firestore,
+     * and checks if geolocation is required.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState The saved instance state of the activity if it was previously destroyed.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_scanned_event_detail);
 
+        // Initialize UI components
         eventNameTextView = findViewById(R.id.eventNameTextView);
         eventDateTextView = findViewById(R.id.eventDateTextView);
         eventDescriptionTextView = findViewById(R.id.eventDescriptionTextView);
@@ -56,78 +62,82 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
         return_button = findViewById(R.id.returnButton);
         geolocationCheckbox = findViewById(R.id.geolocationCheckBox);
 
+        // Retrieve event ID from the intent
         eventID = getIntent().getStringExtra("eventID");
+
+        // Initialize FirebaseAuth and Firestore instances
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        // Geolocation stuff
+        // Initialize LocationManager for geolocation
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
+        // Load event details from Firestore if the eventID is valid
         if (eventID != null) {
             loadEventDetails(eventID);
         } else {
             Toast.makeText(this, "Invalid event ID", Toast.LENGTH_SHORT).show();
-            finish();
+            finish();  // Close activity if event ID is invalid
         }
-        // Check if checkbox necessary
+
+        // Check if geolocation is required for the event
         db.collection("events").document(eventID).get()
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
                         geolocationRequired = documentSnapshot.getBoolean("geolocation");
                         if (geolocationRequired == null || !geolocationRequired) {
-                            geolocationCheckbox.setVisibility(View.GONE);  // Remove checkbox if not required
+                            geolocationCheckbox.setVisibility(View.GONE);  // Hide checkbox if geolocation is not required
                         }
                     }
                 });
 
+        // Set up click listener for the apply button
         applyButton.setOnClickListener(v -> {
 
-            if (geolocationRequired){
-                if (!geolocationCheckbox.isChecked()){
+            if (geolocationRequired) {
+                // If geolocation is required, ensure the checkbox is checked
+                if (!geolocationCheckbox.isChecked()) {
                     geolocationCheckbox.setError("Geolocation Required");
                     return;
                 }
             }
 
+            // Fetch event details and check if the user can apply to the event
             db.collection("events").document(eventID).get()
-                            .addOnSuccessListener(documentSnapshot -> {
-                               if (documentSnapshot.exists()) {
-                                   Long applicant_limit_long = documentSnapshot.getLong("applicantLimit");
-                                   Integer applicant_limit = applicant_limit_long.intValue();
-                                   ArrayList<HashMap<String, String>> applications = (ArrayList<HashMap<String, String>>) documentSnapshot.get("waitlist");
-                                   if (applications != null) {
-                                       Log.d("ApplicantLimitCheck","ApplicantLimit = " + applicant_limit);
-                                       Log.d("ApplicantLimitCheck","Waitlist = " + applications);
-                                       Log.d("ApplicantLimitCheck","WaitlistSize = " + applications.size());
-                                       // entrant may only apply if there is room in waitlist
-                                       if (applications.size() < applicant_limit) {
-                                           applyToEvent();
-                                           // check if geolocation enabled
-                                           if (geolocationRequired != null && geolocationRequired) {
-                                               getOneTimeLocation();
-                                           }
-                                       }
-                                       else {
-                                           Toast.makeText(ScannedEventDetailActivity.this, "Event Full: Unable to join event", Toast.LENGTH_SHORT).show();
-                                       }
-                                   }
-                                   else {
-                                       Toast.makeText(ScannedEventDetailActivity.this, "Waitlist Error: Unable to join event", Toast.LENGTH_SHORT).show();
-                                   }
-                               }
-                            });
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if (documentSnapshot.exists()) {
+                            Long applicantLimitLong = documentSnapshot.getLong("applicantLimit");
+                            Integer applicantLimit = applicantLimitLong != null ? applicantLimitLong.intValue() : 0;
+                            ArrayList<HashMap<String, String>> applications = (ArrayList<HashMap<String, String>>) documentSnapshot.get("waitlist");
+
+                            if (applications != null) {
+                                // Check if there's room in the waitlist
+                                if (applications.size() < applicantLimit) {
+                                    applyToEvent();
+                                    // Check if geolocation is enabled for the event
+                                    if (geolocationRequired != null && geolocationRequired) {
+                                        getOneTimeLocation();  // Fetch and submit the user's location
+                                    }
+                                } else {
+                                    Toast.makeText(ScannedEventDetailActivity.this, "Event Full: Unable to join event", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(ScannedEventDetailActivity.this, "Waitlist Error: Unable to join event", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
 
         });
 
-        return_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
+        // Set up click listener for the return button
+        return_button.setOnClickListener(view -> finish());  // Finish the activity and return to the previous screen
     }
 
+    /**
+     * Loads the event details (name, date, description) from Firestore based on the event ID.
+     *
+     * @param eventID The event ID used to fetch event details.
+     */
     private void loadEventDetails(String eventID) {
         db.collection("events").document(eventID).get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -137,18 +147,23 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                         eventDescriptionTextView.setText(documentSnapshot.getString("description"));
                     } else {
                         Toast.makeText(this, "Event not found", Toast.LENGTH_SHORT).show();
-                        finish();
+                        finish();  // Close the activity if the event is not found
                     }
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to load event details", Toast.LENGTH_SHORT).show());
     }
 
+    /**
+     * Applies the current user to the event's waitlist in Firestore.
+     * This method checks if the user is already on the waitlist and adds them if not.
+     */
     private void applyToEvent() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             String userID = currentUser.getUid();
             DocumentReference userRef = db.collection("user").document(userID);
 
+            // Fetch the current user's details
             userRef.get().addOnSuccessListener(documentSnapshot -> {
                 if (documentSnapshot.exists()) {
                     String fullName = documentSnapshot.getString("full_name");
@@ -180,7 +195,8 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                                             .addOnFailureListener(e -> {
                                                 Toast.makeText(this, "Failed to join the waitlist.", Toast.LENGTH_SHORT).show();
                                             });
-                                    // Add the event to the user's applications
+
+                                    // Add the event to the user's applications list
                                     userRef.update("applications", FieldValue.arrayUnion(eventID));
                                 }
                             })
@@ -198,18 +214,22 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Fetches the user's current location and updates the event's locations field in Firestore.
+     * This method is used if geolocation is required for the event.
+     */
     private void getOneTimeLocation() {
-        // Check for permissions (you should handle this appropriately in your app)
         try {
-            // Request the location update using GPS or Network Provider
+            // Request a one-time location update using the GPS provider
             locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
-                    // Use the location here
-                    HashMap<String, Double> locationCoordinates = new HashMap<String, Double>();
+                    // Store the location data (latitude and longitude) in a HashMap
+                    HashMap<String, Double> locationCoordinates = new HashMap<>();
                     locationCoordinates.put("latitude", location.getLatitude());
                     locationCoordinates.put("longitude", location.getLongitude());
-                    // add latitude and longitude values into Firebase
+
+                    // Update Firestore with the new location data
                     db.collection("events").document(eventID).update("locations", FieldValue.arrayUnion(locationCoordinates));
                 }
 

@@ -17,6 +17,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ * Activity that handles the lottery process for applicants on an event's waitlist.
+ * This activity runs the lottery, selects applicants based on the lottery size, and updates
+ * the event and user records accordingly.
+ */
 public class LotteryActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
@@ -47,6 +53,11 @@ public class LotteryActivity extends AppCompatActivity {
         db.collection("events").document(eventID).update("generatedLottery", true);
     }
 
+
+    /**
+     * Starts the lottery process by selecting applicants from the event's waitlist.
+     * Updates the event and user data accordingly.
+     */
     private void startLottery() {
         db.collection("events").document(eventID).get().addOnSuccessListener(documentSnapshot -> {
             if (!documentSnapshot.exists()) {

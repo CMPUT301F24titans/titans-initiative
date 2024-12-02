@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Activity that displays the list of cancelled entrants for an event.
+ * Allows the admin to send notifications to the cancelled entrants.
+ */
 public class CancelledEntrantsActivity extends AppCompatActivity {
     private RecyclerView waitlistRecyclerView;
     private WaitlistArrayAdapter waitlistAdapter;
@@ -27,6 +31,11 @@ public class CancelledEntrantsActivity extends AppCompatActivity {
     private String eventID;
     Intent send_notification = new Intent();
 
+    /**
+     * Initializes the activity, sets up the UI elements, and loads the cancelled entrants from Firebase.
+     *
+     * @param savedInstanceState the saved instance state, if any.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +47,7 @@ public class CancelledEntrantsActivity extends AppCompatActivity {
 
         EditText lotterySize = findViewById(R.id.editTextLotterySize);
 
-        // Remove waitlist specific objects
+        // Remove waitlist specific objects (e.g., lottery-related views)
         lotterySize.setVisibility(View.GONE);
         generateLottery.setVisibility(View.GONE);
         lotterySizeTextView.setVisibility(View.GONE);
@@ -52,17 +61,21 @@ public class CancelledEntrantsActivity extends AppCompatActivity {
         waitlist = new ArrayList<>();
         eventID = getIntent().getStringExtra("eventID");
 
+        // Check if eventID is valid
         if (eventID == null || eventID.isEmpty()) {
             Toast.makeText(this, "Invalid event ID", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
 
+        // Set up the adapter for displaying cancelled entrants
         waitlistAdapter = new WaitlistArrayAdapter(this, waitlist, eventID);
         waitlistRecyclerView.setAdapter(waitlistAdapter);
 
+        // Load the cancelled entrants from Firebase
         loadCancelledEntrants();
 
+        // Set up the return button
         findViewById(R.id.returnButton).setOnClickListener(v -> finish());
 
         // When sending notification, get the selected users
@@ -71,9 +84,11 @@ public class CancelledEntrantsActivity extends AppCompatActivity {
             send_notification.putExtra("eventID", eventID);
             startActivity(send_notification);
         });
-
     }
 
+    /**
+     * Loads the list of cancelled entrants from Firebase Firestore and updates the RecyclerView.
+     */
     private void loadCancelledEntrants() {
         db.collection("events").document(eventID)
                 .get()
@@ -81,11 +96,13 @@ public class CancelledEntrantsActivity extends AppCompatActivity {
                     waitlist.clear();
                     List<Map<String, String>> firebaseWaitlist = (List<Map<String, String>>) documentSnapshot.get("cancelled");
 
+                    // If there are cancelled entrants, add them to the waitlist
                     if (firebaseWaitlist != null) {
                         for (Map<String, String> attendee : firebaseWaitlist) {
                             waitlist.add(new Attendee(attendee.get("full_name"), attendee.get("user_id"), ""));
                         }
                     }
+                    // Notify the adapter to refresh the data in the RecyclerView
                     waitlistAdapter.notifyDataSetChanged();
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to load waitlist.", Toast.LENGTH_SHORT).show());
