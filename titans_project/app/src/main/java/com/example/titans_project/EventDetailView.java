@@ -1,7 +1,5 @@
 package com.example.titans_project;
 
-import static com.example.titans_project.R.id.dropdown_menu;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -107,7 +105,7 @@ public class EventDetailView extends AppCompatActivity {
         }
 
         // get the event data
-        get_event();
+        getEvent();
         // display all event data
         name.setText(event.getName());
         db.collection("user")
@@ -239,7 +237,7 @@ public class EventDetailView extends AppCompatActivity {
     /**
      * set up the event with the data passed by previous page
      */
-    private void get_event(){
+    private void getEvent(){
         event.setEventID(getIntent().getStringExtra("event ID"));
         event.setName(getIntent().getStringExtra("event name"));
         event.setFacilityName(getIntent().getStringExtra("event facility"));

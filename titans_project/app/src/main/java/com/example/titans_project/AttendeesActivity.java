@@ -106,14 +106,4 @@ public class AttendeesActivity extends AppCompatActivity {
             Toast.makeText(this, "Error loading attendees: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         });
     }
-
-    private void toggleEmptyState(boolean isEmpty) {
-        if (isEmpty) {
-            emptyTextView.setVisibility(TextView.VISIBLE);
-            recyclerView.setVisibility(RecyclerView.GONE);
-        } else {
-            emptyTextView.setVisibility(TextView.GONE);
-            recyclerView.setVisibility(RecyclerView.VISIBLE);
-        }
-    }
 }

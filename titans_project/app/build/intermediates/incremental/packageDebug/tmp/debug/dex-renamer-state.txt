@@ -1,10 +1,10 @@
-#Sun Dec 01 19:24:08 MST 2024
-base.0=C\:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.3=C\:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.4=C\:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.5=C\:\\Users\\18729\\GitRepo\\Cmput301_project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+#Sun Dec 01 22:29:35 MST 2024
+base.0=C\:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.3=C\:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.4=C\:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.5=C\:\\Users\\Jakob\\U_of_A\\YEAR_3\\CMPUT_301\\project\\project\\titans-initiative\\titans_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=13/classes.dex
