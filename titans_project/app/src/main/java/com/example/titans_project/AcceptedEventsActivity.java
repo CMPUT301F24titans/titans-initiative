@@ -18,6 +18,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Activity to display accepted events for the logged-in user.
+ */
 public class AcceptedEventsActivity extends AppCompatActivity {
     private Button return_button;
     private FirebaseAuth mAuth;
@@ -27,7 +30,11 @@ public class AcceptedEventsActivity extends AppCompatActivity {
     private AcceptedEventsArrayAdapter acceptedEventsArrayAdapter;
     private Integer default_applicant_limit = 10000;
 
-
+    /**
+     * Initializes the activity, sets up Firebase, and retrieves accepted events.
+     *
+     * @param savedInstanceState the previous saved instance state, if any.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +73,11 @@ public class AcceptedEventsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Retrieves the accepted events for the currently logged-in user.
+     *
+     * @param listener the callback listener to handle the retrieved events.
+     */
     private void retrieveAcceptedEvents(OnAcceptedEventsRetrievedListener listener) {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
@@ -94,10 +106,18 @@ public class AcceptedEventsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Interface to handle the callback for when accepted events are retrieved.
+     */
     public interface OnAcceptedEventsRetrievedListener {
         void onAcceptedEventsRetrieved(ArrayList<String> accepted_events);
     }
 
+    /**
+     * Retrieves event details for each event ID provided.
+     *
+     * @param documentIds list of event document IDs to fetch from the database.
+     */
     private void retrieveEventsById(List<String> documentIds) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         int[] completedCount = {0}; // Counter for completed fetches
@@ -137,6 +157,4 @@ public class AcceptedEventsActivity extends AppCompatActivity {
                     });
         }
     }
-
-
 }
