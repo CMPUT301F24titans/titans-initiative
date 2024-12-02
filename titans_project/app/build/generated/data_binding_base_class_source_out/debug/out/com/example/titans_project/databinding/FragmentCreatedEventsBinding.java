@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class FragmentCreatedEventsBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final Button buttonReturn;
@@ -33,9 +33,9 @@ public final class FragmentCreatedEventsBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
-  private FragmentCreatedEventsBinding(@NonNull RelativeLayout rootView,
-      @NonNull Button buttonReturn, @NonNull Button createEventButton,
-      @NonNull ListView listviewEvents, @NonNull TextView title) {
+  private FragmentCreatedEventsBinding(@NonNull LinearLayout rootView, @NonNull Button buttonReturn,
+      @NonNull Button createEventButton, @NonNull ListView listviewEvents,
+      @NonNull TextView title) {
     this.rootView = rootView;
     this.buttonReturn = buttonReturn;
     this.createEventButton = createEventButton;
@@ -45,7 +45,7 @@ public final class FragmentCreatedEventsBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -94,7 +94,7 @@ public final class FragmentCreatedEventsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCreatedEventsBinding((RelativeLayout) rootView, buttonReturn,
+      return new FragmentCreatedEventsBinding((LinearLayout) rootView, buttonReturn,
           createEventButton, listviewEvents, title);
     }
     String missingId = rootView.getResources().getResourceName(id);

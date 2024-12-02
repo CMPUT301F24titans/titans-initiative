@@ -3379,7 +3379,6 @@ int id button_clear_email 0x7f09007e
 int id button_clear_facility 0x7f09007f
 int id button_clear_full_name 0x7f090080
 int id button_clear_phone_number 0x7f090081
-int id button_create_profile 0x7f090082
 int id button_decline 0x7f090083
 int id button_delete_poster 0x7f090084
 int id button_edit_profile_pic 0x7f090085
@@ -4035,7 +4034,6 @@ int layout design_navigation_menu 0x7f0c0033
 int layout design_navigation_menu_item 0x7f0c0034
 int layout design_text_input_end_icon 0x7f0c0035
 int layout design_text_input_start_icon 0x7f0c0036
-int layout fragment_application_form 0x7f0c0037
 int layout fragment_attendees 0x7f0c0038
 int layout fragment_browse_content 0x7f0c0039
 int layout fragment_create_event 0x7f0c003a
