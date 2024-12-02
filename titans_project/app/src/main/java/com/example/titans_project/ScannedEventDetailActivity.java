@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,11 +31,13 @@ import java.util.Map;
 public class ScannedEventDetailActivity extends AppCompatActivity {
 
     private TextView eventNameTextView, eventDateTextView, eventDescriptionTextView;
+    private CheckBox geolocationCheckbox;
     private String eventID;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private  Button return_button, applyButton;
     private LocationManager locationManager;
+    private Boolean geolocationRequired;
 
     /**
      * Called when activity starts, create all activity objects here
@@ -51,6 +54,7 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
         eventDescriptionTextView = findViewById(R.id.eventDescriptionTextView);
         applyButton = findViewById(R.id.applyButton);
         return_button = findViewById(R.id.returnButton);
+        geolocationCheckbox = findViewById(R.id.geolocationCheckBox);
 
         eventID = getIntent().getStringExtra("eventID");
         mAuth = FirebaseAuth.getInstance();
@@ -65,8 +69,26 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
             Toast.makeText(this, "Invalid event ID", Toast.LENGTH_SHORT).show();
             finish();
         }
+        // Check if checkbox necessary
+        db.collection("events").document(eventID).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        geolocationRequired = documentSnapshot.getBoolean("geolocation");
+                        if (geolocationRequired == null || !geolocationRequired) {
+                            geolocationCheckbox.setVisibility(View.GONE);  // Remove checkbox if not required
+                        }
+                    }
+                });
 
         applyButton.setOnClickListener(v -> {
+
+            if (geolocationRequired){
+                if (!geolocationCheckbox.isChecked()){
+                    geolocationCheckbox.setError("Geolocation Required");
+                    return;
+                }
+            }
+
             db.collection("events").document(eventID).get()
                             .addOnSuccessListener(documentSnapshot -> {
                                if (documentSnapshot.exists()) {
@@ -81,8 +103,7 @@ public class ScannedEventDetailActivity extends AppCompatActivity {
                                        if (applications.size() < applicant_limit) {
                                            applyToEvent();
                                            // check if geolocation enabled
-                                           Boolean geolocation = documentSnapshot.getBoolean("geolocation"); // Get the field value
-                                           if (geolocation != null && geolocation) {
+                                           if (geolocationRequired != null && geolocationRequired) {
                                                getOneTimeLocation();
                                            }
                                        }
