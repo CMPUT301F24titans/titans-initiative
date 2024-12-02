@@ -36,7 +36,6 @@ public class BrowseContentView extends AppCompatActivity {
     private ProfilesArrayAdapter profileArrayAdapter;
     private Switch back_user;
     private Boolean browsingEvents;
-    private FirebaseAuth mAuth;
     Intent event_detail = new Intent();
     Intent profile_detail = new Intent();
     TextView header1, header2;
