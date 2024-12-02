@@ -126,7 +126,9 @@ public class CreateEventView extends AppCompatActivity {
             else {
                 displayImage(event.getPicture());
             }
-            applicant_limit.setText(event.getApplicantLimit());
+            if (event.getApplicantLimit() != null){
+                applicant_limit.setText(event.getApplicantLimit().toString());
+            }
             event_details.setText(event.getDescription());
             submit_button.setText("Edit");
         }
@@ -138,7 +140,6 @@ public class CreateEventView extends AppCompatActivity {
                 finish();
             }
         });
-
 
         // Click add poster button to select the image for event
         add_poster.setOnClickListener(new View.OnClickListener() {
@@ -153,7 +154,7 @@ public class CreateEventView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 picture.setImageURI(null);
-                uri = null;
+                event.setPicture(null);
                 displayImage(DEFAULT_PIC);
             }
         });
@@ -255,6 +256,7 @@ public class CreateEventView extends AppCompatActivity {
         event.setDescription(getIntent().getStringExtra("event description"));
         event.setOrganizerID(getIntent().getStringExtra("event organizer"));
         event.setPicture(getIntent().getStringExtra("event image"));
+        event.setApplicantLimit(getIntent().getIntExtra("event limit", -1));
     }
 
     /**
