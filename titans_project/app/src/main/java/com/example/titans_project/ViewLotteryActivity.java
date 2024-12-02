@@ -30,6 +30,7 @@ public class ViewLotteryActivity extends AppCompatActivity {
     private ImageButton sendNotification;  // Button to send notifications to the lottery participants
     private Intent send_notification = new Intent();  // Intent to navigate to the SendNotification activity
     private LotteryAdapter adapter;  // Adapter for the RecyclerView to display the lottery list
+    private Button return_button;  // Button to return to previous page
 
     /**
      * Called when the activity is created. Initializes the UI components, sets up listeners,
@@ -62,8 +63,19 @@ public class ViewLotteryActivity extends AppCompatActivity {
         // Initialize the send notification button
         sendNotification = findViewById(R.id.buttonSendNotification);
 
+        // Initialize the return button
+        return_button = findViewById(R.id.returnButton);
+
         // Load the lottery list from Firestore
         loadLotteryList();
+
+        // return to  previous page
+        return_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // Set the click listener for the send notification button
         sendNotification.setOnClickListener(new View.OnClickListener() {
