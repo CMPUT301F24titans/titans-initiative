@@ -42,7 +42,6 @@ id button_clear_email
 id button_clear_facility
 id button_clear_full_name
 id button_clear_phone_number
-id button_create_profile
 id button_decline
 id button_delete_poster
 id button_edit_profile_pic
@@ -136,7 +135,6 @@ layout content_lottery
 layout content_my_applications
 layout content_notifications
 layout content_waitlist
-layout fragment_application_form
 layout fragment_attendees
 layout fragment_browse_content
 layout fragment_create_event

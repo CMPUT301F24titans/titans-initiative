@@ -12,8 +12,8 @@
         "source": "com.example.titans_project.app-main-57:/layout/content_browse_profiles.xml"
     },
     {
-        "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_maps.xml",
-        "source": "com.example.titans_project.app-main-57:/layout/fragment_maps.xml"
+        "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_created_events.xml",
+        "source": "com.example.titans_project.app-main-57:/layout/fragment_created_events.xml"
     },
     {
         "merged": "com.example.titans_project.app-mergeDebugResources-54:/layout/fragment_lottery.xml",

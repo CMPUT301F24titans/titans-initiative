@@ -48,6 +48,7 @@ public class CreateEventView extends AppCompatActivity {
     private String organizer_id, user_type;
     private StorageReference storageReference;
     private Uri uri;
+    private static final String DEFAULT_PIC = "default_image.jpg";
     private Event event = new Event(null, null, null, null, null, null, null, null, null, null);
 
     @Override
@@ -80,6 +81,8 @@ public class CreateEventView extends AppCompatActivity {
         applicant_limit = findViewById(R.id.eventLimitEdit);
         geolocation = findViewById(R.id.checkbox_geolocation);
 
+        picture.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
         // Only assign value to organizer_id if the device id is found
         organizer_id = null;
 
@@ -95,7 +98,6 @@ public class CreateEventView extends AppCompatActivity {
 
                             // Ensure this runs on the main thread
                             runOnUiThread(() -> {
-                                facility_name.setText(document.getString("facility"));
                                 organizer_id = document.getString("user_id");
                             });
                         } else {
@@ -118,7 +120,12 @@ public class CreateEventView extends AppCompatActivity {
             event_name.setText(event.getName());
             facility_name.setText(event.getFacilityName());
             event_date.setText(event.getEventDate());
-            displayImage(event.getPicture());
+            if (event.getPicture() == null || event.getPicture().isEmpty()){
+                displayImage(DEFAULT_PIC);
+            }
+            else {
+                displayImage(event.getPicture());
+            }
             submit_button.setText("Edit");
         }
 
@@ -145,6 +152,7 @@ public class CreateEventView extends AppCompatActivity {
             public void onClick(View view) {
                 picture.setImageURI(null);
                 uri = null;
+                displayImage(DEFAULT_PIC);
             }
         });
 
@@ -175,6 +183,9 @@ public class CreateEventView extends AppCompatActivity {
 
                 if (uri != null) {
                     uploadImage(uri);
+                }
+                else {
+                    displayImage("default_image.jpg");
                 }
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {

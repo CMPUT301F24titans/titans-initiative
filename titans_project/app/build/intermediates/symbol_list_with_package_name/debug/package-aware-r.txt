@@ -3380,7 +3380,6 @@ id button_clear_email
 id button_clear_facility
 id button_clear_full_name
 id button_clear_phone_number
-id button_create_profile
 id button_decline
 id button_delete_poster
 id button_edit_profile_pic
@@ -4036,7 +4035,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_application_form
 layout fragment_attendees
 layout fragment_browse_content
 layout fragment_create_event
