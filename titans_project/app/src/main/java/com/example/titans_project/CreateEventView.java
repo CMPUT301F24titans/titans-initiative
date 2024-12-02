@@ -98,7 +98,6 @@ public class CreateEventView extends AppCompatActivity {
 
                             // Ensure this runs on the main thread
                             runOnUiThread(() -> {
-                                facility_name.setText(document.getString("facility"));
                                 organizer_id = document.getString("user_id");
                             });
                         } else {
