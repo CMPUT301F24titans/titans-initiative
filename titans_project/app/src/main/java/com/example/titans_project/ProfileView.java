@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -156,6 +157,16 @@ public class ProfileView extends AppCompatActivity {
             clear_email.setVisibility(View.GONE);
         }
 
+        profile_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!adminView){
+                    selectImage();
+                    initials.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
         edit_profile_pic.setOnClickListener(new View.OnClickListener() {
             /**
              * User clicks on the edit/remove profile pic button
@@ -166,7 +177,10 @@ public class ProfileView extends AppCompatActivity {
                 // button removes profile pics for admin users
                 if (adminView){
                     if (profileId != null){
-                        db.collection("user").document(profileId).update("profile_pic", null);  // update in firebase
+                        profile_pic.setImageResource(R.drawable.solid_color_background__blue_);
+                        uri = null;
+                        initials.setVisibility(View.VISIBLE);
+                        uploadImage(uri, profileId);
                     }
                     else {
                         Toast.makeText(ProfileView.this, "Failed to remove profile pic.",
@@ -174,7 +188,9 @@ public class ProfileView extends AppCompatActivity {
                     }
                 }
                 else{
-                    selectImage();
+                    profile_pic.setImageResource(R.drawable.solid_color_background__blue_);
+                    uri = null;
+                    initials.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -404,19 +420,23 @@ public class ProfileView extends AppCompatActivity {
      *  The uri of the image
      */
     private void uploadImage(Uri uri, String uid) {
+        String picture_name  = "";
         if (uri == null) {
             Log.d(TAG, "No image selected");
+            db.collection("user").document(uid).update("profile_pic", picture_name);
             return;
         }
-        String picture_name = UUID.randomUUID().toString();
-        db.collection("user").document(uid).update("profile_pic", picture_name);
-        StorageReference reference = storageReference.child(picture_name);
-        reference.putFile(uri)
-                .addOnSuccessListener(taskSnapshot -> {
-                    Toast.makeText(ProfileView.this, "Image successfully uploaded!", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(e -> {
-                    Toast.makeText(ProfileView.this, "There was an error while uploading", Toast.LENGTH_SHORT).show();
-                });
+        else {
+            picture_name = UUID.randomUUID().toString();
+            db.collection("user").document(uid).update("profile_pic", picture_name);
+            StorageReference reference = storageReference.child(picture_name);
+            reference.putFile(uri)
+                    .addOnSuccessListener(taskSnapshot -> {
+                        Toast.makeText(ProfileView.this, "Image successfully uploaded!", Toast.LENGTH_SHORT).show();
+                    }).addOnFailureListener(e -> {
+                        Toast.makeText(ProfileView.this, "There was an error while uploading", Toast.LENGTH_SHORT).show();
+                    });
+        }
     }
 
 

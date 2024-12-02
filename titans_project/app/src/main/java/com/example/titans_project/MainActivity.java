@@ -202,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 profile.setClass(MainActivity.this, ProfileView.class);
+                profile.putExtra("viwer", "entrance");
                 startActivity(profile);
             }
         });

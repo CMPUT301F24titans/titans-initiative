@@ -42,7 +42,7 @@
     <string name="decline">Decline</string>
     <string name="delete">Delete</string>
     <string name="description">Description</string>
-    <string name="edit_remove_profile_pic">Edit Profile Pic</string>
+    <string name="edit_remove_profile_pic">Delete Profile Pic</string>
     <string name="email">Email</string>
     <string name="enroll">Enroll</string>
     <string name="enrollable_events">Enrollable Events</string>

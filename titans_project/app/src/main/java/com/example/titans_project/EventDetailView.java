@@ -144,6 +144,7 @@ public class EventDetailView extends AppCompatActivity {
         Log.w(TAG, "applicantLimit (from EventDetailView): " + eventLimit);
         if (eventLimit != default_applicant_limit) {
             application_limit.setText("The limit of applicants is " + eventLimit);
+            event.setApplicantLimit((Integer) eventLimit);
         }
 
         final PopupMenu dropDownMenu = new PopupMenu(EventDetailView.this, dropdown_button);
@@ -303,6 +304,7 @@ public class EventDetailView extends AppCompatActivity {
         edit_event.putExtra("event description", event.getDescription());
         edit_event.putExtra("event organizer", event.getOrganizerID());
         edit_event.putExtra("event image", event.getPicture());
+        edit_event.putExtra("event limit", event.getApplicantLimit());
         edit_event.putExtra("viewer", "edit");
     }
 }
