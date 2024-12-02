@@ -294,14 +294,23 @@ public class CreateEventView extends AppCompatActivity {
      *  The uri of the image
      */
     private void uploadImage(Uri uri){
+        // Generate a valid picture name
         String picture_name = UUID.randomUUID().toString();
-        event.setPicture(picture_name);
-        StorageReference  reference = storageReference.child(picture_name);
+
+        // Ensure that picture_name is not null or empty
+        if (picture_name == null || picture_name.trim().isEmpty()) {
+            Log.e("CreateEventView", "Generated picture_name is invalid");
+            return; // Exit the method if the picture name is invalid
+        }
+
+        event.setPicture(picture_name); // Store the picture name in the event object
+        StorageReference reference = storageReference.child(picture_name);
         reference.putFile(uri)
                 .addOnSuccessListener(taskSnapshot -> {
-                    Toast.makeText(CreateEventView.this, "Image successfully upload!", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(e -> {
-                    Toast.makeText(CreateEventView.this, "There was an error while upload", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateEventView.this, "Image successfully uploaded!", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(CreateEventView.this, "There was an error while uploading", Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -309,15 +318,24 @@ public class CreateEventView extends AppCompatActivity {
      * Retrieve image from firebase storage and display it
      * @param picture_name
      */
-    private void displayImage(String picture_name){
+    private void displayImage(String picture_name) {
+        // Check if picture_name is valid before proceeding
+        if (picture_name == null || picture_name.trim().isEmpty()) {
+            Log.e("CreateEventView", "Invalid picture name: " + picture_name);
+            picture.setImageDrawable(null); // Set an empty image or placeholder
+            return;
+        }
+
         StorageReference imageRef = storageReference.child(picture_name);
-        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), picture_name+".jpg");
+        final File localFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), picture_name + ".jpg");
         imageRef.getFile(localFile)
                 .addOnSuccessListener(taskSnapshot -> {
                     Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     picture.setImageBitmap(bitmap);
-                }).addOnFailureListener(e -> {
-                    Toast.makeText(CreateEventView.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(CreateEventView.this, "Failed to load image: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    picture.setImageDrawable(null); // Set an empty image or placeholder
                 });
     }
 }

@@ -109,16 +109,18 @@ public class ProfileView extends AppCompatActivity {
                                 email.setText(document.getString("email"));
                                 phone_number.setText(document.getString("phone_number"));
                                 facility.setText(document.getString("facility"));
-                                // profile pic not assigned value (null)
-                                Log.d(TAG, "profile_pic: " + document.getString("profile_pic"));
-                                if (document.getString("profile_pic") == null || document.getString("profile_pic").isEmpty()) {
-                                    // Generate initials of user
+
+                                // Check if profile_pic field is null or empty
+                                String profilePic = document.getString("profile_pic");
+                                if (profilePic == null || profilePic.isEmpty()) {
+                                    // If no profile pic, display the initials
                                     initials.setText(getInitials(name.getText().toString()));
+                                    Log.d(TAG, "Initials Value: " + initials.getText());
+                                } else {
+                                    // If there is a profile pic, display it
+                                    displayImage(profilePic);
                                 }
-                                // profile pic assigned to uri value
-                                else {
-                                    displayImage(document.getString("profile_pic"));
-                                }
+
                                 notifications.setChecked(document.getBoolean("notifications"));
                             });
                         } else {
@@ -158,8 +160,10 @@ public class ProfileView extends AppCompatActivity {
         profile_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectImage();
-                initials.setVisibility(View.INVISIBLE);
+                if(!adminView){
+                    selectImage();
+                    initials.setVisibility(View.INVISIBLE);
+                }
             }
         });
 
@@ -173,7 +177,10 @@ public class ProfileView extends AppCompatActivity {
                 // button removes profile pics for admin users
                 if (adminView){
                     if (profileId != null){
-                        db.collection("user").document(profileId).update("profile_pic", null);  // update in firebase
+                        profile_pic.setImageResource(R.drawable.solid_color_background__blue_);
+                        uri = null;
+                        initials.setVisibility(View.VISIBLE);
+                        uploadImage(uri, profileId);
                     }
                     else {
                         Toast.makeText(ProfileView.this, "Failed to remove profile pic.",
@@ -181,7 +188,7 @@ public class ProfileView extends AppCompatActivity {
                     }
                 }
                 else{
-                    profile_pic.setImageDrawable(Drawable.createFromPath("@drawable/solid_color_background__blue_"));
+                    profile_pic.setImageResource(R.drawable.solid_color_background__blue_);
                     uri = null;
                     initials.setVisibility(View.VISIBLE);
                 }
@@ -250,7 +257,6 @@ public class ProfileView extends AppCompatActivity {
                 phone_number.setText("");  // update locally
                 if (profileId != null) {
                     db.collection("user").document(profileId).update("phone_number", "");  // update in firebase
-                    profile_pic.setImageURI(null);
                 }
                 else{
                     Toast.makeText(ProfileView.this, "Failed to clear phone number.",
@@ -348,8 +354,8 @@ public class ProfileView extends AppCompatActivity {
         String[] words = full_name.trim().split("\\s+");  // handles multiple spaces
         StringBuilder initials = new StringBuilder();
         for (String word : words) {
-            if (!word.isEmpty()) {
-                // Take the first character of each word and convert it to uppercase
+            if (!word.isEmpty() && initials.length() < 2) {
+                // Take the first character of each word and convert it to uppercase (2 initials max)
                 initials.append(Character.toUpperCase(word.charAt(0)));
             }
         }
@@ -414,19 +420,23 @@ public class ProfileView extends AppCompatActivity {
      *  The uri of the image
      */
     private void uploadImage(Uri uri, String uid) {
+        String picture_name  = "";
         if (uri == null) {
             Log.d(TAG, "No image selected");
+            db.collection("user").document(uid).update("profile_pic", picture_name);
             return;
         }
-        String picture_name = UUID.randomUUID().toString();
-        db.collection("user").document(uid).update("profile_pic", picture_name);
-        StorageReference reference = storageReference.child(picture_name);
-        reference.putFile(uri)
-                .addOnSuccessListener(taskSnapshot -> {
-                    Toast.makeText(ProfileView.this, "Image successfully uploaded!", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(e -> {
-                    Toast.makeText(ProfileView.this, "There was an error while uploading", Toast.LENGTH_SHORT).show();
-                });
+        else {
+            picture_name = UUID.randomUUID().toString();
+            db.collection("user").document(uid).update("profile_pic", picture_name);
+            StorageReference reference = storageReference.child(picture_name);
+            reference.putFile(uri)
+                    .addOnSuccessListener(taskSnapshot -> {
+                        Toast.makeText(ProfileView.this, "Image successfully uploaded!", Toast.LENGTH_SHORT).show();
+                    }).addOnFailureListener(e -> {
+                        Toast.makeText(ProfileView.this, "There was an error while uploading", Toast.LENGTH_SHORT).show();
+                    });
+        }
     }
 
 

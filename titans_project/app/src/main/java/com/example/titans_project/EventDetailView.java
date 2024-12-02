@@ -128,8 +128,7 @@ public class EventDetailView extends AppCompatActivity {
             displayImage(picture_name);
         }
         else{
-            Toast.makeText(EventDetailView.this, "no image found",
-                    Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "no image found");
         }
         // Only display description if user set one
         if (!(event.getDescription().isEmpty())){
