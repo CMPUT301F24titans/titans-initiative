@@ -1,171 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Top Bar with Back Icon and Title on the Same Line -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="20"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Back Icon -->
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="@string/back_icon"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Title on the Same Line as the Back Icon -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Event"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Event Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Name"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Name"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="text" />
+
+        <!-- Event Image (Placeholder) -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Organizer Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Organizer Name"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextOrganizerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Organizer Name"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="text" />
+
+        <!-- Event Details -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Details"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEventDetails"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Enter Event Details"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="top"
+            android:inputType="textMultiLine" />
+
+        <!-- Event Date -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Date"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEventDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Date (e.g., YYYY-MM-DD)"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="date" />
+
+        <!-- Event Time -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Time"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEventTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Time (e.g., HH:MM)"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="time" />
+
+        <!-- Terms and Conditions Checkbox -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxAcceptTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I accept the terms"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp" />
 
             <TextView
-                android:id="@+id/event_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/create_an_event"
-                android:textColor="@color/dark_gray"
-                android:textSize="34sp"
-                android:textStyle="bold"
-                android:layout_weight="15" />
-
-            <Button
-                android:id="@+id/button_return"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/user_return"
-                android:backgroundTint="@color/dark_gray"
-                android:layout_weight="5" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/event_name"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/eventTitleEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Event Name" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/facility_name"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/organizerEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Facility Name" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/event_date"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/eventDateEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Event Date"
-            android:layout_marginTop="16dp" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
-
-            <FrameLayout
-                android:layout_width="120dp"
-                android:layout_height="120dp">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="4dp">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:elevation="3dp"
-                        android:background="@android:color/transparent"/>
-
-                </androidx.cardview.widget.CardView>
-
-            </FrameLayout>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/button_add_poster"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_poster"
-                android:backgroundTint="@color/dark_gray"
-                android:contentDescription=""
-                android:layout_marginEnd="10dp"/>
-
-            <Button
-                android:id="@+id/button_delete_poster"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delete Poster"
-                android:backgroundTint="@color/dark_gray"
-                android:contentDescription="" />
+                android:text="Read our T&amp;Cs"
+                android:textColor="#0000FF"
+                android:textSize="14sp" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/limit_of_applicants"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/eventLimitEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="(Optional)"
-            android:inputType="number"
-            android:layout_marginTop="16dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/event_details"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/eventDetailsEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="(Optional)"
-            android:inputType="textMultiLine"
-            android:minLines="3" />
-
-        <CheckBox
-            android:id="@+id/checkbox_geolocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/require_geolocation_from_applicants"/>
-
+        <!-- Submit Button -->
         <Button
-            android:id="@+id/submitButton"
+            android:id="@+id/button_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/dark_gray"
-            android:text="@string/create"
-            android:layout_marginTop="24dp" />
+            android:padding="12dp"
+            android:text="Submit"
+            android:textColor="@android:color/white" />
+
     </LinearLayout>
 </ScrollView>

@@ -1,102 +1,147 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
-    <!-- Scrollable Content -->
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/saveButton">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <!-- Top Bar with Back Icon and Title on the Same Line -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
 
-            <!-- Header with Title and Return Button -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-
-                <Button
-                    android:id="@+id/returnButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Return"
-                    android:background="?android:attr/selectableItemBackgroundBorderless" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Edit Event"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- Event Name -->
-            <EditText
-                android:id="@+id/eventTitleEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Event Name"
-                android:textSize="18sp" />
-
-            <!-- Placeholder for Event Image -->
+            <!-- Back Icon -->
             <ImageView
-                android:id="@+id/eventImageEdit"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="16dp"
-                android:scaleType="centerInside"
-                android:background="@android:color/darker_gray" />
-
-            <!-- Organizer Name -->
-            <EditText
-                android:id="@+id/organizerEdit"
-                android:layout_width="match_parent"
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Full Name (Organizer)"
-                android:textSize="18sp" />
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="@string/back_icon"
+                android:layout_marginEnd="8dp" />
 
-            <!-- Event Details -->
-            <EditText
-                android:id="@+id/eventDetailsEdit"
-                android:layout_width="match_parent"
+            <!-- Title on the Same Line as the Back Icon -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Event Details"
-                android:textSize="18sp"
-                android:gravity="top"
-                android:minHeight="100dp"
-                android:inputType="textMultiLine" />
-
-            <!-- Event Date -->
-            <EditText
-                android:id="@+id/eventDateEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Event Date"
-                android:textSize="18sp" />
-
+                android:text="Edit Event"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </ScrollView>
 
-    <!-- Save Changes Button at Bottom -->
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/black"
-        android:text="Save Changes"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        <!-- Event Name Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Name"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/editTextEventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Name"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Organizer Name Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Organizer Name"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextOrganizerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Organizer Name"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Event Details Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Details"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEventDetails"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Enter Event Details"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="top"
+            android:inputType="textMultiLine" />
+
+        <!-- Event Date Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Date"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEventDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Date (e.g., YYYY-MM-DD)"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="date" />
+
+        <!-- Event Time Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Time"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEventTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Time (e.g., HH:MM)"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:inputType="time" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_gray"
+            android:padding="12dp"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:backgroundTint="@android:color/white">
+
+        <!-- Event Title -->
+        <TextView
+            android:id="@+id/eventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Event Details -->
+        <TextView
+            android:id="@+id/eventDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Details"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Event Date and Time -->
+        <TextView
+            android:id="@+id/eventDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date &amp; Time"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Event Menu Icon -->
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_menu"
+            android:contentDescription="@string/menu_icon" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
