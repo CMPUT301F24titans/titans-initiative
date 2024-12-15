@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <!-- Delete Event Option -->
+    <item
+        android:id="@+id/action_delete_event"
+        android:title="@string/action_delete_event"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="2"/>
+
+
+    <!-- View Details Option -->
+    <item
+        android:id="@+id/action_view_details"
+        android:title="@string/action_view_details"
+        android:icon="@android:drawable/ic_menu_info_details"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="4"/>
+
+    <!-- Share QR Option (Using a different icon) -->
+    <item
+        android:id="@+id/action_share_qr"
+        android:title="@string/action_share_qr"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="5"/>
+
+</menu>
