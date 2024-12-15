@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">titans_project</string>
     <string name="action_settings">Settings</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -13,10 +14,10 @@
     <string name="create">Create</string>
     <string name="full_name">Full Name</string>
     <string name="email">Email</string>
-    <string name="phone_number">Phone Number (xxx-xxx-xxxx)</string>
+    <string name="phone_number">Phone Number</string>
     <string name="checkbox_notifications">Receive notifications from Organizers and Administration</string>
     <string name="profile">Profile</string>
-    <string name="edit_remove_profile_pic">Delete Profile Pic</string>
+    <string name="edit_remove_profile_pic">Edit/Remove Profile Pic</string>
     <string name="save_changes">Save Changes</string>
     <string name="user_return">Return</string>
     <string name="optional">(Optional)</string>
@@ -36,7 +37,7 @@
     <string name="event_details">Event Details</string>
     <string name="geolocation_sharing_message">I agree to share my geolocation</string>
     <string name="apply">Apply</string>
-    <string name="event_details_example">There is no description available for this event.</string>
+    <string name="event_details_example">The Volunteer Event System is a platform designed to simplify the organization, promotion, and participation in volunteer events. This system connects organizations, volunteers, and event coordinators by providing a centralized location to create, manage, and sign up for events.</string>
     <string name="event_date_example">The Volunteering Program will kick off on November 5th, 2024, and will run every Tuesday and Thursday from 10 AM to 2 PM at the Lakeside Community Center.</string>
     <string name="my_applications">Applications</string>
     <string name="homepage">Homepage</string>
@@ -45,45 +46,25 @@
     <string name="created_events">Created Events</string>
     <string name="facility">Facility</string>
     <string name="browse_content">Browse Content</string>
-    <string name="create_an_event">Create an Event</string>
-    <string name="add_poster">Add Poster</string>
-    <string name="facility_name">Facility Name</string>
-    <string name="create_event">Create Event</string>
-    <string name="date_of_event">Date of Event</string>
-    <string name="limit_of_applicants">Number Limit of Applicants</string>
-    <string name="there_is_no_limit_on_the_amount_of_applicants_for_this_event">There is no limit on the amount of applicants for this event</string>
-    <string name="view_attendees">View Attendees</string>
-    <string name="my_created_events">My Created Events</string>
-    <string name="clear">Clear</string>
-    <string name="notifications">Notifications</string>
-    <string name="description">Description</string>
-    <string name="notification_title">Notification Title</string>
-    <string name="delete">Delete</string>
-    <string name="admin_mode">Admin Mode</string>
-    <string name="button_for_user_s_notifications">Button for user\'s notifications</string>
-    <string name="date">date</string>
-    <string name="notifications_0">Notifications: 0</string>
-    <string name="send_notification">Send Notification</string>
-    <string name="create_notification">Create Notification</string>
-    <string name="insert_description">Insert Description</string>
-    <string name="insert_notification_title">Insert Notification Title</string>
-    <string name="organized_by_user">Organized by user</string>
-    <string name="accept">Accept</string>
-    <string name="reject">Reject</string>
-    <string name="remove_poster">Remove Poster</string>
-    <string name="notification">Notification</string>
-    <string name="generate_lottery">Generate Lottery</string>
-    <string name="lottery_size">Lottery Size: </string>
-    <string name="won_lotteries">Won Lotteries</string>
-    <string name="enroll">Enroll</string>
-    <string name="decline">Decline</string>
-    <string name="view_accepted_events">View Accepted Events</string>
-    <string name="enrollable_events">Enrollable Events</string>
-    <string name="view_lottery">View Lottery</string>
-    <string name="view_waitlist">View Waitlist</string>
-    <string name="view_cancelled">View Cancelled</string>
-    <string name="my_attendees">My Attendees</string>
-    <string name="cancelled_entrants">Cancelled Entrants</string>
-    <string name="recipients">Recipients</string>
-    <string name="require_geolocation_from_applicants">Require Geolocation from Applicants</string>
+
+    <!-- New Strings for Bottom Icons -->
+    <string name="application">Applications</string>
+    <string name="profile_icon">Profile</string>
+    <string name="scan_icon">Scan</string>
+    <string name="mail">Mail</string>
+
+
+    <!-- Added missing strings -->
+    <string name="back_icon">Back</string> <!-- Back button text -->
+    <string name="add_event">Add Event</string> <!-- Event addition label -->
+
+    <!-- Strings for menu actions -->
+    <string name="action_edit_event">Edit Event</string>
+    <string name="action_delete_event">Delete Event</string>
+    <string name="action_share_event">Share Event</string>
+    <string name="action_view_details">View Details</string>
+    <string name="action_share_qr">Share QR</string>
+
+    <!-- Added missing strings for menu icon -->
+    <string name="menu_icon">Menu icon</string> <!-- Content description for menu icon -->
 </resources>
